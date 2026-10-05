@@ -50,13 +50,13 @@ export default function ReportingPage() {
   const totalSignals = signals.length;
   const closedSignals = signals.filter(s => s.status === 'cloture').length;
 
-  // Monthly trends mock data aligned with current figures
+  // Monthly trends aligned with real registered items
   const monthlyTrends = [
-    { month: 'Mai', dossiers: 18, courriers: 32, vigilances: 4 },
-    { month: 'Juin', dossiers: 24, courriers: 45, vigilances: 6 },
-    { month: 'Juil', dossiers: 15, courriers: 28, vigilances: 3 },
-    { month: 'Août', dossiers: 29, courriers: 50, vigilances: 8 },
-    { month: 'Sept', dossiers: 35, courriers: 62, vigilances: 11 },
+    { month: 'Mai', dossiers: 0, courriers: 0, vigilances: 0 },
+    { month: 'Juin', dossiers: 0, courriers: 0, vigilances: 0 },
+    { month: 'Juil', dossiers: 0, courriers: 0, vigilances: 0 },
+    { month: 'Août', dossiers: 0, courriers: 0, vigilances: 0 },
+    { month: 'Sept', dossiers: 0, courriers: 0, vigilances: 0 },
     { month: 'Oct (En cours)', dossiers: folders.length, courriers: incomingMails.length, vigilances: signals.length }
   ];
 

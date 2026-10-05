@@ -346,78 +346,18 @@ ON CONFLICT (id) DO UPDATE SET
     department = EXCLUDED.department,
     updated_at = NOW();
 
--- 7. ACTIVITÉS INITIALES
-INSERT INTO public.activities (code, title, description, activity_type, priority, status, progress_percentage, manager_id, manager_name, department, start_date, due_date, associated_folder)
-VALUES
-('ACT-2026-0101', 'Campagne nationale d’échantillonnage et de contrôle qualité des antipaludiques et antibiotiques', 'Organisation des prélèvements aléatoires sur 42 officines et 6 grossistes répartiteurs pour analyse de conformité analytique au Laboratoire National.', 'Échantillonnage', 'haute', 'en_cours', 65, 'a0000000-0000-0000-0000-000000000011', 'Dr. GANHOU Irenée', 'Service de la Surveillance du Marché (SSMUR)', '2026-09-15', '2026-10-25', 'DOS-2026-ECH-0012'),
-('ACT-2026-0102', 'Évaluation approfondie du Plan de Gestion des Risques (PGR) - Antidiabétique Glucotend V3', 'Examen de l’efficacité des mesures additionnelles de minimisation des risques cardiovasculaires soumises par le titulaire d’AMM.', 'Évaluation Dossier', 'urgente', 'en_retard', 45, 'a0000000-0000-0000-0000-000000000005', 'Dr. AROUNA Radihath', 'Service des Vigilances et des Produits de Santé (SVPS)', '2026-08-20', '2026-09-28', 'PGR-2026-0089'),
-('ACT-2026-0103', 'Investigation et comité d’imputabilité MAPI — Déclaration de cas graves Hôpital Central', 'Constitution du dossier technique, analyse clinique rétrospective et convocation de la commission d’experts pour cotation d’imputabilité OMS.', 'Vigilance & Alerte', 'urgente', 'en_cours', 80, 'a0000000-0000-0000-0000-000000000006', 'Dr. FIKARA Sarath', 'Service des Vigilances et des Produits de Santé (SVPS)', '2026-09-22', '2026-10-08', 'MAPI-2026-0044'),
-('ACT-2026-0104', 'Inspection réglementaire préalable à ouverture : Établissement Grossiste PharmaDistribution', 'Vérification de la conformité aux Bonnes Pratiques de Distribution en Gros (BPDG) : chambres froides, système d’assurance qualité et qualification des personnels.', 'Inspection', 'moyenne', 'en_attente', 20, 'a0000000-0000-0000-0000-000000000004', 'Dr. KINTIN Daniel', 'Service des Licences (SL)', '2026-09-28', '2026-10-20', 'ETAB-2026-014'),
-('ACT-2026-0105', 'Session de formation continue des 35 points focaux régionaux de pharmacovigilance', 'Formation certifiante aux nouveaux outils de notification numérique et aux protocoles standardisés de prise en charge des alertes de matériovigilance.', 'Formation', 'moyenne', 'a_faire', 10, 'a0000000-0000-0000-0000-000000000002', 'Dr. HOUNGUE Perrin', 'Service des Vigilances et des Produits de Santé (SVPS)', '2026-10-12', '2026-10-30', NULL),
-('ACT-2026-0106', 'Contrôle des demandes d’autorisation de publicité pour produits de santé grand public', 'Vérification de conformité déontologique et scientifique pour 14 spots radio/télévisés et affiches déposés au 3e trimestre 2026.', 'Évaluation Dossier', 'moyenne', 'en_cours', 50, 'a0000000-0000-0000-0000-000000000008', 'Dr. LOKOUN Ella', 'Service de la Surveillance du Marché (SSMUR)', '2026-09-10', '2026-10-15', 'PUB-2026-0033'),
-('ACT-2026-0107', 'Supervision de la filière d’incinération et neutralisation des déchets pharmaceutiques périmés', 'Contrôle du bordereau de suivi des déchets dangereux (BSDD) de 3 tonnes de médicaments non utilisables collectés dans les hôpitaux régionaux.', 'Inspection', 'moyenne', 'termine', 100, 'a0000000-0000-0000-0000-000000000009', 'Dr. TONOUKOUIN Joel', 'Service de la Surveillance du Marché (SSMUR)', '2026-08-01', '2026-09-15', 'DECHET-2026-0008'),
-('ACT-2026-0108', 'Audit de sécurité des rapports périodiques de sécurité PSUR/PBRER — Classe des Antihypertenseurs', 'Revue triennale des données de tolérance mondiale et réévaluation du ratio bénéfice/risque.', 'Réglementaire', 'haute', 'en_cours', 40, 'a0000000-0000-0000-0000-000000000005', 'Dr. AROUNA Radihath', 'Service des Vigilances et des Produits de Santé (SVPS)', '2026-09-18', '2026-10-31', 'PSUR-2026-0019')
-ON CONFLICT (code) DO NOTHING;
 
--- 8. COURRIERS ENTRANTS & SORTANTS INITIAUX
-INSERT INTO public.incoming_mails (register_number, receipt_date, reference, sender, sender_type, subject, mail_type, department, manager_id, manager_name, due_date, status, priority, scanned_doc_name)
-VALUES
-('ARR-2026-0891', '2026-10-02', 'MIN-SANTE/DGS/2026-1402', 'Ministère de la Santé — Direction Générale de la Santé', 'Institutionnel', 'Instruction ministérielle relative au renforcement des contrôles sur les solutés injectables', 'Circulaire Ministérielle', 'Service des Vigilances et des Produits de Santé (SVPS)', 'a0000000-0000-0000-0000-000000000002', 'Dr. HOUNGUE Perrin', '2026-10-10', 'affectation', 'urgente', 'Circulaire_DGS_1402_Solutes.pdf'),
-('ARR-2026-0892', '2026-09-30', 'LAB-NOV/REG/2026-042', 'Laboratoires Novis Santé SA', 'Titulaire AMM', 'Dépôt du Plan de Gestion des Risques (PGR) actualisé - Spécialité Cardioprotect 50mg', 'Notification Réglementaire', 'Service des Vigilances et des Produits de Santé (SVPS)', 'a0000000-0000-0000-0000-000000000005', 'Dr. AROUNA Radihath', '2026-10-25', 'traitement', 'haute', 'Bordereau_PGR_Cardioprotect.pdf'),
-('ARR-2026-0893', '2026-09-28', 'CHU-CENTRE/PHARM/2026-09', 'Pharmacie Centrale du CHU Universitaire', 'Hôpital Public', 'Demande d’autorisation d’achat d’urgence pour antibiotique de réserve (Colistine IV)', 'Demande Usager', 'Service de la Surveillance du Marché (SSMUR)', 'a0000000-0000-0000-0000-000000000010', 'Dr. DOSSOU YOVO H. O. Mael', '2026-10-05', 'validation', 'urgente', 'Demande_Achat_Urgence_CHU_Colistine.pdf'),
-('ARR-2026-0894', '2026-09-25', 'AGENCE-PUB/COM/2026-78', 'Agence Publicitaire Mediatiks', 'Prestataire Commercial', 'Demande de visa de publicité grand public - Campagne TV Sirop Tussicalm', 'Demande Usager', 'Service de la Surveillance du Marché (SSMUR)', 'a0000000-0000-0000-0000-000000000008', 'Dr. LOKOUN Ella', '2026-10-15', 'traitement', 'moyenne', 'Script_Video_Tussicalm_30s.pdf'),
-('ARR-2026-0895', '2026-09-22', 'PHARM-DISTRIB/DIR/2026-014', 'Société PharmaDistribution Métropole', 'Établissement Pharmaceutique', 'Dossier d’agrément d’ouverture d’un entrepôt frigorifique de distribution en gros', 'Demande Usager', 'Service des Licences (SL)', 'a0000000-0000-0000-0000-000000000004', 'Dr. KINTIN Daniel', '2026-10-22', 'traitement', 'haute', 'Dossier_Technique_PharmaDistribution.pdf'),
-('ARR-2026-0896', '2026-09-18', 'ORDRE-PHARM/REG/2026-11', 'Conseil National de l’Ordre des Pharmaciens', 'Ordre Professionnel', 'Signalement d’exercice illégal et vente non autorisée de produits de santé en ligne', 'Officiel', 'Service des Licences (SL)', 'a0000000-0000-0000-0000-000000000012', 'Dr. YAMBODE Maria-Carole', '2026-10-01', 'traitement', 'urgente', 'Signalement_Ordre_Sites_Web.pdf')
-ON CONFLICT (register_number) DO NOTHING;
+-- ==============================================================================
+-- 7. BASE DE DONNÉES EN PRODUCTION (DÉMARRAGE À BLANC SANS DONNÉES FICTIVES)
+-- ==============================================================================
+-- Seuls les 14 collaborateurs officiels de la DLVS sont initialisés ci-dessus.
+-- Les tables métier (activities, tasks, incoming_mails, outgoing_mails, folders,
+-- documents, establishments, signals_vigilance, trainings, alerts, audit_logs)
+-- démarrent à blanc pour accueillir les véritables données opérationnelles.
 
-INSERT INTO public.outgoing_mails (mail_number, send_date, reference, recipient, subject, mail_type, manager_id, manager_name, status, document_name)
-VALUES
-('DEP-2026-0410', '2026-10-01', 'ACT-REG/2026/0410', 'Pharmacie Centrale du CHU Universitaire', 'Décision d’autorisation d’achat à titre dérogatoire pour Colistine IV 1MUI', 'Officiel', 'a0000000-0000-0000-0000-000000000010', 'Dr. DOSSOU YOVO H. O. Mael', 'envoye', 'Arrete_Autorisation_Achat_CHU_0410.pdf'),
-('DEP-2026-0411', '2026-09-29', 'ACT-PUB/2026/0411', 'Agence Publicitaire Mediatiks', 'Notification de demande de modifications substantielles - Campagne Tussicalm', 'Officiel', 'a0000000-0000-0000-0000-000000000008', 'Dr. LOKOUN Ella', 'envoye', 'Lettre_Observation_Publicite_Tussicalm.pdf'),
-('DEP-2026-0412', '2026-09-25', 'ACT-ETAB/2026/0412', 'Société PharmaDistribution Métropole', 'Convocation à inspection préalable sur site pour agrément grossiste', 'Officiel', 'a0000000-0000-0000-0000-000000000004', 'Dr. KINTIN Daniel', 'envoye', 'Avis_Inspection_PharmaDistribution.pdf'),
-('DEP-2026-0413', '2026-10-03', 'ACT-DIR/2026/0413', 'Ministère de la Santé — DGS', 'Rapport semestriel d’activité et état d’avancement des vigilances sanitaires', 'Rapport / PV', 'a0000000-0000-0000-0000-000000000001', 'Dr. SATCHIVI Jocelyne KANLE', 'valide', 'Rapport_Activite_S1_2026_Final.pdf')
-ON CONFLICT (mail_number) DO NOTHING;
+-- Requête de purge complète si vous aviez préalablement inséré des données de test :
+-- TRUNCATE TABLE public.activities, public.tasks, public.activity_comments,
+--   public.incoming_mails, public.outgoing_mails, public.folders, public.documents,
+--   public.establishments, public.signals_vigilance, public.trainings, public.alerts,
+--   public.notifications, public.audit_logs CASCADE;
 
--- 9. DOSSIERS RÉGLEMENTAIRES INITIAUX
-INSERT INTO public.folders (folder_number, folder_type, applicant, structure, receipt_date, manager_id, manager_name, priority, status, progress_percentage, due_date, decision)
-VALUES
-('DOS-2026-0089', 'Enregistrement PGR', 'Dr. Marc Vaudreuil', 'Laboratoires Novis Santé SA', '2026-08-20', 'a0000000-0000-0000-0000-000000000005', 'Dr. AROUNA Radihath', 'urgente', 'traitement', 60, '2026-09-28', 'En attente'),
-('DOS-2026-0018', 'Autorisation d’achat', 'Pr. Michel Laroche (Pharmacien Chef)', 'Pharmacie Centrale du CHU Universitaire', '2026-09-28', 'a0000000-0000-0000-0000-000000000010', 'Dr. DOSSOU YOVO H. O. Mael', 'urgente', 'decision', 90, '2026-10-05', 'Favorable'),
-('DOS-2026-0044', 'Revue PSUR / PBRER', 'Direction Affaires Réglementaires', 'Laboratoire Sandoz France', '2026-09-18', 'a0000000-0000-0000-0000-000000000005', 'Dr. AROUNA Radihath', 'haute', 'complet', 40, '2026-10-31', 'En attente'),
-('DOS-2026-0014', 'Agrément Établissement', 'M. Gérard Benhamou (PDG)', 'Société PharmaDistribution Métropole', '2026-09-22', 'a0000000-0000-0000-0000-000000000004', 'Dr. KINTIN Daniel', 'haute', 'traitement', 35, '2026-10-22', 'En attente'),
-('DOS-2026-0033', 'Publicité & Promotion', 'Mme. Sophie Marchand (Directrice RP)', 'Agence Publicitaire Mediatiks / Laboratoire Tussi', '2026-09-25', 'a0000000-0000-0000-0000-000000000008', 'Dr. LOKOUN Ella', 'moyenne', 'validation', 75, '2026-10-15', 'Avis avec réserves'),
-('DOS-2026-0008', 'Élimination Déchets', 'M. Patrick Gomez', 'Société EcoDestruction Médicale', '2026-08-01', 'a0000000-0000-0000-0000-000000000009', 'Dr. TONOUKOUIN Joel', 'moyenne', 'cloture', 100, '2026-09-15', 'Favorable')
-ON CONFLICT (folder_number) DO NOTHING;
-
--- 10. ÉTABLISSEMENTS INITIAUX
-INSERT INTO public.establishments (code, name, establishment_type, owner, responsible_pharmacist, address, city, department, phone, email, status, authorization_number, auth_date)
-VALUES
-('ETAB-2026-0001', 'Pharmacie Centrale du Boulevard', 'Officine', 'Dr. Jean-Pierre Valois', 'Dr. Jean-Pierre Valois', '142 Avenue de la République', 'Centre-Ville', 'Service des Licences (SL)', '+33 1 42 68 00 11', 'contact@pharmaciecentrale-valois.fr', 'Actif', 'AUT-OFF-2018-042', '2018-04-12'),
-('ETAB-2026-0002', 'Société PharmaDistribution Métropole', 'Grossiste-Répartiteur', 'M. Gérard Benhamou (PDG)', 'Dre. Martine Ségur', 'Z.I. des Jonquilles, Bâtiment C4', 'Saint-Denis', 'Service des Licences (SL)', '+33 1 48 22 55 90', 'direction@pharmadistribution.com', 'En attente', 'AUT-GROSS-2026-0014', '2026-09-22'),
-('ETAB-2026-0003', 'Laboratoires Novis Santé SA', 'Laboratoire Fabricant', 'Novis Health Group Europe', 'Dr. Marc Vaudreuil', 'Parc Technologique BioSanté, Allée des Pépinières', 'Lyon Est', 'Service des Vigilances et des Produits de Santé (SVPS)', '+33 4 72 00 99 88', 'regulatory@novis-sante.eu', 'Actif', 'AUT-FAB-2015-0089', '2015-06-20'),
-('ETAB-2026-0004', 'Dépôt Pharmaceutique Régional Ouest', 'Dépôt Pharmaceutique', 'Coopérative Sanitaire Maritime', 'Dr. Philippe Le Braz', 'Hangar Fret Portuaire n°7', 'Brest', 'Service des Licences (SL)', '+33 2 98 44 11 22', 'depot.ouest@coopsante.fr', 'Actif', 'AUT-DEP-2021-0033', '2021-09-10'),
-('ETAB-2026-0005', 'Pharmacie des Quatre Chemins', 'Officine', 'Mme. Sarah Cohen', 'Mme. Sarah Cohen', '12 Rue Victor Hugo', 'Pantin', 'Service des Licences (SL)', '+33 1 48 40 12 34', 'quatrechemins.pharma@orange.fr', 'Suspendu', 'AUT-OFF-2019-0112', '2019-03-15')
-ON CONFLICT (code) DO NOTHING;
-
--- 11. SIGNALEMENTS INITIAUX
-INSERT INTO public.signals_vigilance (signal_number, receipt_date, reporter_name, reporter_type, product_name, batch_number, manufacturer, signal_type, severity, description, manager_id, manager_name, workflow_step, status, sample_taken, lab_name, lab_result)
-VALUES
-('SIG-2026-0084', '2026-09-22', 'Dr. Antoine Meyer (Chef de Service Réanimation)', 'Hôpital Public', 'Vaccin Pédiatrique Hexavalent HexaProtect', 'LOT-HEX-4901B', 'BioVaccin International', 'MAPI', 'Critique', 'Manifestation post-vaccinale indésirable grave : 3 nourrissons ayant présenté une réaction fébrile avec convulsions 6h post-injection.', 'a0000000-0000-0000-0000-000000000006', 'Dr. FIKARA Sarath', 'investigation', 'en_cours', true, 'Laboratoire National de Contrôle des Médicaments (LNCM)', 'En attente'),
-('SIG-2026-0085', '2026-09-26', 'Pharmacie Hospitalière Sud', 'Hôpital Public', 'Soluté Glucosé 5% Poches 500ml', 'LOT-GLU-8820', 'Laboratoires Baxter / Fresenius', 'Défaut qualité', 'Grave', 'Présence anormale de particules visibles en suspension et fuite sur la tubulure de perfusion.', 'a0000000-0000-0000-0000-000000000011', 'Dr. GANHOU Irenée', 'echantillonnage', 'en_attente_labo', true, 'LNCM - Département Physico-Chimie', 'En attente'),
-('SIG-2026-0086', '2026-09-15', 'Gendarmerie Nationale / Douanes', 'Autorités Publiques', 'Comprimés Antalgiques Tramadol 50mg Contrefaits', 'FAUX-TRM-991', 'Origine inconnue (Contrefaçon)', 'Produit falsifié / illicite', 'Critique', 'Saisie de 20 000 plaquettes thermoformées vendues illicitement hors réseau officiel.', 'a0000000-0000-0000-0000-000000000011', 'Dr. GANHOU Irenée', 'action_corrective', 'action_engagee', true, 'Laboratoire Police Scientifique', 'Non conforme'),
-('SIG-2026-0087', '2026-08-30', 'Dr. Sylvie Morin (Médecin Généraliste)', 'Médecin Libéral', 'Antibiotique Amoxicilline 500mg Gélules', 'LOT-AMX-2044', 'Biogaran', 'Effet indésirable grave', 'Modérée', 'Éruption cutanée généralisée avec œdème de Quincke résolutif après injection d’adrénaline.', 'a0000000-0000-0000-0000-000000000002', 'Dr. HOUNGUE Perrin', 'cloture', 'cloture', false, NULL, NULL)
-ON CONFLICT (signal_number) DO NOTHING;
-
--- 12. ALERTES ET FORMATIONS INITIALES
-INSERT INTO public.alerts (alert_number, alert_date, source, product_name, nature, risk_level, description, actions_required, manager_name, status)
-VALUES
-('ALT-2026-001', '2026-09-23', 'Centre National de Pharmacovigilance', 'Vaccin Pédiatrique HexaProtect (Lot 4901B)', 'MAPI - Suspension préventive d’utilisation', 'Urgent', 'Alerte de niveau 1 : mise en quarantaine immédiate de tous les flacons du lot en attente des résultats analytiques du LNCM.', 'Rappel auprès des centres vaccinateurs, officines et pédiatres.', 'Dr. HOUNGUE Perrin', 'active'),
-('ALT-2026-002', '2026-09-16', 'Direction Générale des Douanes', 'Faux Tramadol 50mg', 'Produit contrefait toxique', 'Urgent', 'Circulation de faux comprimés sans principe actif. Risque létal en cas de consommation.', 'Information des services d’urgence et des officines.', 'Dr. GANHOU Irenée', 'active'),
-('ALT-2026-003', '2026-09-02', 'OMS / Alerte Médicale Mondiale n°4/2026', 'Sirops contre la toux pédiatriques contaminés à l’éthylène glycol', 'Contamination chimique internationale', 'Élevé', 'Alerte internationale concernant la détection de sirops falsifiés en Afrique subsaharienne.', 'Renforcement du contrôle d’échantillonnage aux frontières maritimes et aéroportuaires.', 'Dr. SATCHIVI Jocelyne KANLE', 'active')
-ON CONFLICT (alert_number) DO NOTHING;
-
-INSERT INTO public.trainings (training_code, participant_name, function_title, structure, region, department, theme, training_date, trainer_name, duration_hours, result, certificate_issued, certificate_number)
-VALUES
-('FORM-2026-015', 'Dr. Karim Ouattara', 'Pharmacien Point Focal Régional', 'Hôpital Régional d’Abidjan Nord', 'Région Lagunes', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Notification électronique des MAPI et algorithme d’imputabilité OMS', '2026-09-12', 'Dr. HOUNGUE Perrin', 14, 'Validé', true, 'CERT-PV-2026-0042'),
-('FORM-2026-015', 'Mme. Aminata Traoré', 'Pharmacienne Inspectrice Régionale', 'Direction Régionale de la Santé de Bouaké', 'Région Centre', 'Service des Licences (SL)', 'Contrôle des Bonnes Pratiques de Distribution en Gros (BPDG)', '2026-09-12', 'Dr. KINTIN Daniel', 14, 'Validé', true, 'CERT-PV-2026-0043'),
-('FORM-2026-016', 'Dr. Pascal Dubois', 'Praticien Hospitalier Référent', 'Centre Hospitalier Départemental', 'Région Ouest', 'Service de la Surveillance du Marché (SSMUR)', 'Vigilance des Essais Cliniques et Notification des EIG/SUSAR', '2026-10-15', 'Dr. LOKOUN Ella', 8, 'En cours', false, NULL);

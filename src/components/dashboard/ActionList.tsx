@@ -124,7 +124,12 @@ export const ActionList: React.FC = () => {
         </div>
 
         <div className="divide-y divide-slate-100 flex-1">
-          {upcomingActivities.map((act) => {
+          {upcomingActivities.length === 0 ? (
+            <div className="p-6 text-center text-xs text-slate-500">
+              Aucune activité ou échéance imminente pour le moment.
+            </div>
+          ) : (
+            upcomingActivities.map((act) => {
             const isDelayed = act.status === 'en_retard' || new Date(act.due_date).getTime() < Date.now();
             return (
               <div
@@ -156,7 +161,7 @@ export const ActionList: React.FC = () => {
                 </div>
               </div>
             );
-          })}
+          }))}
         </div>
       </div>
     </div>

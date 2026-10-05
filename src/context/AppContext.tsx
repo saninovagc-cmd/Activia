@@ -151,7 +151,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const hideToast = () => setToast(null);
 
-  const DATA_VERSION = '2026.10.dlvs.v2';
+  const DATA_VERSION = '2026.10.dlvs.clean.v1';
 
   // Load from localStorage on mount with version validation
   useEffect(() => {
@@ -1304,16 +1304,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const unreadNotificationCount = notifications.filter(n => !n.is_read).length;
 
   const computedStats: DashboardStats = {
-    ...INITIAL_DASHBOARD_STATS,
-    totalFolders: folders.length + 142,
-    foldersInProgress: folders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length + 50,
-    foldersTreated: folders.filter(f => f.status === 'cloture').length + 85,
-    foldersDelayed: folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length + 6,
-    incomingMail: incomingMails.length + 306,
-    outgoingMail: outgoingMails.length + 243,
+    totalFolders: folders.length,
+    foldersInProgress: folders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length,
+    foldersTreated: folders.filter(f => f.status === 'cloture').length,
+    foldersDelayed: folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length,
+    incomingMail: incomingMails.length,
+    outgoingMail: outgoingMails.length,
     activitiesInProgress: activities.filter(a => a.status === 'en_cours').length,
     activitiesDelayed: activities.filter(a => a.status === 'en_retard').length,
-    openReports: signals.filter(s => s.status !== 'cloture').length + 9,
+    pendingRequests: folders.filter(f => f.status === 'depot' || f.status === 'reception').length,
+    openReports: signals.filter(s => s.status !== 'cloture').length,
     activeAlerts: alerts.filter(a => a.status === 'active').length,
   };
 

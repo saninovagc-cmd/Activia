@@ -125,15 +125,15 @@ export default function SettingsPage() {
 
           <button
             onClick={() => {
-              if (confirm('Réinitialiser toutes les données de test aux valeurs par défaut ?')) {
+              if (confirm('Confirmez-vous la purge complète des données pour démarrer à blanc (les 14 agents officiels DLVS et les référentiels sont conservés) ?')) {
                 resetToDefaultData();
-                showToast('info', 'Toutes les données de démonstration ont été réinitialisées.');
+                showToast('info', 'Données purgées avec succès. Environnement de travail prêt à l’emploi.');
               }
             }}
             className="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-colors cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            Réinitialiser données démo
+            Purger les données (Démarrage à blanc)
           </button>
         </div>
 

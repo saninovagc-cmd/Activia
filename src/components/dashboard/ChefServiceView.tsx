@@ -2,40 +2,55 @@
 
 import React, { useState } from 'react';
 import { useApp } from '@/context/AppContext';
-import { StatCard } from './StatCard';
-import { Badge } from '@/components/ui/Badge';
 import { 
-  CheckCircle, 
-  Clock, 
-  AlertOctagon, 
-  Mail, 
-  FolderCheck, 
-  ShieldAlert, 
-  TrendingUp, 
+  Building,
   Users,
-  Building
 } from 'lucide-react';
 
 export const ChefServiceView: React.FC = () => {
-  const { activities, currentUser, allUsers } = useApp();
-  const [selectedDept, setSelectedDept] = useState<string>(currentUser.department || 'Vigilances Sanitaires & MAPI');
+  const { activities, folders, incomingMails, outgoingMails, signals, alerts, currentUser, allUsers } = useApp();
+  const [selectedDept, setSelectedDept] = useState<string>(currentUser.department || 'Tous');
 
   const departments = [
-    'Vigilances Sanitaires & MAPI',
-    'Établissements & Inspections',
-    'Réglementation & PGR/PSUR',
-    'Laboratoire & Échantillonnage',
-    'Déchets & Autorisations Achat'
+    'Tous',
+    'Direction (DLVS)',
+    'Service des Vigilances et des Produits de Santé (SVPS)',
+    'Service de la Surveillance du Marché (SSMUR)',
+    'Service des Licences (SL)'
   ];
 
   // Filter activities by department
-  const deptActivities = activities.filter(a => a.department === selectedDept || selectedDept === 'Tous');
+  const deptActivities = activities.filter(a => selectedDept === 'Tous' || a.department === selectedDept);
   const realisees = deptActivities.filter(a => a.status === 'termine').length;
   const enCours = deptActivities.filter(a => a.status === 'en_cours').length;
   const enRetard = deptActivities.filter(a => a.status === 'en_retard').length;
 
+  // Filter folders by department via manager
+  const deptFolders = folders.filter(f => {
+    if (selectedDept === 'Tous') return true;
+    const mgr = allUsers.find(u => u.id === f.manager_id);
+    return mgr ? mgr.department === selectedDept : false;
+  });
+  const foldersRecus = deptFolders.length;
+  const foldersTraites = deptFolders.filter(f => f.status === 'cloture' || f.status === 'decision').length;
+  const foldersEnAttente = deptFolders.filter(f => ['depot', 'reception', 'complet'].includes(f.status)).length;
+  const foldersEnRetard = deptFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
+
+  // Filter mails by department
+  const deptMailsIn = incomingMails.filter(m => selectedDept === 'Tous' || m.department === selectedDept);
+  const mailsInCount = deptMailsIn.length;
+  const mailsOutCount = outgoingMails.length;
+  const mailsNonTraites = deptMailsIn.filter(m => m.status !== 'cloture' && m.status !== 'reponse').length;
+  const mailsEnRetard = deptMailsIn.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length;
+
+  // Vigilances
+  const signalsCount = signals.length;
+  const activeAlertsCount = alerts.filter(a => a.status === 'active').length;
+  const mapiOpen = signals.filter(s => s.signal_type.toLowerCase().includes('mapi') && s.status !== 'cloture').length;
+  const signalsClosed = signals.filter(s => s.status === 'cloture').length;
+
   // Filter agents in this department
-  const deptAgents = allUsers.filter(u => u.department === selectedDept);
+  const deptAgents = allUsers.filter(u => selectedDept === 'Tous' || u.department === selectedDept);
 
   return (
     <div className="space-y-6">
@@ -46,7 +61,7 @@ export const ChefServiceView: React.FC = () => {
             <Building className="w-5 h-5 text-blue-600" />
             Vue Superviseur : {selectedDept}
           </h3>
-          <p className="text-xs text-slate-500">Pilotage de la charge, des délais et des vigilances du service</p>
+          <p className="text-xs text-slate-500">Pilotage en temps réel de la charge, des délais et des vigilances du service</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -98,20 +113,20 @@ export const ChefServiceView: React.FC = () => {
           <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Dossiers Réglementaires</p>
           <div className="mt-3 space-y-2">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Reçus (ce mois)</span>
-              <span className="font-bold text-slate-900">44</span>
+              <span className="text-slate-600">Total dossiers</span>
+              <span className="font-bold text-slate-900">{foldersRecus}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Traités / Validés</span>
-              <span className="font-bold text-emerald-600">38</span>
+              <span className="font-bold text-emerald-600">{foldersTraites}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">En attente avis</span>
-              <span className="font-bold text-amber-600">6</span>
+              <span className="font-bold text-amber-600">{foldersEnAttente}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Dossiers en retard</span>
-              <span className="font-bold text-rose-600">2</span>
+              <span className="font-bold text-rose-600">{foldersEnRetard}</span>
             </div>
           </div>
         </div>
@@ -122,19 +137,19 @@ export const ChefServiceView: React.FC = () => {
           <div className="mt-3 space-y-2">
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Courriers entrants</span>
-              <span className="font-bold text-slate-900">78</span>
+              <span className="font-bold text-slate-900">{mailsInCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Courriers sortants</span>
-              <span className="font-bold text-slate-900">65</span>
+              <span className="font-bold text-slate-900">{mailsOutCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Non traités</span>
-              <span className="font-bold text-blue-600">12</span>
+              <span className="font-bold text-blue-600">{mailsNonTraites}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Délai limite &gt; 5j</span>
-              <span className="font-bold text-rose-600">1</span>
+              <span className="text-slate-600">Délai limite dépassé</span>
+              <span className="font-bold text-rose-600">{mailsEnRetard}</span>
             </div>
           </div>
         </div>
@@ -145,19 +160,19 @@ export const ChefServiceView: React.FC = () => {
           <div className="mt-3 space-y-2">
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Signalements reçus</span>
-              <span className="font-bold text-slate-900">18</span>
+              <span className="font-bold text-slate-900">{signalsCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Alertes actives</span>
-              <span className="font-bold text-amber-600">4</span>
+              <span className="font-bold text-amber-600">{activeAlertsCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Cas MAPI ouverts</span>
-              <span className="font-bold text-blue-600">7</span>
+              <span className="font-bold text-blue-600">{mapiOpen}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-600">Dossiers clôturés</span>
-              <span className="font-bold text-emerald-600">14</span>
+              <span className="font-bold text-emerald-600">{signalsClosed}</span>
             </div>
           </div>
         </div>
@@ -169,31 +184,30 @@ export const ChefServiceView: React.FC = () => {
           <div>
             <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
               <Users className="w-4 h-4 text-blue-600" />
-              Répartition de la Charge par Agent ({deptAgents.length} agents actifs)
+              Répartition de la Charge par Collaborateur ({deptAgents.length} agents)
             </h4>
             <p className="text-xs text-slate-500">Supervision des dossiers affectés et respect des délais</p>
           </div>
-          <span className="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">
-            Taux moyen de traitement : 88.4%
-          </span>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
             <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-y border-slate-100">
               <tr>
-                <th className="py-2.5 px-3">Agent</th>
-                <th className="py-2.5 px-3">Titre</th>
+                <th className="py-2.5 px-3">Collaborateur</th>
+                <th className="py-2.5 px-3">Titre / Rôle</th>
                 <th className="py-2.5 px-3 text-center">Activités Assignées</th>
-                <th className="py-2.5 px-3 text-center">Tâches en Cours</th>
+                <th className="py-2.5 px-3 text-center">Courriers Assignés</th>
                 <th className="py-2.5 px-3 text-center">En Retard</th>
-                <th className="py-2.5 px-3 text-right">Délai Moyen</th>
+                <th className="py-2.5 px-3 text-right">Statut</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {deptAgents.map((ag) => {
                 const agActivities = activities.filter(a => a.manager_id === ag.id);
-                const agDelayed = agActivities.filter(a => a.status === 'en_retard').length;
+                const agMails = incomingMails.filter(m => m.manager_id === ag.id);
+                const agDelayed = agActivities.filter(a => a.status === 'en_retard').length +
+                  agMails.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length;
                 return (
                   <tr key={ag.id} className="hover:bg-slate-50/70">
                     <td className="py-3 px-3">
@@ -204,9 +218,9 @@ export const ChefServiceView: React.FC = () => {
                         <span className="font-semibold text-slate-900">{ag.full_name}</span>
                       </div>
                     </td>
-                    <td className="py-3 px-3 text-slate-600">{ag.title}</td>
+                    <td className="py-3 px-3 text-slate-600">{ag.role_label || ag.title}</td>
                     <td className="py-3 px-3 text-center font-bold text-slate-800">{agActivities.length}</td>
-                    <td className="py-3 px-3 text-center font-semibold text-blue-600">{agActivities.length * 2}</td>
+                    <td className="py-3 px-3 text-center font-semibold text-blue-600">{agMails.length}</td>
                     <td className="py-3 px-3 text-center">
                       {agDelayed > 0 ? (
                         <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-700 font-bold border border-rose-200">
@@ -216,7 +230,11 @@ export const ChefServiceView: React.FC = () => {
                         <span className="text-slate-400">0</span>
                       )}
                     </td>
-                    <td className="py-3 px-3 text-right font-medium text-slate-700">4.5 jours</td>
+                    <td className="py-3 px-3 text-right">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        Disponible
+                      </span>
+                    </td>
                   </tr>
                 );
               })}
