@@ -1,0 +1,472 @@
+'use client';
+
+import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useApp } from '@/context/AppContext';
+import { Badge } from '@/components/ui/Badge';
+import { 
+  Bell, 
+  Search, 
+  UserCheck, 
+  Check, 
+  ChevronDown, 
+  ExternalLink,
+  ShieldAlert,
+  Calendar,
+  ClipboardList,
+  LogOut,
+  Info,
+  FolderArchive,
+  Mail,
+  Building2,
+  AlertTriangle,
+  GraduationCap,
+  Activity as ActivityIcon,
+  X
+} from 'lucide-react';
+
+export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSidebar }) => {
+  const { 
+    currentUser, 
+    allUsers, 
+    switchUser, 
+    notifications, 
+    unreadNotificationCount, 
+    markNotificationAsRead, 
+    markAllNotificationsAsRead,
+    activities,
+    folders,
+    incomingMails,
+    establishments,
+    signals,
+    trainings
+  } = useApp();
+  
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [showUserSwitcher, setShowUserSwitcher] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+
+  const notifRef = useRef<HTMLDivElement>(null);
+  const userRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  // Close dropdowns on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (notifRef.current && !notifRef.current.contains(e.target as Node)) {
+        setShowNotifications(false);
+      }
+      if (userRef.current && !userRef.current.contains(e.target as Node)) {
+        setShowUserSwitcher(false);
+      }
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setIsSearchFocused(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      setIsSearchFocused(false);
+      router.push(`/activities?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
+  // Real-time matched items across all modules
+  const q = searchQuery.toLowerCase().trim();
+  const hasQuery = q.length >= 2;
+
+  const matchedActivities = hasQuery
+    ? activities.filter(a => a.code.toLowerCase().includes(q) || a.title.toLowerCase().includes(q)).slice(0, 3)
+    : [];
+
+  const matchedFolders = hasQuery
+    ? folders.filter(f => f.folder_number.toLowerCase().includes(q) || f.structure.toLowerCase().includes(q) || f.applicant.toLowerCase().includes(q)).slice(0, 3)
+    : [];
+
+  const matchedMails = hasQuery
+    ? incomingMails.filter(m => m.register_number.toLowerCase().includes(q) || m.sender.toLowerCase().includes(q) || m.subject.toLowerCase().includes(q)).slice(0, 3)
+    : [];
+
+  const matchedEtabs = hasQuery
+    ? establishments.filter(e => e.code.toLowerCase().includes(q) || e.name.toLowerCase().includes(q) || e.responsible_pharmacist.toLowerCase().includes(q) || e.city.toLowerCase().includes(q)).slice(0, 3)
+    : [];
+
+  const matchedSignals = hasQuery
+    ? signals.filter(s => s.signal_number.toLowerCase().includes(q) || s.product_name.toLowerCase().includes(q) || s.batch_number.toLowerCase().includes(q)).slice(0, 3)
+    : [];
+
+  const matchedTrainings = hasQuery
+    ? trainings.filter(t => t.participant_name.toLowerCase().includes(q) || t.structure.toLowerCase().includes(q) || t.theme.toLowerCase().includes(q)).slice(0, 3)
+    : [];
+
+  const totalMatches = matchedActivities.length + matchedFolders.length + matchedMails.length + matchedEtabs.length + matchedSignals.length + matchedTrainings.length;
+
+  return (
+    <header className="sticky top-0 z-40 bg-white border-b border-slate-200 h-16 px-4 md:px-6 flex items-center justify-between shadow-xs">
+      {/* Left section: mobile hamburger + Universal Omni-Search */}
+      <div className="flex items-center gap-4 flex-1 max-w-xl" ref={searchRef}>
+        <button
+          onClick={onToggleSidebar}
+          className="lg:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100 focus:outline-none"
+          title="Menu de navigation"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <div className="relative w-full hidden sm:block">
+          <form onSubmit={handleSearchSubmit}>
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <input
+              type="text"
+              placeholder="Recherche globale : dossier, courrier, établissement, MAPI, activité..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setIsSearchFocused(true);
+              }}
+              onFocus={() => setIsSearchFocused(true)}
+              className="w-full pl-9 pr-8 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery('')}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </form>
+
+          {/* Omni-search live results dropdown */}
+          {isSearchFocused && hasQuery && (
+            <div className="absolute left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-slate-200 py-3 z-50 max-h-[70vh] overflow-y-auto text-xs animate-in fade-in slide-in-from-top-2">
+              <div className="px-3 pb-2 border-b border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                <span>Résultats pour &laquo; <strong>{searchQuery}</strong> &raquo;</span>
+                <span className="font-semibold text-blue-600">{totalMatches} trouvé(s)</span>
+              </div>
+
+              {totalMatches === 0 ? (
+                <div className="p-4 text-center text-slate-400 text-xs">
+                  Aucun résultat correspondant dans l'ensemble des modules.
+                </div>
+              ) : (
+                <div className="divide-y divide-slate-100">
+                  {/* Folders */}
+                  {matchedFolders.length > 0 && (
+                    <div className="p-2 space-y-1">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2">Dossiers Réglementaires</span>
+                      {matchedFolders.map(f => (
+                        <div
+                          key={f.id}
+                          onClick={() => {
+                            setIsSearchFocused(false);
+                            router.push(`/folders`);
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <FolderArchive className="w-4 h-4 text-blue-600" />
+                            <div>
+                              <strong className="text-slate-800">{f.folder_number}</strong> — {f.structure}
+                              <span className="text-[10px] text-slate-400 block">{f.folder_type} • {f.applicant}</span>
+                            </div>
+                          </div>
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-blue-50 text-blue-700 font-semibold">{f.status}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Mail */}
+                  {matchedMails.length > 0 && (
+                    <div className="p-2 space-y-1">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2">Courriers</span>
+                      {matchedMails.map(m => (
+                        <div
+                          key={m.id}
+                          onClick={() => {
+                            setIsSearchFocused(false);
+                            router.push(`/mail`);
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <Mail className="w-4 h-4 text-indigo-600" />
+                            <div>
+                              <strong className="text-slate-800">{m.register_number}</strong> : {m.subject}
+                              <span className="text-[10px] text-slate-400 block">De : {m.sender}</span>
+                            </div>
+                          </div>
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-slate-100 text-slate-600">{m.status}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Establishments */}
+                  {matchedEtabs.length > 0 && (
+                    <div className="p-2 space-y-1">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2">Établissements</span>
+                      {matchedEtabs.map(e => (
+                        <div
+                          key={e.id}
+                          onClick={() => {
+                            setIsSearchFocused(false);
+                            router.push(`/establishments`);
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <Building2 className="w-4 h-4 text-emerald-600" />
+                            <div>
+                              <strong className="text-slate-800">{e.name}</strong> ({e.code})
+                              <span className="text-[10px] text-slate-400 block">{e.responsible_pharmacist} • {e.city}</span>
+                            </div>
+                          </div>
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-50 text-emerald-700 font-semibold">{e.status}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Signals */}
+                  {matchedSignals.length > 0 && (
+                    <div className="p-2 space-y-1">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2">Vigilances & MAPI</span>
+                      {matchedSignals.map(s => (
+                        <div
+                          key={s.id}
+                          onClick={() => {
+                            setIsSearchFocused(false);
+                            router.push(`/signals`);
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <AlertTriangle className="w-4 h-4 text-rose-600" />
+                            <div>
+                              <strong className="text-slate-800">{s.signal_number}</strong> : {s.product_name}
+                              <span className="text-[10px] text-slate-400 block">Lot {s.batch_number} • {s.signal_type}</span>
+                            </div>
+                          </div>
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-rose-50 text-rose-700 font-semibold">{s.severity}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Activities */}
+                  {matchedActivities.length > 0 && (
+                    <div className="p-2 space-y-1">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2">Activités du Service</span>
+                      {matchedActivities.map(a => (
+                        <div
+                          key={a.id}
+                          onClick={() => {
+                            setIsSearchFocused(false);
+                            router.push(`/activities`);
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <ActivityIcon className="w-4 h-4 text-teal-600" />
+                            <div>
+                              <strong className="text-slate-800">{a.code}</strong> — {a.title}
+                              <span className="text-[10px] text-slate-400 block">Resp: {a.manager_name}</span>
+                            </div>
+                          </div>
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-slate-100 text-slate-600">{a.status}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Trainings */}
+                  {matchedTrainings.length > 0 && (
+                    <div className="p-2 space-y-1">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2">Formations</span>
+                      {matchedTrainings.map(t => (
+                        <div
+                          key={t.id}
+                          onClick={() => {
+                            setIsSearchFocused(false);
+                            router.push(`/trainings`);
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg hover:bg-slate-50 cursor-pointer flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <GraduationCap className="w-4 h-4 text-purple-600" />
+                            <div>
+                              <strong className="text-slate-800">{t.participant_name}</strong>
+                              <span className="text-[10px] text-slate-400 block">{t.theme} • {t.structure}</span>
+                            </div>
+                          </div>
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-purple-50 text-purple-700 font-semibold">{t.result}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Right section: Role switcher + Notifications */}
+      <div className="flex items-center gap-3">
+        {/* Role & User Switcher for instantaneous testing of all 14 DLVS staff members */}
+        <div className="relative" ref={userRef}>
+          <button
+            onClick={() => setShowUserSwitcher(!showUserSwitcher)}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 transition-colors text-xs font-medium text-slate-700 cursor-pointer"
+            title="Changer d'utilisateur pour tester les habilitations"
+          >
+            <div className="w-5 h-5 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-[10px]">
+              {currentUser.order || '1'}
+            </div>
+            <div className="text-left hidden sm:block">
+              <span className="font-bold text-slate-900 block leading-tight">{currentUser.full_name}</span>
+              <span className="text-[10px] text-slate-500 block leading-tight">{currentUser.title} • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}</span>
+            </div>
+            <ChevronDown className="w-3.5 h-3.5 text-slate-400 shrink-0 ml-0.5" />
+          </button>
+
+          {showUserSwitcher && (
+            <div className="absolute right-0 mt-2 w-88 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2">
+              <div className="px-3.5 py-2 border-b border-slate-100 bg-slate-50/60">
+                <p className="text-xs font-bold text-slate-900">Personnel DLVS ({allUsers.length} Collaborateurs)</p>
+                <p className="text-[11px] text-slate-500">Basculez instantanément pour tester les vues et permissions.</p>
+              </div>
+              <div className="max-h-80 overflow-y-auto divide-y divide-slate-100">
+                {allUsers.map((u) => {
+                  const isSelected = u.id === currentUser.id;
+                  return (
+                    <button
+                      key={u.id}
+                      onClick={() => {
+                        switchUser(u.id);
+                        setShowUserSwitcher(false);
+                      }}
+                      className={`w-full px-3.5 py-2 text-left text-xs flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                        isSelected ? 'bg-blue-50/80 border-l-3 border-blue-600' : ''
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0 pr-2">
+                        <span className="w-6 h-6 shrink-0 rounded bg-slate-100 text-slate-700 font-bold flex items-center justify-center text-[11px] border border-slate-200">
+                          {u.order || 1}
+                        </span>
+                        <div className="truncate">
+                          <p className={`font-semibold truncate ${isSelected ? 'text-blue-900 font-bold' : 'text-slate-800'}`}>
+                            {u.full_name}
+                          </p>
+                          <p className="text-[10px] text-blue-700 truncate font-medium">{u.title} • {u.post || u.role_label}</p>
+                          <p className="text-[10px] text-slate-400 truncate">{u.department}</p>
+                        </div>
+                      </div>
+                      {isSelected && <Check className="w-4 h-4 text-blue-600 shrink-0" />}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Notifications Dropdown */}
+        <div className="relative" ref={notifRef}>
+          <button
+            onClick={() => setShowNotifications(!showNotifications)}
+            className="relative p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+            title="Notifications du service"
+          >
+            <Bell className="w-5 h-5" />
+            {unreadNotificationCount > 0 && (
+              <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-rose-600 text-[10px] font-bold text-white shadow-xs">
+                {unreadNotificationCount}
+              </span>
+            )}
+          </button>
+
+          {showNotifications && (
+            <div className="absolute right-0 mt-2 w-84 sm:w-96 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2">
+              <div className="px-4 py-2 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Centre de Notifications</h4>
+                  <p className="text-[11px] text-slate-500">{unreadNotificationCount} nouvelle(s) notification(s)</p>
+                </div>
+                {unreadNotificationCount > 0 && (
+                  <button
+                    onClick={markAllNotificationsAsRead}
+                    className="text-xs text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    Tout marquer comme lu
+                  </button>
+                )}
+              </div>
+
+              <div className="max-h-80 overflow-y-auto divide-y divide-slate-100">
+                {notifications.length === 0 ? (
+                  <div className="p-4 text-center text-xs text-slate-500">
+                    Aucune notification pour le moment.
+                  </div>
+                ) : (
+                  notifications.map((notif) => {
+                    const iconMap = {
+                      deadline: <ShieldAlert className="w-4 h-4 text-rose-500" />,
+                      alert: <ShieldAlert className="w-4 h-4 text-amber-500" />,
+                      assignment: <ClipboardList className="w-4 h-4 text-blue-500" />,
+                      status_change: <Calendar className="w-4 h-4 text-emerald-500" />,
+                      system: <Info className="w-4 h-4 text-slate-500" />,
+                    };
+                    return (
+                      <div
+                        key={notif.id}
+                        onClick={() => {
+                          markNotificationAsRead(notif.id);
+                          if (notif.link) {
+                            setShowNotifications(false);
+                            router.push(notif.link);
+                          }
+                        }}
+                        className={`p-3 text-xs hover:bg-slate-50 cursor-pointer transition-colors ${
+                          !notif.is_read ? 'bg-blue-50/40 border-l-2 border-blue-600' : ''
+                        }`}
+                      >
+                        <div className="flex items-start gap-2.5">
+                          <div className="mt-0.5">{iconMap[notif.type]}</div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <span className="font-semibold text-slate-900">{notif.title}</span>
+                              <span className="text-[10px] text-slate-400">{notif.created_at}</span>
+                            </div>
+                            <p className="text-slate-600 mt-0.5 leading-snug">{notif.message}</p>
+                            {notif.link && (
+                              <span className="inline-flex items-center gap-1 text-[11px] text-blue-600 hover:underline mt-1 font-medium">
+                                Consulter <ExternalLink className="w-3 h-3" />
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
+  );
+};
