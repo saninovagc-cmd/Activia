@@ -15,7 +15,7 @@ function DocumentsPageContent() {
             Gestion Électronique des Documents (GED)
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Espace centralisé de stockage, indexation et prévisualisation des pièces officielles (Supabase Storage)
+            Espace centralisé de stockage, indexation et prévisualisation des pièces officielles (Coffre Numérique Sécurisé)
           </p>
         </div>
 

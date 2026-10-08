@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Activity, ActivityStatus, PriorityLevel, Task } from '@/types';
 import { useApp } from '@/context/AppContext';
@@ -392,7 +392,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">Pièces Justificatives et Rapports</h4>
-                  <p className="text-[11px] text-slate-500">Stockage sécurisé Supabase Storage avec contrôle d'intégrité.</p>
+                  <p className="text-[11px] text-slate-500">Stockage sécurisé dans le coffre numérique avec contrôle d&apos;intégrité.</p>
                 </div>
                 <button
                   onClick={() => setShowUploadDoc(!showUploadDoc)}

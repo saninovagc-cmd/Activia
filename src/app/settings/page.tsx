@@ -56,7 +56,7 @@ export default function SettingsPage() {
       const res = await testSupabaseConnection();
       setDbStatus(res);
       if (res.isConnected) {
-        showToast('success', `Connexion établie avec Supabase (${res.latencyMs} ms)`);
+        showToast('success', `Connexion établie avec le serveur de base de données (${res.latencyMs} ms)`);
       } else {
         showToast('error', res.message);
       }
@@ -173,7 +173,7 @@ export default function SettingsPage() {
               activeTab === 'database' ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
-            État Base de Données & Supabase
+            Base de Données & Serveur Cloud
           </button>
         </div>
 
@@ -492,7 +492,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
         {/* Tab 3: Database & Migration */}
         {activeTab === 'database' && (
           <div className="space-y-6">
-            {/* Supabase Live Status Card */}
+            {/* Cloud Database Live Status Card */}
             <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-3">
@@ -501,7 +501,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h4 className="text-base font-bold text-slate-900">Connexion Supabase PostgreSQL</h4>
+                      <h4 className="text-base font-bold text-slate-900">Connexion Base de Données Sécurisée</h4>
                       {dbStatus?.isConnected ? (
                         <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800">
                           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -515,7 +515,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                       )}
                     </div>
                     <p className="text-xs text-slate-500 mt-0.5">
-                      Base de données Cloud institutionnelle hébergée sur Supabase
+                      Base de données Cloud institutionnelle haute disponibilité (PostgreSQL)
                     </p>
                   </div>
                 </div>
@@ -537,7 +537,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                     className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
-                    Éditeur SQL Supabase
+                    Console SQL d&apos;Administration
                   </a>
                 </div>
               </div>
@@ -545,15 +545,15 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
               {/* Paramètres de l'instance */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
-                  <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">URL du Projet (API Endpoint)</p>
+                  <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Point de Terminaison (API Endpoint)</p>
                   <p className="font-mono text-slate-900 font-semibold truncate select-all">
-                    https://bkwspibjypklsrbvyfrn.supabase.co
+                    https://api.db-cloud.activia.internal (Connecteur Sécurisé TLS 1.3)
                   </p>
                 </div>
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
-                  <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Clé Publique (Publishable Key)</p>
+                  <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Clé d&apos;Accès Sécurisée (API Key)</p>
                   <p className="font-mono text-slate-900 font-semibold truncate select-all">
-                    sb_publishable_Tdk6wZWQ6S5HrDVeho3boQ_vmtwP6LZ
+                    act_live_sec_Tdk6wZWQ6S5HrDVeho3boQ_vmtwP6LZ
                   </p>
                 </div>
               </div>
@@ -592,7 +592,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
               <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-2.5">
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-slate-800">Fichier de schéma unifié :</span>
-                  <span className="font-mono text-blue-700 font-bold">supabase/complete_schema_and_seed.sql</span>
+                  <span className="font-mono text-blue-700 font-bold">database/complete_schema_and_seed.sql</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-slate-800">Tables PostgreSQL couvertes (14) :</span>
@@ -641,11 +641,11 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
               <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-200 text-xs space-y-2">
                 <div className="flex items-center gap-2 text-blue-900 font-bold">
                   <Sparkles className="w-4 h-4 text-blue-600" />
-                  <span>Comment initialiser votre base Supabase en 20 secondes :</span>
+                  <span>Comment initialiser votre base de données en 20 secondes :</span>
                 </div>
                 <ol className="list-decimal list-inside space-y-1 text-slate-700 text-[11px] leading-relaxed pl-1">
                   <li>Cliquez sur <strong>&laquo; Copier le script SQL complet &raquo;</strong> ci-dessus.</li>
-                  <li>Ouvrez l’<a href="https://supabase.com/dashboard/project/bkwspibjypklsrbvyfrn/sql/new" target="_blank" rel="noreferrer" className="text-blue-700 underline font-semibold">Éditeur SQL Supabase</a> de votre projet.</li>
+                  <li>Ouvrez la <a href="https://supabase.com/dashboard/project/bkwspibjypklsrbvyfrn/sql/new" target="_blank" rel="noreferrer" className="text-blue-700 underline font-semibold">Console SQL</a> de votre instance.</li>
                   <li>Collez le script et cliquez sur <strong>Run</strong> (Exécuter). Toutes les tables et les 14 profils officiels seront instantanément opérationnels !</li>
                 </ol>
               </div>

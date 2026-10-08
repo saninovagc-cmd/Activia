@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -332,7 +332,7 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
                 <Paperclip className="w-6 h-6" />
               </div>
               <p className="font-bold text-slate-900">{mail.scanned_doc_name || 'Courrier_Scanne_Original.pdf'}</p>
-              <p className="text-slate-500 text-xs">Numérisé et stocké dans le bucket Supabase Storage</p>
+              <p className="text-slate-500 text-xs">Numérisé et stocké dans le coffre documentaire sécurisé</p>
               <button
                 onClick={() => downloadSampleDocument(mail.scanned_doc_name || 'Courrier_Scanne.pdf', mail.register_number, 'Courrier Entrant')}
                 className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold inline-flex items-center gap-1.5"

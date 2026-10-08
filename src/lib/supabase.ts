@@ -35,7 +35,7 @@ export const testSupabaseConnection = async (): Promise<SupabaseConnectionStatus
       isConnected: false,
       url: supabaseUrl,
       hasTables: false,
-      message: 'Supabase n’est pas configuré. Veuillez définir les variables d’environnement.',
+      message: 'Le serveur de base de données distant n’est pas configuré. Mode local actif.',
     };
   }
 
@@ -58,7 +58,7 @@ export const testSupabaseConnection = async (): Promise<SupabaseConnectionStatus
         url: supabaseUrl,
         hasTables: false,
         latencyMs,
-        message: `Erreur de connexion à Supabase (${healthRes.status}: ${healthRes.statusText})`,
+        message: `Erreur de connexion au serveur de base de données (${healthRes.status}: ${healthRes.statusText})`,
       };
     }
 
@@ -80,8 +80,8 @@ export const testSupabaseConnection = async (): Promise<SupabaseConnectionStatus
       hasTables,
       latencyMs,
       message: hasTables 
-        ? 'Connexion active à Supabase et tables opérationnelles.' 
-        : 'Connexion active à Supabase. Le schéma SQL complet est prêt à être appliqué.',
+        ? 'Connexion active à la base de données et tables opérationnelles.' 
+        : 'Connexion active à la base de données. Le schéma SQL complet est prêt à être appliqué.',
     };
   } catch (err: unknown) {
     const latencyMs = Date.now() - start;
@@ -92,7 +92,7 @@ export const testSupabaseConnection = async (): Promise<SupabaseConnectionStatus
       url: supabaseUrl,
       hasTables: false,
       latencyMs,
-      message: 'Échec de connexion réseau vers l’instance Supabase.',
+      message: 'Échec de connexion réseau vers le serveur de base de données.',
       error: errorMsg,
     };
   }

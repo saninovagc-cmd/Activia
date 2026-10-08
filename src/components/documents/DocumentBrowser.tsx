@@ -70,7 +70,7 @@ export const DocumentBrowser: React.FC = () => {
     setNewDocName('');
     setNewDocRef('');
     setIsUploadOpen(false);
-    showToast('success', `Document "${docFileName}" déposé et indexé avec succès dans le coffre GED Supabase.`);
+    showToast('success', `Document "${docFileName}" déposé et indexé avec succès dans le coffre GED sécurisé.`);
   };
 
   const getFileIcon = (type: string) => {
@@ -378,7 +378,7 @@ export const DocumentBrowser: React.FC = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-xs animate-in fade-in">
           <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md overflow-hidden">
             <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
-              <h3 className="font-bold text-slate-900 text-sm">Déposer une pièce dans Supabase Storage</h3>
+              <h3 className="font-bold text-slate-900 text-sm">Déposer une pièce dans le coffre documentaire</h3>
               <button onClick={() => setIsUploadOpen(false)} className="p-1 text-slate-400 hover:text-slate-700">
                 <X className="w-4 h-4" />
               </button>
@@ -487,7 +487,7 @@ export const DocumentBrowser: React.FC = () => {
 
               <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-800 flex items-center justify-center gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-600" />
-                <span>Document signé électroniquement et intègre dans Supabase Storage</span>
+                <span>Document signé électroniquement et intègre dans le coffre documentaire sécurisé</span>
               </div>
 
               <div className="pt-4 flex justify-center gap-3">
