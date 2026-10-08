@@ -25,6 +25,8 @@ import {
   ShieldCheck,
   Download
 } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 function DashboardContent() {
   const router = useRouter();
@@ -48,6 +50,32 @@ function DashboardContent() {
   };
 
   const { stats, currentUser } = useApp();
+
+  const getDashboardExportConfig = (): ExportConfig => ({
+    title: 'Tableau de Bord Général — Synthèse de Pilotage',
+    subtitle: 'Direction de la Pharmacie et du Médicament — Indicateurs Clés de Performance ACTIVIA',
+    filename: `tableau_de_bord_activia_${new Date().toISOString().split('T')[0]}`,
+    headers: ['Domaine', 'Indicateur Clé', 'Valeur Actuelle', 'Statut / Tendance', 'Détails'],
+    rows: [
+      ['Dossiers', 'Total Dossiers Enregistrés', stats.totalFolders, 'Actif', 'Volume global des dossiers gérés'],
+      ['Dossiers', 'Dossiers en cours de traitement', stats.foldersInProgress, 'En cours', 'Dossiers en instruction active'],
+      ['Dossiers', 'Dossiers traités et validés', stats.foldersTreated, 'Succès', 'Dossiers clôturés avec décision'],
+      ['Dossiers', 'Dossiers en retard (SLA)', stats.foldersDelayed, stats.foldersDelayed > 0 ? 'Alerte' : 'Normal', 'Dossiers dépassant l’échéance'],
+      ['Dossiers', 'Demandes en attente', stats.pendingRequests, stats.pendingRequests > 0 ? 'En attente' : 'Normal', 'Demandes nécessitant validation'],
+      ['Courriers', 'Courriers Arrivée (Reçus)', stats.incomingMail, 'Actif', 'Courriers entrants enregistrés'],
+      ['Courriers', 'Courriers Départ (Envoyés)', stats.outgoingMail, 'Actif', 'Courriers et ampliations sortantes'],
+      ['Activités', 'Activités du Service en cours', stats.activitiesInProgress, 'En cours', 'Missions réglementaires et techniques'],
+      ['Activités', 'Activités en retard', stats.activitiesDelayed, stats.activitiesDelayed > 0 ? 'Retard' : 'À jour', 'Missions nécessitant relance'],
+      ['Vigilances', 'Signalements Sanitaires Ouverts', stats.openReports, 'Surveillance', 'Notifications reçues'],
+      ['Vigilances', 'Alertes Actives prioritaires', stats.activeAlerts, stats.activeAlerts > 0 ? 'Alerte' : 'Calme', 'Mesures d’urgence']
+    ],
+    summaryKpis: [
+      { label: 'Total Dossiers', value: stats.totalFolders },
+      { label: 'Dossiers en Retard', value: stats.foldersDelayed },
+      { label: 'Courriers Entrants', value: stats.incomingMail },
+      { label: 'Alertes Sanitaires', value: stats.activeAlerts }
+    ]
+  });
 
   return (
     <AppLayout>
@@ -85,14 +113,7 @@ function DashboardContent() {
               </Link>
             </div>
 
-            <button
-              onClick={() => window.print()}
-              className="px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-colors"
-              title="Exporter ou imprimer le tableau de bord"
-            >
-              <Download className="w-3.5 h-3.5" />
-              Exporter
-            </button>
+            <ExportButton getConfig={getDashboardExportConfig} />
           </div>
         </div>
 

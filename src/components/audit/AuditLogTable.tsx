@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { useApp } from '@/context/AppContext';
 import { Search, Filter, ShieldCheck, Download, History, User } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 export const AuditLogTable: React.FC = () => {
   const { auditLogs } = useApp();
@@ -23,31 +25,27 @@ export const AuditLogTable: React.FC = () => {
     return true;
   });
 
-  const exportAuditCSV = () => {
-    const headers = ['ID', 'Date', 'Utilisateur', 'Rôle', 'Module', 'Action', 'Entité ID', 'Entité Nom', 'Détails', 'Ancienne Valeur', 'Nouvelle Valeur'];
-    const rows = filteredLogs.map(l => [
-      l.id,
+  const getAuditExportConfig = (): ExportConfig => ({
+    title: 'Journal d’Audit & Traçabilité des Opérations',
+    subtitle: 'Direction de la Pharmacie et du Médicament — Registre immuable de conformité',
+    filename: `audit_activia_${new Date().toISOString().split('T')[0]}`,
+    headers: ['Date & Heure', 'Utilisateur', 'Rôle', 'Module', 'Action', 'Entité Ciblée', 'Détails des modifications'],
+    rows: filteredLogs.map(l => [
       l.created_at,
-      `"${l.user_name}"`,
-      `"${l.user_role}"`,
+      l.user_name,
+      l.user_role,
       l.module,
       l.action,
-      l.entity_id,
-      `"${l.entity_name}"`,
-      `"${l.details}"`,
-      l.old_value || '',
-      l.new_value || ''
-    ]);
-
-    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `audit_logs_activia_${new Date().toISOString().split('T')[0]}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+      `${l.entity_name} (${l.entity_id})`,
+      l.details
+    ]),
+    summaryKpis: [
+      { label: 'Total Entrées', value: filteredLogs.length },
+      { label: 'Créations', value: filteredLogs.filter(l => l.action === 'CREATE').length },
+      { label: 'Modifications', value: filteredLogs.filter(l => l.action === 'UPDATE' || l.action === 'STATUS_CHANGE').length },
+      { label: 'Suppressions', value: filteredLogs.filter(l => l.action === 'DELETE').length }
+    ]
+  });
 
   const actionBadgeColors: Record<string, { bg: string; text: string }> = {
     CREATE: { bg: 'bg-emerald-50 border-emerald-200', text: 'text-emerald-700' },
@@ -102,13 +100,7 @@ export const AuditLogTable: React.FC = () => {
           </select>
         </div>
 
-        <button
-          onClick={exportAuditCSV}
-          className="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
-        >
-          <Download className="w-3.5 h-3.5" />
-          Exporter l'Audit (CSV)
-        </button>
+        <ExportButton getConfig={getAuditExportConfig} />
       </div>
 
       {/* Logs Table */}

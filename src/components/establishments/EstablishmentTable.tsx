@@ -14,10 +14,11 @@ import {
   Phone, 
   Mail, 
   ShieldCheck, 
-  AlertTriangle,
   FileCheck2,
   Calendar
 } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 interface EstablishmentTableProps {
   establishments: Establishment[];
@@ -74,20 +75,28 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
     }
   };
 
-  const exportCSV = () => {
-    const headers = ['Code,Nom,Type,Proprietaire,Pharmacien Responsable,Ville,Departement,Telephone,Email,Statut,Autorisation,Date Autorisation,Expiration\n'];
-    const rows = filtered.map(e => 
-      `"${e.code}","${e.name}","${e.establishment_type}","${e.owner}","${e.responsible_pharmacist}","${e.city}","${e.department}","${e.phone}","${e.email}","${e.status}","${e.authorization_number}","${e.auth_date}","${e.expiry_date || ''}"`
-    );
-    const blob = new Blob([headers.concat(rows.join('\n')).join('')], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', `repertoire_etablissements_${new Date().toISOString().split('T')[0]}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const getExportConfig = (): ExportConfig => ({
+    title: 'Répertoire National des Établissements Pharmaceutiques',
+    subtitle: 'Direction de la Pharmacie et du Médicament — Données d’agrément et d’inspection',
+    filename: `repertoire_etablissements_${new Date().toISOString().split('T')[0]}`,
+    headers: ['Code', 'Nom / Dénomination', 'Type', 'Pharmacien Responsable', 'Ville', 'Département', 'Téléphone', 'Agrément', 'Statut'],
+    rows: filtered.map(e => [
+      e.code,
+      e.name,
+      e.establishment_type,
+      e.responsible_pharmacist,
+      e.city,
+      e.department,
+      e.phone,
+      e.authorization_number,
+      e.status
+    ]),
+    summaryKpis: [
+      { label: 'Total Établissements', value: filtered.length },
+      { label: 'Actifs / Agréés', value: filtered.filter(e => e.status === 'Actif').length },
+      { label: 'Sous Surveillance / Suspendus', value: filtered.filter(e => e.status !== 'Actif').length }
+    ]
+  });
 
   return (
     <div className="space-y-4">
@@ -151,14 +160,7 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
 
         {/* Buttons */}
         <div className="flex items-center gap-2">
-          <button
-            onClick={exportCSV}
-            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-lg transition-colors"
-            title="Exporter en fichier CSV conforme"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Export CSV</span>
-          </button>
+          <ExportButton getConfig={getExportConfig} />
 
           {canManage && (
             <button

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -17,10 +17,11 @@ import {
   Plus, 
   Search, 
   Filter, 
-  Download, 
   RefreshCw,
   X
 } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 function ActivitiesContent() {
   const searchParams = useSearchParams();
@@ -93,29 +94,29 @@ function ActivitiesContent() {
 
   const hasActiveFilters = search || selectedStatus !== 'all' || selectedPriority !== 'all' || selectedType !== 'all' || selectedDept !== 'all' || selectedManager !== 'all';
 
-  const exportCSV = () => {
-    const headers = ['Code', 'Titre', 'Type', 'Priorité', 'Statut', 'Avancement (%)', 'Responsable', 'Département', 'Échéance'];
-    const rows = filteredActivities.map(a => [
+  const getExportConfig = (): ExportConfig => ({
+    title: 'Activités & Missions Réglementaires du Service',
+    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi opérationnel ACTIVIA',
+    filename: `activites_activia_${new Date().toISOString().split('T')[0]}`,
+    headers: ['Code', 'Titre de l’activité', 'Typologie', 'Département', 'Responsable', 'Priorité', 'Statut', 'Avancement', 'Échéance'],
+    rows: filteredActivities.map(a => [
       a.code,
-      `"${a.title.replace(/"/g, '""')}"`,
+      a.title,
       a.activity_type,
+      a.department,
+      a.manager_name,
       a.priority,
       a.status,
-      a.progress_percentage,
-      `"${a.manager_name}"`,
-      `"${a.department}"`,
-      a.due_date
-    ]);
-
-    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `activites_activia_${new Date().toISOString().split('T')[0]}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+      `${a.progress_percentage}%`,
+      a.due_date,
+    ]),
+    summaryKpis: [
+      { label: 'Total Activités', value: filteredActivities.length },
+      { label: 'En Cours', value: filteredActivities.filter(a => a.status === 'en_cours').length },
+      { label: 'Terminées', value: filteredActivities.filter(a => a.status === 'termine').length },
+      { label: 'En Retard', value: filteredActivities.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length },
+    ]
+  });
 
   return (
     <AppLayout>
@@ -163,14 +164,7 @@ function ActivitiesContent() {
               </button>
             </div>
 
-            <button
-              onClick={exportCSV}
-              className="px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-colors"
-              title="Exporter les activités au format CSV"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Exporter</span>
-            </button>
+            <ExportButton getConfig={getExportConfig} />
 
             <button
               onClick={() => {

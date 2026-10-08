@@ -11,8 +11,56 @@ import {
   Download
 } from 'lucide-react';
 
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
+import { useApp } from '@/context/AppContext';
+
 export default function ChefServiceDashboardPage() {
   const router = useRouter();
+  const { activities, folders, incomingMails, outgoingMails, signals, allUsers } = useApp();
+
+  const getChefServiceExportConfig = (): ExportConfig => {
+    const rows: (string | number)[][] = [
+      ['Activités', 'Activités totales du service', activities.length, 'Opérationnel', 'Toutes typologies'],
+      ['Activités', 'Activités terminées', activities.filter(a => a.status === 'termine').length, 'Clôturé', 'Missions exécutées'],
+      ['Activités', 'Activités en cours', activities.filter(a => a.status === 'en_cours').length, 'En cours', 'Missions actives'],
+      ['Activités', 'Activités en retard', activities.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length, 'Retard', 'Nécessite arbitrage'],
+      ['Dossiers', 'Dossiers reçus', folders.length, 'Enregistré', 'Dossiers réglementaires'],
+      ['Dossiers', 'Dossiers validés / clôturés', folders.filter(f => f.status === 'cloture' || f.status === 'decision').length, 'Validé', 'Décision prise'],
+      ['Dossiers', 'Dossiers en attente', folders.filter(f => ['depot', 'reception', 'complet', 'verification'].includes(f.status)).length, 'En attente', 'En cours d\'instruction'],
+      ['Dossiers', 'Dossiers en retard', folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture' && f.status !== 'rejete').length, 'Alerte', 'Délai dépassé'],
+      ['Courriers', 'Courriers arrivées reçus', incomingMails.length, 'Enregistré', 'Registre entrée'],
+      ['Courriers', 'Courriers départs émis', outgoingMails.length, 'Émis', 'Registre sortie'],
+      ['Courriers', 'Courriers arrivées non clôturés', incomingMails.filter(m => m.status !== 'cloture' && m.status !== 'reponse').length, 'À traiter', 'En attente réponse'],
+      ['Vigilances', 'Signalements & Alertes', signals.length, 'Surveillance', 'Événements sanitaires'],
+    ];
+
+    allUsers.forEach(u => {
+      const userActs = activities.filter(a => a.manager_id === u.id);
+      const userFolders = folders.filter(f => f.manager_id === u.id);
+      rows.push([
+        'Agent / Charge',
+        `${u.first_name} ${u.last_name} (${u.role})`,
+        `${userActs.length} act. / ${userFolders.length} doss.`,
+        u.department || 'Non assigné',
+        `Email: ${u.email}`
+      ]);
+    });
+
+    return {
+      title: 'Tableau de Bord Chef de Service — Supervision Opérationnelle',
+      subtitle: 'Direction de la Pharmacie et du Médicament — Suivi des charges, délais et performances',
+      filename: `supervision_chef_service_${new Date().toISOString().split('T')[0]}`,
+      headers: ['Catégorie / Périmètre', 'Élément / Indicateur', 'Quantité / Charge', 'Statut / Affectation', 'Observations'],
+      rows,
+      summaryKpis: [
+        { label: 'Activités Totales', value: activities.length },
+        { label: 'Dossiers Déposés', value: folders.length },
+        { label: 'Courriers Reçus', value: incomingMails.length },
+        { label: 'Agents Référencés', value: allUsers.length }
+      ]
+    };
+  };
 
   return (
     <AppLayout>
@@ -50,14 +98,7 @@ export default function ChefServiceDashboardPage() {
               </button>
             </div>
 
-            <button
-              onClick={() => window.print()}
-              className="px-3 py-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-colors cursor-pointer"
-              title="Exporter ou imprimer le tableau de bord"
-            >
-              <Download className="w-3.5 h-3.5" />
-              Exporter
-            </button>
+            <ExportButton getConfig={getChefServiceExportConfig} />
           </div>
         </div>
 

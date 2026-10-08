@@ -18,6 +18,8 @@ import {
   Building,
   User
 } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 interface TrainingTableProps {
   trainings: TrainingItem[];
@@ -55,20 +57,28 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
     return matchesSearch && matchesTheme && matchesRegion && matchesResult;
   });
 
-  const exportCSV = () => {
-    const headers = ['Code,Participant,Fonction,Structure,Region,Departement,Theme,Date,Formateur,Duree_h,Resultat,Certifie,Numero_Certificat\n'];
-    const rows = filtered.map(t => 
-      `"${t.training_code}","${t.participant_name}","${t.function_title}","${t.structure}","${t.region}","${t.department}","${t.theme}","${t.training_date}","${t.trainer_name}","${t.duration_hours}","${t.result}","${t.certificate_issued ? 'Oui' : 'Non'}","${t.certificate_number || ''}"`
-    );
-    const blob = new Blob([headers.concat(rows.join('\n')).join('')], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', `registre_formations_points_focaux_${new Date().toISOString().split('T')[0]}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const getExportConfig = (): ExportConfig => ({
+    title: 'Registre des Formations & Habilitations des Points Focaux',
+    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi des compétences et certifications',
+    filename: `formations_points_focaux_${new Date().toISOString().split('T')[0]}`,
+    headers: ['Code Session', 'Participant', 'Fonction', 'Structure', 'Région', 'Thématique', 'Date', 'Résultat', 'Attestation'],
+    rows: filtered.map(t => [
+      t.training_code,
+      t.participant_name,
+      t.function_title,
+      t.structure,
+      t.region,
+      t.theme,
+      t.training_date,
+      t.result,
+      t.certificate_issued ? `Oui (${t.certificate_number || 'Délivrée'})` : 'Non'
+    ]),
+    summaryKpis: [
+      { label: 'Total Inscrits', value: filtered.length },
+      { label: 'Validés / Certifiés', value: filtered.filter(t => t.result === 'Validé').length },
+      { label: 'Attestations Émises', value: filtered.filter(t => t.certificate_issued).length }
+    ]
+  });
 
   return (
     <div className="space-y-4">
@@ -125,13 +135,7 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
 
         {/* Action buttons */}
         <div className="flex items-center gap-2">
-          <button
-            onClick={exportCSV}
-            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-lg transition-colors"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Export CSV</span>
-          </button>
+          <ExportButton getConfig={getExportConfig} />
 
           {canManage && (
             <button

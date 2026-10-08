@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useMemo, Suspense } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -8,6 +8,8 @@ import { FolderDetailModal } from '@/components/folders/FolderDetailModal';
 import { useApp } from '@/context/AppContext';
 import { Folder, FolderType } from '@/types';
 import { FolderArchive, Plus, Search, Filter, CheckCircle, Clock, AlertTriangle, XCircle } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 function FoldersPageContent() {
   const { folders } = useApp();
@@ -50,6 +52,29 @@ function FoldersPageContent() {
   const autorises = folders.filter(f => f.decision === 'Favorable').length;
   const enRetard = folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
 
+  const getFoldersExportConfig = (): ExportConfig => ({
+    title: 'Registre des Dossiers Réglementaires & Demandes',
+    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi des autorisations et homologations ACTIVIA',
+    filename: `dossiers_activia_${new Date().toISOString().split('T')[0]}`,
+    headers: ['N° Dossier', 'Structure / Demandeur', 'Typologie', 'Priorité', 'Statut / Étape', 'Date Dépôt', 'Échéance SLA', 'Décision'],
+    rows: filteredFolders.map(f => [
+      f.folder_number,
+      `${f.structure} (${f.applicant})`,
+      f.folder_type,
+      f.priority,
+      f.status,
+      f.receipt_date,
+      f.due_date,
+      f.decision || 'En attente'
+    ]),
+    summaryKpis: [
+      { label: 'Total Dossiers', value: filteredFolders.length },
+      { label: 'En Instruction', value: filteredFolders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length },
+      { label: 'En Retard SLA', value: filteredFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length },
+      { label: 'Favorables', value: filteredFolders.filter(f => f.decision === 'Favorable').length }
+    ]
+  });
+
   return (
     <AppLayout>
       <div className="space-y-6">
@@ -65,13 +90,16 @@ function FoldersPageContent() {
             </p>
           </div>
 
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
-          >
-            <Plus className="w-4 h-4" />
-            <span>Nouveau Dossier</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <ExportButton getConfig={getFoldersExportConfig} />
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Nouveau Dossier</span>
+            </button>
+          </div>
         </div>
 
         {/* KPI Mini Summary */}

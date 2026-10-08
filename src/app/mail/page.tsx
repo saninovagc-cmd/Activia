@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useMemo, Suspense } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -10,6 +10,8 @@ import { MailDetailModal } from '@/components/mail/MailDetailModal';
 import { useApp } from '@/context/AppContext';
 import { IncomingMail } from '@/types';
 import { Mail, Send, Plus, Search, Filter, Download } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 function MailPageContent() {
   const { incomingMails, outgoingMails } = useApp();
@@ -63,6 +65,51 @@ function MailPageContent() {
     'Bureau du Courrier & Réception'
   ];
 
+  const getMailExportConfig = (): ExportConfig => {
+    if (activeTab === 'outgoing') {
+      return {
+        title: 'Registre des Courriers Sortants (Départ)',
+        subtitle: 'Direction de la Pharmacie et du Médicament — Traçabilité des expéditions officielles',
+        filename: `courriers_depart_activia_${new Date().toISOString().split('T')[0]}`,
+        headers: ['N° Enregistrement', 'Date Départ', 'Destinataire', 'Objet', 'Type d\'Envoi', 'Référence Officielle'],
+        rows: filteredOutgoing.map(m => [
+          m.mail_number,
+          m.send_date,
+          m.recipient,
+          m.subject,
+          m.mail_type,
+          m.reference || '-'
+        ]),
+        summaryKpis: [
+          { label: 'Courriers Sortants', value: filteredOutgoing.length },
+          { label: 'Filtre Appliqué', value: search ? 'Oui' : 'Tous' }
+        ]
+      };
+    }
+
+    return {
+      title: 'Registre des Courriers Entrants (Arrivée)',
+      subtitle: 'Direction de la Pharmacie et du Médicament — Traçabilité et affectation réglementaire',
+      filename: `courriers_arrivee_activia_${new Date().toISOString().split('T')[0]}`,
+      headers: ['N° Enregistrement', 'Date Réception', 'Expéditeur', 'Département Affecté', 'Objet', 'Priorité', 'Statut', 'Échéance'],
+      rows: filteredIncoming.map(m => [
+        m.register_number,
+        m.receipt_date,
+        m.sender,
+        m.department,
+        m.subject,
+        m.priority,
+        m.status,
+        m.due_date
+      ]),
+      summaryKpis: [
+        { label: 'Total Reçus', value: filteredIncoming.length },
+        { label: 'Non Clôturés', value: filteredIncoming.filter(m => m.status !== 'cloture').length },
+        { label: 'En Retard', value: filteredIncoming.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length }
+      ]
+    };
+  };
+
   return (
     <AppLayout>
       <div className="space-y-6">
@@ -79,9 +126,10 @@ function MailPageContent() {
           </div>
 
           <div className="flex items-center gap-2">
+            <ExportButton getConfig={getMailExportConfig} />
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
+              className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Nouveau Courrier</span>

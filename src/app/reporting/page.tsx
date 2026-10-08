@@ -29,10 +29,11 @@ import {
   AlertTriangle, 
   Mail, 
   FolderArchive, 
-  Building2, 
   FileText,
   Filter
 } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 export default function ReportingPage() {
   const { activities, folders, incomingMails, outgoingMails, signals, trainings, establishments, allUsers } = useApp();
@@ -111,27 +112,27 @@ export default function ReportingPage() {
 
   const COLORS = ['#1e40af', '#0284c7', '#0d9488', '#16a34a', '#d97706', '#dc2626'];
 
-  const exportReportCSV = () => {
-    const headers = ['Indicateur,Valeur,Cible,Statut\n'];
-    const rows = [
-      `"Total Dossiers Déposés",${totalFolders},-,Conforme`,
-      `"Dossiers Traités / Décidés",${treatedFolders},-,En progrès`,
-      `"Taux de Respect des Délais SLA (Dossiers)",${folderSlaRate}%,85%,${folderSlaRate >= 85 ? 'Atteint' : 'Sous surveillance'}`,
-      `"Courriers Entrants Réceptionnés",${totalMail},-,Conforme`,
-      `"Taux de Réponse aux Courriers",${mailProcessingRate}%,90%,${mailProcessingRate >= 90 ? 'Atteint' : 'En cours'}`,
-      `"Signalements Sanitaires Notifiés",${totalSignals},-,Sous contrôle`,
-      `"Établissements Répertoriés",${establishments.length},-,Actif`,
-      `"Points Focaux Formés",${trainings.length},50,${trainings.length >= 50 ? 'Objectif Atteint' : 'En déploiement'}`
-    ];
-    const blob = new Blob([headers.concat(rows.join('\n')).join('')], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', `rapport_performance_${period}_${new Date().toISOString().split('T')[0]}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const getReportingExportConfig = (): ExportConfig => ({
+    title: `Bilan Statistique & Rapport de Performance (${period === 'month' ? 'Mensuel' : period === 'quarter' ? 'Trimestriel' : 'Annuel'})`,
+    subtitle: 'Direction de la Pharmacie et du Médicament — Indicateurs Clés et Mesures de Performance',
+    filename: `rapport_performance_${period}_${new Date().toISOString().split('T')[0]}`,
+    headers: ['Domaine / Indicateur', 'Valeur Constatée', 'Cible / Norme', 'Évaluation de Performance'],
+    rows: [
+      ['Dossiers Réglementaires Traités', totalFolders, '100% reçus', `${folderSlaRate}% traités`],
+      ['Respect des Délais d’Instruction (SLA)', `${folderSlaRate}%`, '85%', folderSlaRate >= 85 ? 'Conforme aux normes' : 'Vigilance requise'],
+      ['Courriers Entrants Réceptionnés', totalMail, '-', 'Flux sous contrôle'],
+      ['Taux de Réponse aux Courriers', `${mailProcessingRate}%`, '90%', mailProcessingRate >= 90 ? 'Objectif Atteint' : 'En cours d’instruction'],
+      ['Signalements Sanitaires & Vigilances', totalSignals, '-', `${closedSignals} clôturés`],
+      ['Établissements Répertoriés', establishments.length, '-', 'Actif'],
+      ['Sessions de Formation / Points Focaux', trainings.length, '50', trainings.length >= 50 ? 'Objectif Atteint' : 'En déploiement']
+    ],
+    summaryKpis: [
+      { label: 'Dossiers Traités', value: `${folderSlaRate}%` },
+      { label: 'Courriers Clôturés', value: `${mailProcessingRate}%` },
+      { label: 'Signalements', value: totalSignals },
+      { label: 'Établissements', value: establishments.length }
+    ]
+  });
 
   return (
     <AppLayout>
@@ -175,21 +176,7 @@ export default function ReportingPage() {
             </button>
           </div>
 
-          <button
-            onClick={exportReportCSV}
-            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg transition-colors"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Export CSV</span>
-          </button>
-
-          <button
-            onClick={() => window.print()}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs transition-colors"
-          >
-            <Printer className="w-4 h-4" />
-            <span>Imprimer le Bilan</span>
-          </button>
+          <ExportButton getConfig={getReportingExportConfig} />
         </div>
       </div>
 

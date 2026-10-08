@@ -16,6 +16,8 @@ import {
   FileText,
   ShieldAlert
 } from 'lucide-react';
+import { ExportButton } from '@/components/common/ExportButton';
+import { ExportConfig } from '@/lib/exportUtils';
 
 interface SignalTableProps {
   signals: SignalItem[];
@@ -67,20 +69,30 @@ export const SignalTable: React.FC<SignalTableProps> = ({
     }
   };
 
-  const exportCSV = () => {
-    const headers = ['Numero,Date,Declarant,Type Declarant,Produit,Lot,Fabricant,Type,Gravite,Echantillon,Laboratoire,Resultat,Etape,Statut,Responsable\n'];
-    const rows = filtered.map(s => 
-      `"${s.signal_number}","${s.receipt_date}","${s.reporter_name}","${s.reporter_type}","${s.product_name}","${s.batch_number}","${s.manufacturer}","${s.signal_type}","${s.severity}","${s.sample_taken ? 'Oui' : 'Non'}","${s.lab_name || ''}","${s.lab_result || ''}","${s.workflow_step}","${s.status}","${s.manager_name}"`
-    );
-    const blob = new Blob([headers.concat(rows.join('\n')).join('')], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', `registre_signalements_${new Date().toISOString().split('T')[0]}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const getExportConfig = (): ExportConfig => ({
+    title: 'Registre des Signalements Sanitaires, Vigilances & MAPI',
+    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi de la sécurité sanitaire et conformité OMS',
+    filename: `signalements_activia_${new Date().toISOString().split('T')[0]}`,
+    headers: ['N° Signalement', 'Date Réception', 'Déclarant', 'Produit de Santé', 'Lot', 'Fabricant', 'Type d’Incident', 'Gravité', 'Échantillon', 'Étape / Statut'],
+    rows: filtered.map(s => [
+      s.signal_number,
+      s.receipt_date,
+      `${s.reporter_name} (${s.reporter_type})`,
+      s.product_name,
+      s.batch_number,
+      s.manufacturer,
+      s.signal_type,
+      s.severity,
+      s.sample_taken ? 'Oui (Prélevé)' : 'Non',
+      `${s.workflow_step} - ${s.status}`
+    ]),
+    summaryKpis: [
+      { label: 'Total Signalements', value: filtered.length },
+      { label: 'MAPI', value: filtered.filter(s => s.signal_type === 'MAPI').length },
+      { label: 'Échantillonnés', value: filtered.filter(s => s.sample_taken).length },
+      { label: 'Clôturés', value: filtered.filter(s => s.status === 'cloture').length }
+    ]
+  });
 
   return (
     <div className="space-y-4">
@@ -140,13 +152,7 @@ export const SignalTable: React.FC<SignalTableProps> = ({
 
         {/* Buttons */}
         <div className="flex items-center gap-2">
-          <button
-            onClick={exportCSV}
-            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-lg transition-colors"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Export CSV</span>
-          </button>
+          <ExportButton getConfig={getExportConfig} />
 
           {canManage && (
             <button
