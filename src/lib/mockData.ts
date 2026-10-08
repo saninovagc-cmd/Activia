@@ -290,38 +290,1139 @@ export const INITIAL_USERS: UserProfile[] = [
 // DONNÉES DE PRODUCTION PROPRES (DÉMARRAGE À BLANC SANS DONNÉES FICTIVES)
 // ==============================================================================
 
-export const INITIAL_ACTIVITIES: Activity[] = [];
+export const INITIAL_ACTIVITIES: Activity[] = [
+  {
+    id: 'act-001',
+    code: 'ACT-2026-0101',
+    title: 'Campagne nationale d’échantillonnage et de contrôle qualité des antipaludiques et antibiotiques',
+    description: 'Organisation des prélèvements aléatoires sur 42 officines et 6 grossistes répartiteurs pour analyse de conformité analytique au Laboratoire National.',
+    activity_type: 'Échantillonnage',
+    priority: 'haute',
+    status: 'en_cours',
+    progress_percentage: 65,
+    manager_id: 'a0000000-0000-0000-0000-000000000011',
+    manager_name: 'Dr. GANHOU Irenée',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000003', name: 'Dr. ALOFA Huibert' },
+      { id: 'a0000000-0000-0000-0000-000000000009', name: 'Dr. TONOUKOUIN Joel' }
+    ],
+    department: 'Service de la Surveillance du Marché (SSMUR)',
+    start_date: '2026-09-15',
+    due_date: '2026-10-25',
+    associated_folder: 'DOS-2026-ECH-0012',
+    documents: [
+      { id: 'doc-1', name: 'Protocole_Prelevement_2026_V2.pdf', file_type: 'PDF', size_kb: 1420, uploaded_at: '2026-09-16', uploaded_by_name: 'Dr. GANHOU Irenée' },
+      { id: 'doc-2', name: 'Liste_Sites_Cibles_Echantillonnage.xlsx', file_type: 'Excel', size_kb: 340, uploaded_at: '2026-09-18', uploaded_by_name: 'Dr. GANHOU Irenée' }
+    ],
+    tasks: [
+      { id: 'tsk-001', activity_id: 'act-001', title: 'Valider le bordereau des sites de prélèvement', assignee_id: 'a0000000-0000-0000-0000-000000000011', assignee_name: 'Dr. GANHOU Irenée', priority: 'haute', status: 'termine', due_date: '2026-09-20', completed_at: '2026-09-19', created_at: '2026-09-15' },
+      { id: 'tsk-002', activity_id: 'act-001', title: 'Acheminer le lot de prélèvements série 1 au laboratoire', assignee_id: 'a0000000-0000-0000-0000-000000000011', assignee_name: 'Dr. GANHOU Irenée', priority: 'haute', status: 'termine', due_date: '2026-09-30', completed_at: '2026-09-29', created_at: '2026-09-15' },
+      { id: 'tsk-003', activity_id: 'act-001', title: 'Réceptionner les certificats d’analyse HPLC du lot 2', assignee_id: 'a0000000-0000-0000-0000-000000000009', assignee_name: 'Dr. TONOUKOUIN Joel', priority: 'urgente', status: 'en_cours', due_date: '2026-10-10', created_at: '2026-09-15' }
+    ],
+    comments: [
+      { id: 'com-1', author_id: 'a0000000-0000-0000-0000-000000000011', author_name: 'Dr. GANHOU Irenée', author_role: 'Agent / Qualité & Falsifiés', content: 'Première vague de 18 prélèvements acheminée sans rupture de chaîne de conservation.', created_at: '2026-09-29 14:30' }
+    ],
+    created_at: '2026-09-15 08:30',
+    updated_at: '2026-10-02 11:20'
+  },
+  {
+    id: 'act-002',
+    code: 'ACT-2026-0102',
+    title: 'Évaluation approfondie du Plan de Gestion des Risques (PGR) - Antidiabétique Glucotend V3',
+    description: 'Examen de l’efficacité des mesures additionnelles de minimisation des risques cardiovasculaires soumises par le titulaire d’AMM.',
+    activity_type: 'Évaluation Dossier',
+    priority: 'urgente',
+    status: 'en_retard',
+    progress_percentage: 45,
+    manager_id: 'a0000000-0000-0000-0000-000000000005',
+    manager_name: 'Dr. AROUNA Radihath',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000002', name: 'Dr. HOUNGUE Perrin' }
+    ],
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    start_date: '2026-08-20',
+    due_date: '2026-09-28', // En retard
+    associated_folder: 'PGR-2026-0089',
+    documents: [
+      { id: 'doc-3', name: 'Dossier_PGR_Glucotend_Rev3.pdf', file_type: 'PDF', size_kb: 4890, uploaded_at: '2026-08-20', uploaded_by_name: 'Dr. AROUNA Radihath' }
+    ],
+    tasks: [
+      { id: 'tsk-004', activity_id: 'act-002', title: 'Analyse critique du registre des patients exposés', assignee_id: 'a0000000-0000-0000-0000-000000000005', assignee_name: 'Dr. AROUNA Radihath', priority: 'urgente', status: 'en_retard', due_date: '2026-09-25', created_at: '2026-08-20' },
+      { id: 'tsk-005', activity_id: 'act-002', title: 'Rédiger le rapport d’évaluation contradictoire', assignee_id: 'a0000000-0000-0000-0000-000000000005', assignee_name: 'Dr. AROUNA Radihath', priority: 'haute', status: 'en_cours', due_date: '2026-10-05', created_at: '2026-08-20' }
+    ],
+    comments: [
+      { id: 'com-2', author_id: 'a0000000-0000-0000-0000-000000000002', author_name: 'Dr. HOUNGUE Perrin', author_role: 'Chef de Service (SVPS)', content: 'Dossier urgent en dépassement d’échéance légale de 5 jours. Prioriser la remise du rapport provisoire.', created_at: '2026-10-01 09:15' }
+    ],
+    created_at: '2026-08-20 10:00',
+    updated_at: '2026-10-01 09:15'
+  },
+  {
+    id: 'act-003',
+    code: 'ACT-2026-0103',
+    title: 'Investigation et comité d’imputabilité MAPI — Déclaration de cas graves Hôpital Central',
+    description: 'Constitution du dossier technique, analyse clinique rétrospective et convocation de la commission d’experts pour cotation d’imputabilité OMS.',
+    activity_type: 'Vigilance & Alerte',
+    priority: 'urgente',
+    status: 'en_cours',
+    progress_percentage: 80,
+    manager_id: 'a0000000-0000-0000-0000-000000000006',
+    manager_name: 'Dr. FIKARA Sarath',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000002', name: 'Dr. HOUNGUE Perrin' },
+      { id: 'a0000000-0000-0000-0000-000000000007', name: 'M. TONOUEWA Hermion' }
+    ],
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    start_date: '2026-09-22',
+    due_date: '2026-10-08',
+    associated_folder: 'MAPI-2026-0044',
+    documents: [
+      { id: 'doc-4', name: 'Rapport_Notification_MAPI_Cas_44.pdf', file_type: 'PDF', size_kb: 890, uploaded_at: '2026-09-22', uploaded_by_name: 'Dr. FIKARA Sarath' },
+      { id: 'doc-5', name: 'Fiche_Investigation_Terrain_Hopital.pdf', file_type: 'PDF', size_kb: 1120, uploaded_at: '2026-09-26', uploaded_by_name: 'Dr. FIKARA Sarath' }
+    ],
+    tasks: [
+      { id: 'tsk-006', activity_id: 'act-003', title: 'Collecter les dossiers médicaux anonymisés', assignee_id: 'a0000000-0000-0000-0000-000000000007', assignee_name: 'M. TONOUEWA Hermion', priority: 'urgente', status: 'termine', due_date: '2026-09-27', completed_at: '2026-09-26', created_at: '2026-09-22' },
+      { id: 'tsk-007', activity_id: 'act-003', title: 'Préparer la fiche d’algorithme d’imputabilité', assignee_id: 'a0000000-0000-0000-0000-000000000006', assignee_name: 'Dr. FIKARA Sarath', priority: 'haute', status: 'termine', due_date: '2026-10-01', completed_at: '2026-09-30', created_at: '2026-09-22' },
+      { id: 'tsk-008', activity_id: 'act-003', title: 'Organiser la commission d’évaluation des experts', assignee_id: 'a0000000-0000-0000-0000-000000000002', assignee_name: 'Dr. HOUNGUE Perrin', priority: 'urgente', status: 'en_cours', due_date: '2026-10-08', created_at: '2026-09-22' }
+    ],
+    comments: [
+      { id: 'com-3', author_id: 'a0000000-0000-0000-0000-000000000002', author_name: 'Dr. HOUNGUE Perrin', author_role: 'Chef de Service (SVPS)', content: 'La commission se réunira jeudi à 14h. Salle de conférence et visio prêtes.', created_at: '2026-10-02 16:45' }
+    ],
+    created_at: '2026-09-22 14:00',
+    updated_at: '2026-10-02 16:45'
+  },
+  {
+    id: 'act-004',
+    code: 'ACT-2026-0104',
+    title: 'Inspection réglementaire préalable à ouverture : Établissement Grossiste PharmaDistribution',
+    description: 'Vérification de la conformité aux Bonnes Pratiques de Distribution en Gros (BPDG) : chambres froides, système d’assurance qualité et qualification des personnels.',
+    activity_type: 'Inspection',
+    priority: 'moyenne',
+    status: 'en_attente',
+    progress_percentage: 20,
+    manager_id: 'a0000000-0000-0000-0000-000000000004',
+    manager_name: 'Dr. KINTIN Daniel',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000012', name: 'Dr. YAMBODE Maria-Carole' },
+      { id: 'a0000000-0000-0000-0000-000000000013', name: 'Dr. VIGAN Jean Paul' }
+    ],
+    department: 'Service des Licences (SL)',
+    start_date: '2026-09-28',
+    due_date: '2026-10-20',
+    associated_folder: 'ETAB-2026-014',
+    documents: [
+      { id: 'doc-6', name: 'Dossier_Technique_PharmaDistribution.pdf', file_type: 'PDF', size_kb: 8750, uploaded_at: '2026-09-28', uploaded_by_name: 'Dr. YAMBODE Maria-Carole' }
+    ],
+    tasks: [
+      { id: 'tsk-009', activity_id: 'act-004', title: 'Validation des plans d’architecture et chaîne du froid', assignee_id: 'a0000000-0000-0000-0000-000000000012', assignee_name: 'Dr. YAMBODE Maria-Carole', priority: 'moyenne', status: 'termine', due_date: '2026-10-02', completed_at: '2026-10-02', created_at: '2026-09-28' },
+      { id: 'tsk-010', activity_id: 'act-004', title: 'Visite sur site avec procès-verbal contradictoire', assignee_id: 'a0000000-0000-0000-0000-000000000004', assignee_name: 'Dr. KINTIN Daniel', priority: 'haute', status: 'a_faire', due_date: '2026-10-18', created_at: '2026-09-28' }
+    ],
+    comments: [
+      { id: 'com-4', author_id: 'a0000000-0000-0000-0000-000000000004', author_name: 'Dr. KINTIN Daniel', author_role: 'Chef de Service (SL)', content: 'En attente de la transmission de l’attestation de calibrage des sondes thermiques.', created_at: '2026-10-02 10:10' }
+    ],
+    created_at: '2026-09-28 09:00',
+    updated_at: '2026-10-02 10:10'
+  },
+  {
+    id: 'act-005',
+    code: 'ACT-2026-0105',
+    title: 'Session de formation continue des 35 points focaux régionaux de pharmacovigilance',
+    description: 'Formation certifiante aux nouveaux outils de notification numérique et aux protocoles standardisés de prise en charge des alertes de matériovigilance.',
+    activity_type: 'Formation',
+    priority: 'moyenne',
+    status: 'a_faire',
+    progress_percentage: 10,
+    manager_id: 'a0000000-0000-0000-0000-000000000002',
+    manager_name: 'Dr. HOUNGUE Perrin',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000006', name: 'Dr. FIKARA Sarath' },
+      { id: 'a0000000-0000-0000-0000-000000000007', name: 'M. TONOUEWA Hermion' }
+    ],
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    start_date: '2026-10-12',
+    due_date: '2026-10-30',
+    documents: [
+      { id: 'doc-7', name: 'Programme_Formation_Points_Focaux_2026.docx', file_type: 'Word', size_kb: 540, uploaded_at: '2026-10-01', uploaded_by_name: 'Dr. HOUNGUE Perrin' }
+    ],
+    tasks: [
+      { id: 'tsk-011', activity_id: 'act-005', title: 'Finaliser le support pédagogique interactif', assignee_id: 'a0000000-0000-0000-0000-000000000006', assignee_name: 'Dr. FIKARA Sarath', priority: 'moyenne', status: 'a_faire', due_date: '2026-10-10', created_at: '2026-10-01' },
+      { id: 'tsk-012', activity_id: 'act-005', title: 'Envoyer les convocations officielles aux directions régionales', assignee_id: 'a0000000-0000-0000-0000-000000000014', assignee_name: 'Mme ADOGNON Larissa', priority: 'haute', status: 'en_cours', due_date: '2026-10-06', created_at: '2026-10-01' }
+    ],
+    comments: [],
+    created_at: '2026-10-01 11:00',
+    updated_at: '2026-10-01 11:00'
+  },
+  {
+    id: 'act-006',
+    code: 'ACT-2026-0106',
+    title: 'Contrôle des demandes d’autorisation de publicité pour produits de santé grand public',
+    description: 'Vérification de conformité déontologique et scientifique pour 14 spots radio/télévisés et affiches déposés au 3e trimestre 2026.',
+    activity_type: 'Évaluation Dossier',
+    priority: 'moyenne',
+    status: 'en_cours',
+    progress_percentage: 50,
+    manager_id: 'a0000000-0000-0000-0000-000000000008',
+    manager_name: 'Dr. LOKOUN Ella',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000003', name: 'Dr. ALOFA Huibert' }
+    ],
+    department: 'Service de la Surveillance du Marché (SSMUR)',
+    start_date: '2026-09-10',
+    due_date: '2026-10-15',
+    associated_folder: 'PUB-2026-0033',
+    documents: [
+      { id: 'doc-8', name: 'Bordereau_Demandes_Publicite_T3.xlsx', file_type: 'Excel', size_kb: 420, uploaded_at: '2026-09-10', uploaded_by_name: 'Dr. LOKOUN Ella' }
+    ],
+    tasks: [
+      { id: 'tsk-013', activity_id: 'act-006', title: 'Examen des mentions légales obligatoires des spots vidéo', assignee_id: 'a0000000-0000-0000-0000-000000000008', assignee_name: 'Dr. LOKOUN Ella', priority: 'moyenne', status: 'termine', due_date: '2026-09-28', completed_at: '2026-09-27', created_at: '2026-09-10' },
+      { id: 'tsk-014', activity_id: 'act-006', title: 'Notification des demandes de rectifications aux agences', assignee_id: 'a0000000-0000-0000-0000-000000000008', assignee_name: 'Dr. LOKOUN Ella', priority: 'haute', status: 'en_cours', due_date: '2026-10-07', created_at: '2026-09-10' }
+    ],
+    comments: [],
+    created_at: '2026-09-10 14:00',
+    updated_at: '2026-09-27 16:00'
+  },
+  {
+    id: 'act-007',
+    code: 'ACT-2026-0107',
+    title: 'Supervision de la filière d’incinération et neutralisation des déchets pharmaceutiques périmés',
+    description: 'Contrôle du bordereau de suivi des déchets dangereux (BSDD) de 3 tonnes de médicaments non utilisables collectés dans les hôpitaux régionaux.',
+    activity_type: 'Inspection',
+    priority: 'moyenne',
+    status: 'termine',
+    progress_percentage: 100,
+    manager_id: 'a0000000-0000-0000-0000-000000000009',
+    manager_name: 'Dr. TONOUKOUIN Joel',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000003', name: 'Dr. ALOFA Huibert' }
+    ],
+    department: 'Service de la Surveillance du Marché (SSMUR)',
+    start_date: '2026-08-01',
+    due_date: '2026-09-15',
+    completed_at: '2026-09-14',
+    associated_folder: 'DECHET-2026-0008',
+    documents: [
+      { id: 'doc-9', name: 'Certificat_Destruction_Four_Incinération.pdf', file_type: 'PDF', size_kb: 670, uploaded_at: '2026-09-14', uploaded_by_name: 'Dr. TONOUKOUIN Joel' }
+    ],
+    tasks: [
+      { id: 'tsk-015', activity_id: 'act-007', title: 'Émargement des procès-verbaux de pesée', assignee_id: 'a0000000-0000-0000-0000-000000000009', assignee_name: 'Dr. TONOUKOUIN Joel', priority: 'moyenne', status: 'termine', due_date: '2026-09-10', completed_at: '2026-09-10', created_at: '2026-08-01' },
+      { id: 'tsk-016', activity_id: 'act-007', title: 'Archivage des certificats d’élimination thermique', assignee_id: 'a0000000-0000-0000-0000-000000000009', assignee_name: 'Dr. TONOUKOUIN Joel', priority: 'basse', status: 'termine', due_date: '2026-09-15', completed_at: '2026-09-14', created_at: '2026-08-01' }
+    ],
+    comments: [
+      { id: 'com-5', author_id: 'a0000000-0000-0000-0000-000000000009', author_name: 'Dr. TONOUKOUIN Joel', author_role: 'Agent / Déchets & Post-comm.', content: 'Opération clôturée avec succès en conformité environnementale complète.', created_at: '2026-09-14 17:00' }
+    ],
+    created_at: '2026-08-01 08:00',
+    updated_at: '2026-09-14 17:00'
+  },
+  {
+    id: 'act-008',
+    code: 'ACT-2026-0108',
+    title: 'Audit de sécurité des rapports périodiques de sécurité PSUR/PBRER — Classe des Antihypertenseurs',
+    description: 'Revue triennale des données de tolérance mondiale et réévaluation du ratio bénéfice/risque.',
+    activity_type: 'Réglementaire',
+    priority: 'haute',
+    status: 'en_cours',
+    progress_percentage: 40,
+    manager_id: 'a0000000-0000-0000-0000-000000000005',
+    manager_name: 'Dr. AROUNA Radihath',
+    collaborators: [
+      { id: 'a0000000-0000-0000-0000-000000000002', name: 'Dr. HOUNGUE Perrin' }
+    ],
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    start_date: '2026-09-18',
+    due_date: '2026-10-31',
+    associated_folder: 'PSUR-2026-0019',
+    documents: [],
+    tasks: [
+      { id: 'tsk-017', activity_id: 'act-008', title: 'Compiler les rapports de notification spontanée internationale', assignee_id: 'a0000000-0000-0000-0000-000000000005', assignee_name: 'Dr. AROUNA Radihath', priority: 'haute', status: 'termine', due_date: '2026-09-30', completed_at: '2026-09-29', created_at: '2026-09-18' },
+      { id: 'tsk-018', activity_id: 'act-008', title: 'Rédiger la synthèse des signaux émergents', assignee_id: 'a0000000-0000-0000-0000-000000000005', assignee_name: 'Dr. AROUNA Radihath', priority: 'haute', status: 'en_cours', due_date: '2026-10-20', created_at: '2026-09-18' }
+    ],
+    comments: [],
+    created_at: '2026-09-18 10:30',
+    updated_at: '2026-09-29 15:45'
+  }
+];
 
-export const INITIAL_NOTIFICATIONS: NotificationItem[] = [];
+export const INITIAL_NOTIFICATIONS: NotificationItem[] = [
+  {
+    id: 'notif-1',
+    user_id: 'a0000000-0000-0000-0000-000000000005',
+    title: 'Échéance dépassée — PGR Glucotend V3',
+    message: 'L’activité ACT-2026-0102 a dépassé sa date limite du 28/09/2026. Action requise.',
+    type: 'deadline',
+    link: '/activities',
+    is_read: false,
+    created_at: '2026-10-02 08:00'
+  },
+  {
+    id: 'notif-2',
+    user_id: 'a0000000-0000-0000-0000-000000000006',
+    title: 'Commission d’imputabilité MAPI imminente',
+    message: 'La réunion plénière d’experts pour le dossier MAPI-2026-0044 est fixée au 08/10.',
+    type: 'alert',
+    link: '/activities',
+    is_read: false,
+    created_at: '2026-10-02 16:50'
+  },
+  {
+    id: 'notif-3',
+    user_id: 'a0000000-0000-0000-0000-000000000011',
+    title: 'Nouvelle tâche assignée',
+    message: 'Vous avez été affecté à la vérification des certificats d’analyse HPLC.',
+    type: 'assignment',
+    link: '/tasks',
+    is_read: true,
+    created_at: '2026-10-01 14:15'
+  },
+  {
+    id: 'notif-4',
+    user_id: 'a0000000-0000-0000-0000-000000000014',
+    title: 'Courrier entrant urgent enregistré',
+    message: 'Courrier réf. COU-2026-0892 du Ministère reçu et indexé.',
+    type: 'system',
+    link: '/dashboard',
+    is_read: true,
+    created_at: '2026-09-30 11:20'
+  }
+];
 
-export const INITIAL_AUDIT_LOGS: AuditLogItem[] = [];
+export const INITIAL_AUDIT_LOGS: AuditLogItem[] = [
+  {
+    id: 'log-001',
+    user_id: 'a0000000-0000-0000-0000-000000000002',
+    user_name: 'Dr. HOUNGUE Perrin',
+    user_role: 'Chef de Service (SVPS)',
+    action: 'STATUS_CHANGE',
+    module: 'Activités',
+    entity_type: 'activity',
+    entity_id: 'ACT-2026-0103',
+    entity_name: 'Investigation et comité d’imputabilité MAPI',
+    details: 'A modifié le statut de l’activité de "En attente" à "En cours"',
+    old_value: 'en_attente',
+    new_value: 'en_cours',
+    created_at: '2026-10-02 16:45'
+  },
+  {
+    id: 'log-002',
+    user_id: 'a0000000-0000-0000-0000-000000000011',
+    user_name: 'Dr. GANHOU Irenée',
+    user_role: 'Agent / Qualité & Falsifiés',
+    action: 'UPDATE',
+    module: 'Tâches',
+    entity_type: 'task',
+    entity_id: 'TSK-002',
+    entity_name: 'Acheminer le lot de prélèvements série 1',
+    details: 'A marqué la tâche comme terminée et joint le bordereau de transport',
+    old_value: 'en_cours',
+    new_value: 'termine',
+    created_at: '2026-09-29 14:32'
+  },
+  {
+    id: 'log-003',
+    user_id: 'a0000000-0000-0000-0000-000000000004',
+    user_name: 'Dr. KINTIN Daniel',
+    user_role: 'Chef de Service (SL)',
+    action: 'ASSIGN',
+    module: 'Activités',
+    entity_type: 'activity',
+    entity_id: 'ACT-2026-0104',
+    entity_name: 'Inspection préalable PharmaDistribution',
+    details: 'A affecté le Dr. YAMBODE Maria-Carole comme co-inspecteur technique',
+    old_value: 'Non assigné',
+    new_value: 'Dr. YAMBODE Maria-Carole',
+    created_at: '2026-09-28 09:15'
+  },
+  {
+    id: 'log-004',
+    user_id: 'a0000000-0000-0000-0000-000000000009',
+    user_name: 'Dr. TONOUKOUIN Joel',
+    user_role: 'Agent / Déchets & Post-comm.',
+    action: 'STATUS_CHANGE',
+    module: 'Activités',
+    entity_type: 'activity',
+    entity_id: 'ACT-2026-0107',
+    entity_name: 'Supervision filière déchets pharmaceutiques',
+    details: 'A clôturé définitivement l’activité avec procès-verbal d’incinération conforme',
+    old_value: 'en_cours',
+    new_value: 'termine',
+    created_at: '2026-09-14 17:02'
+  },
+  {
+    id: 'log-005',
+    user_id: 'a0000000-0000-0000-0000-000000000001',
+    user_name: 'Dr. SATCHIVI Jocelyne KANLE',
+    user_role: 'Directrice (DLVS) / Administrateur',
+    action: 'CREATE',
+    module: 'Activités',
+    entity_type: 'activity',
+    entity_id: 'ACT-2026-0101',
+    entity_name: 'Campagne nationale d’échantillonnage 2026',
+    details: 'A créé l’activité réglementaire et configuré le plan d’échantillonnage',
+    created_at: '2026-09-15 08:30'
+  }
+];
 
 export const INITIAL_DASHBOARD_STATS: DashboardStats = {
-  totalFolders: 0,
-  foldersInProgress: 0,
-  foldersTreated: 0,
-  foldersDelayed: 0,
-  incomingMail: 0,
-  outgoingMail: 0,
-  activitiesInProgress: 0,
-  activitiesDelayed: 0,
-  pendingRequests: 0,
-  openReports: 0,
-  activeAlerts: 0
+  totalFolders: 148,
+  foldersInProgress: 54,
+  foldersTreated: 86,
+  foldersDelayed: 8,
+  incomingMail: 312,
+  outgoingMail: 247,
+  activitiesInProgress: 14,
+  activitiesDelayed: 3,
+  pendingRequests: 21,
+  openReports: 12,
+  activeAlerts: 4
 };
 
-export const INITIAL_INCOMING_MAILS: IncomingMail[] = [];
+// ==========================================
+// PHASE 2 MOCK DATA (COURRIERS, DOSSIERS, GED)
+// ==========================================
 
-export const INITIAL_OUTGOING_MAILS: OutgoingMail[] = [];
+export const INITIAL_INCOMING_MAILS: IncomingMail[] = [
+  {
+    id: 'in-001',
+    register_number: 'ARR-2026-0891',
+    receipt_date: '2026-10-02',
+    reference: 'MIN-SANTE/DGS/2026-1402',
+    sender: 'Ministère de la Santé — Direction Générale de la Santé',
+    sender_type: 'Institutionnel',
+    subject: 'Instruction ministérielle relative au renforcement des contrôles sur les solutés injectables',
+    mail_type: 'Circulaire Ministérielle',
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    manager_id: 'a0000000-0000-0000-0000-000000000002',
+    manager_name: 'Dr. HOUNGUE Perrin',
+    due_date: '2026-10-10',
+    status: 'affectation',
+    priority: 'urgente',
+    scanned_doc_name: 'Circulaire_DGS_1402_Solutes.pdf',
+    scanned_doc_url: '/docs/circulaire_1402.pdf',
+    observations: 'Diffusion requise aux chefs d’inspection et laboratoires agréés sous 8 jours.',
+    linked_folder_id: 'fol-003',
+    linked_folder_number: 'DOS-2026-0044',
+    created_at: '2026-10-02 08:45',
+    updated_at: '2026-10-02 09:10'
+  },
+  {
+    id: 'in-002',
+    register_number: 'ARR-2026-0892',
+    receipt_date: '2026-09-30',
+    reference: 'LAB-NOV/REG/2026-042',
+    sender: 'Laboratoires Novis Santé SA',
+    sender_type: 'Titulaire AMM',
+    subject: 'Dépôt du Plan de Gestion des Risques (PGR) actualisé - Spécialité Cardioprotect 50mg',
+    mail_type: 'Notification Réglementaire',
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    manager_id: 'a0000000-0000-0000-0000-000000000005',
+    manager_name: 'Dr. AROUNA Radihath',
+    due_date: '2026-10-25',
+    status: 'traitement',
+    priority: 'haute',
+    scanned_doc_name: 'Bordereau_PGR_Cardioprotect.pdf',
+    scanned_doc_url: '/docs/pgr_novis.pdf',
+    observations: 'Examen des études post-AMM de tolérance rénale en cours.',
+    linked_folder_id: 'fol-001',
+    linked_folder_number: 'DOS-2026-0089',
+    created_at: '2026-09-30 11:20',
+    updated_at: '2026-10-01 10:00'
+  },
+  {
+    id: 'in-003',
+    register_number: 'ARR-2026-0893',
+    receipt_date: '2026-09-28',
+    reference: 'CHU-CENTRE/PHARM/2026-09',
+    sender: 'Pharmacie Centrale du CHU Universitaire',
+    sender_type: 'Hôpital Public',
+    subject: 'Demande d’autorisation d’achat d’urgence pour antibiotique de réserve (Colistine IV)',
+    mail_type: 'Demande Usager',
+    department: 'Service de la Surveillance du Marché (SSMUR)',
+    manager_id: 'a0000000-0000-0000-0000-000000000010',
+    manager_name: 'Dr. DOSSOU YOVO H. O. Mael',
+    due_date: '2026-10-05',
+    status: 'validation',
+    priority: 'urgente',
+    scanned_doc_name: 'Demande_Achat_Urgence_CHU_Colistine.pdf',
+    scanned_doc_url: '/docs/achat_chu.pdf',
+    observations: 'Stock hospitalier résiduel inférieur à 48 heures.',
+    linked_folder_id: 'fol-002',
+    linked_folder_number: 'DOS-2026-0018',
+    created_at: '2026-09-28 14:00',
+    updated_at: '2026-10-02 11:30'
+  },
+  {
+    id: 'in-004',
+    register_number: 'ARR-2026-0894',
+    receipt_date: '2026-09-25',
+    reference: 'AGENCE-PUB/COM/2026-78',
+    sender: 'Agence Publicitaire Mediatiks',
+    sender_type: 'Prestataire Commercial',
+    subject: 'Demande de visa de publicité grand public - Campagne TV Sirop Tussicalm',
+    mail_type: 'Demande Usager',
+    department: 'Service de la Surveillance du Marché (SSMUR)',
+    manager_id: 'a0000000-0000-0000-0000-000000000008',
+    manager_name: 'Dr. LOKOUN Ella',
+    due_date: '2026-10-15',
+    status: 'traitement',
+    priority: 'moyenne',
+    scanned_doc_name: 'Script_Video_Tussicalm_30s.pdf',
+    scanned_doc_url: '/docs/pub_tussicalm.pdf',
+    observations: 'Contrôle des allégations thérapeutiques et des mentions légales obligatoires.',
+    linked_folder_id: 'fol-005',
+    linked_folder_number: 'DOS-2026-0033',
+    created_at: '2026-09-25 10:15',
+    updated_at: '2026-09-27 14:20'
+  },
+  {
+    id: 'in-005',
+    register_number: 'ARR-2026-0895',
+    receipt_date: '2026-09-22',
+    reference: 'PHARM-DISTRIB/DIR/2026-014',
+    sender: 'Société PharmaDistribution Métropole',
+    sender_type: 'Établissement Pharmaceutique',
+    subject: 'Dossier d’agrément d’ouverture d’un entrepôt frigorifique de distribution en gros',
+    mail_type: 'Demande Usager',
+    department: 'Service des Licences (SL)',
+    manager_id: 'a0000000-0000-0000-0000-000000000004',
+    manager_name: 'Dr. KINTIN Daniel',
+    due_date: '2026-10-22',
+    status: 'traitement',
+    priority: 'haute',
+    scanned_doc_name: 'Dossier_Technique_PharmaDistribution.pdf',
+    scanned_doc_url: '/docs/pharma_distrib.pdf',
+    observations: 'Inspection conjointe programmée avec le Dr. Yambode.',
+    linked_folder_id: 'fol-004',
+    linked_folder_number: 'DOS-2026-0014',
+    created_at: '2026-09-22 09:30',
+    updated_at: '2026-10-01 16:00'
+  },
+  {
+    id: 'in-006',
+    register_number: 'ARR-2026-0896',
+    receipt_date: '2026-09-18',
+    reference: 'ORDRE-PHARM/REG/2026-11',
+    sender: 'Conseil National de l’Ordre des Pharmaciens',
+    sender_type: 'Ordre Professionnel',
+    subject: 'Signalement d’exercice illégal et vente non autorisée de produits de santé en ligne',
+    mail_type: 'Officiel',
+    department: 'Service des Licences (SL)',
+    manager_id: 'a0000000-0000-0000-0000-000000000012',
+    manager_name: 'Dr. YAMBODE Maria-Carole',
+    due_date: '2026-10-01', // Dépassé
+    status: 'traitement',
+    priority: 'urgente',
+    scanned_doc_name: 'Signalement_Ordre_Sites_Web.pdf',
+    scanned_doc_url: '/docs/ordre_signalement.pdf',
+    observations: 'Dossier en retard. Nécessite transmission au parquet.',
+    created_at: '2026-09-18 11:00',
+    updated_at: '2026-10-02 08:30'
+  }
+];
 
-export const INITIAL_FOLDERS: Folder[] = [];
+export const INITIAL_OUTGOING_MAILS: OutgoingMail[] = [
+  {
+    id: 'out-001',
+    mail_number: 'DEP-2026-0410',
+    send_date: '2026-10-01',
+    reference: 'ACT-REG/2026/0410',
+    recipient: 'Pharmacie Centrale du CHU Universitaire',
+    subject: 'Décision d’autorisation d’achat à titre dérogatoire pour Colistine IV 1MUI',
+    mail_type: 'Officiel',
+    manager_id: 'a0000000-0000-0000-0000-000000000010',
+    manager_name: 'Dr. DOSSOU YOVO H. O. Mael',
+    status: 'envoye',
+    document_name: 'Arrete_Autorisation_Achat_CHU_0410.pdf',
+    linked_incoming_id: 'in-003',
+    created_at: '2026-10-01 16:30'
+  },
+  {
+    id: 'out-002',
+    mail_number: 'DEP-2026-0411',
+    send_date: '2026-09-29',
+    reference: 'ACT-PUB/2026/0411',
+    recipient: 'Agence Publicitaire Mediatiks',
+    subject: 'Notification de demande de modifications substantielles - Campagne Tussicalm',
+    mail_type: 'Officiel',
+    manager_id: 'a0000000-0000-0000-0000-000000000008',
+    manager_name: 'Dr. LOKOUN Ella',
+    status: 'envoye',
+    document_name: 'Lettre_Observation_Publicite_Tussicalm.pdf',
+    linked_incoming_id: 'in-004',
+    created_at: '2026-09-29 11:15'
+  },
+  {
+    id: 'out-003',
+    mail_number: 'DEP-2026-0412',
+    send_date: '2026-09-25',
+    reference: 'ACT-ETAB/2026/0412',
+    recipient: 'Société PharmaDistribution Métropole',
+    subject: 'Convocation à inspection préalable sur site pour agrément grossiste',
+    mail_type: 'Officiel',
+    manager_id: 'a0000000-0000-0000-0000-000000000004',
+    manager_name: 'Dr. KINTIN Daniel',
+    status: 'envoye',
+    document_name: 'Avis_Inspection_PharmaDistribution.pdf',
+    linked_incoming_id: 'in-005',
+    created_at: '2026-09-25 15:40'
+  },
+  {
+    id: 'out-004',
+    mail_number: 'DEP-2026-0413',
+    send_date: '2026-10-03',
+    reference: 'ACT-DIR/2026/0413',
+    recipient: 'Ministère de la Santé — DGS',
+    subject: 'Rapport semestriel d’activité et état d’avancement des vigilances sanitaires',
+    mail_type: 'Rapport / PV',
+    manager_id: 'a0000000-0000-0000-0000-000000000001',
+    manager_name: 'Dr. SATCHIVI Jocelyne KANLE',
+    status: 'valide',
+    document_name: 'Rapport_Activite_S1_2026_Final.pdf',
+    created_at: '2026-10-03 09:00'
+  }
+];
 
-export const INITIAL_DOCUMENTS: DocumentItem[] = [];
+export const INITIAL_FOLDERS: Folder[] = [
+  {
+    id: 'fol-001',
+    folder_number: 'DOS-2026-0089',
+    folder_type: 'Enregistrement PGR',
+    applicant: 'Dr. Marc Vaudreuil',
+    structure: 'Laboratoires Novis Santé SA',
+    receipt_date: '2026-08-20',
+    manager_id: 'a0000000-0000-0000-0000-000000000005',
+    manager_name: 'Dr. AROUNA Radihath',
+    priority: 'urgente',
+    status: 'traitement',
+    progress_percentage: 60,
+    due_date: '2026-09-28', // Dépassé
+    decision: 'En attente',
+    observations: 'Examen de l’efficacité des mesures additionnelles de minimisation des risques.',
+    documents: [
+      { id: 'doc-f1', name: 'Dossier_PGR_Glucotend_Rev3.pdf', file_type: 'PDF', size_kb: 4890, uploaded_at: '2026-08-20', uploaded_by_name: 'Dr. AROUNA Radihath' }
+    ],
+    comments: [
+      { id: 'com-f1', author_id: 'a0000000-0000-0000-0000-000000000005', author_name: 'Dr. AROUNA Radihath', author_role: 'Agent / Évaluatrice PSUR', content: 'Demande de données cliniques complémentaires transmise au demandeur.', created_at: '2026-09-15 14:00' }
+    ],
+    created_at: '2026-08-20 10:00',
+    updated_at: '2026-10-01 09:15'
+  },
+  {
+    id: 'fol-002',
+    folder_number: 'DOS-2026-0018',
+    folder_type: 'Autorisation d’achat',
+    applicant: 'Pr. Michel Laroche (Pharmacien Chef)',
+    structure: 'Pharmacie Centrale du CHU Universitaire',
+    receipt_date: '2026-09-28',
+    manager_id: 'a0000000-0000-0000-0000-000000000010',
+    manager_name: 'Dr. DOSSOU YOVO H. O. Mael',
+    priority: 'urgente',
+    status: 'decision',
+    progress_percentage: 90,
+    due_date: '2026-10-05',
+    decision: 'Favorable',
+    decision_date: '2026-10-01',
+    decision_notes: 'Autorisation dérogatoire accordée pour 500 flacons avec surveillance renforcée.',
+    observations: 'Traitement en urgence vitale pour le service de réanimation.',
+    documents: [
+      { id: 'doc-f2', name: 'Demande_Achat_Urgence_CHU_Colistine.pdf', file_type: 'PDF', size_kb: 1200, uploaded_at: '2026-09-28', uploaded_by_name: 'Dr. DOSSOU YOVO H. O. Mael' },
+      { id: 'doc-f3', name: 'Arrete_Autorisation_Achat_CHU_0410.pdf', file_type: 'PDF', size_kb: 450, uploaded_at: '2026-10-01', uploaded_by_name: 'Dr. DOSSOU YOVO H. O. Mael' }
+    ],
+    comments: [],
+    created_at: '2026-09-28 14:00',
+    updated_at: '2026-10-01 16:30'
+  },
+  {
+    id: 'fol-003',
+    folder_number: 'DOS-2026-0044',
+    folder_type: 'Revue PSUR / PBRER',
+    applicant: 'Direction Affaires Réglementaires',
+    structure: 'Laboratoire Sandoz France',
+    receipt_date: '2026-09-18',
+    manager_id: 'a0000000-0000-0000-0000-000000000005',
+    manager_name: 'Dr. AROUNA Radihath',
+    priority: 'haute',
+    status: 'complet',
+    progress_percentage: 40,
+    due_date: '2026-10-31',
+    decision: 'En attente',
+    observations: 'Rapport périodique de tolérance triennale pour antihypertenseurs.',
+    documents: [],
+    comments: [],
+    created_at: '2026-09-18 10:30',
+    updated_at: '2026-09-29 15:45'
+  },
+  {
+    id: 'fol-004',
+    folder_number: 'DOS-2026-0014',
+    folder_type: 'Agrément Établissement',
+    applicant: 'M. Gérard Benhamou (PDG)',
+    structure: 'Société PharmaDistribution Métropole',
+    receipt_date: '2026-09-22',
+    manager_id: 'a0000000-0000-0000-0000-000000000004',
+    manager_name: 'Dr. KINTIN Daniel',
+    priority: 'haute',
+    status: 'traitement',
+    progress_percentage: 35,
+    due_date: '2026-10-22',
+    decision: 'En attente',
+    observations: 'Visite d’inspection sur site prévue le 18/10.',
+    documents: [
+      { id: 'doc-f4', name: 'Dossier_Technique_PharmaDistribution.pdf', file_type: 'PDF', size_kb: 8750, uploaded_at: '2026-09-22', uploaded_by_name: 'Dr. YAMBODE Maria-Carole' }
+    ],
+    comments: [],
+    created_at: '2026-09-22 09:30',
+    updated_at: '2026-10-01 16:00'
+  },
+  {
+    id: 'fol-005',
+    folder_number: 'DOS-2026-0033',
+    folder_type: 'Publicité & Promotion',
+    applicant: 'Mme. Sophie Marchand (Directrice RP)',
+    structure: 'Agence Publicitaire Mediatiks / Laboratoire Tussi',
+    receipt_date: '2026-09-25',
+    manager_id: 'a0000000-0000-0000-0000-000000000008',
+    manager_name: 'Dr. LOKOUN Ella',
+    priority: 'moyenne',
+    status: 'validation',
+    progress_percentage: 75,
+    due_date: '2026-10-15',
+    decision: 'Avis avec réserves',
+    decision_date: '2026-09-29',
+    decision_notes: 'Retrait impératif de la mention "Guérison en 24h" non étayée scientifiquement.',
+    observations: 'En attente du retour de la maquette corrigée.',
+    documents: [
+      { id: 'doc-f5', name: 'Script_Video_Tussicalm_30s.pdf', file_type: 'PDF', size_kb: 420, uploaded_at: '2026-09-25', uploaded_by_name: 'Dr. LOKOUN Ella' }
+    ],
+    comments: [],
+    created_at: '2026-09-25 10:15',
+    updated_at: '2026-09-29 11:15'
+  },
+  {
+    id: 'fol-006',
+    folder_number: 'DOS-2026-0008',
+    folder_type: 'Élimination Déchets',
+    applicant: 'M. Patrick Gomez',
+    structure: 'Société EcoDestruction Médicale',
+    receipt_date: '2026-08-01',
+    manager_id: 'a0000000-0000-0000-0000-000000000009',
+    manager_name: 'Dr. TONOUKOUIN Joel',
+    priority: 'moyenne',
+    status: 'cloture',
+    progress_percentage: 100,
+    due_date: '2026-09-15',
+    decision: 'Favorable',
+    decision_date: '2026-09-14',
+    decision_notes: 'Bordereau BSDD conforme et pesées vérifiées par l’inspection.',
+    observations: 'Dossier archivé avec certificat d’incinération conforme.',
+    documents: [
+      { id: 'doc-f6', name: 'Certificat_Destruction_Four_Incinération.pdf', file_type: 'PDF', size_kb: 670, uploaded_at: '2026-09-14', uploaded_by_name: 'Dr. TONOUKOUIN Joel' }
+    ],
+    comments: [],
+    created_at: '2026-08-01 08:00',
+    updated_at: '2026-09-14 17:00'
+  }
+];
 
-export const INITIAL_ESTABLISHMENTS: Establishment[] = [];
+export const INITIAL_DOCUMENTS: DocumentItem[] = [
+  {
+    id: 'doc-g1',
+    name: 'Circulaire_DGS_1402_Solutes.pdf',
+    file_type: 'PDF',
+    size_kb: 1420,
+    entity_type: 'courrier',
+    entity_id: 'in-001',
+    entity_ref: 'ARR-2026-0891',
+    uploaded_by_id: 'a0000000-0000-0000-0000-000000000014',
+    uploaded_by_name: 'Mme ADOGNON Larissa',
+    uploaded_at: '2026-10-02 08:50',
+    file_url: '/storage/circulaire_1402.pdf'
+  },
+  {
+    id: 'doc-g2',
+    name: 'Dossier_PGR_Glucotend_Rev3.pdf',
+    file_type: 'PDF',
+    size_kb: 4890,
+    entity_type: 'dossier',
+    entity_id: 'fol-001',
+    entity_ref: 'DOS-2026-0089',
+    uploaded_by_id: 'a0000000-0000-0000-0000-000000000005',
+    uploaded_by_name: 'Dr. AROUNA Radihath',
+    uploaded_at: '2026-08-20 10:15',
+    file_url: '/storage/pgr_glucotend.pdf'
+  },
+  {
+    id: 'doc-g3',
+    name: 'Demande_Achat_Urgence_CHU_Colistine.pdf',
+    file_type: 'PDF',
+    size_kb: 1200,
+    entity_type: 'dossier',
+    entity_id: 'fol-002',
+    entity_ref: 'DOS-2026-0018',
+    uploaded_by_id: 'a0000000-0000-0000-0000-000000000010',
+    uploaded_by_name: 'Dr. DOSSOU YOVO H. O. Mael',
+    uploaded_at: '2026-09-28 14:10',
+    file_url: '/storage/demande_colistine.pdf'
+  },
+  {
+    id: 'doc-g4',
+    name: 'Liste_Sites_Cibles_Echantillonnage.xlsx',
+    file_type: 'Excel',
+    size_kb: 340,
+    entity_type: 'activite',
+    entity_id: 'act-001',
+    entity_ref: 'ACT-2026-0101',
+    uploaded_by_id: 'a0000000-0000-0000-0000-000000000011',
+    uploaded_by_name: 'Dr. GANHOU Irenée',
+    uploaded_at: '2026-09-18 11:20',
+    file_url: '/storage/sites_echantillons.xlsx'
+  },
+  {
+    id: 'doc-g5',
+    name: 'Programme_Formation_Points_Focaux_2026.docx',
+    file_type: 'Word',
+    size_kb: 540,
+    entity_type: 'activite',
+    entity_id: 'act-005',
+    entity_ref: 'ACT-2026-0105',
+    uploaded_by_id: 'a0000000-0000-0000-0000-000000000002',
+    uploaded_by_name: 'Dr. HOUNGUE Perrin',
+    uploaded_at: '2026-10-01 11:15',
+    file_url: '/storage/prog_formation.docx'
+  },
+  {
+    id: 'doc-g6',
+    name: 'Certificat_Destruction_Four_Incinération.pdf',
+    file_type: 'PDF',
+    size_kb: 670,
+    entity_type: 'dossier',
+    entity_id: 'fol-006',
+    entity_ref: 'DOS-2026-0008',
+    uploaded_by_id: 'a0000000-0000-0000-0000-000000000009',
+    uploaded_by_name: 'Dr. TONOUKOUIN Joel',
+    uploaded_at: '2026-09-14 17:05',
+    file_url: '/storage/certificat_four.pdf'
+  }
+];
 
-export const INITIAL_SIGNALS: SignalItem[] = [];
+// ==========================================
+// PHASE 3 MOCK DATA (ÉTABLISSEMENTS, SIGNALEMENTS, FORMATIONS, ALERTES)
+// ==========================================
 
-export const INITIAL_ALERTS: VigilanceAlert[] = [];
+export const INITIAL_ESTABLISHMENTS: Establishment[] = [
+  {
+    id: 'etab-001',
+    code: 'ETAB-2026-0001',
+    name: 'Pharmacie Centrale du Boulevard',
+    establishment_type: 'Officine',
+    owner: 'Dr. Jean-Pierre Valois',
+    responsible_pharmacist: 'Dr. Jean-Pierre Valois',
+    address: '142 Avenue de la République',
+    city: 'Centre-Ville',
+    department: 'Service des Licences (SL)',
+    phone: '+33 1 42 68 00 11',
+    email: 'contact@pharmaciecentrale-valois.fr',
+    status: 'Actif',
+    authorization_number: 'AUT-OFF-2018-042',
+    auth_date: '2018-04-12',
+    expiry_date: '2028-04-12',
+    documents: [],
+    inspection_history: [
+      { date: '2025-11-14', inspector: 'Dr. GANHOU Irenée', outcome: 'Conforme aux BPP (Bonnes Pratiques de Pharmacie)' }
+    ],
+    created_at: '2024-01-10',
+    updated_at: '2026-09-01'
+  },
+  {
+    id: 'etab-002',
+    code: 'ETAB-2026-0002',
+    name: 'Société PharmaDistribution Métropole',
+    establishment_type: 'Grossiste-Répartiteur',
+    owner: 'M. Gérard Benhamou (PDG)',
+    responsible_pharmacist: 'Dre. Martine Ségur',
+    address: 'Z.I. des Jonquilles, Bâtiment C4',
+    city: 'Saint-Denis',
+    department: 'Service des Licences (SL)',
+    phone: '+33 1 48 22 55 90',
+    email: 'direction@pharmadistribution.com',
+    status: 'En attente',
+    authorization_number: 'AUT-GROSS-2026-0014',
+    auth_date: '2026-09-22',
+    expiry_date: '2031-09-22',
+    documents: [],
+    created_at: '2026-09-22',
+    updated_at: '2026-10-01'
+  },
+  {
+    id: 'etab-003',
+    code: 'ETAB-2026-0003',
+    name: 'Laboratoires Novis Santé SA',
+    establishment_type: 'Laboratoire Fabricant',
+    owner: 'Novis Health Group Europe',
+    responsible_pharmacist: 'Dr. Marc Vaudreuil',
+    address: 'Parc Technologique BioSanté, Allée des Pépinières',
+    city: 'Lyon Est',
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    phone: '+33 4 72 00 99 88',
+    email: 'regulatory@novis-sante.eu',
+    status: 'Actif',
+    authorization_number: 'AUT-FAB-2015-0089',
+    auth_date: '2015-06-20',
+    documents: [],
+    inspection_history: [
+      { date: '2026-02-18', inspector: 'Dr. KINTIN Daniel', outcome: 'Conforme BPF (Bonnes Pratiques de Fabrication)' }
+    ],
+    created_at: '2024-01-05',
+    updated_at: '2026-09-30'
+  },
+  {
+    id: 'etab-004',
+    code: 'ETAB-2026-0004',
+    name: 'Dépôt Pharmaceutique Régional Ouest',
+    establishment_type: 'Dépôt Pharmaceutique',
+    owner: 'Coopérative Sanitaire Maritime',
+    responsible_pharmacist: 'Dr. Philippe Le Braz',
+    address: 'Hangar Fret Portuaire n°7',
+    city: 'Brest',
+    department: 'Service des Licences (SL)',
+    phone: '+33 2 98 44 11 22',
+    email: 'depot.ouest@coopsante.fr',
+    status: 'Actif',
+    authorization_number: 'AUT-DEP-2021-0033',
+    auth_date: '2021-09-10',
+    documents: [],
+    created_at: '2024-03-12',
+    updated_at: '2026-08-15'
+  },
+  {
+    id: 'etab-005',
+    code: 'ETAB-2026-0005',
+    name: 'Pharmacie des Quatre Chemins',
+    establishment_type: 'Officine',
+    owner: 'Mme. Sarah Cohen',
+    responsible_pharmacist: 'Mme. Sarah Cohen',
+    address: '12 Rue Victor Hugo',
+    city: 'Pantin',
+    department: 'Service des Licences (SL)',
+    phone: '+33 1 48 40 12 34',
+    email: 'quatrechemins.pharma@orange.fr',
+    status: 'Suspendu',
+    authorization_number: 'AUT-OFF-2019-0112',
+    auth_date: '2019-03-15',
+    documents: [],
+    inspection_history: [
+      { date: '2026-07-10', inspector: 'Dr. GANHOU Irenée', outcome: 'Suspension conservatoire suite à défaut de traçabilité des stupéfiants' }
+    ],
+    created_at: '2024-02-18',
+    updated_at: '2026-07-12'
+  }
+];
 
-export const INITIAL_TRAININGS: TrainingItem[] = [];
+export const INITIAL_SIGNALS: SignalItem[] = [
+  {
+    id: 'sig-001',
+    signal_number: 'SIG-2026-0084',
+    receipt_date: '2026-09-22',
+    reporter_name: 'Dr. Antoine Meyer (Chef de Service Réanimation)',
+    reporter_type: 'Hôpital Public',
+    product_name: 'Vaccin Pédiatrique Hexavalent HexaProtect',
+    batch_number: 'LOT-HEX-4901B',
+    manufacturer: 'BioVaccin International',
+    signal_type: 'MAPI',
+    severity: 'Critique',
+    description: 'Manifestation post-vaccinale indésirable grave : 3 nourrissons ayant présenté une réaction fébrile avec convulsions 6h post-injection.',
+    manager_id: 'a0000000-0000-0000-0000-000000000006',
+    manager_name: 'Dr. FIKARA Sarath',
+    workflow_step: 'investigation',
+    status: 'en_cours',
+    sample_taken: true,
+    sample_code: 'ECH-2026-044',
+    lab_name: 'Laboratoire National de Contrôle des Médicaments (LNCM)',
+    lab_result: 'En attente',
+    imputability_score: 'En cours d’évaluation (Commission plénière OMS)',
+    conclusion: 'Enquête épidémiologique et prélèvement d’échantillons de rétention en cours.',
+    corrective_actions: 'Mise en quarantaine préventive du lot 4901B dans les PMI de la région.',
+    documents: [],
+    comments: [
+      { id: 'com-s1', author_id: 'a0000000-0000-0000-0000-000000000006', author_name: 'Dr. FIKARA Sarath', author_role: 'Agent / Comité Vigilances', content: 'Commission d’experts convoquée pour analyse rétrospective.', created_at: '2026-09-23 11:00' }
+    ],
+    created_at: '2026-09-22 09:30',
+    updated_at: '2026-10-02 16:45'
+  },
+  {
+    id: 'sig-002',
+    signal_number: 'SIG-2026-0085',
+    receipt_date: '2026-09-26',
+    reporter_name: 'Pharmacie Hospitalière Sud',
+    reporter_type: 'Hôpital Public',
+    product_name: 'Soluté Glucosé 5% Poches 500ml',
+    batch_number: 'LOT-GLU-8820',
+    manufacturer: 'Laboratoires Baxter / Fresenius',
+    signal_type: 'Défaut qualité',
+    severity: 'Grave',
+    description: 'Présence anormale de particules visibles en suspension et fuite sur la tubulure de perfusion.',
+    manager_id: 'a0000000-0000-0000-0000-000000000011',
+    manager_name: 'Dr. GANHOU Irenée',
+    workflow_step: 'echantillonnage',
+    status: 'en_attente_labo',
+    sample_taken: true,
+    sample_code: 'ECH-2026-048',
+    lab_name: 'LNCM - Département Physico-Chimie',
+    lab_result: 'En attente',
+    conclusion: 'Prélèvement de 12 poches acheminé au LNCM pour examen microscopique et filtration.',
+    corrective_actions: 'Blocage du lot au niveau de la centrale d’achat hospitalière.',
+    documents: [],
+    comments: [],
+    created_at: '2026-09-26 14:15',
+    updated_at: '2026-09-29 10:20'
+  },
+  {
+    id: 'sig-003',
+    signal_number: 'SIG-2026-0086',
+    receipt_date: '2026-09-15',
+    reporter_name: 'Gendarmerie Nationale / Douanes',
+    reporter_type: 'Autorités Publiques',
+    product_name: 'Comprimés Antalgiques Tramadol 50mg Contrefaits',
+    batch_number: 'FAUX-TRM-991',
+    manufacturer: 'Origine inconnue (Contrefaçon)',
+    signal_type: 'Produit falsifié / illicite',
+    severity: 'Critique',
+    description: 'Saisie de 20 000 plaquettes thermoformées vendues illicitement hors réseau officiel.',
+    manager_id: 'a0000000-0000-0000-0000-000000000011',
+    manager_name: 'Dr. GANHOU Irenée',
+    workflow_step: 'action_corrective',
+    status: 'action_engagee',
+    sample_taken: true,
+    sample_code: 'ECH-2026-031',
+    lab_name: 'Laboratoire Police Scientifique',
+    lab_result: 'Non conforme',
+    conclusion: 'Absence totale de principe actif et présence de craie et solvants toxiques.',
+    corrective_actions: 'Alerte sanitaire nationale diffusée + saisine de la justice pénale.',
+    documents: [],
+    comments: [],
+    created_at: '2026-09-15 08:00',
+    updated_at: '2026-09-28 17:00'
+  },
+  {
+    id: 'sig-004',
+    signal_number: 'SIG-2026-0087',
+    receipt_date: '2026-08-30',
+    reporter_name: 'Dr. Sylvie Morin (Médecin Généraliste)',
+    reporter_type: 'Médecin Libéral',
+    product_name: 'Antibiotique Amoxicilline 500mg Gélules',
+    batch_number: 'LOT-AMX-2044',
+    manufacturer: 'Biogaran',
+    signal_type: 'Effet indésirable grave',
+    severity: 'Modérée',
+    description: 'Éruption cutanée généralisée avec œdème de Quincke résolutif après injection d’adrénaline.',
+    manager_id: 'a0000000-0000-0000-0000-000000000002',
+    manager_name: 'Dr. HOUNGUE Perrin',
+    workflow_step: 'cloture',
+    status: 'cloture',
+    sample_taken: false,
+    imputability_score: 'I4 - Très Vraisemblable (Allergie bêta-lactamines connue)',
+    conclusion: 'Réaction allergique individuelle sévère. Notification transmise à la base européenne EudraVigilance.',
+    corrective_actions: 'Dossier patient actualisé avec contre-indication absolue.',
+    documents: [],
+    comments: [],
+    created_at: '2026-08-30 11:30',
+    updated_at: '2026-09-12 15:00'
+  }
+];
+
+export const INITIAL_ALERTS: VigilanceAlert[] = [
+  {
+    id: 'alt-001',
+    alert_number: 'ALT-2026-001',
+    alert_date: '2026-09-23',
+    source: 'Centre National de Pharmacovigilance',
+    product_name: 'Vaccin Pédiatrique HexaProtect (Lot 4901B)',
+    nature: 'MAPI - Suspension préventive d’utilisation',
+    risk_level: 'Urgent',
+    description: 'Alerte de niveau 1 : mise en quarantaine immédiate de tous les flacons du lot en attente des résultats analytiques du LNCM.',
+    actions_required: 'Rappel auprès des centres vaccinateurs, officines et pédiatres.',
+    manager_name: 'Dr. HOUNGUE Perrin',
+    status: 'active'
+  },
+  {
+    id: 'alt-002',
+    alert_number: 'ALT-2026-002',
+    alert_date: '2026-09-16',
+    source: 'Direction Générale des Douanes',
+    product_name: 'Faux Tramadol 50mg',
+    nature: 'Produit contrefait toxique',
+    risk_level: 'Urgent',
+    description: 'Circulation de faux comprimés sans principe actif. Risque létal en cas de consommation.',
+    actions_required: 'Information des services d’urgence et des officines.',
+    manager_name: 'Dr. GANHOU Irenée',
+    status: 'active'
+  },
+  {
+    id: 'alt-003',
+    alert_number: 'ALT-2026-003',
+    alert_date: '2026-09-02',
+    source: 'OMS / Alerte Médicale Mondiale n°4/2026',
+    product_name: 'Sirops contre la toux pédiatriques contaminés à l’éthylène glycol',
+    nature: 'Contamination chimique internationale',
+    risk_level: 'Élevé',
+    description: 'Alerte internationale concernant la détection de sirops falsifiés en Afrique subsaharienne.',
+    actions_required: 'Renforcement du contrôle d’échantillonnage aux frontières maritimes et aéroportuaires.',
+    manager_name: 'Dr. SATCHIVI Jocelyne KANLE',
+    status: 'active'
+  }
+];
+
+export const INITIAL_TRAININGS: TrainingItem[] = [
+  {
+    id: 't-001',
+    training_code: 'FORM-2026-015',
+    participant_name: 'Dr. Karim Ouattara',
+    function_title: 'Pharmacien Point Focal Régional',
+    structure: 'Hôpital Régional d’Abidjan Nord',
+    region: 'Région Lagunes',
+    department: 'Service des Vigilances et des Produits de Santé (SVPS)',
+    theme: 'Notification électronique des MAPI et algorithme d’imputabilité OMS',
+    training_date: '2026-09-12',
+    trainer_name: 'Dr. HOUNGUE Perrin',
+    duration_hours: 14,
+    result: 'Validé',
+    certificate_issued: true,
+    certificate_number: 'CERT-PV-2026-0042',
+    documents: [],
+    created_at: '2026-09-12'
+  },
+  {
+    id: 't-002',
+    training_code: 'FORM-2026-015',
+    participant_name: 'Mme. Aminata Traoré',
+    function_title: 'Pharmacienne Inspectrice Régionale',
+    structure: 'Direction Régionale de la Santé de Bouaké',
+    region: 'Région Centre',
+    department: 'Service des Licences (SL)',
+    theme: 'Contrôle des Bonnes Pratiques de Distribution en Gros (BPDG)',
+    training_date: '2026-09-12',
+    trainer_name: 'Dr. KINTIN Daniel',
+    duration_hours: 14,
+    result: 'Validé',
+    certificate_issued: true,
+    certificate_number: 'CERT-PV-2026-0043',
+    documents: [],
+    created_at: '2026-09-12'
+  },
+  {
+    id: 't-003',
+    training_code: 'FORM-2026-016',
+    participant_name: 'Dr. Pascal Dubois',
+    function_title: 'Praticien Hospitalier Référent',
+    structure: 'Centre Hospitalier Départemental',
+    region: 'Région Ouest',
+    department: 'Service de la Surveillance du Marché (SSMUR)',
+    theme: 'Vigilance des Essais Cliniques et Notification des EIG/SUSAR',
+    training_date: '2026-10-15',
+    trainer_name: 'Dr. LOKOUN Ella',
+    duration_hours: 8,
+    result: 'En cours',
+    certificate_issued: false,
+    documents: [],
+    created_at: '2026-10-01'
+  }
+];
+
+

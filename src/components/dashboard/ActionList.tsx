@@ -25,8 +25,9 @@ export const ActionList: React.FC = () => {
     .sort((a, b) => (a.priority === 'urgente' ? -1 : 1))
     .slice(0, 5);
 
-  // "Échéances prochaines": activities coming due soon or delayed
-  const upcomingActivities = [...activities]
+  // "Échéances prochaines": activities coming due soon or delayed (non terminées)
+  const upcomingActivities = activities
+    .filter(a => a.status !== 'termine')
     .sort((a, b) => new Date(a.due_date).getTime() - new Date(b.due_date).getTime())
     .slice(0, 5);
 

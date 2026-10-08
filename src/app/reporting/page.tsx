@@ -51,15 +51,38 @@ export default function ReportingPage() {
   const totalSignals = signals.length;
   const closedSignals = signals.filter(s => s.status === 'cloture').length;
 
-  // Monthly trends aligned with real registered items
-  const monthlyTrends = [
-    { month: 'Mai', dossiers: 0, courriers: 0, vigilances: 0 },
-    { month: 'Juin', dossiers: 0, courriers: 0, vigilances: 0 },
-    { month: 'Juil', dossiers: 0, courriers: 0, vigilances: 0 },
-    { month: 'Août', dossiers: 0, courriers: 0, vigilances: 0 },
-    { month: 'Sept', dossiers: 0, courriers: 0, vigilances: 0 },
-    { month: 'Oct (En cours)', dossiers: folders.length, courriers: incomingMails.length, vigilances: signals.length }
-  ];
+  // Monthly trends dynamically computed from real registered items
+  const now = new Date();
+  const monthNames = ['Janv', 'Févr', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'];
+  const monthlyTrends = [];
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    const y = d.getFullYear();
+    const m = d.getMonth();
+    const isCurrent = i === 0;
+
+    const countDossiers = folders.filter(f => {
+      const fd = new Date(f.receipt_date || f.created_at);
+      return !isNaN(fd.getTime()) && fd.getFullYear() === y && fd.getMonth() === m;
+    }).length;
+
+    const countCourriers = incomingMails.filter(c => {
+      const cd = new Date(c.receipt_date || c.created_at);
+      return !isNaN(cd.getTime()) && cd.getFullYear() === y && cd.getMonth() === m;
+    }).length;
+
+    const countSignals = signals.filter(s => {
+      const sd = new Date(s.receipt_date || s.created_at);
+      return !isNaN(sd.getTime()) && sd.getFullYear() === y && sd.getMonth() === m;
+    }).length;
+
+    monthlyTrends.push({
+      month: isCurrent ? `${monthNames[m]} (En cours)` : monthNames[m],
+      dossiers: countDossiers,
+      courriers: countCourriers,
+      vigilances: countSignals
+    });
+  }
 
   // Performance by Agent
   const agentPerformance = allUsers.map(user => {

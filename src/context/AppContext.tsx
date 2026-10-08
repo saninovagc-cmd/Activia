@@ -290,7 +290,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedMailsIn) {
         try {
           const parsed = JSON.parse(storedMailsIn);
-          if (Array.isArray(parsed)) setIncomingMails(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setIncomingMails(parsed);
         } catch {}
       }
 
@@ -298,7 +298,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedMailsOut) {
         try {
           const parsed = JSON.parse(storedMailsOut);
-          if (Array.isArray(parsed)) setOutgoingMails(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setOutgoingMails(parsed);
         } catch {}
       }
 
@@ -306,7 +306,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedFolders) {
         try {
           const parsed = JSON.parse(storedFolders);
-          if (Array.isArray(parsed)) setFolders(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setFolders(parsed);
         } catch {}
       }
 
@@ -314,7 +314,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedDocs) {
         try {
           const parsed = JSON.parse(storedDocs);
-          if (Array.isArray(parsed)) setDocuments(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setDocuments(parsed);
         } catch {}
       }
 
@@ -322,7 +322,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedEtabs) {
         try {
           const parsed = JSON.parse(storedEtabs);
-          if (Array.isArray(parsed)) setEstablishments(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setEstablishments(parsed);
         } catch {}
       }
 
@@ -330,7 +330,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedSignals) {
         try {
           const parsed = JSON.parse(storedSignals);
-          if (Array.isArray(parsed)) setSignals(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setSignals(parsed);
         } catch {}
       }
 
@@ -338,7 +338,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedTrainings) {
         try {
           const parsed = JSON.parse(storedTrainings);
-          if (Array.isArray(parsed)) setTrainings(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setTrainings(parsed);
         } catch {}
       }
 
@@ -346,7 +346,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedAlerts) {
         try {
           const parsed = JSON.parse(storedAlerts);
-          if (Array.isArray(parsed)) setAlerts(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setAlerts(parsed);
         } catch {}
       }
 
@@ -354,7 +354,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedLogs) {
         try {
           const parsed = JSON.parse(storedLogs);
-          if (Array.isArray(parsed)) setAuditLogs(parsed);
+          if (Array.isArray(parsed) && parsed.length > 0) setAuditLogs(parsed);
         } catch {}
       }
 
@@ -1879,11 +1879,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     totalFolders: folders.length,
     foldersInProgress: folders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length,
     foldersTreated: folders.filter(f => f.status === 'cloture').length,
-    foldersDelayed: folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length,
+    foldersDelayed: folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture' && f.status !== 'rejete').length,
     incomingMail: incomingMails.length,
     outgoingMail: outgoingMails.length,
     activitiesInProgress: activities.filter(a => a.status === 'en_cours').length,
-    activitiesDelayed: activities.filter(a => a.status === 'en_retard').length,
+    activitiesDelayed: activities.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length,
     pendingRequests: folders.filter(f => f.status === 'depot' || f.status === 'reception').length,
     openReports: signals.filter(s => s.status !== 'cloture').length,
     activeAlerts: alerts.filter(a => a.status === 'active').length,

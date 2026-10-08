@@ -23,31 +23,70 @@ export const ChefServiceView: React.FC = () => {
   const deptActivities = activities.filter(a => selectedDept === 'Tous' || a.department === selectedDept);
   const realisees = deptActivities.filter(a => a.status === 'termine').length;
   const enCours = deptActivities.filter(a => a.status === 'en_cours').length;
-  const enRetard = deptActivities.filter(a => a.status === 'en_retard').length;
+  const enRetard = deptActivities.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length;
 
-  // Filter folders by department via manager
+  // Filter folders by department via manager or regulatory type
   const deptFolders = folders.filter(f => {
     if (selectedDept === 'Tous') return true;
     const mgr = allUsers.find(u => u.id === f.manager_id);
-    return mgr ? mgr.department === selectedDept : false;
+    if (mgr && mgr.department === selectedDept) return true;
+    if (selectedDept === 'Service des Vigilances et des Produits de Santé (SVPS)') {
+      return ['Enregistrement PGR', 'Revue PSUR / PBRER', 'Essai Clinique & EIG'].includes(f.folder_type);
+    }
+    if (selectedDept === 'Service de la Surveillance du Marché (SSMUR)') {
+      return ['Autorisation d’achat', 'Publicité & Promotion', 'Élimination Déchets'].includes(f.folder_type);
+    }
+    if (selectedDept === 'Service des Licences (SL)') {
+      return ['Agrément Établissement'].includes(f.folder_type);
+    }
+    return false;
   });
   const foldersRecus = deptFolders.length;
   const foldersTraites = deptFolders.filter(f => f.status === 'cloture' || f.status === 'decision').length;
-  const foldersEnAttente = deptFolders.filter(f => ['depot', 'reception', 'complet'].includes(f.status)).length;
-  const foldersEnRetard = deptFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
+  const foldersEnAttente = deptFolders.filter(f => ['depot', 'reception', 'complet', 'verification'].includes(f.status)).length;
+  const foldersEnRetard = deptFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture' && f.status !== 'rejete').length;
 
-  // Filter mails by department
+  // Filter incoming & outgoing mails by department
   const deptMailsIn = incomingMails.filter(m => selectedDept === 'Tous' || m.department === selectedDept);
   const mailsInCount = deptMailsIn.length;
-  const mailsOutCount = outgoingMails.length;
+  const deptMailsOut = outgoingMails.filter(m => {
+    if (selectedDept === 'Tous') return true;
+    const mgr = allUsers.find(u => u.id === m.manager_id);
+    if (mgr && mgr.department === selectedDept) return true;
+    if (m.linked_incoming_id) {
+      const inc = incomingMails.find(i => i.id === m.linked_incoming_id);
+      if (inc && inc.department === selectedDept) return true;
+    }
+    return false;
+  });
+  const mailsOutCount = deptMailsOut.length;
   const mailsNonTraites = deptMailsIn.filter(m => m.status !== 'cloture' && m.status !== 'reponse').length;
   const mailsEnRetard = deptMailsIn.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length;
 
-  // Vigilances
-  const signalsCount = signals.length;
-  const activeAlertsCount = alerts.filter(a => a.status === 'active').length;
-  const mapiOpen = signals.filter(s => s.signal_type.toLowerCase().includes('mapi') && s.status !== 'cloture').length;
-  const signalsClosed = signals.filter(s => s.status === 'cloture').length;
+  // Vigilances & Signalements filtered by relevance to department
+  const deptSignals = signals.filter(s => {
+    if (selectedDept === 'Tous') return true;
+    if (selectedDept === 'Service des Vigilances et des Produits de Santé (SVPS)') {
+      return s.signal_type.includes('MAPI') || s.signal_type.includes('indésirable') || s.signal_type.includes('pharmacovigilance');
+    }
+    if (selectedDept === 'Service de la Surveillance du Marché (SSMUR)') {
+      return s.signal_type.includes('falsifié') || s.signal_type.includes('qualité') || s.signal_type.includes('illicite');
+    }
+    if (selectedDept === 'Service des Licences (SL)') {
+      return s.reporter_type?.includes('Établissement') || s.reporter_type?.includes('Officine');
+    }
+    return true;
+  });
+  const signalsCount = deptSignals.length;
+  const activeAlertsCount = alerts.filter(a => {
+    if (a.status !== 'active') return false;
+    if (selectedDept === 'Tous') return true;
+    if (selectedDept === 'Service des Vigilances et des Produits de Santé (SVPS)') return true;
+    if (selectedDept === 'Service de la Surveillance du Marché (SSMUR)') return a.nature.includes('contrefait') || a.nature.includes('falsifié');
+    return false;
+  }).length;
+  const mapiOpen = deptSignals.filter(s => s.signal_type.toLowerCase().includes('mapi') && s.status !== 'cloture').length;
+  const signalsClosed = deptSignals.filter(s => s.status === 'cloture').length;
 
   // Filter agents in this department
   const deptAgents = allUsers.filter(u => selectedDept === 'Tous' || u.department === selectedDept);
@@ -186,7 +225,7 @@ export const ChefServiceView: React.FC = () => {
               <Users className="w-4 h-4 text-blue-600" />
               Répartition de la Charge par Collaborateur ({deptAgents.length} agents)
             </h4>
-            <p className="text-xs text-slate-500">Supervision des dossiers affectés et respect des délais</p>
+            <p className="text-xs text-slate-500">Supervision des activités, dossiers et courriers affectés avec suivi des retards</p>
           </div>
         </div>
 
@@ -194,9 +233,14 @@ export const ChefServiceView: React.FC = () => {
         <div className="block lg:hidden divide-y divide-slate-100">
           {deptAgents.map((ag) => {
             const agActivities = activities.filter(a => a.manager_id === ag.id);
+            const agFolders = folders.filter(f => f.manager_id === ag.id);
             const agMails = incomingMails.filter(m => m.manager_id === ag.id);
-            const agDelayed = agActivities.filter(a => a.status === 'en_retard').length +
+            const agDelayed = 
+              agActivities.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length +
+              agFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture' && f.status !== 'rejete').length +
               agMails.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length;
+            const totalItems = agActivities.length + agFolders.length + agMails.length;
+
             return (
               <div key={ag.id} className="p-3.5 space-y-2 bg-slate-50/50">
                 <div className="flex items-center justify-between gap-2">
@@ -209,15 +253,25 @@ export const ChefServiceView: React.FC = () => {
                       <p className="text-[10px] text-slate-500">{ag.role_label || ag.title}</p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    Disponible
+                  <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold border ${
+                    agDelayed > 0
+                      ? 'bg-rose-50 text-rose-700 border-rose-200'
+                      : totalItems > 4
+                      ? 'bg-blue-50 text-blue-700 border-blue-200'
+                      : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                  }`}>
+                    {agDelayed > 0 ? `${agDelayed} retard(s)` : totalItems > 4 ? 'En charge' : 'Disponible'}
                   </span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 text-center text-xs pt-1 border-t border-slate-200/60">
+                <div className="grid grid-cols-4 gap-1.5 text-center text-xs pt-1 border-t border-slate-200/60">
                   <div className="bg-white p-2 rounded-lg border border-slate-200/70">
                     <p className="text-[10px] text-slate-400 font-medium">Activités</p>
                     <p className="font-bold text-slate-800 text-xs mt-0.5">{agActivities.length}</p>
+                  </div>
+                  <div className="bg-white p-2 rounded-lg border border-slate-200/70">
+                    <p className="text-[10px] text-slate-400 font-medium">Dossiers</p>
+                    <p className="font-bold text-emerald-700 text-xs mt-0.5">{agFolders.length}</p>
                   </div>
                   <div className="bg-white p-2 rounded-lg border border-slate-200/70">
                     <p className="text-[10px] text-slate-400 font-medium">Courriers</p>
@@ -246,8 +300,9 @@ export const ChefServiceView: React.FC = () => {
               <tr>
                 <th className="py-2.5 px-3">Collaborateur</th>
                 <th className="py-2.5 px-3">Titre / Rôle</th>
-                <th className="py-2.5 px-3 text-center">Activités Assignées</th>
-                <th className="py-2.5 px-3 text-center">Courriers Assignés</th>
+                <th className="py-2.5 px-3 text-center">Activités</th>
+                <th className="py-2.5 px-3 text-center">Dossiers</th>
+                <th className="py-2.5 px-3 text-center">Courriers</th>
                 <th className="py-2.5 px-3 text-center">En Retard</th>
                 <th className="py-2.5 px-3 text-right">Statut</th>
               </tr>
@@ -255,9 +310,14 @@ export const ChefServiceView: React.FC = () => {
             <tbody className="divide-y divide-slate-100">
               {deptAgents.map((ag) => {
                 const agActivities = activities.filter(a => a.manager_id === ag.id);
+                const agFolders = folders.filter(f => f.manager_id === ag.id);
                 const agMails = incomingMails.filter(m => m.manager_id === ag.id);
-                const agDelayed = agActivities.filter(a => a.status === 'en_retard').length +
+                const agDelayed = 
+                  agActivities.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length +
+                  agFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture' && f.status !== 'rejete').length +
                   agMails.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length;
+                const totalItems = agActivities.length + agFolders.length + agMails.length;
+
                 return (
                   <tr key={ag.id} className="hover:bg-slate-50/70">
                     <td className="py-2.5 px-3">
@@ -270,6 +330,7 @@ export const ChefServiceView: React.FC = () => {
                     </td>
                     <td className="py-2.5 px-3 text-slate-600">{ag.role_label || ag.title}</td>
                     <td className="py-2.5 px-3 text-center font-bold text-slate-800">{agActivities.length}</td>
+                    <td className="py-2.5 px-3 text-center font-bold text-emerald-700">{agFolders.length}</td>
                     <td className="py-2.5 px-3 text-center font-semibold text-blue-600">{agMails.length}</td>
                     <td className="py-2.5 px-3 text-center">
                       {agDelayed > 0 ? (
@@ -281,8 +342,14 @@ export const ChefServiceView: React.FC = () => {
                       )}
                     </td>
                     <td className="py-2.5 px-3 text-right">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                        Disponible
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold border ${
+                        agDelayed > 0
+                          ? 'bg-rose-50 text-rose-700 border-rose-200'
+                          : totalItems > 4
+                          ? 'bg-blue-50 text-blue-700 border-blue-200'
+                          : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                      }`}>
+                        {agDelayed > 0 ? `${agDelayed} retard(s)` : totalItems > 4 ? 'En charge' : 'Disponible'}
                       </span>
                     </td>
                   </tr>
