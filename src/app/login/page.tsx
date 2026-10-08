@@ -6,32 +6,32 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { 
-  ShieldCheck, 
   Lock, 
   User, 
   ArrowRight, 
   AlertCircle, 
-  CheckCircle2, 
-  Key, 
   Eye, 
   EyeOff, 
-  Home, 
-  ChevronRight
+  Home
 } from 'lucide-react';
-import { Badge } from '@/components/ui/Badge';
 
 export default function LoginPage() {
   const router = useRouter();
-  const { allUsers, login, switchUser } = useApp();
+  const { login } = useApp();
 
-  const [identifier, setIdentifier] = useState('jsatchivi');
-  const [password, setPassword] = useState('satchivi123');
+  const [identifier, setIdentifier] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!identifier.trim() || !password.trim()) {
+      setError('Veuillez saisir votre identifiant et votre mot de passe.');
+      return;
+    }
+
     setLoading(true);
     setError('');
 
@@ -46,17 +46,10 @@ export default function LoginPage() {
     }, 300);
   };
 
-  const handleQuickLogin = (u: typeof allUsers[0]) => {
-    setIdentifier(u.username);
-    setPassword(u.password || u.default_password);
-    switchUser(u.id);
-    router.push('/dashboard');
-  };
-
   return (
     <div className="min-h-screen bg-slate-900 flex flex-col justify-center items-center p-4">
       {/* Container */}
-      <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+      <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Institutional header */}
         <div className="bg-slate-950 px-8 py-6 text-center border-b border-slate-800 relative">
           <Link
@@ -120,14 +113,9 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <div className="flex items-center justify-between mb-1">
-                <label className="text-xs font-semibold text-slate-700">
-                  Mot de passe
-                </label>
-                <span className="text-[11px] text-slate-400">
-                  Par défaut : nom+123
-                </span>
-              </div>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">
+                Mot de passe
+              </label>
               <div className="relative">
                 <Lock className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
@@ -159,53 +147,6 @@ export default function LoginPage() {
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
-
-          {/* Quick Access Simulator */}
-          <div className="pt-4 border-t border-slate-100">
-            <div className="flex items-center justify-between mb-2.5">
-              <div>
-                <p className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">
-                  Personnel ABMed ({allUsers.length} Comptes Activés)
-                </p>
-                <p className="text-[10px] text-slate-400">Cliquez sur un compte pour vous connecter immédiatement :</p>
-              </div>
-            </div>
-            
-            <div className="space-y-1.5 max-h-56 overflow-y-auto pr-1">
-              {allUsers.map((user) => (
-                <button
-                  key={user.id}
-                  onClick={() => handleQuickLogin(user)}
-                  className="w-full p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 text-left flex items-center justify-between text-xs transition-colors cursor-pointer group"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0 pr-2">
-                    <span className="w-6 h-6 shrink-0 rounded-lg bg-slate-200 group-hover:bg-emerald-200 text-slate-700 group-hover:text-emerald-900 font-bold flex items-center justify-center text-[10px]">
-                      {user.order || 1}
-                    </span>
-                    <div className="truncate">
-                      <div className="flex items-center gap-2">
-                        <p className="font-bold text-slate-900 group-hover:text-emerald-950 truncate">
-                          {user.full_name}
-                        </p>
-                        <span className="font-mono text-[10px] text-emerald-800 bg-emerald-100/70 px-1.5 py-0.2 rounded border border-emerald-200">
-                          {user.username}
-                        </span>
-                      </div>
-                      <p className="text-[10px] text-slate-500 truncate">
-                        {user.title} • {user.post || user.department}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5 shrink-0">
-                    <Badge role={user.role}>
-                      {user.role === 'admin' ? 'Directrice' : user.role === 'chef_service' ? 'Chef Serv.' : user.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
-                    </Badge>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-700" />
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Footer */}
