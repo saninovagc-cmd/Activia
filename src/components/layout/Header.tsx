@@ -122,12 +122,12 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
   const totalMatches = matchedActivities.length + matchedFolders.length + matchedMails.length + matchedEtabs.length + matchedSignals.length + matchedTrainings.length;
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 h-16 px-4 md:px-6 flex items-center justify-between shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]">
+    <header className="sticky top-0 z-40 bg-[#15803d] border-b border-emerald-900/40 h-20 px-4 md:px-6 flex items-center justify-between shadow-md text-white">
       {/* Left section: mobile hamburger + Universal Omni-Search */}
       <div className="flex items-center gap-4 flex-1 max-w-xl" ref={searchRef}>
         <button
           onClick={onToggleSidebar}
-          className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none transition-colors"
+          className="lg:hidden p-2 rounded-lg text-white hover:bg-emerald-800 focus:outline-none transition-colors cursor-pointer"
           title="Menu de navigation"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -147,7 +147,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                 setIsSearchFocused(true);
               }}
               onFocus={() => setIsSearchFocused(true)}
-              className="w-full pl-9 pr-14 py-2 text-xs bg-slate-50/80 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600/20 focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
+              className="w-full pl-9 pr-14 py-2.5 text-xs bg-white border border-emerald-700/40 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 focus:bg-white transition-all shadow-xs"
             />
             {searchQuery ? (
               <button
@@ -158,7 +158,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                 <X className="w-3.5 h-3.5" />
               </button>
             ) : (
-              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-mono font-medium text-slate-400 bg-white border border-slate-200 px-1.5 py-0.5 rounded pointer-events-none">
+              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-mono font-medium text-slate-400 bg-slate-50 border border-slate-200 px-1.5 py-0.5 rounded pointer-events-none">
                 Ctrl K
               </span>
             )}
@@ -346,7 +346,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
         <div className="relative" ref={userRef}>
           <button
             onClick={() => setShowUserSwitcher(!showUserSwitcher)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 transition-colors text-xs font-medium text-slate-700 cursor-pointer"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40 bg-white hover:bg-slate-50 transition-colors text-xs font-medium text-slate-800 cursor-pointer shadow-sm"
             title="Mon compte et changement d'utilisateur"
           >
             <div className="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-[10px]">
@@ -459,10 +459,10 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
         <div className="relative" ref={notifRef}>
           <button
             onClick={() => setShowNotifications(!showNotifications)}
-            className="relative p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+            className="relative p-2.5 rounded-xl text-white hover:bg-emerald-800 transition-colors cursor-pointer"
             title="Notifications du service"
           >
-            <Bell className="w-5 h-5" />
+            <Bell className="w-5 h-5 text-white" />
             {unreadNotificationCount > 0 && (
               <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-rose-600 text-[10px] font-bold text-white shadow-xs">
                 {unreadNotificationCount}
@@ -545,7 +545,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
             logout();
             router.push('/login');
           }}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 hover:border-rose-300 transition-colors text-xs font-semibold cursor-pointer shadow-2xs"
+          className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-rose-200 text-rose-700 bg-white hover:bg-rose-50 hover:border-rose-300 transition-colors text-xs font-bold cursor-pointer shadow-sm"
           title="Se déconnecter de la plateforme et retourner à l'accueil"
         >
           <LogOut className="w-3.5 h-3.5 text-rose-600" />
