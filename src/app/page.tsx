@@ -10,36 +10,29 @@ import {
   Lock, 
   User, 
   ArrowRight, 
-  FileCheck2, 
-  Building2, 
   AlertTriangle, 
-  FolderArchive, 
-  Mail, 
-  CheckCircle2, 
-  Database, 
-  Users, 
-  ExternalLink,
-  Sparkles,
-  LogOut,
-  ChevronRight,
-  Eye,
-  EyeOff,
-  Activity as ActivityIcon
+  LogOut, 
+  Eye, 
+  EyeOff 
 } from 'lucide-react';
-import { Badge } from '@/components/ui/Badge';
 
 export default function HomePage() {
   const router = useRouter();
-  const { allUsers, currentUser, isAuthenticated, login, logout, switchUser } = useApp();
+  const { currentUser, isAuthenticated, login, logout } = useApp();
 
-  const [identifier, setIdentifier] = useState('jsatchivi');
-  const [password, setPassword] = useState('satchivi123');
+  const [identifier, setIdentifier] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!identifier.trim() || !password.trim()) {
+      setLoginError('Veuillez renseigner votre identifiant et votre mot de passe.');
+      return;
+    }
+
     setLoading(true);
     setLoginError('');
 
@@ -52,11 +45,6 @@ export default function HomePage() {
         setLoading(false);
       }
     }, 300);
-  };
-
-  const handleAgentClick = (u: typeof allUsers[0]) => {
-    switchUser(u.id);
-    router.push('/dashboard');
   };
 
   return (
@@ -151,7 +139,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-white via-slate-50 to-emerald-50/20 border-b border-slate-200 py-12 sm:py-16">
+      <section className="bg-gradient-to-b from-white via-slate-50 to-emerald-50/20 border-b border-slate-200 py-12 sm:py-16 grow">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column: Presentation */}
@@ -197,18 +185,6 @@ export default function HomePage() {
                   <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
                     <Lock className="w-4 h-4" />
                   </div>
-                </div>
-
-                {/* Account formula rule banner */}
-                <div className="mb-4 p-3 rounded-xl bg-emerald-50/60 border border-emerald-200 text-[11px] text-slate-700 space-y-1">
-                  <p className="font-bold text-slate-900 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                    Formule d&apos;accès automatique :
-                  </p>
-                  <p className="text-slate-600 leading-snug">
-                    • Identifiant : <strong className="font-mono text-emerald-800">initiale prénom + nom</strong> (ex: <span className="font-mono font-bold">jsatchivi</span>)<br />
-                    • Mot de passe : <strong className="font-mono text-emerald-800">nom de famille + 123</strong> (ex: <span className="font-mono font-bold">satchivi123</span>)
-                  </p>
                 </div>
 
                 {loginError && (
@@ -270,147 +246,14 @@ export default function HomePage() {
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
-
-                {/* Quick Simulation Link */}
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-500">Personnel ABMed ({allUsers.length} comptes)</span>
-                  <Link href="/login" className="text-emerald-700 hover:underline font-bold flex items-center gap-1">
-                    Voir la liste des accès <ChevronRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services & Modules Overview */}
-      <section className="py-14 max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <h2 className="text-2xl font-black text-slate-900 tracking-tight">
-            Les Piliers Métiers de l&apos;ABMed
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-500">
-            Une architecture opérationnelle unifiée pour réguler et protéger la santé publique au Bénin
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card 1: Service des Licences */}
-          <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-md transition-shadow space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
-              <FolderArchive className="w-5 h-5" />
-            </div>
-            <h3 className="text-base font-bold text-slate-900">Service des Licences (SL)</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Instruction dématérialisée des demandes d&apos;ouverture, d&apos;exploitation et de transfert d&apos;officines, dépôts et grossistes-répartiteurs. Gestion des commissions et réceptions techniques.
-            </p>
-            <div className="pt-2 text-[11px] font-semibold text-emerald-800">
-              Responsable : Dr. KINTIN Daniel (Chef SL)
-            </div>
-          </div>
-
-          {/* Card 2: SVPS */}
-          <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-md transition-shadow space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
-              <AlertTriangle className="w-5 h-5" />
-            </div>
-            <h3 className="text-base font-bold text-slate-900">Vigilances &amp; Produits de Santé (SVPS)</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Surveillance des signaux sanitaires, matériovigilance, manifestations post-vaccinales indésirables (MAPI), évaluation des PSUR/PBRER et pilotage du Comité Technique de Vigilance.
-            </p>
-            <div className="pt-2 text-[11px] font-semibold text-rose-700">
-              Responsable : Dr. HOUNGUE Perrin (Chef SVPS)
-            </div>
-          </div>
-
-          {/* Card 3: SSMUR */}
-          <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-md transition-shadow space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center">
-              <Building2 className="w-5 h-5" />
-            </div>
-            <h3 className="text-base font-bold text-slate-900">Surveillance du Marché (SSMUR)</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Lutte contre les produits pharmaceutiques falsifiés ou de qualité inférieure, contrôle de la publicité médicale, destruction conforme des déchets et autorisations d&apos;achat d&apos;intrants.
-            </p>
-            <div className="pt-2 text-[11px] font-semibold text-amber-800">
-              Responsable : Dr. ALOFA Huibert (Chef SSMUR)
-            </div>
-          </div>
-        </div>
-
-        {/* DLVS Personnel Table Preview */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-          <div className="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div>
-              <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <Users className="w-4 h-4 text-emerald-700" />
-                Personnel ABMed &amp; Comptes Opérationnels ({allUsers.length} Collaborateurs)
-              </h3>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Cliquez sur un profil pour ouvrir directement la session de travail
-              </p>
-            </div>
-            <Link
-              href="/login"
-              className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold self-start sm:self-auto transition-colors"
-            >
-              Écran de connexion complet →
-            </Link>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs text-left">
-              <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-100">
-                <tr>
-                  <th className="py-2.5 px-3 text-center">N°</th>
-                  <th className="py-2.5 px-4">Collaborateur</th>
-                  <th className="py-2.5 px-3">Identifiant</th>
-                  <th className="py-2.5 px-4">Titre &amp; Poste</th>
-                  <th className="py-2.5 px-4">Service</th>
-                  <th className="py-2.5 px-3">Rôle</th>
-                  <th className="py-2.5 px-4 text-right">Action</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {allUsers.map((u) => (
-                  <tr key={u.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-2.5 px-3 text-center">
-                      <span className="w-5 h-5 rounded bg-slate-100 text-slate-700 font-bold inline-flex items-center justify-center text-[10px]">
-                        {u.order || 1}
-                      </span>
-                    </td>
-                    <td className="py-2.5 px-4 font-bold text-slate-900">
-                      {u.full_name}
-                    </td>
-                    <td className="py-2.5 px-3 font-mono font-semibold text-emerald-800">
-                      {u.username}
-                    </td>
-                    <td className="py-2.5 px-4 text-slate-600 max-w-xs truncate">
-                      {u.title} • {u.post || u.role_label}
-                    </td>
-                    <td className="py-2.5 px-4 text-slate-500">{u.department}</td>
-                    <td className="py-2.5 px-3">
-                      <Badge role={u.role}>{u.role === 'admin' ? 'Directrice' : u.role === 'chef_service' ? 'Chef Serv.' : u.role === 'secretariat' ? 'Secrétaire' : 'Agent'}</Badge>
-                    </td>
-                    <td className="py-2.5 px-4 text-right">
-                      <button
-                        onClick={() => handleAgentClick(u)}
-                        className="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-lg text-[11px] font-semibold transition-colors cursor-pointer"
-                      >
-                        Se connecter
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* Institutional Footer */}
-      <footer className="mt-auto bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800">
+      <footer className="bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <p className="font-bold text-white">ACTIVIA — Agence Béninoise du Médicament et des autres Produits de Santé (ABMed)</p>
