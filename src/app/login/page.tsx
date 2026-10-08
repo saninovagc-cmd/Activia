@@ -16,7 +16,6 @@ import {
   Eye, 
   EyeOff, 
   Home, 
-  Sparkles,
   ChevronRight
 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
@@ -91,18 +90,6 @@ export default function LoginPage() {
             <h2 className="text-base font-bold text-slate-900">Espace d&apos;Authentification Agent</h2>
             <p className="text-xs text-slate-500 mt-0.5">
               Connectez-vous avec vos identifiants institutionnels nominatifs
-            </p>
-          </div>
-
-          {/* Institutional formula notice */}
-          <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs text-emerald-900 space-y-1">
-            <div className="flex items-center gap-1.5 font-bold">
-              <Sparkles className="w-4 h-4 text-emerald-700" />
-              <span>Format officiel des identifiants ABMed :</span>
-            </div>
-            <p className="text-[11px] text-slate-700 leading-relaxed">
-              • <strong>Identifiant</strong> : Initiale du prénom + Nom de famille (ex: <code className="bg-white px-1.5 py-0.5 rounded text-emerald-800 font-mono font-bold">jsatchivi</code>)<br />
-              • <strong>Mot de passe</strong> : Nom de famille + 123 (ex: <code className="bg-white px-1.5 py-0.5 rounded text-emerald-800 font-mono font-bold">satchivi123</code>)
             </p>
           </div>
 
