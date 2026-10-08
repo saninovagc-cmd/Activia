@@ -132,8 +132,8 @@ interface AppContextType {
   showToast: (arg1: string, arg2?: 'success' | 'info' | 'warning' | 'error' | string) => void;
   hideToast: () => void;
   addCommentToFolder: (folderId: string, commentText: string) => void;
-  addDocumentToFolder: (folderId: string, doc: { name: string; size_kb: number; file_type?: string }) => void;
-  addDocumentToActivity: (activityId: string, doc: { name: string; size_kb: number; file_type?: string }) => void;
+  addDocumentToFolder: (folderId: string, doc: { name: string; size_kb: number; file_type?: string; original_size_kb?: number; data_url?: string }) => void;
+  addDocumentToActivity: (activityId: string, doc: { name: string; size_kb: number; file_type?: string; original_size_kb?: number; data_url?: string }) => void;
   createOutgoingResponseMail: (incomingMailId: string, subject?: string, notes?: string) => OutgoingMail;
   createFolderFromMail: (incomingMailId: string, folderType?: FolderType) => Folder;
   createAlertFromSignal: (signalId: string, riskLevel?: 'Faible' | 'Moyen' | 'Élevé' | 'Urgent', actionsRequired?: string) => VigilanceAlert;
@@ -1324,7 +1324,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     showToast('Commentaire technique consigné au dossier', 'success');
   };
 
-  const addDocumentToFolder = (folderId: string, doc: { name: string; size_kb: number; file_type?: string }) => {
+  const addDocumentToFolder = (folderId: string, doc: { name: string; size_kb: number; file_type?: string; original_size_kb?: number; data_url?: string }) => {
     const folder = folders.find(f => f.id === folderId);
     if (!folder) return;
 
@@ -1336,7 +1336,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       size_kb: doc.size_kb,
       uploaded_at: new Date().toISOString().split('T')[0],
       uploaded_by_name: currentUser.full_name,
-      url: '/storage/' + doc.name
+      url: doc.data_url || ('/storage/' + doc.name)
     };
 
     setFolders(prev => prev.map(f => {
@@ -1353,15 +1353,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       name: doc.name,
       file_type: (fileType as any),
       size_kb: doc.size_kb,
+      original_size_kb: doc.original_size_kb,
+      data_url: doc.data_url,
       entity_type: 'dossier',
       entity_id: folder.id,
       entity_ref: folder.folder_number
     });
 
-    showToast(`Pièce "${doc.name}" versée au dossier`, 'success');
+    const gainText = doc.original_size_kb && doc.original_size_kb > doc.size_kb
+      ? ` (optimisé de ${doc.original_size_kb} Ko à ${doc.size_kb} Ko)`
+      : '';
+    showToast(`Pièce "${doc.name}" versée au dossier${gainText}`, 'success');
   };
 
-  const addDocumentToActivity = (activityId: string, doc: { name: string; size_kb: number; file_type?: string }) => {
+  const addDocumentToActivity = (activityId: string, doc: { name: string; size_kb: number; file_type?: string; original_size_kb?: number; data_url?: string }) => {
     const act = activities.find(a => a.id === activityId);
     if (!act) return;
 
@@ -1373,7 +1378,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       size_kb: doc.size_kb,
       uploaded_at: new Date().toISOString().split('T')[0],
       uploaded_by_name: currentUser.full_name,
-      url: '/storage/' + doc.name
+      url: doc.data_url || ('/storage/' + doc.name)
     };
 
     setActivities(prev => prev.map(a => {
@@ -1390,12 +1395,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       name: doc.name,
       file_type: (fileType as any),
       size_kb: doc.size_kb,
+      original_size_kb: doc.original_size_kb,
+      data_url: doc.data_url,
       entity_type: 'activite',
       entity_id: act.id,
       entity_ref: act.code
     });
 
-    showToast(`Pièce "${doc.name}" rattachée à l'activité`, 'success');
+    const gainText = doc.original_size_kb && doc.original_size_kb > doc.size_kb
+      ? ` (optimisé de ${doc.original_size_kb} Ko à ${doc.size_kb} Ko)`
+      : '';
+    showToast(`Pièce "${doc.name}" rattachée à l'activité${gainText}`, 'success');
   };
 
   const createOutgoingResponseMail = (incomingMailId: string, subject?: string, notes?: string): OutgoingMail => {
@@ -1472,13 +1482,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       name: data.name || 'Document_Sans_Titre.pdf',
       file_type: data.file_type || 'PDF',
       size_kb: data.size_kb || 450,
+      original_size_kb: data.original_size_kb,
+      data_url: data.data_url,
       entity_type: data.entity_type || 'dossier',
       entity_id: data.entity_id || 'fol-001',
       entity_ref: data.entity_ref || 'DOS-2026-0089',
       uploaded_by_id: currentUser.id,
       uploaded_by_name: currentUser.full_name,
       uploaded_at: new Date().toISOString().replace('T', ' ').substring(0, 16),
-      file_url: data.file_url || '/storage/placeholder.pdf'
+      file_url: data.data_url || data.file_url || '/storage/placeholder.pdf'
     };
 
     setDocuments(prev => {

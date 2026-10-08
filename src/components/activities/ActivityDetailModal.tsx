@@ -23,6 +23,9 @@ import {
   ExternalLink
 } from 'lucide-react';
 
+import { FileUploadZone } from '@/components/common/FileUploadZone';
+import { CompressedFileResult } from '@/lib/fileCompressor';
+
 interface ActivityDetailModalProps {
   activity: Activity | null;
   onClose: () => void;
@@ -54,6 +57,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
   const [newTaskPriority, setNewTaskPriority] = useState<PriorityLevel>('moyenne');
   const [showUploadDoc, setShowUploadDoc] = useState(false);
   const [docUploadName, setDocUploadName] = useState('');
+  const [docUploadFileResult, setDocUploadFileResult] = useState<CompressedFileResult | null>(null);
 
   if (!activity) return null;
 
@@ -399,36 +403,72 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                   className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-medium flex items-center gap-1 shadow-xs"
                 >
                   <Plus className="w-3.5 h-3.5" />
-                  <span>Joindre un fichier</span>
+                  <span>{showUploadDoc ? 'Fermer' : 'Joindre un fichier'}</span>
                 </button>
               </div>
 
               {showUploadDoc && (
-                <div className="p-3 bg-blue-50/70 border border-blue-200 rounded-xl space-y-2">
-                  <span className="font-bold text-blue-900 text-xs">Verser un document à l'activité</span>
-                  <div className="flex gap-2">
+                <div className="p-4 bg-slate-50 border border-slate-300 rounded-xl space-y-3">
+                  <span className="font-bold text-slate-800 text-xs block">
+                    Sélectionnez un document depuis vos dossiers (compression automatique) :
+                  </span>
+
+                  <FileUploadZone
+                    label="Choisir la pièce justificative dans vos dossiers"
+                    helperText="Scans de PV, rapports, fiches de mission. Les images scannées sont fortement allégées."
+                    selectedResult={docUploadFileResult}
+                    onFileReady={(res) => {
+                      setDocUploadFileResult(res);
+                      setDocUploadName(res.fileName);
+                    }}
+                    onClear={() => {
+                      setDocUploadFileResult(null);
+                      setDocUploadName('');
+                    }}
+                  />
+
+                  <div className="flex flex-col sm:flex-row gap-2 pt-1">
                     <input
                       type="text"
-                      placeholder="Ex: Compte_Rendu_Mission_Terrain.pdf"
+                      placeholder="Intitulé du document (ex: Compte_Rendu_Mission_Terrain.pdf)"
                       value={docUploadName}
                       onChange={(e) => setDocUploadName(e.target.value)}
-                      className="flex-1 px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-xs"
+                      className="flex-1 px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs"
                     />
-                    <button
-                      onClick={() => {
-                        if (docUploadName.trim()) {
-                          addDocumentToActivity(activity.id, {
-                            name: docUploadName.trim().endsWith('.pdf') ? docUploadName.trim() : `${docUploadName.trim()}.pdf`,
-                            size_kb: 480
-                          });
-                          setDocUploadName('');
+                    <div className="flex gap-2 justify-end">
+                      <button
+                        type="button"
+                        onClick={() => {
                           setShowUploadDoc(false);
-                        }
-                      }}
-                      className="px-3 py-1.5 bg-blue-600 text-white rounded-lg font-bold text-xs"
-                    >
-                      Ajouter
-                    </button>
+                          setDocUploadFileResult(null);
+                          setDocUploadName('');
+                        }}
+                        className="px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-200 rounded-lg"
+                      >
+                        Annuler
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const finalName = docUploadName.trim() || docUploadFileResult?.fileName;
+                          if (finalName) {
+                            addDocumentToActivity(activity.id, {
+                              name: finalName,
+                              file_type: (docUploadFileResult?.fileType as any) || 'PDF',
+                              size_kb: docUploadFileResult?.compressedSizeKb || 420,
+                              original_size_kb: docUploadFileResult?.originalSizeKb,
+                              data_url: docUploadFileResult?.dataUrl,
+                            });
+                            setDocUploadName('');
+                            setDocUploadFileResult(null);
+                            setShowUploadDoc(false);
+                          }
+                        }}
+                        className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold text-xs shadow-xs cursor-pointer"
+                      >
+                        Enregistrer la pièce
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}

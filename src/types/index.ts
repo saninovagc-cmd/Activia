@@ -273,6 +273,8 @@ export interface DocumentItem {
   uploaded_by_name: string;
   uploaded_at: string;
   file_url: string;
+  original_size_kb?: number;
+  data_url?: string;
 }
 
 // ==========================================

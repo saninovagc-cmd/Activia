@@ -14,6 +14,8 @@ import {
   MessageSquare,
   AlertCircle
 } from 'lucide-react';
+import { FileUploadZone } from '@/components/common/FileUploadZone';
+import { CompressedFileResult } from '@/lib/fileCompressor';
 
 interface ActivityExecutionModalProps {
   activity: Activity | null;
@@ -42,6 +44,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
   const [showAddDoc, setShowAddDoc] = useState(false);
   const [deliverableName, setDeliverableName] = useState('');
   const [deliverableType, setDeliverableType] = useState<'PDF' | 'Word' | 'Excel' | 'Image'>('PDF');
+  const [uploadedFileResult, setUploadedFileResult] = useState<CompressedFileResult | null>(null);
 
   useEffect(() => {
     if (activity) {
@@ -57,21 +60,26 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
 
   const handleAddDeliverable = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!deliverableName.trim()) return;
+    const finalName = deliverableName.trim() || uploadedFileResult?.fileName;
+    if (!finalName) {
+      showToast('Veuillez sélectionner un fichier ou saisir un nom de livrable', 'warning');
+      return;
+    }
 
-    const ext = deliverableType === 'PDF' ? '.pdf' : deliverableType === 'Word' ? '.docx' : deliverableType === 'Excel' ? '.xlsx' : '.png';
-    const finalName = deliverableName.trim().toLowerCase().endsWith(ext)
-      ? deliverableName.trim()
-      : `${deliverableName.trim()}${ext}`;
+    const sizeKb = uploadedFileResult?.compressedSizeKb || 320;
+    const originalSizeKb = uploadedFileResult?.originalSizeKb || sizeKb;
+    const dataUrl = uploadedFileResult?.dataUrl;
 
     addDocumentToActivity(activity.id, {
       name: finalName,
       file_type: deliverableType,
-      size_kb: Math.floor(Math.random() * 1500) + 250,
+      size_kb: sizeKb,
+      original_size_kb: originalSizeKb,
+      data_url: dataUrl,
     });
 
-    showToast('success', `Livrable "${finalName}" déposé et rattaché à l'activité.`);
     setDeliverableName('');
+    setUploadedFileResult(null);
     setShowAddDoc(false);
   };
 
@@ -262,12 +270,30 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
             {/* Formulaire ajout livrable */}
             {showAddDoc && (
               <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-300 space-y-3">
-                <p className="text-[11px] font-bold text-slate-700">Dépôt d'un nouveau livrable / document officiel :</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <p className="text-[11px] font-bold text-slate-800">
+                  Sélectionnez le livrable depuis vos dossiers (réduction et optimisation de taille automatiques) :
+                </p>
+
+                <FileUploadZone
+                  label="Choisir le livrable dans vos dossiers"
+                  helperText="Scans, PDF, Word, Excel acceptés. Les scans lourds sont compressés instantanément."
+                  selectedResult={uploadedFileResult}
+                  onFileReady={(res) => {
+                    setUploadedFileResult(res);
+                    setDeliverableName(res.fileName);
+                    setDeliverableType(res.fileType as any);
+                  }}
+                  onClear={() => {
+                    setUploadedFileResult(null);
+                    setDeliverableName('');
+                  }}
+                />
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
                   <div className="sm:col-span-2">
+                    <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Nom d&apos;enregistrement du livrable :</label>
                     <input
                       type="text"
-                      required
                       placeholder="Intitulé du livrable (ex : Rapport d'inspection PV.pdf)"
                       value={deliverableName}
                       onChange={(e) => setDeliverableName(e.target.value)}
@@ -275,6 +301,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
                     />
                   </div>
                   <div>
+                    <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Type de document :</label>
                     <select
                       value={deliverableType}
                       onChange={(e) => setDeliverableType(e.target.value as any)}
@@ -283,15 +310,19 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
                       <option value="PDF">Format PDF</option>
                       <option value="Word">Format Word</option>
                       <option value="Excel">Tableur Excel</option>
-                      <option value="Image">Photo / Scan</option>
+                      <option value="Image">Photo / Scan (Allégé)</option>
                     </select>
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2">
+                <div className="flex justify-end gap-2 pt-1">
                   <button
                     type="button"
-                    onClick={() => setShowAddDoc(false)}
+                    onClick={() => {
+                      setShowAddDoc(false);
+                      setUploadedFileResult(null);
+                      setDeliverableName('');
+                    }}
                     className="px-3 py-1 text-xs text-slate-600 hover:bg-slate-200 rounded-lg"
                   >
                     Annuler
@@ -299,9 +330,10 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
                   <button
                     type="button"
                     onClick={handleAddDeliverable}
-                    className="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-xs cursor-pointer"
+                    className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1.5"
                   >
-                    Déposer le livrable
+                    <Upload className="w-3.5 h-3.5" />
+                    Déposer le livrable optimisé
                   </button>
                 </div>
               </div>

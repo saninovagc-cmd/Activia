@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Folder, FolderStatus } from '@/types';
@@ -24,6 +24,9 @@ import {
   Building2,
   ExternalLink
 } from 'lucide-react';
+
+import { FileUploadZone } from '@/components/common/FileUploadZone';
+import { CompressedFileResult } from '@/lib/fileCompressor';
 
 interface FolderDetailModalProps {
   folder: Folder | null;
@@ -60,7 +63,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
   // Upload document state
   const [showDocUpload, setShowDocUpload] = useState(false);
   const [docName, setDocName] = useState('');
-  const [docSize, setDocSize] = useState('380');
+  const [folderDocFileResult, setFolderDocFileResult] = useState<CompressedFileResult | null>(null);
 
   if (!folder) return null;
 
@@ -104,13 +107,27 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
 
   const handleAddDoc = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!docName.trim()) return;
+    const finalDocName = docName.trim() || folderDocFileResult?.fileName;
+    if (!finalDocName) {
+      showToast('Veuillez sélectionner un fichier ou renseigner un intitulé', 'warning');
+      return;
+    }
+
+    const sizeKb = folderDocFileResult?.compressedSizeKb || 380;
+    const origKb = folderDocFileResult?.originalSizeKb || sizeKb;
+    const dataUrl = folderDocFileResult?.dataUrl;
+    const fileType = (folderDocFileResult?.fileType as any) || 'PDF';
+
     addDocumentToFolder(folder.id, {
-      name: docName.trim().endsWith('.pdf') ? docName.trim() : `${docName.trim()}.pdf`,
-      size_kb: parseInt(docSize) || 450,
-      file_type: 'PDF'
+      name: finalDocName,
+      size_kb: sizeKb,
+      original_size_kb: origKb,
+      file_type: fileType,
+      data_url: dataUrl,
     });
+
     setDocName('');
+    setFolderDocFileResult(null);
     setShowDocUpload(false);
   };
 
@@ -334,43 +351,52 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
 
               {/* Inline Upload Form */}
               {showDocUpload && (
-                <form onSubmit={handleAddDoc} className="p-4 bg-blue-50/70 border border-blue-200 rounded-xl space-y-3">
-                  <h5 className="font-bold text-blue-900">Dépôt d'une nouvelle pièce au dossier</h5>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div className="sm:col-span-2 space-y-1">
-                      <label className="font-semibold text-slate-700">Intitulé du document</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Ex: Justificatif_Paiement_Redevance.pdf"
-                        value={docName}
-                        onChange={(e) => setDocName(e.target.value)}
-                        className="w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="font-semibold text-slate-700">Taille estimée (KB)</label>
-                      <input
-                        type="number"
-                        value={docSize}
-                        onChange={(e) => setDocSize(e.target.value)}
-                        className="w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg"
-                      />
-                    </div>
+                <form onSubmit={handleAddDoc} className="p-4 bg-slate-50 border border-slate-300 rounded-xl space-y-3 text-xs">
+                  <h5 className="font-bold text-slate-900 text-xs">Dépôt d&apos;une nouvelle pièce au dossier (compression automatique) :</h5>
+
+                  <FileUploadZone
+                    label="Choisir la pièce dans vos dossiers"
+                    helperText="Récépissés, fiches techniques, certificats. Les images scannées sont allégées drastiquement."
+                    selectedResult={folderDocFileResult}
+                    onFileReady={(res) => {
+                      setFolderDocFileResult(res);
+                      setDocName(res.fileName);
+                    }}
+                    onClear={() => {
+                      setFolderDocFileResult(null);
+                      setDocName('');
+                    }}
+                  />
+
+                  <div className="space-y-1">
+                    <label className="font-semibold text-slate-700 text-[11px]">Intitulé d&apos;enregistrement du document :</label>
+                    <input
+                      type="text"
+                      placeholder="Ex: Justificatif_Paiement_Redevance.pdf"
+                      value={docName}
+                      onChange={(e) => setDocName(e.target.value)}
+                      className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs"
+                    />
                   </div>
-                  <div className="flex justify-end gap-2">
+
+                  <div className="flex justify-end gap-2 pt-1">
                     <button
                       type="button"
-                      onClick={() => setShowDocUpload(false)}
-                      className="px-3 py-1 bg-white border rounded-lg text-slate-600"
+                      onClick={() => {
+                        setShowDocUpload(false);
+                        setFolderDocFileResult(null);
+                        setDocName('');
+                      }}
+                      className="px-3 py-1 bg-white border border-slate-300 rounded-lg text-slate-600 hover:bg-slate-100"
                     >
                       Annuler
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-xs"
+                      className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-xs cursor-pointer flex items-center gap-1.5"
                     >
-                      Enregistrer la pièce
+                      <Paperclip className="w-3.5 h-3.5" />
+                      Verser la pièce optimisée
                     </button>
                   </div>
                 </form>

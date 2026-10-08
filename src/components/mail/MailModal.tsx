@@ -1,9 +1,11 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { useApp } from '@/context/AppContext';
 import { MailType, PriorityLevel } from '@/types';
 import { X, Save, Mail, Send, Paperclip } from 'lucide-react';
+import { FileUploadZone } from '@/components/common/FileUploadZone';
+import { CompressedFileResult } from '@/lib/fileCompressor';
 
 interface MailModalProps {
   isOpen: boolean;
@@ -16,7 +18,7 @@ export const MailModal: React.FC<MailModalProps> = ({
   onClose,
   defaultMode = 'incoming',
 }) => {
-  const { allUsers, currentUser, addIncomingMail, addOutgoingMail } = useApp();
+  const { allUsers, currentUser, addIncomingMail, addOutgoingMail, addDocument, showToast } = useApp();
 
   const [mode, setMode] = useState<'incoming' | 'outgoing'>(defaultMode);
 
@@ -33,6 +35,7 @@ export const MailModal: React.FC<MailModalProps> = ({
   const [priority, setPriority] = useState<PriorityLevel>('moyenne');
   const [observations, setObservations] = useState('');
   const [scannedDocName, setScannedDocName] = useState('');
+  const [scannedFileResult, setScannedFileResult] = useState<CompressedFileResult | null>(null);
 
   // Outgoing state
   const [recipient, setRecipient] = useState('');
@@ -46,7 +49,8 @@ export const MailModal: React.FC<MailModalProps> = ({
 
     if (mode === 'incoming') {
       const manager = allUsers.find(u => u.id === managerId);
-      addIncomingMail({
+      const finalDocName = scannedDocName.trim() || scannedFileResult?.fileName || 'Courrier_Scanne.pdf';
+      const newMail = addIncomingMail({
         sender,
         sender_type: senderType,
         reference: reference || `REF-${Date.now().toString().slice(-4)}`,
@@ -59,12 +63,26 @@ export const MailModal: React.FC<MailModalProps> = ({
         due_date: dueDate,
         priority,
         observations,
-        scanned_doc_name: scannedDocName || 'Courrier_Scanne.pdf',
+        scanned_doc_name: finalDocName,
         status: manager ? 'affectation' : 'enregistrement',
       });
+
+      if (scannedFileResult) {
+        addDocument({
+          name: finalDocName,
+          file_type: (scannedFileResult.fileType as any) || 'PDF',
+          size_kb: scannedFileResult.compressedSizeKb,
+          original_size_kb: scannedFileResult.originalSizeKb,
+          data_url: scannedFileResult.dataUrl,
+          entity_type: 'courrier',
+          entity_id: newMail.id,
+          entity_ref: newMail.register_number,
+        });
+      }
     } else {
       const manager = allUsers.find(u => u.id === managerId) || currentUser;
-      addOutgoingMail({
+      const finalDocName = scannedDocName.trim() || scannedFileResult?.fileName || 'Courrier_Officiel_Signe.pdf';
+      const newOutMail = addOutgoingMail({
         recipient,
         reference: reference || `DEP-${Date.now().toString().slice(-4)}`,
         subject,
@@ -72,9 +90,22 @@ export const MailModal: React.FC<MailModalProps> = ({
         manager_id: manager.id,
         manager_name: manager.full_name,
         send_date: sendDate,
-        document_name: 'Courrier_Officiel_Signe.pdf',
+        document_name: finalDocName,
         status: 'envoye',
       });
+
+      if (scannedFileResult) {
+        addDocument({
+          name: finalDocName,
+          file_type: (scannedFileResult.fileType as any) || 'PDF',
+          size_kb: scannedFileResult.compressedSizeKb,
+          original_size_kb: scannedFileResult.originalSizeKb,
+          data_url: scannedFileResult.dataUrl,
+          entity_type: 'courrier',
+          entity_id: newOutMail.id,
+          entity_ref: newOutMail.mail_number,
+        });
+      }
     }
 
     onClose();
@@ -286,17 +317,35 @@ export const MailModal: React.FC<MailModalProps> = ({
                     className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 font-semibold"
                   />
                 </div>
-                <div>
+                <div className="sm:col-span-3 pt-1">
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Document scanné (Nom)
+                    Pièce numérisée / Courrier scanné (compression et allègement automatiques)
                   </label>
-                  <input
-                    type="text"
-                    placeholder="Courrier_Scanne.pdf"
-                    value={scannedDocName}
-                    onChange={(e) => setScannedDocName(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900"
+                  <FileUploadZone
+                    label="Sélectionner le scan du courrier dans vos dossiers"
+                    helperText="PDF ou images scannées (JPG, PNG). Les images volumineuses sont drastiquement allégées."
+                    selectedResult={scannedFileResult}
+                    onFileReady={(res) => {
+                      setScannedFileResult(res);
+                      setScannedDocName(res.fileName);
+                    }}
+                    onClear={() => {
+                      setScannedFileResult(null);
+                      setScannedDocName('');
+                    }}
                   />
+                  {scannedDocName && (
+                    <div className="mt-2">
+                      <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Intitulé d&apos;indexation :</label>
+                      <input
+                        type="text"
+                        placeholder="Courrier_Scanne.pdf"
+                        value={scannedDocName}
+                        onChange={(e) => setScannedDocName(e.target.value)}
+                        className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs text-slate-900"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -389,6 +438,25 @@ export const MailModal: React.FC<MailModalProps> = ({
                     <option value="Notification Réglementaire">Notification</option>
                   </select>
                 </div>
+              </div>
+
+              <div className="pt-2">
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  Ampliation ou copie scannée signée (facultatif - compression automatique)
+                </label>
+                <FileUploadZone
+                  label="Sélectionner l'ampliation signée dans vos dossiers"
+                  helperText="PDF ou image de la décision signée. Fichier compressé automatiquement."
+                  selectedResult={scannedFileResult}
+                  onFileReady={(res) => {
+                    setScannedFileResult(res);
+                    setScannedDocName(res.fileName);
+                  }}
+                  onClear={() => {
+                    setScannedFileResult(null);
+                    setScannedDocName('');
+                  }}
+                />
               </div>
             </>
           )}

@@ -4,7 +4,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useApp } from '@/context/AppContext';
 import { DocumentItem } from '@/types';
-import { downloadSampleDocument } from '@/lib/downloadUtils';
+import { downloadSampleDocument, downloadDocumentWithFallback } from '@/lib/downloadUtils';
 import { 
   FileText, 
   FileSpreadsheet, 
@@ -22,6 +22,8 @@ import {
   X,
   ExternalLink
 } from 'lucide-react';
+import { FileUploadZone } from '@/components/common/FileUploadZone';
+import { CompressedFileResult } from '@/lib/fileCompressor';
 
 export const DocumentBrowser: React.FC = () => {
   const { documents, addDocument, deleteDocument, currentUser, showToast } = useApp();
@@ -31,12 +33,13 @@ export const DocumentBrowser: React.FC = () => {
   const [selectedEntity, setSelectedEntity] = useState('all');
   const [previewDoc, setPreviewDoc] = useState<DocumentItem | null>(null);
 
-  // Upload simulation modal state
+  // Upload modal state
   const [isUploadOpen, setIsUploadOpen] = useState(false);
   const [newDocName, setNewDocName] = useState('');
   const [newDocType, setNewDocType] = useState<'PDF' | 'Word' | 'Excel' | 'Image'>('PDF');
   const [newDocRef, setNewDocRef] = useState('');
   const [newDocEntity, setNewDocEntity] = useState<'dossier' | 'courrier' | 'activite'>('dossier');
+  const [uploadFileResult, setUploadFileResult] = useState<CompressedFileResult | null>(null);
 
   const filteredDocs = useMemo(() => {
     return documents.filter((doc) => {
@@ -55,22 +58,31 @@ export const DocumentBrowser: React.FC = () => {
 
   const handleUpload = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newDocName.trim()) return;
+    const docFileName = newDocName.trim() || uploadFileResult?.fileName;
+    if (!docFileName) {
+      showToast('error', 'Veuillez sélectionner un fichier dans vos dossiers ou renseigner un nom.');
+      return;
+    }
 
-    const docFileName = newDocName.trim().endsWith(`.${newDocType.toLowerCase()}`) ? newDocName.trim() : `${newDocName.trim()}.${newDocType === 'Word' ? 'docx' : newDocType === 'Excel' ? 'xlsx' : newDocType === 'Image' ? 'png' : 'pdf'}`;
+    const sizeKb = uploadFileResult?.compressedSizeKb || 450;
+    const origKb = uploadFileResult?.originalSizeKb || sizeKb;
+    const dataUrl = uploadFileResult?.dataUrl;
 
     addDocument({
       name: docFileName,
       file_type: newDocType,
-      size_kb: Math.floor(Math.random() * 2000) + 150,
+      size_kb: sizeKb,
+      original_size_kb: origKb,
+      data_url: dataUrl,
       entity_type: newDocEntity,
       entity_ref: newDocRef || 'REF-GENERAL',
     });
 
     setNewDocName('');
     setNewDocRef('');
+    setUploadFileResult(null);
     setIsUploadOpen(false);
-    showToast('success', `Document "${docFileName}" déposé et indexé avec succès dans le coffre GED sécurisé.`);
+    showToast('success', `Document "${docFileName}" déposé et indexé avec succès dans le coffre GED.`);
   };
 
   const getFileIcon = (type: string) => {
@@ -241,7 +253,7 @@ export const DocumentBrowser: React.FC = () => {
                       </button>
                       <button
                         onClick={() => {
-                          downloadSampleDocument(doc.name, doc.entity_ref, doc.entity_type);
+                          downloadDocumentWithFallback(doc.name, doc.entity_ref, doc.entity_type, doc.data_url);
                           showToast('success', `Téléchargement du document "${doc.name}" démarré.`);
                         }}
                         className="p-1.5 text-emerald-700 hover:text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg transition-colors cursor-pointer"
@@ -342,7 +354,7 @@ export const DocumentBrowser: React.FC = () => {
                         </button>
                         <button
                           onClick={() => {
-                            downloadSampleDocument(doc.name, doc.entity_ref, doc.entity_type);
+                            downloadDocumentWithFallback(doc.name, doc.entity_ref, doc.entity_type, doc.data_url);
                             showToast('success', `Téléchargement du document "${doc.name}" démarré.`);
                           }}
                           className="p-1 text-slate-500 hover:text-emerald-600 hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
@@ -384,12 +396,26 @@ export const DocumentBrowser: React.FC = () => {
               </button>
             </div>
 
-            <form onSubmit={handleUpload} className="p-5 space-y-3 text-xs">
+            <form onSubmit={handleUpload} className="p-5 space-y-3.5 text-xs">
+              <FileUploadZone
+                label="Choisir le fichier dans vos dossiers"
+                helperText="Sélectionnez la pièce officielle. Les scans d'images ou photos de documents sont allégés automatiquement."
+                selectedResult={uploadFileResult}
+                onFileReady={(res) => {
+                  setUploadFileResult(res);
+                  setNewDocName(res.fileName);
+                  setNewDocType(res.fileType as any);
+                }}
+                onClear={() => {
+                  setUploadFileResult(null);
+                  setNewDocName('');
+                }}
+              />
+
               <div>
-                <label className="block font-semibold text-slate-700 mb-1">Nom du fichier</label>
+                <label className="block font-semibold text-slate-700 mb-1">Nom d&apos;indexation du fichier</label>
                 <input
                   type="text"
-                  required
                   placeholder="Ex: Certificat_Analytique_HPLC_2026.pdf"
                   value={newDocName}
                   onChange={(e) => setNewDocName(e.target.value)}
@@ -408,7 +434,7 @@ export const DocumentBrowser: React.FC = () => {
                     <option value="PDF">PDF</option>
                     <option value="Word">Word (.docx)</option>
                     <option value="Excel">Excel (.xlsx)</option>
-                    <option value="Image">Image / Scan</option>
+                    <option value="Image">Image / Scan (Allégé)</option>
                   </select>
                 </div>
 
@@ -493,12 +519,12 @@ export const DocumentBrowser: React.FC = () => {
               <div className="pt-4 flex justify-center gap-3">
                 <button
                   onClick={() => {
-                    downloadSampleDocument(previewDoc.name, previewDoc.entity_ref, previewDoc.entity_type);
+                    downloadDocumentWithFallback(previewDoc.name, previewDoc.entity_ref, previewDoc.entity_type, previewDoc.data_url);
                     showToast('success', `Téléchargement du document "${previewDoc.name}" démarré.`);
                   }}
                   className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs"
                 >
-                  <Download className="w-4 h-4" /> Télécharger l'original
+                  <Download className="w-4 h-4" /> Télécharger l&apos;original
                 </button>
                 <button
                   onClick={() => setPreviewDoc(null)}

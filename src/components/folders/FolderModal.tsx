@@ -1,9 +1,11 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { useApp } from '@/context/AppContext';
 import { FolderType, PriorityLevel } from '@/types';
-import { X, Save, FolderPlus } from 'lucide-react';
+import { X, Save, FolderPlus, Paperclip } from 'lucide-react';
+import { FileUploadZone } from '@/components/common/FileUploadZone';
+import { CompressedFileResult } from '@/lib/fileCompressor';
 
 interface FolderModalProps {
   isOpen: boolean;
@@ -11,7 +13,7 @@ interface FolderModalProps {
 }
 
 export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => {
-  const { allUsers, currentUser, addFolder } = useApp();
+  const { allUsers, currentUser, addFolder, addDocumentToFolder } = useApp();
 
   const [folderType, setFolderType] = useState<FolderType>('Autorisation d’achat');
   const [applicant, setApplicant] = useState('');
@@ -21,6 +23,7 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
   const [receiptDate, setReceiptDate] = useState(new Date().toISOString().split('T')[0]);
   const [dueDate, setDueDate] = useState(new Date(Date.now() + 20 * 86400000).toISOString().split('T')[0]);
   const [observations, setObservations] = useState('');
+  const [folderInitialFile, setFolderInitialFile] = useState<CompressedFileResult | null>(null);
 
   const folderTypes: FolderType[] = [
     'Autorisation d’achat',
@@ -39,7 +42,7 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
     e.preventDefault();
     if (!applicant.trim() || !structure.trim()) return;
 
-    addFolder({
+    const newFolder = addFolder({
       folder_type: folderType,
       applicant,
       structure,
@@ -50,6 +53,16 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
       observations,
       status: 'depot',
     });
+
+    if (folderInitialFile) {
+      addDocumentToFolder(newFolder.id, {
+        name: folderInitialFile.fileName,
+        size_kb: folderInitialFile.compressedSizeKb,
+        original_size_kb: folderInitialFile.originalSizeKb,
+        file_type: folderInitialFile.fileType as any,
+        data_url: folderInitialFile.dataUrl,
+      });
+    }
 
     onClose();
   };
@@ -185,7 +198,7 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
 
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1">
-              Observations & Pièces fournies
+              Observations & Consignes
             </label>
             <textarea
               rows={2}
@@ -193,6 +206,19 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
               value={observations}
               onChange={(e) => setObservations(e.target.value)}
               className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">
+              Pièce justificative / Dossier scanné initial (compression automatique)
+            </label>
+            <FileUploadZone
+              label="Sélectionner la pièce du dossier dans vos dossiers"
+              helperText="PDF, formulaires scannés ou photos. Taille allégée automatiquement."
+              selectedResult={folderInitialFile}
+              onFileReady={(res) => setFolderInitialFile(res)}
+              onClear={() => setFolderInitialFile(null)}
             />
           </div>
 

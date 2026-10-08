@@ -41,6 +41,21 @@ Statut : Valide et opposable aux tiers
   downloadFile(filename.endsWith('.txt') ? filename : `${filename}.txt`, content, 'text/plain');
 }
 
+export function downloadDocumentWithFallback(filename: string, entityRef: string, entityType: string, dataUrl?: string) {
+  if (dataUrl && dataUrl.startsWith('data:')) {
+    const a = document.createElement('a');
+    a.href = dataUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+    }, 100);
+    return;
+  }
+  downloadSampleDocument(filename, entityRef, entityType);
+}
+
 export function downloadCertificate(
   participantName: string,
   functionTitle: string,

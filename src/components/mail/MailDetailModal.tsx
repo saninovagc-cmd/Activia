@@ -23,6 +23,9 @@ import {
   ExternalLink
 } from 'lucide-react';
 
+import { FileUploadZone } from '@/components/common/FileUploadZone';
+import { CompressedFileResult } from '@/lib/fileCompressor';
+
 interface MailDetailModalProps {
   mail: IncomingMail | null;
   onClose: () => void;
@@ -37,6 +40,8 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
     auditLogs,
     createOutgoingResponseMail,
     createFolderFromMail,
+    addDocument,
+    documents,
     showToast
   } = useApp();
 
@@ -44,6 +49,8 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
   const [selectedAssignee, setSelectedAssignee] = useState('');
   const [showFolderModal, setShowFolderModal] = useState(false);
   const [selectedFolderType, setSelectedFolderType] = useState<FolderType>('Autorisation d’achat');
+  const [showAddScan, setShowAddScan] = useState(false);
+  const [newScanFileResult, setNewScanFileResult] = useState<CompressedFileResult | null>(null);
 
   if (!mail) return null;
 
@@ -327,18 +334,70 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
           )}
 
           {activeTab === 'document' && (
-            <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 text-center space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mx-auto">
-                <Paperclip className="w-6 h-6" />
+            <div className="space-y-4">
+              <div className="p-5 bg-slate-50 rounded-xl border border-slate-200 text-center space-y-3">
+                <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mx-auto">
+                  <Paperclip className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-bold text-slate-900">{mail.scanned_doc_name || 'Courrier_Scanne_Original.pdf'}</p>
+                  <p className="text-slate-500 text-xs mt-0.5">Numérisé et stocké dans le coffre documentaire sécurisé</p>
+                </div>
+                <div className="flex justify-center gap-2 pt-1">
+                  <button
+                    onClick={() => downloadSampleDocument(mail.scanned_doc_name || 'Courrier_Scanne.pdf', mail.register_number, 'Courrier Entrant')}
+                    className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold inline-flex items-center gap-1.5 shadow-xs cursor-pointer text-xs"
+                  >
+                    <Download className="w-4 h-4" /> Télécharger la pièce
+                  </button>
+                  <button
+                    onClick={() => setShowAddScan(!showAddScan)}
+                    className="px-3.5 py-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 rounded-xl font-semibold inline-flex items-center gap-1.5 cursor-pointer text-xs"
+                  >
+                    <Paperclip className="w-4 h-4" />
+                    {showAddScan ? 'Masquer' : 'Ajouter / Remplacer un scan'}
+                  </button>
+                </div>
               </div>
-              <p className="font-bold text-slate-900">{mail.scanned_doc_name || 'Courrier_Scanne_Original.pdf'}</p>
-              <p className="text-slate-500 text-xs">Numérisé et stocké dans le coffre documentaire sécurisé</p>
-              <button
-                onClick={() => downloadSampleDocument(mail.scanned_doc_name || 'Courrier_Scanne.pdf', mail.register_number, 'Courrier Entrant')}
-                className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold inline-flex items-center gap-1.5"
-              >
-                <Download className="w-4 h-4" /> Télécharger la pièce
-              </button>
+
+              {showAddScan && (
+                <div className="p-4 bg-white rounded-xl border border-blue-200 shadow-xs space-y-3 text-xs">
+                  <h5 className="font-bold text-slate-800">Ajouter un document scanné depuis vos dossiers (compression automatique) :</h5>
+                  <FileUploadZone
+                    label="Choisir la pièce scannée dans vos dossiers"
+                    helperText="PDF ou photos de courriers. Allégement automatique de la taille."
+                    selectedResult={newScanFileResult}
+                    onFileReady={(res) => setNewScanFileResult(res)}
+                    onClear={() => setNewScanFileResult(null)}
+                  />
+                  {newScanFileResult && (
+                    <div className="flex justify-end pt-1">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          addDocument({
+                            name: newScanFileResult.fileName,
+                            file_type: (newScanFileResult.fileType as any) || 'PDF',
+                            size_kb: newScanFileResult.compressedSizeKb,
+                            original_size_kb: newScanFileResult.originalSizeKb,
+                            data_url: newScanFileResult.dataUrl,
+                            entity_type: 'courrier',
+                            entity_id: mail.id,
+                            entity_ref: mail.register_number,
+                          });
+                          showToast(`Document scanné "${newScanFileResult.fileName}" versé au dossier courrier`, 'success');
+                          setNewScanFileResult(null);
+                          setShowAddScan(false);
+                        }}
+                        className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-bold flex items-center gap-1.5 shadow-xs cursor-pointer"
+                      >
+                        <CheckCircle2 className="w-4 h-4" />
+                        Enregistrer la pièce scannée
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           )}
 
