@@ -157,21 +157,7 @@ export default function HomePage() {
                 ACTIVIA centralise et sécurise l&apos;ensemble des procédures de l&apos;<strong>ABMed</strong> : instruction des dossiers réglementaires, contrôle des établissements pharmaceutiques, matériovigilance &amp; pharmacovigilance (MAPI), gestion des activités de service et traçabilité intégrale des courriers.
               </p>
 
-              {/* Status Pills */}
-              <div className="grid grid-cols-3 gap-3 pt-2">
-                <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                  <p className="text-lg sm:text-xl font-black text-emerald-700">14</p>
-                  <p className="text-[11px] text-slate-500 font-semibold mt-0.5">Agents ABMed habilités</p>
-                </div>
-                <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                  <p className="text-lg sm:text-xl font-black text-slate-900">14</p>
-                  <p className="text-[11px] text-slate-500 font-semibold mt-0.5">Tables PostgreSQL RLS</p>
-                </div>
-                <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                  <p className="text-lg sm:text-xl font-black text-amber-600">100%</p>
-                  <p className="text-[11px] text-slate-500 font-semibold mt-0.5">Traçabilité &amp; Audit</p>
-                </div>
-              </div>
+
             </div>
 
             {/* Right Column: Integrated Login Card */}
