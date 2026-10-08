@@ -12,32 +12,8 @@
 
 @font-face {
   font-family: 'Aptos';
-  src: local('Aptos Light'), url('/fonts/Aptos-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aptos';
   src: local('Aptos Bold'), url('/fonts/Aptos-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aptos';
-  src: local('Aptos ExtraBold'), url('/fonts/Aptos-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aptos';
-  src: local('Aptos Black'), url('/fonts/Aptos-Black.ttf') format('truetype');
-  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
@@ -94,7 +70,8 @@
 
 html {
   font-family: 'Aptos', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16.8px; /* Confort de lecture amélioré (+5% taille de base) */
+  font-size: 16.5px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -107,14 +84,14 @@ body {
   line-height: 1.5;
 }
 
-/* Custom scrollbars for tables and kanban */
+/* Scrollbars modernes et raffinés */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -127,18 +104,17 @@ body {
 }
 
 /* ==============================================================================
-   MISE EN FORME GÉNÉRALE — TABLEAUX CLAIRS & SÉPARATIONS (zone .app-main)
-   Ces règles s'appliquent automatiquement à tous les tableaux de la plateforme
-   (activités, tâches, courriers, dossiers, établissements, signalements, etc.)
+   MISE EN FORME PREMIUM — ZONE OPÉRATIONNELLE (.app-main)
    ============================================================================== */
 
-/* Conteneurs de cartes : bordure plus marquée pour bien séparer les blocs */
-.app-main .rounded-xl.border-slate-200,
-.app-main .rounded-2xl.border-slate-200 {
-  border-color: #d5dde8;
+/* Conteneurs de cartes premium */
+.app-main .rounded-xl,
+.app-main .rounded-2xl {
+  border-color: #d8e1eb;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
 }
 
-/* Tableau */
+/* Tableaux Premium Haute Précision */
 .app-main table {
   border-collapse: separate;
   border-spacing: 0;
@@ -150,25 +126,25 @@ body {
   position: sticky;
   top: 0;
   z-index: 2;
-  background-color: #eef2f7;
+  background-color: #f1f5f9;
   color: #334155;
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
   border-bottom: 2px solid #cbd5e1;
-  border-right: 1px solid #dde3ec;
+  border-right: 1px solid #e2e8f0;
 }
 
 .app-main table thead th:last-child {
   border-right: none;
 }
 
-/* Cellules */
+/* Cellules de tableaux */
 .app-main table tbody td {
-  border-bottom: 1px solid #e5eaf1;
-  border-right: 1px solid #f0f3f7;
+  border-bottom: 1px solid #e8edf3;
+  border-right: 1px solid #f1f5f9;
   vertical-align: middle;
 }
 
@@ -180,27 +156,28 @@ body {
   border-bottom: none;
 }
 
-/* Lignes alternées (zébrage) pour une lecture facile */
+/* Lignes alternées (Zébrage subtil) */
 .app-main table tbody tr:nth-child(even):not(.table-group-row) {
   background-color: #fafbfd;
 }
 
 .app-main table tbody tr:not(.table-group-row):hover {
   background-color: #eff6ff;
+  transition: background-color 0.15s ease-in-out;
 }
 
-/* Lignes de regroupement (ex : par service) */
+/* Lignes de regroupement de service */
 .app-main table tbody tr.table-group-row td {
-  background-color: #1e293b;
+  background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.72rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   border-right: none;
   border-bottom: 1px solid #0f172a;
 }
 
-/* Titre de section réutilisable */
+/* Titre de section institutionnel réutilisable */
 .section-title {
   display: flex;
   align-items: center;
@@ -218,15 +195,13 @@ body {
 .section-title::before {
   content: '';
   width: 4px;
-  height: 1rem;
+  height: 1.1rem;
   border-radius: 9999px;
-  background-color: #2563eb;
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
 }
 
 /* ==============================================================================
-   SAISIE EN MAJUSCULES SUR TOUTE LA PLATEFORME
-   Tous les champs de saisie de la plateforme sont en majuscule,
-   sauf les identifiants et mots de passe au niveau de la connexion (.auth-input / .keep-case).
+   SAISIE EN MAJUSCULES SUR TOUTE LA PLATEFORME (SAUF AUTHENTIFICATION)
    ============================================================================== */
 input:not([type="password"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="color"]):not([type="date"]):not([type="time"]):not(.auth-input):not(.keep-case),
 textarea:not(.auth-input):not(.keep-case) {
@@ -239,7 +214,7 @@ textarea::placeholder {
   text-transform: none;
 }
 
-/* Exception explicite et absolue pour la page d'authentification et les mots de passe */
+/* Exception stricte pour les identifiants et mots de passe */
 .auth-input,
 .auth-input input,
 .keep-case,
@@ -248,3 +223,11 @@ textarea.keep-case {
   text-transform: none !important;
 }
 
+/* Focus ring premium sur tous les champs de saisie */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-color: #2563eb !important;
+}

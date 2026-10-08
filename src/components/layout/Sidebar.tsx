@@ -13,6 +13,7 @@ interface NavItem {
 
 interface NavSection {
   id: string;
+  number: string;
   title: string;
   items: NavItem[];
 }
@@ -30,7 +31,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const navSections: NavSection[] = [
     {
       id: 'pilotage',
-      title: '1. PILOTAGE',
+      number: '01',
+      title: 'PILOTAGE',
       items: [
         { name: 'Tableau de Bord Général', href: '/dashboard' },
         { name: 'Dashboard Chef de Service', href: '/dashboard?view=service' },
@@ -39,7 +41,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     },
     {
       id: 'operationnel',
-      title: '2. GESTION DES ACTIVITÉS',
+      number: '02',
+      title: 'GESTION DES ACTIVITÉS',
       items: [
         { name: 'Activités du Service', href: '/activities' },
         { name: 'Tâches & Délais', href: '/tasks' },
@@ -48,7 +51,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     },
     {
       id: 'administratif',
-      title: '3. GESTION ADMINISTRATIVE',
+      number: '03',
+      title: 'GESTION ADMINISTRATIVE',
       items: [
         { name: 'Courriers Entrants / Sortants', href: '/mail' },
         { name: 'Dossiers & Demandes', href: '/folders' },
@@ -57,7 +61,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     },
     {
       id: 'metiers',
-      title: '4. MÉTIERS & VIGILANCES',
+      number: '04',
+      title: 'MÉTIERS & VIGILANCES',
       items: [
         { name: 'Établissements Pharmaceutiques', href: '/establishments' },
         { name: 'Signalements & Alertes', href: '/signals' },
@@ -66,7 +71,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     },
     {
       id: 'donnees',
-      title: '5. PARAMÈTRE & CONFIGURATION',
+      number: '05',
+      title: 'PARAMÈTRE & CONFIGURATION',
       items: [
         { name: 'Migration Fichiers Excel (18)', href: '/import' },
         { name: 'Journal d’Audit & Sécurité', href: '/audit' },
@@ -100,40 +106,52 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       {/* Mobile backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-slate-900/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-40 lg:hidden"
           onClick={onClose}
         />
       )}
 
       {/* Sidebar container */}
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-72 bg-slate-900 text-slate-300 flex flex-col transition-transform duration-300 ease-in-out border-r border-slate-800 ${
+        className={`fixed top-0 bottom-0 left-0 z-50 w-72 bg-[#0b1120] text-slate-300 flex flex-col transition-transform duration-300 ease-in-out border-r border-slate-800/80 shadow-2xl ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
+        {/* National subtle color ribbon at very top */}
+        <div className="h-[2px] w-full flex shrink-0">
+          <span className="w-1/3 bg-emerald-500" />
+          <span className="w-1/3 bg-amber-400" />
+          <span className="w-1/3 bg-rose-500" />
+        </div>
+
         {/* Brand header */}
-        <div className="h-14 flex items-center justify-between px-5 bg-slate-950 border-b border-slate-800 shrink-0">
-          <Link href="/dashboard" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-base tracking-wider shadow-xs">
+        <div className="h-16 flex items-center justify-between px-5 bg-[#070b14] border-b border-slate-800/80 shrink-0">
+          <Link href="/dashboard" className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-black text-lg tracking-wider shadow-md shadow-blue-900/30 ring-1 ring-white/15">
               A
             </div>
             <div>
-              <span className="text-base font-black tracking-wide text-white">ACTIVIA</span>
-              <span className="block text-[9px] uppercase font-semibold tracking-wider text-blue-400">
+              <div className="flex items-center gap-1.5">
+                <span className="text-base font-black tracking-wide text-white">ACTIVIA</span>
+                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                  PRO
+                </span>
+              </div>
+              <span className="block text-[9.5px] uppercase font-semibold tracking-wider text-slate-400">
                 Direction Sanitaire DLVS
               </span>
             </div>
           </Link>
           <button
             onClick={onClose}
-            className="lg:hidden p-1.5 rounded-md text-slate-400 hover:text-white hover:bg-slate-800"
+            className="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
           >
             ✕
           </button>
         </div>
 
         {/* Navigation Sections — Accordion Titles first, revealing Sub-titles on click */}
-        <div className="flex-1 overflow-y-auto px-3 py-3 space-y-1.5">
+        <div className="flex-1 overflow-y-auto px-3 py-3.5 space-y-1.5">
           {navSections.map((section) => {
             const isSectionOpen = openSectionId === section.id;
             const hasActiveItem = section.items.some(item => 
@@ -143,19 +161,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             return (
               <div
                 key={section.id}
-                className={`rounded-lg border transition-all ${
+                className={`rounded-xl border transition-all duration-200 overflow-hidden ${
                   isSectionOpen
-                    ? 'bg-slate-950/60 border-slate-700/80'
+                    ? 'bg-[#0e1628] border-slate-700 shadow-sm'
                     : hasActiveItem
-                    ? 'bg-slate-800/40 border-blue-900/50'
-                    : 'bg-transparent border-transparent hover:bg-slate-800/30'
+                    ? 'bg-slate-900/50 border-blue-900/60'
+                    : 'bg-transparent border-transparent hover:bg-slate-850/40 hover:border-slate-800/60'
                 }`}
               >
                 {/* Section Title Header (Clickable to expand / collapse) */}
                 <button
                   type="button"
                   onClick={() => toggleSection(section.id)}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold uppercase tracking-wider text-left transition-colors cursor-pointer rounded-lg ${
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-bold uppercase tracking-wider text-left transition-colors cursor-pointer select-none ${
                     isSectionOpen
                       ? 'text-white'
                       : hasActiveItem
@@ -164,27 +182,33 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                   }`}
                   aria-expanded={isSectionOpen}
                 >
-                  <span className="flex items-center gap-2 truncate">
+                  <span className="flex items-center gap-2.5 truncate">
                     <span
-                      className={`w-1.5 h-3.5 rounded-full shrink-0 ${
-                        hasActiveItem ? 'bg-blue-500' : isSectionOpen ? 'bg-slate-400' : 'bg-slate-700'
+                      className={`font-mono text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 ${
+                        hasActiveItem
+                          ? 'bg-blue-600 text-white border-blue-500'
+                          : isSectionOpen
+                          ? 'bg-slate-800 text-blue-300 border-slate-700'
+                          : 'bg-slate-900 text-slate-500 border-slate-800'
                       }`}
-                    />
-                    <span className="truncate">{section.title}</span>
+                    >
+                      {section.number}
+                    </span>
+                    <span className="truncate text-[11px]">{section.title}</span>
                   </span>
 
                   <span className="text-slate-400 shrink-0 ml-2">
                     {isSectionOpen ? (
-                      <ChevronDown className="w-3.5 h-3.5" />
+                      <ChevronDown className="w-3.5 h-3.5 text-blue-400 transition-transform duration-200" />
                     ) : (
-                      <ChevronRight className="w-3.5 h-3.5" />
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-500 transition-transform duration-200" />
                     )}
                   </span>
                 </button>
 
                 {/* Sub-items (Revealed on click) */}
                 {isSectionOpen && (
-                  <div className="px-2 pt-1 pb-2 space-y-0.5 border-t border-slate-800/60">
+                  <div className="px-2 pt-1 pb-2 space-y-0.5 border-t border-slate-800/80 bg-[#080d19]/60">
                     {section.items.map((item) => {
                       const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href));
                       return (
@@ -194,16 +218,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                           onClick={() => {
                             if (window.innerWidth < 1024) onClose();
                           }}
-                          className={`block px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                          className={`block px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                             isActive
-                              ? 'bg-blue-600 text-white font-bold shadow-xs'
-                              : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
+                              ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-900/40 ring-1 ring-blue-400/30'
+                              : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
                           }`}
                         >
                           <div className="flex items-center justify-between">
                             <span className="truncate">{item.name}</span>
                             {isActive && (
-                              <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs shrink-0" />
                             )}
                           </div>
                         </Link>
@@ -217,16 +241,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Active user session card & Logout */}
-        <div className="p-3 border-t border-slate-800 bg-slate-950 shrink-0">
-          <div className="flex items-center gap-2 mb-2 px-1">
-            <div className="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-xs">
+        <div className="p-3.5 border-t border-slate-800/90 bg-[#070b14] shrink-0">
+          <div className="flex items-center gap-2.5 mb-2.5 px-1">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-md ring-1 ring-white/10">
               {currentUser.order || '1'}
             </div>
             <div className="truncate min-w-0 flex-1">
-              <p className="text-xs font-bold text-white truncate">{currentUser.full_name}</p>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[10px] text-blue-400 font-mono">ID: {currentUser.username}</span>
-                <span className="text-[9px] text-slate-500 truncate">• {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}</span>
+              <p className="text-xs font-bold text-white truncate leading-tight">{currentUser.full_name}</p>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="text-[10px] text-blue-400 font-mono font-semibold">ID: {currentUser.username}</span>
+                <span className="text-[9px] text-slate-500 truncate">
+                  • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
+                </span>
               </div>
             </div>
           </div>
@@ -235,7 +261,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               logout();
               router.push('/login');
             }}
-            className="w-full py-1.5 px-3 rounded-lg bg-rose-950/40 hover:bg-rose-900/60 border border-rose-800/50 text-rose-300 hover:text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            className="w-full py-1.5 px-3 rounded-lg bg-rose-950/30 hover:bg-rose-900/50 border border-rose-800/40 text-rose-300 hover:text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs active:scale-[0.99]"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Déconnexion</span>

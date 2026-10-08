@@ -122,12 +122,12 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
   const totalMatches = matchedActivities.length + matchedFolders.length + matchedMails.length + matchedEtabs.length + matchedSignals.length + matchedTrainings.length;
 
   return (
-    <header className="sticky top-0 z-40 bg-white border-b border-slate-200 h-16 px-4 md:px-6 flex items-center justify-between shadow-xs">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 h-16 px-4 md:px-6 flex items-center justify-between shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]">
       {/* Left section: mobile hamburger + Universal Omni-Search */}
       <div className="flex items-center gap-4 flex-1 max-w-xl" ref={searchRef}>
         <button
           onClick={onToggleSidebar}
-          className="lg:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100 focus:outline-none"
+          className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none transition-colors"
           title="Menu de navigation"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -147,9 +147,9 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                 setIsSearchFocused(true);
               }}
               onFocus={() => setIsSearchFocused(true)}
-              className="w-full pl-9 pr-8 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+              className="w-full pl-9 pr-14 py-2 text-xs bg-slate-50/80 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:bg-white transition-all shadow-xs"
             />
-            {searchQuery && (
+            {searchQuery ? (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
@@ -157,6 +157,10 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
               >
                 <X className="w-3.5 h-3.5" />
               </button>
+            ) : (
+              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-mono font-medium text-slate-400 bg-white border border-slate-200 px-1.5 py-0.5 rounded pointer-events-none">
+                Ctrl K
+              </span>
             )}
           </form>
 
