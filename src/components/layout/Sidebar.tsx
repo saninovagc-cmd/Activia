@@ -125,34 +125,34 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           <span className="w-1/3 bg-rose-500" />
         </div>
 
-        {/* Brand header with ABMed Official Identity */}
-        <div className="h-20 flex items-center justify-between px-4 bg-[#070b14] border-b border-slate-800/80 shrink-0">
+        {/* Brand header with White background, Blue ACTIVIA and Pilotage Centralisé */}
+        <div className="h-20 flex items-center justify-between px-4 bg-white border-b border-slate-200 shrink-0 shadow-xs">
           <Link href="/dashboard" className="flex items-center gap-3">
-            <div className="bg-white rounded-lg p-1.5 shadow-md flex items-center justify-center shrink-0 border border-slate-200">
+            <div className="flex items-center justify-center shrink-0">
               <Image
                 src="/logo-abmed.png"
                 alt="Logo ABMed"
-                width={72}
-                height={30}
-                className="h-8 w-auto object-contain"
+                width={76}
+                height={34}
+                className="h-9 w-auto object-contain"
                 priority
               />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                <span className="text-sm font-black tracking-wide text-white">ACTIVIA</span>
-                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                <span className="text-base font-black tracking-tight text-blue-600">ACTIVIA</span>
+                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-50 text-emerald-700 border border-emerald-300">
                   ABMed
                 </span>
               </div>
-              <span className="block text-[8.5px] uppercase font-bold tracking-wider text-slate-400 leading-tight">
-                Agence Béninoise du Médicament
+              <span className="block text-[8.5px] uppercase font-bold tracking-wider text-slate-600 leading-tight">
+                PILOTAGE ADMINISTRATIF CENTRALISÉ
               </span>
             </div>
           </Link>
           <button
             onClick={onClose}
-            className="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="lg:hidden p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
           >
             ✕
           </button>
