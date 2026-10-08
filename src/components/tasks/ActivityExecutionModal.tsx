@@ -12,10 +12,10 @@ import {
   Upload, 
   Download, 
   MessageSquare,
-  AlertCircle
+  AlertCircle,
+  Plus
 } from 'lucide-react';
-import { FileUploadZone } from '@/components/common/FileUploadZone';
-import { CompressedFileResult } from '@/lib/fileCompressor';
+import { MultiDeliverableUploadZone, PendingDeliverable } from '@/components/common/MultiDeliverableUploadZone';
 
 interface ActivityExecutionModalProps {
   activity: Activity | null;
@@ -40,11 +40,9 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
   const [progress, setProgress] = useState<number>(0);
   const [commentText, setCommentText] = useState('');
   
-  // Deliverable upload state
+  // Multi-Deliverables upload state
   const [showAddDoc, setShowAddDoc] = useState(false);
-  const [deliverableName, setDeliverableName] = useState('');
-  const [deliverableType, setDeliverableType] = useState<'PDF' | 'Word' | 'Excel' | 'Image'>('PDF');
-  const [uploadedFileResult, setUploadedFileResult] = useState<CompressedFileResult | null>(null);
+  const [pendingDeliverables, setPendingDeliverables] = useState<PendingDeliverable[]>([]);
 
   useEffect(() => {
     if (activity) {
@@ -52,34 +50,29 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
       setProgress(activity.progress_percentage || 0);
       setCommentText('');
       setShowAddDoc(false);
-      setDeliverableName('');
+      setPendingDeliverables([]);
     }
   }, [activity, isOpen]);
 
   if (!isOpen || !activity) return null;
 
-  const handleAddDeliverable = (e: React.FormEvent) => {
-    e.preventDefault();
-    const finalName = deliverableName.trim() || uploadedFileResult?.fileName;
-    if (!finalName) {
-      showToast('Veuillez sélectionner un fichier ou saisir un nom de livrable', 'warning');
+  const handleSaveDeliverables = () => {
+    if (pendingDeliverables.length === 0) {
+      showToast('Veuillez ajouter au moins un livrable', 'warning');
       return;
     }
 
-    const sizeKb = uploadedFileResult?.compressedSizeKb || 320;
-    const originalSizeKb = uploadedFileResult?.originalSizeKb || sizeKb;
-    const dataUrl = uploadedFileResult?.dataUrl;
-
-    addDocumentToActivity(activity.id, {
-      name: finalName,
-      file_type: deliverableType,
-      size_kb: sizeKb,
-      original_size_kb: originalSizeKb,
-      data_url: dataUrl,
+    pendingDeliverables.forEach(item => {
+      addDocumentToActivity(activity.id, {
+        name: item.name.trim() || 'Livrable sans nom',
+        file_type: item.fileType,
+        size_kb: item.compressedSizeKb,
+        original_size_kb: item.originalSizeKb,
+        data_url: item.dataUrl,
+      });
     });
 
-    setDeliverableName('');
-    setUploadedFileResult(null);
+    setPendingDeliverables([]);
     setShowAddDoc(false);
   };
 
@@ -253,89 +246,66 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
           {/* Section 2: Livrables de l'activité */}
           <div className="space-y-3 bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
             <div className="flex items-center justify-between">
-              <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center gap-2">
-                <span className="w-2 h-3.5 rounded-full bg-emerald-600" />
-                2. Livrables & Documents Justificatifs ({activity.documents?.length || 0})
-              </h3>
+              <div>
+                <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center gap-2">
+                  <span className="w-2 h-3.5 rounded-full bg-emerald-600" />
+                  2. Livrables & Documents Justificatifs ({activity.documents?.length || 0})
+                </h3>
+                <p className="text-[11px] text-slate-500">
+                  Déposez autant de livrables et rapports que nécessaire en cliquant sur « + ».
+                </p>
+              </div>
 
               <button
                 type="button"
                 onClick={() => setShowAddDoc(!showAddDoc)}
-                className="px-2.5 py-1 text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-lg transition-colors cursor-pointer"
+                className="px-2.5 py-1 text-xs font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-lg transition-colors cursor-pointer flex items-center gap-1 shadow-2xs"
               >
-                {showAddDoc ? 'Fermer' : '+ Ajouter un livrable'}
+                <Plus className="w-3.5 h-3.5" />
+                <span>{showAddDoc ? 'Fermer' : 'Ajouter des livrables (+)'}</span>
               </button>
             </div>
 
-            {/* Formulaire ajout livrable */}
+            {/* Formulaire ajout multiple de livrables */}
             {showAddDoc && (
               <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-300 space-y-3">
-                <p className="text-[11px] font-bold text-slate-800">
-                  Sélectionnez le livrable depuis vos dossiers (réduction et optimisation de taille automatiques) :
-                </p>
+                <div className="flex items-center justify-between">
+                  <p className="text-[11px] font-bold text-slate-800">
+                    Sélectionnez vos fichiers dans vos dossiers. Cliquez sur « + » pour en ajouter d&apos;autres à volonté :
+                  </p>
+                  <span className="text-[10px] text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full font-bold">
+                    Compression auto active
+                  </span>
+                </div>
 
-                <FileUploadZone
-                  label="Choisir le livrable dans vos dossiers"
-                  helperText="Scans, PDF, Word, Excel acceptés. Les scans lourds sont compressés instantanément."
-                  selectedResult={uploadedFileResult}
-                  onFileReady={(res) => {
-                    setUploadedFileResult(res);
-                    setDeliverableName(res.fileName);
-                    setDeliverableType(res.fileType as any);
-                  }}
-                  onClear={() => {
-                    setUploadedFileResult(null);
-                    setDeliverableName('');
-                  }}
+                <MultiDeliverableUploadZone
+                  items={pendingDeliverables}
+                  onChange={setPendingDeliverables}
+                  helperText="Scans, PDF, Word, Excel acceptés. Cliquez sur « + » pour ajouter autant de fichiers que nécessaire."
                 />
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
-                  <div className="sm:col-span-2">
-                    <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Nom d&apos;enregistrement du livrable :</label>
-                    <input
-                      type="text"
-                      placeholder="Intitulé du livrable (ex : Rapport d'inspection PV.pdf)"
-                      value={deliverableName}
-                      onChange={(e) => setDeliverableName(e.target.value)}
-                      className="w-full px-3 py-1.5 text-xs bg-white border border-slate-300 rounded-lg"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Type de document :</label>
-                    <select
-                      value={deliverableType}
-                      onChange={(e) => setDeliverableType(e.target.value as any)}
-                      className="w-full px-2.5 py-1.5 text-xs bg-white border border-slate-300 rounded-lg font-medium text-slate-800"
+                {pendingDeliverables.length > 0 && (
+                  <div className="flex justify-end gap-2 pt-2 border-t border-slate-200">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowAddDoc(false);
+                        setPendingDeliverables([]);
+                      }}
+                      className="px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-200 rounded-lg font-medium cursor-pointer"
                     >
-                      <option value="PDF">Format PDF</option>
-                      <option value="Word">Format Word</option>
-                      <option value="Excel">Tableur Excel</option>
-                      <option value="Image">Photo / Scan (Allégé)</option>
-                    </select>
+                      Annuler
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleSaveDeliverables}
+                      className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1.5"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      <span>Enregistrer et verser {pendingDeliverables.length} livrable{pendingDeliverables.length > 1 ? 's' : ''}</span>
+                    </button>
                   </div>
-                </div>
-
-                <div className="flex justify-end gap-2 pt-1">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setShowAddDoc(false);
-                      setUploadedFileResult(null);
-                      setDeliverableName('');
-                    }}
-                    className="px-3 py-1 text-xs text-slate-600 hover:bg-slate-200 rounded-lg"
-                  >
-                    Annuler
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleAddDeliverable}
-                    className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1.5"
-                  >
-                    <Upload className="w-3.5 h-3.5" />
-                    Déposer le livrable optimisé
-                  </button>
-                </div>
+                )}
               </div>
             )}
 

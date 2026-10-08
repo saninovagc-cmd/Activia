@@ -25,8 +25,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-import { FileUploadZone } from '@/components/common/FileUploadZone';
-import { CompressedFileResult } from '@/lib/fileCompressor';
+import { MultiDeliverableUploadZone, PendingDeliverable } from '@/components/common/MultiDeliverableUploadZone';
 
 interface FolderDetailModalProps {
   folder: Folder | null;
@@ -62,8 +61,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
 
   // Upload document state
   const [showDocUpload, setShowDocUpload] = useState(false);
-  const [docName, setDocName] = useState('');
-  const [folderDocFileResult, setFolderDocFileResult] = useState<CompressedFileResult | null>(null);
+  const [pendingFolderDocs, setPendingFolderDocs] = useState<PendingDeliverable[]>([]);
 
   if (!folder) return null;
 
@@ -105,29 +103,23 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
     setCommentInput('');
   };
 
-  const handleAddDoc = (e: React.FormEvent) => {
-    e.preventDefault();
-    const finalDocName = docName.trim() || folderDocFileResult?.fileName;
-    if (!finalDocName) {
-      showToast('Veuillez sélectionner un fichier ou renseigner un intitulé', 'warning');
+  const handleSaveAllFolderDocs = () => {
+    if (pendingFolderDocs.length === 0) {
+      showToast('Veuillez ajouter au moins une pièce', 'warning');
       return;
     }
 
-    const sizeKb = folderDocFileResult?.compressedSizeKb || 380;
-    const origKb = folderDocFileResult?.originalSizeKb || sizeKb;
-    const dataUrl = folderDocFileResult?.dataUrl;
-    const fileType = (folderDocFileResult?.fileType as any) || 'PDF';
-
-    addDocumentToFolder(folder.id, {
-      name: finalDocName,
-      size_kb: sizeKb,
-      original_size_kb: origKb,
-      file_type: fileType,
-      data_url: dataUrl,
+    pendingFolderDocs.forEach(item => {
+      addDocumentToFolder(folder.id, {
+        name: item.name.trim() || 'Document sans nom',
+        size_kb: item.compressedSizeKb,
+        original_size_kb: item.originalSizeKb,
+        file_type: item.fileType,
+        data_url: item.dataUrl,
+      });
     });
 
-    setDocName('');
-    setFolderDocFileResult(null);
+    setPendingFolderDocs([]);
     setShowDocUpload(false);
   };
 
@@ -342,64 +334,54 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                 </div>
                 <button
                   onClick={() => setShowDocUpload(!showDocUpload)}
-                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold flex items-center gap-1.5 shadow-xs"
+                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold flex items-center gap-1.5 shadow-xs cursor-pointer text-xs"
                 >
                   <Plus className="w-3.5 h-3.5" />
-                  <span>Verser une pièce</span>
+                  <span>{showDocUpload ? 'Fermer' : 'Verser des pièces (+)'}</span>
                 </button>
               </div>
 
               {/* Inline Upload Form */}
               {showDocUpload && (
-                <form onSubmit={handleAddDoc} className="p-4 bg-slate-50 border border-slate-300 rounded-xl space-y-3 text-xs">
-                  <h5 className="font-bold text-slate-900 text-xs">Dépôt d&apos;une nouvelle pièce au dossier (compression automatique) :</h5>
+                <div className="p-4 bg-slate-50 border border-slate-300 rounded-xl space-y-3 text-xs">
+                  <div className="flex items-center justify-between">
+                    <h5 className="font-bold text-slate-900 text-xs">
+                      Versement de pièces au dossier (sélectionnez vos fichiers ou cliquez sur « + » pour en ajouter d&apos;autres) :
+                    </h5>
+                    <span className="text-[10px] text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full font-bold">
+                      Compression automatique
+                    </span>
+                  </div>
 
-                  <FileUploadZone
-                    label="Choisir la pièce dans vos dossiers"
-                    helperText="Récépissés, fiches techniques, certificats. Les images scannées sont allégées drastiquement."
-                    selectedResult={folderDocFileResult}
-                    onFileReady={(res) => {
-                      setFolderDocFileResult(res);
-                      setDocName(res.fileName);
-                    }}
-                    onClear={() => {
-                      setFolderDocFileResult(null);
-                      setDocName('');
-                    }}
+                  <MultiDeliverableUploadZone
+                    items={pendingFolderDocs}
+                    onChange={setPendingFolderDocs}
+                    helperText="Récépissés, fiches techniques, certificats. Cliquez sur « + » pour ajouter autant de pièces que souhaité."
                   />
 
-                  <div className="space-y-1">
-                    <label className="font-semibold text-slate-700 text-[11px]">Intitulé d&apos;enregistrement du document :</label>
-                    <input
-                      type="text"
-                      placeholder="Ex: Justificatif_Paiement_Redevance.pdf"
-                      value={docName}
-                      onChange={(e) => setDocName(e.target.value)}
-                      className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs"
-                    />
-                  </div>
-
-                  <div className="flex justify-end gap-2 pt-1">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setShowDocUpload(false);
-                        setFolderDocFileResult(null);
-                        setDocName('');
-                      }}
-                      className="px-3 py-1 bg-white border border-slate-300 rounded-lg text-slate-600 hover:bg-slate-100"
-                    >
-                      Annuler
-                    </button>
-                    <button
-                      type="submit"
-                      className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-xs cursor-pointer flex items-center gap-1.5"
-                    >
-                      <Paperclip className="w-3.5 h-3.5" />
-                      Verser la pièce optimisée
-                    </button>
-                  </div>
-                </form>
+                  {pendingFolderDocs.length > 0 && (
+                    <div className="flex justify-end gap-2 pt-2 border-t border-slate-200">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowDocUpload(false);
+                          setPendingFolderDocs([]);
+                        }}
+                        className="px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-slate-600 hover:bg-slate-100 cursor-pointer"
+                      >
+                        Annuler
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleSaveAllFolderDocs}
+                        className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-xs cursor-pointer flex items-center gap-1.5"
+                      >
+                        <Plus className="w-3.5 h-3.5" />
+                        <span>Verser les {pendingFolderDocs.length} pièce{pendingFolderDocs.length > 1 ? 's' : ''} au dossier</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
               )}
 
               {/* Document List */}

@@ -23,8 +23,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-import { FileUploadZone } from '@/components/common/FileUploadZone';
-import { CompressedFileResult } from '@/lib/fileCompressor';
+import { MultiDeliverableUploadZone, PendingDeliverable } from '@/components/common/MultiDeliverableUploadZone';
 
 interface ActivityDetailModalProps {
   activity: Activity | null;
@@ -56,8 +55,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
   const [newTaskDue, setNewTaskDue] = useState('');
   const [newTaskPriority, setNewTaskPriority] = useState<PriorityLevel>('moyenne');
   const [showUploadDoc, setShowUploadDoc] = useState(false);
-  const [docUploadName, setDocUploadName] = useState('');
-  const [docUploadFileResult, setDocUploadFileResult] = useState<CompressedFileResult | null>(null);
+  const [pendingDocs, setPendingDocs] = useState<PendingDeliverable[]>([]);
 
   if (!activity) return null;
 
@@ -400,76 +398,64 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                 </div>
                 <button
                   onClick={() => setShowUploadDoc(!showUploadDoc)}
-                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-medium flex items-center gap-1 shadow-xs"
+                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow-xs cursor-pointer"
                 >
                   <Plus className="w-3.5 h-3.5" />
-                  <span>{showUploadDoc ? 'Fermer' : 'Joindre un fichier'}</span>
+                  <span>{showUploadDoc ? 'Fermer' : 'Joindre des fichiers (+)'}</span>
                 </button>
               </div>
 
               {showUploadDoc && (
                 <div className="p-4 bg-slate-50 border border-slate-300 rounded-xl space-y-3">
-                  <span className="font-bold text-slate-800 text-xs block">
-                    Sélectionnez un document depuis vos dossiers (compression automatique) :
-                  </span>
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-800 text-xs block">
+                      Sélectionnez vos pièces justificatives. Cliquez sur « + » pour en ajouter autant que souhaité :
+                    </span>
+                    <span className="text-[10px] text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full font-bold">
+                      Compression automatique
+                    </span>
+                  </div>
 
-                  <FileUploadZone
-                    label="Choisir la pièce justificative dans vos dossiers"
-                    helperText="Scans de PV, rapports, fiches de mission. Les images scannées sont fortement allégées."
-                    selectedResult={docUploadFileResult}
-                    onFileReady={(res) => {
-                      setDocUploadFileResult(res);
-                      setDocUploadName(res.fileName);
-                    }}
-                    onClear={() => {
-                      setDocUploadFileResult(null);
-                      setDocUploadName('');
-                    }}
+                  <MultiDeliverableUploadZone
+                    items={pendingDocs}
+                    onChange={setPendingDocs}
+                    helperText="Scans de PV, rapports, fiches de mission. Cliquez sur « + » pour ajouter autant de fichiers que souhaité."
                   />
 
-                  <div className="flex flex-col sm:flex-row gap-2 pt-1">
-                    <input
-                      type="text"
-                      placeholder="Intitulé du document (ex: Compte_Rendu_Mission_Terrain.pdf)"
-                      value={docUploadName}
-                      onChange={(e) => setDocUploadName(e.target.value)}
-                      className="flex-1 px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs"
-                    />
-                    <div className="flex gap-2 justify-end">
+                  {pendingDocs.length > 0 && (
+                    <div className="flex justify-end gap-2 pt-2 border-t border-slate-200">
                       <button
                         type="button"
                         onClick={() => {
                           setShowUploadDoc(false);
-                          setDocUploadFileResult(null);
-                          setDocUploadName('');
+                          setPendingDocs([]);
                         }}
-                        className="px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-200 rounded-lg"
+                        className="px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-200 rounded-lg cursor-pointer"
                       >
                         Annuler
                       </button>
                       <button
                         type="button"
                         onClick={() => {
-                          const finalName = docUploadName.trim() || docUploadFileResult?.fileName;
-                          if (finalName) {
+                          pendingDocs.forEach(item => {
                             addDocumentToActivity(activity.id, {
-                              name: finalName,
-                              file_type: (docUploadFileResult?.fileType as any) || 'PDF',
-                              size_kb: docUploadFileResult?.compressedSizeKb || 420,
-                              original_size_kb: docUploadFileResult?.originalSizeKb,
-                              data_url: docUploadFileResult?.dataUrl,
+                              name: item.name.trim() || 'Document sans nom',
+                              file_type: item.fileType,
+                              size_kb: item.compressedSizeKb,
+                              original_size_kb: item.originalSizeKb,
+                              data_url: item.dataUrl,
                             });
-                            setDocUploadName('');
-                            setDocUploadFileResult(null);
-                            setShowUploadDoc(false);
-                          }
+                          });
+                          setPendingDocs([]);
+                          setShowUploadDoc(false);
                         }}
-                        className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold text-xs shadow-xs cursor-pointer"
+                        className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold text-xs shadow-xs cursor-pointer flex items-center gap-1.5"
                       >
-                        Enregistrer la pièce
+                        <Plus className="w-3.5 h-3.5" />
+                        <span>Enregistrer les {pendingDocs.length} pièce{pendingDocs.length > 1 ? 's' : ''}</span>
                       </button>
                     </div>
-                  </div>
+                  )}
                 </div>
               )}
 
