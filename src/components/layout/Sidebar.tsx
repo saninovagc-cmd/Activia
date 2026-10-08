@@ -39,7 +39,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     },
     {
       id: 'operationnel',
-      title: '2. SOCLE OPÉRATIONNEL',
+      title: '2. GESTION DES ACTIVITÉS',
       items: [
         { name: 'Activités du Service', href: '/activities' },
         { name: 'Tâches & Délais', href: '/tasks' },
@@ -66,7 +66,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     },
     {
       id: 'donnees',
-      title: '5. DONNÉES & CONFIGURATION',
+      title: '5. PARAMÈTRE & CONFIGURATION',
       items: [
         { name: 'Migration Fichiers Excel (18)', href: '/import' },
         { name: 'Journal d’Audit & Sécurité', href: '/audit' },

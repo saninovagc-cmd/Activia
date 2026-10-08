@@ -655,7 +655,8 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                       value={adminCustomPassword}
                       onChange={(e) => setAdminCustomPassword(e.target.value)}
                       placeholder="Nouveau mot de passe..."
-                      className="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-mono font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                      style={{ textTransform: 'none' }}
+                      className="keep-case w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-mono font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none"
                     />
                   </div>
                 </div>

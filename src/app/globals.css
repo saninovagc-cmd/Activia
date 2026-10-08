@@ -223,3 +223,28 @@ body {
   background-color: #2563eb;
 }
 
+/* ==============================================================================
+   SAISIE EN MAJUSCULES SUR TOUTE LA PLATEFORME
+   Tous les champs de saisie de la plateforme sont en majuscule,
+   sauf les identifiants et mots de passe au niveau de la connexion (.auth-input / .keep-case).
+   ============================================================================== */
+input:not([type="password"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="color"]):not([type="date"]):not([type="time"]):not(.auth-input):not(.keep-case),
+textarea:not(.auth-input):not(.keep-case) {
+  text-transform: uppercase;
+}
+
+/* Les textes d'aide et placeholders restent en casse standard pour la lisibilité */
+input::placeholder,
+textarea::placeholder {
+  text-transform: none;
+}
+
+/* Exception explicite et absolue pour la page d'authentification et les mots de passe */
+.auth-input,
+.auth-input input,
+.keep-case,
+input.keep-case,
+textarea.keep-case {
+  text-transform: none !important;
+}
+
