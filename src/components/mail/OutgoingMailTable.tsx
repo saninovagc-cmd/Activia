@@ -32,8 +32,8 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
           </span>
         </div>
       </div>
-      <div className="overflow-x-auto">
-        <table className="w-full text-xs text-left text-slate-700">
+      <div className="overflow-x-auto w-full max-w-full">
+        <table className="w-full min-w-[750px] text-xs text-left text-slate-700">
           <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
             <tr>
               <th className="py-3 px-4 font-semibold">N° Chrono</th>

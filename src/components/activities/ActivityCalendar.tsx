@@ -87,17 +87,20 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
         </div>
       </div>
 
-      {/* Days of week header */}
-      <div className="grid grid-cols-7 gap-px bg-slate-200 rounded-t-xl overflow-hidden mt-4 text-center">
-        {daysOfWeek.map((day) => (
-          <div key={day} className="bg-slate-50 py-2 text-xs font-bold text-slate-600">
-            {day}
+      {/* Scrollable Calendar Grid Container */}
+      <div className="overflow-x-auto w-full max-w-full pb-2">
+        <div className="min-w-[560px] sm:min-w-0">
+          {/* Days of week header */}
+          <div className="grid grid-cols-7 gap-px bg-slate-200 rounded-t-xl overflow-hidden mt-4 text-center">
+            {daysOfWeek.map((day) => (
+              <div key={day} className="bg-slate-50 py-2 text-xs font-bold text-slate-600">
+                {day}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      {/* Days grid */}
-      <div className="grid grid-cols-7 gap-px bg-slate-200 rounded-b-xl overflow-hidden text-xs">
+          {/* Days grid */}
+          <div className="grid grid-cols-7 gap-px bg-slate-200 rounded-b-xl overflow-hidden text-xs">
         {/* Leading empty days */}
         {Array.from({ length: startOffset }).map((_, i) => (
           <div key={`empty-${i}`} className="bg-slate-50/50 min-h-[105px] p-2 text-slate-300" />
@@ -159,6 +162,8 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
             </div>
           );
         })}
+          </div>
+        </div>
       </div>
     </div>
   );

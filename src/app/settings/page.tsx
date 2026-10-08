@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -150,7 +150,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-slate-200">
+        <div className="flex flex-wrap border-b border-slate-200 gap-1">
           <button
             onClick={() => setActiveTab('referentials')}
             className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors ${
@@ -249,8 +249,8 @@ export default function SettingsPage() {
                 </div>
               </div>
 
-              <div className="overflow-x-auto">
-                <table className="w-full text-xs text-left">
+              <div className="overflow-x-auto w-full max-w-full">
+                <table className="w-full min-w-[780px] text-xs text-left">
                   <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-100">
                     <tr>
                       <th className="py-3 px-3 text-center">N°</th>

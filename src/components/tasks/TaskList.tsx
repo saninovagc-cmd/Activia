@@ -244,8 +244,8 @@ export const TaskList: React.FC = () => {
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs text-left text-slate-700">
+          <div className="overflow-x-auto w-full max-w-full">
+            <table className="w-full min-w-[780px] text-xs text-left text-slate-700">
               <thead>
                 <tr>
                   <th className="py-3 px-4">Code</th>

@@ -37,14 +37,15 @@ export const ActivityKanban: React.FC<ActivityKanbanProps> = ({
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4 overflow-x-auto pb-4">
-      {columns.map((col) => {
-        const colActivities = activities.filter((a) => a.status === col.status);
-        return (
-          <div
-            key={col.status}
-            className="bg-slate-100/70 rounded-xl p-3 border border-slate-200 flex flex-col min-w-[260px]"
-          >
+    <div className="overflow-x-auto w-full max-w-full pb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 min-w-0">
+        {columns.map((col) => {
+          const colActivities = activities.filter((a) => a.status === col.status);
+          return (
+            <div
+              key={col.status}
+              className="bg-slate-100/70 rounded-xl p-3 border border-slate-200 flex flex-col min-w-0"
+            >
             {/* Column Header */}
             <div className="flex items-center justify-between pb-3 border-b border-slate-200">
               <div className="flex items-center gap-2">
@@ -146,6 +147,7 @@ export const ActivityKanban: React.FC<ActivityKanbanProps> = ({
           </div>
         );
       })}
+      </div>
     </div>
   );
 };

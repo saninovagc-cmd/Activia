@@ -48,10 +48,10 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-900">
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-900 overflow-x-hidden w-full max-w-full">
       {/* Top Benin Institutional Bar */}
-      <div className="bg-slate-950 text-white text-[11px] py-1.5 px-4 sm:px-8 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="bg-slate-950 text-white text-[11px] py-1.5 px-3 sm:px-6 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-0.5">
               <span className="w-2.5 h-2.5 bg-emerald-500 rounded-xs" />
@@ -75,7 +75,7 @@ export default function HomePage() {
 
       {/* Main Navigation Bar */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3.5">
             <div className="bg-white p-1 rounded-xl border border-slate-200 shadow-xs flex items-center justify-center">
               <Image
@@ -139,8 +139,8 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-white via-slate-50 to-emerald-50/20 border-b border-slate-200 py-12 sm:py-16 grow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      <section className="bg-gradient-to-b from-white via-slate-50 to-emerald-50/20 border-b border-slate-200 py-8 sm:py-14 grow overflow-x-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column: Presentation */}
             <div className="lg:col-span-7 space-y-6">
@@ -254,8 +254,8 @@ export default function HomePage() {
       </section>
 
       {/* Institutional Footer */}
-      <footer className="bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <footer className="bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800 overflow-x-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
             <p className="font-bold text-white">ACTIVIA — Agence Béninoise du Médicament et des autres Produits de Santé (ABMed)</p>
             <p className="text-[11px] text-slate-400 mt-0.5">

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Establishment, EstablishmentType, EstablishmentStatus } from '@/types';
@@ -195,8 +195,8 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
             </span>
           </div>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs">
+        <div className="overflow-x-auto w-full max-w-full">
+          <table className="w-full min-w-[780px] text-left border-collapse text-xs">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
                 <th className="py-3 px-4">Code / N° Agrément</th>

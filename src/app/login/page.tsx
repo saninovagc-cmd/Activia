@@ -45,11 +45,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex flex-col justify-center items-center p-4">
+    <div className="min-h-screen bg-slate-900 flex flex-col justify-center items-center p-3 sm:p-4 overflow-x-hidden w-full max-w-full">
       {/* Container */}
       <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Institutional header */}
-        <div className="bg-slate-950 px-8 py-6 text-center border-b border-slate-800">
+        <div className="bg-slate-950 px-4 sm:px-8 py-6 text-center border-b border-slate-800">
 
           <div className="bg-white p-2 rounded-2xl mx-auto mb-3 shadow-lg max-w-[200px] flex items-center justify-center border border-slate-200">
             <Image
@@ -141,7 +141,7 @@ export default function LoginPage() {
         </div>
 
         {/* Footer */}
-        <div className="px-8 py-3.5 bg-slate-50 border-t border-slate-100 text-center text-[11px] flex items-center justify-center">
+        <div className="px-4 sm:px-8 py-3.5 bg-slate-50 border-t border-slate-100 text-center text-[10px] sm:text-[11px] flex items-center justify-center">
           <a
             href="https://www.saninovagc.com"
             target="_blank"
