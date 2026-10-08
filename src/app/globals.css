@@ -125,3 +125,101 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* ==============================================================================
+   MISE EN FORME GÉNÉRALE — TABLEAUX CLAIRS & SÉPARATIONS (zone .app-main)
+   Ces règles s'appliquent automatiquement à tous les tableaux de la plateforme
+   (activités, tâches, courriers, dossiers, établissements, signalements, etc.)
+   ============================================================================== */
+
+/* Conteneurs de cartes : bordure plus marquée pour bien séparer les blocs */
+.app-main .rounded-xl.border-slate-200,
+.app-main .rounded-2xl.border-slate-200 {
+  border-color: #d5dde8;
+}
+
+/* Tableau */
+.app-main table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+/* En-têtes de colonnes */
+.app-main table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #eef2f7;
+  color: #334155;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 2px solid #cbd5e1;
+  border-right: 1px solid #dde3ec;
+}
+
+.app-main table thead th:last-child {
+  border-right: none;
+}
+
+/* Cellules */
+.app-main table tbody td {
+  border-bottom: 1px solid #e5eaf1;
+  border-right: 1px solid #f0f3f7;
+  vertical-align: middle;
+}
+
+.app-main table tbody td:last-child {
+  border-right: none;
+}
+
+.app-main table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Lignes alternées (zébrage) pour une lecture facile */
+.app-main table tbody tr:nth-child(even):not(.table-group-row) {
+  background-color: #fafbfd;
+}
+
+.app-main table tbody tr:not(.table-group-row):hover {
+  background-color: #eff6ff;
+}
+
+/* Lignes de regroupement (ex : par service) */
+.app-main table tbody tr.table-group-row td {
+  background-color: #1e293b;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  border-right: none;
+  border-bottom: 1px solid #0f172a;
+}
+
+/* Titre de section réutilisable */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-title::before {
+  content: '';
+  width: 4px;
+  height: 1rem;
+  border-radius: 9999px;
+  background-color: #2563eb;
+}
+

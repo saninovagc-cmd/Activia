@@ -134,88 +134,123 @@ export const TaskList: React.FC = () => {
         </div>
       </div>
 
-      {/* Tasks Table / Card List */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-xs divide-y divide-slate-100 overflow-hidden">
-        {filteredTasks.length === 0 ? (
-          <div className="p-12 text-center text-slate-400 text-xs">
-            Aucune tâche ne correspond à ces critères.
+      {/* Tasks Table */}
+      <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div className="px-4 py-3 border-b border-slate-200 bg-slate-50/80 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-4 rounded-full bg-blue-600" />
+            <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">Registre des Tâches Opérationnelles</h3>
+            <span className="text-[11px] font-semibold text-blue-700 bg-blue-100/80 px-2 py-0.5 rounded-full">{filteredTasks.length} tâche(s)</span>
           </div>
-        ) : (
-          filteredTasks.map((task) => {
-            const isOverdue = task.status === 'en_retard' || (task.status !== 'termine' && new Date(task.due_date).getTime() < Date.now());
-            return (
-              <div
-                key={task.id}
-                className="p-4 hover:bg-slate-50/80 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs"
-              >
-                <div className="flex items-start gap-3 flex-1">
-                  {/* Status Toggle Checkbox */}
-                  <button
-                    onClick={() => {
-                      const newStatus = task.status === 'termine' ? 'en_cours' : 'termine';
-                      updateTaskStatus(task.id, newStatus);
-                      showToast(
-                        newStatus === 'termine' ? 'success' : 'info',
-                        newStatus === 'termine' ? `Tâche "${task.title}" marquée comme terminée.` : `Tâche "${task.title}" remise en cours.`
-                      );
-                    }}
-                    className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center border transition-all cursor-pointer ${
-                      task.status === 'termine'
-                        ? 'bg-emerald-600 border-emerald-600 text-white'
-                        : 'border-slate-300 hover:border-emerald-500 bg-white'
-                    }`}
-                    title={task.status === 'termine' ? 'Marquer en cours' : 'Marquer comme terminée'}
-                  >
-                    {task.status === 'termine' && <CheckCircle2 className="w-3.5 h-3.5" />}
-                  </button>
-
-                  {/* Task Info */}
-                  <div className="space-y-1">
-                    <p className={`font-semibold text-sm ${task.status === 'termine' ? 'line-through text-slate-400' : 'text-slate-900'}`}>
-                      {task.title}
-                    </p>
-
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-500">
-                      <Link
-                        href={`/activities`}
-                        className="inline-flex items-center gap-1 font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded hover:underline"
-                      >
-                        {task.activity_code} <ArrowUpRight className="w-3 h-3" />
-                      </Link>
-                      <span className="truncate max-w-xs">{task.activity_title}</span>
-                      <span>•</span>
-                      <span className="flex items-center gap-1 text-slate-700 font-medium">
-                        <User className="w-3 h-3 text-slate-400" />
-                        {task.assignee_name}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Badges & Due date */}
-                <div className="flex items-center gap-3 sm:justify-end">
-                  <Badge priority={task.priority} />
-
-                  <div className={`flex items-center gap-1 font-medium ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-600'}`}>
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>{task.due_date}</span>
-                  </div>
-
-                  <span className={`px-2 py-0.5 rounded text-[11px] font-semibold border ${
-                    task.status === 'termine'
-                      ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
-                      : isOverdue
-                      ? 'bg-rose-50 text-rose-800 border-rose-200'
-                      : 'bg-blue-50 text-blue-800 border-blue-200'
-                  }`}>
-                    {task.status === 'termine' ? 'Terminé' : isOverdue ? 'En retard' : 'En cours'}
-                  </span>
-                </div>
-              </div>
-            );
-          })
-        )}
+          <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-blue-500" />
+              {allTasks.filter(t => t.status === 'en_cours').length} en cours
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-rose-500" />
+              {allTasks.filter(t => t.status === 'en_retard' || (t.status !== 'termine' && new Date(t.due_date).getTime() < Date.now())).length} en retard
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              {allTasks.filter(t => t.status === 'termine').length} terminées
+            </span>
+          </div>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs text-left text-slate-700">
+            <thead>
+              <tr>
+                <th className="py-3 px-3 text-center w-12">Fait</th>
+                <th className="py-3 px-4">Tâche</th>
+                <th className="py-3 px-4">Activité rattachée</th>
+                <th className="py-3 px-4">Responsable</th>
+                <th className="py-3 px-4">Priorité</th>
+                <th className="py-3 px-4">Échéance</th>
+                <th className="py-3 px-4 text-center">Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredTasks.length === 0 ? (
+                <tr>
+                  <td colSpan={7} className="py-12 text-center text-slate-400 text-xs">
+                    Aucune tâche ne correspond à ces critères.
+                  </td>
+                </tr>
+              ) : (
+                filteredTasks.map((task) => {
+                  const isOverdue = task.status === 'en_retard' || (task.status !== 'termine' && new Date(task.due_date).getTime() < Date.now());
+                  return (
+                    <tr key={task.id}>
+                      <td className="py-3 px-3 text-center">
+                        <button
+                          onClick={() => {
+                            const newStatus = task.status === 'termine' ? 'en_cours' : 'termine';
+                            updateTaskStatus(task.id, newStatus);
+                            showToast(
+                              newStatus === 'termine' ? 'success' : 'info',
+                              newStatus === 'termine' ? `Tâche "${task.title}" marquée comme terminée.` : `Tâche "${task.title}" remise en cours.`
+                            );
+                          }}
+                          className={`w-5 h-5 rounded inline-flex items-center justify-center border transition-all cursor-pointer ${
+                            task.status === 'termine'
+                              ? 'bg-emerald-600 border-emerald-600 text-white'
+                              : 'border-slate-300 hover:border-emerald-500 bg-white'
+                          }`}
+                          title={task.status === 'termine' ? 'Marquer en cours' : 'Marquer comme terminée'}
+                        >
+                          {task.status === 'termine' && <CheckCircle2 className="w-3.5 h-3.5" />}
+                        </button>
+                      </td>
+                      <td className="py-3 px-4 max-w-xs">
+                        <p className={`font-semibold ${task.status === 'termine' ? 'line-through text-slate-400' : 'text-slate-900'}`}>
+                          {task.title}
+                        </p>
+                      </td>
+                      <td className="py-3 px-4 max-w-xs">
+                        <Link
+                          href={`/activities`}
+                          className="inline-flex items-center gap-1 font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded hover:underline"
+                        >
+                          {task.activity_code} <ArrowUpRight className="w-3 h-3" />
+                        </Link>
+                        <p className="text-[11px] text-slate-500 truncate mt-0.5">{task.activity_title}</p>
+                      </td>
+                      <td className="py-3 px-4 whitespace-nowrap">
+                        <span className="flex items-center gap-1.5 text-slate-800 font-medium">
+                          <User className="w-3.5 h-3.5 text-slate-400" />
+                          {task.assignee_name || '—'}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 whitespace-nowrap">
+                        <Badge priority={task.priority} />
+                      </td>
+                      <td className="py-3 px-4 whitespace-nowrap">
+                        <span className={`flex items-center gap-1 font-medium ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
+                          <Calendar className="w-3.5 h-3.5" />
+                          {task.due_date}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 text-center whitespace-nowrap">
+                        <span className={`px-2 py-0.5 rounded text-[11px] font-semibold border ${
+                          task.status === 'termine'
+                            ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                            : isOverdue
+                            ? 'bg-rose-50 text-rose-800 border-rose-200'
+                            : 'bg-blue-50 text-blue-800 border-blue-200'
+                        }`}>
+                          {task.status === 'termine' ? 'Terminé' : isOverdue ? 'En retard' : 'En cours'}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
 };
+

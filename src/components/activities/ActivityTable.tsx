@@ -47,8 +47,48 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
     return 0;
   });
 
+  // Regroupement par service (ordre officiel DLVS, puis autres services)
+  const SERVICE_ORDER = [
+    'Direction (DLVS)',
+    'Service des Vigilances et des Produits de Santé (SVPS)',
+    'Service de la Surveillance du Marché (SSMUR)',
+    'Service des Licences (SL)',
+  ];
+  const groupsMap = new Map<string, Activity[]>();
+  sortedActivities.forEach(a => {
+    const key = a.department || 'Service non renseigné';
+    if (!groupsMap.has(key)) groupsMap.set(key, []);
+    groupsMap.get(key)!.push(a);
+  });
+  const groupedByService = Array.from(groupsMap.entries()).sort(([a], [b]) => {
+    const ia = SERVICE_ORDER.indexOf(a);
+    const ib = SERVICE_ORDER.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+      <div className="px-4 py-3 border-b border-slate-200 bg-slate-50/80 flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-4 rounded-full bg-blue-600" />
+          <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">Plan Opérationnel des Activités par Service (DLVS)</h3>
+          <span className="text-[11px] font-semibold text-blue-700 bg-blue-100/80 px-2 py-0.5 rounded-full">{activities.length} activité(s)</span>
+        </div>
+        <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+          <span className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-blue-500" />
+            {activities.filter(a => a.status === 'en_cours').length} en cours
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-rose-500" />
+            {activities.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length} en retard
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            {activities.filter(a => a.status === 'termine').length} terminées
+          </span>
+        </div>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full text-xs text-left text-slate-700">
           <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
@@ -97,7 +137,7 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-slate-100">
+          <tbody>
             {sortedActivities.length === 0 ? (
               <tr>
                 <td colSpan={9} className="py-12 text-center text-slate-400 text-sm">
@@ -105,7 +145,27 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
                 </td>
               </tr>
             ) : (
-              sortedActivities.map((act) => {
+              groupedByService.map(([service, items]) => {
+                const lateCount = items.filter(a => a.status === 'en_retard' || (a.status !== 'termine' && new Date(a.due_date).getTime() < Date.now())).length;
+                return (
+                <React.Fragment key={service}>
+                  <tr className="table-group-row">
+                    <td colSpan={9} className="py-2 px-4">
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center gap-2">
+                          <span className="w-1.5 h-4 rounded-full bg-blue-400" />
+                          {service}
+                        </span>
+                        <span className="flex items-center gap-2 text-[10px] font-semibold">
+                          <span className="px-2 py-0.5 rounded-full bg-white/15">{items.length} activité(s)</span>
+                          {lateCount > 0 && (
+                            <span className="px-2 py-0.5 rounded-full bg-rose-500 text-white">{lateCount} en retard</span>
+                          )}
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                {items.map((act) => {
                 const isOverdue = act.status === 'en_retard' || (act.status !== 'termine' && new Date(act.due_date).getTime() < Date.now());
                 return (
                   <tr
@@ -216,6 +276,9 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
                       </div>
                     </td>
                   </tr>
+                );
+              })}
+                </React.Fragment>
                 );
               })
             )}

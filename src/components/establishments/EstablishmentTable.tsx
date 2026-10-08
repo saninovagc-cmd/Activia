@@ -174,6 +174,27 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
 
       {/* Main Table */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div className="px-4 py-3 border-b border-slate-200 bg-slate-50/80 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-4 rounded-full bg-emerald-600" />
+            <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">Répertoire National des Établissements Pharmaceutiques</h3>
+            <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-full">{filtered.length} établissement(s)</span>
+          </div>
+          <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              {establishments.filter(e => e.status === 'Actif').length} actifs
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              {establishments.filter(e => e.status === 'En attente').length} en attente
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-rose-500" />
+              {establishments.filter(e => e.status === 'Suspendu' || e.status === 'Fermé').length} suspendus / fermés
+            </span>
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>

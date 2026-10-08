@@ -162,6 +162,27 @@ export const SignalTable: React.FC<SignalTableProps> = ({
 
       {/* Main Table */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div className="px-4 py-3 border-b border-slate-200 bg-slate-50/80 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-4 rounded-full bg-rose-600" />
+            <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">Registre National des Alertes & Vigilances Sanitaires</h3>
+            <span className="text-[11px] font-semibold text-rose-700 bg-rose-100/80 px-2 py-0.5 rounded-full">{filtered.length} signalement(s)</span>
+          </div>
+          <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-rose-500" />
+              {signals.filter(s => s.severity === 'Critique').length} critiques
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-orange-500" />
+              {signals.filter(s => s.severity === 'Grave').length} graves
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-purple-500" />
+              {signals.filter(s => s.sample_taken).length} échantillons prélevés
+            </span>
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>

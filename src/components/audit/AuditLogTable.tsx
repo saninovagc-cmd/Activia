@@ -113,6 +113,27 @@ export const AuditLogTable: React.FC = () => {
 
       {/* Logs Table */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+        <div className="px-4 py-3 border-b border-slate-200 bg-slate-50/80 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-4 rounded-full bg-slate-800" />
+            <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">Journal d’Audit & Traçabilité des Actions</h3>
+            <span className="text-[11px] font-semibold text-slate-700 bg-slate-200/80 px-2 py-0.5 rounded-full">{filteredLogs.length} entrée(s)</span>
+          </div>
+          <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              {filteredLogs.filter(l => l.action === 'CREATE').length} créations
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-blue-500" />
+              {filteredLogs.filter(l => l.action === 'UPDATE' || l.action === 'STATUS_CHANGE').length} modifications
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
+              {filteredLogs.filter(l => l.action === 'ASSIGN').length} affectations
+            </span>
+          </div>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left text-slate-700">
             <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">

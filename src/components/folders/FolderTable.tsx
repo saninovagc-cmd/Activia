@@ -11,8 +11,33 @@ interface FolderTableProps {
 }
 
 export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) => {
+  const enRetard = folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
+  const favorables = folders.filter(f => f.decision === 'Favorable').length;
+  const enCours = folders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length;
+
   return (
     <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+      <div className="px-4 py-3 border-b border-slate-200 bg-slate-50/80 flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-4 rounded-full bg-blue-600" />
+          <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">Registre des Dossiers d'Instruction Réglementaire</h3>
+          <span className="text-[11px] font-semibold text-blue-700 bg-blue-100/80 px-2 py-0.5 rounded-full">{folders.length} dossier(s)</span>
+        </div>
+        <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+          <span className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-blue-500" />
+            {enCours} en instruction
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-rose-500" />
+            {enRetard} hors SLA
+          </span>
+          <span className="flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            {favorables} avis favorables
+          </span>
+        </div>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full text-xs text-left text-slate-700">
           <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
