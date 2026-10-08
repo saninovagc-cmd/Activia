@@ -36,7 +36,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       title: 'PILOTAGE',
       items: [
         { name: 'Tableau de Bord Général', href: '/dashboard' },
-        { name: 'Dashboard Chef de Service', href: '/dashboard?view=service' },
+        { name: 'Dashboard Chef de Service', href: '/dashboard/service' },
         { name: 'Rapports & Statistiques', href: '/reporting' },
       ],
     },
@@ -84,7 +84,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
   // Detect which section matches the active path
   const getActiveSectionId = (path: string): string => {
-    if (path === '/dashboard' || path.startsWith('/reporting')) return 'pilotage';
+    if (path.startsWith('/dashboard') || path.startsWith('/reporting')) return 'pilotage';
     if (path.startsWith('/activities') || path.startsWith('/tasks') || path.startsWith('/calendar')) return 'operationnel';
     if (path.startsWith('/mail') || path.startsWith('/folders') || path.startsWith('/documents')) return 'administratif';
     if (path.startsWith('/establishments') || path.startsWith('/signals') || path.startsWith('/trainings')) return 'metiers';
@@ -218,7 +218,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 {isSectionOpen && (
                   <div className="px-2 pt-1 pb-2 space-y-0.5 border-t border-slate-800/80 bg-[#080d19]/60">
                     {section.items.map((item) => {
-                      const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href));
+                      const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href + '/'));
                       return (
                         <Link
                           key={item.href}

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, Suspense } from 'react';
+import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { StatCard } from '@/components/dashboard/StatCard';
@@ -28,8 +29,23 @@ import {
 function DashboardContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const initialView = searchParams.get('view') === 'service' ? 'service' : 'general';
-  const [viewMode, setViewMode] = useState<'general' | 'service'>(initialView);
+  const viewParam = searchParams.get('view');
+  const [viewMode, setViewMode] = useState<'general' | 'service'>(
+    viewParam === 'service' ? 'service' : 'general'
+  );
+
+  React.useEffect(() => {
+    setViewMode(viewParam === 'service' ? 'service' : 'general');
+  }, [viewParam]);
+
+  const switchView = (mode: 'general' | 'service') => {
+    setViewMode(mode);
+    if (mode === 'service') {
+      router.push('/dashboard?view=service');
+    } else {
+      router.push('/dashboard');
+    }
+  };
 
   const { stats, currentUser } = useApp();
 
@@ -50,8 +66,8 @@ function DashboardContent() {
           <div className="flex items-center gap-2">
             <div className="bg-slate-200/80 p-1 rounded-xl flex items-center gap-1 text-xs">
               <button
-                onClick={() => setViewMode('general')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
+                onClick={() => switchView('general')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all cursor-pointer ${
                   viewMode === 'general'
                     ? 'bg-white text-slate-900 shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
@@ -60,17 +76,13 @@ function DashboardContent() {
                 <LayoutDashboard className="w-3.5 h-3.5" />
                 Vue Générale
               </button>
-              <button
-                onClick={() => setViewMode('service')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
-                  viewMode === 'service'
-                    ? 'bg-emerald-700 text-white shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+              <Link
+                href="/dashboard/service"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all text-slate-600 hover:text-slate-900 cursor-pointer"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
                 Vue Chef de Service
-              </button>
+              </Link>
             </div>
 
             <button
