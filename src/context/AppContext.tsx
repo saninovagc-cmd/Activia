@@ -40,11 +40,43 @@ import {
   INITIAL_ALERTS,
   INITIAL_TRAININGS
 } from '@/lib/mockData';
+import {
+  loadAllDataFromDatabase,
+  dbSaveActivity,
+  dbUpdateActivity,
+  dbDeleteActivity,
+  dbSaveTask,
+  dbUpdateTask,
+  dbAddActivityComment,
+  dbSaveIncomingMail,
+  dbUpdateIncomingMail,
+  dbSaveOutgoingMail,
+  dbUpdateOutgoingMail,
+  dbSaveFolder,
+  dbUpdateFolder,
+  dbSaveDocument,
+  dbDeleteDocument,
+  dbSaveEstablishment,
+  dbUpdateEstablishment,
+  dbSaveSignal,
+  dbUpdateSignal,
+  dbSaveTraining,
+  dbUpdateTraining,
+  dbSaveAlert,
+  dbUpdateAlert,
+  dbSaveAuditLog,
+  ensureUuid,
+  generateUuid,
+  USER_ID_MAP
+} from '@/lib/dbService';
 
 interface AppContextType {
   currentUser: UserProfile;
   allUsers: UserProfile[];
   isAuthenticated: boolean;
+  isDbConnected: boolean;
+  isSyncing: boolean;
+  refreshFromDatabase: () => Promise<void>;
   switchUser: (userId: string) => void;
   login: (identifier: string, pass: string) => { success: boolean; message?: string; user?: UserProfile };
   logout: () => void;
@@ -133,6 +165,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [notifications, setNotifications] = useState<NotificationItem[]>(INITIAL_NOTIFICATIONS);
   const [auditLogs, setAuditLogs] = useState<AuditLogItem[]>(INITIAL_AUDIT_LOGS);
   const [toast, setToast] = useState<{ id: string; message: string; type: 'success' | 'info' | 'warning' | 'error' } | null>(null);
+  const [isDbConnected, setIsDbConnected] = useState<boolean>(true);
+  const [isSyncing, setIsSyncing] = useState<boolean>(false);
+  const isInitializedRef = React.useRef(false);
 
   const showToast = (arg1: string, arg2?: 'success' | 'info' | 'warning' | 'error' | string) => {
     const validTypes = ['success', 'info', 'warning', 'error'] as const;
@@ -157,27 +192,75 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const hideToast = () => setToast(null);
 
-  const DATA_VERSION = '2026.10.dlvs.auth.v2';
+  // Synchronisation avec la base de données Supabase
+  const refreshFromDatabase = async () => {
+    setIsSyncing(true);
+    try {
+      const res = await loadAllDataFromDatabase();
+      if (res.success && res.data) {
+        setIsDbConnected(true);
+        if (res.data.activities && res.data.activities.length > 0) {
+          setActivities(res.data.activities);
+        }
+        if (res.data.incomingMails && res.data.incomingMails.length > 0) {
+          setIncomingMails(res.data.incomingMails);
+        }
+        if (res.data.outgoingMails && res.data.outgoingMails.length > 0) {
+          setOutgoingMails(res.data.outgoingMails);
+        }
+        if (res.data.folders && res.data.folders.length > 0) {
+          setFolders(res.data.folders);
+        }
+        if (res.data.documents && res.data.documents.length > 0) {
+          setDocuments(res.data.documents);
+        }
+        if (res.data.establishments && res.data.establishments.length > 0) {
+          setEstablishments(res.data.establishments);
+        }
+        if (res.data.signals && res.data.signals.length > 0) {
+          setSignals(res.data.signals);
+        }
+        if (res.data.trainings && res.data.trainings.length > 0) {
+          setTrainings(res.data.trainings);
+        }
+        if (res.data.alerts && res.data.alerts.length > 0) {
+          setAlerts(res.data.alerts);
+        }
+        if (res.data.auditLogs && res.data.auditLogs.length > 0) {
+          setAuditLogs(res.data.auditLogs);
+        }
+        if (res.data.notifications && res.data.notifications.length > 0) {
+          setNotifications(res.data.notifications);
+        }
+      }
+    } catch (e) {
+      console.warn('Erreur synchronisation Supabase:', e);
+      setIsDbConnected(false);
+    } finally {
+      setIsSyncing(false);
+    }
+  };
 
-  // Load from localStorage on mount with version validation
+  // Chargement initial au montage : LocalStorage instantané puis rafraîchissement Supabase
   useEffect(() => {
     try {
-      const storedVersion = localStorage.getItem('activia_data_version');
-      if (storedVersion !== DATA_VERSION) {
-        localStorage.clear();
-        localStorage.setItem('activia_data_version', DATA_VERSION);
-        setAllUsers(INITIAL_USERS);
-        setCurrentUser(INITIAL_USERS[0]);
-        setIsAuthenticated(true);
-        return;
-      }
-
+      // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc
       const storedUsers = localStorage.getItem('activia_users');
+      let currentUsersList = INITIAL_USERS;
       if (storedUsers) {
-        const parsed = JSON.parse(storedUsers);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setAllUsers(parsed);
-        }
+        try {
+          const parsed = JSON.parse(storedUsers);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            // Migrer les anciens identifiants 'usr-00X' vers les UUIDs officiels Supabase
+            const migrated = parsed.map((u: UserProfile) => {
+              const matchedId = USER_ID_MAP[u.id] || u.id;
+              const official = INITIAL_USERS.find(iu => iu.id === matchedId || iu.email === u.email);
+              return official || { ...u, id: matchedId };
+            });
+            currentUsersList = migrated;
+            setAllUsers(migrated);
+          }
+        } catch {}
       }
 
       const storedAuth = localStorage.getItem('activia_is_authenticated');
@@ -187,50 +270,154 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
       const storedUser = localStorage.getItem('activia_current_user');
       if (storedUser) {
-        const parsed = JSON.parse(storedUser);
-        const match = (storedUsers ? JSON.parse(storedUsers) : INITIAL_USERS).find((u: UserProfile) => u.id === parsed.id);
-        if (match) setCurrentUser(match);
+        try {
+          const parsed = JSON.parse(storedUser);
+          const matchedId = USER_ID_MAP[parsed.id] || parsed.id;
+          const match = currentUsersList.find((u: UserProfile) => u.id === matchedId || u.email === parsed.email);
+          if (match) setCurrentUser(match);
+        } catch {}
       }
 
       const storedActivities = localStorage.getItem('activia_activities');
-      if (storedActivities) setActivities(JSON.parse(storedActivities));
+      if (storedActivities) {
+        try {
+          const parsed = JSON.parse(storedActivities);
+          if (Array.isArray(parsed) && parsed.length > 0) setActivities(parsed);
+        } catch {}
+      }
 
       const storedMailsIn = localStorage.getItem('activia_incoming_mails');
-      if (storedMailsIn) setIncomingMails(JSON.parse(storedMailsIn));
+      if (storedMailsIn) {
+        try {
+          const parsed = JSON.parse(storedMailsIn);
+          if (Array.isArray(parsed)) setIncomingMails(parsed);
+        } catch {}
+      }
 
       const storedMailsOut = localStorage.getItem('activia_outgoing_mails');
-      if (storedMailsOut) setOutgoingMails(JSON.parse(storedMailsOut));
+      if (storedMailsOut) {
+        try {
+          const parsed = JSON.parse(storedMailsOut);
+          if (Array.isArray(parsed)) setOutgoingMails(parsed);
+        } catch {}
+      }
 
       const storedFolders = localStorage.getItem('activia_folders');
-      if (storedFolders) setFolders(JSON.parse(storedFolders));
+      if (storedFolders) {
+        try {
+          const parsed = JSON.parse(storedFolders);
+          if (Array.isArray(parsed)) setFolders(parsed);
+        } catch {}
+      }
 
       const storedDocs = localStorage.getItem('activia_documents');
-      if (storedDocs) setDocuments(JSON.parse(storedDocs));
+      if (storedDocs) {
+        try {
+          const parsed = JSON.parse(storedDocs);
+          if (Array.isArray(parsed)) setDocuments(parsed);
+        } catch {}
+      }
 
       const storedEtabs = localStorage.getItem('activia_establishments');
-      if (storedEtabs) setEstablishments(JSON.parse(storedEtabs));
+      if (storedEtabs) {
+        try {
+          const parsed = JSON.parse(storedEtabs);
+          if (Array.isArray(parsed)) setEstablishments(parsed);
+        } catch {}
+      }
 
       const storedSignals = localStorage.getItem('activia_signals');
-      if (storedSignals) setSignals(JSON.parse(storedSignals));
+      if (storedSignals) {
+        try {
+          const parsed = JSON.parse(storedSignals);
+          if (Array.isArray(parsed)) setSignals(parsed);
+        } catch {}
+      }
 
       const storedTrainings = localStorage.getItem('activia_trainings');
-      if (storedTrainings) setTrainings(JSON.parse(storedTrainings));
+      if (storedTrainings) {
+        try {
+          const parsed = JSON.parse(storedTrainings);
+          if (Array.isArray(parsed)) setTrainings(parsed);
+        } catch {}
+      }
 
       const storedAlerts = localStorage.getItem('activia_alerts');
-      if (storedAlerts) setAlerts(JSON.parse(storedAlerts));
+      if (storedAlerts) {
+        try {
+          const parsed = JSON.parse(storedAlerts);
+          if (Array.isArray(parsed)) setAlerts(parsed);
+        } catch {}
+      }
 
       const storedLogs = localStorage.getItem('activia_audit_logs');
-      if (storedLogs) setAuditLogs(JSON.parse(storedLogs));
+      if (storedLogs) {
+        try {
+          const parsed = JSON.parse(storedLogs);
+          if (Array.isArray(parsed)) setAuditLogs(parsed);
+        } catch {}
+      }
 
       const storedNotifs = localStorage.getItem('activia_notifications');
-      if (storedNotifs) setNotifications(JSON.parse(storedNotifs));
+      if (storedNotifs) {
+        try {
+          const parsed = JSON.parse(storedNotifs);
+          if (Array.isArray(parsed)) setNotifications(parsed);
+        } catch {}
+      }
     } catch (e) {
-      console.warn('LocalStorage not available or parse error', e);
+      console.warn('Erreur lecture LocalStorage initiale', e);
     }
+
+    // 2. Chargement de la source de vérité depuis la base de données Supabase
+    setIsSyncing(true);
+    loadAllDataFromDatabase()
+      .then(res => {
+        if (res.success && res.data) {
+          setIsDbConnected(true);
+          // Si Supabase contient des activités, elles priment
+          if (res.data.activities && res.data.activities.length > 0) {
+            setActivities(res.data.activities);
+          } else {
+            // Si la BDD est encore vide mais que l'utilisateur avait déjà saisi une activité en local
+            const localActsRaw = localStorage.getItem('activia_activities');
+            if (localActsRaw) {
+              try {
+                const localActs = JSON.parse(localActsRaw);
+                if (Array.isArray(localActs) && localActs.length > 0) {
+                  localActs.forEach(act => dbSaveActivity(act));
+                }
+              } catch {}
+            }
+          }
+
+          if (res.data.incomingMails && res.data.incomingMails.length > 0) setIncomingMails(res.data.incomingMails);
+          if (res.data.outgoingMails && res.data.outgoingMails.length > 0) setOutgoingMails(res.data.outgoingMails);
+          if (res.data.folders && res.data.folders.length > 0) setFolders(res.data.folders);
+          if (res.data.documents && res.data.documents.length > 0) setDocuments(res.data.documents);
+          if (res.data.establishments && res.data.establishments.length > 0) setEstablishments(res.data.establishments);
+          if (res.data.signals && res.data.signals.length > 0) setSignals(res.data.signals);
+          if (res.data.trainings && res.data.trainings.length > 0) setTrainings(res.data.trainings);
+          if (res.data.alerts && res.data.alerts.length > 0) setAlerts(res.data.alerts);
+          if (res.data.auditLogs && res.data.auditLogs.length > 0) setAuditLogs(res.data.auditLogs);
+          if (res.data.notifications && res.data.notifications.length > 0) setNotifications(res.data.notifications);
+        } else {
+          setIsDbConnected(false);
+        }
+      })
+      .catch(err => {
+        console.warn('Erreur chargement Supabase initial:', err);
+        setIsDbConnected(false);
+      })
+      .finally(() => {
+        setIsSyncing(false);
+        isInitializedRef.current = true;
+      });
   }, []);
 
-  // Save to localStorage when state changes
+  // Sauvegarde sécurisée dans LocalStorage (uniquement après initialisation réussie)
   useEffect(() => {
+    if (!isInitializedRef.current) return;
     try {
       localStorage.setItem('activia_users', JSON.stringify(allUsers));
       localStorage.setItem('activia_is_authenticated', String(isAuthenticated));
@@ -247,7 +434,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.setItem('activia_audit_logs', JSON.stringify(auditLogs));
       localStorage.setItem('activia_notifications', JSON.stringify(notifications));
     } catch (e) {
-      console.warn('LocalStorage write error', e);
+      console.warn('Erreur écriture LocalStorage', e);
     }
   }, [allUsers, isAuthenticated, currentUser, activities, incomingMails, outgoingMails, folders, documents, establishments, signals, trainings, alerts, auditLogs, notifications]);
 
@@ -415,13 +602,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   // ==========================================
-  // ACTIVITÉS & TÂCHES
+  // ACTIVITÉS & TÂCHES (PERSISTANCE DIRECTE BDD SUPABASE)
   // ==========================================
 
   const addActivity = (data: Partial<Activity>): Activity => {
+    const newId = generateUuid();
     const newCode = `ACT-2026-${String(activities.length + 101).padStart(4, '0')}`;
     const newActivity: Activity = {
-      id: `act-${Date.now()}`,
+      id: newId,
       code: newCode,
       title: data.title || 'Nouvelle activité',
       description: data.description || '',
@@ -443,10 +631,25 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16),
     };
 
-    setActivities(prev => [newActivity, ...prev]);
+    // 1. Mise à jour instantanée du state React
+    setActivities(prev => {
+      const updated = [newActivity, ...prev];
+      // Sécurité locale immédiate
+      try { localStorage.setItem('activia_activities', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    // 2. Persistance directe dans la base de données Supabase
+    dbSaveActivity(newActivity).then(success => {
+      if (success) {
+        showToast('Activité enregistrée avec succès dans la base de données', 'success');
+      } else {
+        console.warn('Sauvegarde BDD en attente de reconnexion, conservée en local.');
+      }
+    });
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -459,10 +662,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(prev => [log, ...prev]);
+    dbSaveAuditLog(log);
 
     if (newActivity.manager_id !== currentUser.id) {
       const notif: NotificationItem = {
-        id: `notif-${Date.now()}`,
+        id: generateUuid(),
         user_id: newActivity.manager_id,
         title: 'Nouvelle activité assignée',
         message: `Vous êtes responsable de l'activité ${newCode}: ${newActivity.title}`,
@@ -478,79 +682,109 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const updateActivity = (id: string, updates: Partial<Activity>) => {
-    setActivities(prev => prev.map(act => {
-      if (act.id === id) {
-        const updated = {
-          ...act,
-          ...updates,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        const log: AuditLogItem = {
-          id: `log-${Date.now()}`,
-          user_id: currentUser.id,
-          user_name: currentUser.full_name,
-          user_role: currentUser.role_label,
-          action: 'UPDATE',
-          module: 'Activités',
-          entity_type: 'activity',
-          entity_id: act.code,
-          entity_name: act.title,
-          details: `Modification des paramètres de l'activité ${act.code}`,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setAuditLogs(logs => [log, ...logs]);
-        return updated;
-      }
-      return act;
-    }));
+    setActivities(prev => {
+      const updatedList = prev.map(act => {
+        if (act.id === id) {
+          const updated = {
+            ...act,
+            ...updates,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          const log: AuditLogItem = {
+            id: generateUuid(),
+            user_id: currentUser.id,
+            user_name: currentUser.full_name,
+            user_role: currentUser.role_label,
+            action: 'UPDATE',
+            module: 'Activités',
+            entity_type: 'activity',
+            entity_id: act.code,
+            entity_name: act.title,
+            details: `Modification des paramètres de l'activité ${act.code}`,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setAuditLogs(logs => [log, ...logs]);
+          dbSaveAuditLog(log);
+          return updated;
+        }
+        return act;
+      });
+      try { localStorage.setItem('activia_activities', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    // Persistance directe dans Supabase
+    dbUpdateActivity(id, updates);
   };
 
   const updateActivityStatus = (id: string, newStatus: ActivityStatus) => {
-    setActivities(prev => prev.map(act => {
-      if (act.id === id) {
-        const oldStatus = act.status;
-        const progress = newStatus === 'termine' ? 100 : (oldStatus === 'termine' ? 50 : act.progress_percentage);
-        const completed_at = newStatus === 'termine' ? new Date().toISOString().split('T')[0] : undefined;
+    let completed_at: string | undefined = undefined;
+    let progress = 0;
 
-        const updated = {
-          ...act,
-          status: newStatus,
-          progress_percentage: progress,
-          completed_at,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
+    setActivities(prev => {
+      const updatedList = prev.map(act => {
+        if (act.id === id) {
+          const oldStatus = act.status;
+          progress = newStatus === 'termine' ? 100 : (oldStatus === 'termine' ? 50 : act.progress_percentage);
+          completed_at = newStatus === 'termine' ? new Date().toISOString().split('T')[0] : undefined;
 
-        const log: AuditLogItem = {
-          id: `log-${Date.now()}`,
-          user_id: currentUser.id,
-          user_name: currentUser.full_name,
-          user_role: currentUser.role_label,
-          action: 'STATUS_CHANGE',
-          module: 'Activités',
-          entity_type: 'activity',
-          entity_id: act.code,
-          entity_name: act.title,
-          details: `Passage du statut de "${oldStatus}" à "${newStatus}"`,
-          old_value: oldStatus,
-          new_value: newStatus,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setAuditLogs(logs => [log, ...logs]);
+          const updated = {
+            ...act,
+            status: newStatus,
+            progress_percentage: progress,
+            completed_at,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
 
-        return updated;
-      }
-      return act;
-    }));
+          const log: AuditLogItem = {
+            id: generateUuid(),
+            user_id: currentUser.id,
+            user_name: currentUser.full_name,
+            user_role: currentUser.role_label,
+            action: 'STATUS_CHANGE',
+            module: 'Activités',
+            entity_type: 'activity',
+            entity_id: act.code,
+            entity_name: act.title,
+            details: `Passage du statut de "${oldStatus}" à "${newStatus}"`,
+            old_value: oldStatus,
+            new_value: newStatus,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setAuditLogs(logs => [log, ...logs]);
+          dbSaveAuditLog(log);
+
+          return updated;
+        }
+        return act;
+      });
+      try { localStorage.setItem('activia_activities', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    // Persistance directe dans Supabase
+    dbUpdateActivity(id, {
+      status: newStatus,
+      progress_percentage: progress,
+      completed_at,
+    });
   };
 
   const deleteActivity = (id: string) => {
     const toDelete = activities.find(a => a.id === id);
     if (!toDelete) return;
 
-    setActivities(prev => prev.filter(a => a.id !== id));
+    setActivities(prev => {
+      const updatedList = prev.filter(a => a.id !== id);
+      try { localStorage.setItem('activia_activities', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    // Persistance directe suppression Supabase
+    dbDeleteActivity(id);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -563,12 +797,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
   };
 
   const addTask = (data: Partial<Task>) => {
     if (!data.activity_id) return;
     const newTask: Task = {
-      id: `tsk-${Date.now()}`,
+      id: generateUuid(),
       activity_id: data.activity_id,
       title: data.title || 'Nouvelle tâche',
       description: data.description || '',
@@ -580,18 +815,25 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().split('T')[0]
     };
 
-    setActivities(prev => prev.map(act => {
-      if (act.id === data.activity_id) {
-        return {
-          ...act,
-          tasks: [...(act.tasks || []), newTask]
-        };
-      }
-      return act;
-    }));
+    setActivities(prev => {
+      const updatedList = prev.map(act => {
+        if (act.id === data.activity_id) {
+          return {
+            ...act,
+            tasks: [...(act.tasks || []), newTask]
+          };
+        }
+        return act;
+      });
+      try { localStorage.setItem('activia_activities', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    // Persistance directe dans Supabase table 'tasks'
+    dbSaveTask(newTask);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -604,40 +846,57 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
   };
 
   const updateTaskStatus = (taskId: string, newStatus: 'a_faire' | 'en_cours' | 'termine' | 'en_retard') => {
     let affectedTask: Task | undefined;
-    setActivities(prev => prev.map(act => {
-      const hasTask = act.tasks.some(t => t.id === taskId);
-      if (!hasTask) return act;
+    let completedAt: string | undefined = undefined;
 
-      const updatedTasks = act.tasks.map(t => {
-        if (t.id === taskId) {
-          affectedTask = t;
-          return {
-            ...t,
-            status: newStatus,
-            completed_at: newStatus === 'termine' ? new Date().toISOString().split('T')[0] : undefined
-          };
-        }
-        return t;
+    setActivities(prev => {
+      const updatedList = prev.map(act => {
+        const hasTask = act.tasks.some(t => t.id === taskId);
+        if (!hasTask) return act;
+
+        const updatedTasks = act.tasks.map(t => {
+          if (t.id === taskId) {
+            completedAt = newStatus === 'termine' ? new Date().toISOString().split('T')[0] : undefined;
+            affectedTask = {
+              ...t,
+              status: newStatus,
+              completed_at: completedAt
+            };
+            return affectedTask;
+          }
+          return t;
+        });
+
+        const total = updatedTasks.length;
+        const completed = updatedTasks.filter(t => t.status === 'termine').length;
+        const progress = total > 0 ? Math.round((completed / total) * 100) : act.progress_percentage;
+
+        // Mise à jour de la progression de l'activité en BDD également
+        dbUpdateActivity(act.id, { progress_percentage: progress });
+
+        return {
+          ...act,
+          tasks: updatedTasks,
+          progress_percentage: progress
+        };
       });
+      try { localStorage.setItem('activia_activities', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
 
-      const total = updatedTasks.length;
-      const completed = updatedTasks.filter(t => t.status === 'termine').length;
-      const progress = total > 0 ? Math.round((completed / total) * 100) : act.progress_percentage;
-
-      return {
-        ...act,
-        tasks: updatedTasks,
-        progress_percentage: progress
-      };
-    }));
+    // Persistance directe dans Supabase table 'tasks'
+    dbUpdateTask(taskId, {
+      status: newStatus,
+      completed_at: completedAt
+    });
 
     if (affectedTask) {
       const log: AuditLogItem = {
-        id: `log-${Date.now()}`,
+        id: generateUuid(),
         user_id: currentUser.id,
         user_name: currentUser.full_name,
         user_role: currentUser.role_label,
@@ -647,17 +906,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         entity_id: taskId,
         entity_name: affectedTask.title,
         details: `Statut de la tâche passé à "${newStatus}"`,
-        old_value: affectedTask.status,
+        old_value: (affectedTask as any).old_status || 'a_faire',
         new_value: newStatus,
         created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
       };
       setAuditLogs(logs => [log, ...logs]);
+      dbSaveAuditLog(log);
     }
   };
 
   const addCommentToActivity = (activityId: string, commentText: string) => {
     const newComment = {
-      id: `com-${Date.now()}`,
+      id: generateUuid(),
       author_id: currentUser.id,
       author_name: currentUser.full_name,
       author_role: currentUser.role_label,
@@ -665,25 +925,32 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
 
-    setActivities(prev => prev.map(act => {
-      if (act.id === activityId) {
-        return {
-          ...act,
-          comments: [...(act.comments || []), newComment]
-        };
-      }
-      return act;
-    }));
+    setActivities(prev => {
+      const updatedList = prev.map(act => {
+        if (act.id === activityId) {
+          return {
+            ...act,
+            comments: [...(act.comments || []), newComment]
+          };
+        }
+        return act;
+      });
+      try { localStorage.setItem('activia_activities', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    // Persistance directe dans Supabase table 'activity_comments'
+    dbAddActivityComment(activityId, newComment);
   };
 
   // ==========================================
-  // COURRIERS (PHASE 2)
+  // COURRIERS (PERSISTANCE DIRECTE BDD SUPABASE)
   // ==========================================
 
   const addIncomingMail = (data: Partial<IncomingMail>): IncomingMail => {
     const nextNum = `ARR-2026-${String(incomingMails.length + 897).padStart(4, '0')}`;
     const newMail: IncomingMail = {
-      id: `in-${Date.now()}`,
+      id: generateUuid(),
       register_number: nextNum,
       receipt_date: data.receipt_date || new Date().toISOString().split('T')[0],
       reference: data.reference || 'REF-EXTERNE',
@@ -705,10 +972,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
 
-    setIncomingMails(prev => [newMail, ...prev]);
+    setIncomingMails(prev => {
+      const updated = [newMail, ...prev];
+      try { localStorage.setItem('activia_incoming_mails', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    // Sauvegarde directe BDD Supabase
+    dbSaveIncomingMail(newMail);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -721,93 +995,112 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
 
     return newMail;
   };
 
   const updateIncomingMailStatus = (id: string, newStatus: IncomingMailStatus) => {
-    setIncomingMails(prev => prev.map(m => {
-      if (m.id === id) {
-        const oldStatus = m.status;
-        const updated = {
-          ...m,
-          status: newStatus,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        const log: AuditLogItem = {
-          id: `log-${Date.now()}`,
-          user_id: currentUser.id,
-          user_name: currentUser.full_name,
-          user_role: currentUser.role_label,
-          action: 'STATUS_CHANGE',
-          module: 'Courriers',
-          entity_type: 'mail',
-          entity_id: m.register_number,
-          entity_name: m.subject,
-          details: `Changement du statut courrier de "${oldStatus}" à "${newStatus}"`,
-          old_value: oldStatus,
-          new_value: newStatus,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setAuditLogs(logs => [log, ...logs]);
-        return updated;
-      }
-      return m;
-    }));
+    setIncomingMails(prev => {
+      const updatedList = prev.map(m => {
+        if (m.id === id) {
+          const oldStatus = m.status;
+          const updated = {
+            ...m,
+            status: newStatus,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          const log: AuditLogItem = {
+            id: generateUuid(),
+            user_id: currentUser.id,
+            user_name: currentUser.full_name,
+            user_role: currentUser.role_label,
+            action: 'STATUS_CHANGE',
+            module: 'Courriers',
+            entity_type: 'mail',
+            entity_id: m.register_number,
+            entity_name: m.subject,
+            details: `Changement du statut courrier de "${oldStatus}" à "${newStatus}"`,
+            old_value: oldStatus,
+            new_value: newStatus,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setAuditLogs(logs => [log, ...logs]);
+          dbSaveAuditLog(log);
+          return updated;
+        }
+        return m;
+      });
+      try { localStorage.setItem('activia_incoming_mails', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    dbUpdateIncomingMail(id, { status: newStatus });
   };
 
   const assignIncomingMail = (id: string, managerId: string) => {
     const manager = allUsers.find(u => u.id === managerId);
     if (!manager) return;
 
-    setIncomingMails(prev => prev.map(m => {
-      if (m.id === id) {
-        const updated = {
-          ...m,
-          manager_id: manager.id,
-          manager_name: manager.full_name,
-          status: 'traitement' as IncomingMailStatus,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
+    setIncomingMails(prev => {
+      const updatedList = prev.map(m => {
+        if (m.id === id) {
+          const updated = {
+            ...m,
+            manager_id: manager.id,
+            manager_name: manager.full_name,
+            status: 'traitement' as IncomingMailStatus,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
 
-        const log: AuditLogItem = {
-          id: `log-${Date.now()}`,
-          user_id: currentUser.id,
-          user_name: currentUser.full_name,
-          user_role: currentUser.role_label,
-          action: 'ASSIGN',
-          module: 'Courriers',
-          entity_type: 'mail',
-          entity_id: m.register_number,
-          entity_name: m.subject,
-          details: `Courrier affecté à ${manager.full_name} (${manager.title})`,
-          new_value: manager.full_name,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setAuditLogs(logs => [log, ...logs]);
+          const log: AuditLogItem = {
+            id: generateUuid(),
+            user_id: currentUser.id,
+            user_name: currentUser.full_name,
+            user_role: currentUser.role_label,
+            action: 'ASSIGN',
+            module: 'Courriers',
+            entity_type: 'mail',
+            entity_id: m.register_number,
+            entity_name: m.subject,
+            details: `Courrier affecté à ${manager.full_name} (${manager.title})`,
+            new_value: manager.full_name,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setAuditLogs(logs => [log, ...logs]);
+          dbSaveAuditLog(log);
 
-        const notif: NotificationItem = {
-          id: `notif-${Date.now()}`,
-          user_id: manager.id,
-          title: 'Courrier officiel affecté',
-          message: `Le courrier ${m.register_number} vous a été assigné pour instruction.`,
-          type: 'assignment',
-          link: '/mail',
-          is_read: false,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setNotifications(notifs => [notif, ...notifs]);
+          const notif: NotificationItem = {
+            id: generateUuid(),
+            user_id: manager.id,
+            title: 'Courrier officiel affecté',
+            message: `Le courrier ${m.register_number} vous a été assigné pour instruction.`,
+            type: 'assignment',
+            link: '/mail',
+            is_read: false,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setNotifications(notifs => [notif, ...notifs]);
 
-        return updated;
-      }
-      return m;
-    }));
+          return updated;
+        }
+        return m;
+      });
+      try { localStorage.setItem('activia_incoming_mails', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    dbUpdateIncomingMail(id, {
+      manager_id: manager.id,
+      manager_name: manager.full_name,
+      status: 'traitement' as IncomingMailStatus,
+    });
   };
 
   const addOutgoingMail = (data: Partial<OutgoingMail>): OutgoingMail => {
     const nextNum = `DEP-2026-${String(outgoingMails.length + 414).padStart(4, '0')}`;
     const newMail: OutgoingMail = {
-      id: `out-${Date.now()}`,
+      id: generateUuid(),
       mail_number: nextNum,
       send_date: data.send_date || new Date().toISOString().split('T')[0],
       reference: data.reference || `ACT-REF/${nextNum}`,
@@ -823,10 +1116,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
 
-    setOutgoingMails(prev => [newMail, ...prev]);
+    setOutgoingMails(prev => {
+      const updated = [newMail, ...prev];
+      try { localStorage.setItem('activia_outgoing_mails', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbSaveOutgoingMail(newMail);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -839,24 +1138,22 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
 
     return newMail;
   };
 
   const updateOutgoingMailStatus = (id: string, newStatus: OutgoingMailStatus) => {
-    setOutgoingMails(prev => prev.map(m => {
-      if (m.id === id) {
-        return {
-          ...m,
-          status: newStatus
-        };
-      }
-      return m;
-    }));
+    setOutgoingMails(prev => {
+      const updated = prev.map(m => m.id === id ? { ...m, status: newStatus } : m);
+      try { localStorage.setItem('activia_outgoing_mails', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+    dbUpdateOutgoingMail(id, { status: newStatus });
   };
 
   // ==========================================
-  // DOSSIERS & DEMANDES (PHASE 2)
+  // DOSSIERS & DEMANDES (PERSISTANCE DIRECTE BDD SUPABASE)
   // ==========================================
 
   const addFolder = (data: Partial<Folder>): Folder => {
@@ -864,7 +1161,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const manager = allUsers.find(u => u.id === data.manager_id) || currentUser;
 
     const newFolder: Folder = {
-      id: `fol-${Date.now()}`,
+      id: generateUuid(),
       folder_number: nextNum,
       folder_type: data.folder_type || 'Autorisation d’achat',
       applicant: data.applicant || 'Demandeur non spécifié',
@@ -884,10 +1181,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
 
-    setFolders(prev => [newFolder, ...prev]);
+    setFolders(prev => {
+      const updated = [newFolder, ...prev];
+      try { localStorage.setItem('activia_folders', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbSaveFolder(newFolder);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -900,36 +1203,44 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
 
     return newFolder;
   };
 
   const updateFolder = (id: string, updates: Partial<Folder>) => {
-    setFolders(prev => prev.map(f => {
-      if (f.id === id) {
-        const updated = {
-          ...f,
-          ...updates,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        const log: AuditLogItem = {
-          id: `log-${Date.now()}`,
-          user_id: currentUser.id,
-          user_name: currentUser.full_name,
-          user_role: currentUser.role_label,
-          action: 'UPDATE',
-          module: 'Dossiers',
-          entity_type: 'folder',
-          entity_id: f.folder_number,
-          entity_name: f.structure,
-          details: `Mise à jour du dossier ${f.folder_number}`,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setAuditLogs(logs => [log, ...logs]);
-        return updated;
-      }
-      return f;
-    }));
+    setFolders(prev => {
+      const updatedList = prev.map(f => {
+        if (f.id === id) {
+          const updated = {
+            ...f,
+            ...updates,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          const log: AuditLogItem = {
+            id: generateUuid(),
+            user_id: currentUser.id,
+            user_name: currentUser.full_name,
+            user_role: currentUser.role_label,
+            action: 'UPDATE',
+            module: 'Dossiers',
+            entity_type: 'folder',
+            entity_id: f.folder_number,
+            entity_name: f.structure,
+            details: `Mise à jour du dossier ${f.folder_number}`,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setAuditLogs(logs => [log, ...logs]);
+          dbSaveAuditLog(log);
+          return updated;
+        }
+        return f;
+      });
+      try { localStorage.setItem('activia_folders', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    dbUpdateFolder(id, updates);
   };
 
   const updateFolderStatus = (id: string, newStatus: FolderStatus) => {
@@ -937,37 +1248,47 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const idx = steps.indexOf(newStatus);
     const progress = idx >= 0 ? Math.round(((idx + 1) / steps.length) * 100) : 50;
 
-    setFolders(prev => prev.map(f => {
-      if (f.id === id) {
-        const oldStatus = f.status;
-        const updated = {
-          ...f,
-          status: newStatus,
-          progress_percentage: progress,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
+    setFolders(prev => {
+      const updatedList = prev.map(f => {
+        if (f.id === id) {
+          const oldStatus = f.status;
+          const updated = {
+            ...f,
+            status: newStatus,
+            progress_percentage: progress,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
 
-        const log: AuditLogItem = {
-          id: `log-${Date.now()}`,
-          user_id: currentUser.id,
-          user_name: currentUser.full_name,
-          user_role: currentUser.role_label,
-          action: 'STATUS_CHANGE',
-          module: 'Dossiers',
-          entity_type: 'folder',
-          entity_id: f.folder_number,
-          entity_name: f.structure,
-          details: `Étape du dossier changée de "${oldStatus}" à "${newStatus}"`,
-          old_value: oldStatus,
-          new_value: newStatus,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setAuditLogs(logs => [log, ...logs]);
+          const log: AuditLogItem = {
+            id: generateUuid(),
+            user_id: currentUser.id,
+            user_name: currentUser.full_name,
+            user_role: currentUser.role_label,
+            action: 'STATUS_CHANGE',
+            module: 'Dossiers',
+            entity_type: 'folder',
+            entity_id: f.folder_number,
+            entity_name: f.structure,
+            details: `Étape du dossier changée de "${oldStatus}" à "${newStatus}"`,
+            old_value: oldStatus,
+            new_value: newStatus,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setAuditLogs(logs => [log, ...logs]);
+          dbSaveAuditLog(log);
 
-        return updated;
-      }
-      return f;
-    }));
+          return updated;
+        }
+        return f;
+      });
+      try { localStorage.setItem('activia_folders', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    dbUpdateFolder(id, {
+      status: newStatus,
+      progress_percentage: progress,
+    });
   };
 
   const advanceFolderStep = (id: string) => {
@@ -1141,9 +1462,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // GED DOCUMENTS (PHASE 2)
   // ==========================================
 
+  // ==========================================
+  // GED DOCUMENTS (PERSISTANCE DIRECTE BDD SUPABASE)
+  // ==========================================
+
   const addDocument = (data: Partial<DocumentItem>): DocumentItem => {
     const newDoc: DocumentItem = {
-      id: `doc-${Date.now()}`,
+      id: generateUuid(),
       name: data.name || 'Document_Sans_Titre.pdf',
       file_type: data.file_type || 'PDF',
       size_kb: data.size_kb || 450,
@@ -1156,10 +1481,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       file_url: data.file_url || '/storage/placeholder.pdf'
     };
 
-    setDocuments(prev => [newDoc, ...prev]);
+    setDocuments(prev => {
+      const updated = [newDoc, ...prev];
+      try { localStorage.setItem('activia_documents', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbSaveDocument(newDoc);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -1172,6 +1503,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
 
     return newDoc;
   };
@@ -1180,10 +1512,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const doc = documents.find(d => d.id === id);
     if (!doc) return;
 
-    setDocuments(prev => prev.filter(d => d.id !== id));
+    setDocuments(prev => {
+      const updated = prev.filter(d => d.id !== id);
+      try { localStorage.setItem('activia_documents', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbDeleteDocument(id);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -1196,16 +1534,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
   };
 
   // ==========================================
-  // ÉTABLISSEMENTS (PHASE 3)
+  // ÉTABLISSEMENTS (PERSISTANCE DIRECTE BDD SUPABASE)
   // ==========================================
 
   const addEstablishment = (data: Partial<Establishment>): Establishment => {
     const nextCode = `ETAB-2026-${String(establishments.length + 10).padStart(4, '0')}`;
     const newEtab: Establishment = {
-      id: `etab-${Date.now()}`,
+      id: generateUuid(),
       code: nextCode,
       name: data.name || 'Nouvel Établissement',
       establishment_type: data.establishment_type || 'Officine',
@@ -1224,10 +1563,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       updated_at: new Date().toISOString().split('T')[0]
     };
 
-    setEstablishments(prev => [newEtab, ...prev]);
+    setEstablishments(prev => {
+      const updated = [newEtab, ...prev];
+      try { localStorage.setItem('activia_establishments', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbSaveEstablishment(newEtab);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -1240,25 +1585,32 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
 
     return newEtab;
   };
 
   const updateEstablishment = (id: string, updates: Partial<Establishment>) => {
-    setEstablishments(prev => prev.map(e => {
-      if (e.id === id) {
-        return {
-          ...e,
-          ...updates,
-          updated_at: new Date().toISOString().split('T')[0]
-        };
-      }
-      return e;
-    }));
+    setEstablishments(prev => {
+      const updatedList = prev.map(e => {
+        if (e.id === id) {
+          return {
+            ...e,
+            ...updates,
+            updated_at: new Date().toISOString().split('T')[0]
+          };
+        }
+        return e;
+      });
+      try { localStorage.setItem('activia_establishments', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    dbUpdateEstablishment(id, updates);
   };
 
   // ==========================================
-  // SIGNALEMENTS & MAPI & VIGILANCES (PHASE 3)
+  // SIGNALEMENTS & MAPI & VIGILANCES (PERSISTANCE DIRECTE BDD SUPABASE)
   // ==========================================
 
   const addSignal = (data: Partial<SignalItem>): SignalItem => {
@@ -1266,7 +1618,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const manager = allUsers.find(u => u.id === data.manager_id) || currentUser;
 
     const newSignal: SignalItem = {
-      id: `sig-${Date.now()}`,
+      id: generateUuid(),
       signal_number: nextNum,
       receipt_date: data.receipt_date || new Date().toISOString().split('T')[0],
       reporter_name: data.reporter_name || 'Déclarant non spécifié',
@@ -1292,10 +1644,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
 
-    setSignals(prev => [newSignal, ...prev]);
+    setSignals(prev => {
+      const updated = [newSignal, ...prev];
+      try { localStorage.setItem('activia_signals', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbSaveSignal(newSignal);
 
     const log: AuditLogItem = {
-      id: `log-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       user_name: currentUser.full_name,
       user_role: currentUser.role_label,
@@ -1308,65 +1666,82 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
     };
     setAuditLogs(logs => [log, ...logs]);
+    dbSaveAuditLog(log);
 
     return newSignal;
   };
 
   const updateSignalStep = (id: string, newStep: SignalStep) => {
-    setSignals(prev => prev.map(s => {
-      if (s.id === id) {
-        const oldStep = s.workflow_step;
-        const updated = {
-          ...s,
-          workflow_step: newStep,
-          status: newStep === 'cloture' ? 'cloture' : s.status,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
+    setSignals(prev => {
+      const updatedList = prev.map(s => {
+        if (s.id === id) {
+          const oldStep = s.workflow_step;
+          const updated = {
+            ...s,
+            workflow_step: newStep,
+            status: newStep === 'cloture' ? 'cloture' : s.status,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
 
-        const log: AuditLogItem = {
-          id: `log-${Date.now()}`,
-          user_id: currentUser.id,
-          user_name: currentUser.full_name,
-          user_role: currentUser.role_label,
-          action: 'STATUS_CHANGE',
-          module: 'Activités',
-          entity_type: 'activity',
-          entity_id: s.signal_number,
-          entity_name: s.product_name,
-          details: `Étape de traitement du signalement passée de "${oldStep}" à "${newStep}"`,
-          old_value: oldStep,
-          new_value: newStep,
-          created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-        setAuditLogs(logs => [log, ...logs]);
+          const log: AuditLogItem = {
+            id: generateUuid(),
+            user_id: currentUser.id,
+            user_name: currentUser.full_name,
+            user_role: currentUser.role_label,
+            action: 'STATUS_CHANGE',
+            module: 'Activités',
+            entity_type: 'activity',
+            entity_id: s.signal_number,
+            entity_name: s.product_name,
+            details: `Étape de traitement du signalement passée de "${oldStep}" à "${newStep}"`,
+            old_value: oldStep,
+            new_value: newStep,
+            created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+          setAuditLogs(logs => [log, ...logs]);
+          dbSaveAuditLog(log);
 
-        return updated;
-      }
-      return s;
-    }));
+          return updated;
+        }
+        return s;
+      });
+      try { localStorage.setItem('activia_signals', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    dbUpdateSignal(id, {
+      workflow_step: newStep,
+      status: newStep === 'cloture' ? 'cloture' : 'en_cours',
+    });
   };
 
   const updateSignal = (id: string, updates: Partial<SignalItem>) => {
-    setSignals(prev => prev.map(s => {
-      if (s.id === id) {
-        return {
-          ...s,
-          ...updates,
-          updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
-        };
-      }
-      return s;
-    }));
+    setSignals(prev => {
+      const updatedList = prev.map(s => {
+        if (s.id === id) {
+          return {
+            ...s,
+            ...updates,
+            updated_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+          };
+        }
+        return s;
+      });
+      try { localStorage.setItem('activia_signals', JSON.stringify(updatedList)); } catch {}
+      return updatedList;
+    });
+
+    dbUpdateSignal(id, updates);
   };
 
   // ==========================================
-  // FORMATIONS (PHASE 3)
+  // FORMATIONS (PERSISTANCE DIRECTE BDD SUPABASE)
   // ==========================================
 
   const addTraining = (data: Partial<TrainingItem>): TrainingItem => {
     const nextCode = `FORM-2026-${String(trainings.length + 17).padStart(3, '0')}`;
     const newTraining: TrainingItem = {
-      id: `t-${Date.now()}`,
+      id: generateUuid(),
       training_code: nextCode,
       participant_name: data.participant_name || 'Participant',
       function_title: data.function_title || 'Point Focal Pharmacovigilance',
@@ -1384,22 +1759,33 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       created_at: new Date().toISOString().split('T')[0]
     };
 
-    setTrainings(prev => [newTraining, ...prev]);
+    setTrainings(prev => {
+      const updated = [newTraining, ...prev];
+      try { localStorage.setItem('activia_trainings', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbSaveTraining(newTraining);
     return newTraining;
   };
 
   const updateTraining = (id: string, updates: Partial<TrainingItem>) => {
-    setTrainings(prev => prev.map(t => t.id === id ? { ...t, ...updates } : t));
+    setTrainings(prev => {
+      const updated = prev.map(t => t.id === id ? { ...t, ...updates } : t);
+      try { localStorage.setItem('activia_trainings', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+    dbUpdateTraining(id, updates);
   };
 
   // ==========================================
-  // ALERTES (PHASE 3)
+  // ALERTES (PERSISTANCE DIRECTE BDD SUPABASE)
   // ==========================================
 
   const addAlert = (data: Partial<VigilanceAlert>): VigilanceAlert => {
     const nextNum = `ALT-2026-${String(alerts.length + 4).padStart(3, '0')}`;
     const newAlert: VigilanceAlert = {
-      id: `alt-${Date.now()}`,
+      id: generateUuid(),
       alert_number: nextNum,
       alert_date: data.alert_date || new Date().toISOString().split('T')[0],
       source: data.source || 'Centre de Vigilance',
@@ -1412,11 +1798,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       status: 'active'
     };
 
-    setAlerts(prev => [newAlert, ...prev]);
+    setAlerts(prev => {
+      const updated = [newAlert, ...prev];
+      try { localStorage.setItem('activia_alerts', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+
+    dbSaveAlert(newAlert);
 
     // Send notifications to all agents
     const notif: NotificationItem = {
-      id: `notif-${Date.now()}`,
+      id: generateUuid(),
       user_id: currentUser.id,
       title: `ALERTE SANITAIRE : ${newAlert.product_name}`,
       message: `${newAlert.nature} - ${newAlert.description}`,
@@ -1431,11 +1823,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const closeAlert = (id: string) => {
-    setAlerts(prev => prev.map(a => a.id === id ? {
-      ...a,
-      status: 'cloturee',
-      closing_date: new Date().toISOString().split('T')[0]
-    } : a));
+    const closingDate = new Date().toISOString().split('T')[0];
+    setAlerts(prev => {
+      const updated = prev.map(a => a.id === id ? {
+        ...a,
+        status: 'cloturee' as const,
+        closing_date: closingDate
+      } : a);
+      try { localStorage.setItem('activia_alerts', JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+    dbUpdateAlert(id, { status: 'cloturee', closing_date: closingDate });
   };
 
   // Notifications
@@ -1462,8 +1860,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setAllUsers(INITIAL_USERS);
     setCurrentUser(INITIAL_USERS[0]);
     setIsAuthenticated(true);
-    localStorage.clear();
-    localStorage.setItem('activia_data_version', DATA_VERSION);
+    try {
+      localStorage.removeItem('activia_activities');
+      localStorage.removeItem('activia_incoming_mails');
+      localStorage.removeItem('activia_outgoing_mails');
+      localStorage.removeItem('activia_folders');
+      localStorage.removeItem('activia_documents');
+      localStorage.removeItem('activia_establishments');
+      localStorage.removeItem('activia_signals');
+      localStorage.removeItem('activia_trainings');
+      localStorage.removeItem('activia_alerts');
+    } catch {}
   };
 
   const unreadNotificationCount = notifications.filter(n => !n.is_read).length;
@@ -1488,6 +1895,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         currentUser,
         allUsers,
         isAuthenticated,
+        isDbConnected,
+        isSyncing,
+        refreshFromDatabase,
         switchUser,
         login,
         logout,

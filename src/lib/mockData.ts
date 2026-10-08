@@ -19,7 +19,7 @@ import {
 // ==============================================================================
 export const INITIAL_USERS: UserProfile[] = [
   {
-    id: 'usr-001',
+    id: 'a0000000-0000-0000-0000-000000000001',
     order: 1,
     email: 'jocelyne.satchivi@activia.sante.gouv',
     username: 'jsatchivi',
@@ -38,7 +38,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-002',
+    id: 'a0000000-0000-0000-0000-000000000002',
     order: 2,
     email: 'perrin.houngue@activia.sante.gouv',
     username: 'phoungue',
@@ -57,7 +57,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-003',
+    id: 'a0000000-0000-0000-0000-000000000003',
     order: 3,
     email: 'huibert.alofa@activia.sante.gouv',
     username: 'halofa',
@@ -76,7 +76,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-004',
+    id: 'a0000000-0000-0000-0000-000000000004',
     order: 4,
     email: 'daniel.kintin@activia.sante.gouv',
     username: 'dkintin',
@@ -95,7 +95,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-005',
+    id: 'a0000000-0000-0000-0000-000000000005',
     order: 5,
     email: 'radihath.arouna@activia.sante.gouv',
     username: 'rarouna',
@@ -114,7 +114,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-006',
+    id: 'a0000000-0000-0000-0000-000000000006',
     order: 6,
     email: 'sarath.fikara@activia.sante.gouv',
     username: 'sfikara',
@@ -133,7 +133,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-007',
+    id: 'a0000000-0000-0000-0000-000000000007',
     order: 7,
     email: 'hermion.tonouewa@activia.sante.gouv',
     username: 'htonouewa',
@@ -152,7 +152,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-008',
+    id: 'a0000000-0000-0000-0000-000000000008',
     order: 8,
     email: 'ella.lokoun@activia.sante.gouv',
     username: 'elokoun',
@@ -171,7 +171,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-009',
+    id: 'a0000000-0000-0000-0000-000000000009',
     order: 9,
     email: 'joel.tonoukouin@activia.sante.gouv',
     username: 'jtonoukouin',
@@ -190,7 +190,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-010',
+    id: 'a0000000-0000-0000-0000-000000000010',
     order: 10,
     email: 'mael.dossouyovo@activia.sante.gouv',
     username: 'mdossouyovo',
@@ -209,7 +209,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-011',
+    id: 'a0000000-0000-0000-0000-000000000011',
     order: 11,
     email: 'irenee.ganhou@activia.sante.gouv',
     username: 'iganhou',
@@ -228,7 +228,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-012',
+    id: 'a0000000-0000-0000-0000-000000000012',
     order: 12,
     email: 'maria-carole.yambode@activia.sante.gouv',
     username: 'myambode',
@@ -247,7 +247,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-013',
+    id: 'a0000000-0000-0000-0000-000000000013',
     order: 13,
     email: 'jeanpaul.vigan@activia.sante.gouv',
     username: 'jvigan',
@@ -266,7 +266,7 @@ export const INITIAL_USERS: UserProfile[] = [
     is_active: true,
   },
   {
-    id: 'usr-014',
+    id: 'a0000000-0000-0000-0000-000000000014',
     order: 14,
     email: 'larissa.adognon@activia.sante.gouv',
     username: 'ladognon',
