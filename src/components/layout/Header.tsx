@@ -346,24 +346,24 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
         <div className="relative" ref={userRef}>
           <button
             onClick={() => setShowUserSwitcher(!showUserSwitcher)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/20 hover:border-white/40 bg-white hover:bg-slate-50 transition-colors text-xs font-medium text-slate-800 cursor-pointer shadow-sm"
+            className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl bg-transparent hover:bg-emerald-850/60 border border-transparent hover:border-emerald-600/40 transition-colors cursor-pointer text-left"
             title="Mon compte et changement d'utilisateur"
           >
-            <div className="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-[10px]">
+            <div className="w-6 h-6 rounded-full bg-white text-emerald-800 font-black flex items-center justify-center text-[11px] shadow-xs shrink-0">
               {currentUser.order || '1'}
             </div>
-            <div className="text-left hidden sm:block">
+            <div className="hidden sm:block">
               <div className="flex items-center gap-1.5">
-                <span className="font-bold text-slate-900 leading-tight">{currentUser.full_name}</span>
-                <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-1 py-0.2 rounded border border-emerald-200">
+                <span className="font-bold text-white text-xs leading-tight">{currentUser.full_name}</span>
+                <span className="text-[10px] font-mono font-bold text-emerald-100 bg-emerald-900/60 px-1.5 py-0.2 rounded border border-emerald-400/40">
                   {currentUser.username}
                 </span>
               </div>
-              <span className="text-[10px] text-slate-500 block leading-tight">
+              <span className="text-[10.5px] text-emerald-100/90 block font-medium leading-tight mt-0.5">
                 {currentUser.title} • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
               </span>
             </div>
-            <ChevronDown className="w-3.5 h-3.5 text-slate-400 shrink-0 ml-0.5" />
+            <ChevronDown className="w-3.5 h-3.5 text-emerald-200 shrink-0 ml-0.5" />
           </button>
 
           {showUserSwitcher && (
