@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { AppLayout } from '@/components/layout/AppLayout';
 import { useApp } from '@/context/AppContext';
 import { 
   FileSpreadsheet, 
@@ -261,7 +262,8 @@ export default function ImportPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <AppLayout>
+      <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -507,5 +509,6 @@ PostgreSQL / Supabase d'ACTIVIA avec traçabilité complète des modifications.
         </div>
       </div>
     </div>
+    </AppLayout>
   );
 }

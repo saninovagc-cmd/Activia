@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { AppLayout } from '@/components/layout/AppLayout';
 import { useApp } from '@/context/AppContext';
 import { Establishment } from '@/types';
 import { EstablishmentTable } from '@/components/establishments/EstablishmentTable';
@@ -44,7 +45,8 @@ export default function EstablishmentsPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <AppLayout>
+      <div className="space-y-6">
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -163,6 +165,7 @@ export default function EstablishmentsPage() {
           setIsModalOpen(true);
         }}
       />
-    </div>
+      </div>
+    </AppLayout>
   );
 }

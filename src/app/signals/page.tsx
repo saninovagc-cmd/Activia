@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { AppLayout } from '@/components/layout/AppLayout';
 import { useApp } from '@/context/AppContext';
 import { SignalItem } from '@/types';
 import { SignalTable } from '@/components/signals/SignalTable';
@@ -38,7 +39,8 @@ export default function SignalsPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <AppLayout>
+      <div className="space-y-6">
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -174,6 +176,7 @@ export default function SignalsPage() {
         signal={selectedSignal}
         onClose={() => setSelectedSignal(null)}
       />
-    </div>
+      </div>
+    </AppLayout>
   );
 }

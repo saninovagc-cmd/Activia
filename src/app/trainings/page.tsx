@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { AppLayout } from '@/components/layout/AppLayout';
 import { useApp } from '@/context/AppContext';
 import { TrainingItem } from '@/types';
 import { TrainingDashboard } from '@/components/trainings/TrainingDashboard';
@@ -21,7 +22,8 @@ export default function TrainingsPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <AppLayout>
+      <div className="space-y-6">
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -71,6 +73,7 @@ export default function TrainingsPage() {
         training={selectedTraining}
         onClose={() => setSelectedTraining(null)}
       />
-    </div>
+      </div>
+    </AppLayout>
   );
 }

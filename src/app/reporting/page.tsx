@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { AppLayout } from '@/components/layout/AppLayout';
 import { useApp } from '@/context/AppContext';
 import { 
   BarChart, 
@@ -110,7 +111,8 @@ export default function ReportingPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <AppLayout>
+      <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -341,6 +343,7 @@ export default function ReportingPage() {
           </table>
         </div>
       </div>
-    </div>
+      </div>
+    </AppLayout>
   );
 }
