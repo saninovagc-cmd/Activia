@@ -23,7 +23,11 @@ import {
   AlertTriangle,
   GraduationCap,
   Activity as ActivityIcon,
-  X
+  X,
+  Key,
+  Eye,
+  EyeOff,
+  Lock
 } from 'lucide-react';
 
 export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSidebar }) => {
@@ -31,6 +35,8 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
     currentUser, 
     allUsers, 
     switchUser, 
+    logout,
+    updateUserPassword,
     notifications, 
     unreadNotificationCount, 
     markNotificationAsRead, 
@@ -47,6 +53,13 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
   const [showUserSwitcher, setShowUserSwitcher] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+
+  // Change password modal state
+  const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
+  const [newPasswordInput, setNewPasswordInput] = useState('');
+  const [confirmPasswordInput, setConfirmPasswordInput] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [showPasswordText, setShowPasswordText] = useState(false);
 
   const notifRef = useRef<HTMLDivElement>(null);
   const userRef = useRef<HTMLDivElement>(null);
@@ -323,32 +336,83 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
         </div>
       </div>
 
-      {/* Right section: Role switcher + Notifications */}
-      <div className="flex items-center gap-3">
-        {/* Role & User Switcher for instantaneous testing of all 14 DLVS staff members */}
+      {/* Right section: Role switcher + Notifications + Déconnexion */}
+      <div className="flex items-center gap-2.5">
+        {/* Role & User Switcher with Account Info */}
         <div className="relative" ref={userRef}>
           <button
             onClick={() => setShowUserSwitcher(!showUserSwitcher)}
             className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 transition-colors text-xs font-medium text-slate-700 cursor-pointer"
-            title="Changer d'utilisateur pour tester les habilitations"
+            title="Mon compte et changement d'utilisateur"
           >
             <div className="w-5 h-5 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-[10px]">
               {currentUser.order || '1'}
             </div>
             <div className="text-left hidden sm:block">
-              <span className="font-bold text-slate-900 block leading-tight">{currentUser.full_name}</span>
-              <span className="text-[10px] text-slate-500 block leading-tight">{currentUser.title} • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}</span>
+              <div className="flex items-center gap-1.5">
+                <span className="font-bold text-slate-900 leading-tight">{currentUser.full_name}</span>
+                <span className="text-[10px] font-mono text-blue-600 bg-blue-50 px-1 py-0.2 rounded border border-blue-200">
+                  {currentUser.username}
+                </span>
+              </div>
+              <span className="text-[10px] text-slate-500 block leading-tight">
+                {currentUser.title} • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
+              </span>
             </div>
             <ChevronDown className="w-3.5 h-3.5 text-slate-400 shrink-0 ml-0.5" />
           </button>
 
           {showUserSwitcher && (
-            <div className="absolute right-0 mt-2 w-88 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2">
-              <div className="px-3.5 py-2 border-b border-slate-100 bg-slate-50/60">
-                <p className="text-xs font-bold text-slate-900">Personnel DLVS ({allUsers.length} Collaborateurs)</p>
-                <p className="text-[11px] text-slate-500">Basculez instantanément pour tester les vues et permissions.</p>
+            <div className="absolute right-0 mt-2 w-92 bg-white rounded-xl shadow-2xl border border-slate-200 py-1 z-50 animate-in fade-in slide-in-from-top-2 overflow-hidden">
+              {/* Active user header card */}
+              <div className="p-3 bg-slate-50/90 border-b border-slate-200">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Session Active</span>
+                  <span className="text-[10px] font-mono font-bold text-blue-700 bg-blue-100/70 px-2 py-0.5 rounded border border-blue-200">
+                    ID: {currentUser.username}
+                  </span>
+                </div>
+                <p className="text-xs font-bold text-slate-900 mt-1">{currentUser.full_name}</p>
+                <p className="text-[10px] text-slate-500">{currentUser.title} • {currentUser.post || currentUser.department}</p>
+                
+                <div className="mt-2.5 grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowUserSwitcher(false);
+                      setShowChangePasswordModal(true);
+                      setPasswordError('');
+                      setNewPasswordInput('');
+                      setConfirmPasswordInput('');
+                    }}
+                    className="py-1.5 px-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+                  >
+                    <Key className="w-3.5 h-3.5 text-blue-600" />
+                    Mot de passe
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowUserSwitcher(false);
+                      logout();
+                      router.push('/login');
+                    }}
+                    className="py-1.5 px-2 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-700 rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  >
+                    <LogOut className="w-3.5 h-3.5" />
+                    Déconnexion
+                  </button>
+                </div>
               </div>
-              <div className="max-h-80 overflow-y-auto divide-y divide-slate-100">
+
+              {/* Simulation Switcher list */}
+              <div className="px-3.5 py-1.5 border-b border-slate-100 bg-slate-100/60 flex items-center justify-between">
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                  Bascule rapide ({allUsers.length} Collaborateurs DLVS)
+                </p>
+                <span className="text-[9px] text-slate-400">Simulation RBAC</span>
+              </div>
+              <div className="max-h-64 overflow-y-auto divide-y divide-slate-100">
                 {allUsers.map((u) => {
                   const isSelected = u.id === currentUser.id;
                   return (
@@ -367,11 +431,15 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                           {u.order || 1}
                         </span>
                         <div className="truncate">
-                          <p className={`font-semibold truncate ${isSelected ? 'text-blue-900 font-bold' : 'text-slate-800'}`}>
-                            {u.full_name}
-                          </p>
+                          <div className="flex items-center gap-1.5">
+                            <span className={`font-semibold truncate ${isSelected ? 'text-blue-900 font-bold' : 'text-slate-800'}`}>
+                              {u.full_name}
+                            </span>
+                            <span className="text-[9px] font-mono text-slate-400">
+                              @{u.username}
+                            </span>
+                          </div>
                           <p className="text-[10px] text-blue-700 truncate font-medium">{u.title} • {u.post || u.role_label}</p>
-                          <p className="text-[10px] text-slate-400 truncate">{u.department}</p>
                         </div>
                       </div>
                       {isSelected && <Check className="w-4 h-4 text-blue-600 shrink-0" />}
@@ -466,7 +534,142 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
             </div>
           )}
         </div>
+
+        {/* Bouton Déconnexion Direct */}
+        <button
+          onClick={() => {
+            logout();
+            router.push('/login');
+          }}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 hover:border-rose-300 transition-colors text-xs font-semibold cursor-pointer shadow-2xs"
+          title="Se déconnecter de la plateforme et retourner à l'accueil"
+        >
+          <LogOut className="w-3.5 h-3.5 text-rose-600" />
+          <span className="hidden sm:inline">Déconnexion</span>
+        </button>
       </div>
+
+      {/* Modal Modification du Mot de Passe */}
+      {showChangePasswordModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-xs animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md overflow-hidden">
+            <div className="p-4 bg-slate-900 text-white flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="p-1.5 rounded-lg bg-blue-600 text-white">
+                  <Key className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-sm">Modifier mon mot de passe</h3>
+                  <p className="text-[11px] text-slate-300">{currentUser.full_name} ({currentUser.username})</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowChangePasswordModal(false)}
+                className="text-slate-400 hover:text-white p-1 rounded-md"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setPasswordError('');
+                if (newPasswordInput.trim().length < 4) {
+                  setPasswordError('Le nouveau mot de passe doit comporter au moins 4 caractères.');
+                  return;
+                }
+                if (newPasswordInput !== confirmPasswordInput) {
+                  setPasswordError('Les deux mots de passe saisis ne sont pas identiques.');
+                  return;
+                }
+                const ok = updateUserPassword(currentUser.id, newPasswordInput);
+                if (ok) {
+                  setShowChangePasswordModal(false);
+                  setNewPasswordInput('');
+                  setConfirmPasswordInput('');
+                  setPasswordError('');
+                }
+              }}
+              className="p-5 space-y-4"
+            >
+              <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200 text-xs text-blue-900 space-y-1">
+                <p className="font-bold flex items-center gap-1.5">
+                  <Info className="w-4 h-4 text-blue-600" /> Format initial par défaut :
+                </p>
+                <p className="text-[11px] text-slate-600">
+                  Votre mot de passe par défaut est : <strong className="font-mono text-blue-700">{currentUser.default_password}</strong> (nom de famille + 123). Vous pouvez le remplacer librement par un mot de passe de votre choix.
+                </p>
+              </div>
+
+              {passwordError && (
+                <div className="p-3 rounded-lg bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-start gap-2">
+                  <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
+                  <span>{passwordError}</span>
+                </div>
+              )}
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  Nouveau mot de passe
+                </label>
+                <div className="relative">
+                  <Lock className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                  <input
+                    type={showPasswordText ? "text" : "password"}
+                    required
+                    value={newPasswordInput}
+                    onChange={(e) => setNewPasswordInput(e.target.value)}
+                    placeholder="Saisissez votre nouveau mot de passe"
+                    className="w-full pl-9 pr-10 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPasswordText(!showPasswordText)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  >
+                    {showPasswordText ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  Confirmer le nouveau mot de passe
+                </label>
+                <div className="relative">
+                  <Lock className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                  <input
+                    type={showPasswordText ? "text" : "password"}
+                    required
+                    value={confirmPasswordInput}
+                    onChange={(e) => setConfirmPasswordInput(e.target.value)}
+                    placeholder="Répétez le nouveau mot de passe"
+                    className="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="flex justify-end gap-2.5 pt-3 border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={() => setShowChangePasswordModal(false)}
+                  className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold cursor-pointer"
+                >
+                  Annuler
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md cursor-pointer flex items-center gap-1.5"
+                >
+                  <Check className="w-3.5 h-3.5" />
+                  Enregistrer mon mot de passe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

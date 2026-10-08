@@ -29,6 +29,11 @@ export interface UserProfile {
   id: string;
   order?: number;
   email: string;
+  username: string;
+  password?: string;
+  default_password: string;
+  first_name?: string;
+  last_name?: string;
   full_name: string;
   role: UserRole;
   role_label: string;
@@ -115,7 +120,7 @@ export interface AuditLogItem {
   user_id: string;
   user_name: string;
   user_role: string;
-  action: 'CREATE' | 'UPDATE' | 'DELETE' | 'STATUS_CHANGE' | 'ASSIGN';
+  action: 'CREATE' | 'UPDATE' | 'DELETE' | 'STATUS_CHANGE' | 'ASSIGN' | 'LOGIN' | 'LOGOUT';
   module: 'Activités' | 'Tâches' | 'Courriers' | 'Dossiers' | 'Utilisateurs' | 'Sécurité';
   entity_type: 'activity' | 'task' | 'user' | 'folder' | 'mail';
   entity_id: string;

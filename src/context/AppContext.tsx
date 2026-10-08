@@ -44,7 +44,12 @@ import {
 interface AppContextType {
   currentUser: UserProfile;
   allUsers: UserProfile[];
+  isAuthenticated: boolean;
   switchUser: (userId: string) => void;
+  login: (identifier: string, pass: string) => { success: boolean; message?: string; user?: UserProfile };
+  logout: () => void;
+  updateUserPassword: (userId: string, newPass: string) => boolean;
+  resetUserPassword: (userId: string) => string;
   // Activités & Tâches (Phase 1)
   activities: Activity[];
   tasks: Task[];
@@ -114,7 +119,8 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<UserProfile>(INITIAL_USERS[0]);
-  const [allUsers] = useState<UserProfile[]>(INITIAL_USERS);
+  const [allUsers, setAllUsers] = useState<UserProfile[]>(INITIAL_USERS);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
   const [activities, setActivities] = useState<Activity[]>(INITIAL_ACTIVITIES);
   const [incomingMails, setIncomingMails] = useState<IncomingMail[]>(INITIAL_INCOMING_MAILS);
   const [outgoingMails, setOutgoingMails] = useState<OutgoingMail[]>(INITIAL_OUTGOING_MAILS);
@@ -151,7 +157,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const hideToast = () => setToast(null);
 
-  const DATA_VERSION = '2026.10.dlvs.clean.v1';
+  const DATA_VERSION = '2026.10.dlvs.auth.v2';
 
   // Load from localStorage on mount with version validation
   useEffect(() => {
@@ -160,19 +166,34 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedVersion !== DATA_VERSION) {
         localStorage.clear();
         localStorage.setItem('activia_data_version', DATA_VERSION);
+        setAllUsers(INITIAL_USERS);
         setCurrentUser(INITIAL_USERS[0]);
+        setIsAuthenticated(true);
         return;
       }
 
-      const storedActivities = localStorage.getItem('activia_activities');
-      if (storedActivities) setActivities(JSON.parse(storedActivities));
+      const storedUsers = localStorage.getItem('activia_users');
+      if (storedUsers) {
+        const parsed = JSON.parse(storedUsers);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setAllUsers(parsed);
+        }
+      }
+
+      const storedAuth = localStorage.getItem('activia_is_authenticated');
+      if (storedAuth !== null) {
+        setIsAuthenticated(storedAuth === 'true');
+      }
 
       const storedUser = localStorage.getItem('activia_current_user');
       if (storedUser) {
         const parsed = JSON.parse(storedUser);
-        const match = INITIAL_USERS.find(u => u.id === parsed.id);
+        const match = (storedUsers ? JSON.parse(storedUsers) : INITIAL_USERS).find((u: UserProfile) => u.id === parsed.id);
         if (match) setCurrentUser(match);
       }
+
+      const storedActivities = localStorage.getItem('activia_activities');
+      if (storedActivities) setActivities(JSON.parse(storedActivities));
 
       const storedMailsIn = localStorage.getItem('activia_incoming_mails');
       if (storedMailsIn) setIncomingMails(JSON.parse(storedMailsIn));
@@ -211,6 +232,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Save to localStorage when state changes
   useEffect(() => {
     try {
+      localStorage.setItem('activia_users', JSON.stringify(allUsers));
+      localStorage.setItem('activia_is_authenticated', String(isAuthenticated));
+      localStorage.setItem('activia_current_user', JSON.stringify(currentUser));
       localStorage.setItem('activia_activities', JSON.stringify(activities));
       localStorage.setItem('activia_incoming_mails', JSON.stringify(incomingMails));
       localStorage.setItem('activia_outgoing_mails', JSON.stringify(outgoingMails));
@@ -222,11 +246,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.setItem('activia_alerts', JSON.stringify(alerts));
       localStorage.setItem('activia_audit_logs', JSON.stringify(auditLogs));
       localStorage.setItem('activia_notifications', JSON.stringify(notifications));
-      localStorage.setItem('activia_current_user', JSON.stringify(currentUser));
     } catch (e) {
       console.warn('LocalStorage write error', e);
     }
-  }, [activities, incomingMails, outgoingMails, folders, documents, establishments, signals, trainings, alerts, auditLogs, notifications, currentUser]);
+  }, [allUsers, isAuthenticated, currentUser, activities, incomingMails, outgoingMails, folders, documents, establishments, signals, trainings, alerts, auditLogs, notifications]);
 
   const allTasks: Task[] = activities.flatMap(act => act.tasks || []);
 
@@ -234,6 +257,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const user = allUsers.find(u => u.id === userId);
     if (user) {
       setCurrentUser(user);
+      setIsAuthenticated(true);
       const newLog: AuditLogItem = {
         id: `log-${Date.now()}`,
         user_id: user.id,
@@ -249,6 +273,145 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       };
       setAuditLogs(prev => [newLog, ...prev]);
     }
+  };
+
+  const login = (identifier: string, pass: string): { success: boolean; message?: string; user?: UserProfile } => {
+    const cleanId = identifier.trim().toLowerCase();
+    const cleanPass = pass.trim();
+
+    const user = allUsers.find(u => 
+      (u.username && u.username.toLowerCase() === cleanId) || 
+      (u.email && u.email.toLowerCase() === cleanId)
+    );
+
+    if (!user) {
+      return {
+        success: false,
+        message: `Identifiant ou adresse email introuvable. Format: initiale prénom + nom (ex: jsatchivi).`
+      };
+    }
+
+    const effectivePassword = user.password || user.default_password;
+    if (effectivePassword !== cleanPass) {
+      return {
+        success: false,
+        message: `Mot de passe incorrect pour le compte de ${user.full_name}. Par défaut: nom + 123 (ex: satchivi123).`
+      };
+    }
+
+    setCurrentUser(user);
+    setIsAuthenticated(true);
+    localStorage.setItem('activia_is_authenticated', 'true');
+    localStorage.setItem('activia_current_user', JSON.stringify(user));
+
+    const newLog: AuditLogItem = {
+      id: `log-${Date.now()}`,
+      user_id: user.id,
+      user_name: user.full_name,
+      user_role: user.role_label,
+      action: 'LOGIN',
+      module: 'Sécurité',
+      entity_type: 'user',
+      entity_id: user.id,
+      entity_name: user.full_name,
+      details: `Authentification réussie pour ${user.full_name} (${user.username})`,
+      created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+    };
+    setAuditLogs(prev => [newLog, ...prev]);
+
+    return { success: true, user };
+  };
+
+  const logout = () => {
+    if (currentUser) {
+      const newLog: AuditLogItem = {
+        id: `log-${Date.now()}`,
+        user_id: currentUser.id,
+        user_name: currentUser.full_name,
+        user_role: currentUser.role_label,
+        action: 'LOGOUT',
+        module: 'Sécurité',
+        entity_type: 'user',
+        entity_id: currentUser.id,
+        entity_name: currentUser.full_name,
+        details: `Déconnexion de la session pour ${currentUser.full_name}`,
+        created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+      };
+      setAuditLogs(prev => [newLog, ...prev]);
+    }
+    setIsAuthenticated(false);
+    localStorage.setItem('activia_is_authenticated', 'false');
+    showToast('info', 'Vous avez été déconnecté avec succès.');
+  };
+
+  const updateUserPassword = (userId: string, newPass: string): boolean => {
+    if (!newPass || newPass.trim().length < 4) {
+      showToast('error', 'Le mot de passe doit comporter au moins 4 caractères.');
+      return false;
+    }
+    let targetUserName = '';
+    setAllUsers(prev => prev.map(u => {
+      if (u.id === userId) {
+        targetUserName = u.full_name;
+        return { ...u, password: newPass.trim() };
+      }
+      return u;
+    }));
+
+    if (currentUser?.id === userId) {
+      setCurrentUser(prev => ({ ...prev, password: newPass.trim() }));
+    }
+
+    const newLog: AuditLogItem = {
+      id: `log-${Date.now()}`,
+      user_id: currentUser?.id || userId,
+      user_name: currentUser?.full_name || targetUserName,
+      user_role: currentUser?.role_label || 'Utilisateur',
+      action: 'UPDATE',
+      module: 'Sécurité',
+      entity_type: 'user',
+      entity_id: userId,
+      entity_name: targetUserName,
+      details: `Mise à jour du mot de passe pour ${targetUserName}`,
+      created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+    };
+    setAuditLogs(prev => [newLog, ...prev]);
+    showToast('success', `Mot de passe mis à jour avec succès pour ${targetUserName || 'le compte'}.`);
+    return true;
+  };
+
+  const resetUserPassword = (userId: string): string => {
+    let resetPass = '';
+    let targetUserName = '';
+    setAllUsers(prev => prev.map(u => {
+      if (u.id === userId) {
+        resetPass = u.default_password;
+        targetUserName = u.full_name;
+        return { ...u, password: u.default_password };
+      }
+      return u;
+    }));
+
+    if (currentUser?.id === userId) {
+      setCurrentUser(prev => ({ ...prev, password: resetPass }));
+    }
+
+    const newLog: AuditLogItem = {
+      id: `log-${Date.now()}`,
+      user_id: currentUser?.id || userId,
+      user_name: currentUser?.full_name || targetUserName,
+      user_role: currentUser?.role_label || 'Administrateur',
+      action: 'UPDATE',
+      module: 'Sécurité',
+      entity_type: 'user',
+      entity_id: userId,
+      entity_name: targetUserName,
+      details: `Réinitialisation du mot de passe par défaut (${resetPass}) pour ${targetUserName}`,
+      created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+    };
+    setAuditLogs(prev => [newLog, ...prev]);
+    showToast('info', `Mot de passe de ${targetUserName} réinitialisé à "${resetPass}".`);
+    return resetPass;
   };
 
   // ==========================================
@@ -1296,7 +1459,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setAlerts(INITIAL_ALERTS);
     setNotifications(INITIAL_NOTIFICATIONS);
     setAuditLogs(INITIAL_AUDIT_LOGS);
+    setAllUsers(INITIAL_USERS);
     setCurrentUser(INITIAL_USERS[0]);
+    setIsAuthenticated(true);
     localStorage.clear();
     localStorage.setItem('activia_data_version', DATA_VERSION);
   };
@@ -1322,7 +1487,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       value={{
         currentUser,
         allUsers,
+        isAuthenticated,
         switchUser,
+        login,
+        logout,
+        updateUserPassword,
+        resetUserPassword,
         activities,
         tasks: allTasks,
         addActivity,

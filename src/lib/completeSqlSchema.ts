@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS public.profiles (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     order_num INTEGER NOT NULL DEFAULT 1,
     email TEXT NOT NULL UNIQUE,
+    username TEXT NOT NULL UNIQUE,
+    default_password TEXT NOT NULL DEFAULT 'activia123',
     full_name TEXT NOT NULL,
     role TEXT NOT NULL DEFAULT 'agent',
     role_label TEXT,
@@ -320,24 +322,26 @@ END $$;
 -- 6. JEU DE DONNÉES INITIAL : LES 14 COLLABORATEURS OFFICIELS DLVS
 -- ==============================================================================
 
-INSERT INTO public.profiles (id, order_num, email, full_name, role, role_label, department, title, post, phone, is_active)
+INSERT INTO public.profiles (id, order_num, email, username, default_password, full_name, role, role_label, department, title, post, phone, is_active)
 VALUES
-('a0000000-0000-0000-0000-000000000001', 1, 'jocelyne.satchivi@activia.sante.gouv', 'Dr. SATCHIVI Jocelyne KANLE', 'admin', 'Directrice (DLVS) / Administrateur', 'Direction (DLVS)', 'Pharmacien', 'Directrice des Licences, de la Vigilance et de la Surveillance du Marché (DLVS)', '+229 21 30 01 01', true),
-('a0000000-0000-0000-0000-000000000002', 2, 'perrin.houngue@activia.sante.gouv', 'Dr. HOUNGUE Perrin', 'chef_service', 'Chef de Service (SVPS)', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Pharmacien', 'Chef Service des Vigilances et des Produits de Santé (SVPS)', '+229 21 30 01 02', true),
-('a0000000-0000-0000-0000-000000000003', 3, 'huibert.alofa@activia.sante.gouv', 'Dr. ALOFA Huibert', 'chef_service', 'Chef de Service (SSMUR)', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Chef Service de la Surveillance du Marché et usages rationnels des Médicaments (SSMUR)', '+229 21 30 01 03', true),
-('a0000000-0000-0000-0000-000000000004', 4, 'daniel.kintin@activia.sante.gouv', 'Dr. KINTIN Daniel', 'chef_service', 'Chef de Service (SL)', 'Service des Licences (SL)', 'Pharmacien', 'Chef Service des Licences (SL)', '+229 21 30 01 04', true),
-('a0000000-0000-0000-0000-000000000005', 5, 'radihath.arouna@activia.sante.gouv', 'Dr. AROUNA Radihath', 'agent', 'Agent / Évaluatrice PSUR', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Pharmacien', 'Responsable de l’Évaluation des PSUR/PBRER / SVPS', '+229 21 30 01 05', true),
-('a0000000-0000-0000-0000-000000000006', 6, 'sarath.fikara@activia.sante.gouv', 'Dr. FIKARA Sarath', 'agent', 'Agent / Comité Vigilances', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Pharmacien', 'Responsable de l’organisation du Comité Technique de Vigilances des Produits de Santé / SVPS', '+229 21 30 01 06', true),
-('a0000000-0000-0000-0000-000000000007', 7, 'hermion.tonouewa@activia.sante.gouv', 'M. TONOUEWA Hermion', 'agent', 'Agent / Épidémiologiste', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Epidémiologiste', 'Responsable de la Gestion des Données / SVPS', '+229 21 30 01 07', true),
-('a0000000-0000-0000-0000-000000000008', 8, 'ella.lokoun@activia.sante.gouv', 'Dr. LOKOUN Ella', 'agent', 'Agent / Promotion & Publicité', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Responsable de la promotion et de la publicité des Médicaments / SSMUR', '+229 21 30 01 08', true),
-('a0000000-0000-0000-0000-000000000009', 9, 'joel.tonoukouin@activia.sante.gouv', 'Dr. TONOUKOUIN Joel', 'agent', 'Agent / Déchets & Post-comm.', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Responsable des Activités liées à la surveillance post commercialisation et de la gestion des déchets pharmaceutiques / SSMUR', '+229 21 30 01 09', true),
-('a0000000-0000-0000-0000-000000000010', 10, 'mael.dossouyovo@activia.sante.gouv', 'Dr. DOSSOU YOVO H. O. Mael', 'agent', 'Agent / Autorisations d’Achat', 'Service de la Surveillance du Marché (SSMUR)', 'Médecin Vétérinaire', 'Personne responsable des autorisations / SSMUR', '+229 21 30 01 10', true),
-('a0000000-0000-0000-0000-000000000011', 11, 'irenee.ganhou@activia.sante.gouv', 'Dr. GANHOU Irenée', 'agent', 'Agent / Qualité & Falsifiés', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Responsable des Produits de Santé de Qualité Inférieur ou Falsifiés / SSMUR', '+229 21 30 01 11', true),
-('a0000000-0000-0000-0000-000000000012', 12, 'maria-carole.yambode@activia.sante.gouv', 'Dr. YAMBODE Maria-Carole', 'agent', 'Agent / Commissions Licences', 'Service des Licences (SL)', 'Pharmacien', 'Responsable des commissions de Licence / SL', '+229 21 30 01 12', true),
-('a0000000-0000-0000-0000-000000000013', 13, 'jeanpaul.vigan@activia.sante.gouv', 'Dr. VIGAN Jean Paul', 'agent', 'Agent / Réceptions Licences', 'Service des Licences (SL)', 'Pharmacien', 'Responsable des réceptions / SL', '+229 21 30 01 13', true),
-('a0000000-0000-0000-0000-000000000014', 14, 'larissa.adognon@activia.sante.gouv', 'Mme ADOGNON Larissa', 'secretariat', 'Secrétaire de Direction / Bureau du Courrier', 'Direction (DLVS)', 'Attaché des Services Administratifs', 'Secrétaire / DLVS (Bureau d’Ordre & Courriers)', '+229 21 30 01 14', true)
+('a0000000-0000-0000-0000-000000000001', 1, 'jocelyne.satchivi@activia.sante.gouv', 'jsatchivi', 'satchivi123', 'Dr. SATCHIVI Jocelyne KANLE', 'admin', 'Directrice (DLVS) / Administrateur', 'Direction (DLVS)', 'Pharmacien', 'Directrice des Licences, de la Vigilance et de la Surveillance du Marché (DLVS)', '+229 21 30 01 01', true),
+('a0000000-0000-0000-0000-000000000002', 2, 'perrin.houngue@activia.sante.gouv', 'phoungue', 'houngue123', 'Dr. HOUNGUE Perrin', 'chef_service', 'Chef de Service (SVPS)', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Pharmacien', 'Chef Service des Vigilances et des Produits de Santé (SVPS)', '+229 21 30 01 02', true),
+('a0000000-0000-0000-0000-000000000003', 3, 'huibert.alofa@activia.sante.gouv', 'halofa', 'alofa123', 'Dr. ALOFA Huibert', 'chef_service', 'Chef de Service (SSMUR)', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Chef Service de la Surveillance du Marché et usages rationnels des Médicaments (SSMUR)', '+229 21 30 01 03', true),
+('a0000000-0000-0000-0000-000000000004', 4, 'daniel.kintin@activia.sante.gouv', 'dkintin', 'kintin123', 'Dr. KINTIN Daniel', 'chef_service', 'Chef de Service (SL)', 'Service des Licences (SL)', 'Pharmacien', 'Chef Service des Licences (SL)', '+229 21 30 01 04', true),
+('a0000000-0000-0000-0000-000000000005', 5, 'radihath.arouna@activia.sante.gouv', 'rarouna', 'arouna123', 'Dr. AROUNA Radihath', 'agent', 'Agent / Évaluatrice PSUR', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Pharmacien', 'Responsable de l’Évaluation des PSUR/PBRER / SVPS', '+229 21 30 01 05', true),
+('a0000000-0000-0000-0000-000000000006', 6, 'sarath.fikara@activia.sante.gouv', 'sfikara', 'fikara123', 'Dr. FIKARA Sarath', 'agent', 'Agent / Comité Vigilances', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Pharmacien', 'Responsable de l’organisation du Comité Technique de Vigilances des Produits de Santé / SVPS', '+229 21 30 01 06', true),
+('a0000000-0000-0000-0000-000000000007', 7, 'hermion.tonouewa@activia.sante.gouv', 'htonouewa', 'tonouewa123', 'M. TONOUEWA Hermion', 'agent', 'Agent / Épidémiologiste', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Epidémiologiste', 'Responsable de la Gestion des Données / SVPS', '+229 21 30 01 07', true),
+('a0000000-0000-0000-0000-000000000008', 8, 'ella.lokoun@activia.sante.gouv', 'elokoun', 'lokoun123', 'Dr. LOKOUN Ella', 'agent', 'Agent / Promotion & Publicité', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Responsable de la promotion et de la publicité des Médicaments /标志 SSMUR', '+229 21 30 01 08', true),
+('a0000000-0000-0000-0000-000000000009', 9, 'joel.tonoukouin@activia.sante.gouv', 'jtonoukouin', 'tonoukouin123', 'Dr. TONOUKOUIN Joel', 'agent', 'Agent / Déchets & Post-comm.', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Responsable des Activités liées à la surveillance post commercialisation et de la gestion des déchets pharmaceutiques / SSMUR', '+229 21 30 01 09', true),
+('a0000000-0000-0000-0000-000000000010', 10, 'mael.dossouyovo@activia.sante.gouv', 'mdossouyovo', 'dossouyovo123', 'Dr. DOSSOU YOVO H. O. Mael', 'agent', 'Agent / Autorisations d’Achat', 'Service de la Surveillance du Marché (SSMUR)', 'Médecin Vétérinaire', 'Personne responsable des autorisations / SSMUR', '+229 21 30 01 10', true),
+('a0000000-0000-0000-0000-000000000011', 11, 'irenee.ganhou@activia.sante.gouv', 'iganhou', 'ganhou123', 'Dr. GANHOU Irenée', 'agent', 'Agent / Qualité & Falsifiés', 'Service de la Surveillance du Marché (SSMUR)', 'Pharmacien', 'Responsable des Produits de Santé de Qualité Inférieur ou Falsifiés / SSMUR', '+229 21 30 01 11', true),
+('a0000000-0000-0000-0000-000000000012', 12, 'maria-carole.yambode@activia.sante.gouv', 'myambode', 'yambode123', 'Dr. YAMBODE Maria-Carole', 'agent', 'Agent / Commissions Licences', 'Service des Licences (SL)', 'Pharmacien', 'Responsable des commissions de Licence / SL', '+229 21 30 01 12', true),
+('a0000000-0000-0000-0000-000000000013', 13, 'jeanpaul.vigan@activia.sante.gouv', 'jvigan', 'vigan123', 'Dr. VIGAN Jean Paul', 'agent', 'Agent / Réceptions Licences', 'Service des Licences (SL)', 'Pharmacien', 'Responsable des réceptions / SL', '+229 21 30 01 13', true),
+('a0000000-0000-0000-0000-000000000014', 14, 'larissa.adognon@activia.sante.gouv', 'ladognon', 'adognon123', 'Mme ADOGNON Larissa', 'secretariat', 'Secrétaire de Direction / Bureau du Courrier', 'Direction (DLVS)', 'Attaché des Services Administratifs', 'Secrétaire / DLVS (Bureau d’Ordre & Courriers)', '+229 21 30 01 14', true)
 ON CONFLICT (id) DO UPDATE SET
     order_num = EXCLUDED.order_num,
+    username = EXCLUDED.username,
+    default_password = EXCLUDED.default_password,
     full_name = EXCLUDED.full_name,
     title = EXCLUDED.title,
     post = EXCLUDED.post,

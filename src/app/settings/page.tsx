@@ -19,11 +19,17 @@ import {
   Copy, 
   RefreshCw, 
   Server, 
-  Sparkles 
+  Sparkles,
+  Key,
+  Eye,
+  EyeOff,
+  Lock,
+  User
 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { testSupabaseConnection, SupabaseConnectionStatus, isSupabaseConfigured } from '@/lib/supabase';
 import { COMPLETE_SUPABASE_SQL } from '@/lib/completeSqlSchema';
+import { UserProfile } from '@/types';
 
 interface RefItem {
   id: string;
@@ -32,11 +38,17 @@ interface RefItem {
 }
 
 export default function SettingsPage() {
-  const { allUsers, currentUser, resetToDefaultData, showToast } = useApp();
+  const { allUsers, currentUser, updateUserPassword, resetUserPassword, resetToDefaultData, showToast } = useApp();
   const [activeTab, setActiveTab] = useState<'referentials' | 'users' | 'database'>('referentials');
   const [dbStatus, setDbStatus] = useState<SupabaseConnectionStatus | null>(null);
   const [testingDb, setTestingDb] = useState(false);
   const [copiedSql, setCopiedSql] = useState(false);
+
+  // User password management states
+  const [revealedPasswords, setRevealedPasswords] = useState<Record<string, boolean>>({});
+  const [selectedUserForPassword, setSelectedUserForPassword] = useState<UserProfile | null>(null);
+  const [adminCustomPassword, setAdminCustomPassword] = useState('');
+  const [copiedUserId, setCopiedUserId] = useState<string | null>(null);
 
   const runConnectionTest = async () => {
     setTestingDb(true);
@@ -211,62 +223,160 @@ export default function SettingsPage() {
           </div>
         )}
 
-        {/* Tab 2: Users */}
+        {/* Tab 2: Users & Password Management */}
         {activeTab === 'users' && (
-          <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
-            <div className="p-4 border-b border-slate-100 flex items-center justify-between">
-              <div>
-                <h4 className="text-sm font-bold text-slate-900">Registre du Personnel & Utilisateurs DLVS ({allUsers.length} Collaborateurs)</h4>
-                <p className="text-xs text-slate-500">Membres officiels du service avec ordre hiérarchique, titres, postes et rôles RBAC</p>
+          <div className="space-y-4">
+            {/* Explanatory banner */}
+            <div className="p-4 rounded-xl bg-blue-50/80 border border-blue-200 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="space-y-1">
+                <p className="font-bold text-blue-900 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-blue-600" />
+                  Règle d'attribution des accès DLVS (14 Collaborateurs)
+                </p>
+                <p className="text-[11px] text-slate-700 leading-relaxed">
+                  • <strong>Identifiant</strong> : Initiale du prénom + Nom de famille (ex: <code className="bg-white px-1.5 py-0.5 rounded text-blue-700 font-mono font-bold">jsatchivi</code>)<br />
+                  • <strong>Mot de passe initial</strong> : Nom de famille + 123 (ex: <code className="bg-white px-1.5 py-0.5 rounded text-blue-700 font-mono font-bold">satchivi123</code>)<br />
+                  Chaque agent peut modifier son mot de passe. En tant qu&apos;administrateur, vous pouvez <strong>copier les accès</strong> pour les remettre à l&apos;agent ou <strong>réinitialiser</strong> son mot de passe au format par défaut.
+                </p>
               </div>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-xs text-left">
-                <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-100">
-                  <tr>
-                    <th className="py-3 px-3 text-center">N°</th>
-                    <th className="py-3 px-4">Nom et Prénoms</th>
-                    <th className="py-3 px-4">Titre</th>
-                    <th className="py-3 px-4">Poste Occupé</th>
-                    <th className="py-3 px-4">Service / Direction</th>
-                    <th className="py-3 px-4">Email</th>
-                    <th className="py-3 px-4">Rôle Système</th>
-                    <th className="py-3 px-4 text-center">Statut</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {allUsers.map((u) => (
-                    <tr key={u.id} className="hover:bg-slate-50/70">
-                      <td className="py-3 px-3 text-center">
-                        <span className="inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">
-                          {u.order || 1}
-                        </span>
-                      </td>
-                      <td className="py-3 px-4 font-bold text-slate-900">
-                        <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[10px] shrink-0">
-                            {u.full_name.charAt(0)}
-                          </div>
-                          <span>{u.full_name}</span>
-                        </div>
-                      </td>
-                      <td className="py-3 px-4 font-semibold text-slate-700">{u.title}</td>
-                      <td className="py-3 px-4 text-slate-800 font-medium max-w-xs">{u.post || u.role_label}</td>
-                      <td className="py-3 px-4 text-slate-600">{u.department}</td>
-                      <td className="py-3 px-4 font-mono text-slate-500 text-[11px]">{u.email}</td>
-                      <td className="py-3 px-4">
-                        <Badge role={u.role}>{u.role_label}</Badge>
-                      </td>
-                      <td className="py-3 px-4 text-center">
-                        <span className="inline-flex items-center gap-1 text-emerald-700 font-semibold text-[11px]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                          Actif
-                        </span>
-                      </td>
+
+            <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+              <div className="p-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900">Registre du Personnel &amp; Comptes Opérationnels ({allUsers.length})</h4>
+                  <p className="text-xs text-slate-500">Gestion des identifiants, mots de passe et habilitations ministérielles</p>
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs text-left">
+                  <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-100">
+                    <tr>
+                      <th className="py-3 px-3 text-center">N°</th>
+                      <th className="py-3 px-4">Collaborateur</th>
+                      <th className="py-3 px-3">Identifiant</th>
+                      <th className="py-3 px-4">Mot de passe</th>
+                      <th className="py-3 px-4">Poste &amp; Direction</th>
+                      <th className="py-3 px-3">Rôle RBAC</th>
+                      <th className="py-3 px-4 text-right">Actions d&apos;accès</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {allUsers.map((u) => {
+                      const currentPass = u.password || u.default_password;
+                      const isDefault = currentPass === u.default_password;
+                      const isRevealed = !!revealedPasswords[u.id];
+                      const isCopied = copiedUserId === u.id;
+
+                      return (
+                        <tr key={u.id} className="hover:bg-slate-50/70 transition-colors">
+                          <td className="py-3 px-3 text-center">
+                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">
+                              {u.order || 1}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4 font-bold text-slate-900">
+                            <div className="flex items-center gap-2">
+                              <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[10px] shrink-0">
+                                {u.full_name.charAt(0)}
+                              </div>
+                              <div>
+                                <p className="leading-tight">{u.full_name}</p>
+                                <p className="text-[10px] font-normal text-slate-500">{u.email}</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td className="py-3 px-3">
+                            <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                              {u.username}
+                            </span>
+                          </td>
+                          <td className="py-3 px-4">
+                            <div className="flex items-center gap-2">
+                              <span className="font-mono text-slate-800 font-semibold bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                                {isRevealed ? currentPass : '••••••••'}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => setRevealedPasswords(prev => ({ ...prev, [u.id]: !prev[u.id] }))}
+                                className="p-1 text-slate-400 hover:text-slate-600 rounded transition-colors cursor-pointer"
+                                title={isRevealed ? "Masquer le mot de passe" : "Afficher le mot de passe"}
+                              >
+                                {isRevealed ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+                              </button>
+                              <span className={`text-[9px] px-1.5 py-0.2 rounded font-medium ${isDefault ? 'bg-slate-100 text-slate-500' : 'bg-amber-100 text-amber-800 font-bold'}`}>
+                                {isDefault ? 'Défaut' : 'Modifié'}
+                              </span>
+                            </div>
+                          </td>
+                          <td className="py-3 px-4 max-w-xs">
+                            <p className="font-semibold text-slate-800 truncate">{u.title} • {u.post || u.role_label}</p>
+                            <p className="text-[10px] text-slate-500 truncate">{u.department}</p>
+                          </td>
+                          <td className="py-3 px-3">
+                            <Badge role={u.role}>{u.role_label}</Badge>
+                          </td>
+                          <td className="py-3 px-4 text-right">
+                            <div className="flex items-center justify-end gap-1.5">
+                              {/* Copier et donner */}
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const text = `ACTIVIA — Vos accès DLVS
+Collaborateur : ${u.full_name}
+Titre & Poste : ${u.title} (${u.post || u.role_label})
+Identifiant   : ${u.username}
+Mot de passe  : ${currentPass}
+Lien d'accès  : ${typeof window !== 'undefined' ? window.location.origin : ''}/login
+
+Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot de passe à tout moment dans votre espace.`;
+                                  navigator.clipboard.writeText(text);
+                                  setCopiedUserId(u.id);
+                                  showToast('success', `Identifiants de ${u.full_name} copiés ! Prêt à transmettre.`);
+                                  setTimeout(() => setCopiedUserId(null), 3000);
+                                }}
+                                className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                                title="Copier la fiche complète pour remettre à l'agent"
+                              >
+                                {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                                <span>{isCopied ? 'Copié !' : 'Copier les accès'}</span>
+                              </button>
+
+                              {/* Modifier */}
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setSelectedUserForPassword(u);
+                                  setAdminCustomPassword('');
+                                }}
+                                className="p-1.5 text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-lg border border-slate-200 transition-colors cursor-pointer"
+                                title="Définir un mot de passe personnalisé"
+                              >
+                                <Key className="w-3.5 h-3.5" />
+                              </button>
+
+                              {/* Réinitialiser */}
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  if (confirm(`Confirmez-vous la réinitialisation du mot de passe de ${u.full_name} ?\nLe mot de passe redeviendra : "${u.default_password}"`)) {
+                                    resetUserPassword(u.id);
+                                  }
+                                }}
+                                className="p-1.5 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg border border-slate-200 transition-colors cursor-pointer"
+                                title="Réinitialiser le mot de passe au format par défaut (nom+123)"
+                              >
+                                <RotateCcw className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         )}
@@ -480,6 +590,90 @@ export default function SettingsPage() {
                     className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold cursor-pointer"
                   >
                     Enregistrer l'entrée
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
+        {/* Modal for setting custom password by Administrator */}
+        {selectedUserForPassword && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-xs animate-in fade-in">
+            <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md overflow-hidden">
+              <div className="p-4 bg-slate-900 text-white flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="p-1.5 rounded-lg bg-blue-600 text-white">
+                    <Key className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-sm">Définir un mot de passe</h3>
+                    <p className="text-[11px] text-slate-300">{selectedUserForPassword.full_name} ({selectedUserForPassword.username})</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSelectedUserForPassword(null)}
+                  className="text-slate-400 hover:text-white p-1 rounded"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (!adminCustomPassword.trim()) return;
+                  if (adminCustomPassword.trim().length < 4) {
+                    showToast('error', 'Le mot de passe doit comporter au moins 4 caractères.');
+                    return;
+                  }
+                  updateUserPassword(selectedUserForPassword.id, adminCustomPassword.trim());
+                  setSelectedUserForPassword(null);
+                  setAdminCustomPassword('');
+                }}
+                className="p-5 space-y-4"
+              >
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
+                  <p className="text-slate-600">
+                    Mot de passe par défaut : <strong className="font-mono text-blue-700">{selectedUserForPassword.default_password}</strong>
+                  </p>
+                  <p className="text-[11px] text-slate-500">
+                    Vous pouvez lui attribuer un mot de passe temporaire ou spécifique que l&apos;agent pourra utiliser immédiatement.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    Nouveau mot de passe pour {selectedUserForPassword.full_name}
+                  </label>
+                  <div className="relative">
+                    <Lock className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <input
+                      type="text"
+                      required
+                      autoFocus
+                      value={adminCustomPassword}
+                      onChange={(e) => setAdminCustomPassword(e.target.value)}
+                      placeholder="Nouveau mot de passe..."
+                      className="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-mono font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-end gap-2 pt-2 border-t border-slate-100">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedUserForPassword(null)}
+                    className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold cursor-pointer"
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1.5"
+                  >
+                    <Check className="w-3.5 h-3.5" />
+                    Valider le mot de passe
                   </button>
                 </div>
               </form>
