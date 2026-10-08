@@ -268,8 +268,8 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-hidden">
-        <table className="w-full text-left border-collapse text-xs table-auto">
+      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+        <table className="w-full text-left border-collapse text-xs table-auto min-w-[760px] lg:min-w-0">
           <thead>
             <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
               <th className="py-3 px-3 w-32">N° Agrément</th>

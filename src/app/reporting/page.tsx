@@ -373,8 +373,8 @@ export default function ReportingPage() {
         </div>
 
         {/* Vue Desktop (>= 1024px) : Tableau fluide 100% */}
-        <div className="hidden lg:block w-full max-w-full overflow-hidden">
-          <table className="w-full table-auto text-left border-collapse text-xs">
+        <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+          <table className="w-full table-auto text-left border-collapse text-xs min-w-[640px] lg:min-w-0">
             <thead>
               <tr className="bg-slate-100/70 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
                 <th className="py-2.5 px-3">Collaborateur</th>

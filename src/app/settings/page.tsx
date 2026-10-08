@@ -357,8 +357,8 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
               </div>
 
               {/* Vue Desktop (>= 1024px) : Tableau fluide 100% */}
-              <div className="hidden lg:block w-full max-w-full overflow-hidden">
-                <table className="w-full table-auto text-xs text-left">
+              <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+                <table className="w-full table-auto text-xs text-left min-w-[720px] lg:min-w-0">
                   <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-100">
                     <tr>
                       <th className="py-2.5 px-2 text-center w-8">N°</th>

@@ -332,27 +332,25 @@ export const TaskList: React.FC = () => {
             )}
           </div>
 
-          {/* Desktop (>= 1024px) : Tableau fluide SANS debordement horizontal */}
-          <div className="hidden lg:block w-full max-w-full overflow-hidden">
-            <table className="w-full table-auto text-xs text-left text-slate-700">
+          {/* Desktop (>= 1024px) : Tableau fluide avec overflow-x-auto pour ne JAMAIS couper de donnees */}
+          <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+            <table className="w-full text-xs text-left text-slate-700 min-w-[720px] lg:min-w-0">
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-50/50">
-                  <th className="py-2.5 px-3">Code</th>
-                  <th className="py-2.5 px-3">Activité Programmée</th>
-                  <th className="py-2.5 px-3">Service</th>
-                  <th className="py-2.5 px-3">Responsable</th>
-                  <th className="py-2.5 px-3">Priorité</th>
-                  <th className="py-2.5 px-3">Statut</th>
-                  <th className="py-2.5 px-3 text-center">Avancement</th>
-                  <th className="py-2.5 px-3 text-center">Livrables</th>
-                  <th className="py-2.5 px-3">Échéance</th>
-                  <th className="py-2.5 px-3 text-right">Actions</th>
+                  <th className="py-2.5 px-3 whitespace-nowrap">Code</th>
+                  <th className="py-2.5 px-3">Activité Programmée & Service</th>
+                  <th className="py-2.5 px-3 whitespace-nowrap">Responsable</th>
+                  <th className="py-2.5 px-2.5 whitespace-nowrap">Priorité</th>
+                  <th className="py-2.5 px-2.5 whitespace-nowrap">Statut</th>
+                  <th className="py-2.5 px-3 text-center whitespace-nowrap">Avancement</th>
+                  <th className="py-2.5 px-3 whitespace-nowrap">Échéance</th>
+                  <th className="py-2.5 px-3 text-right whitespace-nowrap">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {filteredActivities.length === 0 ? (
                   <tr>
-                    <td colSpan={10} className="py-12 text-center text-slate-400 text-xs">
+                    <td colSpan={8} className="py-12 text-center text-slate-400 text-xs">
                       Aucune activité programmée ne correspond à vos filtres.
                     </td>
                   </tr>
@@ -371,17 +369,14 @@ export const TaskList: React.FC = () => {
                           {act.code}
                         </td>
 
-                        {/* Titre */}
+                        {/* Titre & Service */}
                         <td className="py-2.5 px-3 max-w-xs">
                           <p className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors truncate">
                             {act.title}
                           </p>
-                          <span className="text-[10px] text-slate-400 font-medium">{act.activity_type}</span>
-                        </td>
-
-                        {/* Service */}
-                        <td className="py-2.5 px-3 whitespace-nowrap text-slate-600 font-medium">
-                          {act.department}
+                          <span className="text-[10px] text-slate-500 font-medium block truncate">
+                            {act.activity_type} • {act.department}
+                          </span>
                         </td>
 
                         {/* Responsable */}
@@ -390,19 +385,19 @@ export const TaskList: React.FC = () => {
                         </td>
 
                         {/* Priorité */}
-                        <td className="py-2.5 px-3 whitespace-nowrap">
+                        <td className="py-2.5 px-2.5 whitespace-nowrap">
                           <Badge priority={act.priority} />
                         </td>
 
                         {/* Statut */}
-                        <td className="py-2.5 px-3 whitespace-nowrap">
+                        <td className="py-2.5 px-2.5 whitespace-nowrap">
                           <Badge status={act.status} />
                         </td>
 
-                        {/* Avancement */}
+                        {/* Avancement & Livrables */}
                         <td className="py-2.5 px-3 text-center whitespace-nowrap">
                           <div className="inline-flex items-center gap-1.5">
-                            <div className="w-14 bg-slate-200 rounded-full h-1.5">
+                            <div className="w-12 bg-slate-200 rounded-full h-1.5">
                               <div
                                 className={`h-1.5 rounded-full ${
                                   act.status === 'termine' ? 'bg-emerald-500' : isOverdue ? 'bg-rose-500' : 'bg-emerald-600'
@@ -410,21 +405,13 @@ export const TaskList: React.FC = () => {
                                 style={{ width: `${act.progress_percentage}%` }}
                               />
                             </div>
-                            <span className="text-[11px] font-bold text-slate-800 w-7 text-right">
+                            <span className="text-[11px] font-bold text-slate-800">
                               {act.progress_percentage}%
                             </span>
                           </div>
-                        </td>
-
-                        {/* Livrables */}
-                        <td className="py-2.5 px-3 text-center whitespace-nowrap">
-                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
-                            docCount > 0 
-                              ? 'bg-emerald-50 text-emerald-800 border-emerald-200' 
-                              : 'bg-slate-50 text-slate-400 border-slate-200'
-                          }`}>
-                            {docCount}
-                          </span>
+                          <div className="text-[10px] text-slate-400 font-medium">
+                            {docCount} livrable{docCount > 1 ? 's' : ''}
+                          </div>
                         </td>
 
                         {/* Échéance */}
@@ -440,7 +427,7 @@ export const TaskList: React.FC = () => {
                           <button
                             type="button"
                             onClick={() => setExecutingActivity(act)}
-                            className="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-semibold inline-flex items-center gap-1 transition-colors cursor-pointer"
+                            className="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold inline-flex items-center gap-1 transition-colors cursor-pointer shadow-2xs"
                             title="Ouvrir l'espace d'exécution, avancement et dépôt de livrables"
                           >
                             <Edit3 className="w-3.5 h-3.5" />
@@ -560,9 +547,9 @@ export const TaskList: React.FC = () => {
             )}
           </div>
 
-          {/* Desktop (>= 1024px) : Tableau fluide */}
-          <div className="hidden lg:block w-full max-w-full overflow-hidden">
-            <table className="w-full table-auto text-xs text-left text-slate-700">
+          {/* Desktop (>= 1024px) : Tableau fluide avec overflow-x-auto */}
+          <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+            <table className="w-full text-xs text-left text-slate-700 min-w-[680px] lg:min-w-0">
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-50/50">
                   <th className="py-2.5 px-3 text-center w-12">Fait</th>

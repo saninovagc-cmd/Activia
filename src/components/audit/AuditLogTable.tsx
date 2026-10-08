@@ -174,8 +174,8 @@ export const AuditLogTable: React.FC = () => {
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-hidden">
-        <table className="w-full text-xs text-left text-slate-700 table-auto">
+      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+        <table className="w-full text-xs text-left text-slate-700 table-auto min-w-[760px] lg:min-w-0">
           <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
             <tr>
               <th className="py-3 px-3 w-36 font-semibold">Horodatage</th>

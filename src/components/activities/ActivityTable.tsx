@@ -224,10 +224,10 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
       </div>
 
       {/* =========================================================================
-          VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
+          VUE DESKTOP (>= 1024px) : Tableau fluide avec overflow-x-auto (aucune coupure)
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-hidden">
-        <table className="w-full text-xs text-left text-slate-700 table-auto">
+      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+        <table className="w-full text-xs text-left text-slate-700 table-auto min-w-[720px] lg:min-w-0">
           <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
             <tr>
               <th 

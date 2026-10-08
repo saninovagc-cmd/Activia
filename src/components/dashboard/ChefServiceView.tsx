@@ -294,8 +294,8 @@ export const ChefServiceView: React.FC = () => {
         </div>
 
         {/* Vue Desktop (>= 1024px) : Tableau fluide */}
-        <div className="hidden lg:block w-full max-w-full overflow-hidden">
-          <table className="w-full text-xs text-left table-auto">
+        <div className="hidden lg:block w-full max-w-full overflow-x-auto">
+          <table className="w-full text-xs text-left table-auto min-w-[640px] lg:min-w-0">
             <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-y border-slate-100">
               <tr>
                 <th className="py-2.5 px-3">Collaborateur</th>
