@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useMemo, Suspense } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -81,7 +81,7 @@ function MailPageContent() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
+              className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
             >
               <Plus className="w-4 h-4" />
               <span>Nouveau Courrier</span>
@@ -180,3 +180,4 @@ export default function MailPage() {
     </Suspense>
   );
 }
+

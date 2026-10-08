@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { useApp } from '@/context/AppContext';
@@ -404,7 +404,7 @@ export const MailModal: React.FC<MailModalProps> = ({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors"
+              className="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors"
             >
               <Save className="w-4 h-4" />
               {mode === 'incoming' ? 'Enregistrer le courrier entrant' : 'Enregistrer et émettre'}
@@ -415,3 +415,4 @@ export const MailModal: React.FC<MailModalProps> = ({
     </div>
   );
 };
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { TrainingItem } from '@/types';
@@ -230,7 +230,7 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
             </button>
             <button
               type="submit"
-              className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-xs"
+              className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs"
             >
               Inscrire au registre
             </button>
@@ -240,3 +240,4 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
     </div>
   );
 };
+

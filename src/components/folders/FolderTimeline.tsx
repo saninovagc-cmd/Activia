@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { FolderStatus } from '@/types';
@@ -44,7 +44,7 @@ export const FolderTimeline: React.FC<FolderTimelineProps> = ({
         {!readOnly && currentIndex < steps.length - 1 && onAdvance && (
           <button
             onClick={onAdvance}
-            className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold flex items-center gap-1 shadow-xs transition-colors"
+            className="px-3 py-1 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-semibold flex items-center gap-1 shadow-xs transition-colors"
           >
             Passer à l'étape suivante
             <ChevronRight className="w-3.5 h-3.5" />
@@ -100,3 +100,4 @@ export const FolderTimeline: React.FC<FolderTimelineProps> = ({
     </div>
   );
 };
+

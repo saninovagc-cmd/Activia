@@ -316,7 +316,7 @@ export const TaskList: React.FC = () => {
                             <div className="w-16 bg-slate-200 rounded-full h-1.5">
                               <div
                                 className={`h-1.5 rounded-full ${
-                                  act.status === 'termine' ? 'bg-emerald-500' : isOverdue ? 'bg-rose-500' : 'bg-blue-600'
+                                  act.status === 'termine' ? 'bg-emerald-500' : isOverdue ? 'bg-rose-500' : 'bg-emerald-600'
                                 }`}
                                 style={{ width: `${act.progress_percentage}%` }}
                               />
@@ -351,7 +351,7 @@ export const TaskList: React.FC = () => {
                           <button
                             type="button"
                             onClick={() => setExecutingActivity(act)}
-                            className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-xs font-semibold inline-flex items-center gap-1 transition-colors cursor-pointer"
+                            className="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-lg text-xs font-semibold inline-flex items-center gap-1 transition-colors cursor-pointer"
                             title="Ouvrir l'espace d'exécution, avancement et dépôt de livrables"
                           >
                             <Edit3 className="w-3.5 h-3.5" />
@@ -371,7 +371,7 @@ export const TaskList: React.FC = () => {
         <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
           <div className="px-4 py-3 border-b border-slate-200 bg-slate-50/80 flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-4 rounded-full bg-blue-600" />
+              <span className="w-2 h-4 rounded-full bg-emerald-700" />
               <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">
                 Registre des Tâches Opérationnelles & Jalons
               </h3>

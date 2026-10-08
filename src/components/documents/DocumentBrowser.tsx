@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
@@ -163,7 +163,7 @@ export const DocumentBrowser: React.FC = () => {
 
         <button
           onClick={() => setIsUploadOpen(true)}
-          className="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
+          className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors"
         >
           <Upload className="w-4 h-4" />
           <span>Déposer un Document</span>
@@ -369,7 +369,7 @@ export const DocumentBrowser: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold"
+                  className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold"
                 >
                   Enregistrer
                 </button>
@@ -418,7 +418,7 @@ export const DocumentBrowser: React.FC = () => {
                     downloadSampleDocument(previewDoc.name, previewDoc.entity_ref, previewDoc.entity_type);
                     showToast('success', `Téléchargement du document "${previewDoc.name}" démarré.`);
                   }}
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs"
+                  className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs"
                 >
                   <Download className="w-4 h-4" /> Télécharger l'original
                 </button>
@@ -436,3 +436,4 @@ export const DocumentBrowser: React.FC = () => {
     </div>
   );
 };
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -270,7 +270,7 @@ export const EstablishmentDetailModal: React.FC<EstablishmentDetailModalProps> =
                 </div>
                 <button
                   onClick={() => setShowInspectionForm(!showInspectionForm)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Enregistrer une inspection</span>
@@ -323,7 +323,7 @@ export const EstablishmentDetailModal: React.FC<EstablishmentDetailModalProps> =
                     </button>
                     <button
                       type="submit"
-                      className="px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
+                      className="px-3 py-1.5 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg"
                     >
                       Valider le PV
                     </button>
@@ -422,7 +422,7 @@ export const EstablishmentDetailModal: React.FC<EstablishmentDetailModalProps> =
                 </div>
                 <button
                   onClick={handleCreateFolderForEstablishment}
-                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors cursor-pointer"
                 >
                   <FolderPlus className="w-3.5 h-3.5" />
                   <span>Ouvrir une demande / dossier</span>
@@ -523,3 +523,4 @@ export const EstablishmentDetailModal: React.FC<EstablishmentDetailModalProps> =
     </div>
   );
 };
+

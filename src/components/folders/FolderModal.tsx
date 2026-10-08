@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { useApp } from '@/context/AppContext';
@@ -207,7 +207,7 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors"
+              className="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors"
             >
               <Save className="w-4 h-4" />
               Ouvrir le dossier
@@ -218,3 +218,4 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
     </div>
   );
 };
+

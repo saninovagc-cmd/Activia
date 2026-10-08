@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -69,7 +69,7 @@ export default function EstablishmentsPage() {
               setEditingEtab(null);
               setIsModalOpen(true);
             }}
-            className="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors self-start md:self-auto"
+            className="flex items-center gap-2 px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors self-start md:self-auto"
           >
             <Plus className="w-4 h-4" />
             <span>Enregistrer un Établissement</span>
@@ -169,3 +169,4 @@ export default function EstablishmentsPage() {
     </AppLayout>
   );
 }
+

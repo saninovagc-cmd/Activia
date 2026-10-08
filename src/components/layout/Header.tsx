@@ -147,7 +147,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                 setIsSearchFocused(true);
               }}
               onFocus={() => setIsSearchFocused(true)}
-              className="w-full pl-9 pr-14 py-2 text-xs bg-slate-50/80 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:bg-white transition-all shadow-xs"
+              className="w-full pl-9 pr-14 py-2 text-xs bg-slate-50/80 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600/20 focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
             />
             {searchQuery ? (
               <button
@@ -349,13 +349,13 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
             className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 hover:border-slate-300 bg-slate-50 hover:bg-slate-100 transition-colors text-xs font-medium text-slate-700 cursor-pointer"
             title="Mon compte et changement d'utilisateur"
           >
-            <div className="w-5 h-5 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-[10px]">
+            <div className="w-5 h-5 rounded-full bg-emerald-700 text-white font-bold flex items-center justify-center text-[10px]">
               {currentUser.order || '1'}
             </div>
             <div className="text-left hidden sm:block">
               <div className="flex items-center gap-1.5">
                 <span className="font-bold text-slate-900 leading-tight">{currentUser.full_name}</span>
-                <span className="text-[10px] font-mono text-blue-600 bg-blue-50 px-1 py-0.2 rounded border border-blue-200">
+                <span className="text-[10px] font-mono text-emerald-700 bg-emerald-50 px-1 py-0.2 rounded border border-emerald-200">
                   {currentUser.username}
                 </span>
               </div>
@@ -372,7 +372,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
               <div className="p-3 bg-slate-50/90 border-b border-slate-200">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Session Active</span>
-                  <span className="text-[10px] font-mono font-bold text-blue-700 bg-blue-100/70 px-2 py-0.5 rounded border border-blue-200">
+                  <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded border border-emerald-200">
                     ID: {currentUser.username}
                   </span>
                 </div>
@@ -391,7 +391,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     }}
                     className="py-1.5 px-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
                   >
-                    <Key className="w-3.5 h-3.5 text-blue-600" />
+                    <Key className="w-3.5 h-3.5 text-emerald-700" />
                     Mot de passe
                   </button>
                   <button
@@ -597,12 +597,12 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
               }}
               className="p-5 space-y-4"
             >
-              <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200 text-xs text-blue-900 space-y-1">
+              <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs text-emerald-900 space-y-1">
                 <p className="font-bold flex items-center gap-1.5">
-                  <Info className="w-4 h-4 text-blue-600" /> Format initial par défaut :
+                  <Info className="w-4 h-4 text-emerald-700" /> Format initial par défaut :
                 </p>
                 <p className="text-[11px] text-slate-600">
-                  Votre mot de passe par défaut est : <strong className="font-mono text-blue-700">{currentUser.default_password}</strong> (nom de famille + 123). Vous pouvez le remplacer librement par un mot de passe de votre choix.
+                  Votre mot de passe par défaut est : <strong className="font-mono text-emerald-800">{currentUser.default_password}</strong> (nom de famille + 123). Vous pouvez le remplacer librement par un mot de passe de votre choix.
                 </p>
               </div>
 
@@ -625,7 +625,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     value={newPasswordInput}
                     onChange={(e) => setNewPasswordInput(e.target.value)}
                     placeholder="Saisissez votre nouveau mot de passe"
-                    className="keep-case w-full pl-9 pr-10 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                    className="keep-case w-full pl-9 pr-10 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:outline-none"
                   />
                   <button
                     type="button"
@@ -649,7 +649,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     value={confirmPasswordInput}
                     onChange={(e) => setConfirmPasswordInput(e.target.value)}
                     placeholder="Répétez le nouveau mot de passe"
-                    className="keep-case w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                    className="keep-case w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:outline-none"
                   />
                 </div>
               </div>
@@ -664,7 +664,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md cursor-pointer flex items-center gap-1.5"
+                  className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-md cursor-pointer flex items-center gap-1.5"
                 >
                   <Check className="w-3.5 h-3.5" />
                   Enregistrer mon mot de passe

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { 
@@ -87,19 +88,26 @@ export default function HomePage() {
       {/* Main Navigation Bar */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-blue-600 text-white font-black text-2xl flex items-center justify-center shadow-md shadow-blue-600/20">
-              A
+          <div className="flex items-center gap-3.5">
+            <div className="bg-white p-1 rounded-xl border border-slate-200 shadow-xs flex items-center justify-center">
+              <Image
+                src="/logo-abmed.png"
+                alt="Logo ABMed"
+                width={120}
+                height={50}
+                className="h-11 w-auto object-contain"
+                priority
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xl font-black text-slate-900 tracking-tight">ACTIVIA</span>
-                <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-blue-100 text-blue-800 uppercase tracking-wider">
-                  DLVS
+                <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-100 text-emerald-800 uppercase tracking-wider border border-emerald-200">
+                  ABMed
                 </span>
               </div>
-              <p className="text-[11px] text-slate-500 font-medium hidden sm:block">
-                Direction des Licences, de la Vigilance et de la Surveillance du Marché
+              <p className="text-[11px] text-slate-500 font-semibold hidden sm:block">
+                Agence Béninoise du Médicament et des autres Produits de Santé
               </p>
             </div>
           </div>
@@ -109,11 +117,11 @@ export default function HomePage() {
               <div className="flex items-center gap-2.5">
                 <div className="text-right hidden sm:block">
                   <p className="text-xs font-bold text-slate-900 leading-tight">{currentUser.full_name}</p>
-                  <p className="text-[10px] text-blue-600 font-mono">@{currentUser.username}</p>
+                  <p className="text-[10px] text-emerald-700 font-mono font-semibold">@{currentUser.username}</p>
                 </div>
                 <Link
                   href="/dashboard"
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-xs transition-colors flex items-center gap-1.5"
+                  className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors flex items-center gap-1.5"
                 >
                   <span>Mon Espace de Travail</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -123,7 +131,7 @@ export default function HomePage() {
                     logout();
                     router.push('/login');
                   }}
-                  className="p-2 text-rose-600 hover:bg-rose-50 rounded-xl transition-colors"
+                  className="p-2 text-rose-600 hover:bg-rose-50 rounded-xl transition-colors cursor-pointer"
                   title="Déconnexion"
                 >
                   <LogOut className="w-4 h-4" />
@@ -132,7 +140,7 @@ export default function HomePage() {
             ) : (
               <Link
                 href="/login"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-xs transition-colors flex items-center gap-1.5"
+                className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors flex items-center gap-1.5"
               >
                 <Lock className="w-3.5 h-3.5" />
                 <span>Se connecter</span>
@@ -143,36 +151,36 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-white via-slate-50 to-slate-100 border-b border-slate-200 py-12 sm:py-16">
+      <section className="bg-gradient-to-b from-white via-slate-50 to-emerald-50/20 border-b border-slate-200 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column: Presentation */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-bold">
-                <ShieldCheck className="w-4 h-4 text-blue-600" />
-                Système Officiel de Pilotage Réglementaire DLVS
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+                <ShieldCheck className="w-4 h-4 text-emerald-700" />
+                Système Officiel de Pilotage Réglementaire ABMed
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-                Gestion des Licences, Vigilances et Surveillance du Marché Sanitaire
+                Agence Béninoise du Médicament et des autres Produits de Santé
               </h1>
 
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                ACTIVIA centralise et sécurise les procédures de la <strong>DLVS</strong> du Ministère de la Santé : instruction des dossiers de licence, matériovigilance &amp; pharmacovigilance (MAPI), contrôle post-commercialisation et traçabilité intégrale des courriers.
+                ACTIVIA centralise et sécurise l&apos;ensemble des procédures de l&apos;<strong>ABMed</strong> : instruction des dossiers réglementaires, contrôle des établissements pharmaceutiques, matériovigilance &amp; pharmacovigilance (MAPI), gestion des activités de service et traçabilité intégrale des courriers.
               </p>
 
               {/* Status Pills */}
               <div className="grid grid-cols-3 gap-3 pt-2">
                 <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                  <p className="text-lg sm:text-xl font-black text-blue-600">14</p>
-                  <p className="text-[11px] text-slate-500 font-semibold mt-0.5">Agents DLVS habilités</p>
+                  <p className="text-lg sm:text-xl font-black text-emerald-700">14</p>
+                  <p className="text-[11px] text-slate-500 font-semibold mt-0.5">Agents ABMed habilités</p>
                 </div>
                 <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                  <p className="text-lg sm:text-xl font-black text-emerald-600">14</p>
+                  <p className="text-lg sm:text-xl font-black text-slate-900">14</p>
                   <p className="text-[11px] text-slate-500 font-semibold mt-0.5">Tables PostgreSQL RLS</p>
                 </div>
                 <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
-                  <p className="text-lg sm:text-xl font-black text-purple-600">100%</p>
+                  <p className="text-lg sm:text-xl font-black text-amber-600">100%</p>
                   <p className="text-[11px] text-slate-500 font-semibold mt-0.5">Traçabilité &amp; Audit</p>
                 </div>
               </div>
@@ -184,22 +192,22 @@ export default function HomePage() {
                 <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-5">
                   <div>
                     <h2 className="text-base font-bold text-slate-900">Espace de Connexion Agent</h2>
-                    <p className="text-xs text-slate-500 mt-0.5">Accès nominatif pour le personnel DLVS</p>
+                    <p className="text-xs text-slate-500 mt-0.5">Accès nominatif pour le personnel ABMed</p>
                   </div>
-                  <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
                     <Lock className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Account formula rule banner */}
-                <div className="mb-4 p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-700 space-y-1">
+                <div className="mb-4 p-3 rounded-xl bg-emerald-50/60 border border-emerald-200 text-[11px] text-slate-700 space-y-1">
                   <p className="font-bold text-slate-900 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
                     Formule d&apos;accès automatique :
                   </p>
                   <p className="text-slate-600 leading-snug">
-                    • Identifiant : <strong className="font-mono text-blue-700">initiale prénom + nom</strong> (ex: <span className="font-mono font-bold">jsatchivi</span>)<br />
-                    • Mot de passe : <strong className="font-mono text-blue-700">nom de famille + 123</strong> (ex: <span className="font-mono font-bold">satchivi123</span>)
+                    • Identifiant : <strong className="font-mono text-emerald-800">initiale prénom + nom</strong> (ex: <span className="font-mono font-bold">jsatchivi</span>)<br />
+                    • Mot de passe : <strong className="font-mono text-emerald-800">nom de famille + 123</strong> (ex: <span className="font-mono font-bold">satchivi123</span>)
                   </p>
                 </div>
 
@@ -223,7 +231,7 @@ export default function HomePage() {
                         value={identifier}
                         onChange={(e) => setIdentifier(e.target.value)}
                         placeholder="Ex: jsatchivi..."
-                        className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none"
+                        className="keep-case w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:bg-white focus:outline-none"
                       />
                     </div>
                   </div>
@@ -240,12 +248,12 @@ export default function HomePage() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Mot de passe..."
-                        className="w-full pl-9 pr-10 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none"
+                        className="keep-case w-full pl-9 pr-10 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:bg-white focus:outline-none"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
                         tabIndex={-1}
                       >
                         {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -256,7 +264,7 @@ export default function HomePage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-colors cursor-pointer"
+                    className="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-colors cursor-pointer"
                   >
                     {loading ? 'Connexion en cours...' : 'Se connecter'}
                     <ArrowRight className="w-4 h-4" />
@@ -265,8 +273,8 @@ export default function HomePage() {
 
                 {/* Quick Simulation Link */}
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-500">Personnel DLVS (14 comptes)</span>
-                  <Link href="/login" className="text-blue-600 hover:underline font-bold flex items-center gap-1">
+                  <span className="text-slate-500">Personnel ABMed ({allUsers.length} comptes)</span>
+                  <Link href="/login" className="text-emerald-700 hover:underline font-bold flex items-center gap-1">
                     Voir la liste des accès <ChevronRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -280,24 +288,24 @@ export default function HomePage() {
       <section className="py-14 max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <h2 className="text-2xl font-black text-slate-900 tracking-tight">
-            Les 3 Piliers Métiers de la DLVS
+            Les Piliers Métiers de l&apos;ABMed
           </h2>
           <p className="text-xs sm:text-sm text-slate-500">
-            Une architecture opérationnelle unifiée pour réguler et protéger la santé publique
+            Une architecture opérationnelle unifiée pour réguler et protéger la santé publique au Bénin
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: Service des Licences */}
           <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-md transition-shadow space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
               <FolderArchive className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-slate-900">Service des Licences (SL)</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Instruction dématérialisée des demandes d&apos;ouverture, d&apos;exploitation et de transfert d&apos;officines, dépôts et grossistes-répartiteurs. Gestion des commissions et réceptions techniques.
             </p>
-            <div className="pt-2 text-[11px] font-semibold text-blue-700">
+            <div className="pt-2 text-[11px] font-semibold text-emerald-800">
               Responsable : Dr. KINTIN Daniel (Chef SL)
             </div>
           </div>
@@ -318,14 +326,14 @@ export default function HomePage() {
 
           {/* Card 3: SSMUR */}
           <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-2xs hover:shadow-md transition-shadow space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center">
               <Building2 className="w-5 h-5" />
             </div>
             <h3 className="text-base font-bold text-slate-900">Surveillance du Marché (SSMUR)</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Lutte contre les produits pharmaceutiques falsifiés ou de qualité inférieure, contrôle de la publicité médicale, destruction conforme des déchets et autorisations d&apos;achat d&apos;intrants.
             </p>
-            <div className="pt-2 text-[11px] font-semibold text-emerald-700">
+            <div className="pt-2 text-[11px] font-semibold text-amber-800">
               Responsable : Dr. ALOFA Huibert (Chef SSMUR)
             </div>
           </div>
@@ -336,8 +344,8 @@ export default function HomePage() {
           <div className="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <Users className="w-4 h-4 text-blue-600" />
-                Personnel DLVS &amp; Comptes Opérationnels ({allUsers.length} Collaborateurs)
+                <Users className="w-4 h-4 text-emerald-700" />
+                Personnel ABMed &amp; Comptes Opérationnels ({allUsers.length} Collaborateurs)
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
                 Cliquez sur un profil pour ouvrir directement la session de travail
@@ -375,7 +383,7 @@ export default function HomePage() {
                     <td className="py-2.5 px-4 font-bold text-slate-900">
                       {u.full_name}
                     </td>
-                    <td className="py-2.5 px-3 font-mono font-semibold text-blue-700">
+                    <td className="py-2.5 px-3 font-mono font-semibold text-emerald-800">
                       {u.username}
                     </td>
                     <td className="py-2.5 px-4 text-slate-600 max-w-xs truncate">
@@ -388,7 +396,7 @@ export default function HomePage() {
                     <td className="py-2.5 px-4 text-right">
                       <button
                         onClick={() => handleAgentClick(u)}
-                        className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-[11px] font-semibold transition-colors cursor-pointer"
+                        className="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-lg text-[11px] font-semibold transition-colors cursor-pointer"
                       >
                         Se connecter
                       </button>
@@ -402,20 +410,20 @@ export default function HomePage() {
       </section>
 
       {/* Institutional Footer */}
-      <footer className="mt-auto bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+      <footer className="mt-auto bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <p className="font-bold text-white">ACTIVIA — Plateforme Réglementaire Officielle DLVS</p>
-            <p className="text-[11px] text-slate-500 mt-0.5">
+            <p className="font-bold text-white">ACTIVIA — Agence Béninoise du Médicament et des autres Produits de Santé (ABMed)</p>
+            <p className="text-[11px] text-slate-400 mt-0.5">
               Direction des Licences, de la Vigilance et de la Surveillance du Marché • Ministère de la Santé, République du Bénin
             </p>
           </div>
           <div className="flex items-center gap-4 text-[11px]">
             <Link href="/login" className="text-slate-300 hover:text-white">Connexion Agent</Link>
             <span>•</span>
-            <Link href="/dashboard" className="text-slate-300 hover:text-white">Espace DLVS</Link>
+            <Link href="/dashboard" className="text-slate-300 hover:text-white">Espace ABMed</Link>
             <span>•</span>
-            <span className="text-emerald-400">Version 2026.10</span>
+            <span className="text-emerald-400 font-semibold">Version ABMed 2026.10</span>
           </div>
         </div>
       </footer>

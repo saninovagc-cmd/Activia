@@ -64,7 +64,7 @@ function DashboardContent() {
                 onClick={() => setViewMode('service')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all ${
                   viewMode === 'service'
-                    ? 'bg-blue-600 text-white shadow-xs'
+                    ? 'bg-emerald-700 text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { Folder, FolderStatus } from '@/types';
@@ -289,7 +289,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                 <div className="flex justify-end gap-2">
                   <button
                     onClick={handleRecordDecision}
-                    className="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold shadow-xs transition-colors"
+                    className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold shadow-xs transition-colors"
                   >
                     Consigner la décision officielle
                   </button>
@@ -325,7 +325,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                 </div>
                 <button
                   onClick={() => setShowDocUpload(!showDocUpload)}
-                  className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold flex items-center gap-1.5 shadow-xs"
+                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold flex items-center gap-1.5 shadow-xs"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Verser une pièce</span>
@@ -368,7 +368,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                     </button>
                     <button
                       type="submit"
-                      className="px-4 py-1 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-xs"
+                      className="px-4 py-1 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-xs"
                     >
                       Enregistrer la pièce
                     </button>
@@ -428,7 +428,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold flex items-center gap-1.5 shadow-xs"
+                    className="px-3.5 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold flex items-center gap-1.5 shadow-xs"
                   >
                     <Send className="w-3.5 h-3.5" />
                     Publier l'observation
@@ -496,3 +496,4 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
     </div>
   );
 };
+

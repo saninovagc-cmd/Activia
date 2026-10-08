@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import { Activity, ActivityStatus, ActivityType, PriorityLevel } from '@/types';
@@ -333,7 +333,7 @@ export const ActivityModal: React.FC<ActivityModalProps> = ({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors"
+              className="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl flex items-center gap-2 shadow-xs transition-colors"
             >
               <Save className="w-4 h-4" />
               {activityToEdit ? 'Enregistrer les modifications' : 'Créer l’activité'}
@@ -344,3 +344,4 @@ export const ActivityModal: React.FC<ActivityModalProps> = ({
     </div>
   );
 };
+

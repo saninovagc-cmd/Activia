@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { 
@@ -67,12 +68,19 @@ export default function LoginPage() {
             <span className="hidden sm:inline">Accueil</span>
           </Link>
 
-          <div className="w-14 h-14 rounded-2xl bg-blue-600 text-white font-black text-3xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-blue-600/30">
-            A
+          <div className="bg-white p-2 rounded-2xl mx-auto mb-3 shadow-lg max-w-[200px] flex items-center justify-center border border-slate-200">
+            <Image
+              src="/logo-abmed.png"
+              alt="Logo ABMed"
+              width={160}
+              height={65}
+              className="h-14 w-auto object-contain"
+              priority
+            />
           </div>
           <h1 className="text-2xl font-black text-white tracking-tight">ACTIVIA</h1>
-          <p className="text-xs uppercase font-bold tracking-widest text-blue-400 mt-1">
-            Direction des Licences, de la Vigilance et de la Surveillance du Marché (DLVS)
+          <p className="text-xs uppercase font-bold tracking-widest text-emerald-400 mt-1">
+            Agence Béninoise du Médicament et des autres Produits de Santé (ABMed)
           </p>
           <p className="text-[11px] text-slate-400 mt-0.5">Ministère de la Santé • République du Bénin</p>
         </div>
@@ -87,14 +95,14 @@ export default function LoginPage() {
           </div>
 
           {/* Institutional formula notice */}
-          <div className="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900 space-y-1">
+          <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs text-emerald-900 space-y-1">
             <div className="flex items-center gap-1.5 font-bold">
-              <Sparkles className="w-4 h-4 text-blue-600" />
-              <span>Format officiel des identifiants DLVS :</span>
+              <Sparkles className="w-4 h-4 text-emerald-700" />
+              <span>Format officiel des identifiants ABMed :</span>
             </div>
             <p className="text-[11px] text-slate-700 leading-relaxed">
-              • <strong>Identifiant</strong> : Initiale du prénom + Nom de famille (ex: <code className="bg-white px-1.5 py-0.5 rounded text-blue-700 font-mono font-bold">jsatchivi</code>)<br />
-              • <strong>Mot de passe</strong> : Nom de famille + 123 (ex: <code className="bg-white px-1.5 py-0.5 rounded text-blue-700 font-mono font-bold">satchivi123</code>)
+              • <strong>Identifiant</strong> : Initiale du prénom + Nom de famille (ex: <code className="bg-white px-1.5 py-0.5 rounded text-emerald-800 font-mono font-bold">jsatchivi</code>)<br />
+              • <strong>Mot de passe</strong> : Nom de famille + 123 (ex: <code className="bg-white px-1.5 py-0.5 rounded text-emerald-800 font-mono font-bold">satchivi123</code>)
             </p>
           </div>
 
@@ -119,7 +127,7 @@ export default function LoginPage() {
                   onChange={(e) => setIdentifier(e.target.value)}
                   placeholder="Ex: jsatchivi ou email..."
                   style={{ textTransform: 'none' }}
-                  className="auth-input keep-case w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none"
+                  className="auth-input keep-case w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:bg-white focus:outline-none"
                 />
               </div>
             </div>
@@ -142,12 +150,12 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Votre mot de passe"
                   style={{ textTransform: 'none' }}
-                  className="auth-input keep-case w-full pl-9 pr-10 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none"
+                  className="auth-input keep-case w-full pl-9 pr-10 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:bg-white focus:outline-none"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
                   tabIndex={-1}
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -158,7 +166,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
+              className="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
             >
               {loading ? 'Connexion en cours...' : 'Se connecter à mon espace'}
               <ArrowRight className="w-4 h-4" />
@@ -170,7 +178,7 @@ export default function LoginPage() {
             <div className="flex items-center justify-between mb-2.5">
               <div>
                 <p className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">
-                  Personnel DLVS ({allUsers.length} Comptes Activés)
+                  Personnel ABMed ({allUsers.length} Comptes Activés)
                 </p>
                 <p className="text-[10px] text-slate-400">Cliquez sur un compte pour vous connecter immédiatement :</p>
               </div>
@@ -181,18 +189,18 @@ export default function LoginPage() {
                 <button
                   key={user.id}
                   onClick={() => handleQuickLogin(user)}
-                  className="w-full p-2.5 rounded-xl bg-slate-50 hover:bg-blue-50/80 border border-slate-200 hover:border-blue-300 text-left flex items-center justify-between text-xs transition-colors cursor-pointer group"
+                  className="w-full p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50/70 border border-slate-200 hover:border-emerald-300 text-left flex items-center justify-between text-xs transition-colors cursor-pointer group"
                 >
                   <div className="flex items-center gap-2.5 min-w-0 pr-2">
-                    <span className="w-6 h-6 shrink-0 rounded-lg bg-slate-200 group-hover:bg-blue-200 text-slate-700 group-hover:text-blue-800 font-bold flex items-center justify-center text-[10px]">
+                    <span className="w-6 h-6 shrink-0 rounded-lg bg-slate-200 group-hover:bg-emerald-200 text-slate-700 group-hover:text-emerald-900 font-bold flex items-center justify-center text-[10px]">
                       {user.order || 1}
                     </span>
                     <div className="truncate">
                       <div className="flex items-center gap-2">
-                        <p className="font-bold text-slate-900 group-hover:text-blue-900 truncate">
+                        <p className="font-bold text-slate-900 group-hover:text-emerald-950 truncate">
                           {user.full_name}
                         </p>
-                        <span className="font-mono text-[10px] text-blue-700 bg-blue-100/60 px-1.5 py-0.2 rounded border border-blue-200">
+                        <span className="font-mono text-[10px] text-emerald-800 bg-emerald-100/70 px-1.5 py-0.2 rounded border border-emerald-200">
                           {user.username}
                         </span>
                       </div>
@@ -205,7 +213,7 @@ export default function LoginPage() {
                     <Badge role={user.role}>
                       {user.role === 'admin' ? 'Directrice' : user.role === 'chef_service' ? 'Chef Serv.' : user.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
                     </Badge>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600" />
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-700" />
                   </div>
                 </button>
               ))}
@@ -215,8 +223,8 @@ export default function LoginPage() {
 
         {/* Footer */}
         <div className="px-8 py-3 bg-slate-50 border-t border-slate-100 text-center text-[11px] text-slate-500 flex items-center justify-between">
-          <span>Sécurité ministérielle & Audit RGPD</span>
-          <Link href="/" className="text-blue-600 hover:underline font-semibold">
+          <span>Sécurité ABMed & Confidentialité</span>
+          <Link href="/" className="text-emerald-700 hover:underline font-semibold">
             Portail institutionnel →
           </Link>
         </div>

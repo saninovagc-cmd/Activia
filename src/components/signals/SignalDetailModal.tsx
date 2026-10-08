@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { SignalItem, SignalStep, SignalSeverity } from '@/types';
@@ -367,7 +367,7 @@ export const SignalDetailModal: React.FC<SignalDetailModalProps> = ({
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-xs"
+                      className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs"
                     >
                       Enregistrer la cotation MAPI
                     </button>
@@ -573,3 +573,4 @@ export const SignalDetailModal: React.FC<SignalDetailModalProps> = ({
     </div>
   );
 };
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -139,7 +139,7 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={handleCreateResponse}
-                    className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold flex items-center gap-1.5 transition-colors shadow-xs"
+                    className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold flex items-center gap-1.5 transition-colors shadow-xs"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Créer courrier réponse</span>
@@ -314,7 +314,7 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
                       {isCurrent && idx < workflowSteps.length - 1 && (
                         <button
                           onClick={() => updateIncomingMailStatus(mail.id, workflowSteps[idx + 1].status)}
-                          className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold flex items-center gap-1 shadow-xs"
+                          className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-semibold flex items-center gap-1 shadow-xs"
                         >
                           Valider cette étape <ArrowRight className="w-3.5 h-3.5" />
                         </button>
@@ -335,7 +335,7 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
               <p className="text-slate-500 text-xs">Numérisé et stocké dans le bucket Supabase Storage</p>
               <button
                 onClick={() => downloadSampleDocument(mail.scanned_doc_name || 'Courrier_Scanne.pdf', mail.register_number, 'Courrier Entrant')}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold inline-flex items-center gap-1.5"
+                className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-semibold inline-flex items-center gap-1.5"
               >
                 <Download className="w-4 h-4" /> Télécharger la pièce
               </button>
@@ -364,3 +364,4 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
     </div>
   );
 };
+

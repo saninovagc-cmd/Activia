@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { LogOut, ChevronDown, ChevronRight } from 'lucide-react';
@@ -124,21 +125,28 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           <span className="w-1/3 bg-rose-500" />
         </div>
 
-        {/* Brand header */}
-        <div className="h-16 flex items-center justify-between px-5 bg-[#070b14] border-b border-slate-800/80 shrink-0">
+        {/* Brand header with ABMed Official Identity */}
+        <div className="h-20 flex items-center justify-between px-4 bg-[#070b14] border-b border-slate-800/80 shrink-0">
           <Link href="/dashboard" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-black text-lg tracking-wider shadow-md shadow-blue-900/30 ring-1 ring-white/15">
-              A
+            <div className="bg-white rounded-lg p-1.5 shadow-md flex items-center justify-center shrink-0 border border-slate-200">
+              <Image
+                src="/logo-abmed.png"
+                alt="Logo ABMed"
+                width={72}
+                height={30}
+                className="h-8 w-auto object-contain"
+                priority
+              />
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                <span className="text-base font-black tracking-wide text-white">ACTIVIA</span>
-                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                  PRO
+                <span className="text-sm font-black tracking-wide text-white">ACTIVIA</span>
+                <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                  ABMed
                 </span>
               </div>
-              <span className="block text-[9.5px] uppercase font-semibold tracking-wider text-slate-400">
-                Direction Sanitaire DLVS
+              <span className="block text-[8.5px] uppercase font-bold tracking-wider text-slate-400 leading-tight">
+                Agence Béninoise du Médicament
               </span>
             </div>
           </Link>
@@ -165,7 +173,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                   isSectionOpen
                     ? 'bg-[#0e1628] border-slate-700 shadow-sm'
                     : hasActiveItem
-                    ? 'bg-slate-900/50 border-blue-900/60'
+                    ? 'bg-slate-900/60 border-emerald-900/60'
                     : 'bg-transparent border-transparent hover:bg-slate-850/40 hover:border-slate-800/60'
                 }`}
               >
@@ -177,7 +185,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     isSectionOpen
                       ? 'text-white'
                       : hasActiveItem
-                      ? 'text-blue-400'
+                      ? 'text-emerald-400'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                   aria-expanded={isSectionOpen}
@@ -186,9 +194,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     <span
                       className={`font-mono text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 ${
                         hasActiveItem
-                          ? 'bg-blue-600 text-white border-blue-500'
+                          ? 'bg-emerald-700 text-white border-emerald-600'
                           : isSectionOpen
-                          ? 'bg-slate-800 text-blue-300 border-slate-700'
+                          ? 'bg-slate-800 text-emerald-300 border-slate-700'
                           : 'bg-slate-900 text-slate-500 border-slate-800'
                       }`}
                     >
@@ -199,7 +207,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
                   <span className="text-slate-400 shrink-0 ml-2">
                     {isSectionOpen ? (
-                      <ChevronDown className="w-3.5 h-3.5 text-blue-400 transition-transform duration-200" />
+                      <ChevronDown className="w-3.5 h-3.5 text-emerald-400 transition-transform duration-200" />
                     ) : (
                       <ChevronRight className="w-3.5 h-3.5 text-slate-500 transition-transform duration-200" />
                     )}
@@ -220,7 +228,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                           }}
                           className={`block px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                             isActive
-                              ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-900/40 ring-1 ring-blue-400/30'
+                              ? 'bg-emerald-700 text-white font-bold shadow-md shadow-emerald-950/40 ring-1 ring-emerald-500/30'
                               : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
                           }`}
                         >
@@ -243,13 +251,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* Active user session card & Logout */}
         <div className="p-3.5 border-t border-slate-800/90 bg-[#070b14] shrink-0">
           <div className="flex items-center gap-2.5 mb-2.5 px-1">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-md ring-1 ring-white/10">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 to-green-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-md ring-1 ring-white/10">
               {currentUser.order || '1'}
             </div>
             <div className="truncate min-w-0 flex-1">
               <p className="text-xs font-bold text-white truncate leading-tight">{currentUser.full_name}</p>
               <div className="flex items-center gap-1.5 mt-0.5">
-                <span className="text-[10px] text-blue-400 font-mono font-semibold">ID: {currentUser.username}</span>
+                <span className="text-[10px] text-emerald-400 font-mono font-semibold">ID: {currentUser.username}</span>
                 <span className="text-[9px] text-slate-500 truncate">
                   • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
                 </span>

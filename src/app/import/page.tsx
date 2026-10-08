@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -425,7 +425,7 @@ export default function ImportPage() {
               <button
                 disabled={!fileUploaded || importStatus === 'validating' || importStatus === 'importing'}
                 onClick={handleRunMigration}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs font-semibold rounded-lg shadow-xs transition-colors"
+                className="flex items-center gap-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-800 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs font-semibold rounded-lg shadow-xs transition-colors"
               >
                 {importStatus === 'validating' || importStatus === 'importing' ? (
                   <>
@@ -512,3 +512,4 @@ PostgreSQL / Supabase d'ACTIVIA avec traçabilité complète des modifications.
     </AppLayout>
   );
 }
+

@@ -150,7 +150,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
           {/* Section 1: Statut & Niveau d'avancement */}
           <div className="space-y-3 bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
             <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center gap-2">
-              <span className="w-2 h-3.5 rounded-full bg-blue-600" />
+              <span className="w-2 h-3.5 rounded-full bg-emerald-700" />
               1. Statut & Niveau d'Avancement Opérationnel
             </h3>
 
@@ -158,9 +158,9 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
               {[
                 { val: 'a_faire', label: 'À faire', bg: 'bg-slate-100 text-slate-700 border-slate-300' },
-                { val: 'en_cours', label: 'En cours', bg: 'bg-blue-50 text-blue-800 border-blue-300' },
+                { val: 'en_cours', label: 'En cours', bg: 'bg-emerald-50 text-emerald-800 border-emerald-300' },
                 { val: 'en_attente', label: 'En attente', bg: 'bg-amber-50 text-amber-800 border-amber-300' },
-                { val: 'termine', label: 'Terminé / Conforme', bg: 'bg-emerald-50 text-emerald-800 border-emerald-300' },
+                { val: 'termine', label: 'Terminé / Conforme', bg: 'bg-emerald-100 text-emerald-900 border-emerald-400' },
               ].map(st => (
                 <button
                   key={st.val}
@@ -171,7 +171,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
                   }}
                   className={`p-2 rounded-lg text-xs font-bold border transition-all cursor-pointer ${
                     status === st.val
-                      ? `${st.bg} ring-2 ring-blue-600 shadow-xs`
+                      ? `${st.bg} ring-2 ring-emerald-600 shadow-xs`
                       : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
                   }`}
                 >
@@ -186,7 +186,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
                 <label className="text-xs font-bold text-slate-700">
                   Niveau d'Avancement :
                 </label>
-                <span className="text-base font-black font-mono text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-lg border border-blue-200">
+                <span className="text-base font-black font-mono text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-lg border border-emerald-200">
                   {progress}%
                 </span>
               </div>
@@ -203,7 +203,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
                   if (val === 100) setStatus('termine');
                   else if (val > 0 && status === 'a_faire') setStatus('en_cours');
                 }}
-                className="w-full accent-blue-600 cursor-pointer h-2 bg-slate-200 rounded-lg"
+                className="w-full accent-emerald-700 cursor-pointer h-2 bg-slate-200 rounded-lg"
               />
 
               <div className="flex items-center justify-between gap-1 text-[10px] text-slate-500 font-semibold pt-1">
@@ -327,7 +327,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
                       }}
                       className="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-semibold flex items-center gap-1 shrink-0 cursor-pointer"
                     >
-                      <Download className="w-3.5 h-3.5 text-blue-600" />
+                      <Download className="w-3.5 h-3.5 text-emerald-700" />
                       Télécharger
                     </button>
                   </div>
@@ -352,7 +352,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
               placeholder="Rédigez ici votre compte-rendu d'exécution, actions entreprises ou difficultés rencontrées..."
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
-              className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+              className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:outline-none"
             />
 
             {/* Commentaires existants */}
@@ -387,7 +387,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md shadow-blue-600/30 cursor-pointer transition-colors"
+              className="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-md shadow-emerald-900/30 cursor-pointer transition-colors"
             >
               Enregistrer l'avancement & les livrables
             </button>
@@ -397,3 +397,4 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
     </div>
   );
 };
+

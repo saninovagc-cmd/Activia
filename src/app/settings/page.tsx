@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -522,7 +522,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                     downloadFile('activia_complete_schema_and_seed.sql', COMPLETE_SUPABASE_SQL, 'application/sql');
                     showToast('success', 'Fichier SQL "activia_complete_schema_and_seed.sql" téléchargé.');
                   }}
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+                  className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5" />
                   Télécharger le script SQL (.sql)
@@ -587,7 +587,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                   </button>
                   <button
                     type="submit"
-                    className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold cursor-pointer"
+                    className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-bold cursor-pointer"
                   >
                     Enregistrer l'entrée
                   </button>
@@ -671,7 +671,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1.5"
+                    className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-xs cursor-pointer flex items-center gap-1.5"
                   >
                     <Check className="w-3.5 h-3.5" />
                     Valider le mot de passe
@@ -685,3 +685,4 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
     </AppLayout>
   );
 }
+

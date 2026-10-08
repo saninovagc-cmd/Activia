@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Activity, ActivityStatus, PriorityLevel, Task } from '@/types';
 import { useApp } from '@/context/AppContext';
@@ -281,7 +281,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                 </div>
                 <button
                   onClick={() => setShowAddTask(!showAddTask)}
-                  className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium flex items-center gap-1 shadow-xs"
+                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-medium flex items-center gap-1 shadow-xs"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   Ajouter une tâche
@@ -396,7 +396,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                 </div>
                 <button
                   onClick={() => setShowUploadDoc(!showUploadDoc)}
-                  className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium flex items-center gap-1 shadow-xs"
+                  className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-medium flex items-center gap-1 shadow-xs"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Joindre un fichier</span>
@@ -548,3 +548,4 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
     </div>
   );
 };
+

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -56,7 +56,7 @@ export const PhasePlaceholder: React.FC<PhasePlaceholderProps> = ({
         <div className="mt-8 flex justify-center gap-3">
           <Link
             href="/dashboard"
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition-colors shadow-xs"
+            className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold transition-colors shadow-xs"
           >
             Retour au Tableau de Bord
           </Link>
@@ -71,3 +71,4 @@ export const PhasePlaceholder: React.FC<PhasePlaceholderProps> = ({
     </AppLayout>
   );
 };
+
