@@ -75,7 +75,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       number: '05',
       title: 'PARAMÈTRE & CONFIGURATION',
       items: [
-        { name: 'Migration Fichiers Excel (18)', href: '/import' },
         { name: 'Journal d’Audit & Sécurité', href: '/audit' },
         { name: 'Référentiels & Paramètres', href: '/settings' },
       ],
@@ -88,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     if (path.startsWith('/activities') || path.startsWith('/tasks') || path.startsWith('/calendar')) return 'operationnel';
     if (path.startsWith('/mail') || path.startsWith('/folders') || path.startsWith('/documents')) return 'administratif';
     if (path.startsWith('/establishments') || path.startsWith('/signals') || path.startsWith('/trainings')) return 'metiers';
-    if (path.startsWith('/import') || path.startsWith('/audit') || path.startsWith('/settings')) return 'donnees';
+    if (path.startsWith('/audit') || path.startsWith('/settings')) return 'donnees';
     return 'pilotage';
   };
 
