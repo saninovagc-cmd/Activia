@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
@@ -11,8 +10,7 @@ import {
   ArrowRight, 
   AlertCircle, 
   Eye, 
-  EyeOff, 
-  Home
+  EyeOff 
 } from 'lucide-react';
 
 export default function LoginPage() {
@@ -51,14 +49,7 @@ export default function LoginPage() {
       {/* Container */}
       <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
         {/* Institutional header */}
-        <div className="bg-slate-950 px-8 py-6 text-center border-b border-slate-800 relative">
-          <Link
-            href="/"
-            className="absolute left-6 top-6 text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors"
-          >
-            <Home className="w-4 h-4" />
-            <span className="hidden sm:inline">Accueil</span>
-          </Link>
+        <div className="bg-slate-950 px-8 py-6 text-center border-b border-slate-800">
 
           <div className="bg-white p-2 rounded-2xl mx-auto mb-3 shadow-lg max-w-[200px] flex items-center justify-center border border-slate-200">
             <Image
@@ -150,11 +141,8 @@ export default function LoginPage() {
         </div>
 
         {/* Footer */}
-        <div className="px-8 py-3 bg-slate-50 border-t border-slate-100 text-center text-[11px] text-slate-500 flex items-center justify-between">
+        <div className="px-8 py-3 bg-slate-50 border-t border-slate-100 text-center text-[11px] text-slate-500 flex items-center justify-center">
           <span>Sécurité ABMed & Confidentialité</span>
-          <Link href="/" className="text-emerald-700 hover:underline font-semibold">
-            Portail institutionnel →
-          </Link>
         </div>
       </div>
     </div>
