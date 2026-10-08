@@ -218,23 +218,22 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-2">
                         {item.result === 'Validé' ? (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
-                            <CheckCircle2 className="w-3 h-3" /> Validé
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                            Validé
                           </span>
                         ) : item.result === 'En cours' ? (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
-                            <Clock className="w-3 h-3" /> En cours
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+                            En cours
                           </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200">
-                            <XCircle className="w-3 h-3" /> Ajourné
+                          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-rose-50 text-rose-800 border border-rose-200">
+                            Ajourné
                           </span>
                         )}
                       </div>
                       {item.certificate_issued && (
-                        <div className="text-[10px] text-purple-700 font-semibold mt-1 flex items-center gap-1">
-                          <Award className="w-3 h-3" />
-                          <span>Certifié ({item.certificate_number})</span>
+                        <div className="text-[10px] text-purple-700 font-semibold mt-1">
+                          Certifié ({item.certificate_number})
                         </div>
                       )}
                     </td>

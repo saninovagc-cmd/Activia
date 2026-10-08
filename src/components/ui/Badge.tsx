@@ -31,8 +31,7 @@ export const Badge: React.FC<BadgeProps> = ({
     const conf = statusConfig[status] || statusConfig.a_faire;
 
     return (
-      <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${conf.bg} ${className}`}>
-        <span className={`w-1.5 h-1.5 rounded-full ${conf.dot} animate-pulse`} />
+      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold border ${conf.bg} ${className}`}>
         {children || conf.label}
       </span>
     );

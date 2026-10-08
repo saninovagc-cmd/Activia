@@ -192,14 +192,14 @@ export const TaskList: React.FC = () => {
                               newStatus === 'termine' ? `Tâche "${task.title}" marquée comme terminée.` : `Tâche "${task.title}" remise en cours.`
                             );
                           }}
-                          className={`w-5 h-5 rounded inline-flex items-center justify-center border transition-all cursor-pointer ${
+                          className={`w-5 h-5 rounded inline-flex items-center justify-center border transition-all cursor-pointer text-xs font-bold ${
                             task.status === 'termine'
                               ? 'bg-emerald-600 border-emerald-600 text-white'
                               : 'border-slate-300 hover:border-emerald-500 bg-white'
                           }`}
                           title={task.status === 'termine' ? 'Marquer en cours' : 'Marquer comme terminée'}
                         >
-                          {task.status === 'termine' && <CheckCircle2 className="w-3.5 h-3.5" />}
+                          {task.status === 'termine' ? '✓' : ''}
                         </button>
                       </td>
                       <td className="py-3 px-4 max-w-xs">
@@ -210,24 +210,20 @@ export const TaskList: React.FC = () => {
                       <td className="py-3 px-4 max-w-xs">
                         <Link
                           href={`/activities`}
-                          className="inline-flex items-center gap-1 font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded hover:underline"
+                          className="font-mono font-bold text-blue-700 hover:underline"
                         >
-                          {task.activity_code} <ArrowUpRight className="w-3 h-3" />
+                          {task.activity_code}
                         </Link>
                         <p className="text-[11px] text-slate-500 truncate mt-0.5">{task.activity_title}</p>
                       </td>
-                      <td className="py-3 px-4 whitespace-nowrap">
-                        <span className="flex items-center gap-1.5 text-slate-800 font-medium">
-                          <User className="w-3.5 h-3.5 text-slate-400" />
-                          {task.assignee_name || '—'}
-                        </span>
+                      <td className="py-3 px-4 whitespace-nowrap font-medium text-slate-800">
+                        {task.assignee_name || '—'}
                       </td>
                       <td className="py-3 px-4 whitespace-nowrap">
                         <Badge priority={task.priority} />
                       </td>
                       <td className="py-3 px-4 whitespace-nowrap">
-                        <span className={`flex items-center gap-1 font-medium ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
-                          <Calendar className="w-3.5 h-3.5" />
+                        <span className={`font-medium ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
                           {task.due_date}
                         </span>
                       </td>

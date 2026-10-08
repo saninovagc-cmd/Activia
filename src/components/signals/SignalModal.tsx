@@ -175,10 +175,10 @@ export const SignalModal: React.FC<SignalModalProps> = ({
                 onChange={e => setFormData({ ...formData, severity: e.target.value as SignalSeverity })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white font-semibold"
               >
-                <option value="Critique">🔴 Critique (Pronostic vital / Rappel urgent)</option>
-                <option value="Grave">🟠 Grave (Hospitalisation / Atteinte d'organe)</option>
-                <option value="Modérée">🟡 Modérée (Nécessite investigation)</option>
-                <option value="Faible">🟢 Faible (Mineur sans conséquence clinique)</option>
+                <option value="Critique">Critique (Pronostic vital / Rappel urgent)</option>
+                <option value="Grave">Grave (Hospitalisation / Atteinte d'organe)</option>
+                <option value="Modérée">Modérée (Nécessite investigation)</option>
+                <option value="Faible">Faible (Mineur sans conséquence clinique)</option>
               </select>
             </div>
           </div>
