@@ -164,20 +164,89 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
             </span>
           </div>
         </div>
-        <div className="overflow-x-auto w-full max-w-full">
-          <table className="w-full min-w-[780px] text-left border-collapse text-xs">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
-                <th className="py-3 px-4">Code / Session</th>
-                <th className="py-3 px-4">Participant & Fonction</th>
-                <th className="py-3 px-4">Structure & Région</th>
-                <th className="py-3 px-4">Thématique</th>
-                <th className="py-3 px-4">Formateur & Durée</th>
-                <th className="py-3 px-4">Résultat & Attestation</th>
-                <th className="py-3 px-4 text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 text-slate-700">
+      {/* =========================================================================
+          VUE MOBILE & TABLETTE (< 1024px) : Cartes fluides 100% SANS défilement
+          ========================================================================= */}
+      <div className="block lg:hidden divide-y divide-slate-100 p-3 bg-slate-50/40 space-y-2.5">
+        {filtered.length === 0 ? (
+          <div className="text-center py-10 text-slate-400 text-xs">
+            <GraduationCap className="w-8 h-8 mx-auto mb-2 text-slate-300" />
+            Aucun enregistrement ne correspond aux filtres sélectionnés.
+          </div>
+        ) : (
+          filtered.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => onSelect(item)}
+              className="p-3.5 bg-white rounded-xl border border-slate-200 shadow-2xs space-y-2.5 cursor-pointer hover:border-purple-400 transition-all"
+            >
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div>
+                  <span className="font-mono font-bold text-xs text-blue-900">{item.training_code}</span>
+                  <span className="text-[10px] text-slate-500 block">{item.training_date}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  {item.result === 'Validé' ? (
+                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                      Validé
+                    </span>
+                  ) : (
+                    <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+                      {item.result}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 text-xs sm:text-sm leading-snug">
+                  {item.participant_name}
+                </h4>
+                <p className="text-[11px] text-slate-600 mt-0.5">
+                  {item.function_title} • <span className="font-medium text-slate-700">{item.structure}</span>
+                </p>
+              </div>
+
+              <div className="pt-2 border-t border-slate-100 text-[11px]">
+                <span className="text-slate-400 block text-[10px] uppercase font-bold">Thématique</span>
+                <span className="font-semibold text-slate-800">{item.theme}</span>
+                <div className="text-[10px] text-slate-500 mt-0.5">
+                  Formateur : {item.trainer_name} ({item.duration_hours}h)
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-100">
+                <span className="text-[10px] text-slate-500">{item.region} ({item.department})</span>
+                <button
+                  onClick={() => onSelect(item)}
+                  className="px-2.5 py-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center gap-1"
+                >
+                  <Eye className="w-3.5 h-3.5" />
+                  <span>Consulter</span>
+                </button>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+
+      {/* =========================================================================
+          VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
+          ========================================================================= */}
+      <div className="hidden lg:block w-full max-w-full overflow-hidden">
+        <table className="w-full text-left border-collapse text-xs table-auto">
+          <thead>
+            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
+              <th className="py-3 px-3 w-32">Code / Session</th>
+              <th className="py-3 px-3">Participant & Fonction</th>
+              <th className="py-3 px-3 w-40">Structure & Région</th>
+              <th className="py-3 px-3">Thématique</th>
+              <th className="py-3 px-2.5 w-36">Formateur</th>
+              <th className="py-3 px-2.5 w-28">Résultat</th>
+              <th className="py-3 px-2 text-right w-12">Action</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 text-slate-700">
               {filtered.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="text-center py-10 text-slate-400">

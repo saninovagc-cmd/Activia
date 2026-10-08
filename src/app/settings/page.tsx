@@ -249,17 +249,125 @@ export default function SettingsPage() {
                 </div>
               </div>
 
-              <div className="overflow-x-auto w-full max-w-full">
-                <table className="w-full min-w-[780px] text-xs text-left">
+              {/* Vue Mobile & Tablette (< 1024px) : Cartes sans debordement */}
+              <div className="block lg:hidden divide-y divide-slate-100">
+                {allUsers.map((u) => {
+                  const currentPass = u.password || u.default_password;
+                  const isDefault = currentPass === u.default_password;
+                  const isRevealed = !!revealedPasswords[u.id];
+                  const isCopied = copiedUserId === u.id;
+
+                  return (
+                    <div key={u.id} className="p-3.5 space-y-2.5 bg-slate-50/50">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="w-5 h-5 rounded bg-slate-200 text-slate-700 font-bold text-[10px] flex items-center justify-center">
+                            {u.order || 1}
+                          </span>
+                          <div>
+                            <p className="font-bold text-xs text-slate-900">{u.full_name}</p>
+                            <p className="text-[10px] text-slate-500">{u.email}</p>
+                          </div>
+                        </div>
+                        <Badge role={u.role}>{u.role_label}</Badge>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-2 text-xs bg-white p-2.5 rounded-lg border border-slate-200/80">
+                        <div>
+                          <p className="text-[10px] text-slate-400 font-medium">Identifiant</p>
+                          <span className="font-mono font-bold text-blue-700">{u.username}</span>
+                        </div>
+                        <div>
+                          <p className="text-[10px] text-slate-400 font-medium">Mot de passe</p>
+                          <div className="flex items-center gap-1.5 mt-0.5">
+                            <span className="font-mono text-slate-800 text-[11px] font-semibold">
+                              {isRevealed ? currentPass : '••••••••'}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setRevealedPasswords(prev => ({ ...prev, [u.id]: !prev[u.id] }))}
+                              className="text-slate-400 hover:text-slate-600"
+                            >
+                              {isRevealed ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
+                            </button>
+                            <span className={`text-[8px] px-1 py-0.2 rounded font-medium ${isDefault ? 'bg-slate-100 text-slate-500' : 'bg-amber-100 text-amber-800 font-bold'}`}>
+                              {isDefault ? 'Défaut' : 'Modifié'}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="text-[11px] text-slate-600">
+                        <p className="truncate font-medium">{u.title} • {u.post || u.role_label}</p>
+                        <p className="text-[10px] text-slate-400 truncate">{u.department}</p>
+                      </div>
+
+                      <div className="flex items-center justify-between gap-1.5 pt-1 border-t border-slate-200/60">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const text = `ACTIVIA — Vos accès DLVS
+Collaborateur : ${u.full_name}
+Titre & Poste : ${u.title} (${u.post || u.role_label})
+Identifiant   : ${u.username}
+Mot de passe  : ${currentPass}
+Lien d'accès  : ${typeof window !== 'undefined' ? window.location.origin : ''}/login
+
+Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot de passe à tout moment dans votre espace.`;
+                            navigator.clipboard.writeText(text);
+                            setCopiedUserId(u.id);
+                            showToast('success', `Identifiants de ${u.full_name} copiés ! Prêt à transmettre.`);
+                            setTimeout(() => setCopiedUserId(null), 3000);
+                          }}
+                          className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          {isCopied ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
+                          <span>{isCopied ? 'Copié !' : 'Copier accès'}</span>
+                        </button>
+
+                        <div className="flex items-center gap-1">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedUserForPassword(u);
+                              setAdminCustomPassword('');
+                            }}
+                            className="p-1.5 text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-lg border border-slate-200 transition-colors cursor-pointer"
+                            title="Définir un mot de passe personnalisé"
+                          >
+                            <Key className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (confirm(`Confirmez-vous la réinitialisation du mot de passe de ${u.full_name} ?\nLe mot de passe redeviendra : "${u.default_password}"`)) {
+                                resetUserPassword(u.id);
+                              }
+                            }}
+                            className="p-1.5 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg border border-slate-200 transition-colors cursor-pointer"
+                            title="Réinitialiser le mot de passe au format par défaut"
+                          >
+                            <RotateCcw className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Vue Desktop (>= 1024px) : Tableau fluide 100% */}
+              <div className="hidden lg:block w-full max-w-full overflow-hidden">
+                <table className="w-full table-auto text-xs text-left">
                   <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-100">
                     <tr>
-                      <th className="py-3 px-3 text-center">N°</th>
-                      <th className="py-3 px-4">Collaborateur</th>
-                      <th className="py-3 px-3">Identifiant</th>
-                      <th className="py-3 px-4">Mot de passe</th>
-                      <th className="py-3 px-4">Poste &amp; Direction</th>
-                      <th className="py-3 px-3">Rôle RBAC</th>
-                      <th className="py-3 px-4 text-right">Actions d&apos;accès</th>
+                      <th className="py-2.5 px-2 text-center w-8">N°</th>
+                      <th className="py-2.5 px-3">Collaborateur</th>
+                      <th className="py-2.5 px-2.5">Identifiant</th>
+                      <th className="py-2.5 px-3">Mot de passe</th>
+                      <th className="py-2.5 px-3">Poste &amp; Direction</th>
+                      <th className="py-2.5 px-2.5">Rôle</th>
+                      <th className="py-2.5 px-3 text-right">Actions d&apos;accès</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -271,30 +379,30 @@ export default function SettingsPage() {
 
                       return (
                         <tr key={u.id} className="hover:bg-slate-50/70 transition-colors">
-                          <td className="py-3 px-3 text-center">
-                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-md bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">
+                          <td className="py-2.5 px-2 text-center">
+                            <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">
                               {u.order || 1}
                             </span>
                           </td>
-                          <td className="py-3 px-4 font-bold text-slate-900">
+                          <td className="py-2.5 px-3 font-bold text-slate-900">
                             <div className="flex items-center gap-2">
                               <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[10px] shrink-0">
                                 {u.full_name.charAt(0)}
                               </div>
-                              <div>
-                                <p className="leading-tight">{u.full_name}</p>
-                                <p className="text-[10px] font-normal text-slate-500">{u.email}</p>
+                              <div className="min-w-0">
+                                <p className="leading-tight truncate">{u.full_name}</p>
+                                <p className="text-[10px] font-normal text-slate-500 truncate">{u.email}</p>
                               </div>
                             </div>
                           </td>
-                          <td className="py-3 px-3">
+                          <td className="py-2.5 px-2.5 whitespace-nowrap">
                             <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
                               {u.username}
                             </span>
                           </td>
-                          <td className="py-3 px-4">
-                            <div className="flex items-center gap-2">
-                              <span className="font-mono text-slate-800 font-semibold bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                          <td className="py-2.5 px-3 whitespace-nowrap">
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-mono text-slate-800 font-semibold bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200 text-[11px]">
                                 {isRevealed ? currentPass : '••••••••'}
                               </span>
                               <button
@@ -303,22 +411,22 @@ export default function SettingsPage() {
                                 className="p-1 text-slate-400 hover:text-slate-600 rounded transition-colors cursor-pointer"
                                 title={isRevealed ? "Masquer le mot de passe" : "Afficher le mot de passe"}
                               >
-                                {isRevealed ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+                                {isRevealed ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
                               </button>
-                              <span className={`text-[9px] px-1.5 py-0.2 rounded font-medium ${isDefault ? 'bg-slate-100 text-slate-500' : 'bg-amber-100 text-amber-800 font-bold'}`}>
+                              <span className={`text-[8px] px-1 py-0.2 rounded font-medium ${isDefault ? 'bg-slate-100 text-slate-500' : 'bg-amber-100 text-amber-800 font-bold'}`}>
                                 {isDefault ? 'Défaut' : 'Modifié'}
                               </span>
                             </div>
                           </td>
-                          <td className="py-3 px-4 max-w-xs">
+                          <td className="py-2.5 px-3 max-w-xs">
                             <p className="font-semibold text-slate-800 truncate">{u.title} • {u.post || u.role_label}</p>
                             <p className="text-[10px] text-slate-500 truncate">{u.department}</p>
                           </td>
-                          <td className="py-3 px-3">
+                          <td className="py-2.5 px-2.5 whitespace-nowrap">
                             <Badge role={u.role}>{u.role_label}</Badge>
                           </td>
-                          <td className="py-3 px-4 text-right">
-                            <div className="flex items-center justify-end gap-1.5">
+                          <td className="py-2.5 px-3 text-right whitespace-nowrap">
+                            <div className="flex items-center justify-end gap-1">
                               {/* Copier et donner */}
                               <button
                                 type="button"
@@ -336,11 +444,11 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                                   showToast('success', `Identifiants de ${u.full_name} copiés ! Prêt à transmettre.`);
                                   setTimeout(() => setCopiedUserId(null), 3000);
                                 }}
-                                className="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                                className="px-2 py-0.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-md text-[10px] font-semibold flex items-center gap-1 transition-colors cursor-pointer"
                                 title="Copier la fiche complète pour remettre à l'agent"
                               >
-                                {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-                                <span>{isCopied ? 'Copié !' : 'Copier les accès'}</span>
+                                {isCopied ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
+                                <span>{isCopied ? 'Copié' : 'Copier'}</span>
                               </button>
 
                               {/* Modifier */}
@@ -350,10 +458,10 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                                   setSelectedUserForPassword(u);
                                   setAdminCustomPassword('');
                                 }}
-                                className="p-1.5 text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-lg border border-slate-200 transition-colors cursor-pointer"
+                                className="p-1 text-slate-600 hover:text-blue-700 hover:bg-slate-100 rounded-md border border-slate-200 transition-colors cursor-pointer"
                                 title="Définir un mot de passe personnalisé"
                               >
-                                <Key className="w-3.5 h-3.5" />
+                                <Key className="w-3 h-3" />
                               </button>
 
                               {/* Réinitialiser */}
@@ -364,10 +472,10 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                                     resetUserPassword(u.id);
                                   }
                                 }}
-                                className="p-1.5 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-lg border border-slate-200 transition-colors cursor-pointer"
+                                className="p-1 text-slate-600 hover:text-amber-700 hover:bg-amber-50 rounded-md border border-slate-200 transition-colors cursor-pointer"
                                 title="Réinitialiser le mot de passe au format par défaut (nom+123)"
                               >
-                                <RotateCcw className="w-3.5 h-3.5" />
+                                <RotateCcw className="w-3 h-3" />
                               </button>
                             </div>
                           </td>

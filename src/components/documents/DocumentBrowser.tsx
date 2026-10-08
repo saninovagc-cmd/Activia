@@ -193,17 +193,95 @@ export const DocumentBrowser: React.FC = () => {
             </span>
           </div>
         </div>
-        <div className="overflow-x-auto w-full max-w-full">
-          <table className="w-full min-w-[700px] text-xs text-left text-slate-700">
+        {/* Vue Mobile & Tablette (< 1024px) : Cartes sans debordement */}
+        <div className="block lg:hidden divide-y divide-slate-100">
+          {filteredDocs.length === 0 ? (
+            <div className="p-8 text-center text-slate-400 text-xs">
+              Aucun document ne correspond à vos filtres de recherche.
+            </div>
+          ) : (
+            <div className="p-3 space-y-2.5">
+              {filteredDocs.map((doc) => (
+                <div
+                  key={doc.id}
+                  className="p-3.5 bg-slate-50/70 rounded-xl border border-slate-200/90 shadow-2xs space-y-2.5"
+                >
+                  <div className="flex items-start gap-2.5">
+                    <div className="p-2 bg-white rounded-lg border border-slate-200 shrink-0">
+                      {getFileIcon(doc.file_type)}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-xs text-slate-900 truncate">{doc.name}</p>
+                      <div className="flex items-center gap-2 text-[10px] text-slate-500 mt-0.5">
+                        <span className="font-medium">{doc.file_type}</span>
+                        <span>•</span>
+                        <span className="font-mono">{doc.size_kb > 1024 ? `${(doc.size_kb / 1024).toFixed(1)} MB` : `${doc.size_kb} KB`}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-2 text-[11px] pt-1 border-t border-slate-200/60">
+                    <div className="truncate">
+                      {getEntityBadge(doc.entity_type, doc.entity_ref)}
+                    </div>
+                    <span className="text-[10px] text-slate-400 shrink-0">{doc.uploaded_at}</span>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-2 pt-1">
+                    <span className="text-[10px] text-slate-600 truncate">
+                      Par : <strong className="text-slate-800">{doc.uploaded_by_name}</strong>
+                    </span>
+                    <div className="flex items-center gap-1 shrink-0">
+                      <button
+                        onClick={() => setPreviewDoc(doc)}
+                        className="p-1.5 text-slate-600 hover:text-blue-600 bg-white border border-slate-200 rounded-lg transition-colors cursor-pointer"
+                        title="Aperçu du document"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                      </button>
+                      <button
+                        onClick={() => {
+                          downloadSampleDocument(doc.name, doc.entity_ref, doc.entity_type);
+                          showToast('success', `Téléchargement du document "${doc.name}" démarré.`);
+                        }}
+                        className="p-1.5 text-emerald-700 hover:text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-lg transition-colors cursor-pointer"
+                        title="Télécharger"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                      </button>
+                      {(currentUser.role === 'admin' || currentUser.role === 'chef_service') && (
+                        <button
+                          onClick={() => {
+                            if (confirm(`Supprimer définitivement ${doc.name} de la GED ?`)) {
+                              deleteDocument(doc.id);
+                            }
+                          }}
+                          className="p-1.5 text-rose-600 hover:text-rose-700 bg-rose-50 border border-rose-200 rounded-lg transition-colors cursor-pointer"
+                          title="Supprimer"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Vue Desktop (>= 1024px) : Tableau fluide 100% */}
+        <div className="hidden lg:block w-full max-w-full overflow-hidden">
+          <table className="w-full table-auto text-xs text-left text-slate-700">
             <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
               <tr>
-                <th className="py-3 px-4 font-semibold">Fichier & Nom</th>
-                <th className="py-3 px-4 font-semibold">Format</th>
-                <th className="py-3 px-4 font-semibold">Taille</th>
-                <th className="py-3 px-4 font-semibold">Rattaché à</th>
-                <th className="py-3 px-4 font-semibold">Déposé par</th>
-                <th className="py-3 px-4 font-semibold">Date de dépôt</th>
-                <th className="py-3 px-4 font-semibold text-right">Actions</th>
+                <th className="py-2.5 px-3 font-semibold">Fichier & Nom</th>
+                <th className="py-2.5 px-3 font-semibold">Format</th>
+                <th className="py-2.5 px-3 font-semibold">Taille</th>
+                <th className="py-2.5 px-3 font-semibold">Rattaché à</th>
+                <th className="py-2.5 px-3 font-semibold">Déposé par</th>
+                <th className="py-2.5 px-3 font-semibold">Date de dépôt</th>
+                <th className="py-2.5 px-3 font-semibold text-right">Actions</th>
               </tr>
             </thead>
 
@@ -218,59 +296,59 @@ export const DocumentBrowser: React.FC = () => {
                 filteredDocs.map((doc) => (
                   <tr key={doc.id} className="hover:bg-slate-50/70 transition-colors">
                     {/* Nom */}
-                    <td className="py-3 px-4">
-                      <div className="flex items-center gap-2.5">
-                        <div className="p-1.5 bg-slate-100 rounded-lg">
+                    <td className="py-2.5 px-3 max-w-xs">
+                      <div className="flex items-center gap-2">
+                        <div className="p-1 bg-slate-100 rounded-md shrink-0">
                           {getFileIcon(doc.file_type)}
                         </div>
-                        <span className="font-semibold text-slate-900">{doc.name}</span>
+                        <span className="font-semibold text-slate-900 truncate">{doc.name}</span>
                       </div>
                     </td>
 
                     {/* Format */}
-                    <td className="py-3 px-4 font-medium text-slate-600">
+                    <td className="py-2.5 px-3 font-medium text-slate-600 whitespace-nowrap">
                       {doc.file_type}
                     </td>
 
                     {/* Taille */}
-                    <td className="py-3 px-4 font-mono text-slate-500">
+                    <td className="py-2.5 px-3 font-mono text-slate-500 whitespace-nowrap">
                       {doc.size_kb > 1024 ? `${(doc.size_kb / 1024).toFixed(1)} MB` : `${doc.size_kb} KB`}
                     </td>
 
                     {/* Rattaché à */}
-                    <td className="py-3 px-4 whitespace-nowrap">
+                    <td className="py-2.5 px-3 whitespace-nowrap">
                       {getEntityBadge(doc.entity_type, doc.entity_ref)}
                     </td>
 
                     {/* Déposé par */}
-                    <td className="py-3 px-4 text-slate-700">
+                    <td className="py-2.5 px-3 text-slate-700 whitespace-nowrap">
                       {doc.uploaded_by_name}
                     </td>
 
                     {/* Date */}
-                    <td className="py-3 px-4 text-slate-500 whitespace-nowrap">
+                    <td className="py-2.5 px-3 text-slate-500 whitespace-nowrap">
                       {doc.uploaded_at}
                     </td>
 
                     {/* Actions */}
-                    <td className="py-3 px-4 text-right whitespace-nowrap">
+                    <td className="py-2.5 px-3 text-right whitespace-nowrap">
                       <div className="flex items-center justify-end gap-1">
                         <button
                           onClick={() => setPreviewDoc(doc)}
-                          className="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-md transition-colors"
+                          className="p-1 text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
                           title="Aperçu du document"
                         >
-                          <Eye className="w-4 h-4" />
+                          <Eye className="w-3.5 h-3.5" />
                         </button>
                         <button
                           onClick={() => {
                             downloadSampleDocument(doc.name, doc.entity_ref, doc.entity_type);
                             showToast('success', `Téléchargement du document "${doc.name}" démarré.`);
                           }}
-                          className="p-1.5 text-slate-500 hover:text-emerald-600 hover:bg-slate-100 rounded-md transition-colors"
+                          className="p-1 text-slate-500 hover:text-emerald-600 hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
                           title="Télécharger"
                         >
-                          <Download className="w-4 h-4" />
+                          <Download className="w-3.5 h-3.5" />
                         </button>
                         {(currentUser.role === 'admin' || currentUser.role === 'chef_service') && (
                           <button
@@ -279,10 +357,10 @@ export const DocumentBrowser: React.FC = () => {
                                 deleteDocument(doc.id);
                               }
                             }}
-                            className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-slate-100 rounded-md transition-colors"
+                            className="p-1 text-slate-400 hover:text-rose-600 hover:bg-slate-100 rounded-md transition-colors cursor-pointer"
                             title="Supprimer"
                           >
-                            <Trash2 className="w-4 h-4" />
+                            <Trash2 className="w-3.5 h-3.5" />
                           </button>
                         )}
                       </div>

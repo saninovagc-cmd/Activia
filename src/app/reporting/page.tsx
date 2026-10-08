@@ -291,41 +291,100 @@ export default function ReportingPage() {
           </span>
         </div>
 
-        <div className="overflow-x-auto w-full max-w-full">
-          <table className="w-full min-w-[700px] text-left border-collapse text-xs">
+        {/* Vue Mobile & Tablette (< 1024px) : Cartes sans debordement */}
+        <div className="block lg:hidden divide-y divide-slate-100">
+          {agentPerformance.length === 0 ? (
+            <div className="p-8 text-center text-slate-400 text-xs">
+              Aucun agent enregistré.
+            </div>
+          ) : (
+            <div className="p-3 space-y-2.5">
+              {agentPerformance.map((agent, idx) => (
+                <div
+                  key={idx}
+                  className="p-3.5 bg-slate-50/70 rounded-xl border border-slate-200/90 shadow-2xs space-y-2.5"
+                >
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <span className="font-bold text-xs text-slate-900">
+                      {agent.name}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                      {agent.role}
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 text-center text-[11px] pt-1 border-t border-slate-200/60">
+                    <div className="bg-white p-2 rounded-lg border border-slate-200/70">
+                      <p className="text-[10px] text-slate-400 font-medium">Dossiers</p>
+                      <p className="font-bold text-blue-900 text-xs mt-0.5">{agent.foldersCount}</p>
+                    </div>
+                    <div className="bg-white p-2 rounded-lg border border-slate-200/70">
+                      <p className="text-[10px] text-slate-400 font-medium">Activités</p>
+                      <p className="font-bold text-slate-800 text-xs mt-0.5">{agent.activitiesCount}</p>
+                    </div>
+                    <div className="bg-white p-2 rounded-lg border border-slate-200/70">
+                      <p className="text-[10px] text-slate-400 font-medium">Tâches</p>
+                      <p className="font-bold text-slate-800 text-xs mt-0.5">{agent.tasksCompleted}/{agent.tasksTotal}</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between text-[11px]">
+                      <span className="text-slate-500 font-medium">Taux d'achèvement</span>
+                      <span className="font-bold text-slate-800">{agent.completionRate}%</span>
+                    </div>
+                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full ${
+                          agent.completionRate >= 80 ? 'bg-emerald-500' :
+                          agent.completionRate >= 50 ? 'bg-blue-500' : 'bg-amber-500'
+                        }`}
+                        style={{ width: `${agent.completionRate}%` }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Vue Desktop (>= 1024px) : Tableau fluide 100% */}
+        <div className="hidden lg:block w-full max-w-full overflow-hidden">
+          <table className="w-full table-auto text-left border-collapse text-xs">
             <thead>
               <tr className="bg-slate-100/70 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
-                <th className="py-3 px-4">Collaborateur</th>
-                <th className="py-3 px-4">Rôle Institutionnel</th>
-                <th className="py-3 px-4 text-center">Dossiers en Charge</th>
-                <th className="py-3 px-4 text-center">Activités Conduites</th>
-                <th className="py-3 px-4 text-center">Tâches Clôturées</th>
-                <th className="py-3 px-4">Taux d'Achèvement</th>
+                <th className="py-2.5 px-3">Collaborateur</th>
+                <th className="py-2.5 px-3">Rôle Institutionnel</th>
+                <th className="py-2.5 px-3 text-center">Dossiers</th>
+                <th className="py-2.5 px-3 text-center">Activités</th>
+                <th className="py-2.5 px-3 text-center">Tâches Clôturées</th>
+                <th className="py-2.5 px-3">Taux d'Achèvement</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 text-slate-700">
               {agentPerformance.map((agent, idx) => (
                 <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="py-3 px-4 font-bold text-slate-900">
+                  <td className="py-2.5 px-3 font-bold text-slate-900 whitespace-nowrap">
                     {agent.name}
                   </td>
-                  <td className="py-3 px-4 text-slate-600">
+                  <td className="py-2.5 px-3 text-slate-600 whitespace-nowrap">
                     <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700">
                       {agent.role}
                     </span>
                   </td>
-                  <td className="py-3 px-4 text-center font-semibold text-blue-900">
+                  <td className="py-2.5 px-3 text-center font-semibold text-blue-900 whitespace-nowrap">
                     {agent.foldersCount}
                   </td>
-                  <td className="py-3 px-4 text-center font-semibold text-slate-800">
+                  <td className="py-2.5 px-3 text-center font-semibold text-slate-800 whitespace-nowrap">
                     {agent.activitiesCount}
                   </td>
-                  <td className="py-3 px-4 text-center text-slate-700">
+                  <td className="py-2.5 px-3 text-center text-slate-700 whitespace-nowrap">
                     <strong>{agent.tasksCompleted}</strong> / {agent.tasksTotal}
                   </td>
-                  <td className="py-3 px-4">
+                  <td className="py-2.5 px-3 whitespace-nowrap">
                     <div className="flex items-center gap-2">
-                      <div className="w-24 h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="w-20 h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div
                           className={`h-full rounded-full ${
                             agent.completionRate >= 80 ? 'bg-emerald-500' :

@@ -190,8 +190,58 @@ export const ChefServiceView: React.FC = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs text-left">
+        {/* Vue Mobile & Tablette (< 1024px) : Cartes sans debordement */}
+        <div className="block lg:hidden divide-y divide-slate-100">
+          {deptAgents.map((ag) => {
+            const agActivities = activities.filter(a => a.manager_id === ag.id);
+            const agMails = incomingMails.filter(m => m.manager_id === ag.id);
+            const agDelayed = agActivities.filter(a => a.status === 'en_retard').length +
+              agMails.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length;
+            return (
+              <div key={ag.id} className="p-3.5 space-y-2 bg-slate-50/50">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[10px]">
+                      {ag.full_name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-bold text-xs text-slate-900">{ag.full_name}</p>
+                      <p className="text-[10px] text-slate-500">{ag.role_label || ag.title}</p>
+                    </div>
+                  </div>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    Disponible
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-3 gap-2 text-center text-xs pt-1 border-t border-slate-200/60">
+                  <div className="bg-white p-2 rounded-lg border border-slate-200/70">
+                    <p className="text-[10px] text-slate-400 font-medium">Activités</p>
+                    <p className="font-bold text-slate-800 text-xs mt-0.5">{agActivities.length}</p>
+                  </div>
+                  <div className="bg-white p-2 rounded-lg border border-slate-200/70">
+                    <p className="text-[10px] text-slate-400 font-medium">Courriers</p>
+                    <p className="font-bold text-blue-600 text-xs mt-0.5">{agMails.length}</p>
+                  </div>
+                  <div className="bg-white p-2 rounded-lg border border-slate-200/70">
+                    <p className="text-[10px] text-slate-400 font-medium">En retard</p>
+                    <p className="font-bold text-xs mt-0.5">
+                      {agDelayed > 0 ? (
+                        <span className="text-rose-600 font-bold">{agDelayed}</span>
+                      ) : (
+                        <span className="text-slate-400">0</span>
+                      )}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Vue Desktop (>= 1024px) : Tableau fluide */}
+        <div className="hidden lg:block w-full max-w-full overflow-hidden">
+          <table className="w-full text-xs text-left table-auto">
             <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-y border-slate-100">
               <tr>
                 <th className="py-2.5 px-3">Collaborateur</th>
@@ -210,7 +260,7 @@ export const ChefServiceView: React.FC = () => {
                   agMails.filter(m => new Date(m.due_date).getTime() < Date.now() && m.status !== 'cloture').length;
                 return (
                   <tr key={ag.id} className="hover:bg-slate-50/70">
-                    <td className="py-3 px-3">
+                    <td className="py-2.5 px-3">
                       <div className="flex items-center gap-2">
                         <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[10px]">
                           {ag.full_name.charAt(0)}
@@ -218,10 +268,10 @@ export const ChefServiceView: React.FC = () => {
                         <span className="font-semibold text-slate-900">{ag.full_name}</span>
                       </div>
                     </td>
-                    <td className="py-3 px-3 text-slate-600">{ag.role_label || ag.title}</td>
-                    <td className="py-3 px-3 text-center font-bold text-slate-800">{agActivities.length}</td>
-                    <td className="py-3 px-3 text-center font-semibold text-blue-600">{agMails.length}</td>
-                    <td className="py-3 px-3 text-center">
+                    <td className="py-2.5 px-3 text-slate-600">{ag.role_label || ag.title}</td>
+                    <td className="py-2.5 px-3 text-center font-bold text-slate-800">{agActivities.length}</td>
+                    <td className="py-2.5 px-3 text-center font-semibold text-blue-600">{agMails.length}</td>
+                    <td className="py-2.5 px-3 text-center">
                       {agDelayed > 0 ? (
                         <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-700 font-bold border border-rose-200">
                           {agDelayed}
@@ -230,7 +280,7 @@ export const ChefServiceView: React.FC = () => {
                         <span className="text-slate-400">0</span>
                       )}
                     </td>
-                    <td className="py-3 px-3 text-right">
+                    <td className="py-2.5 px-3 text-right">
                       <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                         Disponible
                       </span>

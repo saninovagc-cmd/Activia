@@ -134,20 +134,60 @@ export const AuditLogTable: React.FC = () => {
             </span>
           </div>
         </div>
-        <div className="overflow-x-auto w-full max-w-full">
-          <table className="w-full min-w-[780px] text-xs text-left text-slate-700">
-            <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
-              <tr>
-                <th className="py-3 px-4 font-semibold">Horodatage</th>
-                <th className="py-3 px-4 font-semibold">Utilisateur</th>
-                <th className="py-3 px-4 font-semibold">Action</th>
-                <th className="py-3 px-4 font-semibold">Module</th>
-                <th className="py-3 px-4 font-semibold">Élément concerné</th>
-                <th className="py-3 px-4 font-semibold">Détails de l'opération</th>
-                <th className="py-3 px-4 font-semibold">Changement</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100">
+      {/* =========================================================================
+          VUE MOBILE & TABLETTE (< 1024px) : Cartes fluides 100% SANS défilement
+          ========================================================================= */}
+      <div className="block lg:hidden divide-y divide-slate-100 p-3 bg-slate-50/40 space-y-2.5">
+        {filteredLogs.length === 0 ? (
+          <div className="py-8 text-center text-slate-400 text-xs">
+            Aucune entrée d'audit ne correspond à vos filtres.
+          </div>
+        ) : (
+          filteredLogs.map((log) => {
+            const badge = actionBadgeColors[log.action] || { bg: 'bg-slate-100 border-slate-200', text: 'text-slate-700' };
+            return (
+              <div key={log.id} className="p-3.5 bg-white rounded-xl border border-slate-200 shadow-2xs space-y-2">
+                <div className="flex items-center justify-between gap-2 flex-wrap">
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${badge.bg} ${badge.text}`}>
+                    {log.action} • {log.module}
+                  </span>
+                  <span className="font-mono text-[10px] text-slate-400">{log.created_at}</span>
+                </div>
+
+                <div className="text-xs">
+                  <p className="font-semibold text-slate-900">{log.details}</p>
+                  <p className="text-[11px] text-blue-700 font-mono mt-0.5">Réf: {log.entity_id}</p>
+                </div>
+
+                <div className="flex items-center justify-between pt-1.5 border-t border-slate-100 text-[11px] text-slate-500">
+                  <span>Par <strong>{log.user_name}</strong> ({log.user_role})</span>
+                  {log.old_value && log.new_value && (
+                    <span className="font-mono text-[10px] text-emerald-700 font-semibold">{log.old_value} → {log.new_value}</span>
+                  )}
+                </div>
+              </div>
+            );
+          })
+        )}
+      </div>
+
+      {/* =========================================================================
+          VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
+          ========================================================================= */}
+      <div className="hidden lg:block w-full max-w-full overflow-hidden">
+        <table className="w-full text-xs text-left text-slate-700 table-auto">
+          <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
+            <tr>
+              <th className="py-3 px-3 w-36 font-semibold">Horodatage</th>
+              <th className="py-3 px-3 w-40 font-semibold">Utilisateur</th>
+              <th className="py-3 px-2.5 w-24 font-semibold">Action</th>
+              <th className="py-3 px-2.5 w-28 font-semibold">Module</th>
+              <th className="py-3 px-3 w-32 font-semibold">Élément</th>
+              <th className="py-3 px-3 font-semibold">Détails de l'opération</th>
+              <th className="py-3 px-3 w-32 font-semibold">Changement</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
               {filteredLogs.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="py-12 text-center text-slate-400">

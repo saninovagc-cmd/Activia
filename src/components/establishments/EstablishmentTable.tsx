@@ -195,20 +195,93 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
             </span>
           </div>
         </div>
-        <div className="overflow-x-auto w-full max-w-full">
-          <table className="w-full min-w-[780px] text-left border-collapse text-xs">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
-                <th className="py-3 px-4">Code / N° Agrément</th>
-                <th className="py-3 px-4">Établissement & Type</th>
-                <th className="py-3 px-4">Pharmacien Responsable</th>
-                <th className="py-3 px-4">Localisation</th>
-                <th className="py-3 px-4">Date Agrément</th>
-                <th className="py-3 px-4">Statut</th>
-                <th className="py-3 px-4 text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 text-slate-700">
+      {/* =========================================================================
+          VUE MOBILE & TABLETTE (< 1024px) : Cartes fluides 100% SANS défilement
+          ========================================================================= */}
+      <div className="block lg:hidden divide-y divide-slate-100 p-3 bg-slate-50/40 space-y-2.5">
+        {filtered.length === 0 ? (
+          <div className="text-center py-10 text-slate-400 text-xs">
+            <Building2 className="w-8 h-8 mx-auto mb-2 text-slate-300" />
+            Aucun établissement ne correspond aux critères de recherche.
+          </div>
+        ) : (
+          filtered.map((etab) => (
+            <div
+              key={etab.id}
+              onClick={() => onSelect(etab)}
+              className="p-3.5 bg-white rounded-xl border border-slate-200 shadow-2xs space-y-2.5 cursor-pointer hover:border-emerald-400 transition-all"
+            >
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div>
+                  <span className="font-mono font-bold text-xs text-blue-900">{etab.code}</span>
+                  <span className="text-[10px] text-slate-500 block">{etab.authorization_number}</span>
+                </div>
+                {getStatusBadge(etab.status)}
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 text-xs sm:text-sm leading-snug">
+                  {etab.name}
+                </h4>
+                <p className="text-[11px] text-slate-600 mt-0.5">
+                  {etab.establishment_type} {etab.owner ? `• ${etab.owner}` : ''}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100 text-[11px]">
+                <div>
+                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Pharmacien</span>
+                  <span className="font-semibold text-slate-800 truncate block">{etab.responsible_pharmacist}</span>
+                </div>
+                <div>
+                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Localisation</span>
+                  <span className="font-semibold text-slate-700 flex items-center gap-1">
+                    <MapPin className="w-3 h-3 text-slate-400 shrink-0" />
+                    {etab.city} ({etab.department})
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-100" onClick={(e) => e.stopPropagation()}>
+                <button
+                  onClick={() => onSelect(etab)}
+                  className="px-2.5 py-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center gap-1"
+                >
+                  <Eye className="w-3.5 h-3.5" />
+                  <span>Consulter</span>
+                </button>
+                {canManage && (
+                  <button
+                    onClick={() => onEdit(etab)}
+                    className="px-2.5 py-1 text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 rounded-lg flex items-center gap-1"
+                  >
+                    <Edit3 className="w-3.5 h-3.5" />
+                    <span>Modifier</span>
+                  </button>
+                )}
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+
+      {/* =========================================================================
+          VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
+          ========================================================================= */}
+      <div className="hidden lg:block w-full max-w-full overflow-hidden">
+        <table className="w-full text-left border-collapse text-xs table-auto">
+          <thead>
+            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
+              <th className="py-3 px-3 w-32">N° Agrément</th>
+              <th className="py-3 px-3">Établissement & Type</th>
+              <th className="py-3 px-3 w-44">Pharmacien Responsable</th>
+              <th className="py-3 px-3 w-36">Localisation</th>
+              <th className="py-3 px-2.5 w-28">Date Agrément</th>
+              <th className="py-3 px-2.5 w-24">Statut</th>
+              <th className="py-3 px-2 text-right w-16">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 text-slate-700">
               {filtered.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="text-center py-10 text-slate-400">

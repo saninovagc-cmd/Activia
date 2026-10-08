@@ -183,20 +183,82 @@ export const SignalTable: React.FC<SignalTableProps> = ({
             </span>
           </div>
         </div>
-        <div className="overflow-x-auto w-full max-w-full">
-          <table className="w-full min-w-[780px] text-left border-collapse text-xs">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
-                <th className="py-3 px-4">N° Dossier & Date</th>
-                <th className="py-3 px-4">Produit & N° Lot</th>
-                <th className="py-3 px-4">Déclarant</th>
-                <th className="py-3 px-4">Type & Gravité</th>
-                <th className="py-3 px-4">Échantillon / Labo</th>
-                <th className="py-3 px-4">Étape Workflow</th>
-                <th className="py-3 px-4 text-right">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 text-slate-700">
+      {/* =========================================================================
+          VUE MOBILE & TABLETTE (< 1024px) : Cartes fluides 100% SANS défilement
+          ========================================================================= */}
+      <div className="block lg:hidden divide-y divide-slate-100 p-3 bg-slate-50/40 space-y-2.5">
+        {filtered.length === 0 ? (
+          <div className="text-center py-10 text-slate-400 text-xs">
+            <ShieldAlert className="w-8 h-8 mx-auto mb-2 text-slate-300" />
+            Aucun signalement ne correspond à ces critères.
+          </div>
+        ) : (
+          filtered.map((sig) => (
+            <div
+              key={sig.id}
+              onClick={() => onSelect(sig)}
+              className="p-3.5 bg-white rounded-xl border border-slate-200 shadow-2xs space-y-2.5 cursor-pointer hover:border-rose-400 transition-all"
+            >
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div>
+                  <span className="font-mono font-bold text-xs text-blue-900">{sig.signal_number}</span>
+                  <span className="text-[10px] text-slate-500 block">{sig.receipt_date}</span>
+                </div>
+                {getSeverityBadge(sig.severity)}
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 text-xs sm:text-sm leading-snug">
+                  {sig.product_name}
+                </h4>
+                <p className="text-[11px] text-slate-600 mt-0.5">
+                  Lot: <span className="font-mono font-semibold">{sig.batch_number}</span> • {sig.manufacturer}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100 text-[11px]">
+                <div>
+                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Déclarant</span>
+                  <span className="font-semibold text-slate-800 truncate block">{sig.reporter_name}</span>
+                </div>
+                <div>
+                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Étape</span>
+                  <span className="font-semibold text-blue-700 capitalize">{sig.workflow_step.replace('_', ' ')}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-100">
+                <span className="text-[11px] text-slate-500 font-medium">{sig.signal_type}</span>
+                <button
+                  onClick={() => onSelect(sig)}
+                  className="px-2.5 py-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center gap-1"
+                >
+                  <Eye className="w-3.5 h-3.5" />
+                  <span>Consulter</span>
+                </button>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
+
+      {/* =========================================================================
+          VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
+          ========================================================================= */}
+      <div className="hidden lg:block w-full max-w-full overflow-hidden">
+        <table className="w-full text-left border-collapse text-xs table-auto">
+          <thead>
+            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
+              <th className="py-3 px-3 w-32">N° Dossier & Date</th>
+              <th className="py-3 px-3">Produit & N° Lot</th>
+              <th className="py-3 px-3 w-36">Déclarant</th>
+              <th className="py-3 px-2.5 w-28">Type & Gravité</th>
+              <th className="py-3 px-2.5 w-32">Échantillon / Labo</th>
+              <th className="py-3 px-2.5 w-32">Étape Workflow</th>
+              <th className="py-3 px-2 text-right w-12">Action</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 text-slate-700">
               {filtered.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="text-center py-10 text-slate-400">

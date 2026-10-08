@@ -244,23 +244,112 @@ export const TaskList: React.FC = () => {
             </div>
           </div>
 
-          <div className="overflow-x-auto w-full max-w-full">
-            <table className="w-full min-w-[780px] text-xs text-left text-slate-700">
+          {/* Mobile & Tablette (< 1024px) : Vue Cartes sans debordement */}
+          <div className="block lg:hidden divide-y divide-slate-100">
+            {filteredActivities.length === 0 ? (
+              <div className="p-8 text-center text-slate-400 text-xs">
+                Aucune activité programmée ne correspond à vos filtres.
+              </div>
+            ) : (
+              <div className="p-3 space-y-2.5">
+                {filteredActivities.map((act) => {
+                  const isOverdue = new Date(act.due_date).getTime() < Date.now() && act.status !== 'termine';
+                  const docCount = act.documents?.length || 0;
+                  return (
+                    <div
+                      key={act.id}
+                      onClick={() => setExecutingActivity(act)}
+                      className="p-3.5 bg-slate-50/70 rounded-xl border border-slate-200/90 shadow-2xs hover:border-emerald-500 transition-all cursor-pointer space-y-2.5"
+                    >
+                      <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <span className="font-mono font-bold text-xs text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                          {act.code}
+                        </span>
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <Badge priority={act.priority} />
+                          <Badge status={isOverdue ? 'en_retard' : act.status} />
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-bold text-slate-900 text-xs leading-snug">
+                          {act.title}
+                        </h4>
+                        <span className="text-[10px] text-slate-400 font-medium">
+                          {act.activity_type} • {act.department}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between gap-2 text-[11px] text-slate-600">
+                        <span className="truncate">
+                          Resp: <strong className="text-slate-800">{act.manager_name}</strong>
+                        </span>
+                        <span className={`shrink-0 ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-600'}`}>
+                          📅 {act.due_date} {isOverdue && '(Retard)'}
+                        </span>
+                      </div>
+
+                      {/* Progress bar */}
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between text-[11px]">
+                          <span className="text-slate-500 font-medium">Avancement</span>
+                          <span className="font-bold text-slate-800">{act.progress_percentage}%</span>
+                        </div>
+                        <div className="w-full bg-slate-200 rounded-full h-1.5">
+                          <div
+                            className={`h-1.5 rounded-full ${
+                              act.status === 'termine' ? 'bg-emerald-500' : isOverdue ? 'bg-rose-500' : 'bg-emerald-600'
+                            }`}
+                            style={{ width: `${act.progress_percentage}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between pt-1 border-t border-slate-200/60">
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                          docCount > 0 
+                            ? 'bg-emerald-50 text-emerald-800 border-emerald-200' 
+                            : 'bg-slate-50 text-slate-400 border-slate-200'
+                        }`}>
+                          {docCount} livrable(s)
+                        </span>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setExecutingActivity(act);
+                          }}
+                          className="px-3 py-1 bg-emerald-600 text-white rounded-lg text-xs font-semibold inline-flex items-center gap-1 hover:bg-emerald-700 transition-colors cursor-pointer shadow-2xs"
+                        >
+                          <Edit3 className="w-3.5 h-3.5" />
+                          Exécuter
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Desktop (>= 1024px) : Tableau fluide SANS debordement horizontal */}
+          <div className="hidden lg:block w-full max-w-full overflow-hidden">
+            <table className="w-full table-auto text-xs text-left text-slate-700">
               <thead>
-                <tr>
-                  <th className="py-3 px-4">Code</th>
-                  <th className="py-3 px-4">Activité Programmée</th>
-                  <th className="py-3 px-4">Service</th>
-                  <th className="py-3 px-4">Responsable</th>
-                  <th className="py-3 px-4">Priorité</th>
-                  <th className="py-3 px-4">Statut</th>
-                  <th className="py-3 px-4 text-center">Avancement</th>
-                  <th className="py-3 px-4 text-center">Livrables</th>
-                  <th className="py-3 px-4">Échéance</th>
-                  <th className="py-3 px-4 text-right">Actions</th>
+                <tr className="border-b border-slate-200 bg-slate-50/50">
+                  <th className="py-2.5 px-3">Code</th>
+                  <th className="py-2.5 px-3">Activité Programmée</th>
+                  <th className="py-2.5 px-3">Service</th>
+                  <th className="py-2.5 px-3">Responsable</th>
+                  <th className="py-2.5 px-3">Priorité</th>
+                  <th className="py-2.5 px-3">Statut</th>
+                  <th className="py-2.5 px-3 text-center">Avancement</th>
+                  <th className="py-2.5 px-3 text-center">Livrables</th>
+                  <th className="py-2.5 px-3">Échéance</th>
+                  <th className="py-2.5 px-3 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-slate-100">
                 {filteredActivities.length === 0 ? (
                   <tr>
                     <td colSpan={10} className="py-12 text-center text-slate-400 text-xs">
@@ -278,42 +367,42 @@ export const TaskList: React.FC = () => {
                         onClick={() => setExecutingActivity(act)}
                       >
                         {/* Code */}
-                        <td className="py-3 px-4 whitespace-nowrap font-mono font-bold text-blue-700">
+                        <td className="py-2.5 px-3 whitespace-nowrap font-mono font-bold text-blue-700">
                           {act.code}
                         </td>
 
                         {/* Titre */}
-                        <td className="py-3 px-4 max-w-sm">
-                          <p className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors line-clamp-1">
+                        <td className="py-2.5 px-3 max-w-xs">
+                          <p className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors truncate">
                             {act.title}
                           </p>
                           <span className="text-[10px] text-slate-400 font-medium">{act.activity_type}</span>
                         </td>
 
                         {/* Service */}
-                        <td className="py-3 px-4 whitespace-nowrap text-slate-600 font-medium">
+                        <td className="py-2.5 px-3 whitespace-nowrap text-slate-600 font-medium">
                           {act.department}
                         </td>
 
                         {/* Responsable */}
-                        <td className="py-3 px-4 whitespace-nowrap">
+                        <td className="py-2.5 px-3 whitespace-nowrap">
                           <span className="font-semibold text-slate-900">{act.manager_name}</span>
                         </td>
 
                         {/* Priorité */}
-                        <td className="py-3 px-4 whitespace-nowrap">
+                        <td className="py-2.5 px-3 whitespace-nowrap">
                           <Badge priority={act.priority} />
                         </td>
 
                         {/* Statut */}
-                        <td className="py-3 px-4 whitespace-nowrap">
+                        <td className="py-2.5 px-3 whitespace-nowrap">
                           <Badge status={act.status} />
                         </td>
 
                         {/* Avancement */}
-                        <td className="py-3 px-4 text-center whitespace-nowrap">
-                          <div className="inline-flex items-center gap-2">
-                            <div className="w-16 bg-slate-200 rounded-full h-1.5">
+                        <td className="py-2.5 px-3 text-center whitespace-nowrap">
+                          <div className="inline-flex items-center gap-1.5">
+                            <div className="w-14 bg-slate-200 rounded-full h-1.5">
                               <div
                                 className={`h-1.5 rounded-full ${
                                   act.status === 'termine' ? 'bg-emerald-500' : isOverdue ? 'bg-rose-500' : 'bg-emerald-600'
@@ -328,18 +417,18 @@ export const TaskList: React.FC = () => {
                         </td>
 
                         {/* Livrables */}
-                        <td className="py-3 px-4 text-center whitespace-nowrap">
-                          <span className={`px-2 py-0.5 rounded text-[11px] font-bold border ${
+                        <td className="py-2.5 px-3 text-center whitespace-nowrap">
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
                             docCount > 0 
                               ? 'bg-emerald-50 text-emerald-800 border-emerald-200' 
                               : 'bg-slate-50 text-slate-400 border-slate-200'
                           }`}>
-                            {docCount} livrable(s)
+                            {docCount}
                           </span>
                         </td>
 
                         {/* Échéance */}
-                        <td className="py-3 px-4 whitespace-nowrap">
+                        <td className="py-2.5 px-3 whitespace-nowrap">
                           <span className={`font-medium ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
                             {act.due_date}
                           </span>
@@ -347,7 +436,7 @@ export const TaskList: React.FC = () => {
                         </td>
 
                         {/* Action Exécuter */}
-                        <td className="py-3 px-4 text-right whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                        <td className="py-2.5 px-3 text-right whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
                           <button
                             type="button"
                             onClick={() => setExecutingActivity(act)}
@@ -394,20 +483,98 @@ export const TaskList: React.FC = () => {
               </span>
             </div>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-xs text-left text-slate-700">
+          {/* Mobile & Tablette (< 1024px) : Vue Cartes sans debordement */}
+          <div className="block lg:hidden divide-y divide-slate-100">
+            {filteredTasks.length === 0 ? (
+              <div className="p-8 text-center text-slate-400 text-xs">
+                Aucune tâche ne correspond à ces critères.
+              </div>
+            ) : (
+              <div className="p-3 space-y-2.5">
+                {filteredTasks.map((task) => {
+                  const isOverdue = task.status === 'en_retard' || (task.status !== 'termine' && new Date(task.due_date).getTime() < Date.now());
+                  return (
+                    <div
+                      key={task.id}
+                      className="p-3 bg-slate-50/70 rounded-xl border border-slate-200/90 shadow-2xs space-y-2"
+                    >
+                      <div className="flex items-start gap-2.5">
+                        <button
+                          onClick={() => {
+                            const newStatus = task.status === 'termine' ? 'en_cours' : 'termine';
+                            updateTaskStatus(task.id, newStatus);
+                            showToast(
+                              newStatus === 'termine' ? 'success' : 'info',
+                              newStatus === 'termine' ? `Tâche "${task.title}" marquée comme terminée.` : `Tâche "${task.title}" remise en cours.`
+                            );
+                          }}
+                          className={`w-5 h-5 mt-0.5 rounded shrink-0 inline-flex items-center justify-center border transition-all cursor-pointer text-xs font-bold ${
+                            task.status === 'termine'
+                              ? 'bg-emerald-600 border-emerald-600 text-white'
+                              : 'border-slate-300 hover:border-emerald-500 bg-white'
+                          }`}
+                          title={task.status === 'termine' ? 'Marquer en cours' : 'Marquer comme terminée'}
+                        >
+                          {task.status === 'termine' ? '✓' : ''}
+                        </button>
+                        <div className="flex-1 min-w-0">
+                          <p className={`font-semibold text-xs ${task.status === 'termine' ? 'line-through text-slate-400' : 'text-slate-900'}`}>
+                            {task.title}
+                          </p>
+                          <div className="flex items-center gap-1.5 mt-1">
+                            <Link
+                              href="/activities"
+                              className="font-mono font-bold text-[11px] text-blue-700 hover:underline"
+                            >
+                              {task.activity_code}
+                            </Link>
+                            <span className="text-[10px] text-slate-400 truncate">• {task.activity_title}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-200/60 text-[11px]">
+                        <span className="text-slate-600 truncate">
+                          {task.assignee_name || 'Non assigné'}
+                        </span>
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <Badge priority={task.priority} />
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-semibold border ${
+                            task.status === 'termine'
+                              ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                              : isOverdue
+                              ? 'bg-rose-50 text-rose-800 border-rose-200'
+                              : 'bg-blue-50 text-blue-800 border-blue-200'
+                          }`}>
+                            {task.status === 'termine' ? 'Terminé' : isOverdue ? 'En retard' : 'En cours'}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-[10px] text-right font-medium text-slate-500">
+                        Échéance : <span className={isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}>{task.due_date}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Desktop (>= 1024px) : Tableau fluide */}
+          <div className="hidden lg:block w-full max-w-full overflow-hidden">
+            <table className="w-full table-auto text-xs text-left text-slate-700">
               <thead>
-                <tr>
-                  <th className="py-3 px-3 text-center w-12">Fait</th>
-                  <th className="py-3 px-4">Tâche</th>
-                  <th className="py-3 px-4">Activité rattachée</th>
-                  <th className="py-3 px-4">Responsable</th>
-                  <th className="py-3 px-4">Priorité</th>
-                  <th className="py-3 px-4">Échéance</th>
-                  <th className="py-3 px-4 text-center">Statut</th>
+                <tr className="border-b border-slate-200 bg-slate-50/50">
+                  <th className="py-2.5 px-3 text-center w-12">Fait</th>
+                  <th className="py-2.5 px-3">Tâche</th>
+                  <th className="py-2.5 px-3">Activité rattachée</th>
+                  <th className="py-2.5 px-3">Responsable</th>
+                  <th className="py-2.5 px-3">Priorité</th>
+                  <th className="py-2.5 px-3">Échéance</th>
+                  <th className="py-2.5 px-3 text-center">Statut</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-slate-100">
                 {filteredTasks.length === 0 ? (
                   <tr>
                     <td colSpan={7} className="py-12 text-center text-slate-400 text-xs">
@@ -418,8 +585,8 @@ export const TaskList: React.FC = () => {
                   filteredTasks.map((task) => {
                     const isOverdue = task.status === 'en_retard' || (task.status !== 'termine' && new Date(task.due_date).getTime() < Date.now());
                     return (
-                      <tr key={task.id}>
-                        <td className="py-3 px-3 text-center">
+                      <tr key={task.id} className="hover:bg-slate-50/60 transition-colors">
+                        <td className="py-2.5 px-3 text-center">
                           <button
                             onClick={() => {
                               const newStatus = task.status === 'termine' ? 'en_cours' : 'termine';
@@ -439,12 +606,12 @@ export const TaskList: React.FC = () => {
                             {task.status === 'termine' ? '✓' : ''}
                           </button>
                         </td>
-                        <td className="py-3 px-4 max-w-xs">
-                          <p className={`font-semibold ${task.status === 'termine' ? 'line-through text-slate-400' : 'text-slate-900'}`}>
+                        <td className="py-2.5 px-3 max-w-xs">
+                          <p className={`font-semibold truncate ${task.status === 'termine' ? 'line-through text-slate-400' : 'text-slate-900'}`}>
                             {task.title}
                           </p>
                         </td>
-                        <td className="py-3 px-4 max-w-xs">
+                        <td className="py-2.5 px-3 max-w-xs">
                           <Link
                             href={`/activities`}
                             className="font-mono font-bold text-blue-700 hover:underline"
@@ -453,18 +620,18 @@ export const TaskList: React.FC = () => {
                           </Link>
                           <p className="text-[11px] text-slate-500 truncate mt-0.5">{task.activity_title}</p>
                         </td>
-                        <td className="py-3 px-4 whitespace-nowrap font-medium text-slate-800">
+                        <td className="py-2.5 px-3 whitespace-nowrap font-medium text-slate-800">
                           {task.assignee_name || '—'}
                         </td>
-                        <td className="py-3 px-4 whitespace-nowrap">
+                        <td className="py-2.5 px-3 whitespace-nowrap">
                           <Badge priority={task.priority} />
                         </td>
-                        <td className="py-3 px-4 whitespace-nowrap">
+                        <td className="py-2.5 px-3 whitespace-nowrap">
                           <span className={`font-medium ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
                             {task.due_date}
                           </span>
                         </td>
-                        <td className="py-3 px-4 text-center whitespace-nowrap">
+                        <td className="py-2.5 px-3 text-center whitespace-nowrap">
                           <span className={`px-2 py-0.5 rounded text-[11px] font-semibold border ${
                             task.status === 'termine'
                               ? 'bg-emerald-50 text-emerald-800 border-emerald-200'

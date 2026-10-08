@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { FolderStatus } from '@/types';
@@ -52,50 +52,92 @@ export const FolderTimeline: React.FC<FolderTimelineProps> = ({
         )}
       </div>
 
-      {/* Stepper bar */}
-      <div className="overflow-x-auto pb-2">
-        <div className="flex items-center min-w-[700px]">
+      {/* Vue Mobile & Tablette (< 1024px) : Grille adaptative 100% SANS défilement */}
+      <div className="block lg:hidden space-y-3">
+        {/* Barre de progression globale */}
+        <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+          <div
+            className="h-full bg-emerald-600 rounded-full transition-all duration-300"
+            style={{ width: `${Math.round(((currentIndex + 1) / steps.length) * 100)}%` }}
+          />
+        </div>
+
+        {/* Grille des étapes */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
           {steps.map((step, idx) => {
             const isCompleted = idx < currentIndex;
             const isCurrent = idx === currentIndex;
             return (
-              <React.Fragment key={step.status}>
-                <div className="flex flex-col items-center flex-1 text-center">
-                  <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs transition-all ${
-                      isCompleted
-                        ? 'bg-emerald-600 text-white shadow-2xs'
-                        : isCurrent
-                        ? 'bg-blue-600 text-white ring-4 ring-blue-100 shadow-xs'
-                        : 'bg-slate-200 text-slate-500'
-                    }`}
-                  >
-                    {isCompleted ? <Check className="w-4 h-4" /> : idx + 1}
-                  </div>
-                  <span
-                    className={`text-[10px] mt-1.5 font-medium whitespace-nowrap ${
-                      isCurrent
-                        ? 'text-blue-700 font-bold'
-                        : isCompleted
-                        ? 'text-slate-800'
-                        : 'text-slate-400'
-                    }`}
-                  >
-                    {step.label}
-                  </span>
+              <div
+                key={step.status}
+                className={`flex items-center gap-2 p-2 rounded-lg border text-xs transition-colors ${
+                  isCurrent
+                    ? 'bg-blue-50 border-blue-300 text-blue-900 font-bold ring-1 ring-blue-300'
+                    : isCompleted
+                    ? 'bg-emerald-50/60 border-emerald-200 text-slate-800'
+                    : 'bg-white border-slate-200 text-slate-400'
+                }`}
+              >
+                <div
+                  className={`w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0 ${
+                    isCompleted
+                      ? 'bg-emerald-600 text-white'
+                      : isCurrent
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-slate-200 text-slate-500'
+                  }`}
+                >
+                  {isCompleted ? <Check className="w-3 h-3" /> : idx + 1}
                 </div>
-
-                {idx < steps.length - 1 && (
-                  <div
-                    className={`h-0.5 flex-1 mx-1 ${
-                      idx < currentIndex ? 'bg-emerald-500' : 'bg-slate-200'
-                    }`}
-                  />
-                )}
-              </React.Fragment>
+                <span className="truncate text-[11px]">{step.label.replace(/^\d+\.\s*/, '')}</span>
+              </div>
             );
           })}
         </div>
+      </div>
+
+      {/* Vue Desktop (>= 1024px) : Stepper horizontal fluide */}
+      <div className="hidden lg:flex items-center w-full min-w-0 pt-2 pb-1">
+        {steps.map((step, idx) => {
+          const isCompleted = idx < currentIndex;
+          const isCurrent = idx === currentIndex;
+          return (
+            <React.Fragment key={step.status}>
+              <div className="flex flex-col items-center flex-1 text-center min-w-0">
+                <div
+                  className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs transition-all shrink-0 ${
+                    isCompleted
+                      ? 'bg-emerald-600 text-white shadow-2xs'
+                      : isCurrent
+                      ? 'bg-blue-600 text-white ring-4 ring-blue-100 shadow-xs'
+                      : 'bg-slate-200 text-slate-500'
+                  }`}
+                >
+                  {isCompleted ? <Check className="w-4 h-4" /> : idx + 1}
+                </div>
+                <span
+                  className={`text-[10px] mt-1.5 font-medium truncate w-full px-1 ${
+                    isCurrent
+                      ? 'text-blue-700 font-bold'
+                      : isCompleted
+                      ? 'text-slate-800'
+                      : 'text-slate-400'
+                  }`}
+                >
+                  {step.label}
+                </span>
+              </div>
+
+              {idx < steps.length - 1 && (
+                <div
+                  className={`h-0.5 flex-1 mx-1 shrink-0 ${
+                    idx < currentIndex ? 'bg-emerald-500' : 'bg-slate-200'
+                  }`}
+                />
+              )}
+            </React.Fragment>
+          );
+        })}
       </div>
     </div>
   );
