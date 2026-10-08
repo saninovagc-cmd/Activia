@@ -141,8 +141,19 @@ export default function LoginPage() {
         </div>
 
         {/* Footer */}
-        <div className="px-8 py-3 bg-slate-50 border-t border-slate-100 text-center text-[11px] text-slate-500 flex items-center justify-center">
-          <span>Sécurité ABMed & Confidentialité</span>
+        <div className="px-8 py-3.5 bg-slate-50 border-t border-slate-100 text-center text-[11px] flex items-center justify-center">
+          <a
+            href="https://www.saninovagc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-semibold text-slate-700 hover:text-emerald-700 transition-colors animate-pulse cursor-pointer"
+            title="Visiter le site de SANINOVA GLOBAL CONSULTING"
+          >
+            <span>Développé par</span>
+            <span className="font-extrabold text-emerald-700 underline decoration-emerald-500/50 hover:decoration-emerald-700">
+              SANINOVA GLOBAL CONSULTING
+            </span>
+          </a>
         </div>
       </div>
     </div>

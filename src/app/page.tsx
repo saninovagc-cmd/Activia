@@ -232,6 +232,21 @@ export default function HomePage() {
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
+
+                <div className="mt-5 pt-3.5 border-t border-slate-100 text-center text-[11px] flex items-center justify-center">
+                  <a
+                    href="https://www.saninovagc.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-semibold text-slate-700 hover:text-emerald-700 transition-colors animate-pulse cursor-pointer"
+                    title="Visiter le site de SANINOVA GLOBAL CONSULTING"
+                  >
+                    <span>Développé par</span>
+                    <span className="font-extrabold text-emerald-700 underline decoration-emerald-500/50 hover:decoration-emerald-700">
+                      SANINOVA GLOBAL CONSULTING
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -247,12 +262,21 @@ export default function HomePage() {
               Direction des Licences, de la Vigilance et de la Surveillance du Marché • Ministère de la Santé, République du Bénin
             </p>
           </div>
-          <div className="flex items-center gap-4 text-[11px]">
-            <Link href="/login" className="text-slate-300 hover:text-white">Connexion Agent</Link>
-            <span>•</span>
-            <Link href="/dashboard" className="text-slate-300 hover:text-white">Espace ABMed</Link>
-            <span>•</span>
-            <span className="text-emerald-400 font-semibold">Version ABMed 2026.10</span>
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-[11px]">
+            <div className="flex items-center gap-3">
+              <Link href="/login" className="text-slate-300 hover:text-white">Connexion Agent</Link>
+              <span>•</span>
+              <Link href="/dashboard" className="text-slate-300 hover:text-white">Espace ABMed</Link>
+            </div>
+            <a
+              href="https://www.saninovagc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 hover:text-emerald-400 transition-colors animate-pulse inline-flex items-center gap-1 font-semibold"
+            >
+              <span>Développé par</span>
+              <span className="text-emerald-400 font-bold underline">SANINOVA GLOBAL CONSULTING</span>
+            </a>
           </div>
         </div>
       </footer>
