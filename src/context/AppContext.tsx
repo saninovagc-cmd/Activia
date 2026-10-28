@@ -286,6 +286,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setFolders(INITIAL_FOLDERS);
       }
 
+      // Phase 4 : Migration de la Vigilance & Surveillance (143 signalements, 13 alertes, 113 points focaux)
+      const REAL_VIGILANCE_KEY = 'activia_real_vigilance_migrated_v1';
+      if (!localStorage.getItem(REAL_VIGILANCE_KEY)) {
+        localStorage.setItem('activia_signals', JSON.stringify(INITIAL_SIGNALS));
+        localStorage.setItem('activia_alerts', JSON.stringify(INITIAL_ALERTS));
+        localStorage.setItem('activia_trainings', JSON.stringify(INITIAL_TRAININGS));
+        localStorage.setItem(REAL_VIGILANCE_KEY, 'true');
+        setSignals(INITIAL_SIGNALS);
+        setAlerts(INITIAL_ALERTS);
+        setTrainings(INITIAL_TRAININGS);
+      }
+
       // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc
       const storedUsers = localStorage.getItem('activia_users');
       let currentUsersList = INITIAL_USERS;
@@ -1914,9 +1926,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setFolders(INITIAL_FOLDERS);
     setDocuments([]);
     setEstablishments(INITIAL_ESTABLISHMENTS);
-    setSignals([]);
-    setTrainings([]);
-    setAlerts([]);
+    setSignals(INITIAL_SIGNALS);
+    setTrainings(INITIAL_TRAININGS);
+    setAlerts(INITIAL_ALERTS);
     setNotifications([]);
     setAuditLogs([]);
     setAllUsers(INITIAL_USERS);
@@ -1929,15 +1941,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.setItem('activia_folders', JSON.stringify(INITIAL_FOLDERS));
       localStorage.removeItem('activia_documents');
       localStorage.setItem('activia_establishments', JSON.stringify(INITIAL_ESTABLISHMENTS));
-      localStorage.removeItem('activia_signals');
-      localStorage.removeItem('activia_trainings');
-      localStorage.removeItem('activia_alerts');
+      localStorage.setItem('activia_signals', JSON.stringify(INITIAL_SIGNALS));
+      localStorage.setItem('activia_trainings', JSON.stringify(INITIAL_TRAININGS));
+      localStorage.setItem('activia_alerts', JSON.stringify(INITIAL_ALERTS));
       localStorage.removeItem('activia_notifications');
       localStorage.removeItem('activia_audit_logs');
       localStorage.setItem('activia_data_clean_v1', 'true');
       localStorage.setItem('activia_real_etab_migrated_v1', 'true');
       localStorage.setItem('activia_real_courriers_migrated_v1', 'true');
       localStorage.setItem('activia_real_folders_migrated_v1', 'true');
+      localStorage.setItem('activia_real_vigilance_migrated_v1', 'true');
     } catch {}
     clearAllDatabaseData().catch(() => {});
     showToast('Toutes les données de test ont été supprimées. La plateforme est prête pour la saisie de vos données réelles.', 'success');

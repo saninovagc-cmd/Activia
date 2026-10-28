@@ -16,6 +16,9 @@ import {
 import { REAL_ESTABLISHMENTS } from './realEstablishments';
 import { REAL_INCOMING_MAILS } from './realCourriers';
 import { REAL_FOLDERS } from './realFolders';
+import { REAL_SIGNALS } from './realSignals';
+import { REAL_ALERTS } from './realAlerts';
+import { REAL_TRAININGS } from './realTrainings';
 
 // ==============================================================================
 // PERSONNEL OFFICIEL DLVS (14 COLLABORATEURS — DR. SATCHIVI EN RESPONSABLE N°1)
@@ -323,8 +326,8 @@ export const INITIAL_DOCUMENTS: DocumentItem[] = [];
 
 export const INITIAL_ESTABLISHMENTS: Establishment[] = REAL_ESTABLISHMENTS;
 
-export const INITIAL_SIGNALS: SignalItem[] = [];
+export const INITIAL_SIGNALS: SignalItem[] = REAL_SIGNALS;
 
-export const INITIAL_ALERTS: VigilanceAlert[] = [];
+export const INITIAL_ALERTS: VigilanceAlert[] = REAL_ALERTS;
 
-export const INITIAL_TRAININGS: TrainingItem[] = [];
+export const INITIAL_TRAININGS: TrainingItem[] = REAL_TRAININGS;
