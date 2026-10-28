@@ -278,6 +278,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setIncomingMails(INITIAL_INCOMING_MAILS);
       }
 
+      // Phase 3 : Migration des Dossiers Réels du SL (622 dossiers : CNAECP, CNAIAPS-EM, Quitus, Cartes VM)
+      const REAL_FOLDERS_KEY = 'activia_real_folders_migrated_v1';
+      if (!localStorage.getItem(REAL_FOLDERS_KEY)) {
+        localStorage.setItem('activia_folders', JSON.stringify(INITIAL_FOLDERS));
+        localStorage.setItem(REAL_FOLDERS_KEY, 'true');
+        setFolders(INITIAL_FOLDERS);
+      }
+
       // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc
       const storedUsers = localStorage.getItem('activia_users');
       let currentUsersList = INITIAL_USERS;
@@ -1903,7 +1911,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setActivities([]);
     setIncomingMails(INITIAL_INCOMING_MAILS);
     setOutgoingMails([]);
-    setFolders([]);
+    setFolders(INITIAL_FOLDERS);
     setDocuments([]);
     setEstablishments(INITIAL_ESTABLISHMENTS);
     setSignals([]);
@@ -1918,7 +1926,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.removeItem('activia_activities');
       localStorage.setItem('activia_incoming_mails', JSON.stringify(INITIAL_INCOMING_MAILS));
       localStorage.removeItem('activia_outgoing_mails');
-      localStorage.removeItem('activia_folders');
+      localStorage.setItem('activia_folders', JSON.stringify(INITIAL_FOLDERS));
       localStorage.removeItem('activia_documents');
       localStorage.setItem('activia_establishments', JSON.stringify(INITIAL_ESTABLISHMENTS));
       localStorage.removeItem('activia_signals');
@@ -1929,6 +1937,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.setItem('activia_data_clean_v1', 'true');
       localStorage.setItem('activia_real_etab_migrated_v1', 'true');
       localStorage.setItem('activia_real_courriers_migrated_v1', 'true');
+      localStorage.setItem('activia_real_folders_migrated_v1', 'true');
     } catch {}
     clearAllDatabaseData().catch(() => {});
     showToast('Toutes les données de test ont été supprimées. La plateforme est prête pour la saisie de vos données réelles.', 'success');

@@ -281,22 +281,22 @@ export interface Folder {
   status: FolderStatus;
   progress_percentage: number;
   due_date: string;
-  decision?: 'Favorable' | 'Défavorable' | 'Avis avec réserves' | 'En attente' | 'Arrêté signé' | 'Rejeté';
-  decision_date?: string;
-  decision_notes?: string;
-  observations?: string;
+  decision?: 'Favorable' | 'Défavorable' | 'Avis avec réserves' | 'En attente' | 'Arrêté signé' | 'Rejeté' | string | null;
+  decision_date?: string | null;
+  decision_notes?: string | null;
+  observations?: string | null;
 
   // Données issues de l'instruction réelle (SL, SSMUR, SVPS)
-  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string;
-  commission_name?: 'CNAECP' | 'CNAIAPS-EM' | 'Commission Technique SVPS' | 'Comité d’Experts' | 'Autre' | string;
-  commission_date?: string;
-  commission_avis?: 'Favorable' | 'Favorable sous réserve' | 'Défavorable' | 'Rejeté' | 'En attente' | string;
-  missing_documents?: string;
-  notification_date?: string;
-  decree_number?: string;
-  decree_transmission_date?: string;
-  decree_ministere_date?: string;
-  compliance_checklist?: { piece: string; is_present: boolean; notes?: string }[];
+  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string | null;
+  commission_name?: 'CNAECP' | 'CNAIAPS-EM' | 'Commission Technique SVPS' | 'Comité d’Experts' | 'Autre' | string | null;
+  commission_date?: string | null;
+  commission_avis?: 'Favorable' | 'Favorable sous réserve' | 'Défavorable' | 'Rejeté' | 'En attente' | string | null;
+  missing_documents?: string | null;
+  notification_date?: string | null;
+  decree_number?: string | null;
+  decree_transmission_date?: string | null;
+  decree_ministere_date?: string | null;
+  compliance_checklist?: { piece: string; is_present: boolean; notes?: string }[] | null;
 
   documents: ActivityDocument[];
   comments: ActivityComment[];

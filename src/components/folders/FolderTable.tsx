@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Folder } from '@/types';
 import { Badge } from '@/components/ui/Badge';
-import { Calendar, User, Eye, CheckCircle, AlertTriangle, FileText, ArrowRight } from 'lucide-react';
+import { Calendar, User, Eye, CheckCircle, AlertTriangle, FileText, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface FolderTableProps {
   folders: Folder[];
@@ -11,8 +11,17 @@ interface FolderTableProps {
 }
 
 export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<number>(25);
+
+  const totalPages = Math.ceil(folders.length / pageSize) || 1;
+  const safePage = Math.min(Math.max(currentPage, 1), totalPages);
+  const startIndex = (safePage - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize, folders.length);
+  const paginatedFolders = folders.slice(startIndex, endIndex);
+
   const enRetard = folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
-  const favorables = folders.filter(f => f.decision === 'Favorable').length;
+  const favorables = folders.filter(f => f.decision === 'Favorable' || f.decision === 'Arrêté signé').length;
   const enCours = folders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length;
 
   return (
@@ -52,7 +61,7 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
             Aucun dossier ne correspond à ces critères.
           </div>
         ) : (
-          folders.map((folder) => {
+          paginatedFolders.map((folder) => {
             const isOverdue = new Date(folder.due_date).getTime() < Date.now() && folder.status !== 'cloture';
             return (
               <div
@@ -169,7 +178,7 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                 </td>
               </tr>
             ) : (
-              folders.map((folder) => {
+              paginatedFolders.map((folder) => {
                 const isOverdue = new Date(folder.due_date).getTime() < Date.now() && folder.status !== 'cloture';
                 return (
                   <tr
@@ -277,6 +286,55 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
           </tbody>
         </table>
       </div>
+
+      {/* Pagination Footer */}
+      {folders.length > 0 && (
+        <div className="px-4 py-3 bg-slate-50 border-t border-slate-200 text-slate-600 text-xs flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span>
+              Affichage de <strong>{startIndex + 1}</strong> à <strong>{endIndex}</strong> sur <strong>{folders.length}</strong> dossiers
+            </span>
+            <div className="flex items-center gap-1 ml-3">
+              <span className="text-[11px] text-slate-400">Lignes :</span>
+              <select
+                value={pageSize}
+                onChange={(e) => {
+                  setPageSize(Number(e.target.value));
+                  setCurrentPage(1);
+                }}
+                className="bg-white border border-slate-300 rounded px-1.5 py-0.5 text-xs text-slate-700"
+              >
+                <option value={25}>25</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+                <option value={200}>200</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={safePage <= 1}
+              className="p-1.5 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              title="Page précédente"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <span className="px-2 py-0.5 font-semibold text-slate-700">
+              Page {safePage} / {totalPages}
+            </span>
+            <button
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              disabled={safePage >= totalPages}
+              className="p-1.5 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              title="Page suivante"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

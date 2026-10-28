@@ -15,6 +15,7 @@ import {
 } from '@/types';
 import { REAL_ESTABLISHMENTS } from './realEstablishments';
 import { REAL_INCOMING_MAILS } from './realCourriers';
+import { REAL_FOLDERS } from './realFolders';
 
 // ==============================================================================
 // PERSONNEL OFFICIEL DLVS (14 COLLABORATEURS — DR. SATCHIVI EN RESPONSABLE N°1)
@@ -316,7 +317,7 @@ export const INITIAL_INCOMING_MAILS: IncomingMail[] = REAL_INCOMING_MAILS;
 
 export const INITIAL_OUTGOING_MAILS: OutgoingMail[] = [];
 
-export const INITIAL_FOLDERS: Folder[] = [];
+export const INITIAL_FOLDERS: Folder[] = REAL_FOLDERS;
 
 export const INITIAL_DOCUMENTS: DocumentItem[] = [];
 
