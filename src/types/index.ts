@@ -364,8 +364,8 @@ export interface Establishment {
   commune?: string;
   arrondissement?: string;
   zone_sanitaire?: string;
-  latitude?: number | string;
-  longitude?: number | string;
+  latitude?: number | string | null;
+  longitude?: number | string | null;
   managing_director?: string;
   replacement_pharmacist?: string;
   approvisionnement_pharmacie?: string;
@@ -375,8 +375,8 @@ export interface Establishment {
 
   documents: ActivityDocument[];
   inspection_history?: { date: string; inspector: string; outcome: string }[];
-  created_at: string;
-  updated_at: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export type SignalType = 

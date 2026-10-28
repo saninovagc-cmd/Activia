@@ -13,6 +13,7 @@ import {
   TrainingItem,
   VigilanceAlert
 } from '@/types';
+import { REAL_ESTABLISHMENTS } from './realEstablishments';
 
 // ==============================================================================
 // PERSONNEL OFFICIEL DLVS (14 COLLABORATEURS — DR. SATCHIVI EN RESPONSABLE N°1)
@@ -318,7 +319,7 @@ export const INITIAL_FOLDERS: Folder[] = [];
 
 export const INITIAL_DOCUMENTS: DocumentItem[] = [];
 
-export const INITIAL_ESTABLISHMENTS: Establishment[] = [];
+export const INITIAL_ESTABLISHMENTS: Establishment[] = REAL_ESTABLISHMENTS;
 
 export const INITIAL_SIGNALS: SignalItem[] = [];
 

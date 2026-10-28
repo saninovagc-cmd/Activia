@@ -253,7 +253,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         localStorage.removeItem('activia_outgoing_mails');
         localStorage.removeItem('activia_folders');
         localStorage.removeItem('activia_documents');
-        localStorage.removeItem('activia_establishments');
         localStorage.removeItem('activia_signals');
         localStorage.removeItem('activia_trainings');
         localStorage.removeItem('activia_alerts');
@@ -261,6 +260,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         localStorage.removeItem('activia_audit_logs');
         localStorage.setItem(CLEAN_DATA_KEY, 'true');
         clearAllDatabaseData().catch(() => {});
+      }
+
+      // Phase 1 : Migration du Répertoire National Réel des 998 Établissements
+      const REAL_ETAB_KEY = 'activia_real_etab_migrated_v1';
+      if (!localStorage.getItem(REAL_ETAB_KEY)) {
+        localStorage.setItem('activia_establishments', JSON.stringify(INITIAL_ESTABLISHMENTS));
+        localStorage.setItem(REAL_ETAB_KEY, 'true');
+        setEstablishments(INITIAL_ESTABLISHMENTS);
       }
 
       // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc
@@ -341,8 +348,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedEtabs) {
         try {
           const parsed = JSON.parse(storedEtabs);
-          if (Array.isArray(parsed) && parsed.length > 0) setEstablishments(parsed);
-        } catch {}
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setEstablishments(parsed);
+          } else {
+            setEstablishments(INITIAL_ESTABLISHMENTS);
+          }
+        } catch {
+          setEstablishments(INITIAL_ESTABLISHMENTS);
+        }
+      } else {
+        setEstablishments(INITIAL_ESTABLISHMENTS);
       }
 
       const storedSignals = localStorage.getItem('activia_signals');
@@ -1882,7 +1897,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setOutgoingMails([]);
     setFolders([]);
     setDocuments([]);
-    setEstablishments([]);
+    setEstablishments(INITIAL_ESTABLISHMENTS);
     setSignals([]);
     setTrainings([]);
     setAlerts([]);
@@ -1897,7 +1912,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.removeItem('activia_outgoing_mails');
       localStorage.removeItem('activia_folders');
       localStorage.removeItem('activia_documents');
-      localStorage.removeItem('activia_establishments');
+      localStorage.setItem('activia_establishments', JSON.stringify(INITIAL_ESTABLISHMENTS));
       localStorage.removeItem('activia_signals');
       localStorage.removeItem('activia_trainings');
       localStorage.removeItem('activia_alerts');
