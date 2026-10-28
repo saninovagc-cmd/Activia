@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { SignalItem, SignalType, SignalSeverity, SignalStep } from '@/types';
 import { 
   AlertTriangle, 
@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { ExportButton } from '@/components/common/ExportButton';
 import { ExportConfig } from '@/lib/exportUtils';
+import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
+import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 interface SignalTableProps {
   signals: SignalItem[];
@@ -37,6 +39,19 @@ export const SignalTable: React.FC<SignalTableProps> = ({
   const [severityFilter, setSeverityFilter] = useState<string>('all');
   const [sampleFilter, setSampleFilter] = useState<string>('all');
 
+  // Filtres temporels (Date de réception du signalement)
+  const [yearFilter, setYearFilter] = useState<string>('all');
+  const [monthFilter, setMonthFilter] = useState<string>('all');
+  const [dateFilter, setDateFilter] = useState<string>('');
+
+  const availableYears = useMemo(() => {
+    return extractUniqueYears(
+      signals,
+      (s) => s.receipt_date,
+      ['2026', '2025', '2024', '2023']
+    );
+  }, [signals]);
+
   const filtered = signals.filter(s => {
     const matchesSearch = 
       s.signal_number.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -51,7 +66,13 @@ export const SignalTable: React.FC<SignalTableProps> = ({
       sampleFilter === 'all' ? true :
       sampleFilter === 'sampled' ? s.sample_taken : !s.sample_taken;
 
-    return matchesSearch && matchesType && matchesSeverity && matchesSample;
+    const matchesDate = matchesDateFilter(s.receipt_date, {
+      year: yearFilter,
+      month: monthFilter,
+      exactDate: dateFilter
+    });
+
+    return matchesSearch && matchesType && matchesSeverity && matchesSample && matchesDate;
   });
 
   const getSeverityBadge = (severity: SignalSeverity) => {
@@ -157,12 +178,28 @@ export const SignalTable: React.FC<SignalTableProps> = ({
           {canManage && (
             <button
               onClick={onNew}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-rose-600 hover:bg-rose-700 rounded-lg shadow-xs transition-colors"
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-rose-600 hover:bg-rose-700 rounded-lg shadow-xs transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Nouveau Signalement</span>
             </button>
           )}
+        </div>
+      </div>
+
+      {/* Ligne des filtres temporels (Jour, Mois, Année) */}
+      <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-3">
+        <DatePeriodFilter
+          selectedYear={yearFilter}
+          onYearChange={setYearFilter}
+          selectedMonth={monthFilter}
+          onMonthChange={setMonthFilter}
+          selectedDate={dateFilter}
+          onDateChange={setDateFilter}
+          years={availableYears}
+        />
+        <div className="text-xs text-slate-500 font-medium">
+          Affichage : <strong className="text-rose-800 font-bold">{filtered.length}</strong> signalement(s) filtré(s)
         </div>
       </div>
 
@@ -251,17 +288,17 @@ export const SignalTable: React.FC<SignalTableProps> = ({
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
-        <table className="w-full text-left border-collapse text-xs table-auto min-w-[760px] lg:min-w-0">
+      <div className="hidden lg:block w-full max-w-full">
+        <table className="w-full text-left border-collapse text-xs table-fixed">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-3 w-32">N° Dossier & Date</th>
-              <th className="py-3 px-3">Produit & N° Lot</th>
-              <th className="py-3 px-3 w-36">Déclarant</th>
-              <th className="py-3 px-2.5 w-28">Type & Gravité</th>
-              <th className="py-3 px-2.5 w-32">Échantillon / Labo</th>
-              <th className="py-3 px-2.5 w-32">Étape Workflow</th>
-              <th className="py-3 px-2 text-right w-12">Action</th>
+            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider text-[11px]">
+              <th className="py-3 px-3 w-[14%]">N° Dossier & Date</th>
+              <th className="py-3 px-3 w-[26%]">Produit & N° Lot</th>
+              <th className="py-3 px-3 w-[18%]">Déclarant</th>
+              <th className="py-3 px-2.5 w-[14%]">Type & Gravité</th>
+              <th className="py-3 px-2.5 w-[13%]">Échantillon / Labo</th>
+              <th className="py-3 px-2.5 w-[11%]">Étape Workflow</th>
+              <th className="py-3 px-2 text-right w-[4%]"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 text-slate-700">
@@ -279,32 +316,32 @@ export const SignalTable: React.FC<SignalTableProps> = ({
                     className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
                     onClick={() => onSelect(sig)}
                   >
-                    <td className="py-3 px-4 font-mono font-medium">
+                    <td className="py-3 px-3 font-mono font-medium align-top whitespace-nowrap">
                       <div className="text-blue-900 font-bold">{sig.signal_number}</div>
                       <div className="text-[11px] text-slate-500 font-normal">{sig.receipt_date}</div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <td className="py-3 px-3 align-top">
+                      <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug break-words whitespace-normal">
                         {sig.product_name}
                       </div>
-                      <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
+                      <div className="text-[11px] text-slate-500 flex flex-wrap items-center gap-1 mt-0.5 leading-snug break-words whitespace-normal">
                         <span className="font-mono bg-slate-100 px-1 py-0.2 rounded border border-slate-200">Lot: {sig.batch_number}</span>
                         <span>• {sig.manufacturer}</span>
                       </div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-medium text-slate-800">{sig.reporter_name}</div>
-                      <div className="text-[11px] text-slate-500">{sig.reporter_type}</div>
+                    <td className="py-3 px-3 align-top">
+                      <div className="font-semibold text-slate-900 leading-snug break-words whitespace-normal">{sig.reporter_name}</div>
+                      <div className="text-[11px] text-slate-500 leading-snug break-words whitespace-normal">{sig.reporter_type}</div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-semibold text-slate-800 mb-1">{sig.signal_type}</div>
+                    <td className="py-3 px-2.5 align-top">
+                      <div className="font-semibold text-slate-800 mb-1 leading-snug break-words whitespace-normal">{sig.signal_type}</div>
                       <div>{getSeverityBadge(sig.severity)}</div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-2.5 align-top">
                       {sig.sample_taken ? (
                         <div>
                           <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
-                            <FlaskConical className="w-3 h-3" />
+                            <FlaskConical className="w-3 h-3 shrink-0" />
                             {sig.sample_code || 'Prélevé'}
                           </span>
                           {sig.lab_result && (
@@ -320,34 +357,34 @@ export const SignalTable: React.FC<SignalTableProps> = ({
                         <span className="text-[11px] text-slate-400 italic">Sans prélèvement</span>
                       )}
                     </td>
-                    <td className="py-3 px-4">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200 uppercase tracking-tight">
+                    <td className="py-3 px-2.5 align-top">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-blue-800 border border-blue-200 uppercase tracking-tight">
                         {sig.workflow_step.replace('_', ' ')}
                       </span>
-                      <div className="text-[10px] text-slate-500 mt-1">
+                      <div className="text-[10px] text-slate-500 mt-1 leading-snug break-words whitespace-normal">
                         Resp: {sig.manager_name}
                       </div>
                     </td>
-                    <td className="py-3 px-4 text-right" onClick={(e) => e.stopPropagation()}>
+                    <td className="py-3 px-2 text-right align-top whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
                       <button
                         onClick={() => onSelect(sig)}
-                        className="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
-                        title="Consulter le dossier d'investigation"
+                        className="p-1 text-slate-400 hover:text-rose-600 hover:bg-slate-100 rounded transition-colors"
+                        title="Consulter le signalement"
                       >
-                        <Eye className="w-4 h-4" />
+                        <Eye className="w-3.5 h-3.5" />
                       </button>
                     </td>
                   </tr>
                 ))
               )}
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
+      </div>
 
-        <div className="p-3 bg-slate-50 border-t border-slate-200 text-slate-500 text-xs flex items-center justify-between">
-          <span>Affichage de <strong>{filtered.length}</strong> sur <strong>{signals.length}</strong> signalements sanitaires</span>
-          <span className="text-[11px] text-slate-400">Suivi en temps réel de la pharmacovigilance</span>
-        </div>
+      <div className="p-3 bg-slate-50 border-t border-slate-200 text-slate-500 text-xs flex items-center justify-between">
+        <span>Affichage de <strong>{filtered.length}</strong> sur <strong>{signals.length}</strong> signalements sanitaires</span>
+        <span className="text-[11px] text-slate-400">Suivi en temps réel de la pharmacovigilance</span>
+      </div>
       </div>
     </div>
   );

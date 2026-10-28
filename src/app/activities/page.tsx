@@ -22,6 +22,8 @@ import {
 } from 'lucide-react';
 import { ExportButton } from '@/components/common/ExportButton';
 import { ExportConfig } from '@/lib/exportUtils';
+import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
+import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 function ActivitiesContent() {
   const searchParams = useSearchParams();
@@ -36,6 +38,19 @@ function ActivitiesContent() {
   const [selectedType, setSelectedType] = useState<string>('all');
   const [selectedDept, setSelectedDept] = useState<string>('all');
   const [selectedManager, setSelectedManager] = useState<string>('all');
+
+  // Filtres temporels (Jour, Mois, Année)
+  const [yearFilter, setYearFilter] = useState('all');
+  const [monthFilter, setMonthFilter] = useState('all');
+  const [dateFilter, setDateFilter] = useState('');
+
+  const availableYears = useMemo(() => {
+    return extractUniqueYears(
+      activities,
+      (a) => a.due_date || a.start_date,
+      ['2026', '2025', '2024', '2023']
+    );
+  }, [activities]);
 
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [activityToEdit, setActivityToEdit] = useState<Activity | null>(null);
@@ -67,6 +82,11 @@ function ActivitiesContent() {
       if (selectedDept !== 'all' && act.department !== selectedDept) return false;
       if (selectedManager !== 'all' && act.manager_id !== selectedManager) return false;
 
+      // Filtre temporel (Jour, Mois, Année)
+      if (!matchesDateFilter(act.due_date || act.start_date, { year: yearFilter, month: monthFilter, exactDate: dateFilter })) {
+        return false;
+      }
+
       if (search.trim()) {
         const q = search.toLowerCase();
         const matchCode = act.code.toLowerCase().includes(q);
@@ -81,7 +101,7 @@ function ActivitiesContent() {
 
       return true;
     });
-  }, [activities, selectedStatus, selectedPriority, selectedType, selectedDept, selectedManager, search]);
+  }, [activities, selectedStatus, selectedPriority, selectedType, selectedDept, selectedManager, search, yearFilter, monthFilter, dateFilter]);
 
   const resetFilters = () => {
     setSearch('');
@@ -90,9 +110,12 @@ function ActivitiesContent() {
     setSelectedType('all');
     setSelectedDept('all');
     setSelectedManager('all');
+    setYearFilter('all');
+    setMonthFilter('all');
+    setDateFilter('');
   };
 
-  const hasActiveFilters = search || selectedStatus !== 'all' || selectedPriority !== 'all' || selectedType !== 'all' || selectedDept !== 'all' || selectedManager !== 'all';
+  const hasActiveFilters = search || selectedStatus !== 'all' || selectedPriority !== 'all' || selectedType !== 'all' || selectedDept !== 'all' || selectedManager !== 'all' || yearFilter !== 'all' || monthFilter !== 'all' || Boolean(dateFilter);
 
   const getExportConfig = (): ExportConfig => ({
     title: 'Activités & Missions Réglementaires du Service',
@@ -252,6 +275,23 @@ function ActivitiesContent() {
                 ))}
               </select>
             </div>
+          </div>
+
+          {/* Filtres temporels (Jour, Mois, Année) */}
+          <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <DatePeriodFilter
+              selectedYear={yearFilter}
+              onYearChange={setYearFilter}
+              selectedMonth={monthFilter}
+              onMonthChange={setMonthFilter}
+              selectedDate={dateFilter}
+              onDateChange={setDateFilter}
+              years={availableYears}
+            />
+
+            <span className="text-xs text-slate-500 font-medium">
+              Résultats : <strong className="text-slate-800 font-bold">{filteredActivities.length}</strong> activité(s)
+            </span>
           </div>
 
           {/* Active filters indicators */}

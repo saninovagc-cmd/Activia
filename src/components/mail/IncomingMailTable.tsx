@@ -117,14 +117,14 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
 
                 {/* Expéditeur & Objet */}
                 <div>
-                  <h4 className="font-bold text-slate-900 text-xs sm:text-sm leading-snug">
+                  <h4 className="font-bold text-slate-900 text-sm leading-snug break-words">
                     {mail.sender}
                   </h4>
-                  <p className="text-[11px] text-slate-600 mt-1 line-clamp-2">
+                  <p className="text-xs text-slate-700 mt-1 leading-relaxed break-words whitespace-normal">
                     {mail.subject}
                   </p>
-                  <div className="flex items-center gap-2 mt-1 text-[10px] text-slate-400">
-                    <span className="font-mono">{mail.reference}</span>
+                  <div className="flex flex-wrap items-center gap-2 mt-1.5 text-xs text-slate-500">
+                    <span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">{mail.reference}</span>
                     <span>• {mail.department}</span>
                   </div>
                 </div>
@@ -185,18 +185,18 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
-        <table className="w-full text-xs text-left text-slate-700 table-auto min-w-[760px] lg:min-w-0">
-          <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
+      <div className="hidden lg:block w-full max-w-full">
+        <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
+          <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-3 font-semibold w-28">N° Registre</th>
-              <th className="py-3 px-2.5 font-semibold w-28">Date & Réf.</th>
-              <th className="py-3 px-3 font-semibold w-36">Expéditeur</th>
-              <th className="py-3 px-3 font-semibold">Objet du courrier</th>
-              <th className="py-3 px-2.5 font-semibold w-32">Responsable</th>
-              <th className="py-3 px-2.5 font-semibold w-28">Échéance</th>
-              <th className="py-3 px-2.5 font-semibold w-36">Étape Workflow</th>
-              <th className="py-3 px-2 text-right w-12">Action</th>
+              <th className="py-3 px-3 font-bold w-[12%]">N° Registre</th>
+              <th className="py-3 px-2.5 font-bold w-[11%]">Date & Réf.</th>
+              <th className="py-3 px-3 font-bold w-[20%]">Expéditeur</th>
+              <th className="py-3 px-3 font-bold w-[30%]">Objet du courrier</th>
+              <th className="py-3 px-2.5 font-bold w-[14%]">Responsable</th>
+              <th className="py-3 px-2 font-bold w-[8%] text-center">Échéance</th>
+              <th className="py-3 px-2.5 font-bold w-[10%]">Étape</th>
+              <th className="py-3 px-2 text-right w-[5%]">Action</th>
             </tr>
           </thead>
 
@@ -218,47 +218,48 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
                     className="hover:bg-blue-50/40 transition-colors cursor-pointer group"
                   >
                     {/* N° Registre */}
-                    <td className="py-3 px-3 whitespace-nowrap">
-                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                    <td className="py-3 px-3 align-top whitespace-nowrap">
+                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 block text-center">
                         {mail.register_number}
                       </span>
                     </td>
 
                     {/* Date & Réf */}
-                    <td className="py-3 px-2.5 whitespace-nowrap">
-                      <p className="font-semibold text-slate-900">{mail.receipt_date}</p>
-                      <p className="text-[10px] text-slate-400 truncate max-w-[100px] font-mono">{mail.reference}</p>
+                    <td className="py-3 px-2.5 align-top">
+                      <p className="font-bold text-slate-900">{mail.receipt_date}</p>
+                      <p className="text-[11px] text-slate-500 font-mono break-all leading-tight mt-0.5">{mail.reference}</p>
                     </td>
 
-                    {/* Expéditeur */}
-                    <td className="py-3 px-3">
-                      <p className="font-semibold text-slate-900 truncate leading-tight">{mail.sender}</p>
-                      <span className="text-[10px] text-slate-500">{mail.sender_type || mail.mail_type}</span>
+                    {/* Expéditeur - Retour à la ligne automatique */}
+                    <td className="py-3 px-3 align-top">
+                      <p className="font-bold text-slate-900 leading-snug break-words whitespace-normal">{mail.sender}</p>
+                      <span className="text-[11px] text-slate-500 block mt-0.5 break-words">{mail.sender_type || mail.mail_type}</span>
                     </td>
 
-                    {/* Objet */}
-                    <td className="py-3 px-3">
-                      <p className="font-semibold text-slate-900 line-clamp-1 group-hover:text-blue-700 transition-colors leading-tight">
+                    {/* Objet - Retour à la ligne automatique SANS coupure */}
+                    <td className="py-3 px-3 align-top">
+                      <p className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug break-words whitespace-normal">
                         {mail.subject}
                       </p>
-                      <div className="flex items-center gap-2 mt-0.5 text-[10px] text-slate-500">
+                      <div className="flex flex-wrap items-center gap-1.5 mt-1 text-[11px] text-slate-500">
                         <Badge priority={mail.priority} />
                         {mail.scanned_doc_name && (
-                          <span className="inline-flex items-center gap-1 text-blue-600">
+                          <span className="inline-flex items-center gap-1 text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100">
                             <Paperclip className="w-3 h-3" /> Scanné
                           </span>
                         )}
+                        <span className="text-slate-400">• {mail.department}</span>
                       </div>
                     </td>
 
                     {/* Responsable */}
-                    <td className="py-3 px-2.5 whitespace-nowrap relative" onClick={(e) => e.stopPropagation()}>
+                    <td className="py-3 px-2.5 align-top relative" onClick={(e) => e.stopPropagation()}>
                       {mail.manager_name ? (
-                        <div className="flex items-center gap-1.5">
-                          <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[9px] shrink-0">
+                        <div className="flex items-start gap-1.5">
+                          <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">
                             {mail.manager_name.charAt(0)}
                           </div>
-                          <span className="font-medium text-slate-800 text-[11px] truncate max-w-[90px]">{mail.manager_name}</span>
+                          <span className="font-medium text-slate-800 text-xs leading-snug break-words whitespace-normal">{mail.manager_name}</span>
                         </div>
                       ) : (
                         <button

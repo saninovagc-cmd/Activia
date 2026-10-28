@@ -90,6 +90,7 @@ const config: Config = {
       fontFamily: {
         sans: ['Aptos', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
         display: ['Aptos Display', 'Aptos', 'sans-serif'],
+        mono: ['Aptos Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
     },
   },

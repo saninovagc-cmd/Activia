@@ -30,6 +30,7 @@ import { Badge } from '@/components/ui/Badge';
 import { testSupabaseConnection, SupabaseConnectionStatus, isSupabaseConfigured } from '@/lib/supabase';
 import { COMPLETE_SUPABASE_SQL } from '@/lib/completeSqlSchema';
 import { UserProfile } from '@/types';
+import { RolePermissionsMatrix } from '@/components/settings/RolePermissionsMatrix';
 
 interface RefItem {
   id: string;
@@ -39,7 +40,7 @@ interface RefItem {
 
 export default function SettingsPage() {
   const { allUsers, currentUser, updateUserPassword, resetUserPassword, resetToDefaultData, showToast } = useApp();
-  const [activeTab, setActiveTab] = useState<'referentials' | 'users' | 'database'>('referentials');
+  const [activeTab, setActiveTab] = useState<'referentials' | 'users' | 'matrix' | 'database'>('referentials');
   const [dbStatus, setDbStatus] = useState<SupabaseConnectionStatus | null>(null);
   const [testingDb, setTestingDb] = useState(false);
   const [copiedSql, setCopiedSql] = useState(false);
@@ -183,7 +184,7 @@ export default function SettingsPage() {
         <div className="flex flex-wrap border-b border-slate-200 gap-1">
           <button
             onClick={() => setActiveTab('referentials')}
-            className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors ${
+            className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors cursor-pointer ${
               activeTab === 'referentials' ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -191,19 +192,28 @@ export default function SettingsPage() {
           </button>
           <button
             onClick={() => setActiveTab('users')}
-            className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors ${
+            className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors cursor-pointer ${
               activeTab === 'users' ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
-            Utilisateurs & Rôles ({allUsers.length})
+            Utilisateurs & Identifiants ({allUsers.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('matrix')}
+            className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'matrix' ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-500 hover:text-slate-800'
+            }`}
+          >
+            <Shield className="w-3.5 h-3.5 text-blue-600" />
+            Matrice des Droits &amp; Niveaux d’Accès
           </button>
           <button
             onClick={() => setActiveTab('database')}
-            className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors ${
+            className={`py-2.5 px-4 text-xs font-bold border-b-2 transition-colors cursor-pointer ${
               activeTab === 'database' ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
-            Base de Données & Serveur Cloud
+            Base de Données &amp; Serveur Cloud
           </button>
         </div>
 
@@ -516,10 +526,22 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                 </table>
               </div>
             </div>
+
+            {/* Matrice des droits intégrée au bas des utilisateurs */}
+            <div className="pt-2">
+              <RolePermissionsMatrix users={allUsers} />
+            </div>
           </div>
         )}
 
-        {/* Tab 3: Database & Migration */}
+        {/* Tab 3: Matrice Dédiée des Droits d'Accès par Module */}
+        {activeTab === 'matrix' && (
+          <div className="space-y-4">
+            <RolePermissionsMatrix users={allUsers} />
+          </div>
+        )}
+
+        {/* Tab 4: Database & Migration */}
         {activeTab === 'database' && (
           <div className="space-y-6">
             {/* Cloud Database Live Status Card */}

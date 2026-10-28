@@ -224,15 +224,15 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
       </div>
 
       {/* =========================================================================
-          VUE DESKTOP (>= 1024px) : Tableau fluide avec overflow-x-auto (aucune coupure)
+          VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
-        <table className="w-full text-xs text-left text-slate-700 table-auto min-w-[720px] lg:min-w-0">
-          <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
+      <div className="hidden lg:block w-full max-w-full">
+        <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
+          <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
               <th 
                 onClick={() => handleSort('code')}
-                className="py-3 px-3 font-semibold cursor-pointer hover:text-slate-900 transition-colors w-32"
+                className="py-3 px-3 font-bold cursor-pointer hover:text-slate-900 transition-colors w-[12%]"
               >
                 <div className="flex items-center gap-1">
                   Code
@@ -241,35 +241,35 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
               </th>
               <th 
                 onClick={() => handleSort('title')}
-                className="py-3 px-3 font-semibold cursor-pointer hover:text-slate-900 transition-colors"
+                className="py-3 px-3 font-bold cursor-pointer hover:text-slate-900 transition-colors w-[32%]"
               >
                 <div className="flex items-center gap-1">
                   Titre & Périmètre
                   <ArrowUpDown className="w-3 h-3" />
                 </div>
               </th>
-              <th className="py-3 px-2.5 font-semibold w-24">Priorité</th>
+              <th className="py-3 px-2 font-bold w-[8%] text-center">Priorité</th>
               <th 
                 onClick={() => handleSort('status')}
-                className="py-3 px-2.5 font-semibold cursor-pointer hover:text-slate-900 transition-colors w-28"
+                className="py-3 px-2 font-bold cursor-pointer hover:text-slate-900 transition-colors w-[10%] text-center"
               >
-                <div className="flex items-center gap-1">
+                <div className="flex items-center justify-center gap-1">
                   Statut
                   <ArrowUpDown className="w-3 h-3" />
                 </div>
               </th>
-              <th className="py-3 px-2.5 font-semibold text-center w-28">Avancement</th>
-              <th className="py-3 px-3 font-semibold w-36">Responsable</th>
+              <th className="py-3 px-2 font-bold text-center w-[10%]">Avancement</th>
+              <th className="py-3 px-3 font-bold w-[14%]">Responsable</th>
               <th 
                 onClick={() => handleSort('due_date')}
-                className="py-3 px-3 font-semibold cursor-pointer hover:text-slate-900 transition-colors w-28"
+                className="py-3 px-2.5 font-bold cursor-pointer hover:text-slate-900 transition-colors w-[10%]"
               >
                 <div className="flex items-center gap-1">
                   Échéance
                   <ArrowUpDown className="w-3 h-3" />
                 </div>
               </th>
-              <th className="py-3 px-3 font-semibold text-right w-24">Actions</th>
+              <th className="py-3 px-2 font-bold text-right w-[4%]"></th>
             </tr>
           </thead>
 
@@ -310,19 +310,21 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
                           onClick={() => onSelect(act)}
                         >
                           {/* Code */}
-                          <td className="py-3 px-3 font-mono font-bold text-blue-700 whitespace-nowrap">
-                            {act.code}
+                          <td className="py-3 px-3 font-mono font-bold text-blue-700 whitespace-nowrap align-top">
+                            <span className="bg-blue-50 px-2 py-0.5 rounded border border-blue-200 block text-center">
+                              {act.code}
+                            </span>
                           </td>
 
                           {/* Titre */}
-                          <td className="py-3 px-3">
-                            <p className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors leading-tight">
+                          <td className="py-3 px-3 align-top">
+                            <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug break-words whitespace-normal">
                               {act.title}
                             </p>
-                            <div className="flex items-center gap-2 mt-0.5 text-[11px] text-slate-500">
-                              <span className="font-medium text-slate-600">{act.activity_type}</span>
+                            <div className="flex flex-wrap items-center gap-1.5 mt-1 text-xs text-slate-500">
+                              <span className="font-semibold text-slate-700">{act.activity_type}</span>
                               {act.associated_folder && (
-                                <span className="flex items-center gap-1 text-slate-400 truncate">
+                                <span className="flex items-center gap-1 text-slate-500 break-all">
                                   • <Folder className="w-3 h-3 shrink-0" /> {act.associated_folder}
                                 </span>
                               )}
@@ -330,18 +332,21 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
                           </td>
 
                           {/* Priorité */}
-                          <td className="py-3 px-2.5 whitespace-nowrap">
+                          <td className="py-3 px-2 text-center align-top whitespace-nowrap">
                             <Badge priority={act.priority} />
                           </td>
 
                           {/* Statut */}
-                          <td className="py-3 px-2.5 whitespace-nowrap">
+                          <td className="py-3 px-2 text-center align-top whitespace-nowrap">
                             <Badge status={isOverdue ? 'en_retard' : act.status} />
                           </td>
 
                           {/* Avancement */}
-                          <td className="py-3 px-2.5 text-center whitespace-nowrap">
-                            <div className="inline-flex items-center gap-1.5">
+                          <td className="py-3 px-2 text-center align-top whitespace-nowrap">
+                            <div className="inline-flex flex-col items-center gap-1">
+                              <span className="text-xs font-bold text-slate-700">
+                                {act.progress_percentage}%
+                              </span>
                               <div className="w-14 bg-slate-200 rounded-full h-1.5 overflow-hidden">
                                 <div
                                   className={`h-1.5 rounded-full ${
@@ -350,26 +355,23 @@ export const ActivityTable: React.FC<ActivityTableProps> = ({
                                   style={{ width: `${act.progress_percentage}%` }}
                                 />
                               </div>
-                              <span className="text-[10.5px] font-bold text-slate-700 w-6 text-right">
-                                {act.progress_percentage}%
-                              </span>
                             </div>
                           </td>
 
                           {/* Responsable */}
-                          <td className="py-3 px-3 whitespace-nowrap">
-                            <div className="flex items-center gap-1.5">
-                              <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-[9px] shrink-0">
+                          <td className="py-3 px-3 align-top">
+                            <div className="flex items-start gap-1.5">
+                              <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
                                 {act.manager_name.charAt(0)}
                               </div>
-                              <span className="font-medium text-slate-800 truncate text-[11px]">{act.manager_name}</span>
+                              <span className="font-medium text-slate-800 text-xs leading-snug break-words whitespace-normal">{act.manager_name}</span>
                             </div>
                           </td>
 
                           {/* Échéance */}
-                          <td className="py-3 px-3 whitespace-nowrap">
-                            <div className={`flex items-center gap-1 font-medium text-[11px] ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
-                              <Calendar className="w-3 h-3 text-slate-400 shrink-0" />
+                          <td className="py-3 px-2.5 whitespace-nowrap align-top">
+                            <div className={`flex items-center gap-1 font-semibold text-xs ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
+                              <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                               <span>{act.due_date}</span>
                             </div>
                           </td>

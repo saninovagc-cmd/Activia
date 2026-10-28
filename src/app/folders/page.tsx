@@ -10,6 +10,8 @@ import { Folder, FolderType } from '@/types';
 import { FolderArchive, Plus, Search, Filter, CheckCircle, Clock, AlertTriangle, XCircle } from 'lucide-react';
 import { ExportButton } from '@/components/common/ExportButton';
 import { ExportConfig } from '@/lib/exportUtils';
+import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
+import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 function FoldersPageContent() {
   const { folders } = useApp();
@@ -19,6 +21,19 @@ function FoldersPageContent() {
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFolder, setSelectedFolder] = useState<Folder | null>(null);
+
+  // Filtres temporels (Jour, Mois, Année)
+  const [yearFilter, setYearFilter] = useState('all');
+  const [monthFilter, setMonthFilter] = useState('all');
+  const [dateFilter, setDateFilter] = useState('');
+
+  const availableYears = useMemo(() => {
+    return extractUniqueYears(
+      folders,
+      (f) => f.receipt_date || f.created_at,
+      ['2026', '2025', '2024', '2023']
+    );
+  }, [folders]);
 
   const folderTypes: FolderType[] = [
     'Agrément CNAECP (Clientèle Privée)',
@@ -43,6 +58,12 @@ function FoldersPageContent() {
     return folders.filter((f) => {
       if (selectedType !== 'all' && f.folder_type !== selectedType) return false;
       if (selectedStatus !== 'all' && f.status !== selectedStatus) return false;
+
+      // Filtre temporel (Jour, Mois, Année)
+      if (!matchesDateFilter(f.receipt_date || f.created_at, { year: yearFilter, month: monthFilter, exactDate: dateFilter })) {
+        return false;
+      }
+
       if (search.trim()) {
         const q = search.toLowerCase();
         const matchNum = f.folder_number.toLowerCase().includes(q);
@@ -52,7 +73,7 @@ function FoldersPageContent() {
       }
       return true;
     });
-  }, [folders, selectedType, selectedStatus, search]);
+  }, [folders, selectedType, selectedStatus, search, yearFilter, monthFilter, dateFilter]);
 
   const totalFolders = folders.length;
   const enInstruction = folders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length;
@@ -183,6 +204,23 @@ function FoldersPageContent() {
                 <option value="notification">Notification</option>
                 <option value="cloture">Clôture</option>
               </select>
+            </div>
+          </div>
+
+          {/* Filtres temporels (Jour, Mois, Année) */}
+          <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <DatePeriodFilter
+              selectedYear={yearFilter}
+              onYearChange={setYearFilter}
+              selectedMonth={monthFilter}
+              onMonthChange={setMonthFilter}
+              selectedDate={dateFilter}
+              onDateChange={setDateFilter}
+              years={availableYears}
+            />
+
+            <div className="text-xs text-slate-500 font-medium">
+              Résultats : <strong className="text-slate-800 font-bold">{filteredFolders.length}</strong> dossier(s)
             </div>
           </div>
         </div>

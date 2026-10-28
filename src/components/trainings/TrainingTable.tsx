@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { TrainingItem } from '@/types';
 import { 
   GraduationCap, 
@@ -20,6 +20,8 @@ import {
 } from 'lucide-react';
 import { ExportButton } from '@/components/common/ExportButton';
 import { ExportConfig } from '@/lib/exportUtils';
+import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
+import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 interface TrainingTableProps {
   trainings: TrainingItem[];
@@ -39,6 +41,19 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
   const [regionFilter, setRegionFilter] = useState('all');
   const [resultFilter, setResultFilter] = useState('all');
 
+  // Filtres temporels (Date de session)
+  const [yearFilter, setYearFilter] = useState<string>('all');
+  const [monthFilter, setMonthFilter] = useState<string>('all');
+  const [dateFilter, setDateFilter] = useState<string>('');
+
+  const availableYears = useMemo(() => {
+    return extractUniqueYears(
+      trainings,
+      (t) => t.training_date,
+      ['2026', '2025', '2024', '2023']
+    );
+  }, [trainings]);
+
   const themes = Array.from(new Set(trainings.map(t => t.theme))).filter(Boolean);
   const regions = Array.from(new Set(trainings.map(t => t.region))).filter(Boolean);
 
@@ -54,7 +69,13 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
     const matchesRegion = regionFilter === 'all' || t.region === regionFilter;
     const matchesResult = resultFilter === 'all' || t.result === resultFilter;
 
-    return matchesSearch && matchesTheme && matchesRegion && matchesResult;
+    const matchesDate = matchesDateFilter(t.training_date, {
+      year: yearFilter,
+      month: monthFilter,
+      exactDate: dateFilter
+    });
+
+    return matchesSearch && matchesTheme && matchesRegion && matchesResult && matchesDate;
   });
 
   const getExportConfig = (): ExportConfig => ({
@@ -140,12 +161,28 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
           {canManage && (
             <button
               onClick={onNew}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs transition-colors"
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Inscrire un Participant</span>
             </button>
           )}
+        </div>
+      </div>
+
+      {/* Ligne des filtres temporels (Jour, Mois, Année) */}
+      <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-3">
+        <DatePeriodFilter
+          selectedYear={yearFilter}
+          onYearChange={setYearFilter}
+          selectedMonth={monthFilter}
+          onMonthChange={setMonthFilter}
+          selectedDate={dateFilter}
+          onDateChange={setDateFilter}
+          years={availableYears}
+        />
+        <div className="text-xs text-slate-500 font-medium">
+          Affichage : <strong className="text-blue-800 font-bold">{filtered.length}</strong> agent(s) formé(s)
         </div>
       </div>
 
@@ -237,23 +274,22 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
-        <table className="w-full text-left border-collapse text-xs table-auto min-w-[760px] lg:min-w-0">
+      <div className="hidden lg:block w-full max-w-full">
+        <table className="w-full text-left border-collapse text-xs table-fixed">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-3 w-32">Code / Session</th>
-              <th className="py-3 px-3">Participant & Fonction</th>
-              <th className="py-3 px-3 w-40">Structure & Région</th>
-              <th className="py-3 px-3">Thématique</th>
-              <th className="py-3 px-2.5 w-36">Formateur</th>
-              <th className="py-3 px-2.5 w-28">Résultat</th>
-              <th className="py-3 px-2 text-right w-12">Action</th>
+            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider text-[11px]">
+              <th className="py-3 px-3 w-[14%]">Code / Session</th>
+              <th className="py-3 px-3 w-[22%]">Participant & Fonction</th>
+              <th className="py-3 px-3 w-[18%]">Structure & Région</th>
+              <th className="py-3 px-3 w-[22%]">Thématique</th>
+              <th className="py-3 px-2.5 w-[14%]">Formateur</th>
+              <th className="py-3 px-2.5 w-[10%] text-center">Résultat</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 text-slate-700">
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="text-center py-10 text-slate-400">
+                  <td colSpan={6} className="text-center py-10 text-slate-400">
                     <GraduationCap className="w-8 h-8 mx-auto mb-2 text-slate-300" />
                     Aucun enregistrement ne correspond aux filtres sélectionnés.
                   </td>
@@ -265,31 +301,31 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
                     className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
                     onClick={() => onSelect(item)}
                   >
-                    <td className="py-3 px-4 font-mono font-medium">
+                    <td className="py-3 px-3 font-mono font-medium align-top whitespace-nowrap">
                       <div className="text-blue-900 font-bold">{item.training_code}</div>
                       <div className="text-[11px] text-slate-500 font-normal">{item.training_date}</div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <td className="py-3 px-3 align-top">
+                      <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug break-words whitespace-normal">
                         {item.participant_name}
                       </div>
-                      <div className="text-[11px] text-slate-500">
+                      <div className="text-xs text-slate-500 leading-snug break-words whitespace-normal mt-0.5">
                         {item.function_title}
                       </div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-medium text-slate-800">{item.structure}</div>
-                      <div className="text-[11px] text-slate-500">{item.region} ({item.department})</div>
+                    <td className="py-3 px-3 align-top">
+                      <div className="font-semibold text-slate-800 leading-snug break-words whitespace-normal">{item.structure}</div>
+                      <div className="text-[11px] text-slate-500 leading-snug break-words whitespace-normal">{item.region} ({item.department})</div>
                     </td>
-                    <td className="py-3 px-4">
-                      <span className="font-semibold text-slate-800">{item.theme}</span>
+                    <td className="py-3 px-3 align-top">
+                      <span className="font-bold text-slate-900 leading-snug break-words whitespace-normal block">{item.theme}</span>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-medium text-slate-800">{item.trainer_name}</div>
-                      <div className="text-[11px] text-slate-500">{item.duration_hours} heures de cours</div>
+                    <td className="py-3 px-2.5 align-top">
+                      <div className="font-semibold text-slate-800 leading-snug break-words whitespace-normal">{item.trainer_name}</div>
+                      <div className="text-[11px] text-slate-500 leading-snug break-words whitespace-normal">{item.duration_hours}h de cours</div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-center gap-2">
+                    <td className="py-3 px-2.5 align-top text-center whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center gap-1">
                         {item.result === 'Validé' ? (
                           <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
                             Validé
@@ -303,28 +339,19 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
                             Ajourné
                           </span>
                         )}
+                        {item.certificate_issued && (
+                          <div className="text-[10px] text-purple-700 font-semibold mt-0.5">
+                            Certifié ({item.certificate_number})
+                          </div>
+                        )}
                       </div>
-                      {item.certificate_issued && (
-                        <div className="text-[10px] text-purple-700 font-semibold mt-1">
-                          Certifié ({item.certificate_number})
-                        </div>
-                      )}
-                    </td>
-                    <td className="py-3 px-4 text-right" onClick={(e) => e.stopPropagation()}>
-                      <button
-                        onClick={() => onSelect(item)}
-                        className="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
-                        title="Consulter la fiche individuelle"
-                      >
-                        <Eye className="w-4 h-4" />
-                      </button>
                     </td>
                   </tr>
                 ))
               )}
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
+      </div>
 
         <div className="p-3 bg-slate-50 border-t border-slate-200 text-slate-500 text-xs flex items-center justify-between">
           <span>Affichage de <strong>{filtered.length}</strong> sur <strong>{trainings.length}</strong> participants répertoriés</span>

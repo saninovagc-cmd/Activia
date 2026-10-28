@@ -31,16 +31,20 @@ export const StatCard: React.FC<StatCardProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`bg-white rounded-xl p-4 border border-slate-200/90 shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden ${
+      className={`bg-white rounded-xl p-4 border border-slate-200/90 shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden flex flex-col justify-between ${
         onClick ? 'cursor-pointer hover:border-slate-300' : ''
       }`}
     >
-      <div className={`absolute top-0 left-0 right-0 h-1 ${style.border}`} />
-      <div className="pt-1">
-        <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider truncate">{title}</p>
-        <h3 className="text-2xl font-black text-slate-900 mt-1 tracking-tight font-mono">{value}</h3>
+      <div className={`absolute top-0 left-0 right-0 h-1.5 ${style.border}`} />
+      <div className="pt-1 space-y-1">
+        <p className="text-xs sm:text-[13px] font-extrabold text-slate-800 uppercase tracking-wide leading-snug break-words">
+          {title}
+        </p>
+        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-mono py-0.5">
+          {value}
+        </h3>
         {subtitle && (
-          <p className={`text-[11px] mt-1.5 font-semibold ${style.text} truncate`}>
+          <p className={`text-xs font-bold ${style.text} leading-snug break-words mt-1`}>
             {subtitle}
           </p>
         )}

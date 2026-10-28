@@ -151,29 +151,27 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
       </div>
 
       {/* =========================================================================
-          VUE DESKTOP (>= 1024px) : Tableau fluide avec overflow-x-auto (aucune coupure)
+          VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
-        <table className="w-full text-xs text-left text-slate-700 table-auto min-w-[760px] lg:min-w-0">
-          <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
+      <div className="hidden lg:block w-full max-w-full">
+        <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
+          <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-3 font-semibold w-28">N° Dossier</th>
-              <th className="py-3 px-3 font-semibold w-36">Procédure</th>
-              <th className="py-3 px-3 font-semibold">Structure & Demandeur</th>
-              <th className="py-3 px-2.5 font-semibold w-32">Évaluateur</th>
-              <th className="py-3 px-2 font-semibold w-20">Priorité</th>
-              <th className="py-3 px-2.5 font-semibold w-24">Étape</th>
-              <th className="py-3 px-2 text-center w-24">Avancement</th>
-              <th className="py-3 px-2.5 font-semibold w-28">Échéance SLA</th>
-              <th className="py-3 px-2.5 font-semibold w-24">Décision</th>
-              <th className="py-3 px-2 text-right w-12">Action</th>
+              <th className="py-3 px-3 font-bold w-[12%]">N° Dossier</th>
+              <th className="py-3 px-2.5 font-bold w-[17%]">Procédure</th>
+              <th className="py-3 px-3 font-bold w-[25%]">Structure & Demandeur</th>
+              <th className="py-3 px-2.5 font-bold w-[12%]">Évaluateur</th>
+              <th className="py-3 px-2 font-bold w-[8%] text-center">Priorité</th>
+              <th className="py-3 px-2.5 font-bold w-[9%] text-center">Étape</th>
+              <th className="py-3 px-2 font-bold w-[8%] text-center">Progrès</th>
+              <th className="py-3 px-2.5 font-bold w-[9%] text-center">Décision</th>
             </tr>
           </thead>
 
           <tbody className="divide-y divide-slate-100">
             {folders.length === 0 ? (
               <tr>
-                <td colSpan={10} className="py-12 text-center text-slate-400">
+                <td colSpan={8} className="py-12 text-center text-slate-400">
                   Aucun dossier ne correspond à ces critères.
                 </td>
               </tr>
@@ -187,49 +185,63 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                     className="hover:bg-blue-50/40 transition-colors cursor-pointer group"
                   >
                     {/* N° Dossier */}
-                    <td className="py-3 px-3 font-mono font-bold text-blue-700 whitespace-nowrap">
-                      {folder.folder_number}
+                    <td className="py-3 px-3 align-top whitespace-nowrap">
+                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 block text-center">
+                        {folder.folder_number}
+                      </span>
+                      <span className="block text-[11px] text-slate-400 text-center mt-1">
+                        {folder.receipt_date}
+                      </span>
                     </td>
 
-                    {/* Type */}
-                    <td className="py-3 px-3 font-medium text-slate-800 whitespace-nowrap">
-                      {folder.folder_type}
+                    {/* Type / Procédure */}
+                    <td className="py-3 px-2.5 align-top">
+                      <p className="font-semibold text-slate-900 leading-snug break-words whitespace-normal">
+                        {folder.folder_type}
+                      </p>
                     </td>
 
                     {/* Structure & Demandeur */}
-                    <td className="py-3 px-3">
-                      <p className="font-semibold text-slate-900 group-hover:text-blue-700 transition-colors leading-tight">
+                    <td className="py-3 px-3 align-top">
+                      <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug break-words whitespace-normal">
                         {folder.structure}
                       </p>
-                      <p className="text-[11px] text-slate-500">{folder.applicant}</p>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-snug break-words whitespace-normal">
+                        {folder.applicant}
+                      </p>
                     </td>
 
                     {/* Évaluateur */}
-                    <td className="py-3 px-2.5 whitespace-nowrap">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[9px] shrink-0">
-                          {folder.manager_name.charAt(0)}
+                    <td className="py-3 px-2.5 align-top">
+                      <div className="flex items-start gap-1.5">
+                        <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">
+                          {folder.manager_name ? folder.manager_name.charAt(0) : '?'}
                         </div>
-                        <span className="font-medium text-slate-800 truncate text-[11px]">{folder.manager_name}</span>
+                        <span className="font-medium text-slate-800 text-xs leading-snug break-words whitespace-normal">
+                          {folder.manager_name || 'Non assigné'}
+                        </span>
                       </div>
                     </td>
 
                     {/* Priorité */}
-                    <td className="py-3 px-2 whitespace-nowrap">
+                    <td className="py-3 px-2 text-center align-top whitespace-nowrap">
                       <Badge priority={folder.priority} />
                     </td>
 
                     {/* Étape */}
-                    <td className="py-3 px-2.5 whitespace-nowrap">
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wider">
+                    <td className="py-3 px-2.5 text-center align-top whitespace-nowrap">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wider inline-block">
                         {folder.status}
                       </span>
                     </td>
 
                     {/* Avancement */}
-                    <td className="py-3 px-2 text-center whitespace-nowrap">
-                      <div className="inline-flex items-center gap-1.5">
-                        <div className="w-12 bg-slate-200 rounded-full h-1.5 overflow-hidden">
+                    <td className="py-3 px-2 text-center align-top whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center gap-1">
+                        <span className="text-xs font-bold text-slate-700">
+                          {folder.progress_percentage}%
+                        </span>
+                        <div className="w-14 bg-slate-200 rounded-full h-1.5 overflow-hidden">
                           <div
                             className={`h-1.5 rounded-full ${
                               folder.status === 'cloture' ? 'bg-emerald-500' : isOverdue ? 'bg-rose-500' : 'bg-blue-600'
@@ -237,23 +249,12 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                             style={{ width: `${folder.progress_percentage}%` }}
                           />
                         </div>
-                        <span className="text-[10px] font-bold text-slate-700 w-6 text-right">
-                          {folder.progress_percentage}%
-                        </span>
-                      </div>
-                    </td>
-
-                    {/* Échéance SLA */}
-                    <td className="py-3 px-2.5 whitespace-nowrap">
-                      <div className={`flex items-center gap-1 font-medium text-[11px] ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
-                        <Calendar className="w-3 h-3 text-slate-400 shrink-0" />
-                        <span>{folder.due_date}</span>
                       </div>
                     </td>
 
                     {/* Décision */}
-                    <td className="py-3 px-2.5 whitespace-nowrap">
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                    <td className="py-3 px-2.5 text-center align-top whitespace-nowrap">
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold border inline-block ${
                         folder.decision === 'Favorable'
                           ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
                           : folder.decision === 'Défavorable'
@@ -264,20 +265,6 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                       }`}>
                         {folder.decision || 'En attente'}
                       </span>
-                    </td>
-
-                    {/* Actions */}
-                    <td className="py-3 px-2 text-right whitespace-nowrap">
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onSelect(folder);
-                        }}
-                        className="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-md transition-colors"
-                        title="Consulter le dossier"
-                      >
-                        <Eye className="w-3.5 h-3.5" />
-                      </button>
                     </td>
                   </tr>
                 );

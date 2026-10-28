@@ -115,57 +115,58 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
-        <table className="w-full text-xs text-left text-slate-700 table-auto min-w-[760px] lg:min-w-0">
-          <thead className="bg-slate-50 text-slate-500 uppercase tracking-wider border-b border-slate-200">
+      <div className="hidden lg:block w-full max-w-full">
+        <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
+          <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-3 font-semibold w-28">N° Chrono</th>
-              <th className="py-3 px-2.5 font-semibold w-28">Date d’Envoi</th>
-              <th className="py-3 px-3 font-semibold w-40">Destinataire</th>
-              <th className="py-3 px-3 font-semibold">Objet du courrier</th>
-              <th className="py-3 px-2.5 font-semibold w-28">Type</th>
-              <th className="py-3 px-2.5 font-semibold w-32">Rédacteur</th>
-              <th className="py-3 px-2.5 font-semibold w-28">Statut</th>
-              <th className="py-3 px-3 font-semibold text-right w-20">Document</th>
+              <th className="py-3 px-3 font-bold w-[12%]">N° Chrono</th>
+              <th className="py-3 px-2.5 font-bold w-[11%]">Date d’Envoi</th>
+              <th className="py-3 px-3 font-bold w-[22%]">Destinataire</th>
+              <th className="py-3 px-3 font-bold w-[28%]">Objet du courrier</th>
+              <th className="py-3 px-2.5 font-bold w-[11%]">Rédacteur</th>
+              <th className="py-3 px-2 font-bold w-[8%] text-center">Statut</th>
+              <th className="py-3 px-3 font-bold w-[8%] text-right">Document</th>
             </tr>
           </thead>
 
           <tbody className="divide-y divide-slate-100">
             {mails.length === 0 ? (
               <tr>
-                <td colSpan={8} className="py-12 text-center text-slate-400">
+                <td colSpan={7} className="py-12 text-center text-slate-400">
                   Aucun courrier sortant enregistré.
                 </td>
               </tr>
             ) : (
               mails.map((mail) => (
                 <tr key={mail.id} className="hover:bg-slate-50/70 transition-colors">
-                  <td className="py-3 px-3 font-mono font-bold text-indigo-700 whitespace-nowrap">
-                    {mail.mail_number}
+                  <td className="py-3 px-3 font-mono font-bold text-indigo-700 whitespace-nowrap align-top">
+                    <span className="bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200 block text-center">
+                      {mail.mail_number}
+                    </span>
                   </td>
-                  <td className="py-3 px-2.5 whitespace-nowrap">
-                    <span className="font-semibold text-slate-900">{mail.send_date}</span>
+                  <td className="py-3 px-2.5 whitespace-nowrap align-top">
+                    <span className="font-bold text-slate-900">{mail.send_date}</span>
+                    <span className="block text-[11px] text-slate-500 mt-0.5">{mail.mail_type}</span>
                   </td>
-                  <td className="py-3 px-3">
-                    <span className="font-semibold text-slate-900 truncate block leading-tight">{mail.recipient}</span>
+                  <td className="py-3 px-3 align-top">
+                    <span className="font-bold text-slate-900 leading-snug break-words whitespace-normal block">{mail.recipient}</span>
                   </td>
-                  <td className="py-3 px-3">
-                    <p className="font-medium text-slate-900 line-clamp-1 leading-tight">{mail.subject}</p>
-                    <span className="text-[10px] text-slate-400 font-mono">{mail.reference}</span>
+                  <td className="py-3 px-3 align-top">
+                    <p className="font-semibold text-slate-900 leading-snug break-words whitespace-normal">{mail.subject}</p>
+                    {mail.reference && (
+                      <span className="text-[11px] text-slate-500 font-mono block mt-0.5 break-all">Réf: {mail.reference}</span>
+                    )}
                   </td>
-                  <td className="py-3 px-2.5 text-slate-600 whitespace-nowrap">
-                    {mail.mail_type}
-                  </td>
-                  <td className="py-3 px-2.5 whitespace-nowrap">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[9px] shrink-0">
+                  <td className="py-3 px-2.5 align-top">
+                    <div className="flex items-start gap-1.5">
+                      <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">
                         {mail.manager_name.charAt(0)}
                       </div>
-                      <span className="font-medium text-slate-800 text-[11px] truncate max-w-[90px]">{mail.manager_name}</span>
+                      <span className="font-medium text-slate-800 text-xs leading-snug break-words whitespace-normal">{mail.manager_name}</span>
                     </div>
                   </td>
-                  <td className="py-3 px-2.5 whitespace-nowrap">
-                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                  <td className="py-3 px-2.5 whitespace-nowrap align-top">
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border inline-block ${
                       mail.status === 'envoye'
                         ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
                         : mail.status === 'valide'
@@ -175,14 +176,14 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
                       {mail.status === 'envoye' ? 'Expédié' : mail.status === 'valide' ? 'Prêt à l’envoi' : mail.status}
                     </span>
                   </td>
-                  <td className="py-3 px-3 text-right whitespace-nowrap">
+                  <td className="py-3 px-3 text-right whitespace-nowrap align-top">
                     <button
                       onClick={() => {
                         const fileName = mail.document_name || `Courrier_Sortant_${mail.mail_number.replace(/\//g, '_')}.pdf`;
                         downloadSampleDocument(fileName, mail.mail_number, 'courrier');
                         showToast('success', `Téléchargement du courrier officiel "${mail.mail_number}" initié.`);
                       }}
-                      className="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold inline-flex items-center gap-1 transition-colors"
+                      className="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold inline-flex items-center gap-1 transition-colors cursor-pointer"
                       title="Télécharger l'acte administratif / lettre officielle"
                     >
                       <Download className="w-3.5 h-3.5 text-blue-600" />

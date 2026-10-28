@@ -12,6 +12,8 @@ import { IncomingMail } from '@/types';
 import { Mail, Send, Plus, Search, Filter, Download } from 'lucide-react';
 import { ExportButton } from '@/components/common/ExportButton';
 import { ExportConfig } from '@/lib/exportUtils';
+import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
+import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 function MailPageContent() {
   const { incomingMails, outgoingMails } = useApp();
@@ -23,11 +25,31 @@ function MailPageContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMail, setSelectedMail] = useState<IncomingMail | null>(null);
 
+  // Filtres temporels (Jour, Mois, Année)
+  const [yearFilter, setYearFilter] = useState('all');
+  const [monthFilter, setMonthFilter] = useState('all');
+  const [dateFilter, setDateFilter] = useState('');
+
+  // Années uniques
+  const availableYears = useMemo(() => {
+    return extractUniqueYears(
+      [...incomingMails.map(m => m.receipt_date), ...outgoingMails.map(m => m.send_date)],
+      (d) => d,
+      ['2026', '2025', '2024', '2023']
+    );
+  }, [incomingMails, outgoingMails]);
+
   // Filter incoming mails
   const filteredIncoming = useMemo(() => {
     return incomingMails.filter((m) => {
       if (selectedDept !== 'all' && m.department !== selectedDept) return false;
       if (selectedStatus !== 'all' && m.status !== selectedStatus) return false;
+
+      // Filtre temporel (Jour, Mois, Année)
+      if (!matchesDateFilter(m.receipt_date, { year: yearFilter, month: monthFilter, exactDate: dateFilter })) {
+        return false;
+      }
+
       if (search.trim()) {
         const q = search.toLowerCase();
         const matchNum = m.register_number.toLowerCase().includes(q);
@@ -38,11 +60,16 @@ function MailPageContent() {
       }
       return true;
     });
-  }, [incomingMails, selectedDept, selectedStatus, search]);
+  }, [incomingMails, selectedDept, selectedStatus, search, yearFilter, monthFilter, dateFilter]);
 
   // Filter outgoing mails
   const filteredOutgoing = useMemo(() => {
     return outgoingMails.filter((m) => {
+      // Filtre temporel (Jour, Mois, Année)
+      if (!matchesDateFilter(m.send_date, { year: yearFilter, month: monthFilter, exactDate: dateFilter })) {
+        return false;
+      }
+
       if (search.trim()) {
         const q = search.toLowerCase();
         const matchNum = m.mail_number.toLowerCase().includes(q);
@@ -52,7 +79,7 @@ function MailPageContent() {
       }
       return true;
     });
-  }, [outgoingMails, search]);
+  }, [outgoingMails, search, yearFilter, monthFilter, dateFilter]);
 
   const departments = [
     'Direction (DLVS)',
@@ -186,6 +213,23 @@ function MailPageContent() {
                   ))}
                 </select>
               )}
+            </div>
+          </div>
+
+          {/* Ligne des filtres temporels (Jour, Mois, Année) */}
+          <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <DatePeriodFilter
+              selectedYear={yearFilter}
+              onYearChange={setYearFilter}
+              selectedMonth={monthFilter}
+              onMonthChange={setMonthFilter}
+              selectedDate={dateFilter}
+              onDateChange={setDateFilter}
+              years={availableYears}
+            />
+
+            <div className="text-xs text-slate-500 font-medium">
+              Résultats : <strong className="text-slate-800 font-bold">{activeTab === 'incoming' ? filteredIncoming.length : filteredOutgoing.length}</strong> courrier(s)
             </div>
           </div>
         </div>

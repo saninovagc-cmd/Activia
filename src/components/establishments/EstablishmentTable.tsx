@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Establishment, EstablishmentType, EstablishmentStatus } from '@/types';
 import { 
   Building2, 
@@ -19,6 +19,8 @@ import {
 } from 'lucide-react';
 import { ExportButton } from '@/components/common/ExportButton';
 import { ExportConfig } from '@/lib/exportUtils';
+import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
+import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 interface EstablishmentTableProps {
   establishments: Establishment[];
@@ -40,6 +42,19 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [deptFilter, setDeptFilter] = useState<string>('all');
 
+  // Filtres temporels (Date d'agrément)
+  const [yearFilter, setYearFilter] = useState<string>('all');
+  const [monthFilter, setMonthFilter] = useState<string>('all');
+  const [dateFilter, setDateFilter] = useState<string>('');
+
+  const availableYears = useMemo(() => {
+    return extractUniqueYears(
+      establishments,
+      (e) => e.auth_date,
+      ['2026', '2025', '2024', '2023', '2022', '2021', '2020']
+    );
+  }, [establishments]);
+
   // Filter list
   const filtered = establishments.filter(e => {
     const matchesSearch = 
@@ -53,7 +68,13 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
     const matchesStatus = statusFilter === 'all' || e.status === statusFilter;
     const matchesDept = deptFilter === 'all' || e.department.toLowerCase().includes(deptFilter.toLowerCase());
 
-    return matchesSearch && matchesType && matchesStatus && matchesDept;
+    const matchesDate = matchesDateFilter(e.auth_date, {
+      year: yearFilter,
+      month: monthFilter,
+      exactDate: dateFilter
+    });
+
+    return matchesSearch && matchesType && matchesStatus && matchesDept && matchesDate;
   });
 
   // Unique departments for filter
@@ -171,12 +192,28 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
           {canManage && (
             <button
               onClick={onNew}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs transition-colors"
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg shadow-xs transition-colors cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Nouvel Établissement</span>
             </button>
           )}
+        </div>
+      </div>
+
+      {/* Ligne des filtres temporels (Agrément : Jour, Mois, Année) */}
+      <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-3">
+        <DatePeriodFilter
+          selectedYear={yearFilter}
+          onYearChange={setYearFilter}
+          selectedMonth={monthFilter}
+          onMonthChange={setMonthFilter}
+          selectedDate={dateFilter}
+          onDateChange={setDateFilter}
+          years={availableYears}
+        />
+        <div className="text-xs text-slate-500 font-medium">
+          Affichage : <strong className="text-emerald-800 font-bold">{filtered.length}</strong> établissement(s) filtré(s)
         </div>
       </div>
 
@@ -276,17 +313,17 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full overflow-x-auto">
-        <table className="w-full text-left border-collapse text-xs table-auto min-w-[760px] lg:min-w-0">
+      <div className="hidden lg:block w-full max-w-full">
+        <table className="w-full text-left border-collapse text-xs table-fixed">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-3 w-32">N° Agrément</th>
-              <th className="py-3 px-3">Établissement & Type</th>
-              <th className="py-3 px-3 w-44">Pharmacien Responsable</th>
-              <th className="py-3 px-3 w-36">Localisation</th>
-              <th className="py-3 px-2.5 w-28">Date Agrément</th>
-              <th className="py-3 px-2.5 w-24">Statut</th>
-              <th className="py-3 px-2 text-right w-16">Actions</th>
+            <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider text-[11px]">
+              <th className="py-3 px-3 w-[14%]">N° Agrément</th>
+              <th className="py-3 px-3 w-[28%]">Établissement & Type</th>
+              <th className="py-3 px-3 w-[20%]">Pharmacien Responsable</th>
+              <th className="py-3 px-3 w-[16%]">Localisation</th>
+              <th className="py-3 px-2.5 w-[11%]">Date Agrément</th>
+              <th className="py-3 px-2.5 w-[7%] text-center">Statut</th>
+              <th className="py-3 px-2 text-right w-[4%]"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 text-slate-700">
@@ -304,76 +341,67 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
                     className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
                     onClick={() => onSelect(etab)}
                   >
-                    <td className="py-3 px-4 font-mono font-medium">
+                    <td className="py-3 px-3 font-mono font-medium align-top whitespace-nowrap">
                       <div className="text-blue-900 font-bold">{etab.code}</div>
-                      <div className="text-[11px] text-slate-500 font-normal">{etab.authorization_number}</div>
+                      <div className="text-[11px] text-slate-500 font-normal break-all">{etab.authorization_number}</div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <td className="py-3 px-3 align-top">
+                      <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug break-words whitespace-normal">
                         {etab.name}
                       </div>
-                      <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
-                        <span className="font-medium text-slate-600">{etab.establishment_type}</span>
+                      <div className="text-xs text-slate-500 flex flex-wrap items-center gap-1 mt-0.5 leading-snug break-words whitespace-normal">
+                        <span className="font-semibold text-slate-700">{etab.establishment_type}</span>
                         {etab.owner && <span>• {etab.owner}</span>}
                       </div>
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="font-medium text-slate-800">{etab.responsible_pharmacist}</div>
-                      <div className="text-[11px] text-slate-500 flex items-center gap-1">
-                        <Phone className="w-3 h-3 text-slate-400" />
-                        <span>{etab.phone}</span>
-                      </div>
+                    <td className="py-3 px-3 align-top">
+                      <div className="font-semibold text-slate-900 leading-snug break-words whitespace-normal">{etab.responsible_pharmacist}</div>
+                      {etab.phone && (
+                        <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
+                          <Phone className="w-3 h-3 text-slate-400 shrink-0" />
+                          <span>{etab.phone}</span>
+                        </div>
+                      )}
                     </td>
-                    <td className="py-3 px-4">
-                      <div className="flex items-center gap-1 text-slate-800 font-medium">
-                        <MapPin className="w-3 h-3 text-slate-400 shrink-0" />
+                    <td className="py-3 px-3 align-top">
+                      <div className="flex items-start gap-1 text-slate-800 font-medium leading-snug break-words whitespace-normal">
+                        <MapPin className="w-3 h-3 text-slate-400 shrink-0 mt-0.5" />
                         <span>{etab.city}</span>
                       </div>
                       <div className="text-[11px] text-slate-500 pl-4">{etab.department}</div>
                     </td>
-                    <td className="py-3 px-4 text-slate-600">
+                    <td className="py-3 px-2.5 text-slate-600 align-top whitespace-nowrap">
                       <div className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3 text-slate-400" />
-                        <span>{etab.auth_date}</span>
+                        <Calendar className="w-3 h-3 text-slate-400 shrink-0" />
+                        <span className="font-semibold">{etab.auth_date}</span>
                       </div>
                       {etab.expiry_date && (
                         <div className="text-[10px] text-slate-500">Exp: {etab.expiry_date}</div>
                       )}
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-2.5 align-top text-center whitespace-nowrap">
                       {getStatusBadge(etab.status)}
                     </td>
-                    <td className="py-3 px-4 text-right" onClick={(e) => e.stopPropagation()}>
-                      <div className="flex items-center justify-end gap-1.5">
-                        <button
-                          onClick={() => onSelect(etab)}
-                          className="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
-                          title="Consulter la fiche complète"
-                        >
-                          <Eye className="w-4 h-4" />
-                        </button>
-                        {canManage && (
-                          <button
-                            onClick={() => onEdit(etab)}
-                            className="p-1.5 text-slate-500 hover:text-amber-600 hover:bg-amber-50 rounded-md transition-colors"
-                            title="Modifier les informations"
-                          >
-                            <Edit3 className="w-4 h-4" />
-                          </button>
-                        )}
-                      </div>
+                    <td className="py-3 px-2 text-right align-top whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                      <button
+                        onClick={() => onSelect(etab)}
+                        className="p-1 text-slate-400 hover:text-emerald-700 hover:bg-slate-100 rounded transition-colors"
+                        title="Consulter l'établissement"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                      </button>
                     </td>
                   </tr>
                 ))
               )}
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
+      </div>
 
-        <div className="p-3 bg-slate-50 border-t border-slate-200 text-slate-500 text-xs flex items-center justify-between">
-          <span>Affichage de <strong>{filtered.length}</strong> sur <strong>{establishments.length}</strong> établissements répertoriés</span>
-          <span className="text-[11px] text-slate-400">Dernière mise à jour du registre : Aujourd’hui</span>
-        </div>
+      <div className="p-3 bg-slate-50 border-t border-slate-200 text-slate-500 text-xs flex items-center justify-between">
+        <span>Affichage de <strong>{filtered.length}</strong> sur <strong>{establishments.length}</strong> établissements répertoriés</span>
+        <span className="text-[11px] text-slate-400">Dernière mise à jour du registre : Aujourd’hui</span>
+      </div>
       </div>
     </div>
   );

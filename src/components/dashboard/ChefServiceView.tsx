@@ -121,97 +121,97 @@ export const ChefServiceView: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Pilier 1: Activités du Service */}
         <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Activité du Service</p>
-          <div className="mt-3 space-y-2">
+          <p className="text-xs sm:text-sm font-extrabold text-slate-800 uppercase tracking-wider">Activité du Service</p>
+          <div className="mt-3 space-y-2.5">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span className="text-slate-700 font-medium flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
                 Activités réalisées
               </span>
-              <span className="font-bold text-slate-900">{realisees}</span>
+              <span className="font-extrabold text-slate-900">{realisees}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-blue-500" />
+              <span className="text-slate-700 font-medium flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0" />
                 Activités en cours
               </span>
-              <span className="font-bold text-slate-900">{enCours}</span>
+              <span className="font-extrabold text-slate-900">{enCours}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-rose-500" />
+              <span className="text-slate-700 font-medium flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0" />
                 Activités en retard
               </span>
-              <span className="font-bold text-rose-600">{enRetard}</span>
+              <span className="font-extrabold text-rose-600">{enRetard}</span>
             </div>
           </div>
         </div>
 
         {/* Pilier 2: Dossiers Réglementaires */}
         <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Dossiers Réglementaires</p>
-          <div className="mt-3 space-y-2">
+          <p className="text-xs sm:text-sm font-extrabold text-slate-800 uppercase tracking-wider">Dossiers Réglementaires</p>
+          <div className="mt-3 space-y-2.5">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Total dossiers</span>
-              <span className="font-bold text-slate-900">{foldersRecus}</span>
+              <span className="text-slate-700 font-medium">Total dossiers</span>
+              <span className="font-extrabold text-slate-900">{foldersRecus}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Traités / Validés</span>
-              <span className="font-bold text-emerald-600">{foldersTraites}</span>
+              <span className="text-slate-700 font-medium">Traités / Validés</span>
+              <span className="font-extrabold text-emerald-600">{foldersTraites}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">En attente avis</span>
-              <span className="font-bold text-amber-600">{foldersEnAttente}</span>
+              <span className="text-slate-700 font-medium">En attente avis</span>
+              <span className="font-extrabold text-amber-600">{foldersEnAttente}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Dossiers en retard</span>
-              <span className="font-bold text-rose-600">{foldersEnRetard}</span>
+              <span className="text-slate-700 font-medium">Dossiers en retard</span>
+              <span className="font-extrabold text-rose-600">{foldersEnRetard}</span>
             </div>
           </div>
         </div>
 
         {/* Pilier 3: Courriers */}
         <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Courriers</p>
-          <div className="mt-3 space-y-2">
+          <p className="text-xs sm:text-sm font-extrabold text-slate-800 uppercase tracking-wider">Courriers</p>
+          <div className="mt-3 space-y-2.5">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Courriers entrants</span>
-              <span className="font-bold text-slate-900">{mailsInCount}</span>
+              <span className="text-slate-700 font-medium">Courriers entrants</span>
+              <span className="font-extrabold text-slate-900">{mailsInCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Courriers sortants</span>
-              <span className="font-bold text-slate-900">{mailsOutCount}</span>
+              <span className="text-slate-700 font-medium">Courriers sortants</span>
+              <span className="font-extrabold text-slate-900">{mailsOutCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Non traités</span>
-              <span className="font-bold text-blue-600">{mailsNonTraites}</span>
+              <span className="text-slate-700 font-medium">Non traités</span>
+              <span className="font-extrabold text-blue-600">{mailsNonTraites}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Délai limite dépassé</span>
-              <span className="font-bold text-rose-600">{mailsEnRetard}</span>
+              <span className="text-slate-700 font-medium">Délai limite dépassé</span>
+              <span className="font-extrabold text-rose-600">{mailsEnRetard}</span>
             </div>
           </div>
         </div>
 
         {/* Pilier 4: Vigilance Sanitaire */}
         <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Vigilance & Risques</p>
-          <div className="mt-3 space-y-2">
+          <p className="text-xs sm:text-sm font-extrabold text-slate-800 uppercase tracking-wider">Vigilance & Risques</p>
+          <div className="mt-3 space-y-2.5">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Signalements reçus</span>
-              <span className="font-bold text-slate-900">{signalsCount}</span>
+              <span className="text-slate-700 font-medium">Signalements reçus</span>
+              <span className="font-extrabold text-slate-900">{signalsCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Alertes actives</span>
-              <span className="font-bold text-amber-600">{activeAlertsCount}</span>
+              <span className="text-slate-700 font-medium">Alertes actives</span>
+              <span className="font-extrabold text-amber-600">{activeAlertsCount}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Cas MAPI ouverts</span>
-              <span className="font-bold text-blue-600">{mapiOpen}</span>
+              <span className="text-slate-700 font-medium">Cas MAPI ouverts</span>
+              <span className="font-extrabold text-blue-600">{mapiOpen}</span>
             </div>
             <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-600">Dossiers clôturés</span>
-              <span className="font-bold text-emerald-600">{signalsClosed}</span>
+              <span className="text-slate-700 font-medium">Dossiers clôturés</span>
+              <span className="font-extrabold text-emerald-600">{signalsClosed}</span>
             </div>
           </div>
         </div>
