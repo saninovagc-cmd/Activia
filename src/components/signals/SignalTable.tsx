@@ -292,13 +292,13 @@ export const SignalTable: React.FC<SignalTableProps> = ({
         <table className="w-full text-left border-collapse text-xs table-fixed">
           <thead>
             <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-3 w-[14%]">N° Dossier & Date</th>
-              <th className="py-3 px-3 w-[26%]">Produit & N° Lot</th>
-              <th className="py-3 px-3 w-[18%]">Déclarant</th>
-              <th className="py-3 px-2.5 w-[14%]">Type & Gravité</th>
-              <th className="py-3 px-2.5 w-[13%]">Échantillon / Labo</th>
-              <th className="py-3 px-2.5 w-[11%]">Étape Workflow</th>
-              <th className="py-3 px-2 text-right w-[4%]"></th>
+              <th className="py-3 px-2.5 w-[15%]">N° Dossier & Date</th>
+              <th className="py-3 px-2.5 w-[26%]">Produit & N° Lot</th>
+              <th className="py-3 px-2.5 w-[18%]">Déclarant</th>
+              <th className="py-3 px-2 w-[14%]">Type & Gravité</th>
+              <th className="py-3 px-2 w-[13%]">Échantillon / Labo</th>
+              <th className="py-3 px-2 w-[11%]">Étape Workflow</th>
+              <th className="py-3 px-1.5 text-center w-[3%]"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 text-slate-700">
@@ -316,11 +316,11 @@ export const SignalTable: React.FC<SignalTableProps> = ({
                     className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
                     onClick={() => onSelect(sig)}
                   >
-                    <td className="py-3 px-3 font-mono font-medium align-top whitespace-nowrap">
-                      <div className="text-blue-900 font-bold">{sig.signal_number}</div>
-                      <div className="text-[11px] text-slate-500 font-normal">{sig.receipt_date}</div>
+                    <td className="py-3 px-2 font-mono font-medium align-top">
+                      <div className="text-blue-900 font-bold break-all text-xs">{sig.signal_number}</div>
+                      <div className="text-[11px] text-slate-500 font-normal mt-0.5">{sig.receipt_date}</div>
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug break-words whitespace-normal">
                         {sig.product_name}
                       </div>
@@ -329,15 +329,15 @@ export const SignalTable: React.FC<SignalTableProps> = ({
                         <span>• {sig.manufacturer}</span>
                       </div>
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <div className="font-semibold text-slate-900 leading-snug break-words whitespace-normal">{sig.reporter_name}</div>
                       <div className="text-[11px] text-slate-500 leading-snug break-words whitespace-normal">{sig.reporter_type}</div>
                     </td>
-                    <td className="py-3 px-2.5 align-top">
+                    <td className="py-3 px-2 align-top">
                       <div className="font-semibold text-slate-800 mb-1 leading-snug break-words whitespace-normal">{sig.signal_type}</div>
                       <div>{getSeverityBadge(sig.severity)}</div>
                     </td>
-                    <td className="py-3 px-2.5 align-top">
+                    <td className="py-3 px-2 align-top">
                       {sig.sample_taken ? (
                         <div>
                           <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
@@ -357,7 +357,7 @@ export const SignalTable: React.FC<SignalTableProps> = ({
                         <span className="text-[11px] text-slate-400 italic">Sans prélèvement</span>
                       )}
                     </td>
-                    <td className="py-3 px-2.5 align-top">
+                    <td className="py-3 px-2 align-top">
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-blue-800 border border-blue-200 uppercase tracking-tight">
                         {sig.workflow_step.replace('_', ' ')}
                       </span>
@@ -365,7 +365,7 @@ export const SignalTable: React.FC<SignalTableProps> = ({
                         Resp: {sig.manager_name}
                       </div>
                     </td>
-                    <td className="py-3 px-2 text-right align-top whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                    <td className="py-3 px-1.5 text-center align-top" onClick={(e) => e.stopPropagation()}>
                       <button
                         onClick={() => onSelect(sig)}
                         className="p-1 text-slate-400 hover:text-rose-600 hover:bg-slate-100 rounded transition-colors"

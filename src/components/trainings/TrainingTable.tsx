@@ -278,12 +278,12 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
         <table className="w-full text-left border-collapse text-xs table-fixed">
           <thead>
             <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-3 w-[14%]">Code / Session</th>
-              <th className="py-3 px-3 w-[22%]">Participant & Fonction</th>
-              <th className="py-3 px-3 w-[18%]">Structure & Région</th>
-              <th className="py-3 px-3 w-[22%]">Thématique</th>
-              <th className="py-3 px-2.5 w-[14%]">Formateur</th>
-              <th className="py-3 px-2.5 w-[10%] text-center">Résultat</th>
+              <th className="py-3 px-2.5 w-[15%]">Code / Session</th>
+              <th className="py-3 px-2.5 w-[23%]">Participant & Fonction</th>
+              <th className="py-3 px-2.5 w-[18%]">Structure & Région</th>
+              <th className="py-3 px-2.5 w-[22%]">Thématique</th>
+              <th className="py-3 px-2 w-[13%]">Formateur</th>
+              <th className="py-3 px-1.5 w-[9%] text-center">Résultat</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 text-slate-700">
@@ -301,11 +301,11 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
                     className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
                     onClick={() => onSelect(item)}
                   >
-                    <td className="py-3 px-3 font-mono font-medium align-top whitespace-nowrap">
-                      <div className="text-blue-900 font-bold">{item.training_code}</div>
-                      <div className="text-[11px] text-slate-500 font-normal">{item.training_date}</div>
+                    <td className="py-3 px-2 font-mono font-medium align-top">
+                      <div className="text-blue-900 font-bold break-all text-xs">{item.training_code}</div>
+                      <div className="text-[11px] text-slate-500 font-normal mt-0.5">{item.training_date}</div>
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug break-words whitespace-normal">
                         {item.participant_name}
                       </div>
@@ -313,18 +313,18 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
                         {item.function_title}
                       </div>
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <div className="font-semibold text-slate-800 leading-snug break-words whitespace-normal">{item.structure}</div>
                       <div className="text-[11px] text-slate-500 leading-snug break-words whitespace-normal">{item.region} ({item.department})</div>
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <span className="font-bold text-slate-900 leading-snug break-words whitespace-normal block">{item.theme}</span>
                     </td>
-                    <td className="py-3 px-2.5 align-top">
+                    <td className="py-3 px-2 align-top">
                       <div className="font-semibold text-slate-800 leading-snug break-words whitespace-normal">{item.trainer_name}</div>
                       <div className="text-[11px] text-slate-500 leading-snug break-words whitespace-normal">{item.duration_hours}h de cours</div>
                     </td>
-                    <td className="py-3 px-2.5 align-top text-center whitespace-nowrap">
+                    <td className="py-3 px-1.5 align-top text-center">
                       <div className="inline-flex flex-col items-center gap-1">
                         {item.result === 'Validé' ? (
                           <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
@@ -340,7 +340,7 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
                           </span>
                         )}
                         {item.certificate_issued && (
-                          <div className="text-[10px] text-purple-700 font-semibold mt-0.5">
+                          <div className="text-[10px] text-purple-700 font-semibold mt-0.5 break-all">
                             Certifié ({item.certificate_number})
                           </div>
                         )}

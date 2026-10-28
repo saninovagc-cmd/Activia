@@ -119,13 +119,13 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
         <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
           <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-3 font-bold w-[12%]">N° Chrono</th>
-              <th className="py-3 px-2.5 font-bold w-[11%]">Date d’Envoi</th>
-              <th className="py-3 px-3 font-bold w-[22%]">Destinataire</th>
-              <th className="py-3 px-3 font-bold w-[28%]">Objet du courrier</th>
-              <th className="py-3 px-2.5 font-bold w-[11%]">Rédacteur</th>
-              <th className="py-3 px-2 font-bold w-[8%] text-center">Statut</th>
-              <th className="py-3 px-3 font-bold w-[8%] text-right">Document</th>
+              <th className="py-3 px-2.5 font-bold w-[15%] text-center">N° Chrono</th>
+              <th className="py-3 px-2 font-bold w-[11%]">Date d’Envoi</th>
+              <th className="py-3 px-2.5 font-bold w-[21%]">Destinataire</th>
+              <th className="py-3 px-3 font-bold w-[27%]">Objet du courrier</th>
+              <th className="py-3 px-2 font-bold w-[11%]">Rédacteur</th>
+              <th className="py-3 px-1.5 font-bold w-[8%] text-center">Statut</th>
+              <th className="py-3 px-2 font-bold w-[7%] text-center">Document</th>
             </tr>
           </thead>
 
@@ -139,16 +139,16 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
             ) : (
               mails.map((mail) => (
                 <tr key={mail.id} className="hover:bg-slate-50/70 transition-colors">
-                  <td className="py-3 px-3 font-mono font-bold text-indigo-700 whitespace-nowrap align-top">
-                    <span className="bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200 block text-center">
+                  <td className="py-3 px-2 font-mono font-bold text-indigo-700 align-top">
+                    <span className="bg-indigo-50 px-1.5 py-1 rounded border border-indigo-200 block text-center break-all whitespace-normal text-[11px] leading-tight">
                       {mail.mail_number}
                     </span>
                   </td>
-                  <td className="py-3 px-2.5 whitespace-nowrap align-top">
-                    <span className="font-bold text-slate-900">{mail.send_date}</span>
-                    <span className="block text-[11px] text-slate-500 mt-0.5">{mail.mail_type}</span>
+                  <td className="py-3 px-2 align-top">
+                    <span className="font-bold text-slate-900 text-xs whitespace-nowrap block">{mail.send_date}</span>
+                    <span className="block text-[11px] text-slate-500 mt-0.5 break-words whitespace-normal">{mail.mail_type}</span>
                   </td>
-                  <td className="py-3 px-3 align-top">
+                  <td className="py-3 px-2.5 align-top">
                     <span className="font-bold text-slate-900 leading-snug break-words whitespace-normal block">{mail.recipient}</span>
                   </td>
                   <td className="py-3 px-3 align-top">
@@ -157,7 +157,7 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
                       <span className="text-[11px] text-slate-500 font-mono block mt-0.5 break-all">Réf: {mail.reference}</span>
                     )}
                   </td>
-                  <td className="py-3 px-2.5 align-top">
+                  <td className="py-3 px-2 align-top">
                     <div className="flex items-start gap-1.5">
                       <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">
                         {mail.manager_name.charAt(0)}
@@ -165,8 +165,8 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
                       <span className="font-medium text-slate-800 text-xs leading-snug break-words whitespace-normal">{mail.manager_name}</span>
                     </div>
                   </td>
-                  <td className="py-3 px-2.5 whitespace-nowrap align-top">
-                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border inline-block ${
+                  <td className="py-3 px-1.5 text-center align-top">
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border inline-block text-center leading-tight ${
                       mail.status === 'envoye'
                         ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
                         : mail.status === 'valide'
@@ -176,7 +176,7 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
                       {mail.status === 'envoye' ? 'Expédié' : mail.status === 'valide' ? 'Prêt à l’envoi' : mail.status}
                     </span>
                   </td>
-                  <td className="py-3 px-3 text-right whitespace-nowrap align-top">
+                  <td className="py-3 px-2 text-center align-top">
                     <button
                       onClick={() => {
                         const fileName = mail.document_name || `Courrier_Sortant_${mail.mail_number.replace(/\//g, '_')}.pdf`;

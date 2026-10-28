@@ -317,13 +317,13 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
         <table className="w-full text-left border-collapse text-xs table-fixed">
           <thead>
             <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider text-[11px]">
-              <th className="py-3 px-3 w-[14%]">N° Agrément</th>
-              <th className="py-3 px-3 w-[28%]">Établissement & Type</th>
-              <th className="py-3 px-3 w-[20%]">Pharmacien Responsable</th>
-              <th className="py-3 px-3 w-[16%]">Localisation</th>
-              <th className="py-3 px-2.5 w-[11%]">Date Agrément</th>
-              <th className="py-3 px-2.5 w-[7%] text-center">Statut</th>
-              <th className="py-3 px-2 text-right w-[4%]"></th>
+              <th className="py-3 px-2.5 w-[15%]">N° Agrément</th>
+              <th className="py-3 px-2.5 w-[27%]">Établissement & Type</th>
+              <th className="py-3 px-2.5 w-[19%]">Pharmacien Responsable</th>
+              <th className="py-3 px-2.5 w-[16%]">Localisation</th>
+              <th className="py-3 px-2 w-[11%]">Date Agrément</th>
+              <th className="py-3 px-1.5 w-[8%] text-center">Statut</th>
+              <th className="py-3 px-1.5 text-center w-[4%]"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200 text-slate-700">
@@ -341,11 +341,11 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
                     className="hover:bg-slate-50/80 transition-colors cursor-pointer group"
                     onClick={() => onSelect(etab)}
                   >
-                    <td className="py-3 px-3 font-mono font-medium align-top whitespace-nowrap">
-                      <div className="text-blue-900 font-bold">{etab.code}</div>
+                    <td className="py-3 px-2 font-mono font-medium align-top">
+                      <div className="text-blue-900 font-bold break-all text-xs">{etab.code}</div>
                       <div className="text-[11px] text-slate-500 font-normal break-all">{etab.authorization_number}</div>
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <div className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug break-words whitespace-normal">
                         {etab.name}
                       </div>
@@ -354,7 +354,7 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
                         {etab.owner && <span>• {etab.owner}</span>}
                       </div>
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <div className="font-semibold text-slate-900 leading-snug break-words whitespace-normal">{etab.responsible_pharmacist}</div>
                       {etab.phone && (
                         <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
@@ -363,15 +363,15 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
                         </div>
                       )}
                     </td>
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <div className="flex items-start gap-1 text-slate-800 font-medium leading-snug break-words whitespace-normal">
                         <MapPin className="w-3 h-3 text-slate-400 shrink-0 mt-0.5" />
                         <span>{etab.city}</span>
                       </div>
                       <div className="text-[11px] text-slate-500 pl-4">{etab.department}</div>
                     </td>
-                    <td className="py-3 px-2.5 text-slate-600 align-top whitespace-nowrap">
-                      <div className="flex items-center gap-1">
+                    <td className="py-3 px-2 text-slate-600 align-top">
+                      <div className="flex items-center gap-1 whitespace-nowrap text-xs">
                         <Calendar className="w-3 h-3 text-slate-400 shrink-0" />
                         <span className="font-semibold">{etab.auth_date}</span>
                       </div>
@@ -379,10 +379,10 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
                         <div className="text-[10px] text-slate-500">Exp: {etab.expiry_date}</div>
                       )}
                     </td>
-                    <td className="py-3 px-2.5 align-top text-center whitespace-nowrap">
+                    <td className="py-3 px-1.5 align-top text-center">
                       {getStatusBadge(etab.status)}
                     </td>
-                    <td className="py-3 px-2 text-right align-top whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                    <td className="py-3 px-1.5 text-center align-top" onClick={(e) => e.stopPropagation()}>
                       <button
                         onClick={() => onSelect(etab)}
                         className="p-1 text-slate-400 hover:text-emerald-700 hover:bg-slate-100 rounded transition-colors"

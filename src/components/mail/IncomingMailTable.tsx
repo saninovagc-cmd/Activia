@@ -189,14 +189,14 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
         <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
           <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-3 font-bold w-[12%]">N° Registre</th>
-              <th className="py-3 px-2.5 font-bold w-[11%]">Date & Réf.</th>
-              <th className="py-3 px-3 font-bold w-[20%]">Expéditeur</th>
-              <th className="py-3 px-3 font-bold w-[30%]">Objet du courrier</th>
-              <th className="py-3 px-2.5 font-bold w-[14%]">Responsable</th>
-              <th className="py-3 px-2 font-bold w-[8%] text-center">Échéance</th>
-              <th className="py-3 px-2.5 font-bold w-[10%]">Étape</th>
-              <th className="py-3 px-2 text-right w-[5%]">Action</th>
+              <th className="py-3 px-2.5 font-bold w-[14%] text-center">N° Registre</th>
+              <th className="py-3 px-2 font-bold w-[11%]">Date & Réf.</th>
+              <th className="py-3 px-2.5 font-bold w-[19%]">Expéditeur</th>
+              <th className="py-3 px-3 font-bold w-[28%]">Objet du courrier</th>
+              <th className="py-3 px-2 font-bold w-[13%]">Responsable</th>
+              <th className="py-3 px-1.5 font-bold w-[6%] text-center">Échéance</th>
+              <th className="py-3 px-1.5 font-bold w-[6%] text-center">Étape</th>
+              <th className="py-3 px-1.5 text-center w-[3%]"></th>
             </tr>
           </thead>
 
@@ -217,23 +217,23 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
                     onClick={() => onSelect(mail)}
                     className="hover:bg-blue-50/40 transition-colors cursor-pointer group"
                   >
-                    {/* N° Registre */}
-                    <td className="py-3 px-3 align-top whitespace-nowrap">
-                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 block text-center">
+                    {/* N° Registre - Enveloppe sans débordement ni chevauchement */}
+                    <td className="py-3 px-2 align-top">
+                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-1.5 py-1 rounded border border-blue-200 block text-center break-all whitespace-normal text-[11px] leading-tight">
                         {mail.register_number}
                       </span>
                     </td>
 
                     {/* Date & Réf */}
-                    <td className="py-3 px-2.5 align-top">
-                      <p className="font-bold text-slate-900">{mail.receipt_date}</p>
+                    <td className="py-3 px-2 align-top">
+                      <p className="font-bold text-slate-900 text-xs whitespace-nowrap">{mail.receipt_date}</p>
                       <p className="text-[11px] text-slate-500 font-mono break-all leading-tight mt-0.5">{mail.reference}</p>
                     </td>
 
                     {/* Expéditeur - Retour à la ligne automatique */}
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <p className="font-bold text-slate-900 leading-snug break-words whitespace-normal">{mail.sender}</p>
-                      <span className="text-[11px] text-slate-500 block mt-0.5 break-words">{mail.sender_type || mail.mail_type}</span>
+                      <span className="text-[11px] text-slate-500 block mt-0.5 break-words whitespace-normal">{mail.sender_type || mail.mail_type}</span>
                     </td>
 
                     {/* Objet - Retour à la ligne automatique SANS coupure */}
@@ -301,17 +301,16 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
                     </td>
 
                     {/* Échéance */}
-                    <td className="py-3 px-2.5 whitespace-nowrap">
-                      <div className={`flex items-center gap-1 font-medium text-[11px] ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
-                        <Calendar className="w-3 h-3 shrink-0" />
-                        <span>{mail.due_date}</span>
+                    <td className="py-3 px-1.5 align-top">
+                      <div className={`flex flex-col items-center justify-center font-medium text-[11px] ${isOverdue ? 'text-rose-600 font-bold' : 'text-slate-700'}`}>
+                        <span className="text-center">{mail.due_date}</span>
                       </div>
                     </td>
 
                     {/* Étape Workflow */}
-                    <td className="py-3 px-2.5 whitespace-nowrap">
-                      <div className="flex items-center gap-1.5">
-                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                    <td className="py-3 px-1.5 align-top">
+                      <div className="flex flex-col items-center gap-1">
+                        <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold border text-center break-words leading-tight ${
                           mail.status === 'cloture'
                             ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
                             : mail.status === 'traitement' || mail.status === 'validation'
@@ -334,7 +333,7 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
                     </td>
 
                     {/* Actions */}
-                    <td className="py-3 px-2 text-right whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                    <td className="py-3 px-1.5 text-center align-top" onClick={(e) => e.stopPropagation()}>
                       <button
                         onClick={() => onSelect(mail)}
                         className="p-1.5 text-slate-500 hover:text-blue-600 hover:bg-slate-100 rounded-md transition-colors"

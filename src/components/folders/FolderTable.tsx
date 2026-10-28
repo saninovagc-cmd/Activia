@@ -157,14 +157,14 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
         <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
           <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-3 font-bold w-[12%]">N° Dossier</th>
-              <th className="py-3 px-2.5 font-bold w-[17%]">Procédure</th>
-              <th className="py-3 px-3 font-bold w-[25%]">Structure & Demandeur</th>
-              <th className="py-3 px-2.5 font-bold w-[12%]">Évaluateur</th>
-              <th className="py-3 px-2 font-bold w-[8%] text-center">Priorité</th>
-              <th className="py-3 px-2.5 font-bold w-[9%] text-center">Étape</th>
-              <th className="py-3 px-2 font-bold w-[8%] text-center">Progrès</th>
-              <th className="py-3 px-2.5 font-bold w-[9%] text-center">Décision</th>
+              <th className="py-3 px-2.5 font-bold w-[15%] text-center">N° Dossier</th>
+              <th className="py-3 px-2 font-bold w-[17%]">Procédure</th>
+              <th className="py-3 px-2.5 font-bold w-[24%]">Structure & Demandeur</th>
+              <th className="py-3 px-2 font-bold w-[12%]">Évaluateur</th>
+              <th className="py-3 px-1.5 font-bold w-[8%] text-center">Priorité</th>
+              <th className="py-3 px-1.5 font-bold w-[8%] text-center">Étape</th>
+              <th className="py-3 px-1.5 font-bold w-[8%] text-center">Progrès</th>
+              <th className="py-3 px-1.5 font-bold w-[8%] text-center">Décision</th>
             </tr>
           </thead>
 
@@ -185,8 +185,8 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                     className="hover:bg-blue-50/40 transition-colors cursor-pointer group"
                   >
                     {/* N° Dossier */}
-                    <td className="py-3 px-3 align-top whitespace-nowrap">
-                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 block text-center">
+                    <td className="py-3 px-2 align-top">
+                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-1.5 py-1 rounded border border-blue-200 block text-center break-all whitespace-normal text-[11px] leading-tight">
                         {folder.folder_number}
                       </span>
                       <span className="block text-[11px] text-slate-400 text-center mt-1">
@@ -195,14 +195,14 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                     </td>
 
                     {/* Type / Procédure */}
-                    <td className="py-3 px-2.5 align-top">
+                    <td className="py-3 px-2 align-top">
                       <p className="font-semibold text-slate-900 leading-snug break-words whitespace-normal">
                         {folder.folder_type}
                       </p>
                     </td>
 
                     {/* Structure & Demandeur */}
-                    <td className="py-3 px-3 align-top">
+                    <td className="py-3 px-2.5 align-top">
                       <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug break-words whitespace-normal">
                         {folder.structure}
                       </p>
@@ -212,7 +212,7 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                     </td>
 
                     {/* Évaluateur */}
-                    <td className="py-3 px-2.5 align-top">
+                    <td className="py-3 px-2 align-top">
                       <div className="flex items-start gap-1.5">
                         <div className="w-5 h-5 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[10px] shrink-0 mt-0.5">
                           {folder.manager_name ? folder.manager_name.charAt(0) : '?'}
@@ -224,24 +224,24 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                     </td>
 
                     {/* Priorité */}
-                    <td className="py-3 px-2 text-center align-top whitespace-nowrap">
+                    <td className="py-3 px-1.5 text-center align-top">
                       <Badge priority={folder.priority} />
                     </td>
 
                     {/* Étape */}
-                    <td className="py-3 px-2.5 text-center align-top whitespace-nowrap">
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wider inline-block">
+                    <td className="py-3 px-1.5 text-center align-top">
+                      <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 text-slate-800 border border-slate-200 uppercase tracking-wider inline-block text-center leading-tight break-words">
                         {folder.status}
                       </span>
                     </td>
 
                     {/* Avancement */}
-                    <td className="py-3 px-2 text-center align-top whitespace-nowrap">
+                    <td className="py-3 px-1.5 text-center align-top">
                       <div className="inline-flex flex-col items-center gap-1">
                         <span className="text-xs font-bold text-slate-700">
                           {folder.progress_percentage}%
                         </span>
-                        <div className="w-14 bg-slate-200 rounded-full h-1.5 overflow-hidden">
+                        <div className="w-12 bg-slate-200 rounded-full h-1.5 overflow-hidden">
                           <div
                             className={`h-1.5 rounded-full ${
                               folder.status === 'cloture' ? 'bg-emerald-500' : isOverdue ? 'bg-rose-500' : 'bg-blue-600'
@@ -253,8 +253,8 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                     </td>
 
                     {/* Décision */}
-                    <td className="py-3 px-2.5 text-center align-top whitespace-nowrap">
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold border inline-block ${
+                    <td className="py-3 px-1.5 text-center align-top">
+                      <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold border inline-block text-center leading-tight break-words ${
                         folder.decision === 'Favorable'
                           ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
                           : folder.decision === 'Défavorable'
