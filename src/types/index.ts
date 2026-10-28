@@ -197,17 +197,17 @@ export interface IncomingMail {
   response_mail_id?: string;
 
   // Jalons et traçabilité réels du Bureau d'Ordre DLVS
-  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string;
-  affectation_date_dlvs?: string;
-  affectation_date_service?: string;
-  treatment_date_collaborator?: string;
-  visa_date_chef?: string;
-  transmission_date_directrice?: string;
-  transmission_date_dg?: string;
-  delay_dlvs_days?: number;
-  delay_service_days?: number;
-  delay_treatment_days?: number;
-  delay_visa_days?: number;
+  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string | null;
+  affectation_date_dlvs?: string | null;
+  affectation_date_service?: string | null;
+  treatment_date_collaborator?: string | null;
+  visa_date_chef?: string | null;
+  transmission_date_directrice?: string | null;
+  transmission_date_dg?: string | null;
+  delay_dlvs_days?: number | null;
+  delay_service_days?: number | null;
+  delay_treatment_days?: number | null;
+  delay_visa_days?: number | null;
 
   created_at: string;
   updated_at: string;

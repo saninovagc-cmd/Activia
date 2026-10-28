@@ -330,6 +330,46 @@ export const MailDetailModal: React.FC<MailDetailModalProps> = ({ mail, onClose 
                   );
                 })}
               </div>
+
+              {/* Jalons & Délais réels de la DLVS */}
+              {(mail.affectation_date_dlvs || mail.affectation_date_service || mail.treatment_date_collaborator || mail.visa_date_chef) && (
+                <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-2.5">
+                  <h4 className="text-xs font-bold text-slate-800 uppercase tracking-wide flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-blue-600" />
+                    Jalons d'instruction et délais officiels DLVS
+                  </h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-[11px]">
+                    <div className="p-2 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-400 block text-[10px]">Affectation Service</span>
+                      <span className="font-semibold text-slate-800">{mail.affectation_date_dlvs || '—'}</span>
+                      {mail.delay_dlvs_days !== null && mail.delay_dlvs_days !== undefined && (
+                        <span className="block text-[10px] text-blue-600 font-medium">Délai: {mail.delay_dlvs_days} j</span>
+                      )}
+                    </div>
+                    <div className="p-2 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-400 block text-[10px]">Affectation Agent</span>
+                      <span className="font-semibold text-slate-800">{mail.affectation_date_service || '—'}</span>
+                      {mail.delay_service_days !== null && mail.delay_service_days !== undefined && (
+                        <span className="block text-[10px] text-blue-600 font-medium">Délai: {mail.delay_service_days} j</span>
+                      )}
+                    </div>
+                    <div className="p-2 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-400 block text-[10px]">Traitement Agent</span>
+                      <span className="font-semibold text-slate-800">{mail.treatment_date_collaborator || '—'}</span>
+                      {mail.delay_treatment_days !== null && mail.delay_treatment_days !== undefined && (
+                        <span className="block text-[10px] text-blue-600 font-medium">Délai: {mail.delay_treatment_days} j</span>
+                      )}
+                    </div>
+                    <div className="p-2 bg-white rounded-lg border border-slate-200">
+                      <span className="text-slate-400 block text-[10px]">Visa Chef Service</span>
+                      <span className="font-semibold text-slate-800">{mail.visa_date_chef || '—'}</span>
+                      {mail.delay_visa_days !== null && mail.delay_visa_days !== undefined && (
+                        <span className="block text-[10px] text-emerald-600 font-medium">Délai: {mail.delay_visa_days} j</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

@@ -270,6 +270,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setEstablishments(INITIAL_ESTABLISHMENTS);
       }
 
+      // Phase 2 : Migration des Courriers Réels DLVS (1 064 courriers SSMUR, SL, SVPS)
+      const REAL_COURRIERS_KEY = 'activia_real_courriers_migrated_v1';
+      if (!localStorage.getItem(REAL_COURRIERS_KEY)) {
+        localStorage.setItem('activia_incoming_mails', JSON.stringify(INITIAL_INCOMING_MAILS));
+        localStorage.setItem(REAL_COURRIERS_KEY, 'true');
+        setIncomingMails(INITIAL_INCOMING_MAILS);
+      }
+
       // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc
       const storedUsers = localStorage.getItem('activia_users');
       let currentUsersList = INITIAL_USERS;
@@ -1893,7 +1901,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const resetToDefaultData = () => {
     setActivities([]);
-    setIncomingMails([]);
+    setIncomingMails(INITIAL_INCOMING_MAILS);
     setOutgoingMails([]);
     setFolders([]);
     setDocuments([]);
@@ -1908,7 +1916,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setIsAuthenticated(true);
     try {
       localStorage.removeItem('activia_activities');
-      localStorage.removeItem('activia_incoming_mails');
+      localStorage.setItem('activia_incoming_mails', JSON.stringify(INITIAL_INCOMING_MAILS));
       localStorage.removeItem('activia_outgoing_mails');
       localStorage.removeItem('activia_folders');
       localStorage.removeItem('activia_documents');
@@ -1919,6 +1927,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.removeItem('activia_notifications');
       localStorage.removeItem('activia_audit_logs');
       localStorage.setItem('activia_data_clean_v1', 'true');
+      localStorage.setItem('activia_real_etab_migrated_v1', 'true');
+      localStorage.setItem('activia_real_courriers_migrated_v1', 'true');
     } catch {}
     clearAllDatabaseData().catch(() => {});
     showToast('Toutes les données de test ont été supprimées. La plateforme est prête pour la saisie de vos données réelles.', 'success');

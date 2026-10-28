@@ -14,7 +14,9 @@ import {
   CheckCircle2, 
   Clock, 
   AlertCircle,
-  FileText
+  FileText,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 interface IncomingMailTableProps {
@@ -28,6 +30,14 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
 }) => {
   const { allUsers, assignIncomingMail, updateIncomingMailStatus } = useApp();
   const [assigningMailId, setAssigningMailId] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<number>(25);
+
+  const totalPages = Math.ceil(mails.length / pageSize) || 1;
+  const safePage = Math.min(Math.max(currentPage, 1), totalPages);
+  const startIndex = (safePage - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize, mails.length);
+  const paginatedMails = mails.slice(startIndex, endIndex);
 
   const workflowSteps: { status: IncomingMailStatus; label: string; stepNumber: number }[] = [
     { status: 'reception', label: '1. Réception', stepNumber: 1 },
@@ -84,7 +94,7 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
             Aucun courrier entrant ne correspond à ces critères.
           </div>
         ) : (
-          mails.map((mail) => {
+          paginatedMails.map((mail) => {
             const isOverdue = new Date(mail.due_date).getTime() < Date.now() && mail.status !== 'cloture';
             const curStep = workflowSteps.find(s => s.status === mail.status) || workflowSteps[0];
             return (
@@ -198,7 +208,7 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
                 </td>
               </tr>
             ) : (
-              mails.map((mail) => {
+              paginatedMails.map((mail) => {
                 const isOverdue = new Date(mail.due_date).getTime() < Date.now() && mail.status !== 'cloture';
                 const curStep = workflowSteps.find(s => s.status === mail.status) || workflowSteps[0];
                 return (
@@ -339,6 +349,55 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
           </tbody>
         </table>
       </div>
+
+      {/* Pagination Footer */}
+      {mails.length > 0 && (
+        <div className="px-4 py-3 bg-slate-50 border-t border-slate-200 text-slate-600 text-xs flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span>
+              Affichage de <strong>{startIndex + 1}</strong> à <strong>{endIndex}</strong> sur <strong>{mails.length}</strong> courriers
+            </span>
+            <div className="flex items-center gap-1 ml-3">
+              <span className="text-[11px] text-slate-400">Lignes :</span>
+              <select
+                value={pageSize}
+                onChange={(e) => {
+                  setPageSize(Number(e.target.value));
+                  setCurrentPage(1);
+                }}
+                className="bg-white border border-slate-300 rounded px-1.5 py-0.5 text-xs text-slate-700"
+              >
+                <option value={25}>25</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+                <option value={200}>200</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={safePage <= 1}
+              className="p-1.5 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              title="Page précédente"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <span className="px-2 py-0.5 font-semibold text-slate-700">
+              Page {safePage} / {totalPages}
+            </span>
+            <button
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              disabled={safePage >= totalPages}
+              className="p-1.5 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              title="Page suivante"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
