@@ -65,6 +65,7 @@ import {
   dbSaveAlert,
   dbUpdateAlert,
   dbSaveAuditLog,
+  clearAllDatabaseData,
   ensureUuid,
   generateUuid,
   USER_ID_MAP
@@ -244,6 +245,24 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Chargement initial au montage : LocalStorage instantané puis rafraîchissement Supabase
   useEffect(() => {
     try {
+      // Nettoyage automatique des anciennes données de démonstration pour démarrage à blanc
+      const CLEAN_DATA_KEY = 'activia_data_clean_v1';
+      if (!localStorage.getItem(CLEAN_DATA_KEY)) {
+        localStorage.removeItem('activia_activities');
+        localStorage.removeItem('activia_incoming_mails');
+        localStorage.removeItem('activia_outgoing_mails');
+        localStorage.removeItem('activia_folders');
+        localStorage.removeItem('activia_documents');
+        localStorage.removeItem('activia_establishments');
+        localStorage.removeItem('activia_signals');
+        localStorage.removeItem('activia_trainings');
+        localStorage.removeItem('activia_alerts');
+        localStorage.removeItem('activia_notifications');
+        localStorage.removeItem('activia_audit_logs');
+        localStorage.setItem(CLEAN_DATA_KEY, 'true');
+        clearAllDatabaseData().catch(() => {});
+      }
+
       // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc
       const storedUsers = localStorage.getItem('activia_users');
       let currentUsersList = INITIAL_USERS;
@@ -1858,17 +1877,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const resetToDefaultData = () => {
-    setActivities(INITIAL_ACTIVITIES);
-    setIncomingMails(INITIAL_INCOMING_MAILS);
-    setOutgoingMails(INITIAL_OUTGOING_MAILS);
-    setFolders(INITIAL_FOLDERS);
-    setDocuments(INITIAL_DOCUMENTS);
-    setEstablishments(INITIAL_ESTABLISHMENTS);
-    setSignals(INITIAL_SIGNALS);
-    setTrainings(INITIAL_TRAININGS);
-    setAlerts(INITIAL_ALERTS);
-    setNotifications(INITIAL_NOTIFICATIONS);
-    setAuditLogs(INITIAL_AUDIT_LOGS);
+    setActivities([]);
+    setIncomingMails([]);
+    setOutgoingMails([]);
+    setFolders([]);
+    setDocuments([]);
+    setEstablishments([]);
+    setSignals([]);
+    setTrainings([]);
+    setAlerts([]);
+    setNotifications([]);
+    setAuditLogs([]);
     setAllUsers(INITIAL_USERS);
     setCurrentUser(INITIAL_USERS[0]);
     setIsAuthenticated(true);
@@ -1882,7 +1901,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       localStorage.removeItem('activia_signals');
       localStorage.removeItem('activia_trainings');
       localStorage.removeItem('activia_alerts');
+      localStorage.removeItem('activia_notifications');
+      localStorage.removeItem('activia_audit_logs');
+      localStorage.setItem('activia_data_clean_v1', 'true');
     } catch {}
+    clearAllDatabaseData().catch(() => {});
+    showToast('Toutes les données de test ont été supprimées. La plateforme est prête pour la saisie de vos données réelles.', 'success');
   };
 
   const unreadNotificationCount = notifications.filter(n => !n.is_read).length;

@@ -1054,3 +1054,29 @@ export const dbSaveNotification = async (notif: NotificationItem): Promise<boole
     return false;
   }
 };
+
+export const clearAllDatabaseData = async (): Promise<boolean> => {
+  if (!isSupabaseConfigured()) return false;
+  try {
+    await Promise.allSettled([
+      supabase.from('activity_comments').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('tasks').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('activities').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('incoming_mails').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('outgoing_mails').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('folders').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('documents').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('establishments').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('signals_vigilance').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('trainings').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('alerts').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('audit_logs').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+      supabase.from('notifications').delete().neq('id', '00000000-0000-0000-0000-000000000000'),
+    ]);
+    return true;
+  } catch (e) {
+    console.error('Exception clearAllDatabaseData:', e);
+    return false;
+  }
+};
+
