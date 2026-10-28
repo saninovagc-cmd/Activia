@@ -15,7 +15,7 @@ interface FolderModalProps {
 export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => {
   const { allUsers, currentUser, addFolder, addDocumentToFolder } = useApp();
 
-  const [folderType, setFolderType] = useState<FolderType>('Autorisation d’achat');
+  const [folderType, setFolderType] = useState<FolderType>('Agrément CNAECP (Clientèle Privée)');
   const [applicant, setApplicant] = useState('');
   const [structure, setStructure] = useState('');
   const [managerId, setManagerId] = useState(currentUser.id);
@@ -26,14 +26,21 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
   const [folderInitialFile, setFolderInitialFile] = useState<CompressedFileResult | null>(null);
 
   const folderTypes: FolderType[] = [
-    'Autorisation d’achat',
-    'Agrément Établissement',
-    'Publicité & Promotion',
-    'Enregistrement PGR',
-    'Revue PSUR / PBRER',
+    'Agrément CNAECP (Clientèle Privée)',
+    'Autorisation Installation CNAIAPS-EM',
+    'Quitus d’Ouverture d’Officine',
+    'Quitus de Transfert d’Officine',
+    'Carte Visiteur Médical (VM)',
+    'Notification d’Absence Titulaire',
+    'Résiliation Pharmacien / Gérant',
+    'Autorisation d’Achat de Médicaments',
+    'Autorisation d’Opération & Importation (AOI)',
+    'Publicité & Promotion des Médicaments (AMM)',
+    'Revue PSUR / PBRER / DSUR',
     'Essai Clinique & EIG',
-    'Élimination Déchets',
-    'Autre Dossier Technique'
+    'Élimination des Déchets',
+    'Autorisation Matériel Médical & PCRL',
+    'Autre Dossier Réglementaire'
   ];
 
   if (!isOpen) return null;

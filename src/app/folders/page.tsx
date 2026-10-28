@@ -21,14 +21,21 @@ function FoldersPageContent() {
   const [selectedFolder, setSelectedFolder] = useState<Folder | null>(null);
 
   const folderTypes: FolderType[] = [
-    'Autorisation d’achat',
-    'Agrément Établissement',
-    'Publicité & Promotion',
-    'Enregistrement PGR',
-    'Revue PSUR / PBRER',
+    'Agrément CNAECP (Clientèle Privée)',
+    'Autorisation Installation CNAIAPS-EM',
+    'Quitus d’Ouverture d’Officine',
+    'Quitus de Transfert d’Officine',
+    'Carte Visiteur Médical (VM)',
+    'Notification d’Absence Titulaire',
+    'Résiliation Pharmacien / Gérant',
+    'Autorisation d’Achat de Médicaments',
+    'Autorisation d’Opération & Importation (AOI)',
+    'Publicité & Promotion des Médicaments (AMM)',
+    'Revue PSUR / PBRER / DSUR',
     'Essai Clinique & EIG',
-    'Élimination Déchets',
-    'Autre Dossier Technique'
+    'Élimination des Déchets',
+    'Autorisation Matériel Médical & PCRL',
+    'Autre Dossier Réglementaire'
   ];
 
   // Filtering

@@ -26,3 +26,7 @@ Thumbs.db
 
 # TypeScript cache
 *.tsbuildinfo
+
+# Local data & raw audit files
+Base de données/
+scripts/*.json

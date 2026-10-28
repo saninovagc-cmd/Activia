@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { Establishment, EstablishmentType, EstablishmentStatus } from '@/types';
@@ -119,10 +119,16 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                 onChange={e => setFormData({ ...formData, establishment_type: e.target.value as EstablishmentType })}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500"
               >
-                <option value="Officine">Officine de Pharmacie</option>
+                <option value="Officine de Pharmacie">Officine de Pharmacie</option>
                 <option value="Grossiste-Répartiteur">Grossiste-Répartiteur</option>
                 <option value="Dépôt Pharmaceutique">Dépôt Pharmaceutique</option>
-                <option value="Laboratoire Fabricant">Laboratoire Fabricant</option>
+                <option value="Industrie Pharmaceutique / Fabricant">Industrie Pharmaceutique / Fabricant</option>
+                <option value="Établissement Cosmétique">Établissement Cosmétique</option>
+                <option value="Compléments Nutritionnels">Compléments Nutritionnels</option>
+                <option value="Matériel Médical">Matériel Médical</option>
+                <option value="Produits Chimiques & Réactifs (PCRL)">Produits Chimiques & Réactifs (PCRL)</option>
+                <option value="Établissement de Représentation (ERP)">Établissement de Représentation (ERP)</option>
+                <option value="Officine en Gérance (Décès/Succession)">Officine en Gérance (Décès/Succession)</option>
                 <option value="Structure Hospitalière">Pharmacie Hospitalière (PUI)</option>
                 <option value="Autre">Autre structure</option>
               </select>

@@ -28,7 +28,7 @@ export const MailModal: React.FC<MailModalProps> = ({
   const [reference, setReference] = useState('');
   const [subject, setSubject] = useState('');
   const [mailType, setMailType] = useState<MailType>('Officiel');
-  const [department, setDepartment] = useState('Vigilances Sanitaires & MAPI');
+  const [department, setDepartment] = useState('Direction (DLVS)');
   const [managerId, setManagerId] = useState('');
   const [receiptDate, setReceiptDate] = useState(new Date().toISOString().split('T')[0]);
   const [dueDate, setDueDate] = useState(new Date(Date.now() + 10 * 86400000).toISOString().split('T')[0]);
@@ -112,14 +112,10 @@ export const MailModal: React.FC<MailModalProps> = ({
   };
 
   const departments = [
-    'Direction & SI Réglementaire',
-    'Vigilances Sanitaires & MAPI',
-    'Établissements & Inspections',
-    'Réglementation & PGR/PSUR',
-    'Laboratoire & Échantillonnage',
-    'Promotion Médicale & Essais',
-    'Déchets & Autorisations Achat',
-    'Bureau du Courrier & Réception'
+    'Direction (DLVS)',
+    'Service des Licences (SL)',
+    'Service de la Surveillance du Marché (SSMUR)',
+    'Service des Vigilances et des Produits de Santé (SVPS)'
   ];
 
   return (

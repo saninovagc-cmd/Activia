@@ -250,6 +250,48 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                 </div>
               </div>
 
+              {/* Données d'instruction de la Commission (CNAECP / CNAIAPS-EM / etc.) */}
+              {(folder.commission_name || folder.commission_avis || folder.decree_number || folder.missing_documents) && (
+                <div className="p-4 bg-amber-50/70 rounded-xl border border-amber-200/80 space-y-2">
+                  <h4 className="text-xs font-bold text-amber-950 flex items-center gap-1.5">
+                    <Award className="w-4 h-4 text-amber-700" />
+                    Données d'Instruction de la Commission & Arrêté
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                    {folder.commission_name && (
+                      <div>
+                        <span className="text-[10px] text-amber-800 font-semibold block uppercase">Commission</span>
+                        <span className="font-bold text-slate-900">{folder.commission_name}</span>
+                      </div>
+                    )}
+                    {folder.commission_date && (
+                      <div>
+                        <span className="text-[10px] text-amber-800 font-semibold block uppercase">Date Commission</span>
+                        <span className="font-semibold text-slate-900">{folder.commission_date}</span>
+                      </div>
+                    )}
+                    {folder.commission_avis && (
+                      <div>
+                        <span className="text-[10px] text-amber-800 font-semibold block uppercase">Avis Commission</span>
+                        <span className="font-bold text-amber-900">{folder.commission_avis}</span>
+                      </div>
+                    )}
+                    {folder.decree_number && (
+                      <div>
+                        <span className="text-[10px] text-amber-800 font-semibold block uppercase">N° Arrêté / Réf</span>
+                        <span className="font-bold text-slate-900">{folder.decree_number}</span>
+                      </div>
+                    )}
+                  </div>
+                  {folder.missing_documents && (
+                    <div className="pt-2 border-t border-amber-200/70 text-xs">
+                      <span className="text-[10px] text-rose-700 font-bold uppercase block">Pièces manquantes / Réserves :</span>
+                      <p className="text-slate-800 italic mt-0.5">{folder.missing_documents}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {/* Formulaire d'enregistrement de décision */}
               <div className="p-4 bg-blue-50/60 rounded-xl border border-blue-200 space-y-3">
                 <div className="flex items-center justify-between">

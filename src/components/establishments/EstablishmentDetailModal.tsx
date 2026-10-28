@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -237,25 +237,86 @@ export const EstablishmentDetailModal: React.FC<EstablishmentDetailModalProps> =
                 </div>
               </div>
 
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2.5">
                 <h3 className="font-bold text-slate-900 flex items-center gap-1.5 text-xs">
                   <MapPin className="w-4 h-4 text-blue-600" />
-                  Localisation & Circonscription Sanitaire
+                  Localisation, Coordonnées & Circonscription Sanitaire
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-slate-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-slate-700">
                   <div>
-                    <span className="text-slate-500 block text-[11px]">Adresse exacte :</span>
-                    <span>{establishment.address || 'Centre-ville'}</span>
+                    <span className="text-slate-500 block text-[11px]">Département :</span>
+                    <strong className="text-slate-900">{establishment.department}</strong>
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-[11px]">Commune / Ville :</span>
-                    <span>{establishment.city}</span>
+                    <span className="text-slate-500 block text-[11px]">Zone Sanitaire :</span>
+                    <span>{establishment.zone_sanitaire || '-'}</span>
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-[11px]">Département / Région :</span>
-                    <span>{establishment.department}</span>
+                    <span className="text-slate-500 block text-[11px]">Commune :</span>
+                    <span>{establishment.commune || establishment.city}</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-500 block text-[11px]">Arrondissement :</span>
+                    <span>{establishment.arrondissement || '-'}</span>
                   </div>
                 </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-200/60">
+                  <div>
+                    <span className="text-slate-500 block text-[11px]">Adresse / Repère :</span>
+                    <span>{establishment.address || 'Centre-ville'}</span>
+                  </div>
+                  {(establishment.latitude || establishment.longitude) && (
+                    <div>
+                      <span className="text-slate-500 block text-[11px]">Coordonnées GPS (Lat / Long) :</span>
+                      <a
+                        href={`https://www.google.com/maps?q=${establishment.latitude},${establishment.longitude}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-blue-600 hover:underline font-mono font-semibold flex items-center gap-1"
+                      >
+                        {establishment.latitude}, {establishment.longitude}
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {/* Données spécifiques (Directeur Général, Gérance, Dépôt) */}
+                {(establishment.managing_director || establishment.replacement_pharmacist || establishment.approvisionnement_pharmacie || establishment.assigned_site || establishment.observations) && (
+                  <div className="pt-2 border-t border-slate-200/60 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    {establishment.managing_director && (
+                      <div>
+                        <span className="text-slate-500 block text-[11px]">Directeur Général :</span>
+                        <strong className="text-slate-800">{establishment.managing_director}</strong>
+                      </div>
+                    )}
+                    {establishment.replacement_pharmacist && (
+                      <div>
+                        <span className="text-slate-500 block text-[11px]">Gérant / Remplaçant :</span>
+                        <strong className="text-slate-800">{establishment.replacement_pharmacist}</strong>
+                      </div>
+                    )}
+                    {establishment.approvisionnement_pharmacie && (
+                      <div>
+                        <span className="text-slate-500 block text-[11px]">Pharmacie d'approvisionnement :</span>
+                        <span className="text-slate-800">{establishment.approvisionnement_pharmacie}</span>
+                      </div>
+                    )}
+                    {establishment.assigned_site && (
+                      <div>
+                        <span className="text-slate-500 block text-[11px]">Site Attribué :</span>
+                        <span className="text-slate-800">{establishment.assigned_site}</span>
+                      </div>
+                    )}
+                    {establishment.observations && (
+                      <div className="sm:col-span-2">
+                        <span className="text-slate-500 block text-[11px]">Observations réglementaires :</span>
+                        <span className="text-slate-800 italic">{establishment.observations}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           )}

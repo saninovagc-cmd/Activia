@@ -176,7 +176,7 @@ export type OutgoingMailStatus =
 
 export interface IncomingMail {
   id: string;
-  register_number: string; // Ex: ARR-2026-0891
+  register_number: string; // Ex: ARR-2026-0891 ou ABMED/2026A/4540
   receipt_date: string;
   reference: string; // Référence de l'expéditeur
   sender: string;
@@ -195,13 +195,27 @@ export interface IncomingMail {
   linked_folder_id?: string;
   linked_folder_number?: string;
   response_mail_id?: string;
+
+  // Jalons et traçabilité réels du Bureau d'Ordre DLVS
+  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string;
+  affectation_date_dlvs?: string;
+  affectation_date_service?: string;
+  treatment_date_collaborator?: string;
+  visa_date_chef?: string;
+  transmission_date_directrice?: string;
+  transmission_date_dg?: string;
+  delay_dlvs_days?: number;
+  delay_service_days?: number;
+  delay_treatment_days?: number;
+  delay_visa_days?: number;
+
   created_at: string;
   updated_at: string;
 }
 
 export interface OutgoingMail {
   id: string;
-  mail_number: string; // Ex: DEP-2026-0412
+  mail_number: string; // Ex: DEP-2026-0412 ou ABMED/2026D/...
   send_date: string;
   reference: string;
   recipient: string;
@@ -217,6 +231,22 @@ export interface OutgoingMail {
 }
 
 export type FolderType = 
+  | 'Agrément CNAECP (Clientèle Privée)'
+  | 'Autorisation Installation CNAIAPS-EM'
+  | 'Quitus d’Ouverture d’Officine'
+  | 'Quitus de Transfert d’Officine'
+  | 'Carte Visiteur Médical (VM)'
+  | 'Notification d’Absence Titulaire'
+  | 'Résiliation Pharmacien / Gérant'
+  | 'Autorisation d’Achat de Médicaments'
+  | 'Autorisation d’Opération & Importation (AOI)'
+  | 'Publicité & Promotion des Médicaments (AMM)'
+  | 'Revue PSUR / PBRER / DSUR'
+  | 'Essai Clinique & EIG'
+  | 'Élimination des Déchets'
+  | 'Autorisation Matériel Médical & PCRL'
+  | 'Autre Dossier Réglementaire'
+  // Compatibilité
   | 'Autorisation d’achat' 
   | 'Agrément Établissement' 
   | 'Publicité & Promotion' 
@@ -240,7 +270,7 @@ export type FolderStatus =
 
 export interface Folder {
   id: string;
-  folder_number: string; // Ex: DOS-2026-0034
+  folder_number: string; // Ex: DOS-2026-0034 ou ABMED/2026A/1234
   folder_type: FolderType;
   applicant: string; // Demandeur
   structure: string; // Entreprise / Établissement
@@ -251,10 +281,23 @@ export interface Folder {
   status: FolderStatus;
   progress_percentage: number;
   due_date: string;
-  decision?: 'Favorable' | 'Défavorable' | 'Avis avec réserves' | 'En attente';
+  decision?: 'Favorable' | 'Défavorable' | 'Avis avec réserves' | 'En attente' | 'Arrêté signé' | 'Rejeté';
   decision_date?: string;
   decision_notes?: string;
   observations?: string;
+
+  // Données issues de l'instruction réelle (SL, SSMUR, SVPS)
+  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string;
+  commission_name?: 'CNAECP' | 'CNAIAPS-EM' | 'Commission Technique SVPS' | 'Comité d’Experts' | 'Autre' | string;
+  commission_date?: string;
+  commission_avis?: 'Favorable' | 'Favorable sous réserve' | 'Défavorable' | 'Rejeté' | 'En attente' | string;
+  missing_documents?: string;
+  notification_date?: string;
+  decree_number?: string;
+  decree_transmission_date?: string;
+  decree_ministere_date?: string;
+  compliance_checklist?: { piece: string; is_present: boolean; notes?: string }[];
+
   documents: ActivityDocument[];
   comments: ActivityComment[];
   created_at: string;
@@ -282,18 +325,27 @@ export interface DocumentItem {
 // ==========================================
 
 export type EstablishmentType = 
-  | 'Officine' 
+  | 'Officine de Pharmacie'
   | 'Grossiste-Répartiteur' 
   | 'Dépôt Pharmaceutique' 
+  | 'Industrie Pharmaceutique / Fabricant' 
+  | 'Établissement Cosmétique'
+  | 'Compléments Nutritionnels'
+  | 'Matériel Médical'
+  | 'Produits Chimiques & Réactifs (PCRL)'
+  | 'Établissement de Représentation (ERP)'
+  | 'Officine en Gérance (Décès/Succession)'
+  | 'Structure Hospitalière'
+  // Compatibilité
+  | 'Officine' 
   | 'Laboratoire Fabricant' 
-  | 'Structure Hospitalière' 
   | 'Autre';
 
 export type EstablishmentStatus = 'Actif' | 'En attente' | 'Suspendu' | 'Fermé';
 
 export interface Establishment {
   id: string;
-  code: string; // Ex: ETAB-2026-0012
+  code: string; // Ex: ETAB-2026-0012 ou n° d'ordre
   name: string;
   establishment_type: EstablishmentType;
   owner: string;
@@ -307,6 +359,20 @@ export interface Establishment {
   authorization_number: string;
   auth_date: string;
   expiry_date?: string;
+
+  // Données enrichies du registre national réel (SL)
+  commune?: string;
+  arrondissement?: string;
+  zone_sanitaire?: string;
+  latitude?: number | string;
+  longitude?: number | string;
+  managing_director?: string;
+  replacement_pharmacist?: string;
+  approvisionnement_pharmacie?: string;
+  assigned_site?: string;
+  decree_ref?: string;
+  observations?: string;
+
   documents: ActivityDocument[];
   inspection_history?: { date: string; inspector: string; outcome: string }[];
   created_at: string;

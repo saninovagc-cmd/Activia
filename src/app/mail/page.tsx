@@ -55,14 +55,10 @@ function MailPageContent() {
   }, [outgoingMails, search]);
 
   const departments = [
-    'Direction & SI Réglementaire',
-    'Vigilances Sanitaires & MAPI',
-    'Établissements & Inspections',
-    'Réglementation & PGR/PSUR',
-    'Laboratoire & Échantillonnage',
-    'Promotion Médicale & Essais',
-    'Déchets & Autorisations Achat',
-    'Bureau du Courrier & Réception'
+    'Direction (DLVS)',
+    'Service des Licences (SL)',
+    'Service de la Surveillance du Marché (SSMUR)',
+    'Service des Vigilances et des Produits de Santé (SVPS)'
   ];
 
   const getMailExportConfig = (): ExportConfig => {

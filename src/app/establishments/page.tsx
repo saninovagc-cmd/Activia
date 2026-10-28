@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -28,9 +28,9 @@ export default function EstablishmentsPage() {
 
   // Stats calculation
   const totalEtabs = establishments.length;
-  const officines = establishments.filter(e => e.establishment_type === 'Officine').length;
-  const grossistes = establishments.filter(e => e.establishment_type === 'Grossiste-Répartiteur' || e.establishment_type === 'Dépôt Pharmaceutique').length;
-  const labos = establishments.filter(e => e.establishment_type === 'Laboratoire Fabricant' || e.establishment_type === 'Structure Hospitalière').length;
+  const officines = establishments.filter(e => e.establishment_type === 'Officine' || e.establishment_type === 'Officine de Pharmacie' || e.establishment_type === 'Officine en Gérance (Décès/Succession)').length;
+  const grossistes = establishments.filter(e => e.establishment_type === 'Grossiste-Répartiteur' || e.establishment_type === 'Dépôt Pharmaceutique' || e.establishment_type === 'Industrie Pharmaceutique / Fabricant').length;
+  const autres = establishments.filter(e => e.establishment_type !== 'Officine' && e.establishment_type !== 'Officine de Pharmacie' && e.establishment_type !== 'Grossiste-Répartiteur' && e.establishment_type !== 'Dépôt Pharmaceutique').length;
   const pendingOrSuspended = establishments.filter(e => e.status === 'En attente' || e.status === 'Suspendu').length;
 
   const handleCreate = (data: Partial<Establishment>) => {
@@ -114,8 +114,8 @@ export default function EstablishmentsPage() {
             <FlaskConical className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-[11px] font-medium text-slate-500 block">Labos & Hôpitaux</span>
-            <span className="text-lg font-black text-purple-700">{labos}</span>
+            <span className="text-[11px] font-medium text-slate-500 block">Industries, Labos & Autres</span>
+            <span className="text-lg font-black text-purple-700">{autres}</span>
           </div>
         </div>
 

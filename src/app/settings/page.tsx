@@ -75,10 +75,40 @@ export default function SettingsPage() {
 
   const [referentials, setReferentials] = useState<RefItem[]>([
     { id: 'act_types', title: "Types d'activités", items: ['Réglementaire', 'Inspection', 'Vigilance & Alerte', 'Échantillonnage', 'Évaluation Dossier', 'Formation', 'Réunion Technique', 'Autre'] },
+    { id: 'folder_types', title: "Types de dossiers réglementaires", items: [
+      'Agrément CNAECP (Clientèle Privée)',
+      'Autorisation Installation CNAIAPS-EM',
+      'Quitus d’Ouverture d’Officine',
+      'Quitus de Transfert d’Officine',
+      'Carte Visiteur Médical (VM)',
+      'Notification d’Absence Titulaire',
+      'Résiliation Pharmacien / Gérant',
+      'Autorisation d’Achat de Médicaments',
+      'Autorisation d’Opération & Importation (AOI)',
+      'Publicité & Promotion des Médicaments (AMM)',
+      'Revue PSUR / PBRER / DSUR',
+      'Essai Clinique & EIG',
+      'Élimination des Déchets',
+      'Autorisation Matériel Médical & PCRL',
+      'Autre Dossier Réglementaire'
+    ] },
     { id: 'statuses', title: "Statuts d'activités & dossiers", items: ['À faire', 'En cours', 'En attente', 'Terminé / Conforme', 'En retard', 'Annulé'] },
     { id: 'priorities', title: "Priorités réglementaires", items: ['Basse', 'Moyenne', 'Haute', 'Urgente'] },
     { id: 'departments', title: "Directions & Services DLVS", items: ['Direction (DLVS)', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Service de la Surveillance du Marché (SSMUR)', 'Service des Licences (SL)'] },
-    { id: 'etab_types', title: "Types d'établissements", items: ['Officine', 'Grossiste-Répartiteur', 'Dépôt Pharmaceutique', 'Laboratoire Fabricant', 'Structure Hospitalière'] },
+    { id: 'etab_types', title: "Types d'établissements", items: [
+      'Officine de Pharmacie',
+      'Grossiste-Répartiteur',
+      'Dépôt Pharmaceutique',
+      'Industrie Pharmaceutique / Fabricant',
+      'Établissement Cosmétique',
+      'Compléments Nutritionnels',
+      'Matériel Médical',
+      'Produits Chimiques & Réactifs (PCRL)',
+      'Établissement de Représentation (ERP)',
+      'Officine en Gérance (Décès/Succession)',
+      'Structure Hospitalière',
+      'Autre'
+    ] },
     { id: 'sig_types', title: "Types de signalements", items: ['Défaut qualité', 'Effet indésirable grave', 'MAPI', 'Produit falsifié / illicite', 'Erreur médicamenteuse', 'Rupture de stock'] }
   ]);
 

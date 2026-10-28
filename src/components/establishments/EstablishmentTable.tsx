@@ -121,13 +121,19 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
             onChange={e => setTypeFilter(e.target.value)}
             className="text-xs border border-slate-300 rounded-lg px-2.5 py-2 bg-white text-slate-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
           >
-            <option value="all">Tous les types</option>
-            <option value="Officine">Officine</option>
-            <option value="Grossiste-Répartiteur">Grossiste-Répartiteur</option>
-            <option value="Dépôt Pharmaceutique">Dépôt Pharmaceutique</option>
-            <option value="Laboratoire Fabricant">Laboratoire Fabricant</option>
-            <option value="Structure Hospitalière">Structure Hospitalière</option>
-            <option value="Autre">Autre</option>
+            <option value="all">Tous les types d'établissements</option>
+            <option value="Officine de Pharmacie">Officines de Pharmacie</option>
+            <option value="Grossiste-Répartiteur">Grossistes-Répartiteurs</option>
+            <option value="Dépôt Pharmaceutique">Dépôts Pharmaceutiques</option>
+            <option value="Industrie Pharmaceutique / Fabricant">Industries Pharmaceutiques</option>
+            <option value="Établissement Cosmétique">Établissements Cosmétiques</option>
+            <option value="Compléments Nutritionnels">Compléments Nutritionnels</option>
+            <option value="Matériel Médical">Matériel Médical</option>
+            <option value="Produits Chimiques & Réactifs (PCRL)">Produits Chimiques & Réactifs (PCRL)</option>
+            <option value="Établissement de Représentation (ERP)">Établissements de Représentation (ERP)</option>
+            <option value="Officine en Gérance (Décès/Succession)">Officines en Gérance</option>
+            <option value="Structure Hospitalière">Pharmacies Hospitalières</option>
+            <option value="Autre">Autres structures</option>
           </select>
 
           {/* Status filter */}
