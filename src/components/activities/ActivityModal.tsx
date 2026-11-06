@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { Activity, ActivityStatus, ActivityType, PriorityLevel } from '@/types';
@@ -31,20 +31,18 @@ export const ActivityModal: React.FC<ActivityModalProps> = ({
   const [associatedFolder, setAssociatedFolder] = useState('');
 
   const departments = [
-    'Direction & SI Réglementaire',
-    'Vigilances Sanitaires & MAPI',
-    'Établissements & Inspections',
-    'Réglementation & PGR/PSUR',
-    'Laboratoire & Échantillonnage',
-    'Promotion Médicale & Essais',
-    'Déchets & Autorisations Achat',
-    'Bureau du Courrier & Réception'
+    'Direction (DLVS)',
+    'Service des Licences (SL)',
+    'Service de la Surveillance du Marché (SSMUR)',
+    'Service de la Vigilance des Produits de Santé (SVPS)',
   ];
 
   const activityTypes: ActivityType[] = [
     'Réglementaire',
     'Inspection',
-    'Vigilance & Alerte',
+    'Signalements',
+    'Notifications des EI / MAPI',
+    'Ruptures de stock',
     'Échantillonnage',
     'Évaluation Dossier',
     'Formation',
@@ -72,7 +70,7 @@ export const ActivityModal: React.FC<ActivityModalProps> = ({
       setPriority('moyenne');
       setStatus('a_faire');
       setProgress(0);
-      setDepartment(currentUser.department || 'Direction & SI Réglementaire');
+      setDepartment(currentUser.department || 'Direction (DLVS)');
       setManagerId(currentUser.id);
       setStartDate(new Date().toISOString().split('T')[0]);
       setDueDate(new Date(Date.now() + 14 * 86400000).toISOString().split('T')[0]);

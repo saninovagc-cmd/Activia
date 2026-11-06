@@ -153,18 +153,34 @@ export const SignalModal: React.FC<SignalModalProps> = ({
           {/* Incident Type & Severity */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <label className="font-semibold text-slate-700">Type de Signalement *</label>
+              <label className="font-semibold text-slate-700">Type de Signalement / Notification *</label>
               <select
                 value={formData.signal_type}
-                onChange={e => setFormData({ ...formData, signal_type: e.target.value as SignalType })}
+                onChange={e => {
+                  const val = e.target.value as SignalType;
+                  const isSsmur = ['Défaut qualité', 'Produit falsifié / illicite', 'Rupture de stock'].includes(val);
+                  const ssmurChief = allUsers.find(u => u.full_name?.toLowerCase().includes('alofa'));
+                  const svpsChief = allUsers.find(u => u.full_name?.toLowerCase().includes('houngue'));
+                  setFormData({ 
+                    ...formData, 
+                    signal_type: val,
+                    domain: isSsmur ? 'signalement' : 'notification',
+                    target_service: isSsmur ? 'SSMUR' : 'SVPS',
+                    manager_id: isSsmur ? (ssmurChief?.id || currentUser.id) : (svpsChief?.id || currentUser.id)
+                  });
+                }}
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
               >
-                <option value="MAPI">MAPI (Manifestations Post-Vaccinales Indésirables)</option>
-                <option value="Défaut qualité">Défaut de Qualité (aspect, précipité, packaging)</option>
-                <option value="Effet indésirable grave">Effet Indésirable Grave (EIG / Hospitalisation)</option>
-                <option value="Produit falsifié / illicite">Produit falsifié / Circuit illicite</option>
-                <option value="Erreur médicamenteuse">Erreur médicamenteuse (étiquetage, posologie)</option>
-                <option value="Rupture de stock">Tension d'approvisionnement critique</option>
+                <optgroup label="Signalements — Service Surveillance du Marché (SSMUR)">
+                  <option value="Défaut qualité">Défaut de Qualité (aspect, précipité, packaging)</option>
+                  <option value="Produit falsifié / illicite">Produit falsifié / Circuit illicite</option>
+                  <option value="Rupture de stock">Rupture de stock / Tension d'approvisionnement</option>
+                </optgroup>
+                <optgroup label="Notifications — Service Vigilance des Produits de Santé (SVPS)">
+                  <option value="MAPI">MAPI (Manifestations Post-Vaccinales Indésirables)</option>
+                  <option value="Effet indésirable grave">Effet Indésirable Grave (EIG / Hospitalisation)</option>
+                  <option value="Erreur médicamenteuse">Erreur médicamenteuse (posologie, étiquetage)</option>
+                </optgroup>
               </select>
             </div>
 

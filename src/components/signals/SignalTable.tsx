@@ -26,14 +26,17 @@ interface SignalTableProps {
   onSelect: (signal: SignalItem) => void;
   onNew: () => void;
   canManage: boolean;
+  initialDomain?: string;
 }
 
 export const SignalTable: React.FC<SignalTableProps> = ({
   signals,
   onSelect,
   onNew,
-  canManage
+  canManage,
+  initialDomain = 'all'
 }) => {
+  const [domainFilter, setDomainFilter] = useState<string>(initialDomain);
   const [searchTerm, setSearchTerm] = useState('');
   const [typeFilter, setTypeFilter] = useState<string>('all');
   const [severityFilter, setSeverityFilter] = useState<string>('all');
@@ -52,7 +55,21 @@ export const SignalTable: React.FC<SignalTableProps> = ({
     );
   }, [signals]);
 
+  const ssmurSignals = useMemo(() => {
+    return signals.filter(s => s.domain === 'signalement' || ['Défaut qualité', 'Produit falsifié / illicite', 'Rupture de stock'].includes(s.signal_type));
+  }, [signals]);
+
+  const svpsSignals = useMemo(() => {
+    return signals.filter(s => s.domain === 'notification' || ['MAPI', 'Effet indésirable grave', 'Erreur médicamenteuse'].includes(s.signal_type));
+  }, [signals]);
+
   const filtered = signals.filter(s => {
+    const isSsmur = s.domain === 'signalement' || ['Défaut qualité', 'Produit falsifié / illicite', 'Rupture de stock'].includes(s.signal_type);
+    const isSvps = s.domain === 'notification' || ['MAPI', 'Effet indésirable grave', 'Erreur médicamenteuse'].includes(s.signal_type);
+
+    if (domainFilter === 'signalement' && !isSsmur) return false;
+    if (domainFilter === 'notification' && !isSvps) return false;
+
     const matchesSearch = 
       s.signal_number.toLowerCase().includes(searchTerm.toLowerCase()) ||
       s.product_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -91,10 +108,14 @@ export const SignalTable: React.FC<SignalTableProps> = ({
   };
 
   const getExportConfig = (): ExportConfig => ({
-    title: 'Registre des Signalements Sanitaires, Vigilances & MAPI',
-    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi de la sécurité sanitaire et conformité OMS',
-    filename: `signalements_activia_${new Date().toISOString().split('T')[0]}`,
-    headers: ['N° Signalement', 'Date Réception', 'Déclarant', 'Produit de Santé', 'Lot', 'Fabricant', 'Type d’Incident', 'Gravité', 'Échantillon', 'Étape / Statut'],
+    title: domainFilter === 'signalement' 
+      ? 'Registre des Signalements — Surveillance du Marché (SSMUR)'
+      : domainFilter === 'notification'
+      ? 'Registre des Notifications — Vigilance des Produits de Santé (SVPS)'
+      : 'Registre Général des Signalements Sanitaires & Notifications',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
+    filename: `signalements_dlvs_${new Date().toISOString().split('T')[0]}`,
+    headers: ['N° Dossier', 'Date Réception', 'Déclarant', 'Produit de Santé', 'Lot', 'Fabricant', 'Type d’Incident', 'Service / Domaine', 'Gravité', 'Échantillon', 'Étape / Statut'],
     rows: filtered.map(s => [
       s.signal_number,
       s.receipt_date,
@@ -103,20 +124,63 @@ export const SignalTable: React.FC<SignalTableProps> = ({
       s.batch_number,
       s.manufacturer,
       s.signal_type,
+      s.domain === 'signalement' || ['Défaut qualité', 'Produit falsifié / illicite', 'Rupture de stock'].includes(s.signal_type) ? 'SSMUR (Signalement)' : 'SVPS (Notification)',
       s.severity,
       s.sample_taken ? 'Oui (Prélevé)' : 'Non',
       `${s.workflow_step} - ${s.status}`
     ]),
     summaryKpis: [
-      { label: 'Total Signalements', value: filtered.length },
-      { label: 'MAPI', value: filtered.filter(s => s.signal_type === 'MAPI').length },
-      { label: 'Échantillonnés', value: filtered.filter(s => s.sample_taken).length },
-      { label: 'Clôturés', value: filtered.filter(s => s.status === 'cloture').length }
+      { label: 'Total', value: filtered.length },
+      { label: 'SSMUR (Signalements)', value: filtered.filter(s => s.domain === 'signalement' || ['Défaut qualité', 'Produit falsifié / illicite', 'Rupture de stock'].includes(s.signal_type)).length },
+      { label: 'SVPS (Notifications)', value: filtered.filter(s => s.domain === 'notification' || ['MAPI', 'Effet indésirable grave', 'Erreur médicamenteuse'].includes(s.signal_type)).length },
+      { label: 'Échantillonnés LNCM', value: filtered.filter(s => s.sample_taken).length }
     ]
   });
 
   return (
     <div className="space-y-4">
+      {/* Observation 8 & 11: Séparation nette Signalements SSMUR vs Notifications SVPS */}
+      <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-xs flex flex-wrap items-center gap-2">
+        <button
+          onClick={() => setDomainFilter('all')}
+          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+            domainFilter === 'all'
+              ? 'bg-slate-900 text-white shadow-xs'
+              : 'text-slate-600 hover:bg-slate-100'
+          }`}
+        >
+          Tous les flux ({signals.length})
+        </button>
+        <button
+          onClick={() => setDomainFilter('signalement')}
+          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+            domainFilter === 'signalement'
+              ? 'bg-amber-700 text-white shadow-xs'
+              : 'text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200'
+          }`}
+        >
+          <span className="w-2 h-2 rounded-full bg-amber-400" />
+          <span>Signalements SSMUR (Qualité & Ruptures)</span>
+          <span className="ml-1 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20">
+            {ssmurSignals.length}
+          </span>
+        </button>
+        <button
+          onClick={() => setDomainFilter('notification')}
+          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+            domainFilter === 'notification'
+              ? 'bg-purple-700 text-white shadow-xs'
+              : 'text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200'
+          }`}
+        >
+          <span className="w-2 h-2 rounded-full bg-purple-400" />
+          <span>Notifications SVPS (Pharmacovigilance & MAPI)</span>
+          <span className="ml-1 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20">
+            {svpsSignals.length}
+          </span>
+        </button>
+      </div>
+
       {/* Search and filters bar */}
       <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col lg:flex-row gap-3 items-stretch lg:items-center justify-between">
         <div className="flex-1 flex flex-col sm:flex-row gap-2.5">
@@ -334,7 +398,14 @@ export const SignalTable: React.FC<SignalTableProps> = ({
                       <div className="text-[11px] text-slate-500 leading-snug break-words whitespace-normal">{sig.reporter_type}</div>
                     </td>
                     <td className="py-3 px-2 align-top">
-                      <div className="font-semibold text-slate-800 mb-1 leading-snug break-words whitespace-normal">{sig.signal_type}</div>
+                      <div className="flex items-center gap-1.5 flex-wrap mb-1">
+                        <span className="font-semibold text-slate-800 leading-snug break-words whitespace-normal">{sig.signal_type}</span>
+                        {sig.domain === 'signalement' || ['Défaut qualité', 'Produit falsifié / illicite', 'Rupture de stock'].includes(sig.signal_type) ? (
+                          <span className="text-[9px] font-bold text-amber-800 bg-amber-100/90 px-1.5 py-0.2 rounded border border-amber-200">SSMUR</span>
+                        ) : (
+                          <span className="text-[9px] font-bold text-purple-800 bg-purple-100/90 px-1.5 py-0.2 rounded border border-purple-200">SVPS</span>
+                        )}
+                      </div>
                       <div>{getSeverityBadge(sig.severity)}</div>
                     </td>
                     <td className="py-3 px-2 align-top">

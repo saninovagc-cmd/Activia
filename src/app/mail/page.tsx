@@ -85,14 +85,14 @@ function MailPageContent() {
     'Direction (DLVS)',
     'Service des Licences (SL)',
     'Service de la Surveillance du Marché (SSMUR)',
-    'Service des Vigilances et des Produits de Santé (SVPS)'
+    'Service de la Vigilance des Produits de Santé (SVPS)'
   ];
 
   const getMailExportConfig = (): ExportConfig => {
     if (activeTab === 'outgoing') {
       return {
         title: 'Registre des Courriers Sortants (Départ)',
-        subtitle: 'Direction de la Pharmacie et du Médicament — Traçabilité des expéditions officielles',
+        subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
         filename: `courriers_depart_activia_${new Date().toISOString().split('T')[0]}`,
         headers: ['N° Enregistrement', 'Date Départ', 'Destinataire', 'Objet', 'Type d\'Envoi', 'Référence Officielle'],
         rows: filteredOutgoing.map(m => [
@@ -112,7 +112,7 @@ function MailPageContent() {
 
     return {
       title: 'Registre des Courriers Entrants (Arrivée)',
-      subtitle: 'Direction de la Pharmacie et du Médicament — Traçabilité et affectation réglementaire',
+      subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
       filename: `courriers_arrivee_activia_${new Date().toISOString().split('T')[0]}`,
       headers: ['N° Enregistrement', 'Date Réception', 'Expéditeur', 'Département Affecté', 'Objet', 'Priorité', 'Statut', 'Échéance'],
       rows: filteredIncoming.map(m => [

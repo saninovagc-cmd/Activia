@@ -18,12 +18,17 @@ export type PriorityLevel = 'basse' | 'moyenne' | 'haute' | 'urgente';
 export type ActivityType = 
   | 'Réglementaire' 
   | 'Inspection' 
-  | 'Vigilance & Alerte' 
+  | 'Signalements' 
+  | 'Notifications des EI / MAPI' 
+  | 'Ruptures de Stock' 
+  | 'Ruptures de stock' 
   | 'Échantillonnage' 
   | 'Évaluation Dossier' 
   | 'Formation' 
   | 'Réunion Technique' 
-  | 'Autre';
+  | 'Autre'
+  // Compatibilité
+  | 'Vigilance & Alerte';
 
 export interface UserProfile {
   id: string;
@@ -155,6 +160,10 @@ export type MailType =
   | 'Notification Réglementaire' 
   | 'Rapport / PV' 
   | 'Circulaire Ministérielle' 
+  | 'Plaintes'
+  | 'Note de service'
+  | 'Lettre circulaire'
+  | 'Alerte'
   | 'Contentieux'
   | 'Autre';
 
@@ -189,6 +198,7 @@ export interface IncomingMail {
   due_date: string;
   status: IncomingMailStatus;
   priority: PriorityLevel;
+  transmission_channel?: 'GEC' | 'Mail' | 'Physique / Porteur';
   scanned_doc_name?: string;
   scanned_doc_url?: string;
   observations?: string;
@@ -197,7 +207,7 @@ export interface IncomingMail {
   response_mail_id?: string;
 
   // Jalons et traçabilité réels du Bureau d'Ordre DLVS
-  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string | null;
+  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service de la Vigilance des Produits de Santé (SVPS)' | string | null;
   affectation_date_dlvs?: string | null;
   affectation_date_service?: string | null;
   treatment_date_collaborator?: string | null;
@@ -224,6 +234,7 @@ export interface OutgoingMail {
   manager_id: string;
   manager_name: string;
   status: OutgoingMailStatus;
+  transmission_channel?: 'GEC' | 'Mail' | 'Physique / Porteur';
   document_name?: string;
   document_url?: string;
   linked_incoming_id?: string;
@@ -236,17 +247,27 @@ export type FolderType =
   | 'Quitus d’Ouverture d’Officine'
   | 'Quitus de Transfert d’Officine'
   | 'Carte Visiteur Médical (VM)'
+  | 'Carte Visiteur Médical'
   | 'Notification d’Absence Titulaire'
+  | 'Notification d’absence'
+  | 'Notification d\'absence'
   | 'Résiliation Pharmacien / Gérant'
   | 'Autorisation d’Achat de Médicaments'
-  | 'Autorisation d’Opération & Importation (AOI)'
+  | 'Autorisation d’achat'
+  | 'Autorisation d\'achat'
+  | 'Autorisation de transit'
   | 'Publicité & Promotion des Médicaments (AMM)'
+  | 'Publicité'
   | 'Revue PSUR / PBRER / DSUR'
   | 'Essai Clinique & EIG'
-  | 'Élimination des Déchets'
+  | 'Essais Cliniques & EIG'
+  | 'Essais Cliniques'
+  | 'Destruction'
   | 'Autorisation Matériel Médical & PCRL'
   | 'Autre Dossier Réglementaire'
   // Compatibilité
+  | 'Autorisation d’Opération & Importation (AOI)'
+  | 'Élimination des Déchets'
   | 'Autorisation d’achat' 
   | 'Agrément Établissement' 
   | 'Publicité & Promotion' 
@@ -287,7 +308,7 @@ export interface Folder {
   observations?: string | null;
 
   // Données issues de l'instruction réelle (SL, SSMUR, SVPS)
-  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service des Vigilances et des Produits de Santé (SVPS)' | string | null;
+  target_service?: 'Direction (DLVS)' | 'Service des Licences (SL)' | 'Service de la Surveillance du Marché (SSMUR)' | 'Service de la Vigilance des Produits de Santé (SVPS)' | string | null;
   commission_name?: 'CNAECP' | 'CNAIAPS-EM' | 'Commission Technique SVPS' | 'Comité d’Experts' | 'Autre' | string | null;
   commission_date?: string | null;
   commission_avis?: 'Favorable' | 'Favorable sous réserve' | 'Défavorable' | 'Rejeté' | 'En attente' | string | null;
@@ -410,6 +431,8 @@ export interface SignalItem {
   batch_number: string;
   manufacturer: string;
   signal_type: SignalType;
+  domain?: 'signalement' | 'notification';
+  target_service?: string;
   severity: SignalSeverity;
   description: string;
   manager_id: string;
@@ -444,6 +467,8 @@ export interface TrainingItem {
   result: 'Validé' | 'Ajourné' | 'En cours';
   certificate_issued: boolean;
   certificate_number?: string;
+  training_scope?: 'interne' | 'externe';
+  target_service?: string;
   documents: ActivityDocument[];
   created_at: string;
 }

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { TrainingItem } from '@/types';
@@ -21,11 +21,13 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
     participant_name: '',
     function_title: 'Pharmacien Point Focal',
     structure: 'Centre de Santé de Référence (CSRéf)',
-    region: 'Région de Kayes',
-    department: 'Direction Régionale de la Santé',
+    region: 'Département du Littoral',
+    department: 'Direction (DLVS)',
+    target_service: 'SVPS',
+    training_scope: 'externe',
     theme: 'Notification & Investigation des MAPI',
     training_date: new Date().toISOString().split('T')[0],
-    trainer_name: 'Dr. Alou Traoré (Expert National)',
+    trainer_name: 'Dr. Perrin HOUNGUE (Expert National)',
     duration_hours: 14,
     result: 'Validé',
     certificate_issued: true,
@@ -114,14 +116,43 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
             </div>
 
             <div className="space-y-1">
-              <label className="font-semibold text-slate-700">Région Sanitaire</label>
+              <label className="font-semibold text-slate-700">Région / Département sanitaire</label>
               <input
                 type="text"
                 value={formData.region || ''}
                 onChange={e => setFormData({ ...formData, region: e.target.value })}
-                placeholder="Ex: Région de Sikasso"
+                placeholder="Ex: Littoral, Ouémé, Atlantique..."
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
               />
+            </div>
+          </div>
+
+          {/* Observation 7: Typologie par Service et Distinction Interne / Externe */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-3 bg-blue-50/70 border border-blue-200 rounded-xl">
+            <div className="space-y-1">
+              <label className="font-semibold text-slate-700">Service organisateur / Bénéficiaire *</label>
+              <select
+                value={formData.target_service || 'SVPS'}
+                onChange={e => setFormData({ ...formData, target_service: e.target.value })}
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white font-medium"
+              >
+                <option value="SVPS">Service de la Vigilance des Produits de Santé (SVPS)</option>
+                <option value="SSMUR">Service de la Surveillance du Marché (SSMUR)</option>
+                <option value="SL">Service des Licences (SL)</option>
+                <option value="DLVS">Direction Générale DLVS</option>
+              </select>
+            </div>
+
+            <div className="space-y-1">
+              <label className="font-semibold text-slate-700">Portée / Typologie *</label>
+              <select
+                value={formData.training_scope || 'externe'}
+                onChange={e => setFormData({ ...formData, training_scope: e.target.value as any })}
+                className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white font-medium"
+              >
+                <option value="interne">Formation Interne (Agents de la Direction DLVS)</option>
+                <option value="externe">Formation Externe (Points focaux territoriaux & Professionnels)</option>
+              </select>
             </div>
           </div>
 

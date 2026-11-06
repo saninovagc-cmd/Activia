@@ -82,6 +82,7 @@ interface AppContextType {
   login: (identifier: string, pass: string) => { success: boolean; message?: string; user?: UserProfile };
   logout: () => void;
   updateUserPassword: (userId: string, newPass: string) => boolean;
+  updateUserProfile: (userId: string, updates: Partial<UserProfile>) => boolean;
   resetUserPassword: (userId: string) => string;
   // Activités & Tâches (Phase 1)
   activities: Activity[];
@@ -626,6 +627,39 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
     setAuditLogs(prev => [newLog, ...prev]);
     showToast('success', `Mot de passe mis à jour avec succès pour ${targetUserName || 'le compte'}.`);
+    return true;
+  };
+
+  const updateUserProfile = (userId: string, updates: Partial<UserProfile>): boolean => {
+    let targetUserName = '';
+    setAllUsers(prev => prev.map(u => {
+      if (u.id === userId) {
+        targetUserName = updates.full_name || u.full_name;
+        const updated = { ...u, ...updates };
+        return updated;
+      }
+      return u;
+    }));
+
+    if (currentUser?.id === userId) {
+      setCurrentUser(prev => ({ ...prev, ...updates }));
+    }
+
+    const newLog: AuditLogItem = {
+      id: `log-${Date.now()}`,
+      user_id: currentUser?.id || userId,
+      user_name: currentUser?.full_name || targetUserName,
+      user_role: currentUser?.role_label || 'Utilisateur',
+      action: 'UPDATE',
+      module: 'Sécurité',
+      entity_type: 'user',
+      entity_id: userId,
+      entity_name: targetUserName,
+      details: `Mise à jour des informations personnelles pour ${targetUserName}`,
+      created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+    };
+    setAuditLogs(prev => [newLog, ...prev]);
+    showToast('success', 'Vos informations personnelles ont été mises à jour avec succès.');
     return true;
   };
 
@@ -1985,6 +2019,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         login,
         logout,
         updateUserPassword,
+        updateUserProfile,
         resetUserPassword,
         activities,
         tasks: allTasks,

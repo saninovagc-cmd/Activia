@@ -36,6 +36,8 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
   onNew,
   canManage
 }) => {
+  const [scopeFilter, setScopeFilter] = useState<'all' | 'interne' | 'externe'>('all');
+  const [serviceFilter, setServiceFilter] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [themeFilter, setThemeFilter] = useState('all');
   const [regionFilter, setRegionFilter] = useState('all');
@@ -57,7 +59,27 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
   const themes = Array.from(new Set(trainings.map(t => t.theme))).filter(Boolean);
   const regions = Array.from(new Set(trainings.map(t => t.region))).filter(Boolean);
 
+  const internalCount = useMemo(() => {
+    return trainings.filter(t => t.training_scope === 'interne' || t.structure?.toLowerCase().includes('abmed') || t.structure?.toLowerCase().includes('direction')).length;
+  }, [trainings]);
+
+  const externalCount = useMemo(() => {
+    return trainings.filter(t => t.training_scope !== 'interne').length;
+  }, [trainings]);
+
   const filtered = trainings.filter(t => {
+    const isInterne = t.training_scope === 'interne' || t.structure?.toLowerCase().includes('abmed') || t.structure?.toLowerCase().includes('direction');
+    if (scopeFilter === 'interne' && !isInterne) return false;
+    if (scopeFilter === 'externe' && isInterne) return false;
+
+    if (serviceFilter !== 'all') {
+      const matchServ = t.target_service === serviceFilter ||
+        (serviceFilter === 'SVPS' && (t.theme?.toLowerCase().includes('mapi') || t.theme?.toLowerCase().includes('vigilance'))) ||
+        (serviceFilter === 'SSMUR' && (t.theme?.toLowerCase().includes('falsifié') || t.theme?.toLowerCase().includes('déchet') || t.theme?.toLowerCase().includes('distribution'))) ||
+        (serviceFilter === 'SL' && t.theme?.toLowerCase().includes('bpd'));
+      if (!matchServ) return false;
+    }
+
     const matchesSearch = 
       t.participant_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       t.training_code.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -79,13 +101,19 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
   });
 
   const getExportConfig = (): ExportConfig => ({
-    title: 'Registre des Formations & Habilitations des Points Focaux',
-    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi des compétences et certifications',
-    filename: `formations_points_focaux_${new Date().toISOString().split('T')[0]}`,
-    headers: ['Code Session', 'Participant', 'Fonction', 'Structure', 'Région', 'Thématique', 'Date', 'Résultat', 'Attestation'],
+    title: scopeFilter === 'interne'
+      ? 'Registre des Formations Internes — Direction DLVS'
+      : scopeFilter === 'externe'
+      ? 'Registre des Formations Externes & Habilitations du Réseau'
+      : 'Registre Général des Formations & Habilitations DLVS',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
+    filename: `formations_dlvs_${new Date().toISOString().split('T')[0]}`,
+    headers: ['Code Session', 'Participant', 'Portée', 'Service', 'Fonction', 'Structure', 'Région / Dépt', 'Thématique', 'Date', 'Résultat', 'Attestation'],
     rows: filtered.map(t => [
       t.training_code,
       t.participant_name,
+      t.training_scope === 'interne' || t.structure?.toLowerCase().includes('abmed') || t.structure?.toLowerCase().includes('direction') ? 'Interne' : 'Externe',
+      t.target_service || 'SVPS',
       t.function_title,
       t.structure,
       t.region,
@@ -103,6 +131,48 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
 
   return (
     <div className="space-y-4">
+      {/* Observation 7: Onglets de Portée (Formations Internes vs Formations Externes) */}
+      <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-xs flex flex-wrap items-center gap-2">
+        <button
+          onClick={() => setScopeFilter('all')}
+          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+            scopeFilter === 'all'
+              ? 'bg-slate-900 text-white shadow-xs'
+              : 'text-slate-600 hover:bg-slate-100'
+          }`}
+        >
+          Toutes les formations ({trainings.length})
+        </button>
+        <button
+          onClick={() => setScopeFilter('interne')}
+          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+            scopeFilter === 'interne'
+              ? 'bg-emerald-700 text-white shadow-xs'
+              : 'text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200'
+          }`}
+        >
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+          <span>Formations Internes (Direction DLVS)</span>
+          <span className="ml-1 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20">
+            {internalCount}
+          </span>
+        </button>
+        <button
+          onClick={() => setScopeFilter('externe')}
+          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+            scopeFilter === 'externe'
+              ? 'bg-purple-700 text-white shadow-xs'
+              : 'text-purple-900 bg-purple-50 hover:bg-purple-100 border border-purple-200'
+          }`}
+        >
+          <span className="w-2 h-2 rounded-full bg-purple-400" />
+          <span>Formations Externes (Points Focaux & Réseau)</span>
+          <span className="ml-1 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20">
+            {externalCount}
+          </span>
+        </button>
+      </div>
+
       {/* Controls & Filter toolbar */}
       <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col lg:flex-row gap-3 items-stretch lg:items-center justify-between">
         <div className="flex-1 flex flex-col sm:flex-row gap-2.5">
@@ -116,6 +186,19 @@ export const TrainingTable: React.FC<TrainingTableProps> = ({
               className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             />
           </div>
+
+          {/* Filter Service */}
+          <select
+            value={serviceFilter}
+            onChange={e => setServiceFilter(e.target.value)}
+            className="text-xs border border-slate-300 rounded-lg px-2.5 py-2 bg-white text-slate-700 font-semibold"
+          >
+            <option value="all">Tous les services</option>
+            <option value="SVPS">Vigilance des Produits (SVPS)</option>
+            <option value="SSMUR">Surveillance du Marché (SSMUR)</option>
+            <option value="SL">Licences & Établissements (SL)</option>
+            <option value="DLVS">Direction (DLVS)</option>
+          </select>
 
           {/* Theme filter */}
           <select

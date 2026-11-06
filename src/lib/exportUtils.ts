@@ -265,8 +265,8 @@ export const exportToPdf = (config: ExportConfig) => {
     <body>
       <div class="header">
         <div>
-          <div class="inst-title">ACTIVIA — Système de Pilotage Réglementaire</div>
-          <div class="inst-sub">Direction de la Pharmacie et du Médicament (DPM) • DLVS</div>
+          <div class="inst-title">Agence béninoise du Médicament et des autres produits de Santé (ABMed)</div>
+          <div class="inst-sub">Direction des Licences, de la Vigilance et de la Surveillance du Marché (DLVS) • Plateforme ACTIVIA</div>
           <div class="doc-title">${escapeHtml(title)}</div>
           ${subtitle ? `<div class="doc-desc">${escapeHtml(subtitle)}</div>` : ''}
         </div>

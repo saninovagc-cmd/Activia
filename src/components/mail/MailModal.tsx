@@ -28,6 +28,7 @@ export const MailModal: React.FC<MailModalProps> = ({
   const [reference, setReference] = useState('');
   const [subject, setSubject] = useState('');
   const [mailType, setMailType] = useState<MailType>('Officiel');
+  const [transmissionChannel, setTransmissionChannel] = useState<'GEC' | 'Mail' | 'Physique / Porteur'>('GEC');
   const [department, setDepartment] = useState('Direction (DLVS)');
   const [managerId, setManagerId] = useState('');
   const [receiptDate, setReceiptDate] = useState(new Date().toISOString().split('T')[0]);
@@ -56,6 +57,7 @@ export const MailModal: React.FC<MailModalProps> = ({
         reference: reference || `REF-${Date.now().toString().slice(-4)}`,
         subject,
         mail_type: mailType,
+        transmission_channel: transmissionChannel,
         department,
         manager_id: manager?.id,
         manager_name: manager?.full_name,
@@ -87,6 +89,7 @@ export const MailModal: React.FC<MailModalProps> = ({
         reference: reference || `DEP-${Date.now().toString().slice(-4)}`,
         subject,
         mail_type: mailType,
+        transmission_channel: transmissionChannel,
         manager_id: manager.id,
         manager_name: manager.full_name,
         send_date: sendDate,
@@ -215,8 +218,8 @@ export const MailModal: React.FC<MailModalProps> = ({
                 />
               </div>
 
-              {/* Typologie & Service */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Typologie, Canal & Service */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
                     Nature / Type de courrier
@@ -231,7 +234,21 @@ export const MailModal: React.FC<MailModalProps> = ({
                     <option value="Notification Réglementaire">Notification Réglementaire</option>
                     <option value="Rapport / PV">Rapport / PV</option>
                     <option value="Circulaire Ministérielle">Circulaire Ministérielle</option>
-                    <option value="Contentieux">Contentieux</option>
+                    <option value="Plaintes">Plaintes (Remplacement Contentieux)</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    Canal de transmission
+                  </label>
+                  <select
+                    value={transmissionChannel}
+                    onChange={(e) => setTransmissionChannel(e.target.value as any)}
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg font-bold text-blue-800"
+                  >
+                    <option value="GEC">GEC (Gestion Électronique Courriers)</option>
+                    <option value="Mail">Mail / Courriel électronique</option>
+                    <option value="Physique / Porteur">Physique / Porteur officiel</option>
                   </select>
                 </div>
                 <div>
@@ -403,7 +420,7 @@ export const MailModal: React.FC<MailModalProps> = ({
                 />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
                   <label className="block text-xs font-semibold text-slate-700 mb-1">
                     Signataire / Rédacteur
@@ -432,6 +449,23 @@ export const MailModal: React.FC<MailModalProps> = ({
                     <option value="Officiel">Courrier Officiel</option>
                     <option value="Rapport / PV">Arrêté / Décision</option>
                     <option value="Notification Réglementaire">Notification</option>
+                    <option value="Note de service">Note de service</option>
+                    <option value="Lettre circulaire">Lettre circulaire</option>
+                    <option value="Alerte">Alerte Sanitaire</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    Canal de transmission
+                  </label>
+                  <select
+                    value={transmissionChannel}
+                    onChange={(e) => setTransmissionChannel(e.target.value as any)}
+                    className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg font-bold text-indigo-800"
+                  >
+                    <option value="GEC">GEC (Gestion Électronique Courriers)</option>
+                    <option value="Mail">Mail / Courriel électronique</option>
+                    <option value="Physique / Porteur">Physique / Porteur officiel</option>
                   </select>
                 </div>
               </div>

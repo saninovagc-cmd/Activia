@@ -30,18 +30,54 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
     'Autorisation Installation CNAIAPS-EM',
     'Quitus d’Ouverture d’Officine',
     'Quitus de Transfert d’Officine',
-    'Carte Visiteur Médical (VM)',
-    'Notification d’Absence Titulaire',
+    'Carte Visiteur Médical',
+    'Notification d’absence',
     'Résiliation Pharmacien / Gérant',
-    'Autorisation d’Achat de Médicaments',
-    'Autorisation d’Opération & Importation (AOI)',
-    'Publicité & Promotion des Médicaments (AMM)',
+    'Autorisation d’achat',
+    'Autorisation de transit',
+    'Publicité',
     'Revue PSUR / PBRER / DSUR',
-    'Essai Clinique & EIG',
-    'Élimination des Déchets',
+    'Essais Cliniques & EIG',
+    'Destruction',
     'Autorisation Matériel Médical & PCRL',
     'Autre Dossier Réglementaire'
   ];
+
+  const getDefaultEvaluatorForType = (type: FolderType): string => {
+    if (type.includes("Absence") || type.includes("absence")) {
+      const vigan = allUsers.find(u => u.full_name?.toLowerCase().includes('vigan'));
+      if (vigan) return vigan.id;
+    }
+    if (type.includes("Carte") || type.includes("Visiteur")) {
+      const vigan = allUsers.find(u => u.full_name?.toLowerCase().includes('vigan'));
+      if (vigan) return vigan.id;
+    }
+    if (type.includes("Publicité") || type.includes("publicite")) {
+      const lokoun = allUsers.find(u => u.full_name?.toLowerCase().includes('lokoun'));
+      if (lokoun) return lokoun.id;
+    }
+    if (type.includes("Achat") || type.includes("achat")) {
+      const dossou = allUsers.find(u => u.full_name?.toLowerCase().includes('dossou'));
+      if (dossou) return dossou.id;
+    }
+    if (type.includes("Transit") || type.includes("transit")) {
+      const dossou = allUsers.find(u => u.full_name?.toLowerCase().includes('dossou'));
+      if (dossou) return dossou.id;
+    }
+    if (type.includes("Destruction") || type.includes("déchet") || type.includes("dechet")) {
+      const tonoukouin = allUsers.find(u => u.full_name?.toLowerCase().includes('tonoukouin'));
+      if (tonoukouin) return tonoukouin.id;
+    }
+    if (type.includes("PSUR") || type.includes("PBRER")) {
+      const arouna = allUsers.find(u => u.full_name?.toLowerCase().includes('arouna'));
+      if (arouna) return arouna.id;
+    }
+    if (type.includes("Essai") || type.includes("Clinique")) {
+      const houngue = allUsers.find(u => u.full_name?.toLowerCase().includes('houngue'));
+      if (houngue) return houngue.id;
+    }
+    return currentUser.id;
+  };
 
   if (!isOpen) return null;
 
@@ -104,7 +140,12 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
             </label>
             <select
               value={folderType}
-              onChange={(e) => setFolderType(e.target.value as FolderType)}
+              onChange={(e) => {
+                const newType = e.target.value as FolderType;
+                setFolderType(newType);
+                const defEval = getDefaultEvaluatorForType(newType);
+                setManagerId(defEval);
+              }}
               className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg font-medium text-slate-900"
             >
               {folderTypes.map((t) => (

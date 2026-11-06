@@ -75,27 +75,27 @@ export default function SettingsPage() {
   }, [activeTab]);
 
   const [referentials, setReferentials] = useState<RefItem[]>([
-    { id: 'act_types', title: "Types d'activités", items: ['Réglementaire', 'Inspection', 'Vigilance & Alerte', 'Échantillonnage', 'Évaluation Dossier', 'Formation', 'Réunion Technique', 'Autre'] },
+    { id: 'act_types', title: "Types d'activités", items: ['Réglementaire', 'Inspection', 'Signalements', 'Notifications des EI / MAPI', 'Ruptures de stock', 'Échantillonnage', 'Évaluation Dossier', 'Formation', 'Réunion Technique', 'Autre'] },
     { id: 'folder_types', title: "Types de dossiers réglementaires", items: [
       'Agrément CNAECP (Clientèle Privée)',
       'Autorisation Installation CNAIAPS-EM',
       'Quitus d’Ouverture d’Officine',
       'Quitus de Transfert d’Officine',
-      'Carte Visiteur Médical (VM)',
-      'Notification d’Absence Titulaire',
+      'Carte Visiteur Médical',
+      'Notification d’absence',
       'Résiliation Pharmacien / Gérant',
-      'Autorisation d’Achat de Médicaments',
-      'Autorisation d’Opération & Importation (AOI)',
-      'Publicité & Promotion des Médicaments (AMM)',
+      'Autorisation d’achat',
+      'Autorisation de transit',
+      'Publicité',
       'Revue PSUR / PBRER / DSUR',
-      'Essai Clinique & EIG',
-      'Élimination des Déchets',
+      'Essais Cliniques & EIG',
+      'Destruction',
       'Autorisation Matériel Médical & PCRL',
       'Autre Dossier Réglementaire'
     ] },
     { id: 'statuses', title: "Statuts d'activités & dossiers", items: ['À faire', 'En cours', 'En attente', 'Terminé / Conforme', 'En retard', 'Annulé'] },
     { id: 'priorities', title: "Priorités réglementaires", items: ['Basse', 'Moyenne', 'Haute', 'Urgente'] },
-    { id: 'departments', title: "Directions & Services DLVS", items: ['Direction (DLVS)', 'Service des Vigilances et des Produits de Santé (SVPS)', 'Service de la Surveillance du Marché (SSMUR)', 'Service des Licences (SL)'] },
+    { id: 'departments', title: "Directions & Services DLVS", items: ['Direction (DLVS)', 'Service de la Vigilance des Produits de Santé (SVPS)', 'Service de la Surveillance du Marché (SSMUR)', 'Service des Licences (SL)'] },
     { id: 'etab_types', title: "Types d'établissements", items: [
       'Officine de Pharmacie',
       'Grossiste-Répartiteur',

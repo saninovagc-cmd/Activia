@@ -1,9 +1,12 @@
 import { Folder } from '@/types';
 
 // ==============================================================================
-// DONNÉES RÉELLES OFFICIELLES — DOSSIERS DU SERVICE DES LICENCES (SL)
-// Migré fidèlement depuis Activités du SL.xlsx et Base de réception.xlsx
-// Volume : 622 dossiers réels avec commissions CNAECP, Quitus, Cartes VM et checklist
+// DONNÉES RÉELLES OFFICIELLES — REGISTRE GLOBAL DES DOSSIERS DE LA DIRECTION (DLVS)
+// Intégrant les 3 services : Service des Licences (SL), Surveillance du Marché (SSMUR),
+// et Vigilance des Produits de Santé (SVPS) : CNAECP, CNAIAPS, Quitus, Cartes VM,
+// Notifications d'Absence, Publicité AMM, Autorisations de transit, Autorisations d'Achat,
+// Revues PSUR/PBRER, Essais Cliniques EIG, et Procédures de Destruction.
+// Volume total : 1064 dossiers réels.
 // ==============================================================================
 
 export const REAL_FOLDERS: Folder[] = [
@@ -15668,8 +15671,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ACODEHOU Chrystelle",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-12-01",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15709,8 +15712,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ADAHE Geoffrey",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2024-10-16",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15750,8 +15753,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AGBOTON Roger",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-01-13",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15791,8 +15794,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AHIVODJI Eugide",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2024-09-25",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15832,8 +15835,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ASSOGBA Serge",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-12-01",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15873,8 +15876,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ASSOU Achille",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-03-31",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15914,8 +15917,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOGO Marius",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-12-15",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15955,8 +15958,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOSSOU Jean",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-01-27",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -15996,8 +15999,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOSSOUMON Ella",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-01-14",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16037,8 +16040,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ETO Rock",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-09-02",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16078,8 +16081,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "HOUNSOUVI Amevi",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-05-07",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16119,8 +16122,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "IGAMBA Hubert",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-12-23",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16160,8 +16163,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "KOYI Pascal",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-02-26",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16201,8 +16204,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "LIADY Mohamed",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-11-17",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16242,8 +16245,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "LIGAN Aristide",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-12-16",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16283,8 +16286,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "NOUDEHOUIN Marcelline",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-12-03",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16324,8 +16327,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "OUEDJAGNON Olivier",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-11-28",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16365,8 +16368,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SANNY Simbi",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-05-29",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16406,8 +16409,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SEDAMINOU Firmin",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2024-09-30",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16447,8 +16450,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "TCHETAN Yolande",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2025-12-01",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16488,8 +16491,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "TCHOBO Constantin",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-03-23",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16529,8 +16532,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ZANNOU Clément",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-02-26",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16570,8 +16573,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ZANNOU Léopold",
     "structure": "Délégué Médical / Agence de Promotion",
     "receipt_date": "2026-02-26",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "basse",
     "status": "traitement",
     "progress_percentage": 50,
@@ -16611,8 +16614,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AMOUSSOU YEHOUESSI Fleurette (Remplaçant: BOURAÏMA Maridiyath Alakè Mireille)",
     "structure": "Pharmacie Les Maristes",
     "receipt_date": "2025-04-15",
-    "manager_id": "a0000000-0000-0000-0000-000000000009",
-    "manager_name": "Dr. TONOUKOUIN Joel",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16649,8 +16652,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "COLES Farouk (Remplaçant: Sans remplaçant)",
     "structure": "Pharmacie Zoungbonou",
     "receipt_date": "2025-06-21",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16687,8 +16690,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "BOURAÏMA Raïyath-Laï (Remplaçant: KOUKOUN Claude)",
     "structure": "Pharmacie Ifède Route de Ketonou",
     "receipt_date": "2025-11-12",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16725,8 +16728,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOMONHEDO Camille (Remplaçant: ADJEHOUNOU Virginie)",
     "structure": "Pharmacie Pharmabel SARL",
     "receipt_date": "2025-11-26",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16763,8 +16766,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DEGLA AOUTCHEME Corinne (Remplaçant: HOUEHO Fescobaldi)",
     "structure": "Pharmacie La Concorde",
     "receipt_date": "2025-11-19",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16801,8 +16804,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ODJO Christophe (Remplaçant: ODJO Blondine)",
     "structure": "Pharmacie Cristal-Dodji",
     "receipt_date": "2025-12-03",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16839,8 +16842,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "KAYOSSI Clémence (Remplaçant: ALAYE Gisèle)",
     "structure": "Pharmacie Eyitayo-Womey",
     "receipt_date": "2025-12-12",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "cloture",
     "progress_percentage": 100,
@@ -16877,8 +16880,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SANTOS Joanita (Remplaçant: JOACHIM Gilchrist M.)",
     "structure": "Pharmacie Gratias Minontchou",
     "receipt_date": "2025-12-26",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "cloture",
     "progress_percentage": 100,
@@ -16915,8 +16918,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DEGLA AOUTCHEME Corinne (Remplaçant: HOUEHO Fescobaldi)",
     "structure": "Pharmacie La Concorde",
     "receipt_date": "2026-01-22",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16953,8 +16956,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SABI BOUN Saïdou (Remplaçant: ARABA Ferelle)",
     "structure": "Pharmacie St Pierre de Sèmé Podji",
     "receipt_date": "2026-03-18",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -16991,8 +16994,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "KOMI JOHNSON Eunice (Remplaçant: KPOKPOYA Ruth)",
     "structure": "Pharmacie Le Schilo",
     "receipt_date": "2026-02-19",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "cloture",
     "progress_percentage": 100,
@@ -17029,8 +17032,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DASSEYA Roseline (Remplaçant: GANDONOU Samson)",
     "structure": "Pharmacie Cica Santé",
     "receipt_date": "2026-02-19",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17067,8 +17070,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "MALICK Raïma (Remplaçant: LONMANDON Sonia & TOUKOUROU Marydia)",
     "structure": "Pharmacie De l'Etoile",
     "receipt_date": "2026-03-03",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17105,8 +17108,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "KAYOSSI Clémence (Remplaçant: ALAYE Gisèle)",
     "structure": "Pharmacie Eyitayo-Womey",
     "receipt_date": "2026-03-03",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17143,8 +17146,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SANTOS Joanita (Remplaçant: JOACHIM Gilchrist M.)",
     "structure": "Pharmacie Gratias Minontchou",
     "receipt_date": "2026-03-04",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "cloture",
     "progress_percentage": 100,
@@ -17181,8 +17184,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SOUMANOU Rissi (Remplaçant: MFONO OKE Yvane)",
     "structure": "Pharmacie Vogue",
     "receipt_date": "2026-03-03",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17219,8 +17222,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GBEDJINOU Bienvenu (Remplaçant: GBEDJINOU Ange)",
     "structure": "Pharmacie St Marcel",
     "receipt_date": "2026-02-27",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17257,8 +17260,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "HOUNKPATIN Nadia (Remplaçant: DAKPO Zabdielle & NEPO Shalom)",
     "structure": "Pharmacie St Gérard de Zoundja",
     "receipt_date": "2026-03-02",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17295,8 +17298,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AKOGBETO Oscar (Remplaçant: GNACADJA Gloria)",
     "structure": "Pharmacie Les Archanges",
     "receipt_date": "2026-03-02",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17333,8 +17336,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "HEDOKINGBE Ferdinand (Remplaçant: KEKE Cyprien)",
     "structure": "Pharmacie Sèdjro de Ouanho",
     "receipt_date": "2026-03-02",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "cloture",
     "progress_percentage": 100,
@@ -17371,8 +17374,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "EKUE HOUNKPONOU Annabelle (Remplaçant: TAKPARA G. Salima)",
     "structure": "Pharmacie Camp Guezo",
     "receipt_date": "2026-03-10",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "cloture",
     "progress_percentage": 100,
@@ -17409,8 +17412,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "BEBADA Nadège (Remplaçant: HOUNNAMON Francette & OTCHERE P. Johanita)",
     "structure": "Pharmacie St Pio",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17447,8 +17450,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GBESSOU Cyr (Remplaçant: SAIZONOU Sidikath & DJOSSOU René)",
     "structure": "Pharmacie Dowa",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17485,8 +17488,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AYENON Martial (Remplaçant: KIKI-MIGAN Eunice)",
     "structure": "Pharmacie Goho",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17523,8 +17526,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "EYISSE Aichatou (Remplaçant: HESSOU Horace)",
     "structure": "Pharmacie Gbèdjromèdé",
     "receipt_date": "2026-03-12",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "cloture",
     "progress_percentage": 100,
@@ -17561,8 +17564,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "CAPO-CHICHI AGBOTON Clotilde (Remplaçant: AGBOTON Adéline)",
     "structure": "Pharmacie Agbokou",
     "receipt_date": "2026-03-30",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17599,8 +17602,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AYEKO Hervé (Remplaçant: Wilfried AGONNOUDE)",
     "structure": "Pharmacie Lafia",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17637,8 +17640,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DADELE BIGOT Victoire (Remplaçant: d'OLIVEIRA Arielle)",
     "structure": "Pharmacie Du Lac",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17675,8 +17678,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SOSSOU Herman Adjehode (Remplaçant: ADEGBOLA Abdel-Malik)",
     "structure": "Pharmacie Fidjrossè Plage",
     "receipt_date": "2026-03-10",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17713,8 +17716,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DIENG SOSSOU Fa Ndiaye (Remplaçant: DOUKSOUNA Yacoub)",
     "structure": "Pharmacie Nouvelle Pharmacie St Michel",
     "receipt_date": "2026-03-10",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17751,8 +17754,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DEGBE Habib (Remplaçant: DJIVOEDO Gloria Houéfa (étudiante en fin de formation) et OSSENI Raouf (Titulaire Haie Vive))",
     "structure": "Pharmacie Mathys",
     "receipt_date": "2026-03-10",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17789,8 +17792,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "EKUE LIGAN Axelle (Remplaçant: ABDEL ZIGOMARD Houliratou)",
     "structure": "Pharmacie De la centrale de Maria Gléta 2",
     "receipt_date": "2026-03-11",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17827,8 +17830,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "Cyr GBESSOU (Remplaçant: Dr Sidikath SAIZONOU Titulaire/Dr René DJOSSOU)",
     "structure": "Pharmacie Dowa",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17865,8 +17868,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AGONKPAHOUN Eusèbe (Remplaçant: ADJE Thierry O.)",
     "structure": "Pharmacie Nouvelle Espoir",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17903,8 +17906,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AYENON Martial (Remplaçant: KIKI MIGAN Eunice)",
     "structure": "Pharmacie Goho",
     "receipt_date": "2026-03-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17941,8 +17944,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AMOUZOUN Arsène Lucienne (Remplaçant: MEDENOU Nina Christelle et ADJALALA Ariane Jocelyne)",
     "structure": "Pharmacie Christal Santé",
     "receipt_date": "2026-03-06",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -17979,8 +17982,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOUGNON T. Godfried (Remplaçant: DOSSA Ornella)",
     "structure": "Pharmacie Jack & Cie",
     "receipt_date": "2026-03-03",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18017,8 +18020,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GBEDJINOU Bienvenu (Remplaçant: GBEDJINOU Ange Estras)",
     "structure": "Pharmacie Saint Marcel",
     "receipt_date": "2026-03-03",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18055,8 +18058,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "MARHALL Essaie (Remplaçant: CHABI GARA Awaou)",
     "structure": "Pharmacie Le jourdain",
     "receipt_date": "2026-01-13",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18093,8 +18096,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "OKPE Viviane (Remplaçant: FAGBEGNON Tanguy)",
     "structure": "Pharmacie Vallee Béraca",
     "receipt_date": "2027-03-02",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18131,8 +18134,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOMINGO Claudette (Remplaçant: SANI Ornella G. Omoye)",
     "structure": "Pharmacie Sainte Foi",
     "receipt_date": "2027-02-27",
-    "manager_id": "a0000000-0000-0000-0000-000000000014",
-    "manager_name": "Mme ADOGNON Larissa",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18169,8 +18172,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ZOUMENOU Aurelle (Remplaçant: AMINOU Mounihimou Adjadi)",
     "structure": "Pharmacie Djidjoho",
     "receipt_date": "2026-03-11",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18207,8 +18210,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOUGNON T. Godfried (Remplaçant: DOSSA Ornella)",
     "structure": "Pharmacie Jack & Cie",
     "receipt_date": "2026-03-16",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18245,8 +18248,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AHIVODJI Ida (Remplaçant: AHISSOU Ornick)",
     "structure": "Pharmacie Sainte Famille",
     "receipt_date": "2026-03-17",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18283,8 +18286,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SABI BOUN Saïdou (Remplaçant: ARABA Ferelle)",
     "structure": "Pharmacie St Pierre de Sèmé-Podji",
     "receipt_date": "2026-03-18",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18321,8 +18324,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DADELE BIGOT Victoire (Remplaçant: d'OLIVEIRA Arielle)",
     "structure": "Pharmacie Du Lac",
     "receipt_date": "2026-03-19",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18359,8 +18362,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SONON DJAÏTO Karen (Remplaçant: DOHO Mathias)",
     "structure": "Pharmacie Okpè Oluwa",
     "receipt_date": "2026-03-24",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18397,8 +18400,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "LAGUIDE Alimatou (Remplaçant: KOUFERIDJI Yousrath)",
     "structure": "Pharmacie Lom Nava",
     "receipt_date": "2026-03-25",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18435,8 +18438,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GBEDJINOU Bienvenu (Remplaçant: GBEDJINOU Ange)",
     "structure": "Pharmacie St Marcel",
     "receipt_date": "2026-03-26",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18473,8 +18476,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "BAMODU Hermine (Remplaçant: GODONOU Gilchrist)",
     "structure": "Pharmacie El-Bethesda",
     "receipt_date": "2026-03-26",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18511,8 +18514,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AGBIDINOUKOU S. Victoire (Remplaçant: JOACHIM Gilchrist M.)",
     "structure": "Pharmacie Vie et Santé",
     "receipt_date": "2026-04-13",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18549,8 +18552,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "EZIN Joëlle (Remplaçant: VIGNONZAN Orelle Mélysse)",
     "structure": "Pharmacie Les Pylônes",
     "receipt_date": "2026-04-16",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18587,8 +18590,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SABI BOUN Saïdou (Remplaçant: ARABA Ferelle)",
     "structure": "Pharmacie St Pierre de Sèmé-Podji",
     "receipt_date": "2026-04-20",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18625,8 +18628,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "KAYOSSI Clémence (Remplaçant: ALAYE Gisèle)",
     "structure": "Pharmacie Eyitayo-Womey",
     "receipt_date": "2026-04-21",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18663,8 +18666,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "TIDJANI Sofiatou (Remplaçant: MEKOUNOUTCHI Abel)",
     "structure": "Pharmacie Ciné Concorde",
     "receipt_date": "2026-04-28",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18701,8 +18704,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GNINTOUNGBE Linette (Remplaçant: DAVAKAN Fernand et AYENA Lidwine)",
     "structure": "Pharmacie Les Capucines",
     "receipt_date": "2026-05-12",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18739,8 +18742,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "PRUDENCIO Edgard (Remplaçant: PRUDENCIO Danielle)",
     "structure": "Pharmacie Adéchina",
     "receipt_date": "2026-05-05",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18777,8 +18780,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ZOUMENOU Aurelle (Remplaçant: AMINOU Mounihimou Adjadi)",
     "structure": "Pharmacie Djidjoho",
     "receipt_date": "2026-05-31",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18815,8 +18818,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AJAVON Esther (Remplaçant: SIME DEGUIRI CHABI YO Kifayatou)",
     "structure": "Pharmacie Salem-Hlazounto",
     "receipt_date": "2026-06-02",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18853,8 +18856,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "Anna SAMOILOVA (Remplaçant: EHOUMI Rhéticia)",
     "structure": "Pharmacie Mosquée centrale de Zongo",
     "receipt_date": "2026-05-29",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18891,8 +18894,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "CODJIA Claude (Remplaçant: DJIHINTO Emile)",
     "structure": "Pharmacie Godomey PK14",
     "receipt_date": "2026-06-01",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -18929,8 +18932,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ATINDOGBE Raoul (Remplaçant: ASSOGBA Maurice)",
     "structure": "Pharmacie Des 3 banques",
     "receipt_date": "2026-06-08",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -18967,8 +18970,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GBAGUIDI Murielle (Remplaçant: DAVAKAN Nadège et MAMA SANNI Nasrine)",
     "structure": "Pharmacie Zinvié",
     "receipt_date": "2026-06-12",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19005,8 +19008,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SAVI ELENGA Pélagie (Remplaçant: SALIFOU Faouziath)",
     "structure": "Pharmacie Le Rocher",
     "receipt_date": "2026-06-22",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19043,8 +19046,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "EKUE LIGAN Axelle (Remplaçant: ABDEL ZIGOMARD Houliratou)",
     "structure": "Pharmacie De la centrale de Maria Gléta 2",
     "receipt_date": "2026-06-23",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19081,8 +19084,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "SANTOS Joanita (Remplaçant: JOACHIM Gilchrist M.)",
     "structure": "Pharmacie Gratias Minontchou",
     "receipt_date": "2026-06-23",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19119,8 +19122,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "TAVI Jules (Remplaçant: DEGBE Roch)",
     "structure": "Pharmacie Centrale de Houegbo",
     "receipt_date": "2026-06-23",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19157,8 +19160,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DEGLA AOUTCHEME Corinne (Remplaçant: HOUEHO Fescobaldi M.)",
     "structure": "Pharmacie La Concorde",
     "receipt_date": "2026-07-10",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19195,8 +19198,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOSSOU Christiane (Remplaçant: TOPANOU Arabel W.)",
     "structure": "Pharmacie Ganhi",
     "receipt_date": "2026-07-01",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19233,8 +19236,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "FENG Wei Fang (Remplaçant: ADADJA Marjolaine)",
     "structure": "Pharmacie Vita Plus",
     "receipt_date": "2026-07-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19271,8 +19274,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AMOUZOUN GOLOU Arsène Lucienne (Remplaçant: MEDENOU Nina Christelle)",
     "structure": "Pharmacie Cristal Santé",
     "receipt_date": "2026-07-09",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19309,8 +19312,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "de CHACUS Odette (Remplaçant: SAGBOHAN Hérus, DOSSOU Grâce & ODJO Murielle)",
     "structure": "Pharmacie Sacré Cœur",
     "receipt_date": "2026-07-07",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19347,8 +19350,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "BADIROU Madina (Remplaçant: BAKARY Alifath)",
     "structure": "Pharmacie Agblangandan",
     "receipt_date": "2026-07-08",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19385,8 +19388,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "MONTCHO Eugène (Remplaçant: M'PO Carine)",
     "structure": "Pharmacie Ste Valentine",
     "receipt_date": "2026-07-17",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19423,8 +19426,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "IDOHOU Solange (Remplaçant: DJEHOUE Jerry)",
     "structure": "Pharmacie Saint Joseph",
     "receipt_date": "2026-07-17",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19461,8 +19464,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "EYISSE Aichatou (Remplaçant: HESSOU Horace)",
     "structure": "Pharmacie Gbèdjromèdé",
     "receipt_date": "2026-07-14",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19499,8 +19502,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "EKUE LIGAN Axelle (Remplaçant: ABDEL ZIGOMARD Houliratou)",
     "structure": "Pharmacie De la centrale de Maria Gléta 2",
     "receipt_date": "2026-07-20",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19537,8 +19540,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "CODJIA Claude (Remplaçant: DJIHINTO Emile)",
     "structure": "Pharmacie Godomey PK14",
     "receipt_date": "2026-07-22",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19575,8 +19578,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "BELLO Mourchidath (Remplaçant: DOHO Mathias, VITOHEKPON Claude & KLOUSSEH Ornella)",
     "structure": "Pharmacie Olouwatoyin de Kpota",
     "receipt_date": "2026-07-30",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19613,8 +19616,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ZOUNON A. Murielle (Remplaçant: BOHOUN Fréda)",
     "structure": "Pharmacie l'Immaculée de Adoglèta",
     "receipt_date": "2026-07-31",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19651,8 +19654,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "Pharmacien titulaire (Remplaçant: OSSENI Raouf)",
     "structure": "Pharmacie Mathys",
     "receipt_date": "2025-05-01",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19689,8 +19692,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DOHOU Angèle (Remplaçant: VIDEKON Armel, GOMEZ Laura & LAOUROU Marleine)",
     "structure": "Pharmacie Hèvié",
     "receipt_date": "2025-05-01",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19727,8 +19730,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GOUTON Eunice (Remplaçant: GNIMAVO Morelle)",
     "structure": "Pharmacie St Georges",
     "receipt_date": "2026-08-13",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19765,8 +19768,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "AINADOU Henri (Remplaçant: CAPOCHICHI Philippe)",
     "structure": "Pharmacie Sainte Adèle de Godomey",
     "receipt_date": "2026-08-20",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "rejete",
     "progress_percentage": 100,
@@ -19803,8 +19806,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "KAYOSSI Clémence (Remplaçant: ALAYE Gisèle)",
     "structure": "Pharmacie Eyitayo-Womey",
     "receipt_date": "2026-08-27",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -19841,8 +19844,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "ALOUKOUTOU Diane (Remplaçant: TOSSOU Gil)",
     "structure": "Pharmacie Ganou SARL",
     "receipt_date": "2026-08-27",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000013",
+    "manager_name": "Dr. VIGAN Jean Paul",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 60,
@@ -20415,8 +20418,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "APPS",
     "structure": "APPS",
     "receipt_date": "2025-05-08",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000008",
+    "manager_name": "Dr. LOKOUN Ella",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 50,
@@ -20425,7 +20428,7 @@ export const REAL_FOLDERS: Folder[] = [
     "decision_date": "2025-05-08",
     "decision_notes": "Instruction dossier Publicité & Promotion des Médicaments (AMM)",
     "observations": "",
-    "target_service": "Service des Licences (SL)",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
     "documents": [],
     "comments": [],
     "created_at": "2025-05-08T08:00:00Z",
@@ -20438,8 +20441,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "GRAABEL BENIN",
     "structure": "GRAABEL BENIN",
     "receipt_date": "2026-04-02",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000008",
+    "manager_name": "Dr. LOKOUN Ella",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 50,
@@ -20448,7 +20451,7 @@ export const REAL_FOLDERS: Folder[] = [
     "decision_date": "2026-04-02",
     "decision_notes": "Instruction dossier Publicité & Promotion des Médicaments (AMM)",
     "observations": "",
-    "target_service": "Service des Licences (SL)",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
     "documents": [],
     "comments": [],
     "created_at": "2026-04-02T08:00:00Z",
@@ -20461,8 +20464,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "LEFALCO",
     "structure": "LEFALCO",
     "receipt_date": "2025-12-19",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000008",
+    "manager_name": "Dr. LOKOUN Ella",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 50,
@@ -20471,7 +20474,7 @@ export const REAL_FOLDERS: Folder[] = [
     "decision_date": "2025-12-19",
     "decision_notes": "Instruction dossier Publicité & Promotion des Médicaments (AMM)",
     "observations": "",
-    "target_service": "Service des Licences (SL)",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
     "documents": [],
     "comments": [],
     "created_at": "2025-12-19T08:00:00Z",
@@ -20484,8 +20487,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "WEN PHARMA",
     "structure": "WEN PHARMA",
     "receipt_date": "2026-02-05",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000008",
+    "manager_name": "Dr. LOKOUN Ella",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 50,
@@ -20494,7 +20497,7 @@ export const REAL_FOLDERS: Folder[] = [
     "decision_date": "2026-02-05",
     "decision_notes": "Instruction dossier Publicité & Promotion des Médicaments (AMM)",
     "observations": "",
-    "target_service": "Service des Licences (SL)",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
     "documents": [],
     "comments": [],
     "created_at": "2026-02-05T08:00:00Z",
@@ -20507,8 +20510,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "STRATEX",
     "structure": "STRATEX",
     "receipt_date": "2026-02-20",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000008",
+    "manager_name": "Dr. LOKOUN Ella",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 50,
@@ -20517,7 +20520,7 @@ export const REAL_FOLDERS: Folder[] = [
     "decision_date": "2026-02-20",
     "decision_notes": "Instruction dossier Publicité & Promotion des Médicaments (AMM)",
     "observations": "",
-    "target_service": "Service des Licences (SL)",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
     "documents": [],
     "comments": [],
     "created_at": "2026-02-20T08:00:00Z",
@@ -20530,8 +20533,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "DSK PHARMA",
     "structure": "DSK PHARMA",
     "receipt_date": "2026-03-30",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000008",
+    "manager_name": "Dr. LOKOUN Ella",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 50,
@@ -20540,7 +20543,7 @@ export const REAL_FOLDERS: Folder[] = [
     "decision_date": "2026-03-30",
     "decision_notes": "Instruction dossier Publicité & Promotion des Médicaments (AMM)",
     "observations": "",
-    "target_service": "Service des Licences (SL)",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
     "documents": [],
     "comments": [],
     "created_at": "2026-03-30T08:00:00Z",
@@ -20553,8 +20556,8 @@ export const REAL_FOLDERS: Folder[] = [
     "applicant": "REDPI PHARMA",
     "structure": "REDPI PHARMA",
     "receipt_date": "2026-04-21",
-    "manager_id": "a0000000-0000-0000-0000-000000000012",
-    "manager_name": "Dr. YAMBODE Maria-Carole",
+    "manager_id": "a0000000-0000-0000-0000-000000000008",
+    "manager_name": "Dr. LOKOUN Ella",
     "priority": "moyenne",
     "status": "traitement",
     "progress_percentage": 50,
@@ -20563,7 +20566,7 @@ export const REAL_FOLDERS: Folder[] = [
     "decision_date": "2026-04-21",
     "decision_notes": "Instruction dossier Publicité & Promotion des Médicaments (AMM)",
     "observations": "",
-    "target_service": "Service des Licences (SL)",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
     "documents": [],
     "comments": [],
     "created_at": "2026-04-21T08:00:00Z",
@@ -27026,5 +27029,23595 @@ export const REAL_FOLDERS: Folder[] = [
     "comments": [],
     "created_at": "2025-11-01T09:00:00Z",
     "updated_at": "2025-11-01T17:00:00Z"
+  },
+  {
+    "id": "5f375bff-e637-4604-b29e-cf622067d03b",
+    "folder_number": "PSUR/2026/001",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (FAZOL)",
+    "structure": "FAZOL — Isoconazole",
+    "receipt_date": "2025-11-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-09",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-01-19",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 01 Mars 2008 au 31 Juillet 2012. AMM : Non renseignée",
+    "observations": "Substance active : Isoconazole. Forme : Crème,poudre pour application locale,ovule. Période : 01 Mars 2008 au 31 Juillet 2012",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-19",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-01-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "bd2a748f-235f-48ad-a45c-2850f51e93e0",
+        "name": "PSUR_Rapport_FAZOL.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2025-11-10",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-11-10T08:00:00Z",
+    "updated_at": "2026-01-19T16:00:00Z"
+  },
+  {
+    "id": "13b5caf3-0c03-4568-8f65-b2b2b4008328",
+    "folder_number": "PSUR/2026/002",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (MONTELUKAST)",
+    "structure": "MONTELUKAST — Montelukast",
+    "receipt_date": "2026-01-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-03",
+    "decision": "Favorable",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 20 Septembre 2019 au 19 Mars 2024. AMM : 549/2017",
+    "observations": "Substance active : Montelukast. Forme : Comprimés à croquer. Période : 20 Septembre 2019 au 19 Mars 2024",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-20",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a456e400-7a11-4b7e-a0be-32cb6c1eeb1b",
+        "name": "PSUR_Rapport_MONTELUKAST.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-02",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-02T08:00:00Z",
+    "updated_at": "2026-01-20T16:00:00Z"
+  },
+  {
+    "id": "a9fa196c-2968-4755-9cbf-e6496c0ad5c3",
+    "folder_number": "PSUR/2026/003",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (AMLOSIN)",
+    "structure": "AMLOSIN — Amlodipine besylate",
+    "receipt_date": "2026-01-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-03",
+    "decision": "Favorable",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 16 Février 2023 au 15 Février 2024. AMM : 751/2019(5mg) et 538/2017(10mg)",
+    "observations": "Substance active : Amlodipine besylate. Forme : Comprimés pelliculés. Période : 16 Février 2023 au 15 Février 2024",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-20",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "279b5647-598d-4c35-a3eb-4adf85ad6ed7",
+        "name": "PSUR_Rapport_AMLOSIN.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-02",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-02T08:00:00Z",
+    "updated_at": "2026-01-20T16:00:00Z"
+  },
+  {
+    "id": "94d20c2e-2fd4-4d49-ae39-f4e52ebf4a7a",
+    "folder_number": "PSUR/2026/004",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (BIMALARIL 40/240)",
+    "structure": "BIMALARIL 40/240 — Artemether,luméfantrine",
+    "receipt_date": "2026-01-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 01/01/2022 au 31/12/2024. AMM : Non renseignée",
+    "observations": "Substance active : Artemether,luméfantrine. Forme : Comprimés dispersibles. Période : 01/01/2022 au 31/12/2024",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-20",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "62866661-a185-49fa-9241-df2beef4f0b1",
+        "name": "PSUR_Rapport_BIMALARIL_40/240.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-12",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-12T08:00:00Z",
+    "updated_at": "2026-01-20T16:00:00Z"
+  },
+  {
+    "id": "a6ec08f8-de5a-4c97-8db9-c787af790e7c",
+    "folder_number": "PSUR/2026/005",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (BIMALARIL 80/480)",
+    "structure": "BIMALARIL 80/480 — Artemether,luméfantrine",
+    "receipt_date": "2026-01-06",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-07",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 01/01/2023 au 31/12/2024. AMM : Non renseignée",
+    "observations": "Substance active : Artemether,luméfantrine. Forme : Capsule. Période : 01/01/2023 au 31/12/2024",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-20",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "08fc5e18-d89f-4356-9349-b9d94262f8d4",
+        "name": "PSUR_Rapport_BIMALARIL_80/480.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-06",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-06T08:00:00Z",
+    "updated_at": "2026-01-20T16:00:00Z"
+  },
+  {
+    "id": "03ad972a-f291-447b-af08-6e26b4e62514",
+    "folder_number": "PSUR/2026/006",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (DECAPEPTYL)",
+    "structure": "DECAPEPTYL — Triptoréline",
+    "receipt_date": "2026-01-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-08",
+    "decision": "Favorable",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 01/04/2017 au 31/03/2022. AMM : Non renseignée",
+    "observations": "Substance active : Triptoréline. Forme : Injection à libération immédiate et prolongée. Période : 01/04/2017 au 31/03/2022",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-20",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f06c3e37-1cb5-4b4b-ae30-b683d0e06122",
+        "name": "PSUR_Rapport_DECAPEPTYL.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-07",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-07T08:00:00Z",
+    "updated_at": "2026-01-20T16:00:00Z"
+  },
+  {
+    "id": "e94a4b94-7d31-43f0-8dd2-c389eb9ea7d8",
+    "folder_number": "PSUR/2026/007",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (Voltaren,Cataflam,Voltfast,Voltaren D,Voltaren resinate,Flotac)",
+    "structure": "Voltaren,Cataflam,Voltfast,Voltaren D,Voltaren resinate,Flotac — Diclofénac",
+    "receipt_date": "2025-11-13",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-01-12",
+    "decision": "Avis avec réserves",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : . AMM : Non renseignée",
+    "observations": "Substance active : Diclofénac. Forme : . Période : ",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "10df3e68-dd56-44bc-9696-46e1eab08ca5",
+        "name": "PSUR_Rapport_Voltaren,Cataflam,Voltfast,Voltaren_D,Voltaren_resinate,Flotac.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2025-11-13",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-11-13T08:00:00Z",
+    "updated_at": "2025-11-13T16:00:00Z"
+  },
+  {
+    "id": "20b3c65f-c67a-41a0-a61b-8076fedd6a21",
+    "folder_number": "PSUR/2026/008",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (Travatan,Izba)",
+    "structure": "Travatan,Izba — Travoprost",
+    "receipt_date": "2025-11-13",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-01-12",
+    "decision": "Avis avec réserves",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : . AMM : Non renseignée",
+    "observations": "Substance active : Travoprost. Forme : . Période : ",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "34606859-7cf1-449f-b46e-df0bc3ebd688",
+        "name": "PSUR_Rapport_Travatan,Izba.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2025-11-13",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-11-13T08:00:00Z",
+    "updated_at": "2025-11-13T16:00:00Z"
+  },
+  {
+    "id": "f76cdb6d-fb12-4a80-ac94-740593101862",
+    "folder_number": "PSUR/2026/009",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (PROGESTERONE)",
+    "structure": "PROGESTERONE — Progesterone",
+    "receipt_date": "2025-11-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-27",
+    "decision": "Favorable",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 10/09/2017 au 09/09/2025. AMM : Non renseignée",
+    "observations": "Substance active : Progesterone. Forme : Capsules vaginales,capsules orales. Période : 10/09/2017 au 09/09/2025",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-20",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7465fa9f-32fc-4f9c-bdec-bf1306cbf803",
+        "name": "PSUR_Rapport_PROGESTERONE.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2025-11-28",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-11-28T08:00:00Z",
+    "updated_at": "2026-01-20T16:00:00Z"
+  },
+  {
+    "id": "298a96f0-18c5-45b1-bdac-8a2b27bcabb8",
+    "folder_number": "PSUR/2026/010",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (CONCOR)",
+    "structure": "CONCOR — Bisoprolol",
+    "receipt_date": "2025-12-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-28",
+    "decision": "Favorable",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 01/10/2020 au 30/09/2025. AMM : Non renseignée",
+    "observations": "Substance active : Bisoprolol. Forme : Comprimés pelliculés. Période : 01/10/2020 au 30/09/2025",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-01-20",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5ac53f87-bfc7-4312-9f92-a281d72eafa5",
+        "name": "PSUR_Rapport_CONCOR.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2025-12-30",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-12-30T08:00:00Z",
+    "updated_at": "2026-01-20T16:00:00Z"
+  },
+  {
+    "id": "7753ea48-efcc-4157-bbf0-21c243d3067d",
+    "folder_number": "PSUR/2026/011",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (COARTEM/RIAMET)",
+    "structure": "COARTEM/RIAMET — Artemether,luméfantrine",
+    "receipt_date": "2025-12-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-02-06",
+    "decision": "Avis avec réserves",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 02/10/2022 au 01/10/2025. AMM : Non renseignée",
+    "observations": "Substance active : Artemether,luméfantrine. Forme : Comprimés dispersibles, comprimés. Période : 02/10/2022 au 01/10/2025",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "841e6127-c430-4a10-ae71-e5308468d4dd",
+        "name": "PSUR_Rapport_COARTEM/RIAMET.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2025-12-08",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-12-08T08:00:00Z",
+    "updated_at": "2025-12-08T16:00:00Z"
+  },
+  {
+    "id": "c159ce2c-4b02-4c1d-a953-80c94d1d6c4e",
+    "folder_number": "PSUR/2026/012",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (LIDOCAINE  UBIGEN BP 2%)",
+    "structure": "LIDOCAINE  UBIGEN BP 2% — Lidocaïne",
+    "receipt_date": "2026-01-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-02-02",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 01/02/2017 au 01/02/2022. AMM : Non renseignée",
+    "observations": "Substance active : Lidocaïne. Forme : Injectable. Période : 01/02/2017 au 01/02/2022",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-02",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-02-02",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "15b3ed89-4ee4-4861-9d29-ede0a063eec1",
+        "name": "PSUR_Rapport_LIDOCAINE__UBIGEN_BP_2%.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-29",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-29T08:00:00Z",
+    "updated_at": "2026-02-02T16:00:00Z"
+  },
+  {
+    "id": "163058bd-9263-488c-a3c7-95f77b67f7e2",
+    "folder_number": "PSUR/2026/013",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (CLOTRIMAZOLE CREAM BP 1%)",
+    "structure": "CLOTRIMAZOLE CREAM BP 1% — Clotrimazole",
+    "receipt_date": "2026-01-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-02-02",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 01/02/2017 au 01/02/2022. AMM : Non renseignée",
+    "observations": "Substance active : Clotrimazole. Forme : Crème. Période : 01/02/2017 au 01/02/2022",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-02",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-02-02",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6ab12049-e977-4e96-a234-4b8cc79a3c5e",
+        "name": "PSUR_Rapport_CLOTRIMAZOLE_CREAM_BP_1%.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-29",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-29T08:00:00Z",
+    "updated_at": "2026-02-02T16:00:00Z"
+  },
+  {
+    "id": "df9adab6-ab8f-4520-be3f-87e1623cc59b",
+    "folder_number": "PSUR/2026/014",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (TRIBIODERM)",
+    "structure": "TRIBIODERM — Néomycine,Polymyxine B,Bacitracine",
+    "receipt_date": "2026-01-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-02-02",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 01/02/2017 au 01/02/2022. AMM : Non renseignée",
+    "observations": "Substance active : Néomycine,Polymyxine B,Bacitracine. Forme : Crème. Période : 01/02/2017 au 01/02/2022",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-02",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-02-02",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e8753f2e-f736-4468-bf25-2b3fa67836bd",
+        "name": "PSUR_Rapport_TRIBIODERM.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-29",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-29T08:00:00Z",
+    "updated_at": "2026-02-02T16:00:00Z"
+  },
+  {
+    "id": "9a5b7575-e3bb-4882-9cbc-86fa9d0d2f52",
+    "folder_number": "PSUR/2026/015",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (NYSTATINE UBIGEN)",
+    "structure": "NYSTATINE UBIGEN — Nystatine",
+    "receipt_date": "2026-01-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-02-02",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : 01/02/2017 au 01/02/2022. AMM : Non renseignée",
+    "observations": "Substance active : Nystatine. Forme : Suspension orale. Période : 01/02/2017 au 01/02/2022",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-02",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-02-02",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7f138265-ecbe-42f3-b6f7-11b51d89247c",
+        "name": "PSUR_Rapport_NYSTATINE_UBIGEN.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-29",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-29T08:00:00Z",
+    "updated_at": "2026-02-02T16:00:00Z"
+  },
+  {
+    "id": "08e10e4c-1557-449f-8fc2-d370c222bba0",
+    "folder_number": "PSUR/2026/016",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (PARACETAMOL TM)",
+    "structure": "PARACETAMOL TM — Paracétamol",
+    "receipt_date": "2026-02-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-03",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-02-03",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : -. AMM : Non renseignée",
+    "observations": "Substance active : Paracétamol. Forme : Comprimés. Période : -",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-03",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-02-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3273c417-6d50-40f2-a679-c7ceb4005511",
+        "name": "PSUR_Rapport_PARACETAMOL_TM.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-02-02",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-02T08:00:00Z",
+    "updated_at": "2026-02-03T16:00:00Z"
+  },
+  {
+    "id": "487acd58-2d9f-4298-b682-ce774cbb779f",
+    "folder_number": "PSUR/2026/017",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (NORFLOXACINE TM)",
+    "structure": "NORFLOXACINE TM — Norfloxacine",
+    "receipt_date": "2026-02-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-03",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-02-03",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : -. AMM : Non renseignée",
+    "observations": "Substance active : Norfloxacine. Forme : Comprimés. Période : -",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-03",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-02-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9c11142d-6b26-40bf-b104-62cb0c70ef62",
+        "name": "PSUR_Rapport_NORFLOXACINE_TM.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-02-02",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-02T08:00:00Z",
+    "updated_at": "2026-02-03T16:00:00Z"
+  },
+  {
+    "id": "21a3b61a-647d-4c08-b7ff-c0ab6b4b81e7",
+    "folder_number": "PSUR/2026/018",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (TINIDAZOL TM)",
+    "structure": "TINIDAZOL TM — Tinidazole",
+    "receipt_date": "2026-02-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-03",
+    "decision": "Avis avec réserves",
+    "decision_date": "2026-02-03",
+    "decision_notes": "Évaluation PSUR : Ne passe pas à l'évaluation technique. Période couverte : -. AMM : Non renseignée",
+    "observations": "Substance active : Tinidazole. Forme : Comprimés. Période : -",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-03",
+    "commission_avis": "Avis avec réserves",
+    "missing_documents": "",
+    "notification_date": "2026-02-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "639a1a31-832f-42e7-a281-408226a978bc",
+        "name": "PSUR_Rapport_TINIDAZOL_TM.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-02-02",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-02T08:00:00Z",
+    "updated_at": "2026-02-03T16:00:00Z"
+  },
+  {
+    "id": "eda463ac-8844-48fe-bff2-fa9c55593a43",
+    "folder_number": "PSUR/2026/019",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (BIOMIST)",
+    "structure": "BIOMIST — Xylometazoline",
+    "receipt_date": "2026-01-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-02-03",
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 21/07/2022 au 09/05/2025. AMM : Non renseignée",
+    "observations": "Substance active : Xylometazoline. Forme : Spray nasal. Période : 21/07/2022 au 09/05/2025",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": "2026-02-03",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e7b3aa4b-9f08-4d12-93c2-2639e3068678",
+        "name": "PSUR_Rapport_BIOMIST.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-29",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-29T08:00:00Z",
+    "updated_at": "2026-02-03T16:00:00Z"
+  },
+  {
+    "id": "3e83adb7-cdb9-4713-887e-6adb37e1be25",
+    "folder_number": "PSUR/2026/020",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (TRIALGIC)",
+    "structure": "TRIALGIC — PARACETAMOL, IBUPROFENE ET CAFFEINE",
+    "receipt_date": "2026-01-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-03-16",
+    "decision": "Favorable",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Évalué. Période couverte : . AMM : Non renseignée",
+    "observations": "Substance active : PARACETAMOL, IBUPROFENE ET CAFFEINE. Forme : Capsules. Période : ",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "47a456d4-20e8-48f4-ac4b-a87d1852542e",
+        "name": "PSUR_Rapport_TRIALGIC.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-15",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-15T08:00:00Z",
+    "updated_at": "2026-01-15T16:00:00Z"
+  },
+  {
+    "id": "55b5a1e8-50ac-4821-b193-f131b2a5325b",
+    "folder_number": "PSUR/2026/021",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (IXINE)",
+    "structure": "IXINE — Céfixime",
+    "receipt_date": "2026-01-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-03-16",
+    "decision": "Favorable",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Évalué. Période couverte : . AMM : Non renseignée",
+    "observations": "Substance active : Céfixime. Forme : Comprim. Période : ",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e81dd6e1-9406-4c11-8f2a-56c9f275dacf",
+        "name": "PSUR_Rapport_IXINE.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-15",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-15T08:00:00Z",
+    "updated_at": "2026-01-15T16:00:00Z"
+  },
+  {
+    "id": "7da670ed-51d5-4082-a5b4-1f6cb81af9e7",
+    "folder_number": "PSUR/2026/022",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (BEDELIX)",
+    "structure": "BEDELIX — Beidellitic montmorillonite",
+    "receipt_date": "2026-01-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-03-16",
+    "decision": "Favorable",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Évalué. Période couverte : . AMM : Non renseignée",
+    "observations": "Substance active : Beidellitic montmorillonite. Forme : . Période : ",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8e1aac21-189f-45fb-9447-1976b556accb",
+        "name": "PSUR_Rapport_BEDELIX.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-15",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-15T08:00:00Z",
+    "updated_at": "2026-01-15T16:00:00Z"
+  },
+  {
+    "id": "8c5b5c2d-e0d0-476e-ab3f-56f77fb6e0db",
+    "folder_number": "PSUR/2026/023",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (ARTESUPPO)",
+    "structure": "ARTESUPPO — Artésunate",
+    "receipt_date": "2026-01-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-03-16",
+    "decision": "Favorable",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Évalué. Période couverte : . AMM : Non renseignée",
+    "observations": "Substance active : Artésunate. Forme : . Période : ",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "572f9daa-be52-42f3-b519-b595e3dc19f3",
+        "name": "PSUR_Rapport_ARTESUPPO.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-15",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-15T08:00:00Z",
+    "updated_at": "2026-01-15T16:00:00Z"
+  },
+  {
+    "id": "1c2654f9-9ab3-494a-93a9-d07c747a0c7a",
+    "folder_number": "PSUR/2026/024",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (CEFIXIME)",
+    "structure": "CEFIXIME — Céfixime",
+    "receipt_date": "2026-01-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-03-16",
+    "decision": "Favorable",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Évalué. Période couverte : . AMM : Non renseignée",
+    "observations": "Substance active : Céfixime. Forme : . Période : ",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b912c878-1968-4991-ab12-612ee6443a92",
+        "name": "PSUR_Rapport_CEFIXIME.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-01-15",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-15T08:00:00Z",
+    "updated_at": "2026-01-15T16:00:00Z"
+  },
+  {
+    "id": "65a6aeaa-30a2-49c9-962c-bb1e968458d8",
+    "folder_number": "PSUR/2026/025",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (DYNAPAR QPS)",
+    "structure": "DYNAPAR QPS — Diclofenac Diethylamine",
+    "receipt_date": "2026-07-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-09-08",
+    "decision": "Favorable",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 03/2013 à 02/2026. AMM : Non renseignée",
+    "observations": "Substance active : Diclofenac Diethylamine. Forme : Spray. Période : 03/2013 à 02/2026",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9c876d92-0bdf-4371-a33b-b43354242746",
+        "name": "PSUR_Rapport_DYNAPAR_QPS.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-07-10",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-10T08:00:00Z",
+    "updated_at": "2026-07-10T16:00:00Z"
+  },
+  {
+    "id": "131fb600-9884-4bd3-bb63-c691cf32f4a8",
+    "folder_number": "PSUR/2026/026",
+    "folder_type": "Revue PSUR / PBRER / DSUR",
+    "applicant": "Laboratoire détenteur (PLASMOCUR)",
+    "structure": "PLASMOCUR — Dihydroarteminisin piperaquine \ntetraphosphate",
+    "receipt_date": "2026-05-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000005",
+    "manager_name": "Dr. AROUNA Radihath",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 75,
+    "due_date": "2026-07-14",
+    "decision": "Favorable",
+    "decision_date": null,
+    "decision_notes": "Évaluation PSUR : Passe à l'évaluation technique. Période couverte : 15/12/2015 au 31/12/2023. AMM : Non renseignée",
+    "observations": "Substance active : Dihydroarteminisin piperaquine \ntetraphosphate. Forme : Comprimés. Période : 15/12/2015 au 31/12/2023",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Commission Technique SVPS",
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Rapport périodique actualisé de sécurité (PSUR/PBRER)",
+        "is_present": true
+      },
+      {
+        "piece": "Données d'exposition des patients",
+        "is_present": true
+      },
+      {
+        "piece": "Synthèse des notifications d'effets indésirables",
+        "is_present": true
+      },
+      {
+        "piece": "Plan de gestion des risques (PGR)",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e4f89a0c-b7f9-4a5f-a9d7-9f4f42dca164",
+        "name": "PSUR_Rapport_PLASMOCUR.pdf",
+        "file_type": "PDF",
+        "size_kb": 1420,
+        "uploaded_at": "2026-05-15",
+        "uploaded_by_name": "Détenteur AMM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-15T08:00:00Z",
+    "updated_at": "2026-05-15T16:00:00Z"
+  },
+  {
+    "id": "224d4edb-7742-4bbb-9202-dc3e92a808dc",
+    "folder_number": "EC/2026/001",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (CHU-BEN-AJA-051)",
+    "structure": "Essai Clinique — Patient CHU-BEN-AJA-051",
+    "receipt_date": "2025-07-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2025-07-30",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Asthenia. Gravité : Décés. Imputabilité : Non",
+    "observations": "Patient : CHU-BEN-AJA-051 (23 mois, Féminin). Description : Début spontané avec une agitation la nuit les parents auraient dnné du paracétamol la même nuit pour la fièvre",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7e68ba41-0641-4766-9704-2b292a414431",
+        "name": "Notification_EIG_Essai_CHU-BEN-AJA-051.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2025-07-15",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-07-15T08:00:00Z",
+    "updated_at": "2025-07-15T14:30:00Z"
+  },
+  {
+    "id": "d3de5937-4116-4b29-943f-8b1002b0ec1c",
+    "folder_number": "EC/2026/002",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO-BEN-HPO-061)",
+    "structure": "Essai Clinique — Patient GHO-BEN-HPO-061",
+    "receipt_date": "2025-07-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2025-08-12",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Rougeole compliquée de bronchopneumopathie. Gravité : Non. Imputabilité : Non",
+    "observations": "Patient : GHO-BEN-HPO-061 (48 mois, Masculin). Description : Rougeole compliquée de bronchopneumopathie/MAPI",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e2a87ad8-4a56-4099-95ee-b9e81d8df89f",
+        "name": "Notification_EIG_Essai_GHO-BEN-HPO-061.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2025-07-28",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-07-28T08:00:00Z",
+    "updated_at": "2025-07-28T14:30:00Z"
+  },
+  {
+    "id": "c5bfaa9f-ef1e-4694-be96-27d8e608d5e7",
+    "folder_number": "EC/2026/003",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO-BEN-HPO-086)",
+    "structure": "Essai Clinique — Patient GHO-BEN-HPO-086",
+    "receipt_date": "2025-08-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2025-08-19",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Anémia. Gravité : Non. Imputabilité : Non",
+    "observations": "Patient : GHO-BEN-HPO-086 (24 mois, Masculin). Description : Salmonellose compliquée d’anémie sévère décompensée",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e956a709-772d-4760-896f-991b2d53cbe1",
+        "name": "Notification_EIG_Essai_GHO-BEN-HPO-086.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2025-08-04",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-08-04T08:00:00Z",
+    "updated_at": "2025-08-04T14:30:00Z"
+  },
+  {
+    "id": "b4ec187a-cbf3-4f63-88c5-ddd4095b5d14",
+    "folder_number": "EC/2026/004",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (CHU-BEN-AJA-329)",
+    "structure": "Essai Clinique — Patient CHU-BEN-AJA-329",
+    "receipt_date": "2025-10-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2025-11-10",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Respiratory distress. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : CHU-BEN-AJA-329 (12 mois, Féminin). Description : Détresse respiratoire",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1b2bb3b1-4e30-435c-b6cf-3d055e01453d",
+        "name": "Notification_EIG_Essai_CHU-BEN-AJA-329.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2025-10-26",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-10-26T08:00:00Z",
+    "updated_at": "2025-10-26T14:30:00Z"
+  },
+  {
+    "id": "0afc3789-cd2f-46b1-a6bb-764fac87c76c",
+    "folder_number": "EC/2026/005",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (CHU BEN \nAJA 258)",
+    "structure": "Essai Clinique — Patient CHU BEN \nAJA 258",
+    "receipt_date": "2025-09-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2025-10-05",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Anémia. Gravité : Non. Imputabilité : Non",
+    "observations": "Patient : CHU BEN \nAJA 258 (24 mois, Féminin). Description : Anémie sévère décompensée",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e36c4396-27fa-4713-a1fc-353853b38826",
+        "name": "Notification_EIG_Essai_CHU_BEN__AJA_258.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2025-09-20",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-09-20T08:00:00Z",
+    "updated_at": "2025-09-20T14:30:00Z"
+  },
+  {
+    "id": "86184606-e3e6-4c43-a233-a114179ce347",
+    "folder_number": "EC/2026/006",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (CHU-BEN-ADI-\n644)",
+    "structure": "Essai Clinique — Patient CHU-BEN-ADI-\n644",
+    "receipt_date": "2026-03-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-04-10",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Respiratory distress. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : CHU-BEN-ADI-\n644 (10 mois, Féminin). Description : Détresse respiratoire aigüe sévère",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "cc8326ca-c645-4b6e-8c5b-de591fb2b720",
+        "name": "Notification_EIG_Essai_CHU-BEN-ADI-_644.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-03-26",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-26T08:00:00Z",
+    "updated_at": "2026-03-26T14:30:00Z"
+  },
+  {
+    "id": "5205238a-9832-46e1-93ae-761877b78db8",
+    "folder_number": "EC/2026/007",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (CHU BEN \nNMI 436)",
+    "structure": "Essai Clinique — Patient CHU BEN \nNMI 436",
+    "receipt_date": "2026-02-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-03-13",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Abdomonal pain, vomiting. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : CHU BEN \nNMI 436 (36 mois, Féminin). Description : Douleurs abdominales + vomissements,",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3e19feef-335c-4dd6-af18-aa8514ab388b",
+        "name": "Notification_EIG_Essai_CHU_BEN__NMI_436.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-02-26",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-26T08:00:00Z",
+    "updated_at": "2026-02-26T14:30:00Z"
+  },
+  {
+    "id": "632b947d-2c1c-4e5a-b565-53c4cd555fef",
+    "folder_number": "EC/2026/008",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO BEN NMI 459)",
+    "structure": "Essai Clinique — Patient GHO BEN NMI 459",
+    "receipt_date": "2026-04-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-04-16",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Gastroenteritis. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : GHO BEN NMI 459 (12 mois, Féminin). Description : Veille avant admission par une fièvre non chiffrée , 03 épisodre de vomissements, 03 épisodes de selles liquidiennes, une toux, une rhinorhée et des geignement.",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6c4653d5-409d-44ce-adfa-780d4df00409",
+        "name": "Notification_EIG_Essai_GHO_BEN_NMI_459.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-04-01",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-01T08:00:00Z",
+    "updated_at": "2026-04-01T14:30:00Z"
+  },
+  {
+    "id": "88f7eff9-5b51-44a1-94bb-eabc46bd9e75",
+    "folder_number": "EC/2026/009",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO BEN ADI 243)",
+    "structure": "Essai Clinique — Patient GHO BEN ADI 243",
+    "receipt_date": "2026-08-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-08-20",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Malaria. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : GHO BEN ADI 243 (36 mois, Féminin). Description : Paludisme grave",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c1e2f3a1-733e-47b3-94a3-0ff861b364e8",
+        "name": "Notification_EIG_Essai_GHO_BEN_ADI_243.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-08-05",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-05T08:00:00Z",
+    "updated_at": "2026-08-05T14:30:00Z"
+  },
+  {
+    "id": "7efc1c7b-b476-40b6-bf86-cf8ebb81f55d",
+    "folder_number": "EC/2026/010",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO BEN EWI 189)",
+    "structure": "Essai Clinique — Patient GHO BEN EWI 189",
+    "receipt_date": "2026-08-06",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-08-21",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Anémia. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : GHO BEN EWI 189 (23 mois, Masculin). Description : Crise vaso occlusive à 5mois du suivi sur terrain d’hémoglobinopathie",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9f3b7220-8e02-4e7b-bb2d-61c542fa15e3",
+        "name": "Notification_EIG_Essai_GHO_BEN_EWI_189.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-08-06",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-06T08:00:00Z",
+    "updated_at": "2026-08-06T14:30:00Z"
+  },
+  {
+    "id": "accfb8f5-b367-4025-b2db-df1bcbb83e0d",
+    "folder_number": "EC/2026/011",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO BEN ADI 456)",
+    "structure": "Essai Clinique — Patient GHO BEN ADI 456",
+    "receipt_date": "2026-06-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-06-29",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Respiratory distress. Gravité : Décés. Imputabilité : Non",
+    "observations": "Patient : GHO BEN ADI 456 (24 mois, Féminin). Description : Détresse respiratoire",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0ee58866-848e-44e8-9e82-7d7cd612199e",
+        "name": "Notification_EIG_Essai_GHO_BEN_ADI_456.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-06-14",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-14T08:00:00Z",
+    "updated_at": "2026-06-14T14:30:00Z"
+  },
+  {
+    "id": "868a9fb7-1987-485e-b789-884c83032c39",
+    "folder_number": "EC/2026/012",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO BEN EWI 040)",
+    "structure": "Essai Clinique — Patient GHO BEN EWI 040",
+    "receipt_date": "2026-07-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-07-29",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Malaria. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : GHO BEN EWI 040 (24 mois, Masculin). Description : paludisme grave \n(vomissements incoercibles, prostration)",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "bb398a34-a618-4f33-93c2-b37816bf1820",
+        "name": "Notification_EIG_Essai_GHO_BEN_EWI_040.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-07-14",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-14T08:00:00Z",
+    "updated_at": "2026-07-14T14:30:00Z"
+  },
+  {
+    "id": "061487d4-8f17-4b23-afd5-bc0a2a149593",
+    "folder_number": "EC/2026/013",
+    "folder_type": "Essai Clinique & EIG",
+    "applicant": "Centre d'Essai Clinique (GHO BEN EWI 462)",
+    "structure": "Essai Clinique — Patient GHO BEN EWI 462",
+    "receipt_date": "2026-07-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000002",
+    "manager_name": "Dr. HOUNGUE Perrin",
+    "priority": "haute",
+    "status": "validation",
+    "progress_percentage": 85,
+    "due_date": "2026-08-06",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Rapport d'EIG en cours d'évaluation. Terme MedDRA : Metobolic dossorder. Gravité : oui (hospitalisation). Imputabilité : Non",
+    "observations": "Patient : GHO BEN EWI 462 (06 ans, Masculin). Description : Trouble métabolique",
+    "target_service": "Service de la Vigilance des Produits de Santé (SVPS)",
+    "commission_name": "Comité d’Experts",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Fiche de déclaration d'EIG essai clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Protocole d'investigation clinique",
+        "is_present": true
+      },
+      {
+        "piece": "Rapport médical initial d'hospitalisation",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a5da771d-9909-4f34-b51c-ea089654dd85",
+        "name": "Notification_EIG_Essai_GHO_BEN_EWI_462.pdf",
+        "file_type": "PDF",
+        "size_kb": 890,
+        "uploaded_at": "2026-07-22",
+        "uploaded_by_name": "Investigateur Principal"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-22T08:00:00Z",
+    "updated_at": "2026-07-22T14:30:00Z"
+  },
+  {
+    "id": "bceed45a-719f-48b2-b2f0-c9bec615d1a9",
+    "folder_number": "AA/2026/0093",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU-LERE",
+    "structure": "CHUZ SURU-LERE",
+    "receipt_date": "2025-02-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2025-02-17",
+    "decision": "Favorable",
+    "decision_date": "2025-02-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 147. Visé C/SSMUR le 2025-02-04",
+    "observations": "Demande réf: 147. Traitement PRA le 2025-02-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2025-02-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "78ddb271-0def-4640-b920-38f8b584e909",
+        "name": "Demande_Autorisation_Achat_147.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2025-02-03",
+        "uploaded_by_name": "CHUZ SURU-LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-02-03T08:00:00Z",
+    "updated_at": "2025-02-04T15:00:00Z"
+  },
+  {
+    "id": "c87944ca-d306-4354-a517-25e27a6a188b",
+    "folder_number": "AA/2026/0179",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Sakete",
+    "structure": "HZ Sakete",
+    "receipt_date": "2025-04-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2025-04-29",
+    "decision": "Favorable",
+    "decision_date": "2025-04-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 400. Visé C/SSMUR le 2025-04-17",
+    "observations": "Demande réf: 400. Traitement PRA le 2025-04-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2025-04-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ecd4b2e1-5835-4dd0-847d-9299f49cb752",
+        "name": "Demande_Autorisation_Achat_400.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2025-04-15",
+        "uploaded_by_name": "HZ Sakete"
+      }
+    ],
+    "comments": [],
+    "created_at": "2025-04-15T08:00:00Z",
+    "updated_at": "2025-04-17T15:00:00Z"
+  },
+  {
+    "id": "85cd3bd2-aefb-4b45-bf5f-9ba35f956b85",
+    "folder_number": "AA/2026/ ",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Bembèrèkè-Sinendé",
+    "structure": "ZS Bembèrèkè-Sinendé",
+    "receipt_date": "2026-02-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "traitement",
+    "progress_percentage": 60,
+    "due_date": "2026-02-15",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Dossier reçu pour ZS Bembèrèkè-Sinendé",
+    "observations": "Réf demande : DEM- ",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "491906cc-4c35-49cf-8354-3345414a46a9",
+        "name": "Demande_Autorisation_Achat_DEM- .pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-01",
+        "uploaded_by_name": "ZS Bembèrèkè-Sinendé"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-01T08:00:00Z",
+    "updated_at": "2026-02-01T15:00:00Z"
+  },
+  {
+    "id": "932d17a3-290f-43b7-8c8e-3094cfd16aeb",
+    "folder_number": "AA/2026/0001",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Kandi",
+    "structure": "HZ Kandi",
+    "receipt_date": "2026-01-06",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-20",
+    "decision": "Favorable",
+    "decision_date": "2026-01-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 001/2026. Visé C/SSMUR le 2026-01-06",
+    "observations": "Demande réf: 001/2026. Traitement PRA le 2026-01-06",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c92f0f2b-1a3e-485d-a004-8afbebf2adfb",
+        "name": "Demande_Autorisation_Achat_001_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-06",
+        "uploaded_by_name": "HZ Kandi"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-06T08:00:00Z",
+    "updated_at": "2026-01-06T15:00:00Z"
+  },
+  {
+    "id": "a30c54c5-1935-434e-928c-fb053e95cf92",
+    "folder_number": "AA/2026/0002",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Natitingou",
+    "structure": "HZ Natitingou",
+    "receipt_date": "2026-01-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-21",
+    "decision": "Favorable",
+    "decision_date": "2026-01-07",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 5. Visé C/SSMUR le 2026-01-07",
+    "observations": "Demande réf: 5. Traitement PRA le 2026-01-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-07",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7673cca9-c4a8-46e5-8e80-ed39b5f5fec5",
+        "name": "Demande_Autorisation_Achat_5.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-07",
+        "uploaded_by_name": "HZ Natitingou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-07T08:00:00Z",
+    "updated_at": "2026-01-07T15:00:00Z"
+  },
+  {
+    "id": "58491d98-767b-4cfa-8696-2878d8cc810e",
+    "folder_number": "AA/2026/0003",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-01-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-21",
+    "decision": "Favorable",
+    "decision_date": "2026-01-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 19. Visé C/SSMUR le 2026-01-12",
+    "observations": "Demande réf: 19. Traitement PRA le 2026-01-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d134b22c-ec9b-4a9f-8c0e-a391691bc2cb",
+        "name": "Demande_Autorisation_Achat_19.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-07",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-07T08:00:00Z",
+    "updated_at": "2026-01-12T15:00:00Z"
+  },
+  {
+    "id": "3c94ef1b-c4eb-4df3-bc4c-4cd7c55c8033",
+    "folder_number": "AA/2026/0004",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-01-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-21",
+    "decision": "Favorable",
+    "decision_date": "2026-01-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0017/2026. Visé C/SSMUR le 2026-01-12",
+    "observations": "Demande réf: 0017/2026. Traitement PRA le 2026-01-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2f2c5300-e7f7-4eea-859b-d1d04b31f32f",
+        "name": "Demande_Autorisation_Achat_0017_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-07",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-07T08:00:00Z",
+    "updated_at": "2026-01-12T15:00:00Z"
+  },
+  {
+    "id": "34155066-30b6-49a1-906c-8633930fd786",
+    "folder_number": "AA/2026/0005",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD Oueme Plateau",
+    "structure": "CHUD Oueme Plateau",
+    "receipt_date": "2026-01-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-21",
+    "decision": "Favorable",
+    "decision_date": "2026-01-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-5. Visé C/SSMUR le 2026-01-16",
+    "observations": "Demande réf: DEM-5. Traitement PRA le 2026-01-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7af2acfc-ce94-4490-83c0-055790a2bb67",
+        "name": "Demande_Autorisation_Achat_DEM-5.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-07",
+        "uploaded_by_name": "CHUD Oueme Plateau"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-07T08:00:00Z",
+    "updated_at": "2026-01-16T15:00:00Z"
+  },
+  {
+    "id": "88630319-23ed-4bd9-869a-145f7aa9aebc",
+    "folder_number": "AA/2026/0006",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD Oueme Plateau",
+    "structure": "CHUD Oueme Plateau",
+    "receipt_date": "2026-01-13",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-27",
+    "decision": "Favorable",
+    "decision_date": "2026-01-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-6. Visé C/SSMUR le 2026-01-16",
+    "observations": "Demande réf: DEM-6. Traitement PRA le 2026-01-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b7b705f9-0f9e-46d3-9dee-067d0437b522",
+        "name": "Demande_Autorisation_Achat_DEM-6.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-13",
+        "uploaded_by_name": "CHUD Oueme Plateau"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-13T08:00:00Z",
+    "updated_at": "2026-01-16T15:00:00Z"
+  },
+  {
+    "id": "d419782f-dc42-446f-a0b7-0ac54cc45d0a",
+    "folder_number": "AA/2026/0007",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU",
+    "structure": "CNHU",
+    "receipt_date": "2026-01-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-28",
+    "decision": "Favorable",
+    "decision_date": "2026-01-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0057/2026. Visé C/SSMUR le 2026-01-16",
+    "observations": "Demande réf: 0057/2026. Traitement PRA le 2026-01-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "12338e55-fd34-4037-965c-8933ed3c26aa",
+        "name": "Demande_Autorisation_Achat_0057_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-14",
+        "uploaded_by_name": "CNHU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-14T08:00:00Z",
+    "updated_at": "2026-01-16T15:00:00Z"
+  },
+  {
+    "id": "bf7c61ae-6c34-43a1-900f-0472633a5138",
+    "folder_number": "AA/2026/0008",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Adjohoun",
+    "structure": "HZ Adjohoun",
+    "receipt_date": "2026-01-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-29",
+    "decision": "Favorable",
+    "decision_date": "2026-01-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0036/25. Visé C/SSMUR le 2026-01-16",
+    "observations": "Demande réf: 0036/25. Traitement PRA le 2026-01-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "362dfcfc-a864-453b-a4b8-4507b62ffed3",
+        "name": "Demande_Autorisation_Achat_0036_25.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-15",
+        "uploaded_by_name": "HZ Adjohoun"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-15T08:00:00Z",
+    "updated_at": "2026-01-16T15:00:00Z"
+  },
+  {
+    "id": "9f3f06a2-8334-4893-8f40-717d08c52c2e",
+    "folder_number": "AA/2026/0009",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-01-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-01-30",
+    "decision": "Favorable",
+    "decision_date": "2026-01-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0065/2026. Visé C/SSMUR le 2026-01-16",
+    "observations": "Demande réf: 0065/2026. Traitement PRA le 2026-01-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "de4cac19-f20c-44ee-bb8b-1846670cacdb",
+        "name": "Demande_Autorisation_Achat_0065_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-16",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-16T08:00:00Z",
+    "updated_at": "2026-01-16T15:00:00Z"
+  },
+  {
+    "id": "75508681-7705-43b5-b2c0-9fa5bd0d8a67",
+    "folder_number": "AA/2026/0011",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Lokossa-Athiémè",
+    "structure": "ZS Lokossa-Athiémè",
+    "receipt_date": "2026-01-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-02",
+    "decision": "Favorable",
+    "decision_date": "2026-01-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 065/26. Visé C/SSMUR le 2026-01-19",
+    "observations": "Demande réf: 065/26. Traitement PRA le 2026-01-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8f84e8de-41be-47d8-a69a-1dea54fc66fa",
+        "name": "Demande_Autorisation_Achat_065_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-19",
+        "uploaded_by_name": "ZS Lokossa-Athiémè"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-19T08:00:00Z",
+    "updated_at": "2026-01-19T15:00:00Z"
+  },
+  {
+    "id": "297e51fc-6bf0-437c-88ce-b01e9ad1d334",
+    "folder_number": "AA/2026/0012",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Sakété-Ifangni",
+    "structure": "ZS Sakété-Ifangni",
+    "receipt_date": "2026-01-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-02",
+    "decision": "Favorable",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 009/2026. Visé C/SSMUR le 2026-01-20",
+    "observations": "Demande réf: 009/2026. Traitement PRA le 2026-01-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "60113c4c-b9e0-44b2-82da-fa9505bdfc58",
+        "name": "Demande_Autorisation_Achat_009_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-19",
+        "uploaded_by_name": "ZS Sakété-Ifangni"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-19T08:00:00Z",
+    "updated_at": "2026-01-20T15:00:00Z"
+  },
+  {
+    "id": "9e70f5d1-3d66-4e97-8e59-d110c5189756",
+    "folder_number": "AA/2026/0013",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Djidja",
+    "structure": "HZ Djidja",
+    "receipt_date": "2026-01-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-02",
+    "decision": "Favorable",
+    "decision_date": "2026-01-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 020/26. Visé C/SSMUR le 2026-01-20",
+    "observations": "Demande réf: 020/26. Traitement PRA le 2026-01-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c30b5624-6140-423f-af74-2cd9d716b341",
+        "name": "Demande_Autorisation_Achat_020_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-19",
+        "uploaded_by_name": "HZ Djidja"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-19T08:00:00Z",
+    "updated_at": "2026-01-20T15:00:00Z"
+  },
+  {
+    "id": "abf552ce-1335-4a97-981f-fd05eaa026bd",
+    "folder_number": "AA/2026/0014",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Aplahoue",
+    "structure": "HZ Aplahoue",
+    "receipt_date": "2026-01-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-03",
+    "decision": "Favorable",
+    "decision_date": "2026-01-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 038/26. Visé C/SSMUR le 2026-01-21",
+    "observations": "Demande réf: 038/26. Traitement PRA le 2026-01-21",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ee3187a3-054d-4efc-a695-2922f84122f6",
+        "name": "Demande_Autorisation_Achat_038_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-20",
+        "uploaded_by_name": "HZ Aplahoue"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-20T08:00:00Z",
+    "updated_at": "2026-01-21T15:00:00Z"
+  },
+  {
+    "id": "0bc96536-4743-4408-897f-34cbfbd8ddec",
+    "folder_number": "AA/2026/0015",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Malanville-Karimama",
+    "structure": "HZ Malanville-Karimama",
+    "receipt_date": "2026-01-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-03",
+    "decision": "Favorable",
+    "decision_date": "2026-01-22",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 001/26. Visé C/SSMUR le 2026-01-22",
+    "observations": "Demande réf: 001/26. Traitement PRA le 2026-01-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-22",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a04749b7-93f8-4fc6-a931-57978ae6fd31",
+        "name": "Demande_Autorisation_Achat_001_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-20",
+        "uploaded_by_name": "HZ Malanville-Karimama"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-20T08:00:00Z",
+    "updated_at": "2026-01-22T15:00:00Z"
+  },
+  {
+    "id": "f286ba7a-c5a1-41be-b4ec-c0a304cac672",
+    "folder_number": "AA/2026/0016",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Borgou",
+    "structure": "CHD Borgou",
+    "receipt_date": "2026-01-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-05",
+    "decision": "Favorable",
+    "decision_date": "2026-01-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 26-0259. Visé C/SSMUR le 2026-01-23",
+    "observations": "Demande réf: 26-0259. Traitement PRA le 2026-01-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "63f3c8d4-f28e-4065-a3cc-29062a0b3b25",
+        "name": "Demande_Autorisation_Achat_26-0259.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-22",
+        "uploaded_by_name": "CHD Borgou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-22T08:00:00Z",
+    "updated_at": "2026-01-23T15:00:00Z"
+  },
+  {
+    "id": "627d17a4-1bd1-4d58-a964-3517da8f2794",
+    "folder_number": "AA/2026/0017",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-01-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-06",
+    "decision": "Favorable",
+    "decision_date": "2026-01-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 012/2026. Visé C/SSMUR le 2026-01-23",
+    "observations": "Demande réf: 012/2026. Traitement PRA le 2026-01-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ff106702-c694-42b1-8427-f3f87e73c0c2",
+        "name": "Demande_Autorisation_Achat_012_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-23",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-23T08:00:00Z",
+    "updated_at": "2026-01-23T15:00:00Z"
+  },
+  {
+    "id": "8c0b13ea-b58d-416a-931d-bf5e8841c303",
+    "folder_number": "AA/2026/0018",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Ouidah-Kpomassè-Tori-Bossito",
+    "structure": "ZS Ouidah-Kpomassè-Tori-Bossito",
+    "receipt_date": "2026-01-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-06",
+    "decision": "Favorable",
+    "decision_date": "2026-01-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 37. Visé C/SSMUR le 2026-01-23",
+    "observations": "Demande réf: 37. Traitement PRA le 2026-01-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5399d766-cee8-47ca-b6c0-fe6d7cf2ce8d",
+        "name": "Demande_Autorisation_Achat_37.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-23",
+        "uploaded_by_name": "ZS Ouidah-Kpomassè-Tori-Bossito"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-23T08:00:00Z",
+    "updated_at": "2026-01-23T15:00:00Z"
+  },
+  {
+    "id": "dd173e1d-12a4-42ba-b8de-5c23ce46a2fc",
+    "folder_number": "AA/2026/0019",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Ouidah",
+    "structure": "HZ Ouidah",
+    "receipt_date": "2026-01-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-09",
+    "decision": "Favorable",
+    "decision_date": "2026-01-26",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0158/26. Visé C/SSMUR le 2026-01-26",
+    "observations": "Demande réf: 0158/26. Traitement PRA le 2026-01-26",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-26",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "27f61a26-b975-4dce-ada6-510859bfd02c",
+        "name": "Demande_Autorisation_Achat_0158_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-26",
+        "uploaded_by_name": "HZ Ouidah"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-26T08:00:00Z",
+    "updated_at": "2026-01-26T15:00:00Z"
+  },
+  {
+    "id": "2aeee03b-0148-4880-bb0a-9763b7114125",
+    "folder_number": "AA/2026/0020",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-01-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-09",
+    "decision": "Favorable",
+    "decision_date": "2026-01-26",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0122/2026. Visé C/SSMUR le 2026-01-26",
+    "observations": "Demande réf: 0122/2026. Traitement PRA le 2026-01-26",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-26",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "73234019-8427-4f34-91d5-0dfe51ae5681",
+        "name": "Demande_Autorisation_Achat_0122_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-26",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-26T08:00:00Z",
+    "updated_at": "2026-01-26T15:00:00Z"
+  },
+  {
+    "id": "b026673b-2d2e-4b93-9768-f52e8a04867f",
+    "folder_number": "AA/2026/0021",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 1-Cotonou 4",
+    "structure": "ZS Cotonou 1-Cotonou 4",
+    "receipt_date": "2026-01-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-09",
+    "decision": "Favorable",
+    "decision_date": "2026-01-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0048/26. Visé C/SSMUR le 2026-01-27",
+    "observations": "Demande réf: 0048/26. Traitement PRA le 2026-01-26",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2206542a-e9bf-4362-8c38-04af963ef045",
+        "name": "Demande_Autorisation_Achat_0048_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-26",
+        "uploaded_by_name": "ZS Cotonou 1-Cotonou 4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-26T08:00:00Z",
+    "updated_at": "2026-01-27T15:00:00Z"
+  },
+  {
+    "id": "901ffde1-2afb-49c6-a19a-6b84377f7b80",
+    "folder_number": "AA/2026/0022",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Covè-Zagnanado-Ouinhi",
+    "structure": "ZS Covè-Zagnanado-Ouinhi",
+    "receipt_date": "2026-01-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-10",
+    "decision": "Favorable",
+    "decision_date": "2026-01-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0109/2026. Visé C/SSMUR le 2026-01-27",
+    "observations": "Demande réf: 0109/2026. Traitement PRA le 2026-01-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2ec37a4c-e212-4bbd-b06c-3523a8f1f4ab",
+        "name": "Demande_Autorisation_Achat_0109_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-27",
+        "uploaded_by_name": "ZS Covè-Zagnanado-Ouinhi"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-27T08:00:00Z",
+    "updated_at": "2026-01-27T15:00:00Z"
+  },
+  {
+    "id": "8f380f18-402d-47c8-aa23-4b016978cd90",
+    "folder_number": "AA/2026/0023",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Come",
+    "structure": "HZ Come",
+    "receipt_date": "2026-01-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-10",
+    "decision": "Favorable",
+    "decision_date": "2026-01-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 043/044/050/2026. Visé C/SSMUR le 2026-01-28",
+    "observations": "Demande réf: 043/044/050/2026. Traitement PRA le 2026-01-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3d4b9edb-2516-4efb-b0b7-85a33a94ff90",
+        "name": "Demande_Autorisation_Achat_043_044_050_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-27",
+        "uploaded_by_name": "HZ Come"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-27T08:00:00Z",
+    "updated_at": "2026-01-28T15:00:00Z"
+  },
+  {
+    "id": "2a13f855-f2c7-434c-8e26-c339ed50697c",
+    "folder_number": "AA/2026/0025",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Djidja",
+    "structure": "HZ Djidja",
+    "receipt_date": "2026-01-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-10",
+    "decision": "Favorable",
+    "decision_date": "2026-01-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 046/26. Visé C/SSMUR le 2026-01-28",
+    "observations": "Demande réf: 046/26. Traitement PRA le 2026-01-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f0b929c8-eba0-4135-8fef-619eebb01757",
+        "name": "Demande_Autorisation_Achat_046_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-27",
+        "uploaded_by_name": "HZ Djidja"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-27T08:00:00Z",
+    "updated_at": "2026-01-28T15:00:00Z"
+  },
+  {
+    "id": "603b6172-89a9-42fc-bb1d-d23f68c38096",
+    "folder_number": "AA/2026/0026",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 5",
+    "structure": "ZS Cotonou 5",
+    "receipt_date": "2026-01-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-10",
+    "decision": "Favorable",
+    "decision_date": "2026-01-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0049/26. Visé C/SSMUR le 2026-01-28",
+    "observations": "Demande réf: 0049/26. Traitement PRA le 2026-01-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "751d2945-d885-4f31-a2b2-f0881860a041",
+        "name": "Demande_Autorisation_Achat_0049_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-27",
+        "uploaded_by_name": "ZS Cotonou 5"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-27T08:00:00Z",
+    "updated_at": "2026-01-28T15:00:00Z"
+  },
+  {
+    "id": "cf2b6598-372b-43f3-89c5-51dd2066c1ee",
+    "folder_number": "AA/2026/0027",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Malanville-Karimama",
+    "structure": "HZ Malanville-Karimama",
+    "receipt_date": "2026-01-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-11",
+    "decision": "Favorable",
+    "decision_date": "2026-01-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 001/26. Visé C/SSMUR le 2026-01-29",
+    "observations": "Demande réf: 001/26. Traitement PRA le 2026-01-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0a7766be-88f0-409c-a2bd-7a4032a3248a",
+        "name": "Demande_Autorisation_Achat_001_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-28",
+        "uploaded_by_name": "HZ Malanville-Karimama"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-28T08:00:00Z",
+    "updated_at": "2026-01-29T15:00:00Z"
+  },
+  {
+    "id": "15d7e8c5-f143-46e1-9e59-75d14e639501",
+    "folder_number": "AA/2026/0028",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Menontin",
+    "structure": "HZ Menontin",
+    "receipt_date": "2026-01-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-10",
+    "decision": "Favorable",
+    "decision_date": "2026-01-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 18. Visé C/SSMUR le 2026-01-29",
+    "observations": "Demande réf: 18. Traitement PRA le 2026-01-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d5512643-7389-43a3-a293-7089b2307992",
+        "name": "Demande_Autorisation_Achat_18.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-27",
+        "uploaded_by_name": "HZ Menontin"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-27T08:00:00Z",
+    "updated_at": "2026-01-29T15:00:00Z"
+  },
+  {
+    "id": "b4fbf81a-15ed-4b20-b48f-76c5e3e80416",
+    "folder_number": "AA/2026/0029",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU-LERE",
+    "structure": "CHUZ SURU-LERE",
+    "receipt_date": "2026-01-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-11",
+    "decision": "Favorable",
+    "decision_date": "2026-01-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0103/0104/2025. Visé C/SSMUR le 2026-01-29",
+    "observations": "Demande réf: 0103/0104/2025. Traitement PRA le 2026-01-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3b99c44e-33dc-444d-b51e-96634cf10cc9",
+        "name": "Demande_Autorisation_Achat_0103_0104_2025.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-28",
+        "uploaded_by_name": "CHUZ SURU-LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-28T08:00:00Z",
+    "updated_at": "2026-01-29T15:00:00Z"
+  },
+  {
+    "id": "fe967c57-f837-4999-a0fc-1ea7ce5ca0c1",
+    "folder_number": "AA/2026/0030",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU-PPC",
+    "structure": "CNHU-PPC",
+    "receipt_date": "2026-01-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-12",
+    "decision": "Favorable",
+    "decision_date": "2026-01-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 132/2026. Visé C/SSMUR le 2026-01-29",
+    "observations": "Demande réf: 132/2026. Traitement PRA le 2026-01-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "db80e3b8-f083-4e57-89b6-de660f749252",
+        "name": "Demande_Autorisation_Achat_132_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-29",
+        "uploaded_by_name": "CNHU-PPC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-29T08:00:00Z",
+    "updated_at": "2026-01-29T15:00:00Z"
+  },
+  {
+    "id": "276eff9e-c0da-4ef3-98db-f915ddce5df6",
+    "folder_number": "AA/2026/0031",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Ouidah",
+    "structure": "HZ Ouidah",
+    "receipt_date": "2026-01-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-12",
+    "decision": "Favorable",
+    "decision_date": "2026-01-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0270/26. Visé C/SSMUR le 2026-01-30",
+    "observations": "Demande réf: 0270/26. Traitement PRA le 2026-01-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-01-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "19619b6a-e50d-44d7-aac4-a170b1bed364",
+        "name": "Demande_Autorisation_Achat_0270_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-01-29",
+        "uploaded_by_name": "HZ Ouidah"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-01-29T08:00:00Z",
+    "updated_at": "2026-01-30T15:00:00Z"
+  },
+  {
+    "id": "e6efe8b8-8fc3-47d3-874c-5c4da03858d1",
+    "folder_number": "AA/2026/0032",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-02-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-16",
+    "decision": "Favorable",
+    "decision_date": "2026-02-02",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 5. Visé C/SSMUR le 2026-02-02",
+    "observations": "Demande réf: 5. Traitement PRA le 2026-02-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-02",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d7840bf4-93f8-4d83-934f-cc546243ed31",
+        "name": "Demande_Autorisation_Achat_5.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-02",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-02T08:00:00Z",
+    "updated_at": "2026-02-02T15:00:00Z"
+  },
+  {
+    "id": "f86eba84-5f9f-4bc9-8e75-24e3bd1ae5c0",
+    "folder_number": "AA/2026/0033",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Adjohoun",
+    "structure": "HZ Adjohoun",
+    "receipt_date": "2026-02-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-16",
+    "decision": "Favorable",
+    "decision_date": "2026-02-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0168/26. Visé C/SSMUR le 2026-02-04",
+    "observations": "Demande réf: 0168/26. Traitement PRA le 2026-02-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "24832414-fd62-4aee-b476-0ca87e3d4e7f",
+        "name": "Demande_Autorisation_Achat_0168_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-02",
+        "uploaded_by_name": "HZ Adjohoun"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-02T08:00:00Z",
+    "updated_at": "2026-02-04T15:00:00Z"
+  },
+  {
+    "id": "c1f8d4e1-9f17-4568-ad82-99d73e44f909",
+    "folder_number": "AA/2026/0034",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Porto-Novo-Sèmè-kpodji-Aguégués",
+    "structure": "ZS Porto-Novo-Sèmè-kpodji-Aguégués",
+    "receipt_date": "2026-02-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-17",
+    "decision": "Favorable",
+    "decision_date": "2026-02-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 138. Visé C/SSMUR le 2026-02-04",
+    "observations": "Demande réf: 138. Traitement PRA le 2026-03-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b4a0b09a-e2a2-48a6-ba0e-5c8a9da9a526",
+        "name": "Demande_Autorisation_Achat_138.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-03",
+        "uploaded_by_name": "ZS Porto-Novo-Sèmè-kpodji-Aguégués"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-03T08:00:00Z",
+    "updated_at": "2026-02-04T15:00:00Z"
+  },
+  {
+    "id": "8ea4f870-d597-476b-9660-77932271115e",
+    "folder_number": "AA/2026/0035",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-02-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-17",
+    "decision": "Favorable",
+    "decision_date": "2026-04-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 091/2026. Visé C/SSMUR le 2026-04-04",
+    "observations": "Demande réf: 091/2026. Traitement PRA le 2026-02-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0fc13228-64f7-483f-9a00-1c91a285841f",
+        "name": "Demande_Autorisation_Achat_091_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-03",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-03T08:00:00Z",
+    "updated_at": "2026-04-04T15:00:00Z"
+  },
+  {
+    "id": "5af2478e-4e81-4949-871e-a3fcb0b3d7f3",
+    "folder_number": "AA/2026/0036",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Aplahoué-Djakotomey-Dogbo",
+    "structure": "ZS Aplahoué-Djakotomey-Dogbo",
+    "receipt_date": "2026-02-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-17",
+    "decision": "Favorable",
+    "decision_date": "2026-02-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 031/26. Visé C/SSMUR le 2026-02-04",
+    "observations": "Demande réf: 031/26. Traitement PRA le 2026-02-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "97173d9a-08c3-4890-8d33-f562244e3faa",
+        "name": "Demande_Autorisation_Achat_031_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-03",
+        "uploaded_by_name": "ZS Aplahoué-Djakotomey-Dogbo"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-03T08:00:00Z",
+    "updated_at": "2026-02-04T15:00:00Z"
+  },
+  {
+    "id": "f4dffc53-d8af-45d4-9e3b-f29a26c1d681",
+    "folder_number": "AA/2026/0037",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Abomey-Calavi",
+    "structure": "HZ Abomey-Calavi",
+    "receipt_date": "2026-02-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-17",
+    "decision": "Favorable",
+    "decision_date": "2026-02-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 047/26. Visé C/SSMUR le 2026-02-04",
+    "observations": "Demande réf: 047/26. Traitement PRA le 2026-02-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f4e7bc98-bb61-4365-82d0-ab12ea89b8a9",
+        "name": "Demande_Autorisation_Achat_047_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-03",
+        "uploaded_by_name": "HZ Abomey-Calavi"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-03T08:00:00Z",
+    "updated_at": "2026-02-04T15:00:00Z"
+  },
+  {
+    "id": "ec0147ea-eff9-4ffd-b568-e75281239e88",
+    "folder_number": "AA/2026/0038",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Natitingou",
+    "structure": "HZ Natitingou",
+    "receipt_date": "2026-02-06",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-20",
+    "decision": "Favorable",
+    "decision_date": "2026-02-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 134. Visé C/SSMUR le 2026-02-09",
+    "observations": "Demande réf: 134. Traitement PRA le 2026-02-06",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "275318c6-4a9d-4782-883b-8582a1b2fb8b",
+        "name": "Demande_Autorisation_Achat_134.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-06",
+        "uploaded_by_name": "HZ Natitingou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-06T08:00:00Z",
+    "updated_at": "2026-02-09T15:00:00Z"
+  },
+  {
+    "id": "97f8e2ce-710a-4cf1-a028-977bc07f97d8",
+    "folder_number": "AA/2026/0039",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Lokossa",
+    "structure": "HZ Lokossa",
+    "receipt_date": "2026-02-06",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-20",
+    "decision": "Favorable",
+    "decision_date": "2026-02-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 021/26. Visé C/SSMUR le 2026-02-09",
+    "observations": "Demande réf: 021/26. Traitement PRA le 2026-02-06",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f63313a3-7737-4783-8aac-2618183dc163",
+        "name": "Demande_Autorisation_Achat_021_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-06",
+        "uploaded_by_name": "HZ Lokossa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-06T08:00:00Z",
+    "updated_at": "2026-02-09T15:00:00Z"
+  },
+  {
+    "id": "066e3388-4b72-4e2b-9f56-10f64c4bcb16",
+    "folder_number": "AA/2026/0040",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-02-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-23",
+    "decision": "Favorable",
+    "decision_date": "2026-02-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0250/2026. Visé C/SSMUR le 2026-02-09",
+    "observations": "Demande réf: 0250/2026. Traitement PRA le 2026-02-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7002e650-2ed2-4801-b4c2-966121925a2b",
+        "name": "Demande_Autorisation_Achat_0250_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-09",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-09T08:00:00Z",
+    "updated_at": "2026-02-09T15:00:00Z"
+  },
+  {
+    "id": "2ee132b1-ed1f-4e1f-9e45-73d0d0bb1070",
+    "folder_number": "AA/2026/0041",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-02-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-23",
+    "decision": "Favorable",
+    "decision_date": "2026-02-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0248/0249. Visé C/SSMUR le 2026-02-09",
+    "observations": "Demande réf: 0248/0249. Traitement PRA le 2026-02-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b44b8811-05f5-4083-abb0-cbbd95080eb3",
+        "name": "Demande_Autorisation_Achat_0248_0249.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-09",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-09T08:00:00Z",
+    "updated_at": "2026-02-09T15:00:00Z"
+  },
+  {
+    "id": "980b65cc-f9fc-4de2-a961-baee0cd141a4",
+    "folder_number": "AA/2026/0042",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Comè-Grand popo-Houèyogbé-Bopa",
+    "structure": "ZS Comè-Grand popo-Houèyogbé-Bopa",
+    "receipt_date": "2026-02-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-23",
+    "decision": "Favorable",
+    "decision_date": "2026-02-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0188/26. Visé C/SSMUR le 2026-02-09",
+    "observations": "Demande réf: 0188/26. Traitement PRA le 2026-02-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c096db89-1a83-4ae3-9829-1e587853fd58",
+        "name": "Demande_Autorisation_Achat_0188_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-09",
+        "uploaded_by_name": "ZS Comè-Grand popo-Houèyogbé-Bopa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-09T08:00:00Z",
+    "updated_at": "2026-02-09T15:00:00Z"
+  },
+  {
+    "id": "ed4bcd57-e7f8-4563-81c7-7b33f2c7a9a1",
+    "folder_number": "AA/2026/0043",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Klouekanme",
+    "structure": "HZ Klouekanme",
+    "receipt_date": "2026-02-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-24",
+    "decision": "Favorable",
+    "decision_date": "2026-02-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 278/26. Visé C/SSMUR le 2026-02-11",
+    "observations": "Demande réf: 278/26. Traitement PRA le 2026-02-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "818483e7-2623-47bd-afac-863e7eb6d58d",
+        "name": "Demande_Autorisation_Achat_278_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-10",
+        "uploaded_by_name": "HZ Klouekanme"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-10T08:00:00Z",
+    "updated_at": "2026-02-11T15:00:00Z"
+  },
+  {
+    "id": "fe69b7ec-11a4-4154-bab5-4bc936339747",
+    "folder_number": "AA/2026/0044",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Kandi",
+    "structure": "HZ Kandi",
+    "receipt_date": "2026-02-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-24",
+    "decision": "Favorable",
+    "decision_date": "2026-02-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0154/2026. Visé C/SSMUR le 2026-02-11",
+    "observations": "Demande réf: 0154/2026. Traitement PRA le 2026-02-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "11a439e2-4136-4c2f-9ec2-033509f086af",
+        "name": "Demande_Autorisation_Achat_0154_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-10",
+        "uploaded_by_name": "HZ Kandi"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-10T08:00:00Z",
+    "updated_at": "2026-02-11T15:00:00Z"
+  },
+  {
+    "id": "8b5c4ba6-ac8e-4c61-8bdd-f0129690e168",
+    "folder_number": "AA/2026/0045",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Mono",
+    "structure": "CHD Mono",
+    "receipt_date": "2026-02-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-25",
+    "decision": "Favorable",
+    "decision_date": "2026-02-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 047/26. Visé C/SSMUR le 2026-02-11",
+    "observations": "Demande réf: 047/26. Traitement PRA le 2026-02-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0b0ce462-75ea-47e2-bb43-745fca244343",
+        "name": "Demande_Autorisation_Achat_047_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-11",
+        "uploaded_by_name": "CHD Mono"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-11T08:00:00Z",
+    "updated_at": "2026-02-11T15:00:00Z"
+  },
+  {
+    "id": "b7aecd30-128d-4954-bc8b-6890d451e71e",
+    "folder_number": "AA/2026/0046",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Banikoara",
+    "structure": "HZ Banikoara",
+    "receipt_date": "2026-02-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-25",
+    "decision": "Favorable",
+    "decision_date": "2026-02-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 059/2026. Visé C/SSMUR le 2026-02-12",
+    "observations": "Demande réf: 059/2026. Traitement PRA le 2026-02-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "cc95a092-4fde-4567-8aa7-44babd88c330",
+        "name": "Demande_Autorisation_Achat_059_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-11",
+        "uploaded_by_name": "HZ Banikoara"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-11T08:00:00Z",
+    "updated_at": "2026-02-12T15:00:00Z"
+  },
+  {
+    "id": "0f0b26ff-e7b5-4e00-9119-ecd9f0e5befc",
+    "folder_number": "AA/2026/0047",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Bohicon-Za-kpota-Zogbodomey",
+    "structure": "ZS Bohicon-Za-kpota-Zogbodomey",
+    "receipt_date": "2026-02-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-26",
+    "decision": "Favorable",
+    "decision_date": "2026-02-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0082/2026. Visé C/SSMUR le 2026-02-12",
+    "observations": "Demande réf: 0082/2026. Traitement PRA le 2026-02-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0e5a192a-22a7-47f0-bb66-b4dffc93af4d",
+        "name": "Demande_Autorisation_Achat_0082_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-12",
+        "uploaded_by_name": "ZS Bohicon-Za-kpota-Zogbodomey"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-12T08:00:00Z",
+    "updated_at": "2026-02-12T15:00:00Z"
+  },
+  {
+    "id": "3622397c-ac2a-4ddf-8ea1-50970fd7709e",
+    "folder_number": "AA/2026/0048",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Borgou",
+    "structure": "CHD Borgou",
+    "receipt_date": "2026-02-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-26",
+    "decision": "Favorable",
+    "decision_date": "2026-02-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0508/26. Visé C/SSMUR le 2026-02-12",
+    "observations": "Demande réf: 0508/26. Traitement PRA le 2026-02-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3b1ba032-3f79-4990-8e08-11afe894345d",
+        "name": "Demande_Autorisation_Achat_0508_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-12",
+        "uploaded_by_name": "CHD Borgou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-12T08:00:00Z",
+    "updated_at": "2026-02-12T15:00:00Z"
+  },
+  {
+    "id": "96122348-2a90-4463-b7f9-7c3a2f7b5ade",
+    "folder_number": "AA/2026/0049",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU-HKM",
+    "structure": "CNHU-HKM",
+    "receipt_date": "2026-02-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-26",
+    "decision": "Favorable",
+    "decision_date": "2026-02-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0452/2026. Visé C/SSMUR le 2026-02-12",
+    "observations": "Demande réf: 0452/2026. Traitement PRA le 2026-02-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "785c39ab-560c-403c-a03b-9f6efa7fb40e",
+        "name": "Demande_Autorisation_Achat_0452_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-12",
+        "uploaded_by_name": "CNHU-HKM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-12T08:00:00Z",
+    "updated_at": "2026-02-12T15:00:00Z"
+  },
+  {
+    "id": "750d9fc7-a856-4596-9a40-a474396d50c2",
+    "folder_number": "AA/2026/0050",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Malanville-Karimama",
+    "structure": "ZS Malanville-Karimama",
+    "receipt_date": "2026-02-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-02-26",
+    "decision": "Favorable",
+    "decision_date": "2026-02-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0124/2026. Visé C/SSMUR le 2026-02-12",
+    "observations": "Demande réf: 0124/2026. Traitement PRA le 2026-02-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "76f85ce5-3239-4e24-90dd-1c58b0b32775",
+        "name": "Demande_Autorisation_Achat_0124_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-12",
+        "uploaded_by_name": "ZS Malanville-Karimama"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-12T08:00:00Z",
+    "updated_at": "2026-02-12T15:00:00Z"
+  },
+  {
+    "id": "ee31e947-e724-4376-ba34-af9ce9801614",
+    "folder_number": "AA/2026/0051",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-02-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-02",
+    "decision": "Favorable",
+    "decision_date": "2026-02-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 124/2026. Visé C/SSMUR le 2026-02-17",
+    "observations": "Demande réf: 124/2026. Traitement PRA le 2026-02-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "239df459-ad3c-4204-9f22-4d87c77a100d",
+        "name": "Demande_Autorisation_Achat_124_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-16",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-16T08:00:00Z",
+    "updated_at": "2026-02-17T15:00:00Z"
+  },
+  {
+    "id": "401be5fc-2a38-4955-a7dc-aa4f20bfad5d",
+    "folder_number": "AA/2026/0052",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Zou",
+    "structure": "CHD Zou",
+    "receipt_date": "2026-02-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-03",
+    "decision": "Favorable",
+    "decision_date": "2026-02-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-52. Visé C/SSMUR le 2026-02-18",
+    "observations": "Demande réf: DEM-52. Traitement PRA le 2026-02-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e137a033-3c8e-43a4-b3cf-98b8639c9e79",
+        "name": "Demande_Autorisation_Achat_DEM-52.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-17",
+        "uploaded_by_name": "CHD Zou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-17T08:00:00Z",
+    "updated_at": "2026-02-18T15:00:00Z"
+  },
+  {
+    "id": "e38fb870-c89a-401a-9064-74807d41b5fa",
+    "folder_number": "AA/2026/0053",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Pobe",
+    "structure": "HZ Pobe",
+    "receipt_date": "2026-02-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-03",
+    "decision": "Favorable",
+    "decision_date": "2026-02-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 22. Visé C/SSMUR le 2026-02-18",
+    "observations": "Demande réf: 22. Traitement PRA le 2026-02-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "84661afb-0270-42b8-bbec-ba5fb468017e",
+        "name": "Demande_Autorisation_Achat_22.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-17",
+        "uploaded_by_name": "HZ Pobe"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-17T08:00:00Z",
+    "updated_at": "2026-02-18T15:00:00Z"
+  },
+  {
+    "id": "09d799e3-e566-4eb1-9fd5-a1f02d207932",
+    "folder_number": "AA/2026/0054",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-02-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-03",
+    "decision": "Favorable",
+    "decision_date": "2026-02-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 416/26. Visé C/SSMUR le 2026-02-18",
+    "observations": "Demande réf: 416/26. Traitement PRA le 2026-02-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e96f5836-2b76-4f2a-83af-044dd31e15c8",
+        "name": "Demande_Autorisation_Achat_416_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-17",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-17T08:00:00Z",
+    "updated_at": "2026-02-18T15:00:00Z"
+  },
+  {
+    "id": "61f71bc2-dde6-4761-b5f8-a9130316e947",
+    "folder_number": "AA/2026/0055",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Klouekanme",
+    "structure": "HZ Klouekanme",
+    "receipt_date": "2026-02-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-04",
+    "decision": "Favorable",
+    "decision_date": "2026-02-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 336/26. Visé C/SSMUR le 2026-02-18",
+    "observations": "Demande réf: 336/26. Traitement PRA le 2026-02-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b65cd4bc-5de3-457a-a6ee-3fe51003b1f2",
+        "name": "Demande_Autorisation_Achat_336_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-18",
+        "uploaded_by_name": "HZ Klouekanme"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-18T08:00:00Z",
+    "updated_at": "2026-02-18T15:00:00Z"
+  },
+  {
+    "id": "599c7106-4466-43ca-b830-085fba4c760e",
+    "folder_number": "AA/2026/0056",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Sakete",
+    "structure": "HZ Sakete",
+    "receipt_date": "2026-02-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-05",
+    "decision": "Favorable",
+    "decision_date": "2026-02-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 036/26. Visé C/SSMUR le 2026-02-19",
+    "observations": "Demande réf: 036/26. Traitement PRA le 2026-02-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8a274d01-a8f9-4088-b740-0e365bfba111",
+        "name": "Demande_Autorisation_Achat_036_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-19",
+        "uploaded_by_name": "HZ Sakete"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-19T08:00:00Z",
+    "updated_at": "2026-02-19T15:00:00Z"
+  },
+  {
+    "id": "11b46e5b-b1ee-439f-b987-5e7fcd0b99ef",
+    "folder_number": "AA/2026/0057",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Tchaourou",
+    "structure": "ZS Tchaourou",
+    "receipt_date": "2026-02-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-05",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 126/2026. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: 126/2026. Traitement PRA le 2026-02-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "83a6f91f-7797-4b72-88dc-644d97755f32",
+        "name": "Demande_Autorisation_Achat_126_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-19",
+        "uploaded_by_name": "ZS Tchaourou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-19T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "776a7408-b21e-4976-b37a-a6b46dbad38e",
+    "folder_number": "AA/2026/0058",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD Oueme Plateau",
+    "structure": "CHUD Oueme Plateau",
+    "receipt_date": "2026-02-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-05",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-58. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: DEM-58. Traitement PRA le 2026-02-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "64b2afe6-08f9-4719-9284-0d6a363f2e22",
+        "name": "Demande_Autorisation_Achat_DEM-58.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-19",
+        "uploaded_by_name": "CHUD Oueme Plateau"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-19T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "ed15535a-c1b4-43ba-91a3-08639bc6c535",
+    "folder_number": "AA/2026/0059",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-02-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-05",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 141/2026. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: 141/2026. Traitement PRA le 2026-02-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2951f44c-e3fb-4b53-9b0d-f2f8edd3dacd",
+        "name": "Demande_Autorisation_Achat_141_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-19",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-19T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "acd42e7a-6610-46d3-801d-1aa507f96151",
+    "folder_number": "AA/2026/0060",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-02-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-05",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0011/26. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: 0011/26. Traitement PRA le 2026-02-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f312ddbf-79ca-4458-93a2-4f35d4ba5564",
+        "name": "Demande_Autorisation_Achat_0011_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-19",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-19T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "fc2e8f1b-89d3-43ec-b5a2-9383fffcf10f",
+    "folder_number": "AA/2026/0061",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS N'Dali-Parakou",
+    "structure": "ZS N'Dali-Parakou",
+    "receipt_date": "2026-02-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-06",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 092/25. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: 092/25. Traitement PRA le 2026-02-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5c07c540-c4a7-4fcc-bdf8-415d79ea37d8",
+        "name": "Demande_Autorisation_Achat_092_25.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-20",
+        "uploaded_by_name": "ZS N'Dali-Parakou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-20T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "60134e5a-d1f4-4aa9-a317-89115042657d",
+    "folder_number": "AA/2026/0062",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Pobè-Kétou-Adja-ouèrè",
+    "structure": "ZS Pobè-Kétou-Adja-ouèrè",
+    "receipt_date": "2026-02-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-06",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0303/2025. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: 0303/2025. Traitement PRA le 2026-02-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b174d236-7eb4-4662-8cab-bf5b4d2dfb43",
+        "name": "Demande_Autorisation_Achat_0303_2025.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-20",
+        "uploaded_by_name": "ZS Pobè-Kétou-Adja-ouèrè"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-20T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "7557180d-e1f9-4808-aa67-6ece56b71667",
+    "folder_number": "AA/2026/0063",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 1-Cotonou 4",
+    "structure": "ZS Cotonou 1-Cotonou 4",
+    "receipt_date": "2026-02-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-06",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0214/26. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: 0214/26. Traitement PRA le 2026-02-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "28926e36-1aed-4d96-b139-ef890901a742",
+        "name": "Demande_Autorisation_Achat_0214_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-20",
+        "uploaded_by_name": "ZS Cotonou 1-Cotonou 4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-20T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "65c03da4-d5d8-443e-afb6-1d0fb37639ae",
+    "folder_number": "AA/2026/0064",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Banikoara",
+    "structure": "HZ Banikoara",
+    "receipt_date": "2026-02-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-06",
+    "decision": "Favorable",
+    "decision_date": "2026-02-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 072/2026. Visé C/SSMUR le 2026-02-20",
+    "observations": "Demande réf: 072/2026. Traitement PRA le 2026-02-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b9e973e9-50ef-4b05-af0d-b4a536a9ae32",
+        "name": "Demande_Autorisation_Achat_072_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-20",
+        "uploaded_by_name": "HZ Banikoara"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-20T08:00:00Z",
+    "updated_at": "2026-02-20T15:00:00Z"
+  },
+  {
+    "id": "793a760e-9168-448e-80a5-3a3035c23edb",
+    "folder_number": "AA/2026/0065",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Lokossa",
+    "structure": "HZ Lokossa",
+    "receipt_date": "2026-02-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-09",
+    "decision": "Favorable",
+    "decision_date": "2026-02-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 030/26. Visé C/SSMUR le 2026-02-23",
+    "observations": "Demande réf: 030/26. Traitement PRA le 2026-02-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2d9698a0-8d87-40b0-aaff-b928d7d42461",
+        "name": "Demande_Autorisation_Achat_030_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-23",
+        "uploaded_by_name": "HZ Lokossa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-23T08:00:00Z",
+    "updated_at": "2026-02-23T15:00:00Z"
+  },
+  {
+    "id": "9ee877cb-2fb2-4a62-83e1-44f6f3c9a998",
+    "folder_number": "AA/2026/0066",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Sakete",
+    "structure": "HZ Sakete",
+    "receipt_date": "2026-02-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-09",
+    "decision": "Favorable",
+    "decision_date": "2026-02-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 041/26. Visé C/SSMUR le 2026-02-23",
+    "observations": "Demande réf: 041/26. Traitement PRA le 2026-02-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7de4a404-0d8c-4310-ade7-a2b5cd2db4e3",
+        "name": "Demande_Autorisation_Achat_041_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-23",
+        "uploaded_by_name": "HZ Sakete"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-23T08:00:00Z",
+    "updated_at": "2026-02-23T15:00:00Z"
+  },
+  {
+    "id": "1a034ae4-1e2f-4dd1-b09c-61cc333f0ab0",
+    "folder_number": "AA/2026/0067",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-02-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-09",
+    "decision": "Favorable",
+    "decision_date": "2026-02-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0343/2026. Visé C/SSMUR le 2026-02-23",
+    "observations": "Demande réf: 0343/2026. Traitement PRA le 2026-02-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d02eec68-b85a-465b-90e8-6ff77d8bfa25",
+        "name": "Demande_Autorisation_Achat_0343_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-23",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-23T08:00:00Z",
+    "updated_at": "2026-02-23T15:00:00Z"
+  },
+  {
+    "id": "19f1411b-fd64-46a9-b184-2ca779bb1d51",
+    "folder_number": "AA/2026/0068",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Mono",
+    "structure": "CHD Mono",
+    "receipt_date": "2026-02-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-10",
+    "decision": "Favorable",
+    "decision_date": "2026-02-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 057/26. Visé C/SSMUR le 2026-02-24",
+    "observations": "Demande réf: 057/26. Traitement PRA le 2026-02-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2ded7dd8-dc55-4c42-a67a-a4645c244787",
+        "name": "Demande_Autorisation_Achat_057_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-24",
+        "uploaded_by_name": "CHD Mono"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-24T08:00:00Z",
+    "updated_at": "2026-02-24T15:00:00Z"
+  },
+  {
+    "id": "1db2e27e-d7c1-467e-b7a5-80c7fadf4f0d",
+    "folder_number": "AA/2026/0069",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Natitingou",
+    "structure": "HZ Natitingou",
+    "receipt_date": "2026-02-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-10",
+    "decision": "Favorable",
+    "decision_date": "2026-02-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 129. Visé C/SSMUR le 2026-02-24",
+    "observations": "Demande réf: 129. Traitement PRA le 2026-02-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3c915385-257b-437a-bbc1-bb4e18f37b21",
+        "name": "Demande_Autorisation_Achat_129.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-24",
+        "uploaded_by_name": "HZ Natitingou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-24T08:00:00Z",
+    "updated_at": "2026-02-24T15:00:00Z"
+  },
+  {
+    "id": "29d285c7-973f-468c-8c47-39db752e3a4c",
+    "folder_number": "AA/2026/0070",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Bassila",
+    "structure": "HZ Bassila",
+    "receipt_date": "2026-02-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-10",
+    "decision": "Favorable",
+    "decision_date": "2026-02-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 186/2026. Visé C/SSMUR le 2026-02-24",
+    "observations": "Demande réf: 186/2026. Traitement PRA le 2026-02-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1f563082-01d1-4246-aff4-cfbdc4639ccb",
+        "name": "Demande_Autorisation_Achat_186_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-24",
+        "uploaded_by_name": "HZ Bassila"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-24T08:00:00Z",
+    "updated_at": "2026-02-24T15:00:00Z"
+  },
+  {
+    "id": "b2ea9d94-27a6-40f3-8995-01cd59cfef45",
+    "folder_number": "AA/2026/0071",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Adjohoun-Bonou-Dangbo",
+    "structure": "ZS Adjohoun-Bonou-Dangbo",
+    "receipt_date": "2026-02-25",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-11",
+    "decision": "Favorable",
+    "decision_date": "2026-02-25",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0303/26. Visé C/SSMUR le 2026-02-25",
+    "observations": "Demande réf: 0303/26. Traitement PRA le 2026-02-25",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-25",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d66972c5-42b1-4937-9b8a-3bf00b49ad23",
+        "name": "Demande_Autorisation_Achat_0303_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-25",
+        "uploaded_by_name": "ZS Adjohoun-Bonou-Dangbo"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-25T08:00:00Z",
+    "updated_at": "2026-02-25T15:00:00Z"
+  },
+  {
+    "id": "1a84ddc3-537a-4e0f-a004-f7fd4a97d5f5",
+    "folder_number": "AA/2026/0072",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Menontin",
+    "structure": "HZ Menontin",
+    "receipt_date": "2026-02-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-12",
+    "decision": "Favorable",
+    "decision_date": "2026-02-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 111. Visé C/SSMUR le 2026-02-27",
+    "observations": "Demande réf: 111. Traitement PRA le 2026-02-26",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6840bc7c-9995-4769-a028-bce013ae2bf5",
+        "name": "Demande_Autorisation_Achat_111.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-26",
+        "uploaded_by_name": "HZ Menontin"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-26T08:00:00Z",
+    "updated_at": "2026-02-27T15:00:00Z"
+  },
+  {
+    "id": "88f13fa1-192f-492b-9f0e-549cc69dcf33",
+    "folder_number": "AA/2026/0073",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Djidja-Abomey-Agbangnizoun",
+    "structure": "ZS Djidja-Abomey-Agbangnizoun",
+    "receipt_date": "2026-02-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-12",
+    "decision": "Favorable",
+    "decision_date": "2026-02-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 88/26. Visé C/SSMUR le 2026-02-27",
+    "observations": "Demande réf: 88/26. Traitement PRA le 2026-02-26",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1d52ca4a-2d2e-47f4-b8d5-70874b15820a",
+        "name": "Demande_Autorisation_Achat_88_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-26",
+        "uploaded_by_name": "ZS Djidja-Abomey-Agbangnizoun"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-26T08:00:00Z",
+    "updated_at": "2026-02-27T15:00:00Z"
+  },
+  {
+    "id": "45c09bf5-4fcf-4648-b07a-6d634998bf11",
+    "folder_number": "AA/2026/0074",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Donga",
+    "structure": "CHD Donga",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-02-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 028/2026. Visé C/SSMUR le 2026-02-27",
+    "observations": "Demande réf: 028/2026. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "662728b4-efa3-4afc-a447-1a133c90bb56",
+        "name": "Demande_Autorisation_Achat_028_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "CHD Donga"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-02-27T15:00:00Z"
+  },
+  {
+    "id": "17f53667-69a0-42a8-beba-0b6cd62270b9",
+    "folder_number": "AA/2026/0075",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-02-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0387/2026. Visé C/SSMUR le 2026-02-27",
+    "observations": "Demande réf: 0387/2026. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b4c1abcc-dcbe-4e75-9de8-8404cb60d2af",
+        "name": "Demande_Autorisation_Achat_0387_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-02-27T15:00:00Z"
+  },
+  {
+    "id": "07931026-b042-437a-9a2d-a1d91445ad91",
+    "folder_number": "AA/2026/0076",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Klouekanme",
+    "structure": "HZ Klouekanme",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-02-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 380/26. Visé C/SSMUR le 2026-02-27",
+    "observations": "Demande réf: 380/26. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f1584e24-59b3-4f9f-8ecf-1ff468bc1783",
+        "name": "Demande_Autorisation_Achat_380_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "HZ Klouekanme"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-02-27T15:00:00Z"
+  },
+  {
+    "id": "568a5333-7fde-43b1-8173-558ba30017c8",
+    "folder_number": "AA/2026/0077",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 6",
+    "structure": "ZS Cotonou 6",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-03-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0283/2026. Visé C/SSMUR le 2026-03-03",
+    "observations": "Demande réf: 0283/2026. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9a03e8c1-95f5-4c70-b95e-a1d3723299ec",
+        "name": "Demande_Autorisation_Achat_0283_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "ZS Cotonou 6"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-03-03T15:00:00Z"
+  },
+  {
+    "id": "956c616b-6fc0-4df5-b88b-2068e9ff98ce",
+    "folder_number": "AA/2026/0078",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 1-Cotonou 4",
+    "structure": "ZS Cotonou 1-Cotonou 4",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-03-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0247/26. Visé C/SSMUR le 2026-03-03",
+    "observations": "Demande réf: 0247/26. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3398d60d-fcc7-44e8-82c8-2b8d1c510503",
+        "name": "Demande_Autorisation_Achat_0247_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "ZS Cotonou 1-Cotonou 4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-03-03T15:00:00Z"
+  },
+  {
+    "id": "18afd856-c0b1-4a9e-8781-91660f203514",
+    "folder_number": "AA/2026/0079",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-03-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0385/2026. Visé C/SSMUR le 2026-03-04",
+    "observations": "Demande réf: 0385/2026. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "13858d07-bcce-4381-ad44-6dfad4608e7a",
+        "name": "Demande_Autorisation_Achat_0385_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-03-04T15:00:00Z"
+  },
+  {
+    "id": "9c0ddff0-1080-4441-bf91-fc3e9bc6d18a",
+    "folder_number": "AA/2026/0080",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada",
+    "structure": "HZ Allada",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-03-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0386/2026. Visé C/SSMUR le 2026-03-04",
+    "observations": "Demande réf: 0386/2026. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d83da573-e51a-4398-ad69-c644c01a92c5",
+        "name": "Demande_Autorisation_Achat_0386_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "HZ Allada"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-03-04T15:00:00Z"
+  },
+  {
+    "id": "8b304134-82ec-4376-b918-a9ab76c6c032",
+    "folder_number": "AA/2026/0081",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 1-Cotonou 4",
+    "structure": "ZS Cotonou 1-Cotonou 4",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-03-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 247/2026. Visé C/SSMUR le 2026-03-03",
+    "observations": "Demande réf: 247/2026. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4d886d32-259f-4354-85ff-c50257cfb6d2",
+        "name": "Demande_Autorisation_Achat_247_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "ZS Cotonou 1-Cotonou 4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-03-03T15:00:00Z"
+  },
+  {
+    "id": "411d8adc-b62c-4f8f-ad55-bbbad1bbd7a6",
+    "folder_number": "AA/2026/0082",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Natitingou-Boukoumbé-Toucountouna",
+    "structure": "ZS Natitingou-Boukoumbé-Toucountouna",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-03-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 263/2026. Visé C/SSMUR le 2026-03-03",
+    "observations": "Demande réf: 263/2026. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e1d52fb6-c39f-4144-ab0b-b53ba28dd3fe",
+        "name": "Demande_Autorisation_Achat_263_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "ZS Natitingou-Boukoumbé-Toucountouna"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-03-03T15:00:00Z"
+  },
+  {
+    "id": "f7b6fc3f-926e-42e7-94f3-9af8d9b74790",
+    "folder_number": "AA/2026/0083",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Aplahoue",
+    "structure": "HZ Aplahoue",
+    "receipt_date": "2026-02-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-13",
+    "decision": "Favorable",
+    "decision_date": "2026-03-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 152/26. Visé C/SSMUR le 2026-03-04",
+    "observations": "Demande réf: 152/26. Traitement PRA le 2026-02-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6ab573dd-1e9d-40f5-9e2a-fd716f6a395a",
+        "name": "Demande_Autorisation_Achat_152_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-02-27",
+        "uploaded_by_name": "HZ Aplahoue"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-27T08:00:00Z",
+    "updated_at": "2026-03-04T15:00:00Z"
+  },
+  {
+    "id": "3df68753-b7a7-43b9-9568-3a5a8d91a8d9",
+    "folder_number": "AA/2026/0084",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Nikki-Kalalé-Pèrèrè",
+    "structure": "ZS Nikki-Kalalé-Pèrèrè",
+    "receipt_date": "2026-03-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-16",
+    "decision": "Favorable",
+    "decision_date": "2026-03-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 80/2026. Visé C/SSMUR le 2026-03-03",
+    "observations": "Demande réf: 80/2026. Traitement PRA le 2026-03-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2dcd4ce4-2fcf-446d-8fe9-47d78fe16e74",
+        "name": "Demande_Autorisation_Achat_80_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-02",
+        "uploaded_by_name": "ZS Nikki-Kalalé-Pèrèrè"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-02T08:00:00Z",
+    "updated_at": "2026-03-03T15:00:00Z"
+  },
+  {
+    "id": "e2b3da88-a4bc-40ef-9274-6163c4b64136",
+    "folder_number": "AA/2026/0085",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 6",
+    "structure": "ZS Cotonou 6",
+    "receipt_date": "2026-03-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-17",
+    "decision": "Favorable",
+    "decision_date": "2026-03-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 253/2026. Visé C/SSMUR le 2026-03-04",
+    "observations": "Demande réf: 253/2026. Traitement PRA le 2026-03-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "832bb270-dca8-4d6e-bf1b-401f4a55ed89",
+        "name": "Demande_Autorisation_Achat_253_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-03",
+        "uploaded_by_name": "ZS Cotonou 6"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-03T08:00:00Z",
+    "updated_at": "2026-03-04T15:00:00Z"
+  },
+  {
+    "id": "fc47667e-72b8-467d-9862-bd24557e1f4d",
+    "folder_number": "AA/2026/0086",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Tanguiéta-Cobly-Matéri",
+    "structure": "ZS Tanguiéta-Cobly-Matéri",
+    "receipt_date": "2026-03-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-19",
+    "decision": "Favorable",
+    "decision_date": "2026-03-05",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 296/2026. Visé C/SSMUR le 2026-03-05",
+    "observations": "Demande réf: 296/2026. Traitement PRA le 2026-03-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "29d72870-6889-4eea-898f-90bd1a5e78a9",
+        "name": "Demande_Autorisation_Achat_296_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-05",
+        "uploaded_by_name": "ZS Tanguiéta-Cobly-Matéri"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-05T08:00:00Z",
+    "updated_at": "2026-03-05T15:00:00Z"
+  },
+  {
+    "id": "5bb241b8-3480-4b54-973b-b1c25391b0c6",
+    "folder_number": "AA/2026/0087",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU-LERE",
+    "structure": "CHUZ SURU-LERE",
+    "receipt_date": "2026-03-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-18",
+    "decision": "Favorable",
+    "decision_date": "2026-03-05",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 355/2026. Visé C/SSMUR le 2026-03-05",
+    "observations": "Demande réf: 355/2026. Traitement PRA le 2026-03-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "05d63676-6774-4267-b7ff-5223562b1379",
+        "name": "Demande_Autorisation_Achat_355_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-04",
+        "uploaded_by_name": "CHUZ SURU-LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-04T08:00:00Z",
+    "updated_at": "2026-03-05T15:00:00Z"
+  },
+  {
+    "id": "b95af8c2-b097-4087-ad60-616ace38215a",
+    "folder_number": "AA/2026/0088",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU-LERE",
+    "structure": "CHUZ SURU-LERE",
+    "receipt_date": "2026-03-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-18",
+    "decision": "Favorable",
+    "decision_date": "2026-03-05",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 356/2026. Visé C/SSMUR le 2026-03-05",
+    "observations": "Demande réf: 356/2026. Traitement PRA le 2026-03-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "37a60133-611c-4595-9835-90669847db2a",
+        "name": "Demande_Autorisation_Achat_356_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-04",
+        "uploaded_by_name": "CHUZ SURU-LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-04T08:00:00Z",
+    "updated_at": "2026-03-05T15:00:00Z"
+  },
+  {
+    "id": "1a1798f3-cee1-4038-82b8-4bfd9c6e7f44",
+    "folder_number": "AA/2026/0089",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Lokossa",
+    "structure": "HZ Lokossa",
+    "receipt_date": "2026-03-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-19",
+    "decision": "Favorable",
+    "decision_date": "2026-03-05",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 031/2026. Visé C/SSMUR le 2026-03-05",
+    "observations": "Demande réf: 031/2026. Traitement PRA le 2026-03-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8acdfcfe-e4e2-47b2-a32c-95e620d8b0cc",
+        "name": "Demande_Autorisation_Achat_031_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-05",
+        "uploaded_by_name": "HZ Lokossa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-05T08:00:00Z",
+    "updated_at": "2026-03-05T15:00:00Z"
+  },
+  {
+    "id": "70836ffc-a5f3-471d-a479-0db732c4e4cb",
+    "folder_number": "AA/2026/0090",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Hopital Instruction des Armées Parakou",
+    "structure": "Hopital Instruction des Armées Parakou",
+    "receipt_date": "2026-03-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-23",
+    "decision": "Favorable",
+    "decision_date": "2026-03-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 026-0792. Visé C/SSMUR le 2026-03-09",
+    "observations": "Demande réf: 026-0792. Traitement PRA le 2026-03-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "68fd7bdd-1f8f-4064-9cd0-be81bd95db35",
+        "name": "Demande_Autorisation_Achat_026-0792.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-09",
+        "uploaded_by_name": "Hopital Instruction des Armées Parakou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-09T08:00:00Z",
+    "updated_at": "2026-03-09T15:00:00Z"
+  },
+  {
+    "id": "80d94d62-530a-4d2e-ae81-5465005b4182",
+    "folder_number": "AA/2026/0091",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-03-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-23",
+    "decision": "Favorable",
+    "decision_date": "2026-03-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0204/2026. Visé C/SSMUR le 2026-03-09",
+    "observations": "Demande réf: 0204/2026. Traitement PRA le 2026-03-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "868b0e5c-53f3-4dda-a12e-17b72819c96c",
+        "name": "Demande_Autorisation_Achat_0204_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-09",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-09T08:00:00Z",
+    "updated_at": "2026-03-09T15:00:00Z"
+  },
+  {
+    "id": "4434f2ab-9d49-4318-ade2-42d8609ae387",
+    "folder_number": "AA/2026/0092",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-03-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-23",
+    "decision": "Favorable",
+    "decision_date": "2026-03-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0202/2026. Visé C/SSMUR le 2026-03-09",
+    "observations": "Demande réf: 0202/2026. Traitement PRA le 2026-03-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "91f80731-51d2-4487-9803-e27a0f89dfbf",
+        "name": "Demande_Autorisation_Achat_0202_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-09",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-09T08:00:00Z",
+    "updated_at": "2026-03-09T15:00:00Z"
+  },
+  {
+    "id": "df86e5ac-872c-407b-bd35-99529897727f",
+    "folder_number": "AA/2026/0093",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Lokossa",
+    "structure": "HZ Lokossa",
+    "receipt_date": "2026-03-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-23",
+    "decision": "Favorable",
+    "decision_date": "2026-03-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 048/26. Visé C/SSMUR le 2026-03-09",
+    "observations": "Demande réf: 048/26. Traitement PRA le 2026-03-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6ed24665-0a38-48e8-ae67-cb3b8974c8d9",
+        "name": "Demande_Autorisation_Achat_048_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-09",
+        "uploaded_by_name": "HZ Lokossa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-09T08:00:00Z",
+    "updated_at": "2026-03-09T15:00:00Z"
+  },
+  {
+    "id": "a7d75303-ff63-46cd-bbd3-8cce76dc1bee",
+    "folder_number": "AA/2026/0094",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Kandi-Gogounou-Ségbana",
+    "structure": "ZS Kandi-Gogounou-Ségbana",
+    "receipt_date": "2026-03-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-23",
+    "decision": "Favorable",
+    "decision_date": "2026-03-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0421/2026. Visé C/SSMUR le 2026-03-09",
+    "observations": "Demande réf: 0421/2026. Traitement PRA le 2026-03-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4060c4f8-c002-475e-aa96-4af4835bfb42",
+        "name": "Demande_Autorisation_Achat_0421_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-09",
+        "uploaded_by_name": "ZS Kandi-Gogounou-Ségbana"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-09T08:00:00Z",
+    "updated_at": "2026-03-09T15:00:00Z"
+  },
+  {
+    "id": "99dad250-df20-4b5d-b730-ec5d25f73b0b",
+    "folder_number": "AA/2026/0095",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 2-Cotonou 3",
+    "structure": "ZS Cotonou 2-Cotonou 3",
+    "receipt_date": "2026-03-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-23",
+    "decision": "Favorable",
+    "decision_date": "2026-03-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0265/26. Visé C/SSMUR le 2026-03-16",
+    "observations": "Demande réf: 0265/26. Traitement PRA le 2026-03-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c5614564-9e7c-4008-9eda-bffc77e481a1",
+        "name": "Demande_Autorisation_Achat_0265_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-09",
+        "uploaded_by_name": "ZS Cotonou 2-Cotonou 3"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-09T08:00:00Z",
+    "updated_at": "2026-03-16T15:00:00Z"
+  },
+  {
+    "id": "08795ad4-e85f-41ea-9288-bb5b8910b9ab",
+    "folder_number": "AA/2026/0096",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Bassila",
+    "structure": "HZ Bassila",
+    "receipt_date": "2026-03-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-24",
+    "decision": "Favorable",
+    "decision_date": "2026-03-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 237/2026. Visé C/SSMUR le 2026-03-16",
+    "observations": "Demande réf: 237/2026. Traitement PRA le 2026-03-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ea989a1c-c0c3-456d-b2f3-0209b7543fc8",
+        "name": "Demande_Autorisation_Achat_237_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-10",
+        "uploaded_by_name": "HZ Bassila"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-10T08:00:00Z",
+    "updated_at": "2026-03-16T15:00:00Z"
+  },
+  {
+    "id": "c5013a55-0da2-49ff-8e87-703463aee0a2",
+    "folder_number": "AA/2026/0097",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Bassila",
+    "structure": "HZ Bassila",
+    "receipt_date": "2026-03-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-25",
+    "decision": "Favorable",
+    "decision_date": "2026-03-13",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 247/2026. Visé C/SSMUR le 2026-03-13",
+    "observations": "Demande réf: 247/2026. Traitement PRA le 2026-03-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-13",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e6e289e4-33e9-43d6-be0a-5556b5c4b1eb",
+        "name": "Demande_Autorisation_Achat_247_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-11",
+        "uploaded_by_name": "HZ Bassila"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-11T08:00:00Z",
+    "updated_at": "2026-03-13T15:00:00Z"
+  },
+  {
+    "id": "693d1c98-d683-4d91-8c9b-8272a7762bea",
+    "folder_number": "AA/2026/0098",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Covè-Zagnanado-Ouinhi",
+    "structure": "ZS Covè-Zagnanado-Ouinhi",
+    "receipt_date": "2026-03-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-25",
+    "decision": "Favorable",
+    "decision_date": "2026-03-13",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0347/2026. Visé C/SSMUR le 2026-03-13",
+    "observations": "Demande réf: 0347/2026. Traitement PRA le 2026-03-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-13",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c3988949-10d4-4b2e-9fe0-0baeb25047b4",
+        "name": "Demande_Autorisation_Achat_0347_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-11",
+        "uploaded_by_name": "ZS Covè-Zagnanado-Ouinhi"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-11T08:00:00Z",
+    "updated_at": "2026-03-13T15:00:00Z"
+  },
+  {
+    "id": "e132b3ce-0ce1-4d33-8f73-9640c9b0fa7c",
+    "folder_number": "AA/2026/0099",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Dassa",
+    "structure": "HZ Dassa",
+    "receipt_date": "2026-03-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-25",
+    "decision": "Favorable",
+    "decision_date": "2026-03-13",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 062/2026. Visé C/SSMUR le 2026-03-13",
+    "observations": "Demande réf: 062/2026. Traitement PRA le 2026-03-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-13",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6ed0b3b4-60ea-4940-afbb-587798999cbc",
+        "name": "Demande_Autorisation_Achat_062_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-11",
+        "uploaded_by_name": "HZ Dassa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-11T08:00:00Z",
+    "updated_at": "2026-03-13T15:00:00Z"
+  },
+  {
+    "id": "2aef64bf-a413-448e-bc35-5c870c561d32",
+    "folder_number": "AA/2026/0100",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Sakété-Ifangni",
+    "structure": "ZS Sakété-Ifangni",
+    "receipt_date": "2026-03-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-26",
+    "decision": "Favorable",
+    "decision_date": "2026-03-13",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 380/2026. Visé C/SSMUR le 2026-03-13",
+    "observations": "Demande réf: 380/2026. Traitement PRA le 2026-03-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-13",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "83a033d5-c537-4cd3-996b-78c8de05dffc",
+        "name": "Demande_Autorisation_Achat_380_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-12",
+        "uploaded_by_name": "ZS Sakété-Ifangni"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-12T08:00:00Z",
+    "updated_at": "2026-03-13T15:00:00Z"
+  },
+  {
+    "id": "d97fbebe-ee6d-4118-ac13-0e411c1e86cf",
+    "folder_number": "AA/2026/0101",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Adjohoun",
+    "structure": "HZ Adjohoun",
+    "receipt_date": "2026-03-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-26",
+    "decision": "Favorable",
+    "decision_date": "2026-03-13",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 443/2026. Visé C/SSMUR le 2026-03-13",
+    "observations": "Demande réf: 443/2026. Traitement PRA le 2026-03-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-13",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "be95d3c4-bd45-4300-acb7-e1f6fdbc7afd",
+        "name": "Demande_Autorisation_Achat_443_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-12",
+        "uploaded_by_name": "HZ Adjohoun"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-12T08:00:00Z",
+    "updated_at": "2026-03-13T15:00:00Z"
+  },
+  {
+    "id": "a805ec83-6332-4ef8-bb3a-7d37a2a36930",
+    "folder_number": "AA/2026/0102",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Ouidah-Kpomassè-Tori-Bossito",
+    "structure": "ZS Ouidah-Kpomassè-Tori-Bossito",
+    "receipt_date": "2026-03-13",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-27",
+    "decision": "Favorable",
+    "decision_date": "2026-03-13",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 338. Visé C/SSMUR le 2026-03-13",
+    "observations": "Demande réf: 338. Traitement PRA le 2026-03-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-13",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "14ea81e1-1f7f-444b-b987-b996f5d205ee",
+        "name": "Demande_Autorisation_Achat_338.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-13",
+        "uploaded_by_name": "ZS Ouidah-Kpomassè-Tori-Bossito"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-13T08:00:00Z",
+    "updated_at": "2026-03-13T15:00:00Z"
+  },
+  {
+    "id": "81cff5b0-df12-4f63-8f19-09d9749832e3",
+    "folder_number": "AA/2026/0103",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Dassa-Glazoué",
+    "structure": "ZS Dassa-Glazoué",
+    "receipt_date": "2026-03-13",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-27",
+    "decision": "Favorable",
+    "decision_date": "2026-03-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 170/2026. Visé C/SSMUR le 2026-03-16",
+    "observations": "Demande réf: 170/2026. Traitement PRA le 2026-03-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3dd803c4-8126-4a16-9dd6-08f95e3d4cc5",
+        "name": "Demande_Autorisation_Achat_170_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-13",
+        "uploaded_by_name": "ZS Dassa-Glazoué"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-13T08:00:00Z",
+    "updated_at": "2026-03-16T15:00:00Z"
+  },
+  {
+    "id": "45c266fe-ce3c-48a1-8d2e-f1c7e9f06c35",
+    "folder_number": "AA/2026/0104",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU-LERE",
+    "structure": "CHUZ SURU-LERE",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 391/2026. Visé C/SSMUR le 2026-03-18",
+    "observations": "Demande réf: 391/2026. Traitement PRA le 2026-03-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5dd5a02e-8558-4a36-ad49-f7bc394a8994",
+        "name": "Demande_Autorisation_Achat_391_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "CHUZ SURU-LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-18T15:00:00Z"
+  },
+  {
+    "id": "46291ffd-7fe9-4ba9-a57e-08f76c2cba7d",
+    "folder_number": "AA/2026/0105",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU-LERE",
+    "structure": "CHUZ SURU-LERE",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 392/2026. Visé C/SSMUR le 2026-03-18",
+    "observations": "Demande réf: 392/2026. Traitement PRA le 2026-03-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f1680946-3355-4cca-acd9-2d76566c9a78",
+        "name": "Demande_Autorisation_Achat_392_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "CHUZ SURU-LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-18T15:00:00Z"
+  },
+  {
+    "id": "71e18b47-9616-473c-a4e7-c7633b7754db",
+    "folder_number": "AA/2026/0106",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU",
+    "structure": "CNHU",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0452/2026. Visé C/SSMUR le 2026-03-18",
+    "observations": "Demande réf: 0452/2026. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6866a2bc-c99a-4265-a168-b746c4119eba",
+        "name": "Demande_Autorisation_Achat_0452_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "CNHU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-18T15:00:00Z"
+  },
+  {
+    "id": "f8c59b20-6740-414d-b2ca-95daf635ecf4",
+    "folder_number": "AA/2026/0107",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 320/2026. Visé C/SSMUR le 2026-03-17",
+    "observations": "Demande réf: 320/2026. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b8e2e449-babd-425d-8f15-9b1b4bf96bb5",
+        "name": "Demande_Autorisation_Achat_320_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-17T15:00:00Z"
+  },
+  {
+    "id": "fea3aa11-7b51-4d5a-90ee-0e06bb4775f3",
+    "folder_number": "AA/2026/0108",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 321. Visé C/SSMUR le 2026-03-17",
+    "observations": "Demande réf: 321. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "365720b2-6719-44ea-94a5-531bd099daac",
+        "name": "Demande_Autorisation_Achat_321.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-17T15:00:00Z"
+  },
+  {
+    "id": "ca85f458-1c88-40d0-adba-d1673294c5fc",
+    "folder_number": "AA/2026/0109",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 322. Visé C/SSMUR le 2026-03-17",
+    "observations": "Demande réf: 322. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4c72dba1-fa3f-4e03-b615-66778bcdf884",
+        "name": "Demande_Autorisation_Achat_322.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-17T15:00:00Z"
+  },
+  {
+    "id": "120d0d49-6113-43e3-ac50-4485862e9689",
+    "folder_number": "AA/2026/0110",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 323. Visé C/SSMUR le 2026-03-17",
+    "observations": "Demande réf: 323. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8a737b2f-e828-46ff-a26e-03ee1a10b075",
+        "name": "Demande_Autorisation_Achat_323.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-17T15:00:00Z"
+  },
+  {
+    "id": "c128ad50-7347-453c-98ec-57260004ddfe",
+    "folder_number": "AA/2026/0111",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-30",
+    "decision": "Favorable",
+    "decision_date": "2026-03-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 319. Visé C/SSMUR le 2026-03-17",
+    "observations": "Demande réf: 319. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "321978e9-fd26-485b-81cc-d8ea66799edb",
+        "name": "Demande_Autorisation_Achat_319.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-16",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-16T08:00:00Z",
+    "updated_at": "2026-03-17T15:00:00Z"
+  },
+  {
+    "id": "deac14ce-7f58-4db9-a5cd-ef848d5ee469",
+    "folder_number": "AA/2026/0112",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Ouidah",
+    "structure": "HZ Ouidah",
+    "receipt_date": "2026-03-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-31",
+    "decision": "Favorable",
+    "decision_date": "2026-03-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 031/2026. Visé C/SSMUR le 2026-03-17",
+    "observations": "Demande réf: 031/2026. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a4c8b374-fe37-48d3-bf5b-df6dadf1157f",
+        "name": "Demande_Autorisation_Achat_031_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-17",
+        "uploaded_by_name": "HZ Ouidah"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-17T08:00:00Z",
+    "updated_at": "2026-03-17T15:00:00Z"
+  },
+  {
+    "id": "23be8977-8183-438d-a561-864c08c01e7d",
+    "folder_number": "AA/2026/0113",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-31",
+    "decision": "Favorable",
+    "decision_date": "2026-03-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 26-455. Visé C/SSMUR le 2026-03-17",
+    "observations": "Demande réf: 26-455. Traitement PRA le 2026-03-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "17990c13-0516-4db7-94a0-e8504ce0d963",
+        "name": "Demande_Autorisation_Achat_26-455.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-17",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-17T08:00:00Z",
+    "updated_at": "2026-03-17T15:00:00Z"
+  },
+  {
+    "id": "21824a42-9dcd-4023-b9e0-a8c7d98a66f4",
+    "folder_number": "AA/2026/0114",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-01",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 324. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 324. Traitement PRA le 2026-03-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "13704f2d-0120-40da-a867-9322ab11fda8",
+        "name": "Demande_Autorisation_Achat_324.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-18",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-18T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "5ccdb79b-d8c5-4d18-babf-6caaf02b808b",
+    "folder_number": "AA/2026/0115",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Malanville-Karimama",
+    "structure": "HZ Malanville-Karimama",
+    "receipt_date": "2026-03-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-01",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 003/26. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 003/26. Traitement PRA le 2026-03-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d806ee94-a836-4abc-b02e-3d955896c7ce",
+        "name": "Demande_Autorisation_Achat_003_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-18",
+        "uploaded_by_name": "HZ Malanville-Karimama"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-18T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "3f5efe6e-7ebf-4324-b9ae-2f081cf421c3",
+    "folder_number": "AA/2026/0115",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Mono",
+    "structure": "CHD Mono",
+    "receipt_date": "2026-03-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-01",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 079/26. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 079/26. Traitement PRA le 2026-03-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "31fc664d-b2e5-48ab-97e8-2c82abdf0ed8",
+        "name": "Demande_Autorisation_Achat_079_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-18",
+        "uploaded_by_name": "CHD Mono"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-18T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "cd203033-e559-4479-b442-b97faa724c13",
+    "folder_number": "AA/2026/0116",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Sakete",
+    "structure": "HZ Sakete",
+    "receipt_date": "2026-03-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-01",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 059/2026. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 059/2026. Traitement PRA le 2026-03-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "51fb4419-3153-46fc-a7ba-2899de09355f",
+        "name": "Demande_Autorisation_Achat_059_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-18",
+        "uploaded_by_name": "HZ Sakete"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-18T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "972ebb13-bad5-446e-94e2-54981dd7457c",
+    "folder_number": "AA/2026/0117",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Lokossa",
+    "structure": "HZ Lokossa",
+    "receipt_date": "2026-03-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-01",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 054/26. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 054/26. Traitement PRA le 2026-03-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "65dbcdb2-5cb7-4c2f-b7cd-90401c19dda2",
+        "name": "Demande_Autorisation_Achat_054_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-18",
+        "uploaded_by_name": "HZ Lokossa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-18T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "1ec630ad-449f-4a08-8647-59152c434d3c",
+    "folder_number": "AA/2026/0118",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Allada-Toffo-Zè",
+    "structure": "ZS Allada-Toffo-Zè",
+    "receipt_date": "2026-03-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-01",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 482/26. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 482/26. Traitement PRA le 2026-03-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6de7bcdc-28c3-490b-a2c7-fc8451f91ae1",
+        "name": "Demande_Autorisation_Achat_482_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-18",
+        "uploaded_by_name": "ZS Allada-Toffo-Zè"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-18T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "88ac4ad9-628e-452b-a421-34f81a091345",
+    "folder_number": "AA/2026/0119",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Lokossa",
+    "structure": "HZ Lokossa",
+    "receipt_date": "2026-03-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-01",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 443/26. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 443/26. Traitement PRA le 2026-03-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "69ec748b-ca5d-4283-b539-718471529686",
+        "name": "Demande_Autorisation_Achat_443_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-18",
+        "uploaded_by_name": "HZ Lokossa"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-18T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "546ca746-25a5-4e24-84a2-f3cdf2546540",
+    "folder_number": "AA/2026/0119",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Autres",
+    "structure": "Autres",
+    "receipt_date": "2026-03-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-02",
+    "decision": "Favorable",
+    "decision_date": "2026-03-19",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 50. Visé C/SSMUR le 2026-03-19",
+    "observations": "Demande réf: 50. Traitement PRA le 2026-03-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-19",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "eb9b4801-5e53-4c7e-9868-14c973b2be88",
+        "name": "Demande_Autorisation_Achat_50.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-19",
+        "uploaded_by_name": "Autres"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-19T08:00:00Z",
+    "updated_at": "2026-03-19T15:00:00Z"
+  },
+  {
+    "id": "5cfb0ba8-9b2c-4ba2-b034-d29e8568d914",
+    "folder_number": "AA/2026/0120",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Menontin",
+    "structure": "HZ Menontin",
+    "receipt_date": "2026-03-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-06",
+    "decision": "Favorable",
+    "decision_date": "2026-03-25",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 121. Visé C/SSMUR le 2026-03-25",
+    "observations": "Demande réf: 121. Traitement PRA le 2026-03-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-25",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ef06db18-26e1-47a4-b611-c8d7c88abd08",
+        "name": "Demande_Autorisation_Achat_121.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-23",
+        "uploaded_by_name": "HZ Menontin"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-23T08:00:00Z",
+    "updated_at": "2026-03-25T15:00:00Z"
+  },
+  {
+    "id": "fc4b7205-6c39-4f3c-a856-3a4b82b11b03",
+    "folder_number": "AA/2026/0121",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-03-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-06",
+    "decision": "Favorable",
+    "decision_date": "2026-03-25",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 341/342/343. Visé C/SSMUR le 2026-03-25",
+    "observations": "Demande réf: 341/342/343. Traitement PRA le 2026-03-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-25",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3d8c82ec-ada2-455f-8a5f-b7a46e3085cb",
+        "name": "Demande_Autorisation_Achat_341_342_343.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-03-23",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-23T08:00:00Z",
+    "updated_at": "2026-03-25T15:00:00Z"
+  },
+  {
+    "id": "3391e923-ab7f-4562-8aa1-ae4247a91744",
+    "folder_number": "AA/2026/0122",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD DONGA",
+    "structure": "CHD DONGA",
+    "receipt_date": "2026-04-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-30",
+    "decision": "Favorable",
+    "decision_date": "2026-04-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 035/2026. Visé C/SSMUR le 2026-04-17",
+    "observations": "Demande réf: 035/2026. Traitement PRA le 2026-04-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "90590c34-3350-4eef-8d3d-b96780a8a567",
+        "name": "Demande_Autorisation_Achat_035_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-16",
+        "uploaded_by_name": "CHD DONGA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-16T08:00:00Z",
+    "updated_at": "2026-04-17T15:00:00Z"
+  },
+  {
+    "id": "27cba1ed-2586-4e52-bfbd-73712f60976c",
+    "folder_number": "AA/2026/0123",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Klouékanmè Toviklin Lalo",
+    "structure": "ZS Klouékanmè Toviklin Lalo",
+    "receipt_date": "2026-04-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-04",
+    "decision": "Favorable",
+    "decision_date": "2026-04-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0587/26. Visé C/SSMUR le 2026-04-21",
+    "observations": "Demande réf: 0587/26. Traitement PRA le 2026-04-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "51667581-37ff-4568-a477-3b4c6916de28",
+        "name": "Demande_Autorisation_Achat_0587_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-20",
+        "uploaded_by_name": "ZS Klouékanmè Toviklin Lalo"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-20T08:00:00Z",
+    "updated_at": "2026-04-21T15:00:00Z"
+  },
+  {
+    "id": "b718852a-cd01-4ebd-b636-b8ff475c4cf8",
+    "folder_number": "AA/2026/0124",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD Borgou Alibori",
+    "structure": "CHUD Borgou Alibori",
+    "receipt_date": "2026-04-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-05",
+    "decision": "Favorable",
+    "decision_date": "2026-04-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1771/26. Visé C/SSMUR le 2026-04-23",
+    "observations": "Demande réf: 1771/26. Traitement PRA le 2026-04-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2c3cc89d-bd47-49e0-8984-e0289577cce1",
+        "name": "Demande_Autorisation_Achat_1771_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-21",
+        "uploaded_by_name": "CHUD Borgou Alibori"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-21T08:00:00Z",
+    "updated_at": "2026-04-23T15:00:00Z"
+  },
+  {
+    "id": "ce36103a-01b2-4334-8194-824f57ff2d34",
+    "folder_number": "AA/2026/0125",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHU MEL",
+    "structure": "CHU MEL",
+    "receipt_date": "2026-04-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-06",
+    "decision": "Favorable",
+    "decision_date": "2026-04-22",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 452/2026. Visé C/SSMUR le 2026-04-22",
+    "observations": "Demande réf: 452/2026. Traitement PRA le 2026-04-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-22",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a9f122f8-e299-465d-8e00-fc0d71cb67a4",
+        "name": "Demande_Autorisation_Achat_452_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-22",
+        "uploaded_by_name": "CHU MEL"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-22T08:00:00Z",
+    "updated_at": "2026-04-22T15:00:00Z"
+  },
+  {
+    "id": "b91896b0-2572-44d4-b593-99b8ed1f3216",
+    "folder_number": "AA/2026/0126",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHU MEL",
+    "structure": "CHU MEL",
+    "receipt_date": "2026-04-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-06",
+    "decision": "Favorable",
+    "decision_date": "2026-04-22",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 451/2026. Visé C/SSMUR le 2026-04-22",
+    "observations": "Demande réf: 451/2026. Traitement PRA le 2026-04-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-22",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "29695c14-1f7b-49ae-a823-0c4fcda202a5",
+        "name": "Demande_Autorisation_Achat_451_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-22",
+        "uploaded_by_name": "CHU MEL"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-22T08:00:00Z",
+    "updated_at": "2026-04-22T15:00:00Z"
+  },
+  {
+    "id": "7b0581da-1e77-4c51-86e7-657039185e4b",
+    "folder_number": "AA/2026/0127",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada Toffo Zê",
+    "structure": "HZ Allada Toffo Zê",
+    "receipt_date": "2026-04-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-07",
+    "decision": "Favorable",
+    "decision_date": "2026-04-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0799/2026. Visé C/SSMUR le 2026-04-24",
+    "observations": "Demande réf: 0799/2026. Traitement PRA le 2026-04-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "da0c353e-4b4a-47b4-b3c7-e70d69e0158b",
+        "name": "Demande_Autorisation_Achat_0799_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-23",
+        "uploaded_by_name": "HZ Allada Toffo Zê"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-23T08:00:00Z",
+    "updated_at": "2026-04-24T15:00:00Z"
+  },
+  {
+    "id": "d40105d6-98bc-476f-9b2e-2d23786cf88d",
+    "folder_number": "AA/2026/0128",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Akpro-Missérété Avrankou Adjarra",
+    "structure": "ZS Akpro-Missérété Avrankou Adjarra",
+    "receipt_date": "2026-04-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-07",
+    "decision": "Favorable",
+    "decision_date": "2026-04-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 468. Visé C/SSMUR le 2026-04-24",
+    "observations": "Demande réf: 468. Traitement PRA le 2026-04-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e4f8c876-7334-4610-bf16-9a5ca5b7d4a6",
+        "name": "Demande_Autorisation_Achat_468.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-23",
+        "uploaded_by_name": "ZS Akpro-Missérété Avrankou Adjarra"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-23T08:00:00Z",
+    "updated_at": "2026-04-24T15:00:00Z"
+  },
+  {
+    "id": "2cec9a53-8d6f-48a3-beed-696489d71f75",
+    "folder_number": "AA/2026/0129",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Dassa-Glazoué",
+    "structure": "HZ Dassa-Glazoué",
+    "receipt_date": "2026-04-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-08",
+    "decision": "Favorable",
+    "decision_date": "2026-04-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 82/2026. Visé C/SSMUR le 2026-04-24",
+    "observations": "Demande réf: 82/2026. Traitement PRA le 2026-04-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "22ce3010-78bd-4f56-be6f-eb33f4c9791a",
+        "name": "Demande_Autorisation_Achat_82_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-24",
+        "uploaded_by_name": "HZ Dassa-Glazoué"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-24T08:00:00Z",
+    "updated_at": "2026-04-24T15:00:00Z"
+  },
+  {
+    "id": "fa753bc9-0887-4a5c-9992-0184f4f5f3d2",
+    "folder_number": "AA/2026/0130",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Porto-Novo Aguégué Sèmè-Podji",
+    "structure": "ZS Porto-Novo Aguégué Sèmè-Podji",
+    "receipt_date": "2026-04-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-08",
+    "decision": "Favorable",
+    "decision_date": "2026-04-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0673/26. Visé C/SSMUR le 2026-04-27",
+    "observations": "Demande réf: 0673/26. Traitement PRA le 2026-04-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "deb5784f-a74d-4fdf-9f7d-c810dd9efdb3",
+        "name": "Demande_Autorisation_Achat_0673_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-24",
+        "uploaded_by_name": "ZS Porto-Novo Aguégué Sèmè-Podji"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-24T08:00:00Z",
+    "updated_at": "2026-04-27T15:00:00Z"
+  },
+  {
+    "id": "0f4ac57b-01a9-4e33-ae08-04955b2144ee",
+    "folder_number": "AA/2026/0131",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-04-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-11",
+    "decision": "Favorable",
+    "decision_date": "2026-04-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 469/2026. Visé C/SSMUR le 2026-04-27",
+    "observations": "Demande réf: 469/2026. Traitement PRA le 2026-04-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "39aa5012-a5fb-41a6-950a-dccaee5d6e8a",
+        "name": "Demande_Autorisation_Achat_469_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-27",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-27T08:00:00Z",
+    "updated_at": "2026-04-27T15:00:00Z"
+  },
+  {
+    "id": "f94c5bdd-baca-40e4-a77f-b2bd3c70fc7f",
+    "folder_number": "AA/2026/0132",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 1&4",
+    "structure": "ZS Cotonou 1&4",
+    "receipt_date": "2026-04-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-11",
+    "decision": "Favorable",
+    "decision_date": "2026-04-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0438/26. Visé C/SSMUR le 2026-04-27",
+    "observations": "Demande réf: 0438/26. Traitement PRA le 2026-04-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5f3518b6-f934-4143-ae94-d4cb88f033f7",
+        "name": "Demande_Autorisation_Achat_0438_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-27",
+        "uploaded_by_name": "ZS Cotonou 1&4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-27T08:00:00Z",
+    "updated_at": "2026-04-27T15:00:00Z"
+  },
+  {
+    "id": "abbd74fe-6c9b-4419-95ea-f465c3ea5c19",
+    "folder_number": "AA/2026/0133",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Aplahoué",
+    "structure": "HZ Aplahoué",
+    "receipt_date": "2026-04-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-11",
+    "decision": "Favorable",
+    "decision_date": "2026-04-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 267/26. Visé C/SSMUR le 2026-04-27",
+    "observations": "Demande réf: 267/26. Traitement PRA le 2026-04-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7ff736c6-0fb9-4dd0-94bf-f730b73f1e89",
+        "name": "Demande_Autorisation_Achat_267_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-27",
+        "uploaded_by_name": "HZ Aplahoué"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-27T08:00:00Z",
+    "updated_at": "2026-04-27T15:00:00Z"
+  },
+  {
+    "id": "d806b20f-13b8-428e-8681-61be1e7828bb",
+    "folder_number": "AA/2026/0134",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Lokossa Athiémé",
+    "structure": "ZS Lokossa Athiémé",
+    "receipt_date": "2026-04-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-11",
+    "decision": "Favorable",
+    "decision_date": "2026-04-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 779/26. Visé C/SSMUR le 2026-04-27",
+    "observations": "Demande réf: 779/26. Traitement PRA le 2026-04-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ad4c872c-a7dd-4372-aa05-e6cdebb220fa",
+        "name": "Demande_Autorisation_Achat_779_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-27",
+        "uploaded_by_name": "ZS Lokossa Athiémé"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-27T08:00:00Z",
+    "updated_at": "2026-04-27T15:00:00Z"
+  },
+  {
+    "id": "51794dea-e174-4a05-8236-b9e9e251e4e6",
+    "folder_number": "AA/2026/0135",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Cotonou 5",
+    "structure": "ZS Cotonou 5",
+    "receipt_date": "2026-04-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-11",
+    "decision": "Favorable",
+    "decision_date": "2026-04-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0434/26. Visé C/SSMUR le 2026-04-27",
+    "observations": "Demande réf: 0434/26. Traitement PRA le 2026-04-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b27897b9-537a-4be7-890f-f4a60bb1d21a",
+        "name": "Demande_Autorisation_Achat_0434_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-27",
+        "uploaded_by_name": "ZS Cotonou 5"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-27T08:00:00Z",
+    "updated_at": "2026-04-27T15:00:00Z"
+  },
+  {
+    "id": "506fdffb-7b87-4b13-bdbf-8f0e234a5cca",
+    "folder_number": "AA/2026/0136",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ANCQ",
+    "structure": "ANCQ",
+    "receipt_date": "2026-04-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-07",
+    "decision": "Favorable",
+    "decision_date": "2026-04-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 384/2026. Visé C/SSMUR le 2026-04-27",
+    "observations": "Demande réf: 384/2026. Traitement PRA le 2026-04-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "eb59f1f5-ddd7-44d3-a949-8439952c77e8",
+        "name": "Demande_Autorisation_Achat_384_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-23",
+        "uploaded_by_name": "ANCQ"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-23T08:00:00Z",
+    "updated_at": "2026-04-27T15:00:00Z"
+  },
+  {
+    "id": "99b57f8a-aef4-4148-a72b-9c62f44c451b",
+    "folder_number": "AA/2026/0137",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Atacora",
+    "structure": "CHD Atacora",
+    "receipt_date": "2026-04-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-11",
+    "decision": "Favorable",
+    "decision_date": "2026-04-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 468/2026. Visé C/SSMUR le 2026-04-28",
+    "observations": "Demande réf: 468/2026. Traitement PRA le 2026-04-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "97763da7-678b-4886-8c10-e934c1fdc6ff",
+        "name": "Demande_Autorisation_Achat_468_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-27",
+        "uploaded_by_name": "CHD Atacora"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-27T08:00:00Z",
+    "updated_at": "2026-04-28T15:00:00Z"
+  },
+  {
+    "id": "e7a872f6-a55a-419d-9dff-3f63ad52ed8e",
+    "folder_number": "AA/2026/0138",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD Mono",
+    "structure": "CHD Mono",
+    "receipt_date": "2026-04-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-12",
+    "decision": "Favorable",
+    "decision_date": "2026-04-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1351/26. Visé C/SSMUR le 2026-04-28",
+    "observations": "Demande réf: 1351/26. Traitement PRA le 2026-04-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "77d68e3d-2e01-435e-8cda-b5e88314a8fb",
+        "name": "Demande_Autorisation_Achat_1351_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-28",
+        "uploaded_by_name": "CHD Mono"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-28T08:00:00Z",
+    "updated_at": "2026-04-28T15:00:00Z"
+  },
+  {
+    "id": "f846ba2c-c9e0-4084-8045-a04d5a1be90c",
+    "folder_number": "AA/2026/0139",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Abomey-Calavi Sô-Ava",
+    "structure": "ZS Abomey-Calavi Sô-Ava",
+    "receipt_date": "2026-04-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-12",
+    "decision": "Favorable",
+    "decision_date": "2026-04-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1082/2026. Visé C/SSMUR le 2026-04-28",
+    "observations": "Demande réf: 1082/2026. Traitement PRA le 2026-04-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5097b537-76ce-4247-b965-66d08fc1027d",
+        "name": "Demande_Autorisation_Achat_1082_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-28",
+        "uploaded_by_name": "ZS Abomey-Calavi Sô-Ava"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-28T08:00:00Z",
+    "updated_at": "2026-04-28T15:00:00Z"
+  },
+  {
+    "id": "ef14967c-fa1c-4f65-b8fd-9f576a355eff",
+    "folder_number": "AA/2026/0140",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Tchaourou",
+    "structure": "ZS Tchaourou",
+    "receipt_date": "2026-04-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-13",
+    "decision": "Favorable",
+    "decision_date": "2026-04-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 423/2026. Visé C/SSMUR le 2026-04-30",
+    "observations": "Demande réf: 423/2026. Traitement PRA le 2026-04-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "493123ce-14f8-4281-a585-f8b6ca3abd6a",
+        "name": "Demande_Autorisation_Achat_423_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-29",
+        "uploaded_by_name": "ZS Tchaourou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-29T08:00:00Z",
+    "updated_at": "2026-04-30T15:00:00Z"
+  },
+  {
+    "id": "2e41b8c1-6cfa-426b-832d-9c0c635c7d99",
+    "folder_number": "AA/2026/0141",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Pobè Adja-Ouèrè Kétou",
+    "structure": "HZ Pobè Adja-Ouèrè Kétou",
+    "receipt_date": "2026-04-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-13",
+    "decision": "Favorable",
+    "decision_date": "2026-04-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 91. Visé C/SSMUR le 2026-04-30",
+    "observations": "Demande réf: 91. Traitement PRA le 2026-04-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4cbd0d17-d1e8-4d8d-972e-96d6babea9b0",
+        "name": "Demande_Autorisation_Achat_91.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-29",
+        "uploaded_by_name": "HZ Pobè Adja-Ouèrè Kétou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-29T08:00:00Z",
+    "updated_at": "2026-04-30T15:00:00Z"
+  },
+  {
+    "id": "3e10bb1b-5b9c-481e-a375-a686b77c568e",
+    "folder_number": "AA/2026/0142",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Djidja Abomey Agbangnizoun",
+    "structure": "HZ Djidja Abomey Agbangnizoun",
+    "receipt_date": "2026-04-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-12",
+    "decision": "Favorable",
+    "decision_date": "2026-04-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 233/26. Visé C/SSMUR le 2026-04-30",
+    "observations": "Demande réf: 233/26. Traitement PRA le 2026-04-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "26e1da62-3539-45f0-84ad-109f58f6180e",
+        "name": "Demande_Autorisation_Achat_233_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-28",
+        "uploaded_by_name": "HZ Djidja Abomey Agbangnizoun"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-28T08:00:00Z",
+    "updated_at": "2026-04-30T15:00:00Z"
+  },
+  {
+    "id": "643dc223-2246-47a5-b70b-5b30ac9fbbd5",
+    "folder_number": "AA/2026/0143",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Covè",
+    "structure": "HZ Covè",
+    "receipt_date": "2026-04-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-13",
+    "decision": "Favorable",
+    "decision_date": "2026-04-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 240/2026. Visé C/SSMUR le 2026-04-30",
+    "observations": "Demande réf: 240/2026. Traitement PRA le 2026-04-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "30db45d5-70df-4012-928b-9f826ca77ba5",
+        "name": "Demande_Autorisation_Achat_240_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-29",
+        "uploaded_by_name": "HZ Covè"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-29T08:00:00Z",
+    "updated_at": "2026-04-30T15:00:00Z"
+  },
+  {
+    "id": "3a84fcac-500d-4530-be66-cbc36c9d364d",
+    "folder_number": "AA/2026/0144",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Banikoara",
+    "structure": "HZ Banikoara",
+    "receipt_date": "2026-04-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-14",
+    "decision": "Favorable",
+    "decision_date": "2026-04-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 401/2026 & 402/2026. Visé C/SSMUR le 2026-04-30",
+    "observations": "Demande réf: 401/2026 & 402/2026. Traitement PRA le 2026-04-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e2e030c4-db28-4711-9e27-432dbe400d80",
+        "name": "Demande_Autorisation_Achat_401_2026 & 402_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-30",
+        "uploaded_by_name": "HZ Banikoara"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-30T08:00:00Z",
+    "updated_at": "2026-04-30T15:00:00Z"
+  },
+  {
+    "id": "6cb15b21-94de-4187-a5e3-abaf1eeb41a4",
+    "folder_number": "AA/2026/0145",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Lokossa Athiémé",
+    "structure": "HZ Lokossa Athiémé",
+    "receipt_date": "2026-04-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-14",
+    "decision": "Favorable",
+    "decision_date": "2026-05-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 097/26. Visé C/SSMUR le 2026-05-04",
+    "observations": "Demande réf: 097/26. Traitement PRA le 2026-05-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "359a985a-5eae-42a3-b14b-f0eb56f96748",
+        "name": "Demande_Autorisation_Achat_097_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-30",
+        "uploaded_by_name": "HZ Lokossa Athiémé"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-30T08:00:00Z",
+    "updated_at": "2026-05-04T15:00:00Z"
+  },
+  {
+    "id": "2985e58e-9df5-47df-86d3-2b5e1a3b4864",
+    "folder_number": "AA/2026/0146",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Mènontin",
+    "structure": "HZ Mènontin",
+    "receipt_date": "2026-04-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-14",
+    "decision": "Favorable",
+    "decision_date": "2026-05-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 221. Visé C/SSMUR le 2026-05-04",
+    "observations": "Demande réf: 221. Traitement PRA le 2026-05-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1db2d271-bece-4526-8d83-25015ef64d62",
+        "name": "Demande_Autorisation_Achat_221.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-04-30",
+        "uploaded_by_name": "HZ Mènontin"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-30T08:00:00Z",
+    "updated_at": "2026-05-04T15:00:00Z"
+  },
+  {
+    "id": "5aabae25-e22f-4a8f-9814-e4ca6ee20cdc",
+    "folder_number": "AA/2026/0147",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Djidja Abomey Agbangnizoun",
+    "structure": "HZ Djidja Abomey Agbangnizoun",
+    "receipt_date": "2026-05-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-18",
+    "decision": "Favorable",
+    "decision_date": "2026-05-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 233. Visé C/SSMUR le 2026-05-04",
+    "observations": "Demande réf: 233. Traitement PRA le 2026-05-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "512c8116-9464-45f9-b14b-c37546a1579f",
+        "name": "Demande_Autorisation_Achat_233.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-04",
+        "uploaded_by_name": "HZ Djidja Abomey Agbangnizoun"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-04T08:00:00Z",
+    "updated_at": "2026-05-04T15:00:00Z"
+  },
+  {
+    "id": "120070e3-753f-40cb-9e3a-1aeb1e41aef7",
+    "folder_number": "AA/2026/0148",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Pobè Adja Ouèrè Kétou",
+    "structure": "HZ Pobè Adja Ouèrè Kétou",
+    "receipt_date": "2026-05-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-19",
+    "decision": "Favorable",
+    "decision_date": "2026-05-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 91. Visé C/SSMUR le 2026-05-06",
+    "observations": "Demande réf: 91. Traitement PRA le 2026-05-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "33cab0c4-77e0-403f-96d3-92f90eaa3549",
+        "name": "Demande_Autorisation_Achat_91.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-05",
+        "uploaded_by_name": "HZ Pobè Adja Ouèrè Kétou"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-05T08:00:00Z",
+    "updated_at": "2026-05-06T15:00:00Z"
+  },
+  {
+    "id": "55fe2c28-d566-4de8-ba08-32344a32a03d",
+    "folder_number": "AA/2026/0149",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Sakété Ifangni",
+    "structure": "HZ Sakété Ifangni",
+    "receipt_date": "2026-05-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-19",
+    "decision": "Favorable",
+    "decision_date": "2026-05-07",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 129/2026. Visé C/SSMUR le 2026-05-07",
+    "observations": "Demande réf: 129/2026. Traitement PRA le 2026-05-06",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-07",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3c2ca3a5-f64e-4813-994a-36ff5996a9b8",
+        "name": "Demande_Autorisation_Achat_129_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-05",
+        "uploaded_by_name": "HZ Sakété Ifangni"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-05T08:00:00Z",
+    "updated_at": "2026-05-07T15:00:00Z"
+  },
+  {
+    "id": "42825433-3c4f-4eea-94c6-2449373c0f27",
+    "folder_number": "AA/2026/0150",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada Toffo Zè",
+    "structure": "HZ Allada Toffo Zè",
+    "receipt_date": "2026-05-06",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-20",
+    "decision": "Favorable",
+    "decision_date": "2026-05-07",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0924/2026. Visé C/SSMUR le 2026-05-07",
+    "observations": "Demande réf: 0924/2026. Traitement PRA le 2026-05-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-07",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3d4828f5-4331-4d34-ae75-817857143d52",
+        "name": "Demande_Autorisation_Achat_0924_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-06",
+        "uploaded_by_name": "HZ Allada Toffo Zè"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-06T08:00:00Z",
+    "updated_at": "2026-05-07T15:00:00Z"
+  },
+  {
+    "id": "eb56dca4-9f73-4dde-9288-c651fd879a8c",
+    "folder_number": "AA/2026/0151",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KANDI",
+    "structure": "HZ KANDI",
+    "receipt_date": "2026-05-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-21",
+    "decision": "Favorable",
+    "decision_date": "2026-05-07",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0593/2026. Visé C/SSMUR le 2026-05-07",
+    "observations": "Demande réf: 0593/2026. Traitement PRA le 2026-05-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-07",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "55e2e4d8-4a31-453f-8cd5-0f50c0d255d3",
+        "name": "Demande_Autorisation_Achat_0593_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-07",
+        "uploaded_by_name": "HZ KANDI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-07T08:00:00Z",
+    "updated_at": "2026-05-07T15:00:00Z"
+  },
+  {
+    "id": "32a8f751-dcf9-412c-97dd-d609c2b0473c",
+    "folder_number": "AA/2026/0152",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Allada Toffo Zè",
+    "structure": "HZ Allada Toffo Zè",
+    "receipt_date": "2026-05-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-21",
+    "decision": "Favorable",
+    "decision_date": "2026-05-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0925/2026. Visé C/SSMUR le 2026-05-09",
+    "observations": "Demande réf: 0925/2026. Traitement PRA le 2026-05-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "436d27c4-f891-4e4e-ae66-5d787dae12d4",
+        "name": "Demande_Autorisation_Achat_0925_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-07",
+        "uploaded_by_name": "HZ Allada Toffo Zè"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-07T08:00:00Z",
+    "updated_at": "2026-05-09T15:00:00Z"
+  },
+  {
+    "id": "6dfb1033-1dc5-4fda-883b-35785ee77d45",
+    "folder_number": "AA/2026/0153",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ Sakété Ifangni",
+    "structure": "HZ Sakété Ifangni",
+    "receipt_date": "2026-05-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-22",
+    "decision": "Favorable",
+    "decision_date": "2026-05-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 134/2026. Visé C/SSMUR le 2026-05-09",
+    "observations": "Demande réf: 134/2026. Traitement PRA le 2026-05-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "abaf24a3-0d2a-48ff-ba82-38e79961b4c7",
+        "name": "Demande_Autorisation_Achat_134_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-08",
+        "uploaded_by_name": "HZ Sakété Ifangni"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-08T08:00:00Z",
+    "updated_at": "2026-05-09T15:00:00Z"
+  },
+  {
+    "id": "659efbeb-50cf-4277-bc79-6487f990f232",
+    "folder_number": "AA/2026/0154",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ Suru Léré",
+    "structure": "CHUZ Suru Léré",
+    "receipt_date": "2026-05-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-22",
+    "decision": "Favorable",
+    "decision_date": "2026-05-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0614/2026. Visé C/SSMUR le 2026-05-09",
+    "observations": "Demande réf: 0614/2026. Traitement PRA le 2026-05-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2fd78f10-dd41-412f-b558-30f500e4fa52",
+        "name": "Demande_Autorisation_Achat_0614_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-08",
+        "uploaded_by_name": "CHUZ Suru Léré"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-08T08:00:00Z",
+    "updated_at": "2026-05-09T15:00:00Z"
+  },
+  {
+    "id": "37b4751f-6064-494b-8903-8764ae3714fc",
+    "folder_number": "AA/2026/0155",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ Suru Léré",
+    "structure": "CHUZ Suru Léré",
+    "receipt_date": "2026-05-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-22",
+    "decision": "Favorable",
+    "decision_date": "2026-05-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0615/2026. Visé C/SSMUR le 2026-05-09",
+    "observations": "Demande réf: 0615/2026. Traitement PRA le 2026-05-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "99a18ce4-f697-4e15-9e1b-c3ee991e39d4",
+        "name": "Demande_Autorisation_Achat_0615_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-08",
+        "uploaded_by_name": "CHUZ Suru Léré"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-08T08:00:00Z",
+    "updated_at": "2026-05-09T15:00:00Z"
+  },
+  {
+    "id": "f63bdd52-2519-4fa9-a31f-5e898532d06a",
+    "folder_number": "AA/2026/0156",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KANDI",
+    "structure": "HZ KANDI",
+    "receipt_date": "2026-05-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-22",
+    "decision": "Favorable",
+    "decision_date": "2026-05-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0593/2026. Visé C/SSMUR le 2026-05-09",
+    "observations": "Demande réf: 0593/2026. Traitement PRA le 2026-05-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2dee28ca-4284-42d4-9e2f-373eb68820a9",
+        "name": "Demande_Autorisation_Achat_0593_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-08",
+        "uploaded_by_name": "HZ KANDI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-08T08:00:00Z",
+    "updated_at": "2026-05-09T15:00:00Z"
+  },
+  {
+    "id": "f990e03a-4a38-44a1-9acc-bafe25c3ee05",
+    "folder_number": "AA/2026/0157",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COME",
+    "structure": "ZS COME",
+    "receipt_date": "2026-05-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-25",
+    "decision": "Favorable",
+    "decision_date": "2026-05-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 678/26. Visé C/SSMUR le 2026-05-12",
+    "observations": "Demande réf: 678/26. Traitement PRA le 2026-05-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "dec3736c-da4c-4b4f-83f1-dd7e05fb6e48",
+        "name": "Demande_Autorisation_Achat_678_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-11",
+        "uploaded_by_name": "ZS COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-11T08:00:00Z",
+    "updated_at": "2026-05-12T15:00:00Z"
+  },
+  {
+    "id": "d225f275-2d8a-4221-a581-67ec4f5cf5d1",
+    "folder_number": "AA/2026/0158",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ADJOHOUN BONON DANGBO",
+    "structure": "ZS ADJOHOUN BONON DANGBO",
+    "receipt_date": "2026-05-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-25",
+    "decision": "Favorable",
+    "decision_date": "2026-05-14",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 619/26. Visé C/SSMUR le 2026-05-14",
+    "observations": "Demande réf: 619/26. Traitement PRA le 2026-05-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-14",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "49c34389-43dc-410d-bb54-c0633804923c",
+        "name": "Demande_Autorisation_Achat_619_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-11",
+        "uploaded_by_name": "ZS ADJOHOUN BONON DANGBO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-11T08:00:00Z",
+    "updated_at": "2026-05-14T15:00:00Z"
+  },
+  {
+    "id": "03dadc70-4834-4682-8688-4348bdb38747",
+    "folder_number": "AA/2026/0159",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-05-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-25",
+    "decision": "Favorable",
+    "decision_date": "2026-05-12",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 956/2026. Visé C/SSMUR le 2026-05-12",
+    "observations": "Demande réf: 956/2026. Traitement PRA le 2026-05-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-12",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d4ac9fbc-2e40-4189-ab27-1cdee6ade050",
+        "name": "Demande_Autorisation_Achat_956_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-11",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-11T08:00:00Z",
+    "updated_at": "2026-05-12T15:00:00Z"
+  },
+  {
+    "id": "13690313-b886-4a12-bcc9-acf5995df313",
+    "folder_number": "AA/2026/0160",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS Akpro Missérété Avrankou Adjarra",
+    "structure": "ZS Akpro Missérété Avrankou Adjarra",
+    "receipt_date": "2026-05-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-26",
+    "decision": "Favorable",
+    "decision_date": "2026-05-14",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 593. Visé C/SSMUR le 2026-05-14",
+    "observations": "Demande réf: 593. Traitement PRA le 2026-05-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-14",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "10c1b9c8-7175-466e-abbe-c23da9a94288",
+        "name": "Demande_Autorisation_Achat_593.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-12",
+        "uploaded_by_name": "ZS Akpro Missérété Avrankou Adjarra"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-12T08:00:00Z",
+    "updated_at": "2026-05-14T15:00:00Z"
+  },
+  {
+    "id": "51b53bd0-73f9-476b-beac-b6e00690dfd7",
+    "folder_number": "AA/2026/0161",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU PPC",
+    "structure": "CNHU PPC",
+    "receipt_date": "2026-05-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-26",
+    "decision": "Favorable",
+    "decision_date": "2026-05-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 498/2026. Visé C/SSMUR le 2026-05-17",
+    "observations": "Demande réf: 498/2026. Traitement PRA le 2026-05-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c769c29d-044a-485a-9a96-8908866d7fa0",
+        "name": "Demande_Autorisation_Achat_498_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-12",
+        "uploaded_by_name": "CNHU PPC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-12T08:00:00Z",
+    "updated_at": "2026-05-17T15:00:00Z"
+  },
+  {
+    "id": "b3cef786-2071-4e2c-b1ca-b8da7203af69",
+    "folder_number": "AA/2026/0162",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COME",
+    "structure": "HZ COME",
+    "receipt_date": "2026-05-13",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-27",
+    "decision": "Favorable",
+    "decision_date": "2026-05-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 244-2026. Visé C/SSMUR le 2026-05-17",
+    "observations": "Demande réf: 244-2026. Traitement PRA le 2026-05-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f34b0074-a3c1-4060-8229-80ec3bb7e6d3",
+        "name": "Demande_Autorisation_Achat_244-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-13",
+        "uploaded_by_name": "HZ COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-13T08:00:00Z",
+    "updated_at": "2026-05-17T15:00:00Z"
+  },
+  {
+    "id": "bc258dcf-d3b7-45a0-bd60-e5a31682e7c2",
+    "folder_number": "AA/2026/0163",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COME",
+    "structure": "HZ COME",
+    "receipt_date": "2026-05-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-29",
+    "decision": "Favorable",
+    "decision_date": "2026-05-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 243-2026. Visé C/SSMUR le 2026-05-17",
+    "observations": "Demande réf: 243-2026. Traitement PRA le 2026-05-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "85166328-9adb-43d5-80ad-3cbdd6ff7ddf",
+        "name": "Demande_Autorisation_Achat_243-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-15",
+        "uploaded_by_name": "HZ COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-15T08:00:00Z",
+    "updated_at": "2026-05-17T15:00:00Z"
+  },
+  {
+    "id": "527b5191-66e7-4cfd-aa5d-8a07923890ba",
+    "folder_number": "AA/2026/0164",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHPP AKRON",
+    "structure": "CHPP AKRON",
+    "receipt_date": "2026-05-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-29",
+    "decision": "Favorable",
+    "decision_date": "2026-05-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 231. Visé C/SSMUR le 2026-05-16",
+    "observations": "Demande réf: 231. Traitement PRA le 2026-05-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "34ed7a1f-eded-4066-a7b6-f4242ebacde3",
+        "name": "Demande_Autorisation_Achat_231.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-15",
+        "uploaded_by_name": "CHPP AKRON"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-15T08:00:00Z",
+    "updated_at": "2026-05-16T15:00:00Z"
+  },
+  {
+    "id": "504c6e48-3e03-49d8-8168-156c147017e2",
+    "folder_number": "AA/2026/0165",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CSPR PN",
+    "structure": "CSPR PN",
+    "receipt_date": "2026-05-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-29",
+    "decision": "Favorable",
+    "decision_date": "2026-05-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 26-127. Visé C/SSMUR le 2026-05-18",
+    "observations": "Demande réf: 26-127. Traitement PRA le 2026-05-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "015ee1fd-4172-4d3e-86c9-de9d7a5c584e",
+        "name": "Demande_Autorisation_Achat_26-127.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-15",
+        "uploaded_by_name": "CSPR PN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-15T08:00:00Z",
+    "updated_at": "2026-05-18T15:00:00Z"
+  },
+  {
+    "id": "e0a8f942-b173-44a4-b3a2-95a25f738536",
+    "folder_number": "AA/2026/0166",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS DJIDJA ABOMEY AGBANGNIZOUN",
+    "structure": "ZS DJIDJA ABOMEY AGBANGNIZOUN",
+    "receipt_date": "2026-05-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-29",
+    "decision": "Favorable",
+    "decision_date": "2026-05-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 267/26. Visé C/SSMUR le 2026-05-18",
+    "observations": "Demande réf: 267/26. Traitement PRA le 2026-05-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "fa183275-e217-4d5c-aeb0-0bb2834a04a3",
+        "name": "Demande_Autorisation_Achat_267_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-15",
+        "uploaded_by_name": "ZS DJIDJA ABOMEY AGBANGNIZOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-15T08:00:00Z",
+    "updated_at": "2026-05-18T15:00:00Z"
+  },
+  {
+    "id": "3725ebb2-d834-410b-a4b2-9743d8dbd844",
+    "folder_number": "AA/2026/0167",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ BASSILA",
+    "structure": "HZ BASSILA",
+    "receipt_date": "2026-05-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-01",
+    "decision": "Favorable",
+    "decision_date": "2026-05-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 469/2026. Visé C/SSMUR le 2026-05-20",
+    "observations": "Demande réf: 469/2026. Traitement PRA le 2026-05-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9478c24f-a40f-4555-b3f7-43abfabeb843",
+        "name": "Demande_Autorisation_Achat_469_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-18",
+        "uploaded_by_name": "HZ BASSILA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-18T08:00:00Z",
+    "updated_at": "2026-05-20T15:00:00Z"
+  },
+  {
+    "id": "76ae68a6-8aef-4e4d-9c8c-671764ec51fa",
+    "folder_number": "AA/2026/0168",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ ABOMEY-CALAVI",
+    "structure": "CHUZ ABOMEY-CALAVI",
+    "receipt_date": "2026-05-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-01",
+    "decision": "Favorable",
+    "decision_date": "2026-05-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 208/26. Visé C/SSMUR le 2026-05-18",
+    "observations": "Demande réf: 208/26. Traitement PRA le 2026-05-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4b5f1443-1998-4038-a0c9-d4ba951f2334",
+        "name": "Demande_Autorisation_Achat_208_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-18",
+        "uploaded_by_name": "CHUZ ABOMEY-CALAVI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-18T08:00:00Z",
+    "updated_at": "2026-05-18T15:00:00Z"
+  },
+  {
+    "id": "58ed2a05-1175-4667-b060-1432488d793c",
+    "folder_number": "AA/2026/0169",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU 2&3",
+    "structure": "ZS COTONOU 2&3",
+    "receipt_date": "2026-05-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-02",
+    "decision": "Favorable",
+    "decision_date": "2026-05-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0605/26. Visé C/SSMUR le 2026-05-20",
+    "observations": "Demande réf: 0605/26. Traitement PRA le 2026-05-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f407e8de-b358-4114-b9a5-c49a06c90a2a",
+        "name": "Demande_Autorisation_Achat_0605_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-19",
+        "uploaded_by_name": "ZS COTONOU 2&3"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-19T08:00:00Z",
+    "updated_at": "2026-05-20T15:00:00Z"
+  },
+  {
+    "id": "a6290d57-32a9-4750-9eb0-4c17b80f5893",
+    "folder_number": "AA/2026/0170",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PARAKOU N'DALI",
+    "structure": "ZS PARAKOU N'DALI",
+    "receipt_date": "2026-05-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-02",
+    "decision": "Favorable",
+    "decision_date": "2026-05-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0527/26. Visé C/SSMUR le 2026-05-20",
+    "observations": "Demande réf: 0527/26. Traitement PRA le 2026-05-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "34d6457b-e7f3-4525-b935-0c9cb58d9a41",
+        "name": "Demande_Autorisation_Achat_0527_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-19",
+        "uploaded_by_name": "ZS PARAKOU N'DALI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-19T08:00:00Z",
+    "updated_at": "2026-05-20T15:00:00Z"
+  },
+  {
+    "id": "abab43b2-a7be-45a6-b261-73809e4eb8be",
+    "folder_number": "AA/2026/0171",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CS OUESSE",
+    "structure": "CS OUESSE",
+    "receipt_date": "2026-05-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-03",
+    "decision": "Favorable",
+    "decision_date": "2026-05-20",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 132/2026. Visé C/SSMUR le 2026-05-20",
+    "observations": "Demande réf: 132/2026. Traitement PRA le 2026-05-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9b52c7a1-534b-4f0d-b168-1878b121f2b6",
+        "name": "Demande_Autorisation_Achat_132_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-20",
+        "uploaded_by_name": "CS OUESSE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-20T08:00:00Z",
+    "updated_at": "2026-05-20T15:00:00Z"
+  },
+  {
+    "id": "5baec9eb-70d4-45e7-a96e-6d3046a8988d",
+    "folder_number": "AA/2026/0172",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "PROJET NIR4MED",
+    "structure": "PROJET NIR4MED",
+    "receipt_date": "2026-05-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-03",
+    "decision": "Favorable",
+    "decision_date": "2026-05-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 036. Visé C/SSMUR le 2026-05-21",
+    "observations": "Demande réf: 036. Traitement PRA le 2026-05-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "061b8890-94f8-44ee-82e8-c67ae93b2747",
+        "name": "Demande_Autorisation_Achat_036.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-20",
+        "uploaded_by_name": "PROJET NIR4MED"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-20T08:00:00Z",
+    "updated_at": "2026-05-21T15:00:00Z"
+  },
+  {
+    "id": "89f6409e-4bf2-4f8b-8e99-4ac6b208f25f",
+    "folder_number": "AA/2026/0173",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ OUIDAH",
+    "structure": "HZ OUIDAH",
+    "receipt_date": "2026-05-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-04",
+    "decision": "Favorable",
+    "decision_date": "2026-05-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 080/26. Visé C/SSMUR le 2026-05-21",
+    "observations": "Demande réf: 080/26. Traitement PRA le 2026-05-21",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b780fb4d-04e2-4bcb-a38f-3852dfe0eedf",
+        "name": "Demande_Autorisation_Achat_080_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-21",
+        "uploaded_by_name": "HZ OUIDAH"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-21T08:00:00Z",
+    "updated_at": "2026-05-21T15:00:00Z"
+  },
+  {
+    "id": "de9e893b-ad10-4372-b76a-f92c2f3b58d1",
+    "folder_number": "AA/2026/0174",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ADJOHOUN",
+    "structure": "HZ ADJOHOUN",
+    "receipt_date": "2026-05-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-04",
+    "decision": "Favorable",
+    "decision_date": "2026-05-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0956/26. Visé C/SSMUR le 2026-05-23",
+    "observations": "Demande réf: 0956/26. Traitement PRA le 2026-05-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8e4ba9dd-6aa5-4386-a79a-55635a7edbc2",
+        "name": "Demande_Autorisation_Achat_0956_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-21",
+        "uploaded_by_name": "HZ ADJOHOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-21T08:00:00Z",
+    "updated_at": "2026-05-23T15:00:00Z"
+  },
+  {
+    "id": "1fd93671-db75-4104-a258-e8c5be8be9e1",
+    "folder_number": "AA/2026/0175",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-05-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-04",
+    "decision": "Favorable",
+    "decision_date": "2026-05-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1039/2026. Visé C/SSMUR le 2026-05-23",
+    "observations": "Demande réf: 1039/2026. Traitement PRA le 2026-05-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4836808b-efdd-4b94-b74c-631a80f5b5af",
+        "name": "Demande_Autorisation_Achat_1039_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-21",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-21T08:00:00Z",
+    "updated_at": "2026-05-23T15:00:00Z"
+  },
+  {
+    "id": "a63d84c5-acea-4c7d-92f4-78e8f4c4189d",
+    "folder_number": "AA/2026/0176",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-05-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-04",
+    "decision": "Favorable",
+    "decision_date": "2026-05-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1040/2026. Visé C/SSMUR le 2026-05-23",
+    "observations": "Demande réf: 1040/2026. Traitement PRA le 2026-05-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "20490fdb-4320-4359-bd6f-51c575672843",
+        "name": "Demande_Autorisation_Achat_1040_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-21",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-21T08:00:00Z",
+    "updated_at": "2026-05-23T15:00:00Z"
+  },
+  {
+    "id": "888e1a65-fd0d-47e4-8aea-b97799bc0a8f",
+    "folder_number": "AA/2026/0177",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MALANVILLE",
+    "structure": "HZ MALANVILLE",
+    "receipt_date": "2026-05-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-04",
+    "decision": "Favorable",
+    "decision_date": "2026-05-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 03/26. Visé C/SSMUR le 2026-05-27",
+    "observations": "Demande réf: 03/26. Traitement PRA le 2026-05-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "295fa110-8fa8-421e-9b72-0d75ce2a3582",
+        "name": "Demande_Autorisation_Achat_03_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-21",
+        "uploaded_by_name": "HZ MALANVILLE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-21T08:00:00Z",
+    "updated_at": "2026-05-27T15:00:00Z"
+  },
+  {
+    "id": "f87c75ee-d88b-4e06-919a-9eb673b4e770",
+    "folder_number": "AA/2026/0178",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PARAKOU N'DALI",
+    "structure": "ZS PARAKOU N'DALI",
+    "receipt_date": "2026-05-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-04",
+    "decision": "Favorable",
+    "decision_date": "2026-05-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0527/26. Visé C/SSMUR le 2026-05-23",
+    "observations": "Demande réf: 0527/26. Traitement PRA le 2026-05-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2cf51d81-bb06-488a-82cb-cf44c16b7f1d",
+        "name": "Demande_Autorisation_Achat_0527_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-21",
+        "uploaded_by_name": "ZS PARAKOU N'DALI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-21T08:00:00Z",
+    "updated_at": "2026-05-23T15:00:00Z"
+  },
+  {
+    "id": "6b32b379-4d64-4b7f-8f71-da39eddaaba1",
+    "folder_number": "AA/2026/0179",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ISRHR",
+    "structure": "ISRHR",
+    "receipt_date": "2026-05-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-05",
+    "decision": "Favorable",
+    "decision_date": "2026-05-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0954. Visé C/SSMUR le 2026-05-23",
+    "observations": "Demande réf: 0954. Traitement PRA le 2026-05-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "03490390-2b2a-4125-8d83-643f34cfc0fc",
+        "name": "Demande_Autorisation_Achat_0954.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-22",
+        "uploaded_by_name": "ISRHR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-22T08:00:00Z",
+    "updated_at": "2026-05-23T15:00:00Z"
+  },
+  {
+    "id": "98a6b33f-eaf0-4cdb-bdfe-ea170b9fbced",
+    "folder_number": "AA/2026/0180",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ OUIDAH",
+    "structure": "HZ OUIDAH",
+    "receipt_date": "2026-05-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-05",
+    "decision": "Favorable",
+    "decision_date": "2026-05-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 084/26. Visé C/SSMUR le 2026-05-23",
+    "observations": "Demande réf: 084/26. Traitement PRA le 2026-05-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "350f7bdb-59de-4b67-a8d5-cbc27a8ce6d9",
+        "name": "Demande_Autorisation_Achat_084_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-22",
+        "uploaded_by_name": "HZ OUIDAH"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-22T08:00:00Z",
+    "updated_at": "2026-05-23T15:00:00Z"
+  },
+  {
+    "id": "b2954e64-586e-4e72-b227-7a2a2d1e417d",
+    "folder_number": "AA/2026/0181",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD DONGA",
+    "structure": "CHD DONGA",
+    "receipt_date": "2026-05-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-11",
+    "decision": "Favorable",
+    "decision_date": "2026-05-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 050/2026. Visé C/SSMUR le 2026-05-29",
+    "observations": "Demande réf: 050/2026. Traitement PRA le 2026-05-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f20db444-fedf-4a20-973b-b277119b723c",
+        "name": "Demande_Autorisation_Achat_050_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-28",
+        "uploaded_by_name": "CHD DONGA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-28T08:00:00Z",
+    "updated_at": "2026-05-29T15:00:00Z"
+  },
+  {
+    "id": "1a256d72-d07a-454d-8519-90b0a36d0e5e",
+    "folder_number": "AA/2026/0182",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA",
+    "structure": "HZ ALLADA",
+    "receipt_date": "2026-05-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-11",
+    "decision": "Favorable",
+    "decision_date": "2026-05-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1105/2026. Visé C/SSMUR le 2026-05-29",
+    "observations": "Demande réf: 1105/2026. Traitement PRA le 2026-05-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4bd0a6e2-7e8b-4925-9e63-3cdb172cbf1f",
+        "name": "Demande_Autorisation_Achat_1105_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-28",
+        "uploaded_by_name": "HZ ALLADA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-28T08:00:00Z",
+    "updated_at": "2026-05-29T15:00:00Z"
+  },
+  {
+    "id": "7ae5cbd8-c8a1-436a-b009-01ff3a7587b8",
+    "folder_number": "AA/2026/0183",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAVALOU BANTE",
+    "structure": "HZ SAVALOU BANTE",
+    "receipt_date": "2026-05-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-12",
+    "decision": "Favorable",
+    "decision_date": "2026-05-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 690/2026. Visé C/SSMUR le 2026-05-29",
+    "observations": "Demande réf: 690/2026. Traitement PRA le 2026-05-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e4d38c53-43d6-4ab6-bed7-3712d0de2d0f",
+        "name": "Demande_Autorisation_Achat_690_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-05-29",
+        "uploaded_by_name": "HZ SAVALOU BANTE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-29T08:00:00Z",
+    "updated_at": "2026-05-29T15:00:00Z"
+  },
+  {
+    "id": "98767740-b4bd-4b80-81d7-8b32046c0026",
+    "folder_number": "AA/2026/0184",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS APLAHOUE D D",
+    "structure": "ZS APLAHOUE D D",
+    "receipt_date": "2026-06-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-15",
+    "decision": "Favorable",
+    "decision_date": "2026-06-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 408/26. Visé C/SSMUR le 2026-06-03",
+    "observations": "Demande réf: 408/26. Traitement PRA le 2026-06-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "85834930-8fa1-432f-a0c5-065ae4e3dbf6",
+        "name": "Demande_Autorisation_Achat_408_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-01",
+        "uploaded_by_name": "ZS APLAHOUE D D"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-01T08:00:00Z",
+    "updated_at": "2026-06-03T15:00:00Z"
+  },
+  {
+    "id": "257c6d18-dddb-44cd-beb6-5a4db7315055",
+    "folder_number": "AA/2026/0185",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS POBE ADJA OUERE KETOU",
+    "structure": "ZS POBE ADJA OUERE KETOU",
+    "receipt_date": "2026-06-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-15",
+    "decision": "Favorable",
+    "decision_date": "2026-06-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1568/2025. Visé C/SSMUR le 2026-06-03",
+    "observations": "Demande réf: 1568/2025. Traitement PRA le 2026-06-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "41b5c5e6-c429-4a80-9a9c-73a08781b768",
+        "name": "Demande_Autorisation_Achat_1568_2025.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-01",
+        "uploaded_by_name": "ZS POBE ADJA OUERE KETOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-01T08:00:00Z",
+    "updated_at": "2026-06-03T15:00:00Z"
+  },
+  {
+    "id": "d60c2fcc-5f8c-4dec-9403-16f4499f7f5d",
+    "folder_number": "AA/2026/0186",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ LOKOSSA ATHIEME",
+    "structure": "HZ LOKOSSA ATHIEME",
+    "receipt_date": "2026-06-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-15",
+    "decision": "Favorable",
+    "decision_date": "2026-06-02",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 142/26. Visé C/SSMUR le 2026-06-02",
+    "observations": "Demande réf: 142/26. Traitement PRA le 2026-06-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-02",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e982480c-e562-4ba9-a495-f06eb69eaaae",
+        "name": "Demande_Autorisation_Achat_142_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-01",
+        "uploaded_by_name": "HZ LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-01T08:00:00Z",
+    "updated_at": "2026-06-02T15:00:00Z"
+  },
+  {
+    "id": "d40699c6-50fc-44cb-aa6d-eb0d100c3bc5",
+    "folder_number": "AA/2026/0187",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD OUEME PLATEAU",
+    "structure": "CHUD OUEME PLATEAU",
+    "receipt_date": "2026-06-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-16",
+    "decision": "Favorable",
+    "decision_date": "2026-06-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-187. Visé C/SSMUR le 2026-06-03",
+    "observations": "Demande réf: DEM-187. Traitement PRA le 2026-06-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "05724e42-98f1-4bfe-ae30-9978d37777ca",
+        "name": "Demande_Autorisation_Achat_DEM-187.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-02",
+        "uploaded_by_name": "CHUD OUEME PLATEAU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-02T08:00:00Z",
+    "updated_at": "2026-06-03T15:00:00Z"
+  },
+  {
+    "id": "8d371cb2-f68c-4dd9-9684-d59929fe474a",
+    "folder_number": "AA/2026/0188",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-06-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-16",
+    "decision": "Favorable",
+    "decision_date": "2026-06-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 617/2026. Visé C/SSMUR le 2026-06-03",
+    "observations": "Demande réf: 617/2026. Traitement PRA le 2026-06-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b6aefac0-4d24-4184-9dcf-3d795342f0e1",
+        "name": "Demande_Autorisation_Achat_617_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-02",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-02T08:00:00Z",
+    "updated_at": "2026-06-03T15:00:00Z"
+  },
+  {
+    "id": "fddc57aa-95e3-445b-a273-1ad15b6012fc",
+    "folder_number": "AA/2026/0189",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHU-MEL",
+    "structure": "CHU-MEL",
+    "receipt_date": "2026-06-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-16",
+    "decision": "Favorable",
+    "decision_date": "2026-06-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 789/2026. Visé C/SSMUR le 2026-06-03",
+    "observations": "Demande réf: 789/2026. Traitement PRA le 2026-06-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "87ac9fb5-6a05-4fe8-871d-410704aeca9f",
+        "name": "Demande_Autorisation_Achat_789_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-02",
+        "uploaded_by_name": "CHU-MEL"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-02T08:00:00Z",
+    "updated_at": "2026-06-03T15:00:00Z"
+  },
+  {
+    "id": "aa8957ca-bb72-4d65-835c-cf5e4ab881a9",
+    "folder_number": "AA/2026/0190",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KLOUEKANME",
+    "structure": "HZ KLOUEKANME",
+    "receipt_date": "2026-06-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-17",
+    "decision": "Favorable",
+    "decision_date": "2026-06-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 785/26. Visé C/SSMUR le 2026-06-06",
+    "observations": "Demande réf: 785/26. Traitement PRA le 2026-06-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "665f3458-6eaf-46d1-bbe7-a9c8c17a327b",
+        "name": "Demande_Autorisation_Achat_785_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-03",
+        "uploaded_by_name": "HZ KLOUEKANME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-03T08:00:00Z",
+    "updated_at": "2026-06-06T15:00:00Z"
+  },
+  {
+    "id": "2ba25bcd-13cb-48fb-83e8-978abd6f3f41",
+    "folder_number": "AA/2026/0191",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ZOU COLLINES",
+    "structure": "CHD ZOU COLLINES",
+    "receipt_date": "2026-06-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-17",
+    "decision": "Favorable",
+    "decision_date": "2026-06-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-191. Visé C/SSMUR le 2026-06-06",
+    "observations": "Demande réf: DEM-191. Traitement PRA le 2026-06-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "59452615-0941-4c53-b527-d9153d110a28",
+        "name": "Demande_Autorisation_Achat_DEM-191.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-03",
+        "uploaded_by_name": "CHD ZOU COLLINES"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-03T08:00:00Z",
+    "updated_at": "2026-06-06T15:00:00Z"
+  },
+  {
+    "id": "0d9b70ee-3cd5-4db3-bae8-51d56cf9519b",
+    "folder_number": "AA/2026/0192",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MENONTIN",
+    "structure": "HZ MENONTIN",
+    "receipt_date": "2026-06-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-18",
+    "decision": "Favorable",
+    "decision_date": "2026-06-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 560. Visé C/SSMUR le 2026-06-06",
+    "observations": "Demande réf: 560. Traitement PRA le 2026-06-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4df7a588-2f95-48ac-9cf5-3357e19bbc44",
+        "name": "Demande_Autorisation_Achat_560.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-04",
+        "uploaded_by_name": "HZ MENONTIN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-04T08:00:00Z",
+    "updated_at": "2026-06-06T15:00:00Z"
+  },
+  {
+    "id": "a0f70ba4-2ea3-4882-be0d-822d41f88933",
+    "folder_number": "AA/2026/0193",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PARAKOPU N'DALI",
+    "structure": "ZS PARAKOPU N'DALI",
+    "receipt_date": "2026-06-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-18",
+    "decision": "Favorable",
+    "decision_date": "2026-06-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0527/26. Visé C/SSMUR le 2026-06-06",
+    "observations": "Demande réf: 0527/26. Traitement PRA le 2026-06-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f3d28f74-fb93-4c36-8520-af499bb62a6b",
+        "name": "Demande_Autorisation_Achat_0527_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-04",
+        "uploaded_by_name": "ZS PARAKOPU N'DALI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-04T08:00:00Z",
+    "updated_at": "2026-06-06T15:00:00Z"
+  },
+  {
+    "id": "0c950e5a-9557-470d-89ac-a07b7e60f083",
+    "folder_number": "AA/2026/0194",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KLOUEKANME",
+    "structure": "HZ KLOUEKANME",
+    "receipt_date": "2026-06-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-19",
+    "decision": "Favorable",
+    "decision_date": "2026-06-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 789/26. Visé C/SSMUR le 2026-06-06",
+    "observations": "Demande réf: 789/26. Traitement PRA le 2026-06-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4ae27dd2-1967-4df8-883e-68f812ae0660",
+        "name": "Demande_Autorisation_Achat_789_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-05",
+        "uploaded_by_name": "HZ KLOUEKANME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-05T08:00:00Z",
+    "updated_at": "2026-06-06T15:00:00Z"
+  },
+  {
+    "id": "afb1dc89-489e-417d-b4ef-5a6815b7a4b1",
+    "folder_number": "AA/2026/0195",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COME BOPA HOUEYOGBE",
+    "structure": "ZS COME BOPA HOUEYOGBE",
+    "receipt_date": "2026-06-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-19",
+    "decision": "Favorable",
+    "decision_date": "2026-06-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 678/26. Visé C/SSMUR le 2026-06-06",
+    "observations": "Demande réf: 678/26. Traitement PRA le 2026-06-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e33a3f6d-964b-4bc2-b404-e33ee07a849e",
+        "name": "Demande_Autorisation_Achat_678_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-05",
+        "uploaded_by_name": "ZS COME BOPA HOUEYOGBE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-05T08:00:00Z",
+    "updated_at": "2026-06-06T15:00:00Z"
+  },
+  {
+    "id": "d6c3c234-ac5b-47ea-903f-bbdab1c69742",
+    "folder_number": "AA/2026/0196",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COME BOPA HOUEYOGBE",
+    "structure": "ZS COME BOPA HOUEYOGBE",
+    "receipt_date": "2026-06-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-22",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 778/26. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 778/26. Traitement PRA le 2026-06-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "01f3d691-2890-4049-8d51-c987e4ed27ba",
+        "name": "Demande_Autorisation_Achat_778_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-08",
+        "uploaded_by_name": "ZS COME BOPA HOUEYOGBE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-08T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "ed3b2212-a8fc-469c-a3d1-8fda89cb2e9c",
+    "folder_number": "AA/2026/0197",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS LOKOSSA ATHIEME",
+    "structure": "ZS LOKOSSA ATHIEME",
+    "receipt_date": "2026-06-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-23",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 918/26. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 918/26. Traitement PRA le 2026-06-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c0308cde-3c0d-478a-b989-094e41871763",
+        "name": "Demande_Autorisation_Achat_918_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-09",
+        "uploaded_by_name": "ZS LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-09T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "a210c17d-4fc8-493b-a3c8-b17c954293f8",
+    "folder_number": "AA/2026/0198",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-06-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-23",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1218/2026. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 1218/2026. Traitement PRA le 2026-06-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e5505caf-5df3-4c2d-9e39-1185083fbcdc",
+        "name": "Demande_Autorisation_Achat_1218_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-09",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-09T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "c97ec7aa-67c4-42c9-bb84-014733862d25",
+    "folder_number": "AA/2026/0199",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD OUEME PLATEAU",
+    "structure": "CHUD OUEME PLATEAU",
+    "receipt_date": "2026-06-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-23",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-199. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: DEM-199. Traitement PRA le 2026-06-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d0999b85-9037-45c4-9436-832e62343e8c",
+        "name": "Demande_Autorisation_Achat_DEM-199.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-09",
+        "uploaded_by_name": "CHUD OUEME PLATEAU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-09T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "64f5c874-090a-4931-97be-df3cf7ef1605",
+    "folder_number": "AA/2026/0200",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ NATITINGOU",
+    "structure": "HZ NATITINGOU",
+    "receipt_date": "2026-06-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-23",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 749. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 749. Traitement PRA le 2026-06-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3063e587-f623-4f40-9dbd-bab3e8e17190",
+        "name": "Demande_Autorisation_Achat_749.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-09",
+        "uploaded_by_name": "HZ NATITINGOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-09T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "2ebbb58e-0b24-47e4-b34c-51d90590acde",
+    "folder_number": "AA/2026/0201",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ DJIDJA ABOMEY AGBANGNIZOUN",
+    "structure": "HZ DJIDJA ABOMEY AGBANGNIZOUN",
+    "receipt_date": "2026-06-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-23",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 287/26. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 287/26. Traitement PRA le 2026-06-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "65bd6423-ee4d-41b1-8d10-833d7c6b6c5a",
+        "name": "Demande_Autorisation_Achat_287_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-09",
+        "uploaded_by_name": "HZ DJIDJA ABOMEY AGBANGNIZOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-09T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "c69d3b79-8cf5-4d88-8b06-87f6d2da3745",
+    "folder_number": "AA/2026/0202",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHPR-COTONOU",
+    "structure": "CHPR-COTONOU",
+    "receipt_date": "2026-06-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-23",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 083. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 083. Traitement PRA le 2026-06-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a7437ec6-bcad-4acf-a64d-680d3203539b",
+        "name": "Demande_Autorisation_Achat_083.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-09",
+        "uploaded_by_name": "CHPR-COTONOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-09T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "8c4628a6-1ef8-4a37-b2a6-0ff00cee257f",
+    "folder_number": "AA/2026/0203",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS NATI BOUKOUM TOUCOUN",
+    "structure": "ZS NATI BOUKOUM TOUCOUN",
+    "receipt_date": "2026-06-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-24",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 601/2025. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 601/2025. Traitement PRA le 2026-06-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1b3e0447-aeb8-4b5d-bb0a-3a1c727c8e87",
+        "name": "Demande_Autorisation_Achat_601_2025.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-10",
+        "uploaded_by_name": "ZS NATI BOUKOUM TOUCOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-10T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "9d22acd3-feda-4a37-8197-5a7743162ebf",
+    "folder_number": "AA/2026/0204",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD MONO",
+    "structure": "CHD MONO",
+    "receipt_date": "2026-06-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-24",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 185/26. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: 185/26. Traitement PRA le 2026-06-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3a0a12d0-d825-4cdd-a410-cf08bd806cbf",
+        "name": "Demande_Autorisation_Achat_185_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-10",
+        "uploaded_by_name": "CHD MONO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-10T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "6d9cf145-4cc0-4708-a530-3a90178f8f55",
+    "folder_number": "AA/2026/0205",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ZOU/COLLINES",
+    "structure": "CHD ZOU/COLLINES",
+    "receipt_date": "2026-06-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-25",
+    "decision": "Favorable",
+    "decision_date": "2026-06-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: DEM-205. Visé C/SSMUR le 2026-06-11",
+    "observations": "Demande réf: DEM-205. Traitement PRA le 2026-06-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4c73ddaf-2662-485b-bd4a-cd0296bf1dc9",
+        "name": "Demande_Autorisation_Achat_DEM-205.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-11",
+        "uploaded_by_name": "CHD ZOU/COLLINES"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-11T08:00:00Z",
+    "updated_at": "2026-06-11T15:00:00Z"
+  },
+  {
+    "id": "f4e26e5c-9285-49c9-8fb8-35c594e1d1a1",
+    "folder_number": "AA/2026/0206",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU LERE",
+    "structure": "CHUZ SURU LERE",
+    "receipt_date": "2026-06-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-25",
+    "decision": "Favorable",
+    "decision_date": "2026-06-15",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0839-2026. Visé C/SSMUR le 2026-06-15",
+    "observations": "Demande réf: 0839-2026. Traitement PRA le 2026-06-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-15",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a6aa3fa8-4539-4205-ad43-616692918ef7",
+        "name": "Demande_Autorisation_Achat_0839-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-11",
+        "uploaded_by_name": "CHUZ SURU LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-11T08:00:00Z",
+    "updated_at": "2026-06-15T15:00:00Z"
+  },
+  {
+    "id": "879f0fef-7d7a-4b4e-a377-2ba6179907c0",
+    "folder_number": "AA/2026/0207",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU 2&3",
+    "structure": "ZS COTONOU 2&3",
+    "receipt_date": "2026-06-12",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-26",
+    "decision": "Favorable",
+    "decision_date": "2026-06-15",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0704/26. Visé C/SSMUR le 2026-06-15",
+    "observations": "Demande réf: 0704/26. Traitement PRA le 2026-06-12",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-15",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "061ce005-96f1-4960-982d-3b0f7e49d06e",
+        "name": "Demande_Autorisation_Achat_0704_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-12",
+        "uploaded_by_name": "ZS COTONOU 2&3"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-12T08:00:00Z",
+    "updated_at": "2026-06-15T15:00:00Z"
+  },
+  {
+    "id": "00e16c42-343c-486c-bfdd-263da3c734a2",
+    "folder_number": "AA/2026/0208",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "SAMU",
+    "structure": "SAMU",
+    "receipt_date": "2026-06-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-29",
+    "decision": "Favorable",
+    "decision_date": "2026-06-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 209/2026. Visé C/SSMUR le 2026-06-16",
+    "observations": "Demande réf: 209/2026. Traitement PRA le 2026-06-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "acd58db8-267f-4a26-b4f8-a1000b778fdf",
+        "name": "Demande_Autorisation_Achat_209_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-15",
+        "uploaded_by_name": "SAMU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-15T08:00:00Z",
+    "updated_at": "2026-06-16T15:00:00Z"
+  },
+  {
+    "id": "188fb2e6-c0a6-40de-a43a-5dae7c5e7322",
+    "folder_number": "AA/2026/0209",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS KANDO GOGOUNOU SEGBANA",
+    "structure": "ZS KANDO GOGOUNOU SEGBANA",
+    "receipt_date": "2026-06-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-29",
+    "decision": "Favorable",
+    "decision_date": "2026-06-16",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1151/2026. Visé C/SSMUR le 2026-06-16",
+    "observations": "Demande réf: 1151/2026. Traitement PRA le 2026-06-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-16",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d9ae728c-c640-489a-8d60-7fd9b69fd044",
+        "name": "Demande_Autorisation_Achat_1151_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-15",
+        "uploaded_by_name": "ZS KANDO GOGOUNOU SEGBANA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-15T08:00:00Z",
+    "updated_at": "2026-06-16T15:00:00Z"
+  },
+  {
+    "id": "796770a0-d512-42ae-b9a5-204002a3fe93",
+    "folder_number": "AA/2026/0210",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PORTO-NOVO AGUEGUES SEME-PODJI",
+    "structure": "ZS PORTO-NOVO AGUEGUES SEME-PODJI",
+    "receipt_date": "2026-06-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-30",
+    "decision": "Favorable",
+    "decision_date": "2026-06-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0940/26. Visé C/SSMUR le 2026-06-17",
+    "observations": "Demande réf: 0940/26. Traitement PRA le 2026-06-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c00f620c-8c1a-4db0-8569-3a53a5a43a0c",
+        "name": "Demande_Autorisation_Achat_0940_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-16",
+        "uploaded_by_name": "ZS PORTO-NOVO AGUEGUES SEME-PODJI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-16T08:00:00Z",
+    "updated_at": "2026-06-17T15:00:00Z"
+  },
+  {
+    "id": "3b0a5d78-9ab0-4f5d-9111-b9f2928d36b9",
+    "folder_number": "AA/2026/0211",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD BORGOU ALIBORI",
+    "structure": "CHUD BORGOU ALIBORI",
+    "receipt_date": "2026-06-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-01",
+    "decision": "Favorable",
+    "decision_date": "2026-06-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2653/26. Visé C/SSMUR le 2026-06-17",
+    "observations": "Demande réf: 2653/26. Traitement PRA le 2026-06-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b75e3f8c-8f47-49ac-9805-d0380588ecff",
+        "name": "Demande_Autorisation_Achat_2653_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-17",
+        "uploaded_by_name": "CHUD BORGOU ALIBORI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-17T08:00:00Z",
+    "updated_at": "2026-06-17T15:00:00Z"
+  },
+  {
+    "id": "28139e1c-a319-4557-8a47-d415102314cf",
+    "folder_number": "AA/2026/0212",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KANDI",
+    "structure": "HZ KANDI",
+    "receipt_date": "2026-06-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-01",
+    "decision": "Favorable",
+    "decision_date": "2026-06-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0737/2026. Visé C/SSMUR le 2026-06-17",
+    "observations": "Demande réf: 0737/2026. Traitement PRA le 2026-06-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "37b971e7-cbc0-4b00-97cc-fc16cfd351e5",
+        "name": "Demande_Autorisation_Achat_0737_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-17",
+        "uploaded_by_name": "HZ KANDI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-17T08:00:00Z",
+    "updated_at": "2026-06-17T15:00:00Z"
+  },
+  {
+    "id": "8734aa06-06ba-47e4-b1c6-3829505204f4",
+    "folder_number": "AA/2026/0213",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHUPPC",
+    "structure": "CNHUPPC",
+    "receipt_date": "2026-06-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-03",
+    "decision": "Favorable",
+    "decision_date": "2026-06-25",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 672/2026. Visé C/SSMUR le 2026-06-25",
+    "observations": "Demande réf: 672/2026. Traitement PRA le 2026-06-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-25",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9b75d20a-66bb-4136-9203-4d4d1d71c0ad",
+        "name": "Demande_Autorisation_Achat_672_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-19",
+        "uploaded_by_name": "CNHUPPC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-19T08:00:00Z",
+    "updated_at": "2026-06-25T15:00:00Z"
+  },
+  {
+    "id": "82bfd8da-74fb-4d45-9109-597d8d57d929",
+    "folder_number": "AA/2026/0214",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-06-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-03",
+    "decision": "Favorable",
+    "decision_date": "2026-06-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 651/2026. Visé C/SSMUR le 2026-06-23",
+    "observations": "Demande réf: 651/2026. Traitement PRA le 2026-06-19",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e5d6732c-ab3e-454b-9cf9-4af2b61c6e03",
+        "name": "Demande_Autorisation_Achat_651_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-19",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-19T08:00:00Z",
+    "updated_at": "2026-06-23T15:00:00Z"
+  },
+  {
+    "id": "3f606d2c-b251-45ef-9bc0-71ee72024028",
+    "folder_number": "AA/2026/0215",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-06-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-03",
+    "decision": "Favorable",
+    "decision_date": "2026-06-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 652/2026. Visé C/SSMUR le 2026-06-23",
+    "observations": "Demande réf: 652/2026. Traitement PRA le 2026-06-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4439aad1-0ab2-4ed0-a7bb-e98b1273d939",
+        "name": "Demande_Autorisation_Achat_652_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-19",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-19T08:00:00Z",
+    "updated_at": "2026-06-23T15:00:00Z"
+  },
+  {
+    "id": "b6167109-4ac6-4979-9159-6799f5712916",
+    "folder_number": "AA/2026/0216",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU HKM",
+    "structure": "CNHU HKM",
+    "receipt_date": "2026-06-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-06",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1608/2026. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 1608/2026. Traitement PRA le 2026-06-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a3ff7e45-b9bd-49cb-bf39-acaa73f52fe4",
+        "name": "Demande_Autorisation_Achat_1608_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-22",
+        "uploaded_by_name": "CNHU HKM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-22T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "ba2169f7-0c35-471e-aa18-95579c5055c8",
+    "folder_number": "AA/2026/0217",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "UAC",
+    "structure": "UAC",
+    "receipt_date": "2026-06-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-08",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 904. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 904. Traitement PRA le 2026-06-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "63984385-0581-45a2-8031-5f9ab72d52ae",
+        "name": "Demande_Autorisation_Achat_904.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-24",
+        "uploaded_by_name": "UAC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-24T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "d211ff2b-ea1b-4468-8cda-c4389588781a",
+    "folder_number": "AA/2026/0218",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "UAC",
+    "structure": "UAC",
+    "receipt_date": "2026-06-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-06",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 905. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 905. Traitement PRA le 2026-06-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f8218344-f7db-42e6-90db-d74b853b1712",
+        "name": "Demande_Autorisation_Achat_905.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-22",
+        "uploaded_by_name": "UAC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-22T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "cce87232-ff89-45a8-9db4-e0b586c38a3f",
+    "folder_number": "AA/2026/0219",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "UAC",
+    "structure": "UAC",
+    "receipt_date": "2026-06-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-06",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 906. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 906. Traitement PRA le 2026-06-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "cdb6acdc-627c-401a-9f4e-26c1a70bd80b",
+        "name": "Demande_Autorisation_Achat_906.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-22",
+        "uploaded_by_name": "UAC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-22T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "6ed52170-74b1-459e-95aa-50235adcbeee",
+    "folder_number": "AA/2026/0220",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ DASSA GLAZOUE",
+    "structure": "HZ DASSA GLAZOUE",
+    "receipt_date": "2026-06-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-07",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 118/2026. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 118/2026. Traitement PRA le 2026-06-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "82ffe080-1644-4e8a-bb12-f4696acefec6",
+        "name": "Demande_Autorisation_Achat_118_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-23",
+        "uploaded_by_name": "HZ DASSA GLAZOUE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-23T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "e199c8ec-db67-4fdb-94aa-c74dcb6c7c99",
+    "folder_number": "AA/2026/0221",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COME",
+    "structure": "HZ COME",
+    "receipt_date": "2026-06-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-07",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 322-2026. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 322-2026. Traitement PRA le 2026-06-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d9536bd7-a6d2-48e7-8e4e-74f47198ac40",
+        "name": "Demande_Autorisation_Achat_322-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-23",
+        "uploaded_by_name": "HZ COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-23T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "9f9a80d3-217c-43bf-a5ee-f2f5d07d42b2",
+    "folder_number": "AA/2026/0222",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COME",
+    "structure": "HZ COME",
+    "receipt_date": "2026-06-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-07",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 323-2026. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 323-2026. Traitement PRA le 2026-06-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "14634eac-1ac2-446b-a205-f83a5c37754a",
+        "name": "Demande_Autorisation_Achat_323-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-23",
+        "uploaded_by_name": "HZ COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-23T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "da990da1-3f50-48e5-9167-09e4e0ea00f0",
+    "folder_number": "AA/2026/0223",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "UAC",
+    "structure": "UAC",
+    "receipt_date": "2026-06-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-07",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 755. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 755. Traitement PRA le 2026-06-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "50165219-4554-4cae-9031-5897f580b65b",
+        "name": "Demande_Autorisation_Achat_755.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-23",
+        "uploaded_by_name": "UAC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-23T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "ea436c19-6288-4276-b0c3-6fd8f0cd73cf",
+    "folder_number": "AA/2026/0224",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COME",
+    "structure": "HZ COME",
+    "receipt_date": "2026-06-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-07",
+    "decision": "Favorable",
+    "decision_date": "2026-06-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 324-2026. Visé C/SSMUR le 2026-06-24",
+    "observations": "Demande réf: 324-2026. Traitement PRA le 2026-06-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c40171e8-ad62-4f22-b9a8-4c1ba3b9d821",
+        "name": "Demande_Autorisation_Achat_324-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-23",
+        "uploaded_by_name": "HZ COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-23T08:00:00Z",
+    "updated_at": "2026-06-24T15:00:00Z"
+  },
+  {
+    "id": "9784c805-8841-4f91-8ff1-22408557da82",
+    "folder_number": "AA/2026/0225",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS SAKETE IFANGNI",
+    "structure": "ZS SAKETE IFANGNI",
+    "receipt_date": "2026-06-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-08",
+    "decision": "Favorable",
+    "decision_date": "2026-06-26",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0911//2026. Visé C/SSMUR le 2026-06-26",
+    "observations": "Demande réf: 0911//2026. Traitement PRA le 2026-06-25",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-26",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "620b916e-3da1-4a08-af3a-4705acad5fbb",
+        "name": "Demande_Autorisation_Achat_0911__2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-24",
+        "uploaded_by_name": "ZS SAKETE IFANGNI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-24T08:00:00Z",
+    "updated_at": "2026-06-26T15:00:00Z"
+  },
+  {
+    "id": "927de919-10ad-4f1c-a9de-d3b9f23c6afb",
+    "folder_number": "AA/2026/0226",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ APLAHOUE",
+    "structure": "HZ APLAHOUE",
+    "receipt_date": "2026-06-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-08",
+    "decision": "Favorable",
+    "decision_date": "2026-06-26",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 208/2026. Visé C/SSMUR le 2026-06-26",
+    "observations": "Demande réf: 208/2026. Traitement PRA le 2026-06-25",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-26",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2bef2c46-63c7-45d3-90de-dfc861566ab0",
+        "name": "Demande_Autorisation_Achat_208_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-24",
+        "uploaded_by_name": "HZ APLAHOUE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-24T08:00:00Z",
+    "updated_at": "2026-06-26T15:00:00Z"
+  },
+  {
+    "id": "ae2d4a4e-365c-4dd8-b073-b31d0a34ae28",
+    "folder_number": "AA/2026/0227",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-06-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-08",
+    "decision": "Favorable",
+    "decision_date": "2026-06-29",
+    "decision_notes": "Dossier reçu pour ZS ALLADA TOFFO ZE",
+    "observations": "Demande réf: 2069/26. Traitement PRA le 2026-06-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7c3637b4-cd92-478a-bf52-44a823ccd608",
+        "name": "Demande_Autorisation_Achat_2069_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-24",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-24T08:00:00Z",
+    "updated_at": "2026-06-29T15:00:00Z"
+  },
+  {
+    "id": "60484a03-a38e-4bc6-ac14-ce443deaeb19",
+    "folder_number": "AA/2026/0228",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA",
+    "structure": "HZ ALLADA",
+    "receipt_date": "2026-06-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-08",
+    "decision": "Favorable",
+    "decision_date": "2026-06-29",
+    "decision_notes": "Dossier reçu pour HZ ALLADA",
+    "observations": "Demande réf: 1500/2026. Traitement PRA le 2026-06-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "56e0b4ec-a8e7-40ac-998e-ade261f6f771",
+        "name": "Demande_Autorisation_Achat_1500_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-24",
+        "uploaded_by_name": "HZ ALLADA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-24T08:00:00Z",
+    "updated_at": "2026-06-29T15:00:00Z"
+  },
+  {
+    "id": "a4c8f8ad-386c-4d8d-a148-a963ac4971af",
+    "folder_number": "AA/2026/0229",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-06-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-13",
+    "decision": "Favorable",
+    "decision_date": "2026-06-29",
+    "decision_notes": "Dossier reçu pour ZS ALLADA TOFFO ZE",
+    "observations": "Demande réf: 1501/2026. Traitement PRA le 2026-06-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8fb09c3d-fec1-47dc-b054-edb35bf2e3f9",
+        "name": "Demande_Autorisation_Achat_1501_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-29",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-29T08:00:00Z",
+    "updated_at": "2026-06-29T15:00:00Z"
+  },
+  {
+    "id": "621369af-8586-404f-937e-fd509082e52f",
+    "folder_number": "AA/2026/0230",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COME BOPA GRAND POPO HOUEYOGBE",
+    "structure": "ZS COME BOPA GRAND POPO HOUEYOGBE",
+    "receipt_date": "2026-06-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-13",
+    "decision": "Favorable",
+    "decision_date": "2026-06-29",
+    "decision_notes": "Dossier reçu pour ZS COME BOPA GRAND POPO HOUEYOGBE",
+    "observations": "Demande réf: 901/26. Traitement PRA le 2026-06-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "85759ce3-ceb3-44f7-be26-dedbee662103",
+        "name": "Demande_Autorisation_Achat_901_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-29",
+        "uploaded_by_name": "ZS COME BOPA GRAND POPO HOUEYOGBE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-29T08:00:00Z",
+    "updated_at": "2026-06-29T15:00:00Z"
+  },
+  {
+    "id": "518376b4-e7d9-434a-99d6-b48b1b425628",
+    "folder_number": "AA/2026/0231",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS SAKET IFANGNI",
+    "structure": "ZS SAKET IFANGNI",
+    "receipt_date": "2026-06-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-13",
+    "decision": "Favorable",
+    "decision_date": "2026-06-30",
+    "decision_notes": "Dossier reçu pour ZS SAKET IFANGNI",
+    "observations": "Demande réf: 0911/2026. Traitement PRA le 2026-06-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b0f71c6a-3c7b-4ad8-b06e-193311bc9eb0",
+        "name": "Demande_Autorisation_Achat_0911_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-29",
+        "uploaded_by_name": "ZS SAKET IFANGNI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-29T08:00:00Z",
+    "updated_at": "2026-06-30T15:00:00Z"
+  },
+  {
+    "id": "05aa9fae-710b-49ff-b96b-44ea4214c6c0",
+    "folder_number": "AA/2026/0232",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MENONTIN",
+    "structure": "HZ MENONTIN",
+    "receipt_date": "2026-06-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-14",
+    "decision": "Favorable",
+    "decision_date": "2026-06-30",
+    "decision_notes": "Dossier reçu pour HZ MENONTIN",
+    "observations": "Demande réf: 597. Traitement PRA le 2026-06-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3f9f905c-32e7-401c-b00f-1d7786d1dd60",
+        "name": "Demande_Autorisation_Achat_597.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-30",
+        "uploaded_by_name": "HZ MENONTIN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-30T08:00:00Z",
+    "updated_at": "2026-06-30T15:00:00Z"
+  },
+  {
+    "id": "e4933295-b57e-4e92-ae9c-3115c22c4730",
+    "folder_number": "AA/2026/0233",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ OUIDAH",
+    "structure": "HZ OUIDAH",
+    "receipt_date": "2026-06-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-14",
+    "decision": "Favorable",
+    "decision_date": "2026-06-30",
+    "decision_notes": "Dossier reçu pour HZ OUIDAH",
+    "observations": "Demande réf: 105/26. Traitement PRA le 2026-06-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "13dc7b6a-5f99-441b-9d67-57f13b3eb842",
+        "name": "Demande_Autorisation_Achat_105_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-30",
+        "uploaded_by_name": "HZ OUIDAH"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-30T08:00:00Z",
+    "updated_at": "2026-06-30T15:00:00Z"
+  },
+  {
+    "id": "44c833b3-19d7-41ee-b87a-3c0ef117539d",
+    "folder_number": "AA/2026/0234",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ APLAHOUE",
+    "structure": "HZ APLAHOUE",
+    "receipt_date": "2026-06-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-13",
+    "decision": "Favorable",
+    "decision_date": "2026-06-30",
+    "decision_notes": "Dossier reçu pour HZ APLAHOUE",
+    "observations": "Demande réf: 4542/26. Traitement PRA le 2026-06-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f9273de4-948f-491c-871c-62bc7926a1c6",
+        "name": "Demande_Autorisation_Achat_4542_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-29",
+        "uploaded_by_name": "HZ APLAHOUE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-29T08:00:00Z",
+    "updated_at": "2026-06-30T15:00:00Z"
+  },
+  {
+    "id": "3986a29f-70d4-46c7-8485-9f97508c64f4",
+    "folder_number": "AA/2026/0235",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MENONTIN",
+    "structure": "HZ MENONTIN",
+    "receipt_date": "2026-06-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-14",
+    "decision": "Favorable",
+    "decision_date": "2026-07-01",
+    "decision_notes": "Dossier reçu pour HZ MENONTIN",
+    "observations": "Demande réf: 596. Traitement PRA le 2026-07-01",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4fdee36e-e443-4cb6-ae8a-7f3050702e47",
+        "name": "Demande_Autorisation_Achat_596.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-06-30",
+        "uploaded_by_name": "HZ MENONTIN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-30T08:00:00Z",
+    "updated_at": "2026-07-01T15:00:00Z"
+  },
+  {
+    "id": "086a9f6a-6779-47b7-8792-bf796a94251d",
+    "folder_number": "AA/2026/0236",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS KOUANDE KEROU PEHUNCO",
+    "structure": "ZS KOUANDE KEROU PEHUNCO",
+    "receipt_date": "2026-07-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-15",
+    "decision": "Favorable",
+    "decision_date": "2026-07-01",
+    "decision_notes": "Dossier reçu pour ZS KOUANDE KEROU PEHUNCO",
+    "observations": "Demande réf: 923/2026. Traitement PRA le 2026-07-01",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0a51be0d-5632-4c7b-973c-07930d2a6fd3",
+        "name": "Demande_Autorisation_Achat_923_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-01",
+        "uploaded_by_name": "ZS KOUANDE KEROU PEHUNCO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-01T08:00:00Z",
+    "updated_at": "2026-07-01T15:00:00Z"
+  },
+  {
+    "id": "97633f35-6a6a-4f0f-922e-f692a7b37ecb",
+    "folder_number": "AA/2026/0237",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ADJOHOUN",
+    "structure": "HZ ADJOHOUN",
+    "receipt_date": "2026-07-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-16",
+    "decision": "Favorable",
+    "decision_date": "2026-07-02",
+    "decision_notes": "Dossier reçu pour HZ ADJOHOUN",
+    "observations": "Demande réf: 1355/26. Traitement PRA le 2026-07-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f8bf3317-d01e-43c0-b2ea-e7395fe649dc",
+        "name": "Demande_Autorisation_Achat_1355_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-02",
+        "uploaded_by_name": "HZ ADJOHOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-02T08:00:00Z",
+    "updated_at": "2026-07-02T15:00:00Z"
+  },
+  {
+    "id": "e86fd6b1-63fd-4de7-bd14-39e761919f75",
+    "folder_number": "AA/2026/0238",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHU MEL",
+    "structure": "CHU MEL",
+    "receipt_date": "2026-07-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-16",
+    "decision": "Favorable",
+    "decision_date": "2026-07-02",
+    "decision_notes": "Dossier reçu pour CHU MEL",
+    "observations": "Demande réf: 1008/2026. Traitement PRA le 2026-07-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "02171d55-f212-4f47-98c2-ee99b277ab9e",
+        "name": "Demande_Autorisation_Achat_1008_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-02",
+        "uploaded_by_name": "CHU MEL"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-02T08:00:00Z",
+    "updated_at": "2026-07-02T15:00:00Z"
+  },
+  {
+    "id": "eb1317d7-76f2-4974-ab03-0e84209acdcd",
+    "folder_number": "AA/2026/0239",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAVALOU BANTE",
+    "structure": "HZ SAVALOU BANTE",
+    "receipt_date": "2026-07-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-16",
+    "decision": "Favorable",
+    "decision_date": "2026-07-02",
+    "decision_notes": "Dossier reçu pour HZ SAVALOU BANTE",
+    "observations": "Demande réf: 843/2026. Traitement PRA le 2026-07-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "67f29d02-e6ef-4c97-927f-7706e8558864",
+        "name": "Demande_Autorisation_Achat_843_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-02",
+        "uploaded_by_name": "HZ SAVALOU BANTE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-02T08:00:00Z",
+    "updated_at": "2026-07-02T15:00:00Z"
+  },
+  {
+    "id": "a5bff72c-f874-4cbf-a185-89bf20e7c33b",
+    "folder_number": "AA/2026/0240",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ZOU COLLINES",
+    "structure": "CHD ZOU COLLINES",
+    "receipt_date": "2026-07-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-16",
+    "decision": "Favorable",
+    "decision_date": "2026-07-02",
+    "decision_notes": "Dossier reçu pour CHD ZOU COLLINES",
+    "observations": "Demande réf: Courrier du 02 juillet. Traitement PRA le 2026-07-02",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3482e251-3aff-4f07-8bdc-160f60a55ed0",
+        "name": "Demande_Autorisation_Achat_Courrier du 02 juillet.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-02",
+        "uploaded_by_name": "CHD ZOU COLLINES"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-02T08:00:00Z",
+    "updated_at": "2026-07-02T15:00:00Z"
+  },
+  {
+    "id": "2aa62487-446d-4166-90d0-e5240de7ea30",
+    "folder_number": "AA/2026/0241",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ZOGBODOMEY BOHICON ZAKPOTA",
+    "structure": "ZS ZOGBODOMEY BOHICON ZAKPOTA",
+    "receipt_date": "2026-07-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-16",
+    "decision": "Favorable",
+    "decision_date": "2026-07-03",
+    "decision_notes": "Dossier reçu pour ZS ZOGBODOMEY BOHICON ZAKPOTA",
+    "observations": "Demande réf: 0415/2026. Traitement PRA le 2026-07-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e0eb76d8-c3bb-4702-b003-237cf6dbf9e9",
+        "name": "Demande_Autorisation_Achat_0415_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-02",
+        "uploaded_by_name": "ZS ZOGBODOMEY BOHICON ZAKPOTA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-02T08:00:00Z",
+    "updated_at": "2026-07-03T15:00:00Z"
+  },
+  {
+    "id": "b4066d96-7a89-4b3b-8e96-cee1e348a70f",
+    "folder_number": "AA/2026/0242",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ LOKOSSA ATHIEME",
+    "structure": "HZ LOKOSSA ATHIEME",
+    "receipt_date": "2026-07-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-21",
+    "decision": "Favorable",
+    "decision_date": "2026-07-07",
+    "decision_notes": "Dossier reçu pour HZ LOKOSSA ATHIEME",
+    "observations": "Demande réf: 182/26. Traitement PRA le 2026-07-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "83b7e4cc-6e03-45e6-bed9-d0d37d067442",
+        "name": "Demande_Autorisation_Achat_182_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-07",
+        "uploaded_by_name": "HZ LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-07T08:00:00Z",
+    "updated_at": "2026-07-07T15:00:00Z"
+  },
+  {
+    "id": "b8b84d21-9ab4-4ac3-9dbc-b724f94d6df6",
+    "folder_number": "AA/2026/0243",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAKETE IFANGNI",
+    "structure": "HZ SAKETE IFANGNI",
+    "receipt_date": "2026-07-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-21",
+    "decision": "Favorable",
+    "decision_date": "2026-07-07",
+    "decision_notes": "Dossier reçu pour HZ SAKETE IFANGNI",
+    "observations": "Demande réf: 171/2026. Traitement PRA le 2026-07-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "95318184-c16b-4eba-87ed-c01aaaf15cca",
+        "name": "Demande_Autorisation_Achat_171_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-07",
+        "uploaded_by_name": "HZ SAKETE IFANGNI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-07T08:00:00Z",
+    "updated_at": "2026-07-07T15:00:00Z"
+  },
+  {
+    "id": "5dd30ac2-9d37-4a41-b09f-12b9d360735f",
+    "folder_number": "AA/2026/0244",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ ABOMEY CALAVI",
+    "structure": "CHUZ ABOMEY CALAVI",
+    "receipt_date": "2026-07-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-21",
+    "decision": "Favorable",
+    "decision_date": "2026-07-07",
+    "decision_notes": "Dossier reçu pour CHUZ ABOMEY CALAVI",
+    "observations": "Demande réf: 366/26. Traitement PRA le 2026-07-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "bd8f7e1e-5b6a-40ef-bd7d-b944382063cd",
+        "name": "Demande_Autorisation_Achat_366_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-07",
+        "uploaded_by_name": "CHUZ ABOMEY CALAVI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-07T08:00:00Z",
+    "updated_at": "2026-07-07T15:00:00Z"
+  },
+  {
+    "id": "49c09aba-fc73-4dd8-b0c0-8451694754a0",
+    "folder_number": "AA/2026/0245",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAKETE IFANGNI",
+    "structure": "HZ SAKETE IFANGNI",
+    "receipt_date": "2026-07-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-22",
+    "decision": "Favorable",
+    "decision_date": "2026-07-09",
+    "decision_notes": "Dossier reçu pour HZ SAKETE IFANGNI",
+    "observations": "Demande réf: 178/2026. Traitement PRA le 2026-07-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d839171b-a47c-4492-a474-2677c716a5ab",
+        "name": "Demande_Autorisation_Achat_178_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-08",
+        "uploaded_by_name": "HZ SAKETE IFANGNI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-08T08:00:00Z",
+    "updated_at": "2026-07-09T15:00:00Z"
+  },
+  {
+    "id": "968a4fe2-c497-49b6-a841-f915928b510e",
+    "folder_number": "AA/2026/0246",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS DJIDJA ABOMY AGBANGNIZOUN",
+    "structure": "ZS DJIDJA ABOMY AGBANGNIZOUN",
+    "receipt_date": "2026-07-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-22",
+    "decision": "Favorable",
+    "decision_date": "2026-07-09",
+    "decision_notes": "Dossier reçu pour ZS DJIDJA ABOMY AGBANGNIZOUN",
+    "observations": "Demande réf: 828/2026. Traitement PRA le 2026-07-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "80add716-31cb-4a54-8b08-0139b37bee9f",
+        "name": "Demande_Autorisation_Achat_828_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-08",
+        "uploaded_by_name": "ZS DJIDJA ABOMY AGBANGNIZOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-08T08:00:00Z",
+    "updated_at": "2026-07-09T15:00:00Z"
+  },
+  {
+    "id": "025e5669-8bf7-43d1-9cea-7e67593c06ca",
+    "folder_number": "AA/2026/0247",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COVE",
+    "structure": "HZ COVE",
+    "receipt_date": "2026-07-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-23",
+    "decision": "Favorable",
+    "decision_date": "2026-07-10",
+    "decision_notes": "Dossier reçu pour HZ COVE",
+    "observations": "Demande réf: 336/2026. Traitement PRA le 2026-07-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6267a1c3-1c44-42a5-8dcb-7242bd86c48c",
+        "name": "Demande_Autorisation_Achat_336_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-09",
+        "uploaded_by_name": "HZ COVE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-09T08:00:00Z",
+    "updated_at": "2026-07-10T15:00:00Z"
+  },
+  {
+    "id": "64da18e6-6e5d-4da6-921f-8c10d4fcb12d",
+    "folder_number": "AA/2026/0248",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ POBE ADJA OUERE",
+    "structure": "HZ POBE ADJA OUERE",
+    "receipt_date": "2026-07-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-23",
+    "decision": "Favorable",
+    "decision_date": "2026-07-10",
+    "decision_notes": "Dossier reçu pour HZ POBE ADJA OUERE",
+    "observations": "Demande réf: 0154/2026. Traitement PRA le 2026-07-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "99042676-6b99-4d57-9b44-c26fa87ae4c8",
+        "name": "Demande_Autorisation_Achat_0154_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-09",
+        "uploaded_by_name": "HZ POBE ADJA OUERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-09T08:00:00Z",
+    "updated_at": "2026-07-10T15:00:00Z"
+  },
+  {
+    "id": "92ef1044-8f1f-460c-a2d9-3c857e4b3416",
+    "folder_number": "AA/2026/0249",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU LERE",
+    "structure": "CHUZ SURU LERE",
+    "receipt_date": "2026-07-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-24",
+    "decision": "Favorable",
+    "decision_date": "2026-07-13",
+    "decision_notes": "Dossier reçu pour CHUZ SURU LERE",
+    "observations": "Demande réf: 0991-2026. Traitement PRA le 2026-07-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "afea6651-6215-4125-b1a7-1a4415a7fec3",
+        "name": "Demande_Autorisation_Achat_0991-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-10",
+        "uploaded_by_name": "CHUZ SURU LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-10T08:00:00Z",
+    "updated_at": "2026-07-13T15:00:00Z"
+  },
+  {
+    "id": "dfb8d1ac-2d8f-434c-aa3e-58d5a32c4d38",
+    "folder_number": "AA/2026/0250",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU LERE",
+    "structure": "CHUZ SURU LERE",
+    "receipt_date": "2026-07-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-24",
+    "decision": "Favorable",
+    "decision_date": "2026-07-13",
+    "decision_notes": "Dossier reçu pour CHUZ SURU LERE",
+    "observations": "Demande réf: 0993-2026. Traitement PRA le 2026-07-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c352b0a1-247d-4053-85e6-02b6d54365fa",
+        "name": "Demande_Autorisation_Achat_0993-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-10",
+        "uploaded_by_name": "CHUZ SURU LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-10T08:00:00Z",
+    "updated_at": "2026-07-13T15:00:00Z"
+  },
+  {
+    "id": "d5cb33cc-ac8e-4803-9dda-845908287b94",
+    "folder_number": "AA/2026/0251",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU LERE",
+    "structure": "CHUZ SURU LERE",
+    "receipt_date": "2026-07-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-24",
+    "decision": "Favorable",
+    "decision_date": "2026-07-13",
+    "decision_notes": "Dossier reçu pour CHUZ SURU LERE",
+    "observations": "Demande réf: 0995-2026. Traitement PRA le 2026-07-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "81c94e4e-5586-4132-bbba-8060ff4fb197",
+        "name": "Demande_Autorisation_Achat_0995-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-10",
+        "uploaded_by_name": "CHUZ SURU LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-10T08:00:00Z",
+    "updated_at": "2026-07-13T15:00:00Z"
+  },
+  {
+    "id": "a84d7442-0ebb-4f0a-a3c7-2765df0b6460",
+    "folder_number": "AA/2026/0252",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU LERE",
+    "structure": "CHUZ SURU LERE",
+    "receipt_date": "2026-07-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-24",
+    "decision": "Favorable",
+    "decision_date": "2026-07-13",
+    "decision_notes": "Dossier reçu pour CHUZ SURU LERE",
+    "observations": "Demande réf: 0992-2026. Traitement PRA le 2026-07-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d3e6e98d-c4e5-4b00-9191-b460792de7b6",
+        "name": "Demande_Autorisation_Achat_0992-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-10",
+        "uploaded_by_name": "CHUZ SURU LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-10T08:00:00Z",
+    "updated_at": "2026-07-13T15:00:00Z"
+  },
+  {
+    "id": "f06de626-9935-46a1-8486-dc396300e455",
+    "folder_number": "AA/2026/0253",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ SURU LERE",
+    "structure": "CHUZ SURU LERE",
+    "receipt_date": "2026-07-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-24",
+    "decision": "Favorable",
+    "decision_date": "2026-07-13",
+    "decision_notes": "Dossier reçu pour CHUZ SURU LERE",
+    "observations": "Demande réf: 0994-2026. Traitement PRA le 2026-07-13",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "96f3cc7b-089c-4ee4-b4d6-9612e12c598a",
+        "name": "Demande_Autorisation_Achat_0994-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-10",
+        "uploaded_by_name": "CHUZ SURU LERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-10T08:00:00Z",
+    "updated_at": "2026-07-13T15:00:00Z"
+  },
+  {
+    "id": "62bd898d-fd11-453d-a251-faab307210ae",
+    "folder_number": "AA/2026/0254",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Projet BSRF/UAC",
+    "structure": "Projet BSRF/UAC",
+    "receipt_date": "2026-07-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-28",
+    "decision": "Favorable",
+    "decision_date": "2026-07-15",
+    "decision_notes": "Dossier reçu pour Projet BSRF/UAC",
+    "observations": "Demande réf: 324. Traitement PRA le 2026-07-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e7b4ed22-3875-4892-a4f5-cb913bb47519",
+        "name": "Demande_Autorisation_Achat_324.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-14",
+        "uploaded_by_name": "Projet BSRF/UAC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-14T08:00:00Z",
+    "updated_at": "2026-07-15T15:00:00Z"
+  },
+  {
+    "id": "e3e10fe1-9cfb-4bf5-9018-2de29703984c",
+    "folder_number": "AA/2026/0255",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Projet TYLCV/UAC",
+    "structure": "Projet TYLCV/UAC",
+    "receipt_date": "2026-07-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-28",
+    "decision": "Favorable",
+    "decision_date": "2026-07-15",
+    "decision_notes": "Dossier reçu pour Projet TYLCV/UAC",
+    "observations": "Demande réf: 996. Traitement PRA le 2026-07-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "db5a2842-35e9-4217-8276-5fc599cf7d86",
+        "name": "Demande_Autorisation_Achat_996.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-14",
+        "uploaded_by_name": "Projet TYLCV/UAC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-14T08:00:00Z",
+    "updated_at": "2026-07-15T15:00:00Z"
+  },
+  {
+    "id": "2451578e-b31a-4684-ac7b-b031e117a874",
+    "folder_number": "AA/2026/0256",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS KLOUEKANMEY",
+    "structure": "ZS KLOUEKANMEY",
+    "receipt_date": "2026-07-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-29",
+    "decision": "Favorable",
+    "decision_date": "2026-07-16",
+    "decision_notes": "Dossier reçu pour ZS KLOUEKANMEY",
+    "observations": "Demande réf: 1035/26. Traitement PRA le 2026-07-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8ddc4abb-ad46-4278-98b3-8973c3647d22",
+        "name": "Demande_Autorisation_Achat_1035_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-15",
+        "uploaded_by_name": "ZS KLOUEKANMEY"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-15T08:00:00Z",
+    "updated_at": "2026-07-16T15:00:00Z"
+  },
+  {
+    "id": "8e5eee2b-6e04-4dea-aed7-a016c129ba8f",
+    "folder_number": "AA/2026/0257",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-07-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-29",
+    "decision": "Favorable",
+    "decision_date": "2026-07-16",
+    "decision_notes": "Dossier reçu pour HZ ALLADA TOFFO ZE",
+    "observations": "Demande réf: 1642/2026. Traitement PRA le 2026-07-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c033ffc3-a3b7-4957-96f8-e3022f223e15",
+        "name": "Demande_Autorisation_Achat_1642_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-15",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-15T08:00:00Z",
+    "updated_at": "2026-07-16T15:00:00Z"
+  },
+  {
+    "id": "dfadfd1b-f46b-4233-b1f1-b59c120a0b09",
+    "folder_number": "AA/2026/0258",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS LOKOSSA ATHIEME",
+    "structure": "ZS LOKOSSA ATHIEME",
+    "receipt_date": "2026-07-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-29",
+    "decision": "Favorable",
+    "decision_date": "2026-07-16",
+    "decision_notes": "Dossier reçu pour ZS LOKOSSA ATHIEME",
+    "observations": "Demande réf: 1117/26. Traitement PRA le 2026-07-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0f415e53-117a-472e-bddf-e24b6cac7539",
+        "name": "Demande_Autorisation_Achat_1117_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-15",
+        "uploaded_by_name": "ZS LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-15T08:00:00Z",
+    "updated_at": "2026-07-16T15:00:00Z"
+  },
+  {
+    "id": "46c192ff-9c57-4b97-9d9d-529492d2a484",
+    "folder_number": "AA/2026/0259",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MENONTIN",
+    "structure": "HZ MENONTIN",
+    "receipt_date": "2026-07-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-31",
+    "decision": "Favorable",
+    "decision_date": "2026-07-17",
+    "decision_notes": "Dossier reçu pour HZ MENONTIN",
+    "observations": "Demande réf: 614-2026. Traitement PRA le 2026-07-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b05600f1-51dc-4bc8-becd-68e77d286f26",
+        "name": "Demande_Autorisation_Achat_614-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-17",
+        "uploaded_by_name": "HZ MENONTIN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-17T08:00:00Z",
+    "updated_at": "2026-07-17T15:00:00Z"
+  },
+  {
+    "id": "61830c4c-ca28-459b-be85-2f1b98f3059a",
+    "folder_number": "AA/2026/0260",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "DPAF MDN",
+    "structure": "DPAF MDN",
+    "receipt_date": "2026-07-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-31",
+    "decision": "Favorable",
+    "decision_date": "2026-07-17",
+    "decision_notes": "Dossier reçu pour DPAF MDN",
+    "observations": "Demande réf: 2026-415. Traitement PRA le 2026-07-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "14ea8d18-817b-4d44-9a96-2110c88150f1",
+        "name": "Demande_Autorisation_Achat_2026-415.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-17",
+        "uploaded_by_name": "DPAF MDN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-17T08:00:00Z",
+    "updated_at": "2026-07-17T15:00:00Z"
+  },
+  {
+    "id": "35cb39df-c215-45c1-a66e-87d5cf57ee7d",
+    "folder_number": "AA/2026/0261",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS AKPRO MISSERETE AVRANKOU ADJARRA",
+    "structure": "ZS AKPRO MISSERETE AVRANKOU ADJARRA",
+    "receipt_date": "2026-07-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-31",
+    "decision": "Favorable",
+    "decision_date": "2026-07-17",
+    "decision_notes": "Dossier reçu pour ZS AKPRO MISSERETE AVRANKOU ADJARRA",
+    "observations": "Demande réf: 1264. Traitement PRA le 2026-07-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "757c75bf-af22-41fd-bf1e-544bf5b7171c",
+        "name": "Demande_Autorisation_Achat_1264.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-17",
+        "uploaded_by_name": "ZS AKPRO MISSERETE AVRANKOU ADJARRA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-17T08:00:00Z",
+    "updated_at": "2026-07-17T15:00:00Z"
+  },
+  {
+    "id": "f7fb5a50-d91d-42b5-8eaf-1d3f4f1a7501",
+    "folder_number": "AA/2026/0262",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ LOKOSSA ATHIEME",
+    "structure": "HZ LOKOSSA ATHIEME",
+    "receipt_date": "2026-07-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-31",
+    "decision": "Favorable",
+    "decision_date": "2026-07-17",
+    "decision_notes": "Dossier reçu pour HZ LOKOSSA ATHIEME",
+    "observations": "Demande réf: 1118/26. Traitement PRA le 2026-07-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7b5b7799-1af6-47e8-9910-94b5f8f173ec",
+        "name": "Demande_Autorisation_Achat_1118_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-17",
+        "uploaded_by_name": "HZ LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-17T08:00:00Z",
+    "updated_at": "2026-07-17T15:00:00Z"
+  },
+  {
+    "id": "28510bec-0f78-45b4-b0e0-f88bb7c06582",
+    "folder_number": "AA/2026/0263",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD MONO",
+    "structure": "CHD MONO",
+    "receipt_date": "2026-07-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-31",
+    "decision": "Favorable",
+    "decision_date": "2026-07-20",
+    "decision_notes": "Dossier reçu pour CHD MONO",
+    "observations": "Demande réf: 256/26. Traitement PRA le 2026-07-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6ce75fb9-50a3-43ea-a14c-f2833a64bf96",
+        "name": "Demande_Autorisation_Achat_256_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-17",
+        "uploaded_by_name": "CHD MONO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-17T08:00:00Z",
+    "updated_at": "2026-07-20T15:00:00Z"
+  },
+  {
+    "id": "7a6dd435-f156-4d56-a2ca-81b51004a681",
+    "folder_number": "AA/2026/0264",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD MONO",
+    "structure": "CHD MONO",
+    "receipt_date": "2026-07-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-31",
+    "decision": "Favorable",
+    "decision_date": "2026-07-20",
+    "decision_notes": "Dossier reçu pour CHD MONO",
+    "observations": "Demande réf: 257/26. Traitement PRA le 2026-07-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5f44a4c8-d83f-4f1c-98fb-dae87fc404df",
+        "name": "Demande_Autorisation_Achat_257_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-17",
+        "uploaded_by_name": "CHD MONO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-17T08:00:00Z",
+    "updated_at": "2026-07-20T15:00:00Z"
+  },
+  {
+    "id": "915ffe14-33f1-4f18-b59e-689dfb78c371",
+    "folder_number": "AA/2026/0268",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HIA PARAKOU",
+    "structure": "HIA PARAKOU",
+    "receipt_date": "2026-07-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-31",
+    "decision": "Favorable",
+    "decision_date": "2026-07-20",
+    "decision_notes": "Dossier reçu pour HIA PARAKOU",
+    "observations": "Demande réf: 26-3079. Traitement PRA le 2026-07-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a7b7f311-ad0e-443f-84d8-46df6cf6f390",
+        "name": "Demande_Autorisation_Achat_26-3079.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-17",
+        "uploaded_by_name": "HIA PARAKOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-17T08:00:00Z",
+    "updated_at": "2026-07-20T15:00:00Z"
+  },
+  {
+    "id": "64f03446-254c-4d1b-9d07-f19f6f770bfd",
+    "folder_number": "AA/2026/0269",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-07-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-03",
+    "decision": "Favorable",
+    "decision_date": "2026-07-20",
+    "decision_notes": "Dossier reçu pour ZS ALLADA TOFFO ZE",
+    "observations": "Demande réf: 2244/26. Traitement PRA le 2026-07-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6a43c8bf-cad2-403a-a4fb-20c578ca13e1",
+        "name": "Demande_Autorisation_Achat_2244_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-20",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-20T08:00:00Z",
+    "updated_at": "2026-07-20T15:00:00Z"
+  },
+  {
+    "id": "62684e78-c4b1-4c3c-93cb-2fd876ecf1c9",
+    "folder_number": "AA/2026/0270",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ LOKOSSA ATHIEME",
+    "structure": "HZ LOKOSSA ATHIEME",
+    "receipt_date": "2026-07-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-03",
+    "decision": "Favorable",
+    "decision_date": "2026-07-21",
+    "decision_notes": "Dossier reçu pour HZ LOKOSSA ATHIEME",
+    "observations": "Demande réf: 198/26. Traitement PRA le 2026-07-21",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e108140c-37d9-4f5c-8f4d-38af1fe8ff43",
+        "name": "Demande_Autorisation_Achat_198_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-20",
+        "uploaded_by_name": "HZ LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-20T08:00:00Z",
+    "updated_at": "2026-07-21T15:00:00Z"
+  },
+  {
+    "id": "92eebd41-3410-4831-bc1f-a3405fdbb021",
+    "folder_number": "AA/2026/0271",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ BANIKOARA",
+    "structure": "HZ BANIKOARA",
+    "receipt_date": "2026-07-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-03",
+    "decision": "Favorable",
+    "decision_date": "2026-07-21",
+    "decision_notes": "Dossier reçu pour HZ BANIKOARA",
+    "observations": "Demande réf: 593/2026. Traitement PRA le 2026-07-21",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c01f71bf-db15-4ea3-8c02-a3e184a61c9a",
+        "name": "Demande_Autorisation_Achat_593_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-20",
+        "uploaded_by_name": "HZ BANIKOARA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-20T08:00:00Z",
+    "updated_at": "2026-07-21T15:00:00Z"
+  },
+  {
+    "id": "10a85edc-2bc9-47f2-9ffd-61648825d595",
+    "folder_number": "AA/2026/0272",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ BANIKOARA",
+    "structure": "HZ BANIKOARA",
+    "receipt_date": "2026-07-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-03",
+    "decision": "Favorable",
+    "decision_date": "2026-07-21",
+    "decision_notes": "Dossier reçu pour HZ BANIKOARA",
+    "observations": "Demande réf: 594/2026. Traitement PRA le 2026-07-21",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9a9c2b76-0629-4613-8416-b5a9d26816f4",
+        "name": "Demande_Autorisation_Achat_594_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-20",
+        "uploaded_by_name": "HZ BANIKOARA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-20T08:00:00Z",
+    "updated_at": "2026-07-21T15:00:00Z"
+  },
+  {
+    "id": "2b4f2b2c-0384-4700-a83f-34c5715a5880",
+    "folder_number": "AA/2026/0273",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KLOUEKANME",
+    "structure": "HZ KLOUEKANME",
+    "receipt_date": "2026-07-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-04",
+    "decision": "Favorable",
+    "decision_date": "2026-07-22",
+    "decision_notes": "Dossier reçu pour HZ KLOUEKANME",
+    "observations": "Demande réf: 1166/26. Traitement PRA le 2026-07-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2e2f6b92-3601-4afa-ad60-eb0cb944b270",
+        "name": "Demande_Autorisation_Achat_1166_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-21",
+        "uploaded_by_name": "HZ KLOUEKANME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-21T08:00:00Z",
+    "updated_at": "2026-07-22T15:00:00Z"
+  },
+  {
+    "id": "308d2c51-c785-4185-95ac-ff6e3e5a4572",
+    "folder_number": "AA/2026/0274",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ DJIDJA ABOMEY AGBANGNIZOUN",
+    "structure": "HZ DJIDJA ABOMEY AGBANGNIZOUN",
+    "receipt_date": "2026-07-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-06",
+    "decision": "Favorable",
+    "decision_date": "2026-07-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 383/26. Visé C/SSMUR le 2026-07-29",
+    "observations": "Demande réf: 383/26. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a4f9cb93-5eb6-4a22-8ecd-59a951b53595",
+        "name": "Demande_Autorisation_Achat_383_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-23",
+        "uploaded_by_name": "HZ DJIDJA ABOMEY AGBANGNIZOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-23T08:00:00Z",
+    "updated_at": "2026-07-29T15:00:00Z"
+  },
+  {
+    "id": "eb39ca98-827c-4773-a52d-6ac95f1e0282",
+    "folder_number": "AA/2026/0275",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "BZ COME BOPA GRAND POPO",
+    "structure": "BZ COME BOPA GRAND POPO",
+    "receipt_date": "2026-07-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-06",
+    "decision": "Favorable",
+    "decision_date": "2026-07-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1132/26. Visé C/SSMUR le 2026-07-29",
+    "observations": "Demande réf: 1132/26. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "484397bc-2689-4940-b1ef-74be47682df2",
+        "name": "Demande_Autorisation_Achat_1132_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-23",
+        "uploaded_by_name": "BZ COME BOPA GRAND POPO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-23T08:00:00Z",
+    "updated_at": "2026-07-29T15:00:00Z"
+  },
+  {
+    "id": "82db83d2-28ca-412b-8424-05e45be00f77",
+    "folder_number": "AA/2026/0276",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU 2 & 3",
+    "structure": "ZS COTONOU 2 & 3",
+    "receipt_date": "2026-07-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-06",
+    "decision": "Favorable",
+    "decision_date": "2026-07-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0986/26. Visé C/SSMUR le 2026-07-29",
+    "observations": "Demande réf: 0986/26. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f8744ddb-4055-4053-973c-62c5591bc75a",
+        "name": "Demande_Autorisation_Achat_0986_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-23",
+        "uploaded_by_name": "ZS COTONOU 2 & 3"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-23T08:00:00Z",
+    "updated_at": "2026-07-29T15:00:00Z"
+  },
+  {
+    "id": "439a934c-4246-4643-a40b-594c61db54b9",
+    "folder_number": "AA/2026/0277",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ OUIDAH",
+    "structure": "HZ OUIDAH",
+    "receipt_date": "2026-07-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-06",
+    "decision": "Favorable",
+    "decision_date": "2026-07-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 111/26. Visé C/SSMUR le 2026-07-29",
+    "observations": "Demande réf: 111/26. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "01af7bbc-070e-4834-8b39-a0e45dba4434",
+        "name": "Demande_Autorisation_Achat_111_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-23",
+        "uploaded_by_name": "HZ OUIDAH"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-23T08:00:00Z",
+    "updated_at": "2026-07-29T15:00:00Z"
+  },
+  {
+    "id": "5ac95d8c-b49a-4c79-9dd0-76f1bba3f08e",
+    "folder_number": "AA/2026/0278",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD DONGA",
+    "structure": "CHD DONGA",
+    "receipt_date": "2026-07-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-06",
+    "decision": "Favorable",
+    "decision_date": "2026-07-29",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 115/2026. Visé C/SSMUR le 2026-07-29",
+    "observations": "Demande réf: 115/2026. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-29",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "845bcc19-241f-44d0-a525-d0c12a420ece",
+        "name": "Demande_Autorisation_Achat_115_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-23",
+        "uploaded_by_name": "CHD DONGA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-23T08:00:00Z",
+    "updated_at": "2026-07-29T15:00:00Z"
+  },
+  {
+    "id": "f70bb60e-e5cf-4b5a-b6ba-5edc31343570",
+    "folder_number": "AA/2026/0279",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-07-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-06",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 851/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 851/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3b37ecf2-dd40-4c96-b8f8-71cb85e9afa2",
+        "name": "Demande_Autorisation_Achat_851_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-23",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-23T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "e4b79fbb-3605-4bfa-8783-79b0c2b93b09",
+    "folder_number": "AA/2026/0280",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-07-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-07",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 852/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 852/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6e262d4c-abde-4fa3-92fe-58a4bca43051",
+        "name": "Demande_Autorisation_Achat_852_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-24",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-24T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "4ed82ad0-07bc-4f34-bdf3-517bc73213e2",
+    "folder_number": "AA/2026/0281",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KANDI",
+    "structure": "HZ KANDI",
+    "receipt_date": "2026-07-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-07",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2145/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 2145/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "75ee89d8-476b-4e4c-910b-f46f08a50544",
+        "name": "Demande_Autorisation_Achat_2145_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-24",
+        "uploaded_by_name": "HZ KANDI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-24T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "d3cc8417-6657-4a51-8da7-e94015c8d525",
+    "folder_number": "AA/2026/0282",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KOUANDE",
+    "structure": "HZ KOUANDE",
+    "receipt_date": "2026-07-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-07",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1612/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 1612/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c547d4d0-b0bf-46fa-bd03-e97889ee1034",
+        "name": "Demande_Autorisation_Achat_1612_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-24",
+        "uploaded_by_name": "HZ KOUANDE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-24T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "9fc744a8-9f1a-4345-9795-c2e9baced88f",
+    "folder_number": "AA/2026/0283",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ BASSILA",
+    "structure": "HZ BASSILA",
+    "receipt_date": "2026-07-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-07",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 805/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 805/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4445d3c2-15a4-49f4-8030-af5d279e21dc",
+        "name": "Demande_Autorisation_Achat_805_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-24",
+        "uploaded_by_name": "HZ BASSILA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-24T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "1dfa2f8b-7fec-465c-9fb3-42f158ebb3df",
+    "folder_number": "AA/2026/0284",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-07-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-07",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1691/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 1691/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4ff64662-854b-4147-9a1d-75c9325fd7ad",
+        "name": "Demande_Autorisation_Achat_1691_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-24",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-24T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "495e3a28-532c-4fa1-8b5e-62c06b9d825c",
+    "folder_number": "AA/2026/0285",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-07-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-07",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1690/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 1690/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e8d095e6-277f-41ed-85c8-74313fd0a09b",
+        "name": "Demande_Autorisation_Achat_1690_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-24",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-24T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "4f84f776-d980-4f80-b75f-8724feb235f7",
+    "folder_number": "AA/2026/0286",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHU MEL",
+    "structure": "CHU MEL",
+    "receipt_date": "2026-07-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-07",
+    "decision": "Favorable",
+    "decision_date": "2026-07-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1224/2026. Visé C/SSMUR le 2026-07-27",
+    "observations": "Demande réf: 1224/2026. Traitement PRA le 2026-07-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "68f7e797-abd3-4188-b78c-b3ad266b204b",
+        "name": "Demande_Autorisation_Achat_1224_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-24",
+        "uploaded_by_name": "CHU MEL"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-24T08:00:00Z",
+    "updated_at": "2026-07-27T15:00:00Z"
+  },
+  {
+    "id": "bed41fa8-ea50-4ef7-80f7-7bba04f6ca68",
+    "folder_number": "AA/2026/0287",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ APLAHOUE",
+    "structure": "HZ APLAHOUE",
+    "receipt_date": "2026-07-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-12",
+    "decision": "Favorable",
+    "decision_date": "2026-07-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 509/26. Visé C/SSMUR le 2026-07-30",
+    "observations": "Demande réf: 509/26. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c4510759-4eb7-4204-957d-4502057386e0",
+        "name": "Demande_Autorisation_Achat_509_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-29",
+        "uploaded_by_name": "HZ APLAHOUE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-29T08:00:00Z",
+    "updated_at": "2026-07-30T15:00:00Z"
+  },
+  {
+    "id": "1fd43238-a53e-40a1-b6c3-d1f85acae1e3",
+    "folder_number": "AA/2026/0288",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHPR-C",
+    "structure": "CHPR-C",
+    "receipt_date": "2026-07-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-10",
+    "decision": "Favorable",
+    "decision_date": "2026-07-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 137. Visé C/SSMUR le 2026-07-30",
+    "observations": "Demande réf: 137. Traitement PRA le 2026-07-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7c8f4bb9-39d6-48a1-b0ea-4d093f9ad637",
+        "name": "Demande_Autorisation_Achat_137.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-27",
+        "uploaded_by_name": "CHPR-C"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-27T08:00:00Z",
+    "updated_at": "2026-07-30T15:00:00Z"
+  },
+  {
+    "id": "e085a0d8-78fd-44f7-8669-cecaf177ed07",
+    "folder_number": "AA/2026/0289",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ NATITINGOU",
+    "structure": "HZ NATITINGOU",
+    "receipt_date": "2026-07-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-12",
+    "decision": "Favorable",
+    "decision_date": "2026-07-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1067. Visé C/SSMUR le 2026-07-30",
+    "observations": "Demande réf: 1067. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "628f85c5-fd45-4f9e-97ce-cd3b22be0e99",
+        "name": "Demande_Autorisation_Achat_1067.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-29",
+        "uploaded_by_name": "HZ NATITINGOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-29T08:00:00Z",
+    "updated_at": "2026-07-30T15:00:00Z"
+  },
+  {
+    "id": "c30a12be-9c34-4a6e-8742-66b6a5f6c0f6",
+    "folder_number": "AA/2026/0290",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS POBE ADJA OUERE KETOU",
+    "structure": "ZS POBE ADJA OUERE KETOU",
+    "receipt_date": "2026-07-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-11",
+    "decision": "Favorable",
+    "decision_date": "2026-07-31",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2008. Visé C/SSMUR le 2026-07-31",
+    "observations": "Demande réf: 2008. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-31",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5c56414e-9261-4996-9bd8-3467491a9631",
+        "name": "Demande_Autorisation_Achat_2008.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-28",
+        "uploaded_by_name": "ZS POBE ADJA OUERE KETOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-28T08:00:00Z",
+    "updated_at": "2026-07-31T15:00:00Z"
+  },
+  {
+    "id": "ea6e6541-e561-4d7e-85cd-27cc6fad3f13",
+    "folder_number": "AA/2026/0291",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COVE ZAGNANADO OUINHI",
+    "structure": "ZS COVE ZAGNANADO OUINHI",
+    "receipt_date": "2026-07-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-11",
+    "decision": "Favorable",
+    "decision_date": "2026-07-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1099/2026. Visé C/SSMUR le 2026-07-30",
+    "observations": "Demande réf: 1099/2026. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2d54c84b-c318-491d-8492-d5168eb35732",
+        "name": "Demande_Autorisation_Achat_1099_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-28",
+        "uploaded_by_name": "ZS COVE ZAGNANADO OUINHI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-28T08:00:00Z",
+    "updated_at": "2026-07-30T15:00:00Z"
+  },
+  {
+    "id": "fed33fd1-ead3-4e89-9dd1-5c20aa97ea6a",
+    "folder_number": "AA/2026/0292",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ ABOMEY CALAVI",
+    "structure": "CHUZ ABOMEY CALAVI",
+    "receipt_date": "2026-07-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-11",
+    "decision": "Favorable",
+    "decision_date": "2026-07-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 4092/2026. Visé C/SSMUR le 2026-07-30",
+    "observations": "Demande réf: 4092/2026. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "37983c09-a945-458e-b8d0-2be258159239",
+        "name": "Demande_Autorisation_Achat_4092_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-28",
+        "uploaded_by_name": "CHUZ ABOMEY CALAVI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-28T08:00:00Z",
+    "updated_at": "2026-07-30T15:00:00Z"
+  },
+  {
+    "id": "07227f47-5f6d-4530-b66e-dc23eca75893",
+    "folder_number": "AA/2026/0293",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD OUEME",
+    "structure": "CHUD OUEME",
+    "receipt_date": "2026-07-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-12",
+    "decision": "Favorable",
+    "decision_date": "2026-07-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: courrier date du 29 juillet. Visé C/SSMUR le 2026-07-30",
+    "observations": "Demande réf: courrier date du 29 juillet. Traitement PRA le 2026-07-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c621663d-0694-4eb3-aa5d-8cfee57fe201",
+        "name": "Demande_Autorisation_Achat_courrier date du 29 juillet.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-29",
+        "uploaded_by_name": "CHUD OUEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-29T08:00:00Z",
+    "updated_at": "2026-07-30T15:00:00Z"
+  },
+  {
+    "id": "4793bb6c-0df5-4d83-9117-2415db8aee0c",
+    "folder_number": "AA/2026/0294",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-07-30",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-13",
+    "decision": "Favorable",
+    "decision_date": "2026-08-01",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2387/26. Visé C/SSMUR le 2026-08-01",
+    "observations": "Demande réf: 2387/26. Traitement PRA le 2026-07-31",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-01",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "94aa0ae3-3785-4fe3-a6b6-4c4aabf0491f",
+        "name": "Demande_Autorisation_Achat_2387_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-30",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-30T08:00:00Z",
+    "updated_at": "2026-08-01T15:00:00Z"
+  },
+  {
+    "id": "fae909bd-ba35-4107-a091-0e3debd6f5bf",
+    "folder_number": "AA/2026/0295",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ BASSILA",
+    "structure": "HZ BASSILA",
+    "receipt_date": "2026-07-31",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-14",
+    "decision": "Favorable",
+    "decision_date": "2026-08-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 836. Visé C/SSMUR le 2026-08-04",
+    "observations": "Demande réf: 836. Traitement PRA le 2026-08-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "83a6da6e-f227-49ed-a1f5-257a88968214",
+        "name": "Demande_Autorisation_Achat_836.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-07-31",
+        "uploaded_by_name": "HZ BASSILA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-31T08:00:00Z",
+    "updated_at": "2026-08-04T15:00:00Z"
+  },
+  {
+    "id": "ecda05b0-8025-4b65-808e-4b6781397df8",
+    "folder_number": "AA/2026/0296",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MALANVILLE",
+    "structure": "HZ MALANVILLE",
+    "receipt_date": "2026-08-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-17",
+    "decision": "Favorable",
+    "decision_date": "2026-08-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 04/26. Visé C/SSMUR le 2026-08-04",
+    "observations": "Demande réf: 04/26. Traitement PRA le 2026-08-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "da83f54d-6e4e-484a-a52c-497087f93ddc",
+        "name": "Demande_Autorisation_Achat_04_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-03",
+        "uploaded_by_name": "HZ MALANVILLE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-03T08:00:00Z",
+    "updated_at": "2026-08-04T15:00:00Z"
+  },
+  {
+    "id": "9e0573c7-65ee-4abb-8e45-16b216bbdb03",
+    "folder_number": "AA/2026/0297",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU 1&4",
+    "structure": "ZS COTONOU 1&4",
+    "receipt_date": "2026-08-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-17",
+    "decision": "Favorable",
+    "decision_date": "2026-08-05",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0781/2026. Visé C/SSMUR le 2026-08-05",
+    "observations": "Demande réf: 0781/2026. Traitement PRA le 2026-08-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "396e580d-2507-416c-8f5b-b38e51c2dc0d",
+        "name": "Demande_Autorisation_Achat_0781_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-03",
+        "uploaded_by_name": "ZS COTONOU 1&4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-03T08:00:00Z",
+    "updated_at": "2026-08-05T15:00:00Z"
+  },
+  {
+    "id": "db1f494b-3706-4b5a-9444-8c922b2e09ad",
+    "folder_number": "AA/2026/0298",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-08-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-17",
+    "decision": "Favorable",
+    "decision_date": "2026-08-05",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1835//2026. Visé C/SSMUR le 2026-08-05",
+    "observations": "Demande réf: 1835//2026. Traitement PRA le 2026-08-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e0bd8bcf-0d6e-4805-bc88-fa98d91ddb40",
+        "name": "Demande_Autorisation_Achat_1835__2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-03",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-03T08:00:00Z",
+    "updated_at": "2026-08-05T15:00:00Z"
+  },
+  {
+    "id": "35e1d723-38a9-470e-b0d2-9bdbdbce55ec",
+    "folder_number": "AA/2026/0299",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-08-03",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-17",
+    "decision": "Favorable",
+    "decision_date": "2026-08-05",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1836/2026. Visé C/SSMUR le 2026-08-05",
+    "observations": "Demande réf: 1836/2026. Traitement PRA le 2026-08-05",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "22fdd0f1-93bc-4614-8f08-50b4420e2651",
+        "name": "Demande_Autorisation_Achat_1836_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-03",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-03T08:00:00Z",
+    "updated_at": "2026-08-05T15:00:00Z"
+  },
+  {
+    "id": "29bf712d-b46d-4613-a2f2-421431139235",
+    "folder_number": "AA/2026/0300",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU 1&4",
+    "structure": "ZS COTONOU 1&4",
+    "receipt_date": "2026-08-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-19",
+    "decision": "Favorable",
+    "decision_date": "2026-08-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0793/25. Visé C/SSMUR le 2026-08-06",
+    "observations": "Demande réf: 0793/25. Traitement PRA le 2026-08-06",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ab795f1a-61a9-4161-992a-f67948c3d5b8",
+        "name": "Demande_Autorisation_Achat_0793_25.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-05",
+        "uploaded_by_name": "ZS COTONOU 1&4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-05T08:00:00Z",
+    "updated_at": "2026-08-06T15:00:00Z"
+  },
+  {
+    "id": "e6a9a834-5d7d-43d6-b61a-dcf5211ff168",
+    "folder_number": "AA/2026/0301",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ADJOHOUN",
+    "structure": "HZ ADJOHOUN",
+    "receipt_date": "2026-08-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-19",
+    "decision": "Favorable",
+    "decision_date": "2026-08-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1648/26. Visé C/SSMUR le 2026-08-06",
+    "observations": "Demande réf: 1648/26. Traitement PRA le 2026-08-06",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6c9f2a96-e1c7-4c9e-8a5c-4e03f7930c6e",
+        "name": "Demande_Autorisation_Achat_1648_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-05",
+        "uploaded_by_name": "HZ ADJOHOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-05T08:00:00Z",
+    "updated_at": "2026-08-06T15:00:00Z"
+  },
+  {
+    "id": "7844a6b2-ba95-414c-8179-c175fed74acc",
+    "folder_number": "AA/2026/0302",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD BORGOU/ALIBORI",
+    "structure": "CHUD BORGOU/ALIBORI",
+    "receipt_date": "2026-08-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-19",
+    "decision": "Favorable",
+    "decision_date": "2026-08-06",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 3816/26. Visé C/SSMUR le 2026-08-06",
+    "observations": "Demande réf: 3816/26. Traitement PRA le 2026-08-06",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-06",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "500d838c-f8b9-4767-bf82-bf6ec4f5bba6",
+        "name": "Demande_Autorisation_Achat_3816_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-05",
+        "uploaded_by_name": "CHUD BORGOU/ALIBORI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-05T08:00:00Z",
+    "updated_at": "2026-08-06T15:00:00Z"
+  },
+  {
+    "id": "aab57f91-25ff-4e43-a404-59890e386c8d",
+    "folder_number": "AA/2026/0303",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COT VI",
+    "structure": "ZS COT VI",
+    "receipt_date": "2026-08-06",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-20",
+    "decision": "Favorable",
+    "decision_date": "2026-08-08",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1133/2026. Visé C/SSMUR le 2026-08-08",
+    "observations": "Demande réf: 1133/2026. Traitement PRA le 2026-08-07",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-08",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "28c4ee59-29ed-4362-9d7d-fd233518ed81",
+        "name": "Demande_Autorisation_Achat_1133_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-06",
+        "uploaded_by_name": "ZS COT VI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-06T08:00:00Z",
+    "updated_at": "2026-08-08T15:00:00Z"
+  },
+  {
+    "id": "a52ad96e-6958-46cc-a3ff-cd0cb9e5bb96",
+    "folder_number": "AA/2026/0304",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ADJOHOUN BONOU DANGBO",
+    "structure": "ZS ADJOHOUN BONOU DANGBO",
+    "receipt_date": "2026-08-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-28",
+    "decision": "Favorable",
+    "decision_date": "2026-08-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0956/26. Visé C/SSMUR le 2026-08-17",
+    "observations": "Demande réf: 0956/26. Traitement PRA le 2026-08-14",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0a561b10-8897-4977-aa97-29359efe4ec8",
+        "name": "Demande_Autorisation_Achat_0956_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-14",
+        "uploaded_by_name": "ZS ADJOHOUN BONOU DANGBO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-14T08:00:00Z",
+    "updated_at": "2026-08-17T15:00:00Z"
+  },
+  {
+    "id": "def6e187-4e9e-4399-af86-2d7f2d72173d",
+    "folder_number": "AA/2026/0305",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-08-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-28",
+    "decision": "Favorable",
+    "decision_date": "2026-08-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 903/2026. Visé C/SSMUR le 2026-08-17",
+    "observations": "Demande réf: 903/2026. Traitement PRA le 2026-08-14",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1ab7c0c6-1fdd-445f-a1d3-baad2c2154d0",
+        "name": "Demande_Autorisation_Achat_903_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-14",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-14T08:00:00Z",
+    "updated_at": "2026-08-17T15:00:00Z"
+  },
+  {
+    "id": "fac6bc1d-9792-42a6-8d1a-e417688ea8eb",
+    "folder_number": "AA/2026/0306",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-08-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-30",
+    "decision": "Favorable",
+    "decision_date": "2026-08-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1943/2026. Visé C/SSMUR le 2026-08-17",
+    "observations": "Demande réf: 1943/2026. Traitement PRA le 2026-08-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f5bb9a99-bc59-47e3-a8ec-09d3bcc4c7c9",
+        "name": "Demande_Autorisation_Achat_1943_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-16",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-16T08:00:00Z",
+    "updated_at": "2026-08-17T15:00:00Z"
+  },
+  {
+    "id": "ba898bce-fd2c-4b6b-a504-2f9fcf484105",
+    "folder_number": "AA/2026/0307",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA TOFFO ZE",
+    "structure": "HZ ALLADA TOFFO ZE",
+    "receipt_date": "2026-08-16",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-30",
+    "decision": "Favorable",
+    "decision_date": "2026-08-17",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1944/2026. Visé C/SSMUR le 2026-08-17",
+    "observations": "Demande réf: 1944/2026. Traitement PRA le 2026-08-16",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-17",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ac55f18c-d141-4783-a03b-c73a02b0bf11",
+        "name": "Demande_Autorisation_Achat_1944_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-16",
+        "uploaded_by_name": "HZ ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-16T08:00:00Z",
+    "updated_at": "2026-08-17T15:00:00Z"
+  },
+  {
+    "id": "8816d0b5-c937-4f34-b960-66bf152beaa1",
+    "folder_number": "AA/2026/0308",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD OUEME PLATEAU",
+    "structure": "CHUD OUEME PLATEAU",
+    "receipt_date": "2026-08-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-31",
+    "decision": "Favorable",
+    "decision_date": "2026-08-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: Courrier du 17/08/2026. Visé C/SSMUR le 2026-08-18",
+    "observations": "Demande réf: Courrier du 17/08/2026. Traitement PRA le 2026-08-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3081798b-3283-4c46-96b5-df648a56cc47",
+        "name": "Demande_Autorisation_Achat_Courrier du 17_08_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-17",
+        "uploaded_by_name": "CHUD OUEME PLATEAU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-17T08:00:00Z",
+    "updated_at": "2026-08-18T15:00:00Z"
+  },
+  {
+    "id": "19345a9e-fc98-447f-9e0c-22dcaf05c514",
+    "folder_number": "AA/2026/0309",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHPR COTONOU",
+    "structure": "CHPR COTONOU",
+    "receipt_date": "2026-08-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-31",
+    "decision": "Favorable",
+    "decision_date": "2026-08-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 160. Visé C/SSMUR le 2026-08-18",
+    "observations": "Demande réf: 160. Traitement PRA le 2026-08-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0e52c809-d733-4081-ae50-7ae5c4a65408",
+        "name": "Demande_Autorisation_Achat_160.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-17",
+        "uploaded_by_name": "CHPR COTONOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-17T08:00:00Z",
+    "updated_at": "2026-08-18T15:00:00Z"
+  },
+  {
+    "id": "123897ea-e4a7-4051-b7b9-b6510211f729",
+    "folder_number": "AA/2026/0310",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS MALANVILLE KARIMAMA",
+    "structure": "ZS MALANVILLE KARIMAMA",
+    "receipt_date": "2026-08-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-31",
+    "decision": "Favorable",
+    "decision_date": "2026-08-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 01070/2026. Visé C/SSMUR le 2026-08-18",
+    "observations": "Demande réf: 01070/2026. Traitement PRA le 2026-08-17",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "688fe5e2-1c50-4431-b6c0-0bd2321e2a1d",
+        "name": "Demande_Autorisation_Achat_01070_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-17",
+        "uploaded_by_name": "ZS MALANVILLE KARIMAMA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-17T08:00:00Z",
+    "updated_at": "2026-08-18T15:00:00Z"
+  },
+  {
+    "id": "57bb6902-3e71-42d2-be45-13b03156f7d7",
+    "folder_number": "AA/2026/0311",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHPP AKRON",
+    "structure": "CHPP AKRON",
+    "receipt_date": "2026-08-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-31",
+    "decision": "Favorable",
+    "decision_date": "2026-08-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 375. Visé C/SSMUR le 2026-08-18",
+    "observations": "Demande réf: 375. Traitement PRA le 2026-08-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5d098256-6104-41b0-9992-d19937bfd69f",
+        "name": "Demande_Autorisation_Achat_375.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-17",
+        "uploaded_by_name": "CHPP AKRON"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-17T08:00:00Z",
+    "updated_at": "2026-08-18T15:00:00Z"
+  },
+  {
+    "id": "bdee5368-5a2c-43f1-b88b-9a96a22f23c7",
+    "folder_number": "AA/2026/0312",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU HKM",
+    "structure": "CNHU HKM",
+    "receipt_date": "2026-08-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-08-31",
+    "decision": "Favorable",
+    "decision_date": "2026-08-18",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2509/2026. Visé C/SSMUR le 2026-08-18",
+    "observations": "Demande réf: 2509/2026. Traitement PRA le 2026-08-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6d3a22d5-984a-4c83-95e8-65fce6b8af80",
+        "name": "Demande_Autorisation_Achat_2509_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-17",
+        "uploaded_by_name": "CNHU HKM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-17T08:00:00Z",
+    "updated_at": "2026-08-18T15:00:00Z"
+  },
+  {
+    "id": "555cb1a1-947b-4f5c-9a74-7d3967b42d3f",
+    "folder_number": "AA/2026/0313",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-08-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-03",
+    "decision": "Favorable",
+    "decision_date": "2026-08-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 920/2026. Visé C/SSMUR le 2026-08-21",
+    "observations": "Demande réf: 920/2026. Traitement PRA le 2026-08-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "aa1a35c0-9371-44ff-aeaa-fc1e712a6e5f",
+        "name": "Demande_Autorisation_Achat_920_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-20",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-20T08:00:00Z",
+    "updated_at": "2026-08-21T15:00:00Z"
+  },
+  {
+    "id": "2f2d9d61-b676-4d55-97e7-f14f1a77ae6a",
+    "folder_number": "AA/2026/0314",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD ATACORA",
+    "structure": "CHD ATACORA",
+    "receipt_date": "2026-08-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-03",
+    "decision": "Favorable",
+    "decision_date": "2026-08-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 921/2026. Visé C/SSMUR le 2026-08-21",
+    "observations": "Demande réf: 921/2026. Traitement PRA le 2026-08-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "02343339-5a28-4301-a341-cc5ad796cedb",
+        "name": "Demande_Autorisation_Achat_921_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-20",
+        "uploaded_by_name": "CHD ATACORA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-20T08:00:00Z",
+    "updated_at": "2026-08-21T15:00:00Z"
+  },
+  {
+    "id": "3666a730-278e-4e27-9425-a9d62085258a",
+    "folder_number": "AA/2026/0315",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ APLAHOUE",
+    "structure": "HZ APLAHOUE",
+    "receipt_date": "2026-08-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-02",
+    "decision": "Favorable",
+    "decision_date": "2026-08-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 552/26. Visé C/SSMUR le 2026-08-21",
+    "observations": "Demande réf: 552/26. Traitement PRA le 2026-08-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1e63347d-70cf-484d-92cd-5c7934859731",
+        "name": "Demande_Autorisation_Achat_552_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-19",
+        "uploaded_by_name": "HZ APLAHOUE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-19T08:00:00Z",
+    "updated_at": "2026-08-21T15:00:00Z"
+  },
+  {
+    "id": "7a405a14-37b0-41f7-9c5e-7957e34b6e41",
+    "folder_number": "AA/2026/0316",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU PPC",
+    "structure": "CNHU PPC",
+    "receipt_date": "2026-08-19",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-02",
+    "decision": "Favorable",
+    "decision_date": "2026-08-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 958/2026. Visé C/SSMUR le 2026-08-21",
+    "observations": "Demande réf: 958/2026. Traitement PRA le 2026-08-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1191f1ee-11fe-4c19-855a-e4eb551d424b",
+        "name": "Demande_Autorisation_Achat_958_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-19",
+        "uploaded_by_name": "CNHU PPC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-19T08:00:00Z",
+    "updated_at": "2026-08-21T15:00:00Z"
+  },
+  {
+    "id": "7bd1d09c-69dd-41ad-8ad4-2660f67bc6f7",
+    "folder_number": "AA/2026/0317",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAVALOU BANTE",
+    "structure": "HZ SAVALOU BANTE",
+    "receipt_date": "2026-08-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-03",
+    "decision": "Favorable",
+    "decision_date": "2026-08-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1036/2026. Visé C/SSMUR le 2026-08-21",
+    "observations": "Demande réf: 1036/2026. Traitement PRA le 2026-08-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2ca3e9f8-fc9f-4eb5-b83c-8aa63dd88cb4",
+        "name": "Demande_Autorisation_Achat_1036_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-20",
+        "uploaded_by_name": "HZ SAVALOU BANTE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-20T08:00:00Z",
+    "updated_at": "2026-08-21T15:00:00Z"
+  },
+  {
+    "id": "8ae75d0d-f22f-4356-91a7-661f462b5feb",
+    "folder_number": "AA/2026/0318",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PLAHOUE DJAKOTOMEY DOGBO",
+    "structure": "ZS PLAHOUE DJAKOTOMEY DOGBO",
+    "receipt_date": "2026-08-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-03",
+    "decision": "Favorable",
+    "decision_date": "2026-08-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0591/26. Visé C/SSMUR le 2026-08-21",
+    "observations": "Demande réf: 0591/26. Traitement PRA le 2026-08-20",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8fa3ad2d-cc6b-4dae-956d-669c288f66d5",
+        "name": "Demande_Autorisation_Achat_0591_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-20",
+        "uploaded_by_name": "ZS PLAHOUE DJAKOTOMEY DOGBO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-20T08:00:00Z",
+    "updated_at": "2026-08-21T15:00:00Z"
+  },
+  {
+    "id": "1100dd54-3b2d-4c75-990d-e945fbc81096",
+    "folder_number": "AA/2026/0319",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAKETE IFANGNI",
+    "structure": "HZ SAKETE IFANGNI",
+    "receipt_date": "2026-08-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-04",
+    "decision": "Favorable",
+    "decision_date": "2026-08-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2392/22026. Visé C/SSMUR le 2026-08-24",
+    "observations": "Demande réf: 2392/22026. Traitement PRA le 2026-08-21",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "654dae96-4595-4a95-8566-00f7dc36cb19",
+        "name": "Demande_Autorisation_Achat_2392_22026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-21",
+        "uploaded_by_name": "HZ SAKETE IFANGNI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-21T08:00:00Z",
+    "updated_at": "2026-08-24T15:00:00Z"
+  },
+  {
+    "id": "06e5bca9-6feb-44d0-84b6-2f47d84afa53",
+    "folder_number": "AA/2026/0320",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CENTRE DE SANTE PARAKOU",
+    "structure": "CENTRE DE SANTE PARAKOU",
+    "receipt_date": "2026-08-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-07",
+    "decision": "Favorable",
+    "decision_date": "2026-08-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 245/26. Visé C/SSMUR le 2026-08-24",
+    "observations": "Demande réf: 245/26. Traitement PRA le 2026-08-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "66e83b69-ab82-4612-a742-824e612470a3",
+        "name": "Demande_Autorisation_Achat_245_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-24",
+        "uploaded_by_name": "CENTRE DE SANTE PARAKOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-24T08:00:00Z",
+    "updated_at": "2026-08-24T15:00:00Z"
+  },
+  {
+    "id": "837a4883-39fa-4ae3-af4d-66dada15cb29",
+    "folder_number": "AA/2026/0321",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "Projet GeCROC",
+    "structure": "Projet GeCROC",
+    "receipt_date": "2026-08-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-07",
+    "decision": "Favorable",
+    "decision_date": "2026-08-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1285. Visé C/SSMUR le 2026-08-24",
+    "observations": "Demande réf: 1285. Traitement PRA le 2026-08-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4209bc54-3b51-4839-86a8-f0ccd6971caa",
+        "name": "Demande_Autorisation_Achat_1285.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-24",
+        "uploaded_by_name": "Projet GeCROC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-24T08:00:00Z",
+    "updated_at": "2026-08-24T15:00:00Z"
+  },
+  {
+    "id": "e04a3407-e644-464d-a4be-7b5dd08376aa",
+    "folder_number": "AA/2026/0322",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS NIKKI KALALE PERERE",
+    "structure": "ZS NIKKI KALALE PERERE",
+    "receipt_date": "2026-08-26",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-09",
+    "decision": "Favorable",
+    "decision_date": "2026-08-26",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0501/2026. Visé C/SSMUR le 2026-08-26",
+    "observations": "Demande réf: 0501/2026. Traitement PRA le 2026-08-26",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-26",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7cbd9b3d-0a57-4f3a-89d2-afc43b683e42",
+        "name": "Demande_Autorisation_Achat_0501_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-26",
+        "uploaded_by_name": "ZS NIKKI KALALE PERERE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-26T08:00:00Z",
+    "updated_at": "2026-08-26T15:00:00Z"
+  },
+  {
+    "id": "b2161993-c786-43fe-8997-9fd419f6bd7b",
+    "folder_number": "AA/2026/0323",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU 1 & 4",
+    "structure": "ZS COTONOU 1 & 4",
+    "receipt_date": "2026-08-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-10",
+    "decision": "Favorable",
+    "decision_date": "2026-08-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0864/26. Visé C/SSMUR le 2026-08-27",
+    "observations": "Demande réf: 0864/26. Traitement PRA le 2026-08-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "d8b62aa0-4b81-46a1-96a9-11539b15fcbe",
+        "name": "Demande_Autorisation_Achat_0864_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-27",
+        "uploaded_by_name": "ZS COTONOU 1 & 4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-27T08:00:00Z",
+    "updated_at": "2026-08-27T15:00:00Z"
+  },
+  {
+    "id": "2adacfb2-fec6-46d9-85ad-3356ee53d4ca",
+    "folder_number": "AA/2026/0324",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHU MEL",
+    "structure": "CHU MEL",
+    "receipt_date": "2026-08-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-10",
+    "decision": "Favorable",
+    "decision_date": "2026-08-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1292/02026. Visé C/SSMUR le 2026-08-27",
+    "observations": "Demande réf: 1292/02026. Traitement PRA le 2026-08-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1d08d54a-5d40-47d2-a36c-6d26728c52d4",
+        "name": "Demande_Autorisation_Achat_1292_02026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-27",
+        "uploaded_by_name": "CHU MEL"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-27T08:00:00Z",
+    "updated_at": "2026-08-27T15:00:00Z"
+  },
+  {
+    "id": "e5903901-f55a-41f4-96a7-64e333bf9998",
+    "folder_number": "AA/2026/0325",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHU MEL",
+    "structure": "CHU MEL",
+    "receipt_date": "2026-08-27",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-10",
+    "decision": "Favorable",
+    "decision_date": "2026-08-27",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1490/2026. Visé C/SSMUR le 2026-08-27",
+    "observations": "Demande réf: 1490/2026. Traitement PRA le 2026-08-27",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-27",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c50a5e88-9e33-4821-9eab-dc98fdc9ad1f",
+        "name": "Demande_Autorisation_Achat_1490_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-27",
+        "uploaded_by_name": "CHU MEL"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-27T08:00:00Z",
+    "updated_at": "2026-08-27T15:00:00Z"
+  },
+  {
+    "id": "5e5db49c-a488-4499-b50d-6930e2e24467",
+    "folder_number": "AA/2026/0326",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD DONGA",
+    "structure": "CHD DONGA",
+    "receipt_date": "2026-08-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-11",
+    "decision": "Favorable",
+    "decision_date": "2026-08-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 172/2026. Visé C/SSMUR le 2026-08-28",
+    "observations": "Demande réf: 172/2026. Traitement PRA le 2026-08-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "e88b632e-54ff-4752-9a52-e312e241d83f",
+        "name": "Demande_Autorisation_Achat_172_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-28",
+        "uploaded_by_name": "CHD DONGA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-28T08:00:00Z",
+    "updated_at": "2026-08-28T15:00:00Z"
+  },
+  {
+    "id": "7ceee2db-53b5-42a7-b352-e7b9f4189fdb",
+    "folder_number": "AA/2026/0327",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS OUIDAH KPOMASSE TORI",
+    "structure": "ZS OUIDAH KPOMASSE TORI",
+    "receipt_date": "2026-08-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-11",
+    "decision": "Favorable",
+    "decision_date": "2026-08-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1183. Visé C/SSMUR le 2026-08-28",
+    "observations": "Demande réf: 1183. Traitement PRA le 2026-08-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2e161ecc-5970-4b9f-bc50-956070659528",
+        "name": "Demande_Autorisation_Achat_1183.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-28",
+        "uploaded_by_name": "ZS OUIDAH KPOMASSE TORI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-28T08:00:00Z",
+    "updated_at": "2026-08-28T15:00:00Z"
+  },
+  {
+    "id": "f2c3fd04-e0da-4635-b4ab-8cea6061bae5",
+    "folder_number": "AA/2026/0328",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS OUIDAH KPOMASSE TORI",
+    "structure": "ZS OUIDAH KPOMASSE TORI",
+    "receipt_date": "2026-08-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-11",
+    "decision": "Favorable",
+    "decision_date": "2026-08-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1184. Visé C/SSMUR le 2026-08-28",
+    "observations": "Demande réf: 1184. Traitement PRA le 2026-08-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "bb7e362b-3369-4454-8492-7ae58d975ef8",
+        "name": "Demande_Autorisation_Achat_1184.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-28",
+        "uploaded_by_name": "ZS OUIDAH KPOMASSE TORI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-28T08:00:00Z",
+    "updated_at": "2026-08-28T15:00:00Z"
+  },
+  {
+    "id": "468403df-dda9-4132-930f-3848b0dbefe2",
+    "folder_number": "AA/2026/0329",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ OUIDAH",
+    "structure": "HZ OUIDAH",
+    "receipt_date": "2026-08-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-11",
+    "decision": "Favorable",
+    "decision_date": "2026-08-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 002/26. Visé C/SSMUR le 2026-08-28",
+    "observations": "Demande réf: 002/26. Traitement PRA le 2026-08-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1f35b091-4b8d-43b4-83cc-d69e52db55e6",
+        "name": "Demande_Autorisation_Achat_002_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-28",
+        "uploaded_by_name": "HZ OUIDAH"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-28T08:00:00Z",
+    "updated_at": "2026-08-28T15:00:00Z"
+  },
+  {
+    "id": "c01d191b-171e-4410-8d54-955ff5b2e7a1",
+    "folder_number": "AA/2026/0330",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ OUIDAH",
+    "structure": "HZ OUIDAH",
+    "receipt_date": "2026-08-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-11",
+    "decision": "Favorable",
+    "decision_date": "2026-08-28",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 001/26. Visé C/SSMUR le 2026-08-28",
+    "observations": "Demande réf: 001/26. Traitement PRA le 2026-08-28",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-28",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "8cb294ff-6a5f-4753-bb08-78a923f7df01",
+        "name": "Demande_Autorisation_Achat_001_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-28",
+        "uploaded_by_name": "HZ OUIDAH"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-28T08:00:00Z",
+    "updated_at": "2026-08-28T15:00:00Z"
+  },
+  {
+    "id": "81e03302-d1ff-44dd-8c75-7422820f2f51",
+    "folder_number": "AA/2026/0331",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAVE OUESSE",
+    "structure": "HZ SAVE OUESSE",
+    "receipt_date": "2026-08-31",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-14",
+    "decision": "Favorable",
+    "decision_date": "2026-08-31",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1055/2026. Visé C/SSMUR le 2026-08-31",
+    "observations": "Demande réf: 1055/2026. Traitement PRA le 2026-08-31",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-31",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b66ac555-2d55-4532-85db-f77979d743a7",
+        "name": "Demande_Autorisation_Achat_1055_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-31",
+        "uploaded_by_name": "HZ SAVE OUESSE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-31T08:00:00Z",
+    "updated_at": "2026-08-31T15:00:00Z"
+  },
+  {
+    "id": "4a021a13-beb7-4613-a0ff-a79c98f6463f",
+    "folder_number": "AA/2026/0332",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU V",
+    "structure": "ZS COTONOU V",
+    "receipt_date": "2026-08-31",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-14",
+    "decision": "Favorable",
+    "decision_date": "2026-08-31",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0825/26. Visé C/SSMUR le 2026-08-31",
+    "observations": "Demande réf: 0825/26. Traitement PRA le 2026-08-31",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-31",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f6ed7a39-bf5e-4cd5-88e7-a6b91b35f8a9",
+        "name": "Demande_Autorisation_Achat_0825_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-08-31",
+        "uploaded_by_name": "ZS COTONOU V"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-31T08:00:00Z",
+    "updated_at": "2026-08-31T15:00:00Z"
+  },
+  {
+    "id": "f6ef70e9-06c7-4ca4-9647-b69ab3218e67",
+    "folder_number": "AA/2026/0333",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ND'ALI PARAKOU",
+    "structure": "ZS ND'ALI PARAKOU",
+    "receipt_date": "2026-09-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-15",
+    "decision": "Favorable",
+    "decision_date": "2026-09-01",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1129/26. Visé C/SSMUR le 2026-09-01",
+    "observations": "Demande réf: 1129/26. Traitement PRA le 2026-09-01",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-01",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "9bc91629-ed1d-4082-b431-fceed4192575",
+        "name": "Demande_Autorisation_Achat_1129_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-01",
+        "uploaded_by_name": "ZS ND'ALI PARAKOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-01T08:00:00Z",
+    "updated_at": "2026-09-01T15:00:00Z"
+  },
+  {
+    "id": "904dbfde-1ea9-486d-9a63-515c1e117dad",
+    "folder_number": "AA/2026/0334",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ADJOHOUN BONOU DANGBO",
+    "structure": "ZS ADJOHOUN BONOU DANGBO",
+    "receipt_date": "2026-09-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-15",
+    "decision": "Favorable",
+    "decision_date": "2026-09-01",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1040. Visé C/SSMUR le 2026-09-01",
+    "observations": "Demande réf: 1040. Traitement PRA le 2026-09-01",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-01",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "588415ef-2fb8-4e5e-95b7-48cc32dfc081",
+        "name": "Demande_Autorisation_Achat_1040.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-01",
+        "uploaded_by_name": "ZS ADJOHOUN BONOU DANGBO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-01T08:00:00Z",
+    "updated_at": "2026-09-01T15:00:00Z"
+  },
+  {
+    "id": "65e2def9-f0b2-4d89-9fb5-658d3daa9ab8",
+    "folder_number": "AA/2026/0335",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS N'DALI PARAKOU",
+    "structure": "ZS N'DALI PARAKOU",
+    "receipt_date": "2026-09-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-15",
+    "decision": "Favorable",
+    "decision_date": "2026-09-01",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1129/26. Visé C/SSMUR le 2026-09-01",
+    "observations": "Demande réf: 1129/26. Traitement PRA le 2026-09-01",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-01",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "233b1094-0928-47ad-83f1-e5b8cc1bbd33",
+        "name": "Demande_Autorisation_Achat_1129_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-01",
+        "uploaded_by_name": "ZS N'DALI PARAKOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-01T08:00:00Z",
+    "updated_at": "2026-09-01T15:00:00Z"
+  },
+  {
+    "id": "d22d60da-a86a-4ff0-a29e-2597d02243e8",
+    "folder_number": "AA/2026/0336",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MENONTIN",
+    "structure": "HZ MENONTIN",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 677-2026. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 677-2026. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5a2d1ecc-645e-4c0f-a181-78de23820cb1",
+        "name": "Demande_Autorisation_Achat_677-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "HZ MENONTIN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "99a8114f-1fcd-4cf1-a122-60db6b012e83",
+    "folder_number": "AA/2026/0337",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA",
+    "structure": "HZ ALLADA",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2024/2026. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 2024/2026. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "53330805-52b8-494c-a296-998eddd1c5f0",
+        "name": "Demande_Autorisation_Achat_2024_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "HZ ALLADA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "44b78d73-9ffd-427c-94e5-baff9f7ec186",
+    "folder_number": "AA/2026/0338",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA",
+    "structure": "HZ ALLADA",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2031/2026. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 2031/2026. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1c4c34e1-651e-42b8-904a-84f28743eb5f",
+        "name": "Demande_Autorisation_Achat_2031_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "HZ ALLADA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "85c0d818-6fbb-45f4-bd87-60268da1d922",
+    "folder_number": "AA/2026/0339",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA",
+    "structure": "HZ ALLADA",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2025/2026. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 2025/2026. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "218fc5e5-e3bf-46a2-b32c-4e145a463d2b",
+        "name": "Demande_Autorisation_Achat_2025_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "HZ ALLADA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "db1f02c0-508d-44f8-b91b-a1dd9cce3ef3",
+    "folder_number": "AA/2026/0340",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS LOKOSSA ATHIEME",
+    "structure": "ZS LOKOSSA ATHIEME",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1393/26. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 1393/26. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c17ccee6-6ffb-4a7a-ae87-1d4036c9a5b1",
+        "name": "Demande_Autorisation_Achat_1393_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "ZS LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "366ecd3d-7e53-410a-a6c8-16b507a9d631",
+    "folder_number": "AA/2026/0341",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS LOKOSSA ATHIEME",
+    "structure": "ZS LOKOSSA ATHIEME",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1392/26. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 1392/26. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "eb9e4bc9-817f-4211-b7a3-9f53c6faae8d",
+        "name": "Demande_Autorisation_Achat_1392_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "ZS LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "41ca6d9f-6b65-4ea6-ab6a-ecb463c52152",
+    "folder_number": "AA/2026/0342",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COVE COZO",
+    "structure": "HZ COVE COZO",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 399/2026. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 399/2026. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "71a3eba2-ecaf-418b-a2ab-c5c7c3da98b0",
+        "name": "Demande_Autorisation_Achat_399_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "HZ COVE COZO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "78cc2478-33c1-459c-b658-ae511cdb11b5",
+    "folder_number": "AA/2026/0343",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COVE COZO",
+    "structure": "HZ COVE COZO",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 398/2026. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 398/2026. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "56ebd511-36c5-4f18-8ba7-6a5fd0dcd444",
+        "name": "Demande_Autorisation_Achat_398_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "HZ COVE COZO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "1c27a729-4423-4544-a3f1-80fe9d754fd7",
+    "folder_number": "AA/2026/0344",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-03",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2646/26. Visé C/SSMUR le 2026-09-03",
+    "observations": "Demande réf: 2646/26. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-03",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ddf483b9-e8bc-424f-b270-b0f5480e844f",
+        "name": "Demande_Autorisation_Achat_2646_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-03T15:00:00Z"
+  },
+  {
+    "id": "6eb0d432-f438-44d4-bffc-7b52e649779b",
+    "folder_number": "AA/2026/0345",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS COTONOU 1 & 4",
+    "structure": "ZS COTONOU 1 & 4",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-16",
+    "decision": "Favorable",
+    "decision_date": "2026-09-04",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 0894/26. Visé C/SSMUR le 2026-09-04",
+    "observations": "Demande réf: 0894/26. Traitement PRA le 2026-09-03",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5c1a6bbe-83fd-4e0b-b197-3b5359b576e3",
+        "name": "Demande_Autorisation_Achat_0894_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "ZS COTONOU 1 & 4"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:00:00Z",
+    "updated_at": "2026-09-04T15:00:00Z"
+  },
+  {
+    "id": "9dc2397d-d17f-46d3-9b68-14e6720d6867",
+    "folder_number": "AA/2026/0346",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU HKM",
+    "structure": "CNHU HKM",
+    "receipt_date": "2026-09-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-18",
+    "decision": "Favorable",
+    "decision_date": "2026-09-08",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2711/2026. Visé C/SSMUR le 2026-09-08",
+    "observations": "Demande réf: 2711/2026. Traitement PRA le 2026-09-04",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-08",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5d07baa4-d7ee-4bda-87ba-3ee722f20e27",
+        "name": "Demande_Autorisation_Achat_2711_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-04",
+        "uploaded_by_name": "CNHU HKM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-04T08:00:00Z",
+    "updated_at": "2026-09-08T15:00:00Z"
+  },
+  {
+    "id": "adf448a4-0259-4d3d-8d37-0af72df85fd6",
+    "folder_number": "AA/2026/0347",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ LOKOSSA ATHIEME",
+    "structure": "HZ LOKOSSA ATHIEME",
+    "receipt_date": "2026-09-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-21",
+    "decision": "Favorable",
+    "decision_date": "2026-09-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 264/26. Visé C/SSMUR le 2026-09-09",
+    "observations": "Demande réf: 264/26. Traitement PRA le 2026-09-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "db1e7555-e82b-4530-a386-892f34caa25f",
+        "name": "Demande_Autorisation_Achat_264_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-07",
+        "uploaded_by_name": "HZ LOKOSSA ATHIEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-07T08:00:00Z",
+    "updated_at": "2026-09-09T15:00:00Z"
+  },
+  {
+    "id": "b6e648fc-769e-447a-a847-482dcc53dfa1",
+    "folder_number": "AA/2026/0348",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ DJIDJA ABOMEY AGBANGNIZOUN",
+    "structure": "HZ DJIDJA ABOMEY AGBANGNIZOUN",
+    "receipt_date": "2026-09-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-21",
+    "decision": "Favorable",
+    "decision_date": "2026-09-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 496/26. Visé C/SSMUR le 2026-09-09",
+    "observations": "Demande réf: 496/26. Traitement PRA le 2026-09-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "bb6e4a47-8566-4b8d-819f-46f9d06e6089",
+        "name": "Demande_Autorisation_Achat_496_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-07",
+        "uploaded_by_name": "HZ DJIDJA ABOMEY AGBANGNIZOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-07T08:00:00Z",
+    "updated_at": "2026-09-09T15:00:00Z"
+  },
+  {
+    "id": "4ed05bd9-162d-4028-9f67-4a7c717af071",
+    "folder_number": "AA/2026/0349",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PARAKOU N'DALI",
+    "structure": "ZS PARAKOU N'DALI",
+    "receipt_date": "2026-09-07",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-21",
+    "decision": "Favorable",
+    "decision_date": "2026-09-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1129/26. Visé C/SSMUR le 2026-09-09",
+    "observations": "Demande réf: 1129/26. Traitement PRA le 2026-09-08",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "45dfbb73-8e57-4bd8-850d-6be273209602",
+        "name": "Demande_Autorisation_Achat_1129_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-07",
+        "uploaded_by_name": "ZS PARAKOU N'DALI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-07T08:00:00Z",
+    "updated_at": "2026-09-09T15:00:00Z"
+  },
+  {
+    "id": "9692243e-d1c1-4f39-8a9d-f209fdf493c8",
+    "folder_number": "AA/2026/0350",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KLOUEKANME",
+    "structure": "HZ KLOUEKANME",
+    "receipt_date": "2026-09-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-22",
+    "decision": "Favorable",
+    "decision_date": "2026-09-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1463/26. Visé C/SSMUR le 2026-09-09",
+    "observations": "Demande réf: 1463/26. Traitement PRA le 2026-09-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "29594678-85ef-4229-b25e-1c8732adb630",
+        "name": "Demande_Autorisation_Achat_1463_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-08",
+        "uploaded_by_name": "HZ KLOUEKANME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-08T08:00:00Z",
+    "updated_at": "2026-09-09T15:00:00Z"
+  },
+  {
+    "id": "077f305c-67e1-4530-bfb4-8eda56d57b5d",
+    "folder_number": "AA/2026/0351",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ NATITINGOU",
+    "structure": "HZ NATITINGOU",
+    "receipt_date": "2026-09-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-22",
+    "decision": "Favorable",
+    "decision_date": "2026-09-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1232. Visé C/SSMUR le 2026-09-09",
+    "observations": "Demande réf: 1232. Traitement PRA le 2026-09-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c94802e8-4b41-4230-9011-5f71a24ee76a",
+        "name": "Demande_Autorisation_Achat_1232.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-08",
+        "uploaded_by_name": "HZ NATITINGOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-08T08:00:00Z",
+    "updated_at": "2026-09-09T15:00:00Z"
+  },
+  {
+    "id": "226b0971-31b1-4566-a6ac-ed377821a9a9",
+    "folder_number": "AA/2026/0352",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ COME",
+    "structure": "HZ COME",
+    "receipt_date": "2026-09-08",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-22",
+    "decision": "Favorable",
+    "decision_date": "2026-09-09",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 492-2025. Visé C/SSMUR le 2026-09-09",
+    "observations": "Demande réf: 492-2025. Traitement PRA le 2026-09-09",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-09",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3d81bbaa-3d54-47f9-a233-423433766893",
+        "name": "Demande_Autorisation_Achat_492-2025.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-08",
+        "uploaded_by_name": "HZ COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-08T08:00:00Z",
+    "updated_at": "2026-09-09T15:00:00Z"
+  },
+  {
+    "id": "d4b2654a-e83f-43fc-aa62-e3890e445a42",
+    "folder_number": "AA/2026/0353",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ MENONTIN",
+    "structure": "HZ MENONTIN",
+    "receipt_date": "2026-09-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-23",
+    "decision": "Favorable",
+    "decision_date": "2026-09-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 676-2026. Visé C/SSMUR le 2026-09-11",
+    "observations": "Demande réf: 676-2026. Traitement PRA le 2026-09-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "be191317-d6b2-47ed-a28a-ffa851a1f99d",
+        "name": "Demande_Autorisation_Achat_676-2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-09",
+        "uploaded_by_name": "HZ MENONTIN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-09T08:00:00Z",
+    "updated_at": "2026-09-11T15:00:00Z"
+  },
+  {
+    "id": "3eff08be-69b2-430f-8508-97e649294585",
+    "folder_number": "AA/2026/0354",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS BASSILA",
+    "structure": "ZS BASSILA",
+    "receipt_date": "2026-09-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-23",
+    "decision": "Favorable",
+    "decision_date": "2026-09-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1440/2026. Visé C/SSMUR le 2026-09-11",
+    "observations": "Demande réf: 1440/2026. Traitement PRA le 2026-09-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a6a79aab-a37e-4724-90e8-599806af8097",
+        "name": "Demande_Autorisation_Achat_1440_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-09",
+        "uploaded_by_name": "ZS BASSILA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-09T08:00:00Z",
+    "updated_at": "2026-09-11T15:00:00Z"
+  },
+  {
+    "id": "24a9c561-2845-4e0c-ac4f-0dd6253213f3",
+    "folder_number": "AA/2026/0355",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD MONO",
+    "structure": "CHD MONO",
+    "receipt_date": "2026-09-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-23",
+    "decision": "Favorable",
+    "decision_date": "2026-09-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 359/26. Visé C/SSMUR le 2026-09-11",
+    "observations": "Demande réf: 359/26. Traitement PRA le 2026-09-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a445cdc4-6c06-48b0-bcee-8d33608f4b72",
+        "name": "Demande_Autorisation_Achat_359_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-09",
+        "uploaded_by_name": "CHD MONO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-09T08:00:00Z",
+    "updated_at": "2026-09-11T15:00:00Z"
+  },
+  {
+    "id": "9a372f42-1364-4963-bed1-531e61dfe20e",
+    "folder_number": "AA/2026/0356",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ADJOHOUN",
+    "structure": "HZ ADJOHOUN",
+    "receipt_date": "2026-09-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-23",
+    "decision": "Favorable",
+    "decision_date": "2026-09-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1956/26. Visé C/SSMUR le 2026-09-11",
+    "observations": "Demande réf: 1956/26. Traitement PRA le 2026-09-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "cfd13d1c-8ede-4669-8559-6873cf21e572",
+        "name": "Demande_Autorisation_Achat_1956_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-09",
+        "uploaded_by_name": "HZ ADJOHOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-09T08:00:00Z",
+    "updated_at": "2026-09-11T15:00:00Z"
+  },
+  {
+    "id": "15f098ff-5784-41d9-9e2a-7b7dd95bc6ae",
+    "folder_number": "AA/2026/0357",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS KLOUEKANMEY TOVIKLIN LALO",
+    "structure": "ZS KLOUEKANMEY TOVIKLIN LALO",
+    "receipt_date": "2026-09-09",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-23",
+    "decision": "Favorable",
+    "decision_date": "2026-09-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1415/26. Visé C/SSMUR le 2026-09-11",
+    "observations": "Demande réf: 1415/26. Traitement PRA le 2026-09-10",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f15ba199-ea07-4647-975c-91716fa79177",
+        "name": "Demande_Autorisation_Achat_1415_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-09",
+        "uploaded_by_name": "ZS KLOUEKANMEY TOVIKLIN LALO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-09T08:00:00Z",
+    "updated_at": "2026-09-11T15:00:00Z"
+  },
+  {
+    "id": "4a051bc5-f8f0-4c3d-ba92-6e3318286c6e",
+    "folder_number": "AA/2026/0358",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ABOMEY CALAVI SO AVA",
+    "structure": "ZS ABOMEY CALAVI SO AVA",
+    "receipt_date": "2026-09-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-28",
+    "decision": "Favorable",
+    "decision_date": "2026-09-14",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2456/26. Visé C/SSMUR le 2026-09-14",
+    "observations": "Demande réf: 2456/26. Traitement PRA le 2026-09-14",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-14",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "58ac7d1b-b7d2-4df1-8243-106e24626c71",
+        "name": "Demande_Autorisation_Achat_2456_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-14",
+        "uploaded_by_name": "ZS ABOMEY CALAVI SO AVA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-14T08:00:00Z",
+    "updated_at": "2026-09-14T15:00:00Z"
+  },
+  {
+    "id": "f81721ba-c814-4132-898b-b3d096b4c2d9",
+    "folder_number": "AA/2026/0359",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS AKPRO MISSERETE ADJARRA AVRANKOU",
+    "structure": "ZS AKPRO MISSERETE ADJARRA AVRANKOU",
+    "receipt_date": "2026-09-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-25",
+    "decision": "Favorable",
+    "decision_date": "2026-09-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1751. Visé C/SSMUR le 2026-09-11",
+    "observations": "Demande réf: 1751. Traitement PRA le 2026-09-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2bfbff59-3b45-4cad-8023-941c78a3c175",
+        "name": "Demande_Autorisation_Achat_1751.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-11",
+        "uploaded_by_name": "ZS AKPRO MISSERETE ADJARRA AVRANKOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-11T08:00:00Z",
+    "updated_at": "2026-09-11T15:00:00Z"
+  },
+  {
+    "id": "8ae6650c-8651-4509-847a-2ce059d3c6dd",
+    "folder_number": "AA/2026/0360",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ADJOHOUN BONOU DANGBO",
+    "structure": "ZS ADJOHOUN BONOU DANGBO",
+    "receipt_date": "2026-09-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-25",
+    "decision": "Favorable",
+    "decision_date": "2026-09-11",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1100. Visé C/SSMUR le 2026-09-11",
+    "observations": "Demande réf: 1100. Traitement PRA le 2026-09-11",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6c0383c4-d832-45fb-86ca-dc2290a1506c",
+        "name": "Demande_Autorisation_Achat_1100.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-11",
+        "uploaded_by_name": "ZS ADJOHOUN BONOU DANGBO"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-11T08:00:00Z",
+    "updated_at": "2026-09-11T15:00:00Z"
+  },
+  {
+    "id": "fc4a3617-8633-4c00-9a85-dc2d81cfb3b4",
+    "folder_number": "AA/2026/0361",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PARAKOU N'DALI",
+    "structure": "ZS PARAKOU N'DALI",
+    "receipt_date": "2026-09-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-28",
+    "decision": "Favorable",
+    "decision_date": "2026-09-14",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1184/26. Visé C/SSMUR le 2026-09-14",
+    "observations": "Demande réf: 1184/26. Traitement PRA le 2026-09-14",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-14",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "79998dfb-bc4a-4669-84f9-4157daf0c802",
+        "name": "Demande_Autorisation_Achat_1184_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-14",
+        "uploaded_by_name": "ZS PARAKOU N'DALI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-14T08:00:00Z",
+    "updated_at": "2026-09-14T15:00:00Z"
+  },
+  {
+    "id": "c280e9ad-2396-41fc-b740-35c9aa34a598",
+    "folder_number": "AA/2026/0362",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ ABOMEY CALAVI",
+    "structure": "CHUZ ABOMEY CALAVI",
+    "receipt_date": "2026-09-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-28",
+    "decision": "Favorable",
+    "decision_date": "2026-09-14",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 527/26. Visé C/SSMUR le 2026-09-14",
+    "observations": "Demande réf: 527/26. Traitement PRA le 2026-09-14",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-14",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3005ff47-a0a5-4b44-9dc6-e208e0d0eafa",
+        "name": "Demande_Autorisation_Achat_527_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-14",
+        "uploaded_by_name": "CHUZ ABOMEY CALAVI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-14T08:00:00Z",
+    "updated_at": "2026-09-14T15:00:00Z"
+  },
+  {
+    "id": "c49b23ef-153d-4dd8-9257-298dfd1703ea",
+    "folder_number": "AA/2026/0363",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS TCHAOUROU",
+    "structure": "ZS TCHAOUROU",
+    "receipt_date": "2026-09-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-28",
+    "decision": "Favorable",
+    "decision_date": "2026-09-14",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 912/2026. Visé C/SSMUR le 2026-09-14",
+    "observations": "Demande réf: 912/2026. Traitement PRA le 2026-09-14",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-14",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2382a40e-cd29-435c-9883-07ed5df010ad",
+        "name": "Demande_Autorisation_Achat_912_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-14",
+        "uploaded_by_name": "ZS TCHAOUROU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-14T08:00:00Z",
+    "updated_at": "2026-09-14T15:00:00Z"
+  },
+  {
+    "id": "c91ae19e-7f4a-4a83-8189-e534d4203a9a",
+    "folder_number": "AA/2026/0364",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "BZ COME",
+    "structure": "BZ COME",
+    "receipt_date": "2026-09-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-28",
+    "decision": "Favorable",
+    "decision_date": "2026-09-15",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1634/26. Visé C/SSMUR le 2026-09-15",
+    "observations": "Demande réf: 1634/26. Traitement PRA le 2026-09-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-15",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b2dd3d1a-198c-4873-bf3c-7e73d1c75039",
+        "name": "Demande_Autorisation_Achat_1634_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-14",
+        "uploaded_by_name": "BZ COME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-14T08:00:00Z",
+    "updated_at": "2026-09-15T15:00:00Z"
+  },
+  {
+    "id": "fbe6ae1f-889e-464b-863e-d5171c96de4f",
+    "folder_number": "AA/2026/0365",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUZ ABOMEY CALAVI",
+    "structure": "CHUZ ABOMEY CALAVI",
+    "receipt_date": "2026-09-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-28",
+    "decision": "Favorable",
+    "decision_date": "2026-09-15",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 687/26. Visé C/SSMUR le 2026-09-15",
+    "observations": "Demande réf: 687/26. Traitement PRA le 2026-09-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-15",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "309c88a6-68f5-409f-86e8-f495035c172e",
+        "name": "Demande_Autorisation_Achat_687_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-14",
+        "uploaded_by_name": "CHUZ ABOMEY CALAVI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-14T08:00:00Z",
+    "updated_at": "2026-09-15T15:00:00Z"
+  },
+  {
+    "id": "6200451c-a386-494a-8371-d90f149fa59c",
+    "folder_number": "AA/2026/0366",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KANDI",
+    "structure": "HZ KANDI",
+    "receipt_date": "2026-09-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-29",
+    "decision": "Favorable",
+    "decision_date": "2026-09-15",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2393/2026. Visé C/SSMUR le 2026-09-15",
+    "observations": "Demande réf: 2393/2026. Traitement PRA le 2026-09-15",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-15",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ee0edb3e-ddf1-43f3-aa28-804a29f1804e",
+        "name": "Demande_Autorisation_Achat_2393_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-15",
+        "uploaded_by_name": "HZ KANDI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-15T08:00:00Z",
+    "updated_at": "2026-09-15T15:00:00Z"
+  },
+  {
+    "id": "3c2bd9ea-fd07-4acc-963f-7b446e669e2a",
+    "folder_number": "AA/2026/0367",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS TCHAOUROU",
+    "structure": "ZS TCHAOUROU",
+    "receipt_date": "2026-09-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-28",
+    "decision": "Favorable",
+    "decision_date": "2026-09-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 912/2026. Visé C/SSMUR le 2026-09-21",
+    "observations": "Demande réf: 912/2026. Traitement PRA le 2026-09-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "5aa2ac6b-3925-4937-8537-f6cd10ff0dbc",
+        "name": "Demande_Autorisation_Achat_912_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-14",
+        "uploaded_by_name": "ZS TCHAOUROU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-14T08:00:00Z",
+    "updated_at": "2026-09-21T15:00:00Z"
+  },
+  {
+    "id": "e3e6dd13-1601-4c02-b75b-28a01c54619e",
+    "folder_number": "AA/2026/0368",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CNHU HKM",
+    "structure": "CNHU HKM",
+    "receipt_date": "2026-09-17",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-01",
+    "decision": "Favorable",
+    "decision_date": "2026-09-21",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2872/2026. Visé C/SSMUR le 2026-09-21",
+    "observations": "Demande réf: 2872/2026. Traitement PRA le 2026-09-18",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-21",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f25c0444-8744-4510-a4dd-0d60d33a9c1f",
+        "name": "Demande_Autorisation_Achat_2872_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-17",
+        "uploaded_by_name": "CNHU HKM"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-17T08:00:00Z",
+    "updated_at": "2026-09-21T15:00:00Z"
+  },
+  {
+    "id": "53438119-81aa-4767-8f99-d4ec6307da34",
+    "folder_number": "AA/2026/0369",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ DASSA GLAZOUE",
+    "structure": "HZ DASSA GLAZOUE",
+    "receipt_date": "2026-09-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-04",
+    "decision": "Favorable",
+    "decision_date": "2026-09-22",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 188/2026. Visé C/SSMUR le 2026-09-22",
+    "observations": "Demande réf: 188/2026. Traitement PRA le 2026-09-21",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-22",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "b5b1f123-ee58-4853-8590-ab6a5e7968fc",
+        "name": "Demande_Autorisation_Achat_188_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-20",
+        "uploaded_by_name": "HZ DASSA GLAZOUE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-20T08:00:00Z",
+    "updated_at": "2026-09-22T15:00:00Z"
+  },
+  {
+    "id": "686c3f4f-7e01-4da0-aa2c-f0d23d1f4dab",
+    "folder_number": "AA/2026/0370",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-09-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-05",
+    "decision": "Favorable",
+    "decision_date": "2026-09-22",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2724/26. Visé C/SSMUR le 2026-09-22",
+    "observations": "Demande réf: 2724/26. Traitement PRA le 2026-09-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-22",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "142cdd8f-3f7e-4722-bf7d-3980080bacad",
+        "name": "Demande_Autorisation_Achat_2724_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-21",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-21T08:00:00Z",
+    "updated_at": "2026-09-22T15:00:00Z"
+  },
+  {
+    "id": "97b8f1c9-776c-49f2-ab3f-d3053bd6443e",
+    "folder_number": "AA/2026/0371",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA",
+    "structure": "HZ ALLADA",
+    "receipt_date": "2026-09-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-05",
+    "decision": "Favorable",
+    "decision_date": "2026-09-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2218/2026. Visé C/SSMUR le 2026-09-23",
+    "observations": "Demande réf: 2218/2026. Traitement PRA le 2026-09-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c92ebcb8-0c8f-4846-bb4a-efdca219da15",
+        "name": "Demande_Autorisation_Achat_2218_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-21",
+        "uploaded_by_name": "HZ ALLADA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-21T08:00:00Z",
+    "updated_at": "2026-09-23T15:00:00Z"
+  },
+  {
+    "id": "323d3ee1-c092-4f7c-bd47-d4446879a9b7",
+    "folder_number": "AA/2026/0372",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS PORTO NOVO AGUEGUES SEME PODJI",
+    "structure": "ZS PORTO NOVO AGUEGUES SEME PODJI",
+    "receipt_date": "2026-09-21",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-05",
+    "decision": "Favorable",
+    "decision_date": "2026-09-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 1868/26. Visé C/SSMUR le 2026-09-23",
+    "observations": "Demande réf: 1868/26. Traitement PRA le 2026-09-22",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "bb372f80-0e61-49ab-b935-8309507675bb",
+        "name": "Demande_Autorisation_Achat_1868_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-21",
+        "uploaded_by_name": "ZS PORTO NOVO AGUEGUES SEME PODJI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-21T08:00:00Z",
+    "updated_at": "2026-09-23T15:00:00Z"
+  },
+  {
+    "id": "928dad1f-7e93-4127-8c46-62152ac377b8",
+    "folder_number": "AA/2026/0373",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ POBE ADJA OUERE KETOU",
+    "structure": "HZ POBE ADJA OUERE KETOU",
+    "receipt_date": "2026-09-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-07",
+    "decision": "Favorable",
+    "decision_date": "2026-09-25",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 212. Visé C/SSMUR le 2026-09-25",
+    "observations": "Demande réf: 212. Traitement PRA le 2026-09-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-25",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "daef5912-4061-45a1-a9d4-f4b8dc61880f",
+        "name": "Demande_Autorisation_Achat_212.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-23",
+        "uploaded_by_name": "HZ POBE ADJA OUERE KETOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-23T08:00:00Z",
+    "updated_at": "2026-09-25T15:00:00Z"
+  },
+  {
+    "id": "3c15e9dc-08aa-400e-bec7-29706900b90e",
+    "folder_number": "AA/2026/0374",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD BORGOU ALIBORI",
+    "structure": "CHUD BORGOU ALIBORI",
+    "receipt_date": "2026-09-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-07",
+    "decision": "Favorable",
+    "decision_date": "2026-09-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 4677/26. Visé C/SSMUR le 2026-09-23",
+    "observations": "Demande réf: 4677/26. Traitement PRA le 2026-09-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a21476da-babc-4982-9901-58fdd42f8518",
+        "name": "Demande_Autorisation_Achat_4677_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-23",
+        "uploaded_by_name": "CHUD BORGOU ALIBORI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-23T08:00:00Z",
+    "updated_at": "2026-09-23T15:00:00Z"
+  },
+  {
+    "id": "c5be90b9-d386-4be6-808b-cc0bf6749fd9",
+    "folder_number": "AA/2026/0375",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ LOKOSSA ATHOEME",
+    "structure": "HZ LOKOSSA ATHOEME",
+    "receipt_date": "2026-09-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-07",
+    "decision": "Favorable",
+    "decision_date": "2026-09-23",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 275/26. Visé C/SSMUR le 2026-09-23",
+    "observations": "Demande réf: 275/26. Traitement PRA le 2026-09-23",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-23",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "c725eb21-b1a5-48c5-960d-5db64788b3b3",
+        "name": "Demande_Autorisation_Achat_275_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-23",
+        "uploaded_by_name": "HZ LOKOSSA ATHOEME"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-23T08:00:00Z",
+    "updated_at": "2026-09-23T15:00:00Z"
+  },
+  {
+    "id": "1a094627-f97b-4dc0-acdf-117047837a70",
+    "folder_number": "AA/2026/0376",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAKETE IFANGNI",
+    "structure": "HZ SAKETE IFANGNI",
+    "receipt_date": "2026-09-23",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-07",
+    "decision": "Favorable",
+    "decision_date": "2026-09-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 269/2026. Visé C/SSMUR le 2026-09-24",
+    "observations": "Demande réf: 269/2026. Traitement PRA le 2026-09-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "48e52699-bec3-4d29-a151-e85bd37881fa",
+        "name": "Demande_Autorisation_Achat_269_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-23",
+        "uploaded_by_name": "HZ SAKETE IFANGNI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-23T08:00:00Z",
+    "updated_at": "2026-09-24T15:00:00Z"
+  },
+  {
+    "id": "f04c6ce2-d94a-4a80-9372-b11408533ef8",
+    "folder_number": "AA/2026/0377",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ APLAHOUE",
+    "structure": "HZ APLAHOUE",
+    "receipt_date": "2026-09-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-08",
+    "decision": "Favorable",
+    "decision_date": "2026-09-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 641/26. Visé C/SSMUR le 2026-09-24",
+    "observations": "Demande réf: 641/26. Traitement PRA le 2026-09-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "45cbc204-015f-4610-8ca7-c401ee1eae4e",
+        "name": "Demande_Autorisation_Achat_641_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-24",
+        "uploaded_by_name": "HZ APLAHOUE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-24T08:00:00Z",
+    "updated_at": "2026-09-24T15:00:00Z"
+  },
+  {
+    "id": "45de35ad-4f52-4295-95ac-28e0a1caff5c",
+    "folder_number": "AA/2026/0378",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHUD OUEME PLATEAU",
+    "structure": "CHUD OUEME PLATEAU",
+    "receipt_date": "2026-09-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-08",
+    "decision": "Favorable",
+    "decision_date": "2026-09-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: du 23 septembre 2026. Visé C/SSMUR le 2026-09-24",
+    "observations": "Demande réf: du 23 septembre 2026. Traitement PRA le 2026-09-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "3b0eea7b-b872-4501-880d-418932cdddc9",
+        "name": "Demande_Autorisation_Achat_du 23 septembre 2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-24",
+        "uploaded_by_name": "CHUD OUEME PLATEAU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-24T08:00:00Z",
+    "updated_at": "2026-09-24T15:00:00Z"
+  },
+  {
+    "id": "31bc33a4-60b7-4949-8047-a27985dc802e",
+    "folder_number": "AA/2026/0379",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS POBE ADJA OUERE KETOU",
+    "structure": "ZS POBE ADJA OUERE KETOU",
+    "receipt_date": "2026-09-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-08",
+    "decision": "Favorable",
+    "decision_date": "2026-09-24",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2460/2025. Visé C/SSMUR le 2026-09-24",
+    "observations": "Demande réf: 2460/2025. Traitement PRA le 2026-09-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-24",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "fd28b906-d534-4f97-9a69-da8ff129c4ca",
+        "name": "Demande_Autorisation_Achat_2460_2025.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-24",
+        "uploaded_by_name": "ZS POBE ADJA OUERE KETOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-24T08:00:00Z",
+    "updated_at": "2026-09-24T15:00:00Z"
+  },
+  {
+    "id": "412f1ffb-e350-4554-9f5d-fdb0aa380945",
+    "folder_number": "AA/2026/0380",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS NATITINGOU BOUKOMBE",
+    "structure": "ZS NATITINGOU BOUKOMBE",
+    "receipt_date": "2026-09-24",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-08",
+    "decision": "Favorable",
+    "decision_date": "2026-09-26",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2012/2025. Visé C/SSMUR le 2026-09-26",
+    "observations": "Demande réf: 2012/2025. Traitement PRA le 2026-09-24",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-26",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "eea20a19-937d-4c48-966c-4efe210db679",
+        "name": "Demande_Autorisation_Achat_2012_2025.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-24",
+        "uploaded_by_name": "ZS NATITINGOU BOUKOMBE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-24T08:00:00Z",
+    "updated_at": "2026-09-26T15:00:00Z"
+  },
+  {
+    "id": "a70f0cdb-71c5-425c-8f59-eb0ee0efed61",
+    "folder_number": "AA/2026/0381",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ KOUANDE",
+    "structure": "HZ KOUANDE",
+    "receipt_date": "2026-09-25",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-09",
+    "decision": "Favorable",
+    "decision_date": "2026-09-25",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 186/2026. Visé C/SSMUR le 2026-09-25",
+    "observations": "Demande réf: 186/2026. Traitement PRA le 2026-09-25",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-25",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "bc3d5dac-4044-4f7d-9cdb-32c6baaa9fc4",
+        "name": "Demande_Autorisation_Achat_186_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-25",
+        "uploaded_by_name": "HZ KOUANDE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-25T08:00:00Z",
+    "updated_at": "2026-09-25T15:00:00Z"
+  },
+  {
+    "id": "d28c4ae9-c77c-46bf-9aca-8eafbbbcb998",
+    "folder_number": "AA/2026/0382",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ADJOHOUN",
+    "structure": "HZ ADJOHOUN",
+    "receipt_date": "2026-09-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-12",
+    "decision": "Favorable",
+    "decision_date": "2026-09-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2150/26. Visé C/SSMUR le 2026-09-30",
+    "observations": "Demande réf: 2150/26. Traitement PRA le 2026-09-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "f246e08d-e50d-4222-90e3-fb4b8c4af139",
+        "name": "Demande_Autorisation_Achat_2150_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-28",
+        "uploaded_by_name": "HZ ADJOHOUN"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-28T08:00:00Z",
+    "updated_at": "2026-09-30T15:00:00Z"
+  },
+  {
+    "id": "12915f0e-4958-4673-b764-ecbf29e7fb2c",
+    "folder_number": "AA/2026/0383",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ SAKETE IFANGNI",
+    "structure": "HZ SAKETE IFANGNI",
+    "receipt_date": "2026-09-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-12",
+    "decision": "Favorable",
+    "decision_date": "2026-09-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 271/2026. Visé C/SSMUR le 2026-09-30",
+    "observations": "Demande réf: 271/2026. Traitement PRA le 2026-09-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "33e522dd-c961-4cb4-8827-4b4e5e906ce4",
+        "name": "Demande_Autorisation_Achat_271_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-28",
+        "uploaded_by_name": "HZ SAKETE IFANGNI"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-28T08:00:00Z",
+    "updated_at": "2026-09-30T15:00:00Z"
+  },
+  {
+    "id": "a0e2262f-c4a0-4d18-8a0e-d9c4bbfb5105",
+    "folder_number": "AA/2026/0384",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ZS ALLADA TOFFO ZE",
+    "structure": "ZS ALLADA TOFFO ZE",
+    "receipt_date": "2026-09-25",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-09",
+    "decision": "Favorable",
+    "decision_date": "2026-09-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2853/26. Visé C/SSMUR le 2026-09-30",
+    "observations": "Demande réf: 2853/26. Traitement PRA le 2026-09-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "39f80a14-f123-4ad4-92a6-43a59b9b6488",
+        "name": "Demande_Autorisation_Achat_2853_26.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-25",
+        "uploaded_by_name": "ZS ALLADA TOFFO ZE"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-25T08:00:00Z",
+    "updated_at": "2026-09-30T15:00:00Z"
+  },
+  {
+    "id": "4119bdf4-9f60-4bd7-b1d6-2bae075461f3",
+    "folder_number": "AA/2026/0385",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "ED-SDI UAC",
+    "structure": "ED-SDI UAC",
+    "receipt_date": "2026-09-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-13",
+    "decision": "Favorable",
+    "decision_date": "2026-09-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 60. Visé C/SSMUR le 2026-09-30",
+    "observations": "Demande réf: 60. Traitement PRA le 2026-09-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a214c626-d63e-47cd-be61-78f332a2b1a6",
+        "name": "Demande_Autorisation_Achat_60.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-29",
+        "uploaded_by_name": "ED-SDI UAC"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-29T08:00:00Z",
+    "updated_at": "2026-09-30T15:00:00Z"
+  },
+  {
+    "id": "f08b7533-0fbc-4737-87fb-e980da04411e",
+    "folder_number": "AA/2026/0386",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ ALLADA",
+    "structure": "HZ ALLADA",
+    "receipt_date": "2026-09-29",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-13",
+    "decision": "Favorable",
+    "decision_date": "2026-09-30",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 2254/2026. Visé C/SSMUR le 2026-09-30",
+    "observations": "Demande réf: 2254/2026. Traitement PRA le 2026-09-29",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-09-30",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "64f30c0f-1208-44c0-b18e-68005da9eb82",
+        "name": "Demande_Autorisation_Achat_2254_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-29",
+        "uploaded_by_name": "HZ ALLADA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-29T08:00:00Z",
+    "updated_at": "2026-09-30T15:00:00Z"
+  },
+  {
+    "id": "7e1d18d0-bfa4-4cec-9e59-9bee3ed0553a",
+    "folder_number": "AA/2026/0387",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "HZ POBE ADJA OUERE KETOU",
+    "structure": "HZ POBE ADJA OUERE KETOU",
+    "receipt_date": "2026-09-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-12",
+    "decision": "Favorable",
+    "decision_date": "2026-10-01",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 212. Visé C/SSMUR le 2026-10-01",
+    "observations": "Demande réf: 212. Traitement PRA le 2026-09-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-10-01",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "73ceb695-1107-4aa2-ba6e-6dcb97f331f7",
+        "name": "Demande_Autorisation_Achat_212.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-28",
+        "uploaded_by_name": "HZ POBE ADJA OUERE KETOU"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-28T08:00:00Z",
+    "updated_at": "2026-10-01T15:00:00Z"
+  },
+  {
+    "id": "050aa61a-d850-495b-aee2-8d3bda7b8d03",
+    "folder_number": "AA/2026/0388",
+    "folder_type": "Autorisation d’Achat de Médicaments",
+    "applicant": "CHD DONGA",
+    "structure": "CHD DONGA",
+    "receipt_date": "2026-09-28",
+    "manager_id": "a0000000-0000-0000-0000-000000000010",
+    "manager_name": "Dr. DOSSOU YOVO H. O. Mael",
+    "priority": "moyenne",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-10-12",
+    "decision": "Favorable",
+    "decision_date": "2026-10-01",
+    "decision_notes": "Demande d'autorisation d'achat dérogatoire réf: 203/2026. Visé C/SSMUR le 2026-10-01",
+    "observations": "Demande réf: 203/2026. Traitement PRA le 2026-09-30",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": null,
+    "commission_date": null,
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-10-01",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Lettre de demande motivée d'autorisation d'achat",
+        "is_present": true
+      },
+      {
+        "piece": "Facture proforma / Liste quantitative des produits",
+        "is_present": true
+      },
+      {
+        "piece": "Justificatif de rupture ou d'indisponibilité nationale",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "13cf6221-fef1-47b4-bbfb-ea5bb9d1acf9",
+        "name": "Demande_Autorisation_Achat_203_2026.pdf",
+        "file_type": "PDF",
+        "size_kb": 450,
+        "uploaded_at": "2026-09-28",
+        "uploaded_by_name": "CHD DONGA"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-28T08:00:00Z",
+    "updated_at": "2026-10-01T15:00:00Z"
+  },
+  {
+    "id": "bed9dcf8-b768-4698-982a-a2ce56533142",
+    "folder_number": "DEST-2026-001",
+    "folder_type": "Destruction",
+    "applicant": "Pharmacie de l'Étoile",
+    "structure": "Pharmacie de l'Étoile",
+    "receipt_date": "2026-02-10",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-03",
+    "decision": "Favorable",
+    "decision_date": "2026-02-10",
+    "decision_notes": "Procédure de destruction contrôlée : Lot périmé de solutés injectables et antibiotiques. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Lot périmé de solutés injectables et antibiotiques. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-02-10",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-10",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "1b7bf904-8def-48e2-9713-5533d25509b8",
+        "name": "PV_Destruction_DEST-2026-001.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-02-10",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-10T08:30:00Z",
+    "updated_at": "2026-02-10T16:00:00Z"
+  },
+  {
+    "id": "d31655bd-18b8-43e7-b65c-6580bde6f460",
+    "folder_number": "DEST-2026-002",
+    "folder_type": "Destruction",
+    "applicant": "UBIPHARM Bénin",
+    "structure": "UBIPHARM Bénin",
+    "receipt_date": "2026-02-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-11",
+    "decision": "Favorable",
+    "decision_date": "2026-02-18",
+    "decision_notes": "Procédure de destruction contrôlée : Lots de réactifs et produits thermosensibles avariés. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Lots de réactifs et produits thermosensibles avariés. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-02-18",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-02-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a03e7a7d-33d9-4c8a-9ac5-86a882e7e8f8",
+        "name": "PV_Destruction_DEST-2026-002.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-02-18",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-02-18T08:30:00Z",
+    "updated_at": "2026-02-18T16:00:00Z"
+  },
+  {
+    "id": "65c17ae0-9b44-4433-86dc-95497c294715",
+    "folder_number": "DEST-2026-003",
+    "folder_type": "Destruction",
+    "applicant": "CHUD Ouémé-Plateau",
+    "structure": "CHUD Ouémé-Plateau",
+    "receipt_date": "2026-03-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-03-23",
+    "decision": "Favorable",
+    "decision_date": "2026-03-02",
+    "decision_notes": "Procédure de destruction contrôlée : Déchets pharmaceutiques hospitaliers et médicaments périmés. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Déchets pharmaceutiques hospitaliers et médicaments périmés. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-03-02",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-02",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "7eae9414-7bad-4f8b-9aec-63b112524be9",
+        "name": "PV_Destruction_DEST-2026-003.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-03-02",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-02T08:30:00Z",
+    "updated_at": "2026-03-02T16:00:00Z"
+  },
+  {
+    "id": "54e736d8-81aa-4a35-8c64-f51ebdfc37a8",
+    "folder_number": "DEST-2026-004",
+    "folder_type": "Destruction",
+    "applicant": "Pharmacie Saint Luc Cotonou",
+    "structure": "Pharmacie Saint Luc Cotonou",
+    "receipt_date": "2026-03-14",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-04",
+    "decision": "Favorable",
+    "decision_date": "2026-03-14",
+    "decision_notes": "Procédure de destruction contrôlée : Périmés du 4ème trimestre 2025. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Périmés du 4ème trimestre 2025. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-03-14",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-14",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "fc671b42-ea8a-4f0a-b304-7bc66915ea9a",
+        "name": "PV_Destruction_DEST-2026-004.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-03-14",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-14T08:30:00Z",
+    "updated_at": "2026-03-14T16:00:00Z"
+  },
+  {
+    "id": "ee3a6060-4d7f-4284-bfd6-c44d34359312",
+    "folder_number": "DEST-2026-005",
+    "folder_type": "Destruction",
+    "applicant": "LABOREX Bénin",
+    "structure": "LABOREX Bénin",
+    "receipt_date": "2026-03-25",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-15",
+    "decision": "Favorable",
+    "decision_date": "2026-03-25",
+    "decision_notes": "Procédure de destruction contrôlée : Rupture de chaîne du froid sur vaccins et biothérapies. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Rupture de chaîne du froid sur vaccins et biothérapies. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-03-25",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-03-25",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "6329ed30-e66f-4c68-bb69-482f498f33c6",
+        "name": "PV_Destruction_DEST-2026-005.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-03-25",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-03-25T08:30:00Z",
+    "updated_at": "2026-03-25T16:00:00Z"
+  },
+  {
+    "id": "770aed56-be41-46ac-b048-0d6c349b2677",
+    "folder_number": "DEST-2026-006",
+    "folder_type": "Destruction",
+    "applicant": "CAME (Centrale d'Achat)",
+    "structure": "CAME (Centrale d'Achat)",
+    "receipt_date": "2026-04-05",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-04-26",
+    "decision": "Favorable",
+    "decision_date": "2026-04-05",
+    "decision_notes": "Procédure de destruction contrôlée : Médicaments altérés et périmés programme national. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Médicaments altérés et périmés programme national. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-04-05",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-05",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "94e6b263-f16c-404a-97c6-573c09c3de14",
+        "name": "PV_Destruction_DEST-2026-006.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-04-05",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-05T08:30:00Z",
+    "updated_at": "2026-04-05T16:00:00Z"
+  },
+  {
+    "id": "6f5361bb-1a73-44ea-830b-44f7701bb89e",
+    "folder_number": "DEST-2026-007",
+    "folder_type": "Destruction",
+    "applicant": "Pharmacie de la Paix",
+    "structure": "Pharmacie de la Paix",
+    "receipt_date": "2026-04-20",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-05-11",
+    "decision": "Favorable",
+    "decision_date": "2026-04-20",
+    "decision_notes": "Procédure de destruction contrôlée : Stocks périmés pour destruction réglementaire. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Stocks périmés pour destruction réglementaire. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-04-20",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-04-20",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "0a02100f-43d1-40e0-b803-75672cf0dbcc",
+        "name": "PV_Destruction_DEST-2026-007.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-04-20",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-04-20T08:30:00Z",
+    "updated_at": "2026-04-20T16:00:00Z"
+  },
+  {
+    "id": "ff6dec6a-18ad-4dec-ac05-651fa358aaf3",
+    "folder_number": "DEST-2026-008",
+    "folder_type": "Destruction",
+    "applicant": "Clinique Mahouna",
+    "structure": "Clinique Mahouna",
+    "receipt_date": "2026-05-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "traitement",
+    "progress_percentage": 70,
+    "due_date": "2026-05-23",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Procédure de destruction contrôlée : Produits anesthésiques et consommables périmés. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Produits anesthésiques et consommables périmés. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": false
+      }
+    ],
+    "documents": [
+      {
+        "id": "8540794e-225f-4f8b-99a4-dfe7210d1404",
+        "name": "PV_Destruction_DEST-2026-008.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-05-02",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-02T08:30:00Z",
+    "updated_at": "2026-05-02T16:00:00Z"
+  },
+  {
+    "id": "45b01387-860a-45c3-8bdb-ebcf8fce89a9",
+    "folder_number": "DEST-2026-009",
+    "folder_type": "Destruction",
+    "applicant": "Dépôt Pharmaceutique d'Abomey",
+    "structure": "Dépôt Pharmaceutique d'Abomey",
+    "receipt_date": "2026-05-15",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-05",
+    "decision": "Favorable",
+    "decision_date": "2026-05-15",
+    "decision_notes": "Procédure de destruction contrôlée : Médicaments détériorés suite à inondation. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Médicaments détériorés suite à inondation. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-05-15",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-05-15",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "91862c92-ba2c-4abb-b77c-005fa953c33b",
+        "name": "PV_Destruction_DEST-2026-009.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-05-15",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-05-15T08:30:00Z",
+    "updated_at": "2026-05-15T16:00:00Z"
+  },
+  {
+    "id": "b51470a2-0c60-46bc-b0c2-8d6b058ffcdf",
+    "folder_number": "DEST-2026-010",
+    "folder_type": "Destruction",
+    "applicant": "Pharmacie du Port Cotonou",
+    "structure": "Pharmacie du Port Cotonou",
+    "receipt_date": "2026-06-01",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-06-22",
+    "decision": "Favorable",
+    "decision_date": "2026-06-01",
+    "decision_notes": "Procédure de destruction contrôlée : Destruction trimestrielle de stupéfiants périmés. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Destruction trimestrielle de stupéfiants périmés. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-06-01",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-01",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "a0b85ae1-0883-4708-887f-0909336d7ed5",
+        "name": "PV_Destruction_DEST-2026-010.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-06-01",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-01T08:30:00Z",
+    "updated_at": "2026-06-01T16:00:00Z"
+  },
+  {
+    "id": "9e3e9b5e-8d86-4702-9488-d935818caeb0",
+    "folder_number": "DEST-2026-011",
+    "folder_type": "Destruction",
+    "applicant": "GAPOB SARL",
+    "structure": "GAPOB SARL",
+    "receipt_date": "2026-06-18",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-09",
+    "decision": "Favorable",
+    "decision_date": "2026-06-18",
+    "decision_notes": "Procédure de destruction contrôlée : Compléments nutritionnels et dispositifs médicaux non conformes. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Compléments nutritionnels et dispositifs médicaux non conformes. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-06-18",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-06-18",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "2d5685dd-4b88-4971-b46e-109878235f1e",
+        "name": "PV_Destruction_DEST-2026-011.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-06-18",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-06-18T08:30:00Z",
+    "updated_at": "2026-06-18T16:00:00Z"
+  },
+  {
+    "id": "36407283-dbd8-4c3c-a578-4dd8ace8facf",
+    "folder_number": "DEST-2026-012",
+    "folder_type": "Destruction",
+    "applicant": "Hôpital Saint Jean de Dieu",
+    "structure": "Hôpital Saint Jean de Dieu",
+    "receipt_date": "2026-07-04",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-07-25",
+    "decision": "Favorable",
+    "decision_date": "2026-07-04",
+    "decision_notes": "Procédure de destruction contrôlée : Médicaments périmés pharmacie hospitalière. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Médicaments périmés pharmacie hospitalière. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-07-04",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-07-04",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "4201d653-fa69-42c0-b644-35bea2fc07de",
+        "name": "PV_Destruction_DEST-2026-012.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-07-04",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-04T08:30:00Z",
+    "updated_at": "2026-07-04T16:00:00Z"
+  },
+  {
+    "id": "69920112-8e93-4987-b772-c2e894dccdae",
+    "folder_number": "DEST-2026-013",
+    "folder_type": "Destruction",
+    "applicant": "Pharmacie de l'Amitié Parakou",
+    "structure": "Pharmacie de l'Amitié Parakou",
+    "receipt_date": "2026-07-22",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "traitement",
+    "progress_percentage": 70,
+    "due_date": "2026-08-12",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Procédure de destruction contrôlée : Périmés 1er semestre 2026. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Périmés 1er semestre 2026. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": false
+      }
+    ],
+    "documents": [
+      {
+        "id": "c37c83b5-e339-4c27-a173-8981252d4ce8",
+        "name": "PV_Destruction_DEST-2026-013.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-07-22",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-07-22T08:30:00Z",
+    "updated_at": "2026-07-22T16:00:00Z"
+  },
+  {
+    "id": "946e25b6-a648-4ddc-a26f-81aa655e7d67",
+    "folder_number": "DEST-2026-014",
+    "folder_type": "Destruction",
+    "applicant": "Pharmacie des Lagunes",
+    "structure": "Pharmacie des Lagunes",
+    "receipt_date": "2026-08-11",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "cloture",
+    "progress_percentage": 100,
+    "due_date": "2026-09-01",
+    "decision": "Favorable",
+    "decision_date": "2026-08-11",
+    "decision_notes": "Procédure de destruction contrôlée : Stocks non utilisables et flacons brisés. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Stocks non utilisables et flacons brisés. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": "2026-08-11",
+    "commission_avis": "Favorable",
+    "missing_documents": "",
+    "notification_date": "2026-08-11",
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "ec4e74d6-41ce-44ed-bf02-0b761d070329",
+        "name": "PV_Destruction_DEST-2026-014.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-08-11",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-08-11T08:30:00Z",
+    "updated_at": "2026-08-11T16:00:00Z"
+  },
+  {
+    "id": "8cce0907-551d-4c94-8edb-b21f14e7fb08",
+    "folder_number": "DEST-2026-015",
+    "folder_type": "Destruction",
+    "applicant": "BENIN PHARMA Distribution",
+    "structure": "BENIN PHARMA Distribution",
+    "receipt_date": "2026-09-02",
+    "manager_id": "a0000000-0000-0000-0000-000000000009",
+    "manager_name": "Dr. TONOUKOUIN Joel",
+    "priority": "haute",
+    "status": "traitement",
+    "progress_percentage": 70,
+    "due_date": "2026-09-23",
+    "decision": "En attente",
+    "decision_date": null,
+    "decision_notes": "Procédure de destruction contrôlée : Lots détériorés en cours de transit. Évaluateur : Dr. TONOUKOUIN Joel",
+    "observations": "Motif de destruction : Lots détériorés en cours de transit. Procès-verbal de constat dressé avec la commission de destruction.",
+    "target_service": "Service de la Surveillance du Marché (SSMUR)",
+    "commission_name": "Commission Technique de Destruction",
+    "commission_date": null,
+    "commission_avis": "En attente",
+    "missing_documents": "",
+    "notification_date": null,
+    "decree_transmission_date": null,
+    "decree_ministere_date": null,
+    "compliance_checklist": [
+      {
+        "piece": "Inventaire contradictoire et quantitatif des produits à détruire",
+        "is_present": true
+      },
+      {
+        "piece": "Demande officielle de destruction",
+        "is_present": true
+      },
+      {
+        "piece": "Attestation de provenance / Numéros de lot",
+        "is_present": true
+      },
+      {
+        "piece": "Procès-verbal de constatation de destruction",
+        "is_present": false
+      }
+    ],
+    "documents": [
+      {
+        "id": "e38be7d3-c676-4cc6-8a19-f9962d2b6c74",
+        "name": "PV_Destruction_DEST-2026-015.pdf",
+        "file_type": "PDF",
+        "size_kb": 1150,
+        "uploaded_at": "2026-09-02",
+        "uploaded_by_name": "Commission de Destruction SSMUR"
+      }
+    ],
+    "comments": [],
+    "created_at": "2026-09-02T08:30:00Z",
+    "updated_at": "2026-09-02T16:00:00Z"
   }
 ];

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { useApp } from '@/context/AppContext';
 import { SignalItem } from '@/types';
@@ -19,7 +20,10 @@ import {
   Syringe
 } from 'lucide-react';
 
-export default function SignalsPage() {
+function SignalsContent() {
+  const searchParams = useSearchParams();
+  const domainParam = searchParams.get('domain') || 'all';
+
   const { signals, alerts, addSignal, currentUser } = useApp();
   const [selectedSignal, setSelectedSignal] = useState<SignalItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,24 +50,24 @@ export default function SignalsPage() {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-black text-slate-900 tracking-tight">
-              Signalements Sanitaires, Vigilances & Gestion des MAPI
+              Signalements Sanitaires (SSMUR) & Notifications (SVPS)
             </h1>
             <span className="text-[10px] font-bold uppercase bg-rose-100 text-rose-800 px-2 py-0.5 rounded-full border border-rose-200">
-              Phase 3 • Vigilances
+              DLVS • Surveillance & Vigilances
             </span>
           </div>
           <p className="text-xs text-slate-500 mt-1">
-            Enregistrement des alertes, enquêtes sur le terrain, prévalidation MAPI, analyses de laboratoire et imputabilité OMS
+            Enregistrement des signalements de qualité/ruptures (SSMUR) et notifications d'effets indésirables / MAPI (SVPS)
           </p>
         </div>
 
         {canManage && mainView === 'signals' && (
           <button
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors self-start md:self-auto"
+            className="flex items-center gap-2 px-4 py-2.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors self-start md:self-auto cursor-pointer"
           >
             <Plus className="w-4 h-4" />
-            <span>Nouveau Signalement</span>
+            <span>Nouveau Signalement / Notification</span>
           </button>
         )}
       </div>
@@ -75,7 +79,7 @@ export default function SignalsPage() {
             <AlertTriangle className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-[11px] font-medium text-slate-500 block">Total Notifiés</span>
+            <span className="text-[11px] font-medium text-slate-500 block">Total Dossiers</span>
             <span className="text-lg font-black text-slate-900">{totalSignals}</span>
           </div>
         </div>
@@ -85,7 +89,7 @@ export default function SignalsPage() {
             <Syringe className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-[11px] font-medium text-slate-500 block">Cas MAPI</span>
+            <span className="text-[11px] font-medium text-slate-500 block">Cas MAPI (SVPS)</span>
             <span className="text-lg font-black text-blue-700">{mapiCount}</span>
           </div>
         </div>
@@ -105,7 +109,7 @@ export default function SignalsPage() {
             <FlaskConical className="w-5 h-5" />
           </div>
           <div>
-            <span className="text-[11px] font-medium text-slate-500 block">Prélèvements Labo</span>
+            <span className="text-[11px] font-medium text-slate-500 block">Prélèvements LNCM</span>
             <span className="text-lg font-black text-purple-700">{samplesTaken}</span>
           </div>
         </div>
@@ -125,19 +129,19 @@ export default function SignalsPage() {
       <div className="flex border-b border-slate-200 space-x-6 text-xs font-semibold">
         <button
           onClick={() => setMainView('signals')}
-          className={`pb-3 flex items-center gap-2 border-b-2 transition-colors ${
+          className={`pb-3 flex items-center gap-2 border-b-2 transition-colors cursor-pointer ${
             mainView === 'signals'
               ? 'border-blue-600 text-blue-600'
               : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
           <AlertTriangle className="w-4 h-4" />
-          <span>Registre des Signalements & MAPI ({signals.length})</span>
+          <span>Registre Signalements & Notifications ({signals.length})</span>
         </button>
 
         <button
           onClick={() => setMainView('alerts')}
-          className={`pb-3 flex items-center gap-2 border-b-2 transition-colors ${
+          className={`pb-3 flex items-center gap-2 border-b-2 transition-colors cursor-pointer ${
             mainView === 'alerts'
               ? 'border-rose-600 text-rose-600'
               : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -160,6 +164,7 @@ export default function SignalsPage() {
           onSelect={(sig) => setSelectedSignal(sig)}
           onNew={() => setIsModalOpen(true)}
           canManage={canManage}
+          initialDomain={domainParam}
         />
       ) : (
         <AlertsList alerts={alerts} canManage={canManage} />
@@ -178,5 +183,13 @@ export default function SignalsPage() {
       />
       </div>
     </AppLayout>
+  );
+}
+
+export default function SignalsPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-xs text-slate-500">Chargement des flux...</div>}>
+      <SignalsContent />
+    </Suspense>
   );
 }

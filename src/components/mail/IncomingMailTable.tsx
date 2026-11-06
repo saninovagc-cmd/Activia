@@ -228,6 +228,17 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
                     <td className="py-3 px-2 align-top">
                       <p className="font-bold text-slate-900 text-xs whitespace-nowrap">{mail.receipt_date}</p>
                       <p className="text-[11px] text-slate-500 font-mono break-all leading-tight mt-0.5">{mail.reference}</p>
+                      {mail.transmission_channel && (
+                        <span className={`inline-block text-[9px] font-bold px-1.5 py-0.2 rounded mt-1 border ${
+                          mail.transmission_channel === 'GEC'
+                            ? 'bg-blue-50 text-blue-800 border-blue-200'
+                            : mail.transmission_channel === 'Mail'
+                            ? 'bg-purple-50 text-purple-800 border-purple-200'
+                            : 'bg-amber-50 text-amber-800 border-amber-200'
+                        }`}>
+                          {mail.transmission_channel}
+                        </span>
+                      )}
                     </td>
 
                     {/* Expéditeur - Retour à la ligne automatique */}

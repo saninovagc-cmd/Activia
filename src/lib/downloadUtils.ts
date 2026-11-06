@@ -19,8 +19,10 @@ export function downloadFile(filename: string, content: string, mimeType: string
 
 export function downloadSampleDocument(filename: string, entityRef: string, entityType: string) {
   const content = `================================================================================
-RÉPUBLIQUE - DIRECTION DE LA PHARMACIE ET DU MÉDICAMENT
-SYSTÈME D'INFORMATION ET DE GESTION DU SERVICE "ACTIVIA"
+RÉPUBLIQUE DU BÉNIN — MINISTÈRE DE LA SANTÉ
+AGENCE BÉNINOISE DU MÉDICAMENT ET DES AUTRES PRODUITS DE SANTÉ (ABMed)
+DIRECTION DES LICENCES, DE LA VIGILANCE ET DE LA SURVEILLANCE DU MARCHÉ (DLVS)
+SYSTÈME D'INFORMATION ET DE PILOTAGE "ACTIVIA"
 ================================================================================
 
 DOCUMENT OFFICIEL NUMÉRISÉ : ${filename}

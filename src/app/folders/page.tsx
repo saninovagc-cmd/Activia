@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { FolderTable } from '@/components/folders/FolderTable';
 import { FolderModal } from '@/components/folders/FolderModal';
@@ -14,10 +15,13 @@ import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
 import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 function FoldersPageContent() {
+  const searchParams = useSearchParams();
+  const initialType = searchParams.get('type') || 'all';
+
   const { folders } = useApp();
 
   const [search, setSearch] = useState('');
-  const [selectedType, setSelectedType] = useState('all');
+  const [selectedType, setSelectedType] = useState(initialType);
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFolder, setSelectedFolder] = useState<Folder | null>(null);
@@ -40,15 +44,15 @@ function FoldersPageContent() {
     'Autorisation Installation CNAIAPS-EM',
     'Quitus d’Ouverture d’Officine',
     'Quitus de Transfert d’Officine',
-    'Carte Visiteur Médical (VM)',
-    'Notification d’Absence Titulaire',
+    'Carte Visiteur Médical',
+    'Notification d’absence',
     'Résiliation Pharmacien / Gérant',
-    'Autorisation d’Achat de Médicaments',
-    'Autorisation d’Opération & Importation (AOI)',
-    'Publicité & Promotion des Médicaments (AMM)',
+    'Autorisation d’achat',
+    'Autorisation de transit',
+    'Publicité',
     'Revue PSUR / PBRER / DSUR',
-    'Essai Clinique & EIG',
-    'Élimination des Déchets',
+    'Essais Cliniques & EIG',
+    'Destruction',
     'Autorisation Matériel Médical & PCRL',
     'Autre Dossier Réglementaire'
   ];
@@ -56,7 +60,12 @@ function FoldersPageContent() {
   // Filtering
   const filteredFolders = useMemo(() => {
     return folders.filter((f) => {
-      if (selectedType !== 'all' && f.folder_type !== selectedType) return false;
+      if (selectedType !== 'all') {
+        const matchesType = f.folder_type === selectedType || 
+          f.folder_type.toLowerCase().includes(selectedType.toLowerCase()) ||
+          selectedType.toLowerCase().includes(f.folder_type.toLowerCase());
+        if (!matchesType) return false;
+      }
       if (selectedStatus !== 'all' && f.status !== selectedStatus) return false;
 
       // Filtre temporel (Jour, Mois, Année)
@@ -81,9 +90,11 @@ function FoldersPageContent() {
   const enRetard = folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
 
   const getFoldersExportConfig = (): ExportConfig => ({
-    title: 'Registre des Dossiers Réglementaires & Demandes',
-    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi des autorisations et homologations ACTIVIA',
-    filename: `dossiers_activia_${new Date().toISOString().split('T')[0]}`,
+    title: selectedType !== 'all' 
+      ? `Registre officiel — ${selectedType}`
+      : 'Registre Général des Dossiers Réglementaires & Demandes',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
+    filename: `dossiers_dlvs_${new Date().toISOString().split('T')[0]}`,
     headers: ['N° Dossier', 'Structure / Demandeur', 'Typologie', 'Priorité', 'Statut / Étape', 'Date Dépôt', 'Échéance SLA', 'Décision'],
     rows: filteredFolders.map(f => [
       f.folder_number,

@@ -10,6 +10,7 @@ import { LogOut, ChevronDown, ChevronRight } from 'lucide-react';
 interface NavItem {
   name: string;
   href: string;
+  group?: string;
 }
 
 interface NavSection {
@@ -43,9 +44,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     {
       id: 'operationnel',
       number: '02',
-      title: 'GESTION DES ACTIVITÉS',
+      title: 'ACTIVITÉS DE LA DIRECTION',
       items: [
-        { name: 'Activités du Service', href: '/activities' },
+        { name: 'Activités de la Direction', href: '/activities' },
         { name: 'Tâches & Délais', href: '/tasks' },
         { name: 'Calendrier Global', href: '/calendar' },
       ],
@@ -63,11 +64,24 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     {
       id: 'metiers',
       number: '04',
-      title: 'MÉTIERS & VIGILANCES',
+      title: 'MÉTIERS',
       items: [
-        { name: 'Établissements Pharmaceutiques', href: '/establishments' },
-        { name: 'Signalements & Alertes', href: '/signals' },
-        { name: 'Formations Points Focaux', href: '/trainings' },
+        // Service des Licences (SL)
+        { name: 'Établissements Pharmaceutiques', href: '/establishments', group: 'Service des Licences (SL)' },
+        { name: 'Cartes Visiteurs Médicaux', href: '/folders?type=Carte+Visiteur+M%C3%A9dical', group: 'Service des Licences (SL)' },
+        { name: "Notifications d'Absence", href: "/folders?type=Notification+d'absence", group: 'Service des Licences (SL)' },
+        
+        // Service Surveillance du Marché (SSMUR)
+        { name: "Autorisations d'Achat", href: "/folders?type=Autorisation+d'achat", group: 'Service Surveillance du Marché (SSMUR)' },
+        { name: 'Publicité & Promotion', href: '/folders?type=Publicit%C3%A9', group: 'Service Surveillance du Marché (SSMUR)' },
+        { name: 'Destruction de Produits', href: '/folders?type=Destruction', group: 'Service Surveillance du Marché (SSMUR)' },
+        { name: 'Signalements & Alertes (SSMUR)', href: '/signals?domain=signalement', group: 'Service Surveillance du Marché (SSMUR)' },
+        
+        // Service Vigilance des Produits de Santé (SVPS)
+        { name: 'Revue PSUR / PBRER / DSUR', href: '/folders?type=PSUR+%2F+PBRER+%2F+DSUR', group: 'Service Vigilance des Produits (SVPS)' },
+        { name: 'Essais Cliniques & EIG', href: '/folders?type=Essais+Cliniques+%26+EIG', group: 'Service Vigilance des Produits (SVPS)' },
+        { name: 'Notifications EI & MAPI (SVPS)', href: '/signals?domain=notification', group: 'Service Vigilance des Produits (SVPS)' },
+        { name: 'Formations Points Focaux', href: '/trainings', group: 'Service Vigilance des Produits (SVPS)' },
       ],
     },
     {
@@ -216,28 +230,37 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 {/* Sub-items (Revealed on click) */}
                 {isSectionOpen && (
                   <div className="px-2 pt-1 pb-2 space-y-0.5 border-t border-slate-800/80 bg-[#080d19]/60">
-                    {section.items.map((item) => {
+                    {section.items.map((item, itemIdx) => {
                       const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href + '/'));
+                      const prevGroup = itemIdx > 0 ? section.items[itemIdx - 1]?.group : null;
+                      const showGroupHeader = item.group && item.group !== prevGroup;
+
                       return (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => {
-                            if (window.innerWidth < 1024) onClose();
-                          }}
-                          className={`block px-3 py-2 rounded-lg text-xs font-medium transition-all ${
-                            isActive
-                              ? 'bg-emerald-700 text-white font-bold shadow-md shadow-emerald-950/40 ring-1 ring-emerald-500/30'
-                              : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
-                          }`}
-                        >
-                          <div className="flex items-center justify-between">
-                            <span className="truncate">{item.name}</span>
-                            {isActive && (
-                              <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs shrink-0" />
-                            )}
-                          </div>
-                        </Link>
+                        <React.Fragment key={item.href + itemIdx}>
+                          {showGroupHeader && (
+                            <div className="pt-2.5 pb-1 px-3 text-[10px] font-bold uppercase tracking-wider text-emerald-400/90 border-t border-slate-800/60 mt-1.5 first:border-0 first:mt-0">
+                              {item.group}
+                            </div>
+                          )}
+                          <Link
+                            href={item.href}
+                            onClick={() => {
+                              if (window.innerWidth < 1024) onClose();
+                            }}
+                            className={`block px-3 py-2 rounded-lg text-xs font-medium transition-all ${
+                              isActive
+                                ? 'bg-emerald-700 text-white font-bold shadow-md shadow-emerald-950/40 ring-1 ring-emerald-500/30'
+                                : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="truncate">{item.name}</span>
+                              {isActive && (
+                                <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs shrink-0" />
+                              )}
+                            </div>
+                          </Link>
+                        </React.Fragment>
                       );
                     })}
                   </div>

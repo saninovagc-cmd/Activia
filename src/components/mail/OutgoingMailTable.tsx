@@ -147,6 +147,17 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
                   <td className="py-3 px-2 align-top">
                     <span className="font-bold text-slate-900 text-xs whitespace-nowrap block">{mail.send_date}</span>
                     <span className="block text-[11px] text-slate-500 mt-0.5 break-words whitespace-normal">{mail.mail_type}</span>
+                    {mail.transmission_channel && (
+                      <span className={`inline-block text-[9px] font-bold px-1.5 py-0.2 rounded mt-1 border ${
+                        mail.transmission_channel === 'GEC'
+                          ? 'bg-indigo-50 text-indigo-800 border-indigo-200'
+                          : mail.transmission_channel === 'Mail'
+                          ? 'bg-purple-50 text-purple-800 border-purple-200'
+                          : 'bg-amber-50 text-amber-800 border-amber-200'
+                      }`}>
+                        {mail.transmission_channel}
+                      </span>
+                    )}
                   </td>
                   <td className="py-3 px-2.5 align-top">
                     <span className="font-bold text-slate-900 leading-snug break-words whitespace-normal block">{mail.recipient}</span>

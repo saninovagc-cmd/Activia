@@ -56,16 +56,20 @@ function ActivitiesContent() {
   const [activityToEdit, setActivityToEdit] = useState<Activity | null>(null);
   const [selectedActivityDetail, setSelectedActivityDetail] = useState<Activity | null>(null);
 
-  // Departments list
-  const departments = useMemo(() => {
-    return Array.from(new Set(activities.map(a => a.department)));
-  }, [activities]);
+  const activeActivityDetail = useMemo(() => {
+    if (!selectedActivityDetail) return null;
+    return activities.find(a => a.id === selectedActivityDetail.id) || selectedActivityDetail;
+  }, [activities, selectedActivityDetail]);
 
-  // Types list
+  const [departments, setDepartments] = useState<string[]>([]);
+
+  // Types list conformes aux 4 missions réelles
   const types: ActivityType[] = [
     'Réglementaire',
     'Inspection',
-    'Vigilance & Alerte',
+    'Signalements',
+    'Notifications des EI / MAPI',
+    'Ruptures de stock',
     'Échantillonnage',
     'Évaluation Dossier',
     'Formation',
@@ -79,7 +83,14 @@ function ActivitiesContent() {
       if (selectedStatus !== 'all' && act.status !== selectedStatus) return false;
       if (selectedPriority !== 'all' && act.priority !== selectedPriority) return false;
       if (selectedType !== 'all' && act.activity_type !== selectedType) return false;
-      if (selectedDept !== 'all' && act.department !== selectedDept) return false;
+      if (selectedDept !== 'all') {
+        const matchService = act.department === selectedDept || 
+          (selectedDept.includes('DLVS') && (act.department?.includes('DLVS') || act.department?.includes('Direction'))) ||
+          (selectedDept.includes('SL') && (act.department?.includes('Licences') || act.department?.includes('SL'))) ||
+          (selectedDept.includes('SSMUR') && (act.department?.includes('Surveillance') || act.department?.includes('SSMUR') || act.department?.includes('Marché'))) ||
+          (selectedDept.includes('SVPS') && (act.department?.includes('Vigilance') || act.department?.includes('SVPS')));
+        if (!matchService) return false;
+      }
       if (selectedManager !== 'all' && act.manager_id !== selectedManager) return false;
 
       // Filtre temporel (Jour, Mois, Année)
@@ -148,10 +159,10 @@ function ActivitiesContent() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
-              Module Activités du Service
+              Activités de la Direction
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-              Pilotage des missions réglementaires, inspections, échantillonnages et vigilances
+              Pilotage des missions réglementaires, inspections, signalements, notifications et surveillance du marché
             </p>
           </div>
 
@@ -262,17 +273,18 @@ function ActivitiesContent() {
               </select>
             </div>
 
-            {/* Filter Département */}
+            {/* Filter Service (DLVS, SL, SSMUR, SVPS) */}
             <div>
               <select
                 value={selectedDept}
                 onChange={(e) => setSelectedDept(e.target.value)}
                 className="w-full px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg font-medium text-slate-800"
               >
-                <option value="all">Tous départements</option>
-                {departments.map(d => (
-                  <option key={d} value={d}>{d}</option>
-                ))}
+                <option value="all">Tous les services</option>
+                <option value="Direction (DLVS)">Direction (DLVS)</option>
+                <option value="Service des Licences (SL)">Service des Licences (SL)</option>
+                <option value="Service de la Surveillance du Marché (SSMUR)">Service Surveillance Marché (SSMUR)</option>
+                <option value="Service de la Vigilance des Produits de Santé (SVPS)">Service Vigilance Produits (SVPS)</option>
               </select>
             </div>
           </div>
@@ -344,9 +356,9 @@ function ActivitiesContent() {
           activityToEdit={activityToEdit}
         />
 
-        {/* Modal Fiche Détaillée 5 Onglets */}
+        {/* Modal Fiche Détaillée 5 Onglets Réactive */}
         <ActivityDetailModal
-          activity={selectedActivityDetail}
+          activity={activeActivityDetail}
           onClose={() => setSelectedActivityDetail(null)}
           onEdit={(act) => {
             setSelectedActivityDetail(null);
