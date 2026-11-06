@@ -115,15 +115,15 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full">
+      <div className="hidden lg:block w-full max-w-full overflow-hidden">
         <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
           <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-2.5 font-bold w-[15%] text-center">N° Chrono</th>
+              <th className="py-3 px-2 font-bold w-[15%] text-center">N° Chrono</th>
               <th className="py-3 px-2 font-bold w-[11%]">Date d’Envoi</th>
               <th className="py-3 px-2.5 font-bold w-[21%]">Destinataire</th>
-              <th className="py-3 px-3 font-bold w-[27%]">Objet du courrier</th>
-              <th className="py-3 px-2 font-bold w-[11%]">Rédacteur</th>
+              <th className="py-3 px-3 font-bold w-[26%]">Objet du courrier</th>
+              <th className="py-3 px-2 font-bold w-[12%]">Rédacteur</th>
               <th className="py-3 px-1.5 font-bold w-[8%] text-center">Statut</th>
               <th className="py-3 px-2 font-bold w-[7%] text-center">Document</th>
             </tr>
@@ -139,12 +139,25 @@ export const OutgoingMailTable: React.FC<OutgoingMailTableProps> = ({ mails }) =
             ) : (
               mails.map((mail) => (
                 <tr key={mail.id} className="hover:bg-slate-50/70 transition-colors">
-                  <td className="py-3 px-2 font-mono font-bold text-indigo-700 align-top">
-                    <span className="bg-indigo-50 px-1.5 py-1 rounded border border-indigo-200 block text-center break-all whitespace-normal text-[11px] leading-tight">
-                      {mail.mail_number}
-                    </span>
+                  <td className="py-3 px-2 font-mono font-bold text-indigo-700 align-top overflow-hidden">
+                    <div className="bg-indigo-50/90 text-indigo-900 px-2 py-1.5 rounded-lg border border-indigo-200/90 text-center shadow-2xs">
+                      {mail.mail_number.includes('-') ? (
+                        <>
+                          <span className="block text-[9.5px] font-semibold text-indigo-600 tracking-tight leading-tight truncate">
+                            {mail.mail_number.substring(0, mail.mail_number.lastIndexOf('-') + 1)}
+                          </span>
+                          <span className="block text-xs font-black text-indigo-950 tracking-wide mt-0.5 leading-tight truncate">
+                            {mail.mail_number.substring(mail.mail_number.lastIndexOf('-') + 1)}
+                          </span>
+                        </>
+                      ) : (
+                        <span className="text-xs font-bold text-indigo-900 break-all leading-tight block">
+                          {mail.mail_number}
+                        </span>
+                      )}
+                    </div>
                   </td>
-                  <td className="py-3 px-2 align-top">
+                  <td className="py-3 px-2 align-top overflow-hidden">
                     <span className="font-bold text-slate-900 text-xs whitespace-nowrap block">{mail.send_date}</span>
                     <span className="block text-[11px] text-slate-500 mt-0.5 break-words whitespace-normal">{mail.mail_type}</span>
                     {mail.transmission_channel && (

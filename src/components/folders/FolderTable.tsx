@@ -185,11 +185,24 @@ export const FolderTable: React.FC<FolderTableProps> = ({ folders, onSelect }) =
                     className="hover:bg-blue-50/40 transition-colors cursor-pointer group"
                   >
                     {/* N° Dossier */}
-                    <td className="py-3 px-2 align-top">
-                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-1.5 py-1 rounded border border-blue-200 block text-center break-all whitespace-normal text-[11px] leading-tight">
-                        {folder.folder_number}
-                      </span>
-                      <span className="block text-[11px] text-slate-400 text-center mt-1">
+                    <td className="py-3 px-2 align-top overflow-hidden">
+                      <div className="font-mono bg-blue-50/90 text-blue-900 px-2 py-1.5 rounded-lg border border-blue-200/90 text-center shadow-2xs">
+                        {folder.folder_number.includes('/') ? (
+                          <>
+                            <span className="block text-[9.5px] font-semibold text-blue-600 tracking-tight leading-tight truncate">
+                              {folder.folder_number.substring(0, folder.folder_number.lastIndexOf('/') + 1)}
+                            </span>
+                            <span className="block text-xs font-black text-blue-950 tracking-wide mt-0.5 leading-tight truncate">
+                              {folder.folder_number.substring(folder.folder_number.lastIndexOf('/') + 1)}
+                            </span>
+                          </>
+                        ) : (
+                          <span className="text-xs font-bold text-blue-900 break-all leading-tight block">
+                            {folder.folder_number}
+                          </span>
+                        )}
+                      </div>
+                      <span className="block text-[11px] text-slate-500 font-medium text-center mt-1">
                         {folder.receipt_date}
                       </span>
                     </td>

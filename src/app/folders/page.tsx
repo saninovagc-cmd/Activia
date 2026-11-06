@@ -26,6 +26,16 @@ function FoldersPageContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedFolder, setSelectedFolder] = useState<Folder | null>(null);
 
+  // Synchronisation dynamique lors du clic sur les sous-modules du menu MÉTIERS
+  React.useEffect(() => {
+    const t = searchParams.get('type');
+    if (t) {
+      setSelectedType(t);
+    } else {
+      setSelectedType('all');
+    }
+  }, [searchParams]);
+
   // Filtres temporels (Jour, Mois, Année)
   const [yearFilter, setYearFilter] = useState('all');
   const [monthFilter, setMonthFilter] = useState('all');
@@ -61,9 +71,19 @@ function FoldersPageContent() {
   const filteredFolders = useMemo(() => {
     return folders.filter((f) => {
       if (selectedType !== 'all') {
-        const matchesType = f.folder_type === selectedType || 
-          f.folder_type.toLowerCase().includes(selectedType.toLowerCase()) ||
-          selectedType.toLowerCase().includes(f.folder_type.toLowerCase());
+        const qType = selectedType.toLowerCase();
+        const fType = f.folder_type.toLowerCase();
+        const matchesType = fType === qType || 
+          fType.includes(qType) ||
+          qType.includes(fType) ||
+          (qType.includes('achat') && fType.includes('achat')) ||
+          (qType.includes('transit') && fType.includes('transit')) ||
+          (qType.includes('publicit') && fType.includes('publicit')) ||
+          (qType.includes('absence') && fType.includes('absence')) ||
+          (qType.includes('visiteur') && fType.includes('visiteur')) ||
+          (qType.includes('psur') && fType.includes('psur')) ||
+          (qType.includes('essai') && fType.includes('essai')) ||
+          (qType.includes('destruct') && (fType.includes('destruct') || fType.includes('déchet')));
         if (!matchesType) return false;
       }
       if (selectedStatus !== 'all' && f.status !== selectedStatus) return false;

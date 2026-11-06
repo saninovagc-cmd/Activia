@@ -185,18 +185,18 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
       {/* =========================================================================
           VUE DESKTOP (>= 1024px) : Tableau fluide 100% SANS barre de défilement
           ========================================================================= */}
-      <div className="hidden lg:block w-full max-w-full">
+      <div className="hidden lg:block w-full max-w-full overflow-hidden">
         <table className="w-full text-xs text-left text-slate-800 table-fixed border-collapse">
           <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 text-[11px]">
             <tr>
-              <th className="py-3 px-2.5 font-bold w-[14%] text-center">N° Registre</th>
-              <th className="py-3 px-2 font-bold w-[11%]">Date & Réf.</th>
-              <th className="py-3 px-2.5 font-bold w-[19%]">Expéditeur</th>
-              <th className="py-3 px-3 font-bold w-[28%]">Objet du courrier</th>
-              <th className="py-3 px-2 font-bold w-[13%]">Responsable</th>
+              <th className="py-3 px-2 font-bold w-[15%] text-center">N° Registre</th>
+              <th className="py-3 px-2 font-bold w-[12%]">Date & Réf.</th>
+              <th className="py-3 px-2.5 font-bold w-[20%]">Expéditeur</th>
+              <th className="py-3 px-3 font-bold w-[26%]">Objet du courrier</th>
+              <th className="py-3 px-2 font-bold w-[12%]">Responsable</th>
               <th className="py-3 px-1.5 font-bold w-[6%] text-center">Échéance</th>
               <th className="py-3 px-1.5 font-bold w-[6%] text-center">Étape</th>
-              <th className="py-3 px-1.5 text-center w-[3%]"></th>
+              <th className="py-3 px-1 text-center w-[3%]"></th>
             </tr>
           </thead>
 
@@ -218,14 +218,27 @@ export const IncomingMailTable: React.FC<IncomingMailTableProps> = ({
                     className="hover:bg-blue-50/40 transition-colors cursor-pointer group"
                   >
                     {/* N° Registre - Enveloppe sans débordement ni chevauchement */}
-                    <td className="py-3 px-2 align-top">
-                      <span className="font-mono font-bold text-blue-700 bg-blue-50 px-1.5 py-1 rounded border border-blue-200 block text-center break-all whitespace-normal text-[11px] leading-tight">
-                        {mail.register_number}
-                      </span>
+                    <td className="py-3 px-2 align-top overflow-hidden">
+                      <div className="font-mono bg-blue-50/90 text-blue-900 px-2 py-1.5 rounded-lg border border-blue-200/90 text-center shadow-2xs">
+                        {mail.register_number.includes('/') ? (
+                          <>
+                            <span className="block text-[9.5px] font-semibold text-blue-600 tracking-tight leading-tight truncate">
+                              {mail.register_number.substring(0, mail.register_number.lastIndexOf('/') + 1)}
+                            </span>
+                            <span className="block text-xs font-black text-blue-950 tracking-wide mt-0.5 leading-tight truncate">
+                              {mail.register_number.substring(mail.register_number.lastIndexOf('/') + 1)}
+                            </span>
+                          </>
+                        ) : (
+                          <span className="text-xs font-bold text-blue-900 break-all leading-tight block">
+                            {mail.register_number}
+                          </span>
+                        )}
+                      </div>
                     </td>
 
                     {/* Date & Réf */}
-                    <td className="py-3 px-2 align-top">
+                    <td className="py-3 px-2 align-top overflow-hidden">
                       <p className="font-bold text-slate-900 text-xs whitespace-nowrap">{mail.receipt_date}</p>
                       <p className="text-[11px] text-slate-500 font-mono break-all leading-tight mt-0.5">{mail.reference}</p>
                       {mail.transmission_channel && (

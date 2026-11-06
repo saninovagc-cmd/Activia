@@ -42,6 +42,13 @@ export const SignalTable: React.FC<SignalTableProps> = ({
   const [severityFilter, setSeverityFilter] = useState<string>('all');
   const [sampleFilter, setSampleFilter] = useState<string>('all');
 
+  // Synchronisation avec les paramètres d'URL (clic depuis le menu MÉTIERS)
+  React.useEffect(() => {
+    if (initialDomain) {
+      setDomainFilter(initialDomain);
+    }
+  }, [initialDomain]);
+
   // Filtres temporels (Date de réception du signalement)
   const [yearFilter, setYearFilter] = useState<string>('all');
   const [monthFilter, setMonthFilter] = useState<string>('all');

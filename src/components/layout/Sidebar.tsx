@@ -3,14 +3,19 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
-import { LogOut, ChevronDown, ChevronRight } from 'lucide-react';
+import { LogOut, ChevronDown, ChevronRight, FolderCheck, ShieldAlert, BookOpen } from 'lucide-react';
 
 interface NavItem {
   name: string;
   href: string;
-  group?: string;
+}
+
+interface MetierSubService {
+  key: string;
+  name: string;
+  items: NavItem[];
 }
 
 interface NavSection {
@@ -25,10 +30,48 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const router = useRouter();
   const { currentUser, logout } = useApp();
+
+  // Définition hiérarchique des Services et de leurs Métiers pour le Module 04
+  const metierServices: MetierSubService[] = [
+    {
+      key: 'SL',
+      name: 'Service des Licences (SL)',
+      items: [
+        { name: 'Établissements Pharmaceutiques', href: '/establishments' },
+        { name: 'Cartes Visiteurs Médicaux', href: '/folders?type=Carte+Visiteur+M%C3%A9dical' },
+        { name: "Notifications d'Absence", href: "/folders?type=Notification+d'absence" },
+        { name: 'Agréments CNAECP', href: '/folders?type=Agr%C3%A9ment+CNAECP' },
+        { name: 'Autorisations CNAIAPS-EM', href: '/folders?type=Autorisation+Installation+CNAIAPS-EM' },
+        { name: "Quitus d'Ouverture d'Officine", href: '/folders?type=Quitus+d%E2%80%99Ouverture' },
+      ],
+    },
+    {
+      key: 'SSMUR',
+      name: 'Surveillance du Marché (SSMUR)',
+      items: [
+        { name: "Autorisations d'Achat", href: "/folders?type=Autorisation+d'achat" },
+        { name: 'Autorisations de Transit', href: '/folders?type=Autorisation+de+transit' },
+        { name: 'Publicité & Promotion', href: '/folders?type=Publicit%C3%A9' },
+        { name: 'Destruction de Produits', href: '/folders?type=Destruction' },
+        { name: 'Signalements & Falsifications', href: '/signals?domain=signalement' },
+      ],
+    },
+    {
+      key: 'SVPS',
+      name: 'Vigilance des Produits (SVPS)',
+      items: [
+        { name: 'Revue PSUR / PBRER / DSUR', href: '/folders?type=PSUR+%2F+PBRER+%2F+DSUR' },
+        { name: 'Essais Cliniques & EIG', href: '/folders?type=Essais+Cliniques+%26+EIG' },
+        { name: 'Notifications EI & MAPI', href: '/signals?domain=notification' },
+        { name: 'Formations Points Focaux', href: '/trainings' },
+      ],
+    },
+  ];
 
   const navSections: NavSection[] = [
     {
@@ -65,24 +108,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       id: 'metiers',
       number: '04',
       title: 'MÉTIERS',
-      items: [
-        // Service des Licences (SL)
-        { name: 'Établissements Pharmaceutiques', href: '/establishments', group: 'Service des Licences (SL)' },
-        { name: 'Cartes Visiteurs Médicaux', href: '/folders?type=Carte+Visiteur+M%C3%A9dical', group: 'Service des Licences (SL)' },
-        { name: "Notifications d'Absence", href: "/folders?type=Notification+d'absence", group: 'Service des Licences (SL)' },
-        
-        // Service Surveillance du Marché (SSMUR)
-        { name: "Autorisations d'Achat", href: "/folders?type=Autorisation+d'achat", group: 'Service Surveillance du Marché (SSMUR)' },
-        { name: 'Publicité & Promotion', href: '/folders?type=Publicit%C3%A9', group: 'Service Surveillance du Marché (SSMUR)' },
-        { name: 'Destruction de Produits', href: '/folders?type=Destruction', group: 'Service Surveillance du Marché (SSMUR)' },
-        { name: 'Signalements & Alertes (SSMUR)', href: '/signals?domain=signalement', group: 'Service Surveillance du Marché (SSMUR)' },
-        
-        // Service Vigilance des Produits de Santé (SVPS)
-        { name: 'Revue PSUR / PBRER / DSUR', href: '/folders?type=PSUR+%2F+PBRER+%2F+DSUR', group: 'Service Vigilance des Produits (SVPS)' },
-        { name: 'Essais Cliniques & EIG', href: '/folders?type=Essais+Cliniques+%26+EIG', group: 'Service Vigilance des Produits (SVPS)' },
-        { name: 'Notifications EI & MAPI (SVPS)', href: '/signals?domain=notification', group: 'Service Vigilance des Produits (SVPS)' },
-        { name: 'Formations Points Focaux', href: '/trainings', group: 'Service Vigilance des Produits (SVPS)' },
-      ],
+      items: metierServices.flatMap(s => s.items),
     },
     {
       id: 'donnees',
@@ -95,8 +121,33 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     },
   ];
 
+  // Helper pour vérifier si un élément de navigation est actif
+  const isItemActive = (href: string): boolean => {
+    if (href.includes('?')) {
+      const [targetPath, queryStr] = href.split('?');
+      if (pathname !== targetPath) return false;
+      const targetParams = new URLSearchParams(queryStr);
+      let match = true;
+      targetParams.forEach((val, key) => {
+        if (searchParams.get(key) !== val) {
+          match = false;
+        }
+      });
+      return match;
+    }
+    // Si la route courante a des query params métiers, ne pas surligner le lien générique
+    if (href === '/folders' && searchParams.get('type')) return false;
+    if (href === '/signals' && searchParams.get('domain')) return false;
+    return pathname === href || (href !== '/dashboard' && pathname.startsWith(href + '/'));
+  };
+
   // Detect which section matches the active path
   const getActiveSectionId = (path: string): string => {
+    const typeParam = searchParams.get('type');
+    const domainParam = searchParams.get('domain');
+    if (path === '/folders' && typeParam) return 'metiers';
+    if (path === '/signals' && domainParam) return 'metiers';
+
     if (path.startsWith('/dashboard') || path.startsWith('/reporting')) return 'pilotage';
     if (path.startsWith('/activities') || path.startsWith('/tasks') || path.startsWith('/calendar')) return 'operationnel';
     if (path.startsWith('/mail') || path.startsWith('/folders') || path.startsWith('/documents')) return 'administratif';
@@ -106,13 +157,23 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   };
 
   const [openSectionId, setOpenSectionId] = useState<string>(() => getActiveSectionId(pathname));
+  const [openServices, setOpenServices] = useState<Record<string, boolean>>({
+    SL: true,
+    SSMUR: true,
+    SVPS: true,
+  });
 
   useEffect(() => {
     setOpenSectionId(getActiveSectionId(pathname));
-  }, [pathname]);
+  }, [pathname, searchParams]);
 
   const toggleSection = (id: string) => {
     setOpenSectionId(prev => (prev === id ? '' : id));
+  };
+
+  const toggleService = (key: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setOpenServices(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
@@ -175,9 +236,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         <div className="flex-1 overflow-y-auto px-3 py-3.5 space-y-1.5">
           {navSections.map((section) => {
             const isSectionOpen = openSectionId === section.id;
-            const hasActiveItem = section.items.some(item => 
-              pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href))
-            );
+            const hasActiveItem = section.items.some(item => isItemActive(item.href));
 
             return (
               <div
@@ -229,40 +288,100 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
                 {/* Sub-items (Revealed on click) */}
                 {isSectionOpen && (
-                  <div className="px-2 pt-1 pb-2 space-y-0.5 border-t border-slate-800/80 bg-[#080d19]/60">
-                    {section.items.map((item, itemIdx) => {
-                      const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href + '/'));
-                      const prevGroup = itemIdx > 0 ? section.items[itemIdx - 1]?.group : null;
-                      const showGroupHeader = item.group && item.group !== prevGroup;
+                  <div className="px-2 pt-1 pb-2 space-y-1 border-t border-slate-800/80 bg-[#080d19]/60">
+                    {section.id === 'metiers' ? (
+                      // Rendu spécifique Module 04 MÉTIERS : Accordéons interactifs par Service (SL, SSMUR, SVPS)
+                      <div className="space-y-1.5">
+                        {metierServices.map((service) => {
+                          const isServiceOpen = !!openServices[service.key];
+                          const hasActiveServiceItem = service.items.some(it => isItemActive(it.href));
 
-                      return (
-                        <React.Fragment key={item.href + itemIdx}>
-                          {showGroupHeader && (
-                            <div className="pt-2.5 pb-1 px-3 text-[10px] font-bold uppercase tracking-wider text-emerald-400/90 border-t border-slate-800/60 mt-1.5 first:border-0 first:mt-0">
-                              {item.group}
+                          return (
+                            <div key={service.key} className="rounded-lg bg-slate-900/50 border border-slate-800/60 overflow-hidden">
+                              {/* En-tête du service clickable */}
+                              <button
+                                type="button"
+                                onClick={(e) => toggleService(service.key, e)}
+                                className={`w-full flex items-center justify-between px-2.5 py-1.5 text-[11px] font-bold transition-colors cursor-pointer select-none ${
+                                  hasActiveServiceItem
+                                    ? 'text-emerald-300 bg-emerald-950/30'
+                                    : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                                }`}
+                              >
+                                <span className="flex items-center gap-1.5 truncate">
+                                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${hasActiveServiceItem ? 'bg-emerald-400' : 'bg-slate-500'}`} />
+                                  <span className="truncate">{service.name}</span>
+                                </span>
+                                <span className="text-slate-500 shrink-0 ml-1.5">
+                                  {isServiceOpen ? (
+                                    <ChevronDown className="w-3 h-3 text-slate-400" />
+                                  ) : (
+                                    <ChevronRight className="w-3 h-3 text-slate-500" />
+                                  )}
+                                </span>
+                              </button>
+
+                              {/* Liste des sous-modules métier du service */}
+                              {isServiceOpen && (
+                                <div className="px-1.5 pb-1.5 pt-0.5 space-y-0.5 border-t border-slate-800/40">
+                                  {service.items.map((item) => {
+                                    const active = isItemActive(item.href);
+                                    return (
+                                      <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        onClick={() => {
+                                          if (window.innerWidth < 1024) onClose();
+                                        }}
+                                        className={`block px-2.5 py-1.5 rounded-md text-xs font-medium transition-all ${
+                                          active
+                                            ? 'bg-emerald-700 text-white font-bold shadow-xs shadow-emerald-950/40 ring-1 ring-emerald-500/30'
+                                            : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
+                                        }`}
+                                      >
+                                        <div className="flex items-center justify-between">
+                                          <span className="truncate">{item.name}</span>
+                                          {active && (
+                                            <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs shrink-0" />
+                                          )}
+                                        </div>
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
                             </div>
-                          )}
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      // Rendu standard pour les autres modules (01, 02, 03, 05)
+                      section.items.map((item) => {
+                        const active = isItemActive(item.href);
+
+                        return (
                           <Link
+                            key={item.href}
                             href={item.href}
                             onClick={() => {
                               if (window.innerWidth < 1024) onClose();
                             }}
                             className={`block px-3 py-2 rounded-lg text-xs font-medium transition-all ${
-                              isActive
+                              active
                                 ? 'bg-emerald-700 text-white font-bold shadow-md shadow-emerald-950/40 ring-1 ring-emerald-500/30'
                                 : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
                             }`}
                           >
                             <div className="flex items-center justify-between">
                               <span className="truncate">{item.name}</span>
-                              {isActive && (
+                              {active && (
                                 <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs shrink-0" />
                               )}
                             </div>
                           </Link>
-                        </React.Fragment>
-                      );
-                    })}
+                        );
+                      })
+                    )}
                   </div>
                 )}
               </div>
@@ -299,5 +418,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         </div>
       </aside>
     </>
+  );
+};
+
+export const Sidebar: React.FC<SidebarProps> = (props) => {
+  return (
+    <React.Suspense fallback={<div className="hidden lg:block w-72 shrink-0 bg-[#090d1a]" />}>
+      <SidebarContent {...props} />
+    </React.Suspense>
   );
 };
