@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { FolderTable } from '@/components/folders/FolderTable';
 import { FolderModal } from '@/components/folders/FolderModal';
@@ -15,6 +15,7 @@ import { DatePeriodFilter } from '@/components/common/DatePeriodFilter';
 import { matchesDateFilter, extractUniqueYears } from '@/lib/dateFilterUtils';
 
 function FoldersPageContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const initialType = searchParams.get('type') || 'all';
 
@@ -59,6 +60,7 @@ function FoldersPageContent() {
     'Résiliation Pharmacien / Gérant',
     'Autorisation d’achat',
     'Autorisation de transit',
+    'Autorisation de transit & AOI',
     'Publicité',
     'Revue PSUR / PBRER / DSUR',
     'Essais Cliniques & EIG',
@@ -66,6 +68,46 @@ function FoldersPageContent() {
     'Autorisation Matériel Médical & PCRL',
     'Autre Dossier Réglementaire'
   ];
+
+  // Détection du sous-module métier actif si filtré par type
+  const activeMetierInfo = useMemo(() => {
+    if (selectedType === 'all') return null;
+    const q = selectedType.toLowerCase();
+    if (q.includes('cnaecp')) {
+      return { service: 'Service des Licences (SL)', title: 'Agréments CNAECP (Exercice en Clientèle Privée)' };
+    }
+    if (q.includes('cnaiaps')) {
+      return { service: 'Service des Licences (SL)', title: 'Autorisations d’Installation CNAIAPS-EM' };
+    }
+    if (q.includes('quitus')) {
+      return { service: 'Service des Licences (SL)', title: 'Quitus d’Ouverture & Transfert d’Officine' };
+    }
+    if (q.includes('visiteur')) {
+      return { service: 'Service des Licences (SL)', title: 'Cartes Professionnelles des Visiteurs Médicaux (VM)' };
+    }
+    if (q.includes('absence')) {
+      return { service: 'Service des Licences (SL)', title: 'Notifications d’Absence des Pharmaciens Titulaires' };
+    }
+    if (q.includes('achat')) {
+      return { service: 'Surveillance du Marché (SSMUR)', title: 'Autorisations d’Achat de Médicaments' };
+    }
+    if (q.includes('transit') || q.includes('aoi')) {
+      return { service: 'Surveillance du Marché (SSMUR)', title: 'Autorisations d’Ouverture & Importation / Transit (AOI)' };
+    }
+    if (q.includes('publicit')) {
+      return { service: 'Surveillance du Marché (SSMUR)', title: 'Demandes de Publicité & Promotion des Médicaments (AMM)' };
+    }
+    if (q.includes('destruct')) {
+      return { service: 'Surveillance du Marché (SSMUR)', title: 'Procédures de Destruction & Déclassement de Produits' };
+    }
+    if (q.includes('psur')) {
+      return { service: 'Vigilance des Produits de Santé (SVPS)', title: 'Rapports Périodiques de Sécurité (PSUR / PBRER / DSUR)' };
+    }
+    if (q.includes('essai')) {
+      return { service: 'Vigilance des Produits de Santé (SVPS)', title: 'Protocoles d’Essais Cliniques & Événements Indésirables Graves (EIG)' };
+    }
+    return { service: 'Direction DLVS', title: selectedType };
+  }, [selectedType]);
 
   // Filtering
   const filteredFolders = useMemo(() => {
@@ -77,10 +119,13 @@ function FoldersPageContent() {
           fType.includes(qType) ||
           qType.includes(fType) ||
           (qType.includes('achat') && fType.includes('achat')) ||
-          (qType.includes('transit') && fType.includes('transit')) ||
+          (qType.includes('transit') && (fType.includes('transit') || fType.includes('aoi'))) ||
           (qType.includes('publicit') && fType.includes('publicit')) ||
           (qType.includes('absence') && fType.includes('absence')) ||
           (qType.includes('visiteur') && fType.includes('visiteur')) ||
+          (qType.includes('cnaecp') && fType.includes('cnaecp')) ||
+          (qType.includes('cnaiaps') && fType.includes('cnaiaps')) ||
+          (qType.includes('quitus') && fType.includes('quitus')) ||
           (qType.includes('psur') && fType.includes('psur')) ||
           (qType.includes('essai') && fType.includes('essai')) ||
           (qType.includes('destruct') && (fType.includes('destruct') || fType.includes('déchet')));
@@ -104,13 +149,15 @@ function FoldersPageContent() {
     });
   }, [folders, selectedType, selectedStatus, search, yearFilter, monthFilter, dateFilter]);
 
-  const totalFolders = folders.length;
-  const enInstruction = folders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length;
-  const autorises = folders.filter(f => f.decision === 'Favorable').length;
-  const enRetard = folders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
+  const totalFolders = filteredFolders.length;
+  const enInstruction = filteredFolders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length;
+  const autorises = filteredFolders.filter(f => f.decision === 'Favorable' || f.decision === 'Arrêté signé').length;
+  const enRetard = filteredFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length;
 
   const getFoldersExportConfig = (): ExportConfig => ({
-    title: selectedType !== 'all' 
+    title: activeMetierInfo 
+      ? `Registre Métier Officiel — ${activeMetierInfo.title}`
+      : selectedType !== 'all' 
       ? `Registre officiel — ${selectedType}`
       : 'Registre Général des Dossiers Réglementaires & Demandes',
     subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
@@ -130,36 +177,79 @@ function FoldersPageContent() {
       { label: 'Total Dossiers', value: filteredFolders.length },
       { label: 'En Instruction', value: filteredFolders.filter(f => f.status !== 'cloture' && f.status !== 'rejete').length },
       { label: 'En Retard SLA', value: filteredFolders.filter(f => new Date(f.due_date).getTime() < Date.now() && f.status !== 'cloture').length },
-      { label: 'Favorables', value: filteredFolders.filter(f => f.decision === 'Favorable').length }
+      { label: 'Favorables', value: filteredFolders.filter(f => f.decision === 'Favorable' || f.decision === 'Arrêté signé').length }
     ]
   });
 
   return (
     <AppLayout>
       <div className="space-y-6">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-              <FolderArchive className="w-6 h-6 text-blue-600" />
-              Gestion des Dossiers & Demandes Réglementaires
-            </h1>
-            <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-              Instruction, circuit de recevabilité, timeline des jalons et prise de décision
-            </p>
-          </div>
+        {/* Header - Dynamique selon le sous-module métier actif */}
+        {activeMetierInfo ? (
+          <div className="bg-gradient-to-r from-[#0b1120] to-[#151f38] text-white p-5 rounded-2xl border border-slate-700/80 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
+                  Module 04 MÉTIERS
+                </span>
+                <span className="text-xs font-semibold text-slate-300">
+                  • {activeMetierInfo.service}
+                </span>
+              </div>
+              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2 mt-1">
+                <FolderArchive className="w-6 h-6 text-emerald-400 shrink-0" />
+                <span>{activeMetierInfo.title}</span>
+              </h1>
+              <p className="text-xs text-slate-400">
+                Registre métier officiel • <strong className="text-emerald-300 font-bold">{filteredFolders.length} dossier(s) exploité(s)</strong> issu(s) des bases de données réelles DLVS
+              </p>
+            </div>
 
-          <div className="flex items-center gap-2">
-            <ExportButton getConfig={getFoldersExportConfig} />
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Nouveau Dossier</span>
-            </button>
+            <div className="flex items-center gap-2.5 flex-wrap shrink-0">
+              <button
+                onClick={() => {
+                  setSelectedType('all');
+                  router.push('/folders');
+                }}
+                className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold border border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer"
+                title="Afficher tous les dossiers de tous les métiers"
+              >
+                <span>← Voir tous les dossiers</span>
+              </button>
+              <ExportButton getConfig={getFoldersExportConfig} />
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Nouveau Dossier</span>
+              </button>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+                <FolderArchive className="w-6 h-6 text-blue-600" />
+                Gestion des Dossiers & Demandes Réglementaires
+              </h1>
+              <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                Instruction, circuit de recevabilité, timeline des jalons et prise de décision
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <ExportButton getConfig={getFoldersExportConfig} />
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-4 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-xs transition-colors cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Nouveau Dossier</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* KPI Mini Summary */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

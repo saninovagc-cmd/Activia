@@ -55,8 +55,8 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       name: 'Surveillance du Marché (SSMUR)',
       items: [
         { name: "Autorisations d'Achat", href: "/folders?type=Autorisation+d'achat" },
-        { name: 'Autorisations de Transit', href: '/folders?type=Autorisation+de+transit' },
-        { name: 'Publicité & Promotion', href: '/folders?type=Publicit%C3%A9' },
+        { name: 'Autorisations de Transit & AOI', href: '/folders?type=Autorisation+de+transit' },
+        { name: 'Publicité & Promotion AMM', href: '/folders?type=Publicit%C3%A9' },
         { name: 'Destruction de Produits', href: '/folders?type=Destruction' },
         { name: 'Signalements & Falsifications', href: '/signals?domain=signalement' },
       ],
@@ -156,19 +156,59 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     return 'pilotage';
   };
 
-  const [openSectionId, setOpenSectionId] = useState<string>(() => getActiveSectionId(pathname));
+  // Gestion d'ouverture indépendante par section (Module 04 MÉTIERS ouvert par défaut)
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    pilotage: false,
+    operationnel: false,
+    administratif: false,
+    metiers: true, // Ouvert par défaut pour donner accès immédiat aux 3 Services
+    donnees: false,
+  });
+
   const [openServices, setOpenServices] = useState<Record<string, boolean>>({
     SL: true,
     SSMUR: true,
     SVPS: true,
   });
 
+  // Dès qu'on navigue, s'assurer que la section active ET son service sont ouverts
   useEffect(() => {
-    setOpenSectionId(getActiveSectionId(pathname));
+    const activeSec = getActiveSectionId(pathname);
+    if (activeSec) {
+      setOpenSections(prev => ({ ...prev, [activeSec]: true }));
+    }
+
+    const typeParam = searchParams.get('type');
+    const domainParam = searchParams.get('domain');
+
+    if (
+      pathname === '/establishments' || 
+      (pathname === '/folders' && typeParam && (typeParam.includes('Visiteur') || typeParam.includes('absence') || typeParam.includes('CNAECP') || typeParam.includes('CNAIAPS') || typeParam.includes('Ouverture')))
+    ) {
+      setOpenSections(prev => ({ ...prev, metiers: true }));
+      setOpenServices(prev => ({ ...prev, SL: true }));
+    }
+
+    if (
+      (pathname === '/signals' && domainParam === 'signalement') || 
+      (pathname === '/folders' && typeParam && (typeParam.includes('achat') || typeParam.includes('transit') || typeParam.includes('Publicit') || typeParam.includes('Destruction')))
+    ) {
+      setOpenSections(prev => ({ ...prev, metiers: true }));
+      setOpenServices(prev => ({ ...prev, SSMUR: true }));
+    }
+
+    if (
+      pathname === '/trainings' || 
+      (pathname === '/signals' && domainParam === 'notification') || 
+      (pathname === '/folders' && typeParam && (typeParam.includes('PSUR') || typeParam.includes('Essai')))
+    ) {
+      setOpenSections(prev => ({ ...prev, metiers: true }));
+      setOpenServices(prev => ({ ...prev, SVPS: true }));
+    }
   }, [pathname, searchParams]);
 
   const toggleSection = (id: string) => {
-    setOpenSectionId(prev => (prev === id ? '' : id));
+    setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
   const toggleService = (key: string, e: React.MouseEvent) => {
@@ -235,7 +275,7 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* Navigation Sections — Accordion Titles first, revealing Sub-titles on click */}
         <div className="flex-1 overflow-y-auto px-3 py-3.5 space-y-1.5">
           {navSections.map((section) => {
-            const isSectionOpen = openSectionId === section.id;
+            const isSectionOpen = !!openSections[section.id];
             const hasActiveItem = section.items.some(item => isItemActive(item.href));
 
             return (

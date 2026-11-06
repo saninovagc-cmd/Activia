@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
@@ -31,8 +31,8 @@ export default function TrainingsPage() {
             <h1 className="text-xl font-black text-slate-900 tracking-tight">
               Registre des Formations & Certification des Points Focaux
             </h1>
-            <span className="text-[10px] font-bold uppercase bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full border border-purple-200">
-              Phase 3 • Métiers
+            <span className="text-[10px] font-mono uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-300 font-bold">
+              Module 04 MÉTIERS • Service Vigilance des Produits (SVPS)
             </span>
           </div>
           <p className="text-xs text-slate-500 mt-1">

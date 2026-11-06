@@ -299,9 +299,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setTrainings(INITIAL_TRAININGS);
       }
 
-      // Migration forcée v2 : Application intégrale des 17 observations DLVS / ABMed
-      const OBSERVATIONS_MIGRATION_V2_KEY = 'activia_dlvs_observations_17_points_v2';
-      if (!localStorage.getItem(OBSERVATIONS_MIGRATION_V2_KEY)) {
+      // Migration forcée v3 : Intégration des 206 dossiers réels d'AOI / Transit et sous-modules Métiers
+      const OBSERVATIONS_MIGRATION_V3_KEY = 'activia_dlvs_observations_17_points_v3_aoi';
+      if (!localStorage.getItem(OBSERVATIONS_MIGRATION_V3_KEY)) {
         localStorage.setItem('activia_folders', JSON.stringify(INITIAL_FOLDERS));
         localStorage.setItem('activia_users', JSON.stringify(INITIAL_USERS));
         localStorage.setItem('activia_signals', JSON.stringify(INITIAL_SIGNALS));
@@ -325,7 +325,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           } catch {}
         }
 
-        localStorage.setItem(OBSERVATIONS_MIGRATION_V2_KEY, 'true');
+        localStorage.setItem(OBSERVATIONS_MIGRATION_V3_KEY, 'true');
       }
 
       // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc

@@ -16,6 +16,7 @@ import {
 import { REAL_ESTABLISHMENTS } from './realEstablishments';
 import { REAL_INCOMING_MAILS } from './realCourriers';
 import { REAL_FOLDERS } from './realFolders';
+import { REAL_AOI_FOLDERS } from './realAoiFolders';
 import { REAL_SIGNALS } from './realSignals';
 import { REAL_ALERTS } from './realAlerts';
 import { REAL_TRAININGS } from './realTrainings';
@@ -320,7 +321,7 @@ export const INITIAL_INCOMING_MAILS: IncomingMail[] = REAL_INCOMING_MAILS;
 
 export const INITIAL_OUTGOING_MAILS: OutgoingMail[] = [];
 
-export const INITIAL_FOLDERS: Folder[] = REAL_FOLDERS;
+export const INITIAL_FOLDERS: Folder[] = [...REAL_FOLDERS, ...REAL_AOI_FOLDERS];
 
 export const INITIAL_DOCUMENTS: DocumentItem[] = [];
 

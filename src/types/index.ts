@@ -256,6 +256,7 @@ export type FolderType =
   | 'Autorisation d’achat'
   | 'Autorisation d\'achat'
   | 'Autorisation de transit'
+  | 'Autorisation de transit & AOI'
   | 'Publicité & Promotion des Médicaments (AMM)'
   | 'Publicité'
   | 'Revue PSUR / PBRER / DSUR'

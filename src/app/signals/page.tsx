@@ -46,31 +46,77 @@ function SignalsContent() {
     <AppLayout>
       <div className="space-y-6">
       {/* Page Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl font-black text-slate-900 tracking-tight">
-              Signalements Sanitaires (SSMUR) & Notifications (SVPS)
+      {domainParam !== 'all' ? (
+        <div className="bg-gradient-to-r from-[#0b1120] to-[#151f38] text-white p-5 rounded-2xl border border-slate-700/80 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 font-bold">
+                Module 04 MÉTIERS
+              </span>
+              <span className="text-xs font-semibold text-slate-300">
+                • {domainParam === 'signalement' ? 'Service de la Surveillance du Marché (SSMUR)' : 'Service Vigilance des Produits de Santé (SVPS)'}
+              </span>
+            </div>
+            <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2 mt-1">
+              <ShieldAlert className="w-6 h-6 text-rose-400 shrink-0" />
+              <span>
+                {domainParam === 'signalement'
+                  ? 'Signalements Sanitaires, Défauts Qualité & Falsifications (SSMUR)'
+                  : 'Notifications d’Événements Indésirables & Cas MAPI (SVPS)'}
+              </span>
             </h1>
-            <span className="text-[10px] font-bold uppercase bg-rose-100 text-rose-800 px-2 py-0.5 rounded-full border border-rose-200">
-              DLVS • Surveillance & Vigilances
-            </span>
+            <p className="text-xs text-slate-400">
+              {domainParam === 'signalement'
+                ? 'Surveillance active du marché pharmaceutique, traçabilité des lots suspects et retraits'
+                : 'Pharmacovigilance et matériovigilance : suivi des cas MAPI et campagnes nationales'}
+            </p>
           </div>
-          <p className="text-xs text-slate-500 mt-1">
-            Enregistrement des signalements de qualité/ruptures (SSMUR) et notifications d'effets indésirables / MAPI (SVPS)
-          </p>
-        </div>
 
-        {canManage && mainView === 'signals' && (
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors self-start md:self-auto cursor-pointer"
-          >
-            <Plus className="w-4 h-4" />
-            <span>Nouveau Signalement / Notification</span>
-          </button>
-        )}
-      </div>
+          <div className="flex items-center gap-2.5 flex-wrap shrink-0">
+            <a
+              href="/signals"
+              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold border border-slate-700 transition-colors flex items-center gap-1.5"
+            >
+              <span>← Voir toutes les vigilances</span>
+            </a>
+            {canManage && mainView === 'signals' && (
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="flex items-center gap-2 px-3.5 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Nouveau Signalement</span>
+              </button>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <h1 className="text-xl font-black text-slate-900 tracking-tight">
+                Signalements Sanitaires (SSMUR) & Notifications (SVPS)
+              </h1>
+              <span className="text-[10px] font-bold uppercase bg-rose-100 text-rose-800 px-2 py-0.5 rounded-full border border-rose-200">
+                DLVS • Surveillance & Vigilances
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 mt-1">
+              Enregistrement des signalements de qualité/ruptures (SSMUR) et notifications d'effets indésirables / MAPI (SVPS)
+            </p>
+          </div>
+
+          {canManage && mainView === 'signals' && (
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="flex items-center gap-2 px-4 py-2.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors self-start md:self-auto cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Nouveau Signalement / Notification</span>
+            </button>
+          )}
+        </div>
+      )}
 
       {/* KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
