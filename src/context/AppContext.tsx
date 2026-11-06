@@ -299,6 +299,35 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setTrainings(INITIAL_TRAININGS);
       }
 
+      // Migration forcée v2 : Application intégrale des 17 observations DLVS / ABMed
+      const OBSERVATIONS_MIGRATION_V2_KEY = 'activia_dlvs_observations_17_points_v2';
+      if (!localStorage.getItem(OBSERVATIONS_MIGRATION_V2_KEY)) {
+        localStorage.setItem('activia_folders', JSON.stringify(INITIAL_FOLDERS));
+        localStorage.setItem('activia_users', JSON.stringify(INITIAL_USERS));
+        localStorage.setItem('activia_signals', JSON.stringify(INITIAL_SIGNALS));
+        localStorage.setItem('activia_trainings', JSON.stringify(INITIAL_TRAININGS));
+        localStorage.setItem('activia_incoming_mails', JSON.stringify(INITIAL_INCOMING_MAILS));
+        setFolders(INITIAL_FOLDERS);
+        setAllUsers(INITIAL_USERS);
+        setSignals(INITIAL_SIGNALS);
+        setTrainings(INITIAL_TRAININGS);
+        setIncomingMails(INITIAL_INCOMING_MAILS);
+
+        const savedCurrentUser = localStorage.getItem('activia_current_user');
+        if (savedCurrentUser) {
+          try {
+            const parsed = JSON.parse(savedCurrentUser);
+            const fresh = INITIAL_USERS.find(u => u.id === parsed.id || u.username === parsed.username);
+            if (fresh) {
+              localStorage.setItem('activia_current_user', JSON.stringify(fresh));
+              setCurrentUser(fresh);
+            }
+          } catch {}
+        }
+
+        localStorage.setItem(OBSERVATIONS_MIGRATION_V2_KEY, 'true');
+      }
+
       // 1. Chargement instantané depuis LocalStorage pour éviter tout écran blanc
       const storedUsers = localStorage.getItem('activia_users');
       let currentUsersList = INITIAL_USERS;
