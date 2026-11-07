@@ -229,12 +229,20 @@ function FoldersPageContent() {
         ) : (
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold">
+                  Module 04 MÉTIERS
+                </span>
+                <span className="text-xs font-semibold text-slate-500">
+                  • Vue Globale Tous Services (SL, SSMUR, SVPS)
+                </span>
+              </div>
               <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-                <FolderArchive className="w-6 h-6 text-blue-600" />
-                Gestion des Dossiers & Demandes Réglementaires
+                <FolderArchive className="w-6 h-6 text-emerald-700" />
+                Registre Global des Dossiers Réglementaires & Demandes
               </h1>
               <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-                Instruction, circuit de recevabilité, timeline des jalons et prise de décision
+                Instruction, circuit de recevabilité, timeline des jalons et prise de décision sur l’ensemble des dossiers réels DLVS
               </p>
             </div>
 

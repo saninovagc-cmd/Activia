@@ -100,15 +100,17 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       title: 'GESTION ADMINISTRATIVE',
       items: [
         { name: 'Courriers Entrants / Sortants', href: '/mail' },
-        { name: 'Dossiers & Demandes', href: '/folders' },
-        { name: 'Documents & GED', href: '/documents' },
+        { name: 'Documents & Numérisation GED', href: '/documents' },
       ],
     },
     {
       id: 'metiers',
       number: '04',
       title: 'MÉTIERS',
-      items: metierServices.flatMap(s => s.items),
+      items: [
+        { name: 'Tous les Dossiers DLVS (Vue Globale)', href: '/folders' },
+        ...metierServices.flatMap(s => s.items)
+      ],
     },
     {
       id: 'donnees',
@@ -143,17 +145,12 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
   // Detect which section matches the active path
   const getActiveSectionId = (path: string): string => {
-    const typeParam = searchParams.get('type');
-    const domainParam = searchParams.get('domain');
-    if (path === '/folders' && typeParam) return 'metiers';
-    if (path === '/signals' && domainParam) return 'metiers';
-
     if (path.startsWith('/dashboard') || path.startsWith('/reporting')) return 'pilotage';
     if (path.startsWith('/activities') || path.startsWith('/tasks') || path.startsWith('/calendar')) return 'operationnel';
-    if (path.startsWith('/mail') || path.startsWith('/folders') || path.startsWith('/documents')) return 'administratif';
-    if (path.startsWith('/establishments') || path.startsWith('/signals') || path.startsWith('/trainings')) return 'metiers';
+    if (path.startsWith('/mail') || path.startsWith('/documents')) return 'administratif';
+    if (path.startsWith('/folders') || path.startsWith('/establishments') || path.startsWith('/signals') || path.startsWith('/trainings')) return 'metiers';
     if (path.startsWith('/audit') || path.startsWith('/settings')) return 'donnees';
-    return 'pilotage';
+    return 'metiers';
   };
 
   // Gestion d'ouverture indépendante par section (Module 04 MÉTIERS ouvert par défaut)
@@ -332,6 +329,30 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                     {section.id === 'metiers' ? (
                       // Rendu spécifique Module 04 MÉTIERS : Accordéons interactifs par Service (SL, SSMUR, SVPS)
                       <div className="space-y-1.5">
+                        {/* 1. Vue Globale de tous les dossiers réglementaires DLVS */}
+                        <Link
+                          href="/folders"
+                          onClick={() => {
+                            if (window.innerWidth < 1024) onClose();
+                          }}
+                          className={`block px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all border ${
+                            pathname === '/folders' && !searchParams.get('type')
+                              ? 'bg-emerald-700 text-white font-bold border-emerald-600 shadow-sm'
+                              : 'bg-slate-900/40 text-slate-300 hover:text-white hover:bg-slate-800/60 border-slate-800/80'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="flex items-center gap-1.5 truncate">
+                              <span className="text-[11px]">📁</span>
+                              <span className="truncate">Tous les Dossiers DLVS (Vue Globale)</span>
+                            </span>
+                            {pathname === '/folders' && !searchParams.get('type') && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs shrink-0" />
+                            )}
+                          </div>
+                        </Link>
+
+                        {/* 2. Accordéons interactifs par Service (SL, SSMUR, SVPS) */}
                         {metierServices.map((service) => {
                           const isServiceOpen = !!openServices[service.key];
                           const hasActiveServiceItem = service.items.some(it => isItemActive(it.href));
