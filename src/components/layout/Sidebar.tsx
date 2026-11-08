@@ -153,64 +153,59 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     return 'metiers';
   };
 
-  // Gestion d'ouverture indépendante par section (Module 04 MÉTIERS ouvert par défaut)
+  // Dépliement des modules au clic uniquement (tous les modules sont fermés par défaut)
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     pilotage: false,
     operationnel: false,
     administratif: false,
-    metiers: true, // Ouvert par défaut pour donner accès immédiat aux 3 Services
+    metiers: false,
     donnees: false,
   });
 
+  // Dépliement des sous-modules métiers par service (tous fermés par défaut)
   const [openServices, setOpenServices] = useState<Record<string, boolean>>({
-    SL: true,
-    SSMUR: true,
-    SVPS: true,
+    SL: false,
+    SSMUR: false,
+    SVPS: false,
   });
 
-  // Dès qu'on navigue, s'assurer que la section active ET son service sont ouverts
-  useEffect(() => {
-    const activeSec = getActiveSectionId(pathname);
-    if (activeSec) {
-      setOpenSections(prev => ({ ...prev, [activeSec]: true }));
-    }
-
-    const typeParam = searchParams.get('type');
-    const domainParam = searchParams.get('domain');
-
-    if (
-      pathname === '/establishments' || 
-      (pathname === '/folders' && typeParam && (typeParam.includes('Visiteur') || typeParam.includes('absence') || typeParam.includes('CNAECP') || typeParam.includes('CNAIAPS') || typeParam.includes('Ouverture')))
-    ) {
-      setOpenSections(prev => ({ ...prev, metiers: true }));
-      setOpenServices(prev => ({ ...prev, SL: true }));
-    }
-
-    if (
-      (pathname === '/signals' && domainParam === 'signalement') || 
-      (pathname === '/folders' && typeParam && (typeParam.includes('achat') || typeParam.includes('transit') || typeParam.includes('Publicit') || typeParam.includes('Destruction')))
-    ) {
-      setOpenSections(prev => ({ ...prev, metiers: true }));
-      setOpenServices(prev => ({ ...prev, SSMUR: true }));
-    }
-
-    if (
-      pathname === '/trainings' || 
-      (pathname === '/signals' && domainParam === 'notification') || 
-      (pathname === '/folders' && typeParam && (typeParam.includes('PSUR') || typeParam.includes('Essai')))
-    ) {
-      setOpenSections(prev => ({ ...prev, metiers: true }));
-      setOpenServices(prev => ({ ...prev, SVPS: true }));
-    }
-  }, [pathname, searchParams]);
-
+  // Bascule du dépliement au clic : clique sur un module = affiche ses sous-modules et replie les autres
   const toggleSection = (id: string) => {
-    setOpenSections(prev => ({ ...prev, [id]: !prev[id] }));
+    setOpenSections(prev => {
+      const willBeOpen = !prev[id];
+      if (willBeOpen) {
+        return {
+          pilotage: id === 'pilotage',
+          operationnel: id === 'operationnel',
+          administratif: id === 'administratif',
+          metiers: id === 'metiers',
+          donnees: id === 'donnees',
+        };
+      }
+      return {
+        ...prev,
+        [id]: false,
+      };
+    });
   };
 
+  // Bascule du dépliement d'un Service du Module 04 au clic
   const toggleService = (key: string, e: React.MouseEvent) => {
     e.stopPropagation();
-    setOpenServices(prev => ({ ...prev, [key]: !prev[key] }));
+    setOpenServices(prev => {
+      const willBeOpen = !prev[key];
+      if (willBeOpen) {
+        return {
+          SL: key === 'SL',
+          SSMUR: key === 'SSMUR',
+          SVPS: key === 'SVPS',
+        };
+      }
+      return {
+        ...prev,
+        [key]: false,
+      };
+    });
   };
 
   return (
