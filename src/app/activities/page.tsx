@@ -130,7 +130,7 @@ function ActivitiesContent() {
 
   const getExportConfig = (): ExportConfig => ({
     title: 'Activités & Missions Réglementaires du Service',
-    subtitle: 'Direction de la Pharmacie et du Médicament — Suivi opérationnel ACTIVIA',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
     filename: `activites_activia_${new Date().toISOString().split('T')[0]}`,
     headers: ['Code', 'Titre de l’activité', 'Typologie', 'Département', 'Responsable', 'Priorité', 'Statut', 'Avancement', 'Échéance'],
     rows: filteredActivities.map(a => [

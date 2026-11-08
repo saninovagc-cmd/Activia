@@ -53,7 +53,7 @@ function DashboardContent() {
 
   const getDashboardExportConfig = (): ExportConfig => ({
     title: 'Tableau de Bord Général — Synthèse de Pilotage',
-    subtitle: 'Direction de la Pharmacie et du Médicament — Indicateurs Clés de Performance ACTIVIA',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
     filename: `tableau_de_bord_activia_${new Date().toISOString().split('T')[0]}`,
     headers: ['Domaine', 'Indicateur Clé', 'Valeur Actuelle', 'Statut / Tendance', 'Détails'],
     rows: [

@@ -49,7 +49,7 @@ export default function ChefServiceDashboardPage() {
 
     return {
       title: 'Tableau de Bord Chef de Service — Supervision Opérationnelle',
-      subtitle: 'Direction de la Pharmacie et du Médicament — Suivi des charges, délais et performances',
+      subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
       filename: `supervision_chef_service_${new Date().toISOString().split('T')[0]}`,
       headers: ['Catégorie / Périmètre', 'Élément / Indicateur', 'Quantité / Charge', 'Statut / Affectation', 'Observations'],
       rows,

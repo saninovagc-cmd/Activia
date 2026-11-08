@@ -27,7 +27,7 @@ export const AuditLogTable: React.FC = () => {
 
   const getAuditExportConfig = (): ExportConfig => ({
     title: 'Journal d’Audit & Traçabilité des Opérations',
-    subtitle: 'Direction de la Pharmacie et du Médicament — Registre immuable de conformité',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
     filename: `audit_activia_${new Date().toISOString().split('T')[0]}`,
     headers: ['Date & Heure', 'Utilisateur', 'Rôle', 'Module', 'Action', 'Entité Ciblée', 'Détails des modifications'],
     rows: filteredLogs.map(l => [

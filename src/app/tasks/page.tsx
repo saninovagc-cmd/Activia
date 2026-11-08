@@ -41,7 +41,7 @@ export default function TasksPage() {
 
     return {
       title: 'Suivi des Tâches Opérationnelles & Jalons de Service',
-      subtitle: 'Direction de la Pharmacie et du Médicament — Planification opérationnelle ACTIVIA',
+      subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
       filename: `taches_activia_${new Date().toISOString().split('T')[0]}`,
       headers: ['Code Activité', 'Activité Parente', 'Intitulé Tâche / Jalon', 'Assigné à', 'Priorité', 'Statut', 'Date Échéance'],
       rows: taskRows,

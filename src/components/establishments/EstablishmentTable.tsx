@@ -98,7 +98,7 @@ export const EstablishmentTable: React.FC<EstablishmentTableProps> = ({
 
   const getExportConfig = (): ExportConfig => ({
     title: 'Répertoire National des Établissements Pharmaceutiques',
-    subtitle: 'Direction de la Pharmacie et du Médicament — Données d’agrément et d’inspection',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
     filename: `repertoire_etablissements_${new Date().toISOString().split('T')[0]}`,
     headers: ['Code', 'Nom / Dénomination', 'Type', 'Pharmacien Responsable', 'Ville', 'Département', 'Téléphone', 'Agrément', 'Statut'],
     rows: filtered.map(e => [

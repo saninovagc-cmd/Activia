@@ -114,7 +114,7 @@ export default function ReportingPage() {
 
   const getReportingExportConfig = (): ExportConfig => ({
     title: `Bilan Statistique & Rapport de Performance (${period === 'month' ? 'Mensuel' : period === 'quarter' ? 'Trimestriel' : 'Annuel'})`,
-    subtitle: 'Direction de la Pharmacie et du Médicament — Indicateurs Clés et Mesures de Performance',
+    subtitle: 'Agence béninoise du Médicament et des autres produits de Santé (ABMed) — Direction DLVS',
     filename: `rapport_performance_${period}_${new Date().toISOString().split('T')[0]}`,
     headers: ['Domaine / Indicateur', 'Valeur Constatée', 'Cible / Norme', 'Évaluation de Performance'],
     rows: [

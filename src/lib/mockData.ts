@@ -41,7 +41,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Directrice des Licences, de la Vigilance et de la Surveillance du Marché (DLVS)',
     phone: '+229 21 30 01 01',
-    avatar_url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -60,7 +59,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Chef Service de la Vigilance des Produits de Santé (SVPS)',
     phone: '+229 21 30 01 02',
-    avatar_url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -79,7 +77,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Chef Service de la Surveillance du Marché et usages rationnels des Médicaments (SSMUR)',
     phone: '+229 21 30 01 03',
-    avatar_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -98,7 +95,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Chef Service des Licences (SL)',
     phone: '+229 21 30 01 04',
-    avatar_url: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -117,7 +113,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: "Responsable de l'Évaluation des PSUR/PBRER / SVPS",
     phone: '+229 21 30 01 05',
-    avatar_url: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -136,7 +131,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: "Responsable de l'organisation du Comité Technique de Vigilances des Produits de Santé / SVPS",
     phone: '+229 21 30 01 06',
-    avatar_url: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -155,7 +149,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Epidémiologiste',
     post: 'Responsable de la Gestion des Données / SVPS',
     phone: '+229 21 30 01 07',
-    avatar_url: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -174,7 +167,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Responsable de la promotion et de la publicité des Médicaments / SSMUR',
     phone: '+229 21 30 01 08',
-    avatar_url: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -193,7 +185,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Responsable des Activités liées à la surveillance post commercialisation et de la gestion des déchets pharmaceutiques / SSMUR',
     phone: '+229 21 30 01 09',
-    avatar_url: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -212,7 +203,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Médecin Vétérinaire',
     post: 'Personne responsable des autorisations / SSMUR',
     phone: '+229 21 30 01 10',
-    avatar_url: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -231,7 +221,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Responsable des Produits de Santé de Qualité Inférieur ou Falsifiés / SSMUR',
     phone: '+229 21 30 01 11',
-    avatar_url: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -250,7 +239,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Responsable des commissions de Licence / SL',
     phone: '+229 21 30 01 12',
-    avatar_url: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -269,7 +257,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Pharmacien',
     post: 'Responsable des réceptions / SL',
     phone: '+229 21 30 01 13',
-    avatar_url: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
   {
@@ -288,7 +275,6 @@ export const INITIAL_USERS: UserProfile[] = [
     title: 'Attaché des Services Administratifs',
     post: 'Secrétaire / DLVS (Bureau d’Ordre & Courriers)',
     phone: '+229 21 30 01 14',
-    avatar_url: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&auto=format&fit=crop&q=80',
     is_active: true,
   },
 ];
