@@ -266,6 +266,28 @@ export default function SettingsPage() {
         {/* Tab 2: Users & Password Management */}
         {activeTab === 'users' && (
           <div className="space-y-4">
+            {/* Super Admin Private Indicator (Uniquement visible si connecté en tant que Saninovagc) */}
+            {currentUser.username?.toLowerCase() === 'saninovagc' && (
+              <div className="p-4 rounded-xl bg-purple-50/90 border border-purple-200 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center font-bold text-xs shrink-0">
+                    SA
+                  </div>
+                  <div>
+                    <p className="font-bold text-purple-950 flex items-center gap-1.5">
+                      Session Super Administrateur active (Saninovagc)
+                    </p>
+                    <p className="text-[11px] text-purple-800">
+                      Ce compte système furtif détient les droits maximaux sur tous les modules. Il demeure <strong>strictement masqué</strong> pour l&apos;ensemble des autres utilisateurs DLVS.
+                    </p>
+                  </div>
+                </div>
+                <span className="px-2.5 py-1 rounded bg-purple-200/80 text-purple-900 font-bold text-[10px] shrink-0 uppercase tracking-wide border border-purple-300">
+                  Accès Total &amp; Furtif
+                </span>
+              </div>
+            )}
+
             {/* Explanatory banner */}
             <div className="p-4 rounded-xl bg-blue-50/80 border border-blue-200 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="space-y-1">

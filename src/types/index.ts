@@ -48,6 +48,7 @@ export interface UserProfile {
   phone?: string;
   avatar_url?: string;
   is_active: boolean;
+  is_hidden?: boolean;
 }
 
 export interface Task {

@@ -372,7 +372,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
             title="Mon compte et changement d'utilisateur"
           >
             <div className="w-6 h-6 rounded-full bg-white text-emerald-800 font-black flex items-center justify-center text-[11px] shadow-xs shrink-0">
-              {currentUser.order || '1'}
+              {currentUser.username?.toLowerCase() === 'saninovagc' ? 'SA' : (currentUser.order || '1')}
             </div>
             <div className="hidden sm:block">
               <div className="flex items-center gap-1.5">
@@ -382,7 +382,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                 </span>
               </div>
               <span className="text-[10.5px] text-emerald-100/90 block font-medium leading-tight mt-0.5">
-                {currentUser.title} • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
+                {currentUser.title} • {currentUser.username?.toLowerCase() === 'saninovagc' ? 'Super Admin' : (currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent')}
               </span>
             </div>
             <ChevronDown className="w-3.5 h-3.5 text-emerald-200 shrink-0 ml-0.5" />

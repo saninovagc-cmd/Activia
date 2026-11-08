@@ -449,14 +449,14 @@ export const SidebarContent: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         <div className="p-3.5 border-t border-slate-800/90 bg-[#070b14] shrink-0">
           <div className="flex items-center gap-2.5 mb-2.5 px-1">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-700 to-green-600 text-white font-bold flex items-center justify-center text-xs shrink-0 shadow-md ring-1 ring-white/10">
-              {currentUser.order || '1'}
+              {currentUser.username?.toLowerCase() === 'saninovagc' ? 'SA' : (currentUser.order || '1')}
             </div>
             <div className="truncate min-w-0 flex-1">
               <p className="text-xs font-bold text-white truncate leading-tight">{currentUser.full_name}</p>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <span className="text-[10px] text-emerald-400 font-mono font-semibold">ID: {currentUser.username}</span>
                 <span className="text-[9px] text-slate-500 truncate">
-                  • {currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent'}
+                  • {currentUser.username?.toLowerCase() === 'saninovagc' ? 'Super Admin' : (currentUser.role === 'admin' ? 'Directrice' : currentUser.role === 'chef_service' ? 'Chef Serv.' : currentUser.role === 'secretariat' ? 'Secrétaire' : 'Agent')}
                 </span>
               </div>
             </div>
