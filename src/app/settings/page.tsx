@@ -754,7 +754,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                     autoFocus
                     value={newEntryText}
                     onChange={(e) => setNewEntryText(e.target.value)}
-                    placeholder="Ex: Dispositifs Médicaux Innovants..."
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>
@@ -836,7 +836,7 @@ Conservez vos accès de manière confidentielle. Vous pourrez modifier votre mot
                       autoFocus
                       value={adminCustomPassword}
                       onChange={(e) => setAdminCustomPassword(e.target.value)}
-                      placeholder="Nouveau mot de passe..."
+
                       style={{ textTransform: 'none' }}
                       className="keep-case w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-mono font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none"
                     />

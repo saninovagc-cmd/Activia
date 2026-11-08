@@ -350,7 +350,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
                   <div>
                     <input
                       type="text"
-                      placeholder="Intitulé de la tâche..."
+
                       value={newTaskTitle}
                       onChange={(e) => setNewTaskTitle(e.target.value)}
                       required
@@ -589,7 +589,7 @@ export const ActivityDetailModal: React.FC<ActivityDetailModalProps> = ({
               <form onSubmit={handleAddComment} className="flex gap-2">
                 <input
                   type="text"
-                  placeholder="Ajouter une observation ou consigne..."
+
                   value={commentText}
                   onChange={(e) => setCommentText(e.target.value)}
                   className="flex-1 px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none"

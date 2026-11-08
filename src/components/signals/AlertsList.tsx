@@ -203,7 +203,7 @@ export const AlertsList: React.FC<AlertsListProps> = ({ alerts, canManage }) => 
                     required
                     value={product}
                     onChange={e => setProduct(e.target.value)}
-                    placeholder="Ex: Médicament contrefait / Sirop toxique"
+
                     className="w-full px-3 py-1.5 border rounded-lg"
                   />
                 </div>
@@ -250,7 +250,7 @@ export const AlertsList: React.FC<AlertsListProps> = ({ alerts, canManage }) => 
                   required
                   value={description}
                   onChange={e => setDescription(e.target.value)}
-                  placeholder="Circonstances, numéros de lot suspects, pays d’origine..."
+
                   className="w-full px-3 py-1.5 border rounded-lg"
                 />
               </div>
@@ -262,7 +262,7 @@ export const AlertsList: React.FC<AlertsListProps> = ({ alerts, canManage }) => 
                   required
                   value={actionsRequired}
                   onChange={e => setActionsRequired(e.target.value)}
-                  placeholder="Quarantaine immédiate, contrôle aux frontières, communiqué de presse..."
+
                   className="w-full px-3 py-1.5 border rounded-lg"
                 />
               </div>

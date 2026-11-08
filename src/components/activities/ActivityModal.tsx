@@ -152,7 +152,7 @@ export const ActivityModal: React.FC<ActivityModalProps> = ({
             <input
               type="text"
               required
-              placeholder="Ex: Campagne d'échantillonnage annuel 2026..."
+
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none"
@@ -166,7 +166,7 @@ export const ActivityModal: React.FC<ActivityModalProps> = ({
             </label>
             <textarea
               rows={3}
-              placeholder="Détaillez le périmètre technique, les cibles, les normes applicables..."
+
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none"
@@ -312,7 +312,7 @@ export const ActivityModal: React.FC<ActivityModalProps> = ({
               </label>
               <input
                 type="text"
-                placeholder="Ex: DOS-2026-0042"
+
                 value={associatedFolder}
                 onChange={(e) => setAssociatedFolder(e.target.value)}
                 className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900"

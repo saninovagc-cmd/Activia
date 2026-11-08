@@ -162,7 +162,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
               type="text"
-              placeholder="Recherche globale : dossier, courrier, établissement, MAPI, activité..."
+
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
@@ -631,7 +631,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     required
                     value={newPasswordInput}
                     onChange={(e) => setNewPasswordInput(e.target.value)}
-                    placeholder="Saisissez votre nouveau mot de passe"
+
                     className="keep-case w-full pl-9 pr-10 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:outline-none"
                   />
                   <button
@@ -655,7 +655,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     required
                     value={confirmPasswordInput}
                     onChange={(e) => setConfirmPasswordInput(e.target.value)}
-                    placeholder="Répétez le nouveau mot de passe"
+
                     className="keep-case w-full pl-9 pr-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-emerald-600 focus:outline-none"
                   />
                 </div>
@@ -728,7 +728,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     required
                     value={profileFullName}
                     onChange={(e) => setProfileFullName(e.target.value)}
-                    placeholder="Ex: Dr. DOSSOU YOVO H. O. Mael"
+
                     className="keep-case w-full px-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>
@@ -741,7 +741,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     type="text"
                     value={profileTitle}
                     onChange={(e) => setProfileTitle(e.target.value)}
-                    placeholder="Ex: Pharmacien / Dr."
+
                     className="keep-case w-full px-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>
@@ -754,7 +754,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     type="text"
                     value={profilePost}
                     onChange={(e) => setProfilePost(e.target.value)}
-                    placeholder="Ex: Chef de Service / Évaluateur"
+
                     className="keep-case w-full px-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>
@@ -767,7 +767,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     type="email"
                     value={profileEmail}
                     onChange={(e) => setProfileEmail(e.target.value)}
-                    placeholder="Ex: agent@abmed.bj"
+
                     className="keep-case w-full px-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>
@@ -780,7 +780,7 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
                     type="tel"
                     value={profilePhone}
                     onChange={(e) => setProfilePhone(e.target.value)}
-                    placeholder="Ex: +229 97 00 00 00"
+
                     className="keep-case w-full px-3 py-2 border border-slate-300 rounded-lg text-xs font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                   />
                 </div>

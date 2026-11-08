@@ -329,7 +329,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                     <label className="block text-[11px] font-semibold text-slate-700 mb-1">Motifs & Réserves</label>
                     <input
                       type="text"
-                      placeholder="Motifs de la décision ou réserves émises..."
+
                       value={decisionNotes}
                       onChange={(e) => setDecisionNotes(e.target.value)}
                       className="w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-xs"
@@ -525,7 +525,7 @@ export const FolderDetailModal: React.FC<FolderDetailModalProps> = ({
                   rows={2}
                   value={commentInput}
                   onChange={(e) => setCommentInput(e.target.value)}
-                  placeholder="Ajouter une instruction, remarque ou observation sur le dossier..."
+
                   className="w-full p-2.5 bg-white border border-slate-300 rounded-lg text-xs"
                 />
                 <div className="flex justify-end">

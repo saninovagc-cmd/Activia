@@ -86,7 +86,7 @@ export const SignalModal: React.FC<SignalModalProps> = ({
                   required
                   value={formData.reporter_name || ''}
                   onChange={e => setFormData({ ...formData, reporter_name: e.target.value })}
-                  placeholder="Ex: Dr. Diallo - CHU du Point G"
+
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
                 />
               </div>
@@ -120,7 +120,7 @@ export const SignalModal: React.FC<SignalModalProps> = ({
                   required
                   value={formData.product_name || ''}
                   onChange={e => setFormData({ ...formData, product_name: e.target.value })}
-                  placeholder="Ex: Paracétamol Sirop 120mg/5ml"
+
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
                 />
               </div>
@@ -132,7 +132,7 @@ export const SignalModal: React.FC<SignalModalProps> = ({
                   required
                   value={formData.batch_number || ''}
                   onChange={e => setFormData({ ...formData, batch_number: e.target.value })}
-                  placeholder="Ex: LOT-2025-08"
+
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
                 />
               </div>
@@ -144,7 +144,7 @@ export const SignalModal: React.FC<SignalModalProps> = ({
                 type="text"
                 value={formData.manufacturer || ''}
                 onChange={e => setFormData({ ...formData, manufacturer: e.target.value })}
-                placeholder="Ex: Pharma International SA"
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
               />
             </div>
@@ -222,7 +222,7 @@ export const SignalModal: React.FC<SignalModalProps> = ({
                     type="text"
                     value={formData.sample_code || ''}
                     onChange={e => setFormData({ ...formData, sample_code: e.target.value })}
-                    placeholder="Ex: ECH-2026-042"
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
                   />
                 </div>
@@ -232,7 +232,7 @@ export const SignalModal: React.FC<SignalModalProps> = ({
                     type="text"
                     value={formData.lab_name || ''}
                     onChange={e => setFormData({ ...formData, lab_name: e.target.value })}
-                    placeholder="Ex: LNAM"
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
                   />
                 </div>
@@ -248,7 +248,7 @@ export const SignalModal: React.FC<SignalModalProps> = ({
               rows={3}
               value={formData.description || ''}
               onChange={e => setFormData({ ...formData, description: e.target.value })}
-              placeholder="Décrire les symptômes observés, le délai d’apparition, l’aspect physique du produit incriminé..."
+
               className="w-full px-3 py-2 border border-slate-300 rounded-lg"
             />
           </div>

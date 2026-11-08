@@ -84,7 +84,7 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
                 required
                 value={formData.participant_name || ''}
                 onChange={e => setFormData({ ...formData, participant_name: e.target.value })}
-                placeholder="Ex: Dr. Mariam Coulibaly"
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
               />
             </div>
@@ -95,7 +95,7 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
                 type="text"
                 value={formData.function_title || ''}
                 onChange={e => setFormData({ ...formData, function_title: e.target.value })}
-                placeholder="Ex: Pharmacien Chef de District"
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
               />
             </div>
@@ -110,7 +110,7 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
                 required
                 value={formData.structure || ''}
                 onChange={e => setFormData({ ...formData, structure: e.target.value })}
-                placeholder="Ex: Hôpital Régional de Sikasso"
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
               />
             </div>
@@ -121,7 +121,7 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
                 type="text"
                 value={formData.region || ''}
                 onChange={e => setFormData({ ...formData, region: e.target.value })}
-                placeholder="Ex: Littoral, Ouémé, Atlantique..."
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
               />
             </div>
@@ -243,7 +243,7 @@ export const TrainingModal: React.FC<TrainingModalProps> = ({
                   type="text"
                   value={formData.certificate_number || ''}
                   onChange={e => setFormData({ ...formData, certificate_number: e.target.value })}
-                  placeholder="CERT-2026-089"
+
                   className="w-full px-3 py-1.5 border border-slate-300 rounded-lg bg-white font-mono"
                 />
               </div>

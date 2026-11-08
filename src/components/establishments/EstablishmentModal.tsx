@@ -107,7 +107,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                 required
                 value={formData.name || ''}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Ex: Pharmacie de la Victoire"
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -143,7 +143,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                 required
                 value={formData.responsible_pharmacist || ''}
                 onChange={e => setFormData({ ...formData, responsible_pharmacist: e.target.value })}
-                placeholder="Ex: Dr. Moussa Traoré"
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -154,7 +154,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                 type="text"
                 value={formData.owner || ''}
                 onChange={e => setFormData({ ...formData, owner: e.target.value })}
-                placeholder="Ex: Dr. Moussa Traoré ou SARL Pharma"
+
                 className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -170,7 +170,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                   type="text"
                   value={formData.address || ''}
                   onChange={e => setFormData({ ...formData, address: e.target.value })}
-                  placeholder="Ex: Rue 14, Porte 205, Quartier Médina"
+
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -183,7 +183,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                     required
                     value={formData.city || ''}
                     onChange={e => setFormData({ ...formData, city: e.target.value })}
-                    placeholder="Ex: Bamako / Dakar / Abidjan"
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -194,7 +194,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                     type="text"
                     value={formData.department || ''}
                     onChange={e => setFormData({ ...formData, department: e.target.value })}
-                    placeholder="Ex: Direction Régionale de la Santé"
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -207,7 +207,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                     type="tel"
                     value={formData.phone || ''}
                     onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+223 20 22 45 80"
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -218,7 +218,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                     type="email"
                     value={formData.email || ''}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="contact@pharmacie-victoire.ml"
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -237,7 +237,7 @@ export const EstablishmentModal: React.FC<EstablishmentModalProps> = ({
                   required
                   value={formData.authorization_number || ''}
                   onChange={e => setFormData({ ...formData, authorization_number: e.target.value })}
-                  placeholder="AUT-2024-MS-0412"
+
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                 />
               </div>

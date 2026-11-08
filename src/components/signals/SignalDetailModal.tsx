@@ -358,7 +358,7 @@ export const SignalDetailModal: React.FC<SignalDetailModalProps> = ({
                     value={mapiNotes}
                     onChange={e => setMapiNotes(e.target.value)}
                     disabled={!canEdit}
-                    placeholder="Synthèse des discussions du comité, antécédents du patient, heure exacte d'injection..."
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
                   />
                 </div>
@@ -503,7 +503,7 @@ export const SignalDetailModal: React.FC<SignalDetailModalProps> = ({
                     value={correctiveActions}
                     onChange={e => setCorrectiveActions(e.target.value)}
                     disabled={!canEdit}
-                    placeholder="Ex: Arrêté de rappel du lot LOT-2025-08 diffusé aux officines et grossistes. Quarantaine immédiate des stocks..."
+
                     className="w-full px-3 py-2 border border-slate-300 rounded-lg bg-white"
                   />
                 </div>

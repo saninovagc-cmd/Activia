@@ -142,7 +142,7 @@ export const DocumentBrowser: React.FC = () => {
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
-              placeholder="Rechercher un fichier, une référence, un auteur..."
+
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white w-64"
@@ -416,7 +416,7 @@ export const DocumentBrowser: React.FC = () => {
                 <label className="block font-semibold text-slate-700 mb-1">Nom d&apos;indexation du fichier</label>
                 <input
                   type="text"
-                  placeholder="Ex: Certificat_Analytique_HPLC_2026.pdf"
+
                   value={newDocName}
                   onChange={(e) => setNewDocName(e.target.value)}
                   className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg font-medium text-slate-900"
@@ -456,7 +456,7 @@ export const DocumentBrowser: React.FC = () => {
                 <label className="block font-semibold text-slate-700 mb-1">Référence associée</label>
                 <input
                   type="text"
-                  placeholder="Ex: DOS-2026-0089 ou ARR-2026-0891"
+
                   value={newDocRef}
                   onChange={(e) => setNewDocRef(e.target.value)}
                   className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900"

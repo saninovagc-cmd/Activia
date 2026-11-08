@@ -162,7 +162,7 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
               <input
                 type="text"
                 required
-                placeholder="Ex: Hôpital Universitaire, Laboratoire Sandoz..."
+
                 value={structure}
                 onChange={(e) => setStructure(e.target.value)}
                 className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg font-medium text-slate-900 focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none"
@@ -175,7 +175,7 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
               <input
                 type="text"
                 required
-                placeholder="Ex: Dr. Martin, Pharmacien Responsable..."
+
                 value={applicant}
                 onChange={(e) => setApplicant(e.target.value)}
                 className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900"
@@ -250,7 +250,7 @@ export const FolderModal: React.FC<FolderModalProps> = ({ isOpen, onClose }) => 
             </label>
             <textarea
               rows={2}
-              placeholder="Spécifiez la liste des pièces justificatives fournies ou consignes particulières..."
+
               value={observations}
               onChange={(e) => setObservations(e.target.value)}
               className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900"

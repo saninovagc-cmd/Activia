@@ -241,7 +241,7 @@ export const MultiDeliverableUploadZone: React.FC<MultiDeliverableUploadZoneProp
                       type="text"
                       value={it.name}
                       onChange={(e) => handleUpdateItem(it.id, { name: e.target.value })}
-                      placeholder="Nom du livrable..."
+
                       className="w-full text-xs font-semibold text-slate-900 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-emerald-600 focus:bg-white focus:outline-none px-1 py-0.5 rounded transition-all"
                     />
                     <div className="flex flex-wrap items-center gap-2 text-[10px] text-slate-500">

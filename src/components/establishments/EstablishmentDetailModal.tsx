@@ -370,7 +370,7 @@ export const EstablishmentDetailModal: React.FC<EstablishmentDetailModalProps> =
                       required
                       value={inspOutcome}
                       onChange={e => setInspOutcome(e.target.value)}
-                      placeholder="Ex: Conforme avec recommandations sur la chaîne du froid"
+
                       className="w-full px-3 py-1.5 border border-slate-300 rounded-lg bg-white"
                     />
                   </div>

@@ -351,7 +351,7 @@ export const ActivityExecutionModal: React.FC<ActivityExecutionModalProps> = ({
 
             <textarea
               rows={3}
-              placeholder="Rédigez ici votre compte-rendu d'exécution, actions entreprises ou difficultés rencontrées..."
+
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
               className="w-full px-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:outline-none"
