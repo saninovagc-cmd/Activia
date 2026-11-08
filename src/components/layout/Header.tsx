@@ -149,6 +149,14 @@ export const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSid
           </svg>
         </button>
 
+        {/* Logo & Titre sur Mobile */}
+        <div className="sm:hidden flex items-center gap-1.5">
+          <span className="font-black tracking-tight text-white text-sm">ACTIVIA</span>
+          <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-900/80 text-emerald-100 border border-emerald-400/40">
+            ABMed
+          </span>
+        </div>
+
         <div className="relative w-full hidden sm:block">
           <form onSubmit={handleSearchSubmit}>
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />

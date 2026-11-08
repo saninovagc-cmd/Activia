@@ -415,8 +415,110 @@ export const RolePermissionsMatrix: React.FC<RolePermissionsMatrixProps> = ({ us
         </div>
       </div>
 
-      {/* TABLEAU INTERACTIF DES DROITS PAR MODULE */}
-      <div className="overflow-x-auto w-full px-4 pb-4">
+      {/* VUE MOBILE (< 768px) : Cartes tactiles fluides par module */}
+      <div className="block md:hidden p-3 space-y-3 bg-slate-50/50">
+        {DEFAULT_MODULES.map((mod) => {
+          const perms = currentPermissions[mod.id] || { read: false, write: false, validate: false, delete: false, export: false };
+          const hasAnyPerm = perms.read || perms.write || perms.validate || perms.delete || perms.export;
+
+          return (
+            <div
+              key={mod.id}
+              className={`p-3 bg-white rounded-xl border transition-all space-y-2.5 shadow-2xs ${
+                hasAnyPerm ? 'border-slate-300' : 'border-slate-200 opacity-80'
+              }`}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-base">{mod.icon}</span>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-900 leading-tight">{mod.name}</h4>
+                    <p className="text-[10px] text-slate-400">{mod.category}</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => toggleRow(mod.id)}
+                  className="text-[10px] font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 px-2 py-0.5 rounded border border-blue-200 shrink-0 cursor-pointer"
+                >
+                  Tout
+                </button>
+              </div>
+
+              {/* 5 Boutons tactiles faciles à presser au doigt */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 pt-1 border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={() => updatePermission(mod.id, 'read', !perms.read)}
+                  className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-all cursor-pointer ${
+                    perms.read
+                      ? 'bg-blue-50 text-blue-800 border-blue-300 font-bold'
+                      : 'bg-slate-50 text-slate-400 border-slate-200'
+                  }`}
+                >
+                  <span>👁️ Lecture</span>
+                  <input type="checkbox" checked={perms.read} readOnly className="w-3.5 h-3.5 pointer-events-none accent-blue-600" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => updatePermission(mod.id, 'write', !perms.write)}
+                  className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-all cursor-pointer ${
+                    perms.write
+                      ? 'bg-emerald-50 text-emerald-800 border-emerald-300 font-bold'
+                      : 'bg-slate-50 text-slate-400 border-slate-200'
+                  }`}
+                >
+                  <span>✍️ Écriture</span>
+                  <input type="checkbox" checked={perms.write} readOnly className="w-3.5 h-3.5 pointer-events-none accent-emerald-600" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => updatePermission(mod.id, 'validate', !perms.validate)}
+                  className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-all cursor-pointer ${
+                    perms.validate
+                      ? 'bg-cyan-50 text-cyan-800 border-cyan-300 font-bold'
+                      : 'bg-slate-50 text-slate-400 border-slate-200'
+                  }`}
+                >
+                  <span>✅ Validation</span>
+                  <input type="checkbox" checked={perms.validate} readOnly className="w-3.5 h-3.5 pointer-events-none accent-cyan-600" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => updatePermission(mod.id, 'delete', !perms.delete)}
+                  className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-all cursor-pointer ${
+                    perms.delete
+                      ? 'bg-rose-50 text-rose-800 border-rose-300 font-bold'
+                      : 'bg-slate-50 text-slate-400 border-slate-200'
+                  }`}
+                >
+                  <span>🗑️ Supprimer</span>
+                  <input type="checkbox" checked={perms.delete} readOnly className="w-3.5 h-3.5 pointer-events-none accent-rose-600" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => updatePermission(mod.id, 'export', !perms.export)}
+                  className={`flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-all cursor-pointer col-span-2 sm:col-span-1 ${
+                    perms.export
+                      ? 'bg-indigo-50 text-indigo-800 border-indigo-300 font-bold'
+                      : 'bg-slate-50 text-slate-400 border-slate-200'
+                  }`}
+                >
+                  <span>📥 Export</span>
+                  <input type="checkbox" checked={perms.export} readOnly className="w-3.5 h-3.5 pointer-events-none accent-indigo-600" />
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* TABLEAU INTERACTIF DES DROITS PAR MODULE (DESKTOP >= 768px) */}
+      <div className="hidden md:block overflow-x-auto w-full px-4 pb-4">
         <table className="w-full text-xs text-left border-collapse table-fixed">
           <thead>
             <tr className="bg-slate-100/80 border-b border-slate-200 text-slate-700 font-bold uppercase tracking-wider text-[11px]">

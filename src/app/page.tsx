@@ -109,9 +109,10 @@ export default function HomePage() {
                 </div>
                 <Link
                   href="/dashboard"
-                  className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors flex items-center gap-1.5"
+                  className="px-2.5 sm:px-4 py-1.5 sm:py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-xs transition-colors flex items-center gap-1.5 shrink-0"
                 >
-                  <span>Mon Espace de Travail</span>
+                  <span className="hidden sm:inline">Mon Espace de Travail</span>
+                  <span className="sm:hidden inline">Mon Espace</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <button

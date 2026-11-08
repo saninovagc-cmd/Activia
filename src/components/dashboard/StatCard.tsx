@@ -31,7 +31,7 @@ export const StatCard: React.FC<StatCardProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`bg-white rounded-xl p-4 border border-slate-200/90 shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden flex flex-col justify-between ${
+      className={`bg-white rounded-xl p-3 sm:p-4 border border-slate-200/90 shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 relative overflow-hidden flex flex-col justify-between ${
         onClick ? 'cursor-pointer hover:border-slate-300' : ''
       }`}
     >
