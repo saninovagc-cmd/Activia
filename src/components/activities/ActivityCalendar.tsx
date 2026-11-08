@@ -42,7 +42,8 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
   };
 
   const resetToCurrent = () => {
-    setCurrentDate(new Date(2026, 9, 1));
+    const now = new Date();
+    setCurrentDate(new Date(now.getFullYear(), now.getMonth(), 1));
   };
 
   return (
@@ -113,7 +114,9 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
           
           // Match activities where due date is this day OR date is within start and due
           const dayActivities = activities.filter((act) => act.due_date === dateString);
-          const isToday = dateString === '2026-10-03';
+          const today = new Date();
+          const todayDateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+          const isToday = dateString === todayDateString;
 
           return (
             <div
