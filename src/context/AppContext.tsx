@@ -155,7 +155,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<UserProfile>(INITIAL_USERS[0]);
   const [allUsers, setAllUsers] = useState<UserProfile[]>(INITIAL_USERS);
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [activities, setActivities] = useState<Activity[]>(INITIAL_ACTIVITIES);
   const [incomingMails, setIncomingMails] = useState<IncomingMail[]>(INITIAL_INCOMING_MAILS);
   const [outgoingMails, setOutgoingMails] = useState<OutgoingMail[]>(INITIAL_OUTGOING_MAILS);

@@ -15,13 +15,7 @@ import {
 
 export default function LoginPage() {
   const router = useRouter();
-  const { login, isAuthenticated } = useApp();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      router.push('/dashboard');
-    }
-  }, [isAuthenticated, router]);
+  const { login } = useApp();
 
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
