@@ -14,8 +14,11 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
   activities,
   onSelect,
 }) => {
-  // Current calendar view date: October 2026 (matching system timeline)
-  const [currentDate, setCurrentDate] = useState(new Date(2026, 9, 1)); // October 2026
+  // Date initiale synchronisée en temps réel sur le jour et le mois réels actuels
+  const [currentDate, setCurrentDate] = useState(() => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  });
 
   const monthNames = [
     'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
@@ -26,6 +29,9 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
+
+  const now = new Date();
+  const isCurrentMonthAndYear = now.getFullYear() === year && now.getMonth() === month;
 
   // First day of month (0 = Sunday, 1 = Monday, etc.)
   const firstDayOfMonth = new Date(year, month, 1).getDay();
@@ -42,8 +48,8 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
   };
 
   const resetToCurrent = () => {
-    const now = new Date();
-    setCurrentDate(new Date(now.getFullYear(), now.getMonth(), 1));
+    const today = new Date();
+    setCurrentDate(new Date(today.getFullYear(), today.getMonth(), 1));
   };
 
   return (
@@ -55,9 +61,16 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
             <CalendarIcon className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-slate-900">
-              {monthNames[month]} {year}
-            </h3>
+            <div className="flex items-center gap-2">
+              <h3 className="text-base font-bold text-slate-900">
+                {monthNames[month]} {year}
+              </h3>
+              {isCurrentMonthAndYear && (
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  Mois actuel
+                </span>
+              )}
+            </div>
             <p className="text-xs text-slate-500">
               Vue planning des échéances et activités réglementaires
             </p>
@@ -67,20 +80,20 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
         <div className="flex items-center gap-2">
           <button
             onClick={resetToCurrent}
-            className="px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+            className="px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors cursor-pointer"
           >
             Aujourd'hui
           </button>
           <div className="flex items-center border border-slate-200 rounded-lg overflow-hidden">
             <button
               onClick={prevMonth}
-              className="p-1.5 hover:bg-slate-100 text-slate-600 border-r border-slate-200"
+              className="p-1.5 hover:bg-slate-100 text-slate-600 border-r border-slate-200 cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={nextMonth}
-              className="p-1.5 hover:bg-slate-100 text-slate-600"
+              className="p-1.5 hover:bg-slate-100 text-slate-600 cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -126,13 +139,20 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
               }`}
             >
               <div className="flex items-center justify-between">
-                <span
-                  className={`w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs ${
-                    isToday ? 'bg-blue-600 text-white' : 'text-slate-700'
-                  }`}
-                >
-                  {dayNum}
-                </span>
+                <div className="flex items-center gap-1.5">
+                  <span
+                    className={`w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs ${
+                      isToday ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-700'
+                    }`}
+                  >
+                    {dayNum}
+                  </span>
+                  {isToday && (
+                    <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-blue-800 border border-blue-200 hidden sm:inline">
+                      Aujourd'hui
+                    </span>
+                  )}
+                </div>
                 {dayActivities.length > 0 && (
                   <span className="text-[10px] font-bold text-blue-700 bg-blue-100 px-1.5 py-0.2 rounded-full">
                     {dayActivities.length}
