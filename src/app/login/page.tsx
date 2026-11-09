@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
@@ -15,7 +15,13 @@ import {
 
 export default function LoginPage() {
   const router = useRouter();
-  const { login } = useApp();
+  const { login, isAuthenticated } = useApp();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push('/dashboard');
+    }
+  }, [isAuthenticated, router]);
 
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
