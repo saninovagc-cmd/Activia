@@ -262,7 +262,7 @@ export const loadAllDataFromDatabase = async (): Promise<{ success: boolean; dat
       size_kb: Number(d.size_kb || 0),
       entity_type: d.entity_type || 'activite',
       entity_id: d.entity_id || '',
-      entity_ref: d.entity_ref || (d.entity_type === 'activite' ? 'ACT-2026-0101' : ''),
+      entity_ref: d.entity_ref || '',
       uploaded_by_id: d.uploaded_by || d.uploaded_by_id || '',
       uploaded_by_name: d.uploaded_by_name || '',
       uploaded_at: d.uploaded_at ? d.uploaded_at.replace('T', ' ').substring(0, 16) : (d.created_at ? d.created_at.replace('T', ' ').substring(0, 16) : new Date().toISOString().substring(0, 16)),

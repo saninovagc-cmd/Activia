@@ -292,14 +292,27 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         localStorage.setItem(REAL_ACTIVITIES_KEY, 'true');
       }
 
-      // Restauration des Documents Réels GED (Décret Déposé par Dr DOSSOU YOVO H. O. Mael)
-      const REAL_DOCS_KEY = 'activia_real_docs_migrated_v2_dossou_mael';
-      if (!localStorage.getItem(REAL_DOCS_KEY)) {
-        if (INITIAL_DOCUMENTS.length > 0) {
-          localStorage.setItem('activia_documents', JSON.stringify(INITIAL_DOCUMENTS));
-          setDocuments(INITIAL_DOCUMENTS);
-        }
-        localStorage.setItem(REAL_DOCS_KEY, 'true');
+      // Purge des éléments de test injectés (activité/tâches/document du 04/11) du cache navigateur
+      const PURGE_TEST_KEY = 'activia_purge_test_entries_v3';
+      if (!localStorage.getItem(PURGE_TEST_KEY)) {
+        const TEST_ACT_ID = 'd0550000-0000-0000-0000-000000000010';
+        const TEST_DOC_ID = 'd1111111-0000-0000-0000-000000000001';
+        try {
+          const acts = JSON.parse(localStorage.getItem('activia_activities') || '[]');
+          if (Array.isArray(acts)) {
+            const cleaned = acts.filter((a: Activity) => a.id !== TEST_ACT_ID);
+            const final = cleaned.length > 0 ? cleaned : INITIAL_ACTIVITIES;
+            localStorage.setItem('activia_activities', JSON.stringify(final));
+            setActivities(final);
+          }
+          const docs = JSON.parse(localStorage.getItem('activia_documents') || '[]');
+          if (Array.isArray(docs)) {
+            const cleanedDocs = docs.filter((d: DocumentItem) => d.id !== TEST_DOC_ID);
+            localStorage.setItem('activia_documents', JSON.stringify(cleanedDocs));
+            setDocuments(cleanedDocs);
+          }
+        } catch {}
+        localStorage.setItem(PURGE_TEST_KEY, 'true');
       }
 
       // Restauration des Courriers Sortants Réels (DEP-2026-0415 émis par Dr. YAMBODE Maria-Carole)

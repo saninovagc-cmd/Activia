@@ -310,65 +310,8 @@ export const INITIAL_USERS: UserProfile[] = [
 
 export const INITIAL_ACTIVITIES: Activity[] = [
   {
-    id: 'd0550000-0000-0000-0000-000000000010',
-    code: 'ACT-2026-0101',
-    title: "AUTORISATION D'ACHAT",
-    description: 'ZS COTONOU (Zone Sanitaire Cotonou)',
-    activity_type: 'Réglementaire',
-    priority: 'urgente',
-    status: 'termine',
-    progress_percentage: 100,
-    manager_id: 'a0000000-0000-0000-0000-000000000010',
-    manager_name: 'Dr. DOSSOU YOVO H. O. Mael',
-    collaborators: [],
-    department: 'Service de la Surveillance du Marché (SSMUR)',
-    start_date: '2026-11-04',
-    due_date: '2026-11-07',
-    completed_at: '2026-11-07 18:00',
-    associated_folder: 'DOS-2026-0042',
-    documents: [
-      {
-        id: 'd1111111-0000-0000-0000-000000000001',
-        name: 'decret-2024-1295 (1).pdf',
-        file_type: 'PDF',
-        size_kb: 214,
-        uploaded_at: '2026-11-04 07:47',
-        uploaded_by_name: 'Dr. DOSSOU YOVO H. O. Mael',
-      }
-    ],
-    tasks: [
-      {
-        id: 'b1111111-0000-0000-0000-000000000001',
-        activity_id: 'd0550000-0000-0000-0000-000000000010',
-        title: 'hbvdgbemoru',
-        assignee_id: 'a0000000-0000-0000-0000-000000000010',
-        assignee_name: 'Dr. DOSSOU YOVO H. O. Mael',
-        priority: 'moyenne',
-        status: 'termine',
-        due_date: '2026-11-04',
-        completed_at: '2026-11-04 18:00',
-        created_at: '2026-11-04 07:45',
-      },
-      {
-        id: 'b1111111-0000-0000-0000-000000000002',
-        activity_id: 'd0550000-0000-0000-0000-000000000010',
-        title: 'djsbfkjsbgv!lz',
-        assignee_id: 'a0000000-0000-0000-0000-000000000010',
-        assignee_name: 'Dr. DOSSOU YOVO H. O. Mael',
-        priority: 'moyenne',
-        status: 'termine',
-        due_date: '2026-11-04',
-        completed_at: '2026-11-04 18:00',
-        created_at: '2026-11-04 07:46',
-      }
-    ],
-    comments: [],
-    created_at: '2026-11-04 07:40',
-    updated_at: '2026-11-04 07:47',
-  },
-  {
     id: 'f1e2f014-af33-4d42-bc9e-8badc3765ad0',
-    code: 'ACT-2026-0102',
+    code: 'ACT-2026-0101',
     title: 'Réunion avec les points focaux Vigilances DES HOPITAUX',
     description: '',
     activity_type: 'Réunion Technique',
@@ -390,7 +333,7 @@ export const INITIAL_ACTIVITIES: Activity[] = [
   },
   {
     id: 'ec403fbe-2192-4f50-bb61-b74e59b43294',
-    code: 'ACT-2026-0103',
+    code: 'ACT-2026-0102',
     title: 'Réunion avec les points focaux Vigilances DES Grossistes et pharmaciens',
     description: '',
     activity_type: 'Réunion Technique',
@@ -412,7 +355,7 @@ export const INITIAL_ACTIVITIES: Activity[] = [
   },
   {
     id: '52070508-b5f2-480f-914d-8bac5f2d5c90',
-    code: 'ACT-2026-0104',
+    code: 'ACT-2026-0103',
     title: 'Réunion avec les points focaux Vigilances DES Programmes, ANSSP, ANTS, ABMS',
     description: '',
     activity_type: 'Réunion Technique',
@@ -434,7 +377,7 @@ export const INITIAL_ACTIVITIES: Activity[] = [
   },
   {
     id: 'fb1d0123-fce3-49ad-b485-fc26fcd2d841',
-    code: 'ACT-2026-0105',
+    code: 'ACT-2026-0104',
     title: 'Soumission des données sur VigiFlow et VigiLyse',
     description: '',
     activity_type: 'Notifications des EI / MAPI',
@@ -456,7 +399,7 @@ export const INITIAL_ACTIVITIES: Activity[] = [
   },
   {
     id: '8c58354e-670e-419e-ad39-4a506799eff3',
-    code: 'ACT-2026-0106',
+    code: 'ACT-2026-0105',
     title: 'Validation des données du PNLP',
     description: '',
     activity_type: 'Autre',
@@ -518,21 +461,7 @@ export const INITIAL_OUTGOING_MAILS: OutgoingMail[] = [
 
 export const INITIAL_FOLDERS: Folder[] = [...REAL_FOLDERS, ...REAL_AOI_FOLDERS];
 
-export const INITIAL_DOCUMENTS: DocumentItem[] = [
-  {
-    id: 'd1111111-0000-0000-0000-000000000001',
-    name: 'decret-2024-1295 (1).pdf',
-    file_type: 'PDF',
-    size_kb: 214,
-    entity_type: 'activite',
-    entity_id: 'd0550000-0000-0000-0000-000000000010',
-    entity_ref: 'ACT-2026-0101',
-    uploaded_by_id: 'a0000000-0000-0000-0000-000000000010',
-    uploaded_by_name: 'Dr. DOSSOU YOVO H. O. Mael',
-    uploaded_at: '2026-11-04 07:47',
-    file_url: 'decret-2024-1295 (1).pdf',
-  }
-];
+export const INITIAL_DOCUMENTS: DocumentItem[] = [];
 
 export const INITIAL_ESTABLISHMENTS: Establishment[] = REAL_ESTABLISHMENTS;
 
