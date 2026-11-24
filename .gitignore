@@ -30,3 +30,6 @@ Thumbs.db
 # Local data & raw audit files
 Base de données/
 scripts/*.json
+scratch/
+extracted_media/
+/*.docx

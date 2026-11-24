@@ -110,7 +110,7 @@ export const loadAllDataFromDatabase = async (): Promise<{ success: boolean; dat
       supabase.from('incoming_mails').select('*').order('created_at', { ascending: false }),
       supabase.from('outgoing_mails').select('*').order('created_at', { ascending: false }),
       supabase.from('folders').select('*').order('created_at', { ascending: false }),
-      supabase.from('documents').select('*').order('created_at', { ascending: false }),
+      supabase.from('documents').select('*'),
       supabase.from('establishments').select('*').order('created_at', { ascending: false }),
       supabase.from('signals_vigilance').select('*').order('created_at', { ascending: false }),
       supabase.from('trainings').select('*').order('created_at', { ascending: false }),
@@ -258,15 +258,15 @@ export const loadAllDataFromDatabase = async (): Promise<{ success: boolean; dat
     const documents: DocumentItem[] = (docsRes.data || []).map((d: any) => ({
       id: d.id,
       name: d.name,
-      file_type: d.file_type,
+      file_type: d.file_type || 'PDF',
       size_kb: Number(d.size_kb || 0),
-      entity_type: d.entity_type,
-      entity_id: d.entity_id,
-      entity_ref: d.entity_ref,
-      uploaded_by_id: d.uploaded_by_id || '',
+      entity_type: d.entity_type || 'activite',
+      entity_id: d.entity_id || '',
+      entity_ref: d.entity_ref || (d.entity_type === 'activite' ? 'ACT-2026-0101' : ''),
+      uploaded_by_id: d.uploaded_by || d.uploaded_by_id || '',
       uploaded_by_name: d.uploaded_by_name || '',
-      uploaded_at: d.created_at ? d.created_at.replace('T', ' ').substring(0, 16) : '',
-      file_url: d.file_url,
+      uploaded_at: d.uploaded_at ? d.uploaded_at.replace('T', ' ').substring(0, 16) : (d.created_at ? d.created_at.replace('T', ' ').substring(0, 16) : new Date().toISOString().substring(0, 16)),
+      file_url: d.storage_path || d.file_url || d.name,
     }));
 
     const establishments: Establishment[] = (etabsRes.data || []).map((e: any) => ({
@@ -742,14 +742,14 @@ export const dbSaveDocument = async (doc: DocumentItem): Promise<boolean> => {
     const payload = {
       id: ensureUuid(doc.id),
       name: doc.name,
-      file_type: doc.file_type,
+      file_type: doc.file_type || 'PDF',
       size_kb: doc.size_kb || 0,
       entity_type: doc.entity_type,
-      entity_id: doc.entity_id,
-      entity_ref: doc.entity_ref,
-      uploaded_by_id: normalizeUserId(doc.uploaded_by_id),
+      entity_id: ensureUuid(doc.entity_id),
+      uploaded_by: normalizeUserId(doc.uploaded_by_id),
       uploaded_by_name: doc.uploaded_by_name || null,
-      file_url: doc.file_url,
+      uploaded_at: doc.uploaded_at ? (doc.uploaded_at.includes('T') ? doc.uploaded_at : new Date(doc.uploaded_at).toISOString()) : new Date().toISOString(),
+      storage_path: doc.file_url || doc.name,
     };
     const { error } = await supabase.from('documents').upsert(payload);
     if (error) {

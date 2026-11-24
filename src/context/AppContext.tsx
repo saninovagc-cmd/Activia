@@ -204,6 +204,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setIsDbConnected(true);
         if (res.data.activities && res.data.activities.length > 0) {
           setActivities(res.data.activities);
+          try { localStorage.setItem('activia_activities', JSON.stringify(res.data.activities)); } catch {}
         }
         if (res.data.incomingMails && res.data.incomingMails.length > 0) {
           setIncomingMails(res.data.incomingMails);
@@ -247,23 +248,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Chargement initial au montage : LocalStorage instantané puis rafraîchissement Supabase
   useEffect(() => {
     try {
-      // Nettoyage automatique des anciennes données de démonstration pour démarrage à blanc
-      const CLEAN_DATA_KEY = 'activia_data_clean_v1';
-      if (!localStorage.getItem(CLEAN_DATA_KEY)) {
-        localStorage.removeItem('activia_activities');
-        localStorage.removeItem('activia_incoming_mails');
-        localStorage.removeItem('activia_outgoing_mails');
-        localStorage.removeItem('activia_folders');
-        localStorage.removeItem('activia_documents');
-        localStorage.removeItem('activia_signals');
-        localStorage.removeItem('activia_trainings');
-        localStorage.removeItem('activia_alerts');
-        localStorage.removeItem('activia_notifications');
-        localStorage.removeItem('activia_audit_logs');
-        localStorage.setItem(CLEAN_DATA_KEY, 'true');
-        clearAllDatabaseData().catch(() => {});
-      }
-
       // Phase 1 : Migration du Répertoire National Réel des 998 Établissements
       const REAL_ETAB_KEY = 'activia_real_etab_migrated_v1';
       if (!localStorage.getItem(REAL_ETAB_KEY)) {
@@ -298,6 +282,34 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setSignals(INITIAL_SIGNALS);
         setAlerts(INITIAL_ALERTS);
         setTrainings(INITIAL_TRAININGS);
+      }
+
+      // Phase 5 : Migration & Restauration Intégrale des Activités Réelles (Dr DOSSOU YOVO H. O. Mael & DLVS)
+      const REAL_ACTIVITIES_KEY = 'activia_real_activities_migrated_v2_dossou_mael';
+      if (!localStorage.getItem(REAL_ACTIVITIES_KEY)) {
+        localStorage.setItem('activia_activities', JSON.stringify(INITIAL_ACTIVITIES));
+        setActivities(INITIAL_ACTIVITIES);
+        localStorage.setItem(REAL_ACTIVITIES_KEY, 'true');
+      }
+
+      // Restauration des Documents Réels GED (Décret Déposé par Dr DOSSOU YOVO H. O. Mael)
+      const REAL_DOCS_KEY = 'activia_real_docs_migrated_v2_dossou_mael';
+      if (!localStorage.getItem(REAL_DOCS_KEY)) {
+        if (INITIAL_DOCUMENTS.length > 0) {
+          localStorage.setItem('activia_documents', JSON.stringify(INITIAL_DOCUMENTS));
+          setDocuments(INITIAL_DOCUMENTS);
+        }
+        localStorage.setItem(REAL_DOCS_KEY, 'true');
+      }
+
+      // Restauration des Courriers Sortants Réels (DEP-2026-0415 émis par Dr. YAMBODE Maria-Carole)
+      const REAL_OUT_MAILS_KEY = 'activia_real_out_mails_migrated_v2';
+      if (!localStorage.getItem(REAL_OUT_MAILS_KEY)) {
+        if (INITIAL_OUTGOING_MAILS.length > 0) {
+          localStorage.setItem('activia_outgoing_mails', JSON.stringify(INITIAL_OUTGOING_MAILS));
+          setOutgoingMails(INITIAL_OUTGOING_MAILS);
+        }
+        localStorage.setItem(REAL_OUT_MAILS_KEY, 'true');
       }
 
       // Migration forcée v3 : Intégration des 206 dossiers réels d'AOI / Transit et sous-modules Métiers
@@ -482,6 +494,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           // Si Supabase contient des activités, elles priment
           if (res.data.activities && res.data.activities.length > 0) {
             setActivities(res.data.activities);
+            try { localStorage.setItem('activia_activities', JSON.stringify(res.data.activities)); } catch {}
           } else {
             // Si la BDD est encore vide mais que l'utilisateur avait déjà saisi une activité en local
             const localActsRaw = localStorage.getItem('activia_activities');
