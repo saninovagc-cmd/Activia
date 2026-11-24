@@ -440,6 +440,55 @@ export const dbSaveActivity = async (activity: Activity): Promise<boolean> => {
   }
 };
 
+/** Renvoie le prochain code ACT-AAAA-NNNN disponible à partir d'une liste de codes. */
+export const nextActivityCode = (codes: string[]): string => {
+  const year = new Date().getFullYear();
+  const max = codes.reduce((m, c) => {
+    const n = parseInt(String(c || '').split('-').pop() || '0', 10);
+    return Number.isFinite(n) && n > m ? n : m;
+  }, 100);
+  return `ACT-${year}-${String(max + 1).padStart(4, '0')}`;
+};
+
+/**
+ * Enregistre une activité en garantissant l'unicité du code.
+ * En cas de conflit (code déjà utilisé par un autre agent), un nouveau code est attribué
+ * à partir de la base, puis l'enregistrement est relancé.
+ * Renvoie le code finalement enregistré, ou null en cas d'échec.
+ */
+export const dbSaveActivityUnique = async (activity: Activity): Promise<string | null> => {
+  if (!isSupabaseConfigured()) return null;
+  let current = { ...activity };
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const payload = {
+      id: ensureUuid(current.id),
+      code: current.code,
+      title: current.title,
+      description: current.description || '',
+      activity_type: current.activity_type,
+      priority: current.priority,
+      status: current.status,
+      progress_percentage: current.progress_percentage || 0,
+      manager_id: normalizeUserId(current.manager_id),
+      manager_name: current.manager_name || null,
+      department: current.department,
+      start_date: current.start_date,
+      due_date: current.due_date,
+      completed_at: current.completed_at ? new Date(current.completed_at).toISOString() : null,
+      associated_folder: current.associated_folder || null,
+    };
+    const { error } = await supabase.from('activities').upsert(payload);
+    if (!error) return current.code;
+    if (error.code !== '23505') {
+      console.error('Erreur dbSaveActivityUnique Supabase:', error.message);
+      return null;
+    }
+    const { data } = await supabase.from('activities').select('code');
+    current = { ...current, code: nextActivityCode((data || []).map((r: any) => r.code)) };
+  }
+  return null;
+};
+
 export const dbUpdateActivity = async (id: string, updates: Partial<Activity>): Promise<boolean> => {
   if (!isSupabaseConfigured()) return false;
   try {

@@ -44,6 +44,8 @@ import {
 import {
   loadAllDataFromDatabase,
   dbSaveActivity,
+  dbSaveActivityUnique,
+  nextActivityCode,
   dbUpdateActivity,
   dbDeleteActivity,
   dbSaveTask,
@@ -195,6 +197,50 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const hideToast = () => setToast(null);
 
+  // Fusion serveur + poste local : les saisies présentes uniquement sur ce poste (échec d'envoi)
+  // ne sont plus écrasées par la base ; elles sont conservées et renvoyées au serveur.
+  const mergeRemoteActivities = (remote: Activity[]) => {
+    let local: Activity[] = [];
+    try {
+      const raw = localStorage.getItem('activia_activities');
+      if (raw) local = JSON.parse(raw);
+    } catch {}
+    if (!Array.isArray(local)) local = [];
+
+    const remoteById = new Map(remote.map(a => [a.id, a]));
+    const localOnly = local.filter(a => a && a.id && !remoteById.has(a.id));
+    const pendingTasks: Task[] = [];
+
+    const mergedRemote = remote.map(r => {
+      const l = local.find(a => a.id === r.id);
+      if (!l || !Array.isArray(l.tasks)) return r;
+      const remoteTaskIds = new Set((r.tasks || []).map(t => t.id));
+      const missing = l.tasks.filter(t => t && !remoteTaskIds.has(t.id));
+      if (missing.length === 0) return r;
+      pendingTasks.push(...missing);
+      return { ...r, tasks: [...(r.tasks || []), ...missing] };
+    });
+
+    const merged = [...localOnly, ...mergedRemote];
+    setActivities(merged);
+    try { localStorage.setItem('activia_activities', JSON.stringify(merged)); } catch {}
+
+    pendingTasks.forEach(t => dbSaveTask(t));
+    localOnly.forEach(act => {
+      dbSaveActivityUnique(act).then(savedCode => {
+        if (!savedCode) return;
+        (act.tasks || []).forEach(t => dbSaveTask(t));
+        if (savedCode !== act.code) {
+          setActivities(prev => {
+            const updated = prev.map(a => a.id === act.id ? { ...a, code: savedCode } : a);
+            try { localStorage.setItem('activia_activities', JSON.stringify(updated)); } catch {}
+            return updated;
+          });
+        }
+      });
+    });
+  };
+
   // Synchronisation avec la base de données Supabase
   const refreshFromDatabase = async () => {
     setIsSyncing(true);
@@ -202,9 +248,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       const res = await loadAllDataFromDatabase();
       if (res.success && res.data) {
         setIsDbConnected(true);
-        if (res.data.activities && res.data.activities.length > 0) {
-          setActivities(res.data.activities);
-          try { localStorage.setItem('activia_activities', JSON.stringify(res.data.activities)); } catch {}
+        if (res.data.activities) {
+          mergeRemoteActivities(res.data.activities);
         }
         if (res.data.incomingMails && res.data.incomingMails.length > 0) {
           setIncomingMails(res.data.incomingMails);
@@ -284,13 +329,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setTrainings(INITIAL_TRAININGS);
       }
 
-      // Phase 5 : Migration & Restauration Intégrale des Activités Réelles (Dr DOSSOU YOVO H. O. Mael & DLVS)
-      const REAL_ACTIVITIES_KEY = 'activia_real_activities_migrated_v2_dossou_mael';
-      if (!localStorage.getItem(REAL_ACTIVITIES_KEY)) {
-        localStorage.setItem('activia_activities', JSON.stringify(INITIAL_ACTIVITIES));
-        setActivities(INITIAL_ACTIVITIES);
-        localStorage.setItem(REAL_ACTIVITIES_KEY, 'true');
-      }
+      // (Ancienne migration v2 supprimée : elle écrasait les saisies locales non envoyées.)
 
       // Purge des éléments de test injectés (activité/tâches/document du 04/11) du cache navigateur
       const PURGE_TEST_KEY = 'activia_purge_test_entries_v3';
@@ -504,21 +543,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       .then(res => {
         if (res.success && res.data) {
           setIsDbConnected(true);
-          // Si Supabase contient des activités, elles priment
-          if (res.data.activities && res.data.activities.length > 0) {
-            setActivities(res.data.activities);
-            try { localStorage.setItem('activia_activities', JSON.stringify(res.data.activities)); } catch {}
-          } else {
-            // Si la BDD est encore vide mais que l'utilisateur avait déjà saisi une activité en local
-            const localActsRaw = localStorage.getItem('activia_activities');
-            if (localActsRaw) {
-              try {
-                const localActs = JSON.parse(localActsRaw);
-                if (Array.isArray(localActs) && localActs.length > 0) {
-                  localActs.forEach(act => dbSaveActivity(act));
-                }
-              } catch {}
-            }
+          // Fusion serveur + saisies locales non encore envoyées (aucune saisie écrasée)
+          if (res.data.activities) {
+            mergeRemoteActivities(res.data.activities);
           }
 
           if (res.data.incomingMails && res.data.incomingMails.length > 0) setIncomingMails(res.data.incomingMails);
@@ -835,7 +862,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const addActivity = (data: Partial<Activity>): Activity => {
     const newId = generateUuid();
-    const newCode = `ACT-2026-${String(activities.length + 101).padStart(4, '0')}`;
+    const newCode = nextActivityCode(activities.map(a => a.code));
     const newActivity: Activity = {
       id: newId,
       code: newCode,
@@ -867,12 +894,19 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       return updated;
     });
 
-    // 2. Persistance directe dans la base de données Supabase
-    dbSaveActivity(newActivity).then(success => {
-      if (success) {
-        showToast('Activité enregistrée avec succès dans la base de données', 'success');
+    // 2. Persistance directe dans la base de données Supabase (code unique garanti)
+    dbSaveActivityUnique(newActivity).then(savedCode => {
+      if (savedCode) {
+        if (savedCode !== newCode) {
+          setActivities(prev => {
+            const updated = prev.map(a => a.id === newId ? { ...a, code: savedCode } : a);
+            try { localStorage.setItem('activia_activities', JSON.stringify(updated)); } catch {}
+            return updated;
+          });
+        }
+        showToast(`Activité ${savedCode} enregistrée avec succès dans la base de données`, 'success');
       } else {
-        console.warn('Sauvegarde BDD en attente de reconnexion, conservée en local.');
+        showToast("ATTENTION : l'activité n'a pas pu être enregistrée sur le serveur. Elle est conservée sur ce poste et sera renvoyée automatiquement.", 'error');
       }
     });
 
